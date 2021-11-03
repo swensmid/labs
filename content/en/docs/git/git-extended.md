@@ -190,11 +190,11 @@ Es ist lediglich ein wenig aufwändiger Repositorys aus anderen Quellen einzubin
 
 
 ### Installationsanleitung
-Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:<br>
-```https://desktop.github.com/``` <br>
-Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden: <br>
+Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:
+```https://desktop.github.com/``` 
+Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden:
 ```https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1```
-=======
+
 ## Git Blame
 ### Was ist Git-Blame?
 Ist ein Befehl welcher dazu dient den Author der letzten Änderung anzuzeigen. Deswegen auch
