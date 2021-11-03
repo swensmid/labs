@@ -235,6 +235,17 @@ index 1e6db46..dd7161b 100644
 ```
 
 `git diff` vergleicht die Änderungen welche noch nicht gestaged wurden, will man bereits gestagte Änderungen überprüfen braucht es zusätzlich das Flag `--staged` oder `--cached` (die beiden Flags sind Synonyme).
+ 
+Anders als `git diff` funktioniert `git diff-tool` mit einem externen Tool, welches dir die Änderungen anzeigt. Beispiele dafür sind 'P4Merge' oder auch 'Beyond Compare'. Sie versuchen die Bearbeitungen besser zu visualisieren
+und es dem Benutzer einfacher zu machen, diese in einer Datei / im Code einzusehen.
+Jetzt bleibt die Frage: Wann brauchen wir `git diff` und wann `git diff-tool` ? Grundsätzlich
+wird `git diff` bei folgenden Situationen gebraucht:
+- Wenn wir kein GUI haben und nur mit dem Output des Terminals arbeiten
+- Falls wir gar kein externes Tool zur Verfügung haben
+- Wenn du keine 'schweren' externen Tools starten möchtest, sondern so schnell wie möglich zum Ergebnis kommen willst.
+
+`git diff-tool` kann man dann überall dort einsetzen, bei denen die oben erwähnten Situationen nicht zutreffen. Zu Beachten ist aber, dass es noch viele weitere Situationen gibt, in welchen man auf `git diff-tool` verzichten kann.
+Zur genaueren Einsicht ist Googel immer eine gute Anhaltestelle.
 
 ### Commiten
 
