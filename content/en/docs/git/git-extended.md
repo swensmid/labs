@@ -28,7 +28,7 @@ Um Dateien im Anschluss abzurufen wird der folgende Befehl verwendet:
 ```bash
 git stash pop
 ```
-Mit ```git stash pop``` werden alle änderungen des stashes gelöscht und der ursprünglichen Datei hinzugefügt.
+Mit ```git stash pop``` werden alle Änderungen des stashes gelöscht und der ursprünglichen Datei hinzugefügt.
 
 Die Alternative dazu ist:
 ```bash
@@ -43,7 +43,7 @@ dies kann nützlich sein, wenn dieselbe Änderung mehreren Branches hinzugefügt
 #### Was ist Squash
 squash in Git meint mehrere Commits zu vereinen.
 Squash wird meistens benutzt, wenn Branches gemerged werden.
-AN dieser Stelle ist es jedoch wichtig zu erwähnen das es keinen ```git squash``` Befehl gibt.
+An dieser Stelle ist es jedoch wichtig zu erwähnen das es keinen ```git squash``` Befehl gibt.
 
 
 #### Wie funktioniert squash?
@@ -58,7 +58,7 @@ Um jetzt die Commits zu squashen muss das pick zu beginn der zeile mit squash er
 Jetzt werden alle Commits mit dem squash Schlüsselwort an den obersten Commit hinzugefügt.
 
 
-#####Wieso sollte man Squashen:
+##### Wieso sollte man Squashen:
 Angenommen du beendest die Arbeit an einem Featurebranch und willst diese in den Main branch mergen,
 jedoch enthält der Featurebranch viele Commits die nicht zwingend im Mainbranch aufgeführt werden sollen,
 in diesem Fall eignet sich das squashen, um diese Commits zusammenzufassen.
@@ -157,3 +157,32 @@ Stichwort [alias]. Danach könnte das etwa so aussehen:
  ```
 Die Aliasse können beliebig definiert werden, Ziel davon soll nur sein, die Schreibarbeit zu
 minimieren und das eigene Programmieren praktischer zu machen.
+
+## Gitg
+### Was ist Gitg
+Gitg ist eine grafische Benutzeroberfläche für git. Es zielt darauf ab, ein kleines, 
+schnelles und bequemes Werkzeug zu sein, um Git-Repositories zu visualisieren.
+Neben der Visualisierung bietet Gitg auch einfache Möglichkeiten zur Verwaltung eines Repositorys.
+Jedoch bietet IntelliJ standardmässig die dieselben Möglichkeiten, sollte man jedoch eine IDE ohne Git integration verwenden ist gitg ein praktisches Tool.
+
+
+### Installationsanleitung
+Unter Linux kann gitg mit folgendem Befehl installieren:
+<br>```sudo apt install gitg```<br>
+Leider ist git unter Windows nicht verfügbar. 
+Eine empfehlenswerte Alternative dazu ist der offizielle GitHub Client.
+
+## Github Client 
+### Was ist der GitHub Client
+Der GitHub Client ist ein Windows Programm für die Verwaltung von Git Repositorys. 
+Der GitHub Client funktioniert am besten mit GitHub repositorys, 
+das bedeutet aber nicht das dieser keine Repositorys von anderen Quellen unterstützt.
+Es ist lediglich ein wenig aufwändiger Repositorys aus anderen Quellen einzubinden.
+
+
+### Installationsanleitung
+Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:
+<br>```https://desktop.github.com/``` <br>
+Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden: <br>
+```https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1```
+
