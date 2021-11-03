@@ -518,19 +518,108 @@ private git@github.com:Lehrling/training-sbb-puzzle.git &lt;span style="color:#f
 &lt;h2 id="inhalt">Inhalt&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="#Stash">Stash&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#CherryPick">Cherry Pick&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#Tag">Tag&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#Alias">Alias&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="stash">Stash&lt;/h2>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="squash">Squash&lt;/h2>
+&lt;h2 id="squash">Squash&lt;/h2>
 &lt;h2 id="mergepullrequests">Merge/Pullrequests&lt;/h2>
 &lt;h2 id="cherry-pick">Cherry Pick&lt;/h2>
+&lt;h3 id="was-ist-cherry-pick-">Was ist Cherry-Pick ?&lt;/h3>
+&lt;p>git cherry-pick ist ein Befehl welcher es ermöglicht beliebige Git-Commits per Referenz
+anzusprechen und diese an den momentanen Arbeitskopf (HEAD) anzuheften.
+git cherry-pick kann sehr nützlich für das rückgängig Machen von Änderungen sein.&lt;/p>
+&lt;p>Zum Beispiel: Ein Commit ist aus Versehen im falschen Branch. Nun kannst du zum korrekten
+Branch wechselt und brauchst git cherry-pick um den Commit am richtigen Ort zu befestigen.&lt;/p>
+&lt;h3 id="wie-funktioniert-cherry-pick-">Wie funktioniert Cherry-Pick ?&lt;/h3>
+&lt;p>Um Cherry Pick anzuwenden gibt man folgenden Befehl ein:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">git cherry-pick &amp;lt;commit-hash&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Der &lt;commit-hash> muss natürlich noch mit dem korrekten Hash des Commits ersetzt werden, welchen
+man verschieben will. Anschliessend wird der Commit an den Branch angeheftet, auf dem man sich gerade
+befindet. Darum Achtung!: Immer zuerst kontrollieren ob man derzeit auch wirklich auf dem korrekten
+Branch ist.&lt;/p>
 &lt;h2 id="tag">Tag&lt;/h2>
-&lt;h2 id="alias">Alias&lt;/h2></description></item><item><title>Docs: Git Branches</title><link>/labs/docs/git/git-branches/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/docs/git/git-branches/</guid><description>
+&lt;h3 id="was-sind-tags-">Was sind Tags ?&lt;/h3>
+&lt;p>Tags sind Referenzen, welche an einen bestimmten Punkt der History
+zeigen. Tagging wird üblicherweise benutzt um wichtige Ereignisse wie z.B.
+das Release einer Applikation festzuhalten. Ein Tag ist etwas ähnliches
+wie ein Branch, nur das ein Tag sich nicht verändert. Anders als ein Branch,
+kann ein Tag nach dem Erstellen keine weiteren Commits
+beinhalten.&lt;/p>
+&lt;h3 id="wie-funktionieren-tags-">Wie funktionieren Tags ?&lt;/h3>
+&lt;p>Um ein Tag zu erstellen wird folgender Befehl benötigt:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">git tag &amp;lt;tagname&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Wobei der &lt;tagname> auch wieder durch den gewünschten String ersetzt werden muss.
+Will man zusätzlich zum Tag eine Beschriftung hinzufügen, macht man das mit:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">git tag &amp;lt;tagname&amp;gt; -a
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Damit wird ein annotated tag erstellt.&lt;/p>
+&lt;p>Auch wichtig anzumerken: Wenn du normal auf den Branch pushst, werden die Tags
+nicht standardmässig mitgepusht. Dazu brauchst du dann:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">git push origin --tags
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Willst du nur ein einzelnes Tag pushen, brauche:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">git push origin &amp;lt;tag&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="alias">Alias&lt;/h2>
+&lt;h3 id="was-sind-aliasse-">Was sind Aliasse ?&lt;/h3>
+&lt;p>Ein Git-Alias ist zu vergleichen mit einem Shortcut. Aliasse werden z.b.
+auch beim Arbeiten mit der Bash-Konsole eingesetzt. Aliase werden gebraucht um kürzere Befehle
+zu realisieren. Sie ermöglichen effizienteres Programmieren.&lt;/p>
+&lt;p>Nehmen wir zum Beispiel den git-checkout Befehl.
+Dieser Befehl wird häufig verwendet und muss immer wieder neu eingetippt werden. Mit den Git-Aliassen
+jedoch kann man git-checkout z.B. in git.co verwandeln. Dies spart enorme Schreibarbeit über längere Zeit
+und verliert dennoch nicht an Wirksamkeit.&lt;/p>
+&lt;h3 id="wie-funktionieren-aliasse">Wie funktionieren Aliasse?&lt;/h3>
+&lt;p>Um Aliasse festzulegen, müssen wir diese in der gitconfig-Datei definieren. Dort erstellen wir das
+Stichwort [alias]. Danach könnte das etwa so aussehen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">[alias]
+st = status
+ci = commit -v
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Die Aliasse können beliebig definiert werden, Ziel davon soll nur sein, die Schreibarbeit zu
+minimieren und das eigene Programmieren praktischer zu machen.&lt;/p></description></item><item><title>Docs: Git Branches</title><link>/labs/docs/git/git-branches/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/docs/git/git-branches/</guid><description>
 &lt;h2 id="inhalt">Inhalt&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="#beispiel-f%C3%BCr-branching-merging-und-rebasing">Beispiel für Branching, Merging und Rebasing&lt;/a>&lt;/li>
