@@ -12,6 +12,26 @@ Es freut uns das du **git** kennen lernen willst!
 
 Wir haben hier ein Lab für dich zusammengestellt damit du in dieses Thema eintauchen kannst. Finde für dich heraus warum **git** eine Zeitmaschine ist und was es mit den Paralleluniversen auf sich hat.
 
+# Ziele
+
+Du kannst ...
+
+- git konfigurieren
+- Repositories auschecken
+- Branches erstellen und auschecken
+- Commits erstellen und klare Commit Messages formulieren
+- Änderungen vom Server pullen
+- Merge-/Pullrequests erstellen (z.B. auf Github, Bitbucket, Gitlab)
+- Änderungen anhand der Git History nachvollziehen
+- Mergen und Rebasen von Branches
+
+Vielleicht sogar ...
+
+- Commits squashen
+- Tags erstellen und pushen
+- Aliasse einrichten
+- Blame anwenden
+
 ## Schwerpunkte
 
 Dieses Lab unterteilt sich in folgende Themenbereiche:
@@ -33,6 +53,7 @@ Meisterst du diese Challenges?
 ## Voraussetzungen
 
 * [git](https://git-scm.com/book/de/v2/Erste-Schritte-Git-installieren) installiert
+
 
 ## Auch interessant, wird aber nicht behandelt:
 
