@@ -238,7 +238,7 @@ index 1e6db46..dd7161b 100644
  
 Anders als `git diff` funktioniert `git diff-tool` mit einem externen Tool, welches dir die Änderungen anzeigt. Beispiele dafür sind 'P4Merge' oder auch 'Beyond Compare'. Sie versuchen die Bearbeitungen besser zu visualisieren
 und es dem Benutzer einfacher zu machen, diese in einer Datei / im Code einzusehen.
-Jetzt bleibt die Frage: Wann brauchen wir `git diff` und wann `git diff-tool` ? Grundsätzlich
+Jetzt bleibt die Frage: Wann brauchen wir was? Grundsätzlich
 wird `git diff` bei folgenden Situationen gebraucht:
 - Wenn wir kein GUI haben und nur mit dem Output des Terminals arbeiten
 - Falls wir gar kein externes Tool zur Verfügung haben
