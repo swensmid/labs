@@ -523,8 +523,90 @@ private git@github.com:Lehrling/training-sbb-puzzle.git &lt;span style="color:#f
 &lt;li>&lt;a href="#Alias">Alias&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="stash">Stash&lt;/h2>
+&lt;h4 id="was-ist-stash">Was ist stash?&lt;/h4>
+&lt;p>Mit git stash ist es möglich Änderungen zwischenzuspeichern und diese später abzurufen.
+Nach dem stashen kannst du an anderen Dateien arbeiten bis du die zwischengespeicherten Daten problemlos wieder abrufen kannst.&lt;/p>
+&lt;h4 id="wie-funktioniert-stash">Wie funktioniert stash?&lt;/h4>
+&lt;p>Um Dateien zu stashen wird der folgende Befehl verwendet:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git stash
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Um Dateien im Anschluss abzurufen wird der folgende Befehl verwendet:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git stash pop
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Mit &lt;code>git stash pop&lt;/code> werden alle Änderungen des stashes gelöscht und der ursprünglichen Datei hinzugefügt.&lt;/p>
+&lt;p>Die Alternative dazu ist:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git stash apply
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Mit &lt;code>git stash apply&lt;/code> werden die änderungen ebenfalls übernommen,
+der Unterschied zu &lt;code>git stash pop&lt;/code> liegt darin das stash apply die Dateien nicht aus dem Stash löscht,
+dies kann nützlich sein, wenn dieselbe Änderung mehreren Branches hinzugefügt werden soll.&lt;/p>
 &lt;h2 id="squash">Squash&lt;/h2>
-&lt;h2 id="mergepullrequests">Merge/Pullrequests&lt;/h2>
+&lt;h4 id="was-ist-squash">Was ist Squash&lt;/h4>
+&lt;p>squash in Git meint mehrere Commits zu vereinen.
+Squash wird meistens benutzt, wenn Branches gemerged werden.
+An dieser Stelle ist es jedoch wichtig zu erwähnen das es keinen &lt;code>git squash&lt;/code> Befehl gibt.&lt;/p>
+&lt;h4 id="wie-funktioniert-squash">Wie funktioniert squash?&lt;/h4>
+&lt;p>Es gibt verschiedene Wege um Commits zu squashen.
+Zum Beispiel gibt es die Methode des manuellen squashens, dazu wird das Interactive rebase feature von Git genutzt.
+Um die Interactive Rebase session zu starten wird der folgende Befehl verwendet:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git rebase -i HEAD~3
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Danach öffnet sich ein Editor der die letzten n Commits anzeigt, n wird durch die Zahl nach dem &amp;ldquo;~&amp;rdquo; definiert.
+Um jetzt die Commits zu squashen muss das pick zu beginn der zeile mit squash ersetzt werden.
+Jetzt werden alle Commits mit dem squash Schlüsselwort an den obersten Commit hinzugefügt.&lt;/p>
+&lt;h5 id="wieso-sollte-man-squashen">Wieso sollte man Squashen:&lt;/h5>
+&lt;p>Angenommen du beendest die Arbeit an einem Featurebranch und willst diese in den Main branch mergen,
+jedoch enthält der Featurebranch viele Commits die nicht zwingend im Mainbranch aufgeführt werden sollen,
+in diesem Fall eignet sich das squashen, um diese Commits zusammenzufassen.&lt;/p>
+&lt;h2 id="mergepull-requests">Merge/Pull Requests&lt;/h2>
+&lt;p>###Was ist der Unterschied zwischen einer Merge Request und einer Pull Request?
+Beide Begriffe meinen dasselbe, werden jedoch mit einer anderen Plattform assoziiert.
+Der Begriff Merge Request wird im Zusammenhang mit GitLab verwendet.
+Im Zusammenhang mit GitHub wird jedoch der Begriff Pull Request verwendet.
+Der Einfachheit wird im folgenden Text nur von Pull Request gesprochen.&lt;/p>
+&lt;h3 id="was-ist-eine-pull-request-bzw-eine-merge-request">Was ist eine Pull Request bzw. eine Merge Request?&lt;/h3>
+&lt;p>In ihrer einfachsten Form sind Pull-Requests eine Funktion für Entwickler
+die andere Teammitglieder darüber informiert, dass ein Feature fertiggestellt wurde.
+Dies lässt alle Beteiligten wissen, dass der Code bereit für eine überprüfung ist und danach in Hauptzweig eingeführt werden kann.&lt;/p>
+&lt;p>###Wie kann eine Pull Request erstellt werden (IntelliJ)
+Um eine Pull Request direkt aus Intelij zu erstellen, muss zuerst sichergestellt werden das man selber berechtigt ist eine Pull Request zu erstellen.
+Sind diese Berechtigungen vorhanden, kann die Pull Request in wenigen Schritten erstellt werden.
+Oben Links in IntelliJ befindet sich einen Button der mit Pull Request beschriftet ist.
+Danach öffnet sich ein Fenster in dem ausgewählt werden kann, welchen der lokalen Branches in das Ziel Repo gemerged werden soll.
+Danach muss nach noch einen Titel festgelegt werden. Es besteht ebenfalls die Möglichkeit eine Beschreibung hinzuzufügen, dies ist jedoch nur optional.
+Im Anschluss besteht die Möglichkeit einen Reviewer hinzuzufügen.
+Jetzt kann die Pull Request erstellt werden.&lt;/p>
+&lt;h3 id="wie-kann-eine-pull-request-erstellt-werden-github">Wie kann eine Pull Request erstellt werden (Github)&lt;/h3>
+&lt;p>Um eine Pull Request direkt von GitHub aus zu senden, muss zuerst der Reiter Pull Request ausgewählt werden,
+Jetzt stehen verschiedene Möglichkeiten zu Auswahl, in unserem Fall wollen wir aber nur eine neue Pull Request erstellen.
+Im Anschluss erscheint ein neues Panel, das wichtigste dabei ist die Wahl des richtigen source und target branches.
+Als nächstes kann noch ein Name und eine Beschreibung für die Pull Request gesetzt werden.
+Wie in IntelliJ besteht auch hier die Möglichkeit einen Reviewer hinzuzufügen, der Button dazu befindet sich mittig auf der linken Seite.
+Da nun alle Einstellungen vorgenommen wurden, kann die Pull Request erstellt werden.&lt;/p>
 &lt;h2 id="cherry-pick">Cherry Pick&lt;/h2>
 &lt;h3 id="was-ist-cherry-pick-">Was ist Cherry-Pick ?&lt;/h3>
 &lt;p>git cherry-pick ist ein Befehl welcher es ermöglicht beliebige Git-Commits per Referenz
@@ -620,6 +702,28 @@ ci = commit -v
 &lt;/div>
 &lt;/div>&lt;p>Die Aliasse können beliebig definiert werden, Ziel davon soll nur sein, die Schreibarbeit zu
 minimieren und das eigene Programmieren praktischer zu machen.&lt;/p>
+&lt;h2 id="gitg">Gitg&lt;/h2>
+&lt;h3 id="was-ist-gitg">Was ist Gitg&lt;/h3>
+&lt;p>Gitg ist eine grafische Benutzeroberfläche für git. Es zielt darauf ab, ein kleines,
+schnelles und bequemes Werkzeug zu sein, um Git-Repositories zu visualisieren.
+Neben der Visualisierung bietet Gitg auch einfache Möglichkeiten zur Verwaltung eines Repositorys.
+Jedoch bietet IntelliJ standardmässig die dieselben Möglichkeiten, sollte man jedoch eine IDE ohne Git integration verwenden ist gitg ein praktisches Tool.&lt;/p>
+&lt;h3 id="installationsanleitung">Installationsanleitung&lt;/h3>
+&lt;p>Unter Linux kann gitg mit folgendem Befehl installieren:
+&lt;br>&lt;code>sudo apt install gitg&lt;/code>&lt;br>
+Leider ist git unter Windows nicht verfügbar.
+Eine empfehlenswerte Alternative dazu ist der offizielle GitHub Client.&lt;/p>
+&lt;h2 id="github-client">Github Client&lt;/h2>
+&lt;h3 id="was-ist-der-github-client">Was ist der GitHub Client&lt;/h3>
+&lt;p>Der GitHub Client ist ein Windows Programm für die Verwaltung von Git Repositorys.
+Der GitHub Client funktioniert am besten mit GitHub repositorys,
+das bedeutet aber nicht das dieser keine Repositorys von anderen Quellen unterstützt.
+Es ist lediglich ein wenig aufwändiger Repositorys aus anderen Quellen einzubinden.&lt;/p>
+&lt;h3 id="installationsanleitung-1">Installationsanleitung&lt;/h3>
+&lt;h1 id="httpsgistgithubcomberkorbay6feda478a00b0432d13f1fc0a50467f1">Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:
+&lt;br>&lt;code>https://desktop.github.com/&lt;/code> &lt;br>
+Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden: &lt;br>
+&lt;code>https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1&lt;/code>&lt;/h1>
 &lt;h2 id="git-blame">Git Blame&lt;/h2>
 &lt;h3 id="was-ist-git-blame">Was ist Git-Blame?&lt;/h3>
 &lt;p>Ist ein Befehl welcher dazu dient den Author der letzten Änderung anzuzeigen. Deswegen auch
