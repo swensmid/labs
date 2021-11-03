@@ -3004,8 +3004,8 @@ Der Einfachheit wird im folgenden Text nur von Pull Request gesprochen.&lt;/p>
 &lt;p>In ihrer einfachsten Form sind Pull-Requests eine Funktion für Entwickler
 die andere Teammitglieder darüber informiert, dass ein Feature fertiggestellt wurde.
 Dies lässt alle Beteiligten wissen, dass der Code bereit für eine überprüfung ist und danach in Hauptzweig eingeführt werden kann.&lt;/p>
-&lt;p>###Wie kann eine Pull Request erstellt werden (IntelliJ)
-Um eine Pull Request direkt aus Intelij zu erstellen, muss zuerst sichergestellt werden das man selber berechtigt ist eine Pull Request zu erstellen.
+&lt;h3 id="wie-kann-eine-pull-request-erstellt-werden-intellij">Wie kann eine Pull Request erstellt werden (IntelliJ)&lt;/h3>
+&lt;p>Um eine Pull Request direkt aus Intelij zu erstellen, muss zuerst sichergestellt werden das man selber berechtigt ist eine Pull Request zu erstellen.
 Sind diese Berechtigungen vorhanden, kann die Pull Request in wenigen Schritten erstellt werden.
 Oben Links in IntelliJ befindet sich einen Button der mit Pull Request beschriftet ist.
 Danach öffnet sich ein Fenster in dem ausgewählt werden kann, welchen der lokalen Branches in das Ziel Repo gemerged werden soll.
@@ -3132,8 +3132,8 @@ Der GitHub Client funktioniert am besten mit GitHub repositorys,
 das bedeutet aber nicht das dieser keine Repositorys von anderen Quellen unterstützt.
 Es ist lediglich ein wenig aufwändiger Repositorys aus anderen Quellen einzubinden.&lt;/p>
 &lt;h3 id="installationsanleitung-1">Installationsanleitung&lt;/h3>
-&lt;h1 id="httpsgistgithubcomberkorbay6feda478a00b0432d13f1fc0a50467f1">Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:
-&lt;br>&lt;code>https://desktop.github.com/&lt;/code> &lt;br>
+&lt;h1 id="httpsgistgithubcomberkorbay6feda478a00b0432d13f1fc0a50467f1">Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:&lt;br>
+&lt;code>https://desktop.github.com/&lt;/code> &lt;br>
 Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden: &lt;br>
 &lt;code>https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1&lt;/code>&lt;/h1>
 &lt;h2 id="git-blame">Git Blame&lt;/h2>
