@@ -66,7 +66,7 @@ in diesem Fall eignet sich das squashen, um diese Commits zusammenzufassen.
 
 
 ## Merge/Pull Requests
-###Was ist der Unterschied zwischen einer Merge Request und einer Pull Request?
+### Was ist der Unterschied zwischen einer Merge Request und einer Pull Request?
 Beide Begriffe meinen dasselbe, werden jedoch mit einer anderen Plattform assoziiert.
 Der Begriff Merge Request wird im Zusammenhang mit GitLab verwendet.
 Im Zusammenhang mit GitHub wird jedoch der Begriff Pull Request verwendet.
