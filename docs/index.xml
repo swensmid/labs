@@ -3006,8 +3006,8 @@ Jetzt werden alle Commits mit dem squash Schlüsselwort an den obersten Commit h
 jedoch enthält der Featurebranch viele Commits die nicht zwingend im Mainbranch aufgeführt werden sollen,
 in diesem Fall eignet sich das squashen, um diese Commits zusammenzufassen.&lt;/p>
 &lt;h2 id="mergepull-requests">Merge/Pull Requests&lt;/h2>
-&lt;p>###Was ist der Unterschied zwischen einer Merge Request und einer Pull Request?
-Beide Begriffe meinen dasselbe, werden jedoch mit einer anderen Plattform assoziiert.
+&lt;h3 id="was-ist-der-unterschied-zwischen-einer-merge-request-und-einer-pull-request">Was ist der Unterschied zwischen einer Merge Request und einer Pull Request?&lt;/h3>
+&lt;p>Beide Begriffe meinen dasselbe, werden jedoch mit einer anderen Plattform assoziiert.
 Der Begriff Merge Request wird im Zusammenhang mit GitLab verwendet.
 Im Zusammenhang mit GitHub wird jedoch der Begriff Pull Request verwendet.
 Der Einfachheit wird im folgenden Text nur von Pull Request gesprochen.&lt;/p>
