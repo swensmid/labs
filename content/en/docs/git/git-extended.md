@@ -77,14 +77,23 @@ In ihrer einfachsten Form sind Pull-Requests eine Funktion für Entwickler
 die andere Teammitglieder darüber informiert, dass ein Feature fertiggestellt wurde.
 Dies lässt alle Beteiligten wissen, dass der Code bereit für eine überprüfung ist und danach in Hauptzweig eingeführt werden kann.
 
-###Wie kann eine Pull Request gesendet werden (IntelliJ)
-Um eine Pull Request direkt aus Intelij zu senden, muss zuerst sichergestellt werden das man selber berechtigt ist eine Pull Request zu stellen.
-Sind diese Berechtigungen vorhanden, kann die Pull Request in wenigen Schritten gesendet werden.
+###Wie kann eine Pull Request erstellt werden (IntelliJ)
+Um eine Pull Request direkt aus Intelij zu erstellen, muss zuerst sichergestellt werden das man selber berechtigt ist eine Pull Request zu erstellen.
+Sind diese Berechtigungen vorhanden, kann die Pull Request in wenigen Schritten erstellt werden.
 Oben Links in IntelliJ befindet sich einen Button der mit Pull Request beschriftet ist.
 Danach öffnet sich ein Fenster in dem ausgewählt werden kann, welchen der lokalen Branches in das Ziel Repo gemerged werden soll.
 Danach muss nach noch einen Titel festgelegt werden. Es besteht ebenfalls die Möglichkeit eine Beschreibung hinzuzufügen, dies ist jedoch nur optional.
 Im Anschluss besteht die Möglichkeit einen Reviewer hinzuzufügen.
-Jetzt kann die Pull Request gesendet werden.
+Jetzt kann die Pull Request erstellt werden.
+
+### Wie kann eine Pull Request erstellt werden (Github)
+Um eine Pull Request direkt von GitHub aus zu senden, muss zuerst der Reiter Pull Request ausgewählt werden, 
+Jetzt stehen verschiedene Möglichkeiten zu Auswahl, in unserem Fall wollen wir aber nur eine neue Pull Request erstellen.
+Im Anschluss erscheint ein neues Panel, das wichtigste dabei ist die Wahl des richtigen source und target branches. 
+Als nächstes kann noch ein Name und eine Beschreibung für die Pull Request gesetzt werden. 
+Wie in IntelliJ besteht auch hier die Möglichkeit einen Reviewer hinzuzufügen, der Button dazu befindet sich mittig auf der linken Seite.
+Da nun alle Einstellungen vorgenommen wurden, kann die Pull Request erstellt werden.
+
 
 ## Cherry Pick
 ### Was ist Cherry-Pick ?
