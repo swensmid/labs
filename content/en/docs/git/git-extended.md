@@ -197,19 +197,19 @@ Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden:
 
 ## Git Blame
 ### Was ist Git-Blame?
-Ist ein Befehl welcher dazu dient den Author der letzten Änderung anzuzeigen. Deswegen auch
+Ist ein Befehl, welcher dazu dient den Author der letzten Änderung anzuzeigen. Deswegen auch
 git "blame". Man "blamed" den Verfasser der letzten Änderung für seinen Fehler (falls er
 einen gemacht hat). 
 
 ### Wie funktioniert Git-Blame?
-Um gitblame anzuwenden braucht es nicht viel:
+Um git blame anzuwenden braucht es nicht viel:
 ```
 git blame <filename>
  ```
 Und schon haben wir den Verantwortlichen für die letzte Änderung an einem unserer
-Files. Jedoch können wir auch git blame auf die verschiedensten Arten anwenden
+Files. Jedoch bietet  ```git blame``` auch andere Anwendungsmöglichkeiten:
 
-```
+```Bash
 git blame -L 1,5 <filename>
  ```
 Hier zum Beispiel definieren wir eine Range von der Zeile 1 bis zur Zeile 5. Oder hier, noch
@@ -227,6 +227,24 @@ git blame -w <filename>
 Dieser Befehl ignoriert wenn ein Author nur Leerschläge geändert hat. Das hat den Vorteil, dass
 wir nur die Authoren bekommen, welche auch wirklich etwas am Code selbst geändert und ihn
 nicht nur formatiert haben.
+
+## Blobs und Trees
+### Was sind Blobs und Trees show?
+Zuerst zu den Blobs: Blobs werden benutzt, um die Inhalte einzelner Dateien zu speichern.
+Trees wiederum beinhalten Referenzen zu anderen Blobs oder Unterbäumen. 
+
+### Wozu braucht es sie?
+Wenn man eine Datei staged wird eine Blob-Datei erstellt. Dieser Blob hat den
+Inhalt der Datei und hat den Typ "blob". Ein Blob eigentlich der Inhalt der Datei
+an einer bestimmten Instanz. Die verschiedenen Blobs fallen danach unter einen
+Tree. 
+
+Nun bildet sich hier eine Kette: Das Commit-Objekt greift auf die Tree-Objekte zu.
+Diese wiederum geben uns die Blob-Objekte zurück. Deshalb brauchen wir diese Konstellation also.
+Ohne die Trees und Blobs hätten wir keinen Zugriff auf die Inhalte unserer Dateien mehr.
+
+<img src="https://miro.medium.com/max/541/1*ZGVkiRbMErfng2CqpU3YQQ.png">
+Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.
 
 
 
