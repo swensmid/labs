@@ -194,4 +194,39 @@ Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen wer
 <br>```https://desktop.github.com/``` <br>
 Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden: <br>
 ```https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1```
+=======
+## Git Blame
+### Was ist Git-Blame?
+Ist ein Befehl welcher dazu dient den Author der letzten Änderung anzuzeigen. Deswegen auch
+git "blame". Man "blamed" den Verfasser der letzten Änderung für seinen Fehler (falls er
+einen gemacht hat). 
+
+### Wie funktioniert Git-Blame?
+Um gitblame anzuwenden braucht es nicht viel:
+```
+git blame <filename>
+ ```
+Und schon haben wir den Verantwortlichen für die letzte Änderung an einem unserer
+Files. Jedoch können wir auch git blame auf die verschiedensten Arten anwenden
+
+```
+git blame -L 1,5 <filename>
+ ```
+Hier zum Beispiel definieren wir eine Range von der Zeile 1 bis zur Zeile 5. Oder hier, noch
+eine weitere Variante:
+```
+git blame -e <filename>
+ ```
+Die Option -e zeigt uns anstatt des usernames des Authors, direkt die E-mail Adresse von
+ihm, so dass wir gerade Kontakt aufnehmen können.
+
+Zum Schluss haben wir noch die -w Option
+```
+git blame -w <filename>
+ ```
+Dieser Befehl ignoriert wenn ein Author nur Leerschläge geändert hat. Das hat den Vorteil, dass
+wir nur die Authoren bekommen, welche auch wirklich etwas am Code selbst geändert und ihn
+nicht nur formatiert haben.
+
+
 
