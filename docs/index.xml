@@ -2805,6 +2805,17 @@ index 1e6db46..dd7161b 100644
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>&lt;code>git diff&lt;/code> vergleicht die Änderungen welche noch nicht gestaged wurden, will man bereits gestagte Änderungen überprüfen braucht es zusätzlich das Flag &lt;code>--staged&lt;/code> oder &lt;code>--cached&lt;/code> (die beiden Flags sind Synonyme).&lt;/p>
+&lt;p>Anders als &lt;code>git diff&lt;/code> funktioniert &lt;code>git diff-tool&lt;/code> mit einem externen Tool, welches dir die Änderungen anzeigt. Beispiele dafür sind &amp;lsquo;P4Merge&amp;rsquo; oder auch &amp;lsquo;Beyond Compare&amp;rsquo;. Sie versuchen die Bearbeitungen besser zu visualisieren
+und es dem Benutzer einfacher zu machen, diese in einer Datei / im Code einzusehen.
+Jetzt bleibt die Frage: Wann brauchen wir &lt;code>git diff&lt;/code> und wann &lt;code>git diff-tool&lt;/code> ? Grundsätzlich
+wird &lt;code>git diff&lt;/code> bei folgenden Situationen gebraucht:&lt;/p>
+&lt;ul>
+&lt;li>Wenn wir kein GUI haben und nur mit dem Output des Terminals arbeiten&lt;/li>
+&lt;li>Falls wir gar kein externes Tool zur Verfügung haben&lt;/li>
+&lt;li>Wenn du keine &amp;lsquo;schweren&amp;rsquo; externen Tools starten möchtest, sondern so schnell wie möglich zum Ergebnis kommen willst.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>git diff-tool&lt;/code> kann man dann überall dort einsetzen, bei denen die oben erwähnten Situationen nicht zutreffen. Zu Beachten ist aber, dass es noch viele weitere Situationen gibt, in welchen man auf &lt;code>git diff-tool&lt;/code> verzichten kann.
+Zur genaueren Einsicht ist Googel immer eine gute Anhaltestelle.&lt;/p>
 &lt;h3 id="commiten">Commiten&lt;/h3>
 &lt;p>Ist man sicher, dass man nur die Änderungen gestaged hat, welche man auch commiten will, kann man dies mit dem Befehl &lt;code>git commit&lt;/code> bewerkstelligen. Dadurch wird ein Editor geöffnet und man wird gebeten eine Beschreibung für die Änderungen anzugeben. Wie solche Beschreibungen gestaltet werden sollen und was alles in eine &amp;ldquo;Commit Message&amp;rdquo; gehört, darüber gibt es ganz unterschiedliche Meinungen. Idealerweise probiert man sich vorzustellen, was man an Zusätzlichen Informationen braucht, wenn man die Änderungen in zwei Jahren wieder anschaut, um zu verstehen, was und warum das geändert wurde.&lt;/p>
 &lt;p>Oft gibt es pro Projekt Konventionen wie eine Commit Message aussehen soll. Falls dies nicht existiert gibt es ein paar wenige Punkte welche die Messages einiges lesbarer und verständlicher machen:&lt;/p>
@@ -3138,11 +3149,11 @@ Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden:
 &lt;code>https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1&lt;/code>&lt;/p>
 &lt;h2 id="git-blame">Git Blame&lt;/h2>
 &lt;h3 id="was-ist-git-blame">Was ist Git-Blame?&lt;/h3>
-&lt;p>Ist ein Befehl welcher dazu dient den Author der letzten Änderung anzuzeigen. Deswegen auch
+&lt;p>Ist ein Befehl, welcher dazu dient den Author der letzten Änderung anzuzeigen. Deswegen auch
 git &amp;ldquo;blame&amp;rdquo;. Man &amp;ldquo;blamed&amp;rdquo; den Verfasser der letzten Änderung für seinen Fehler (falls er
 einen gemacht hat).&lt;/p>
 &lt;h3 id="wie-funktioniert-git-blame">Wie funktioniert Git-Blame?&lt;/h3>
-&lt;p>Um gitblame anzuwenden braucht es nicht viel:&lt;/p>
+&lt;p>Um git blame anzuwenden braucht es nicht viel:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -3152,13 +3163,13 @@ einen gemacht hat).&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Und schon haben wir den Verantwortlichen für die letzte Änderung an einem unserer
-Files. Jedoch können wir auch git blame auf die verschiedensten Arten anwenden&lt;/p>
+Files. Jedoch bietet &lt;code>git blame&lt;/code> auch andere Anwendungsmöglichkeiten:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">git blame -L 1,5 &amp;lt;filename&amp;gt;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-Bash" data-lang="Bash">git blame -L 1,5 &amp;lt;filename&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Hier zum Beispiel definieren wir eine Range von der Zeile 1 bis zur Zeile 5. Oder hier, noch
@@ -3184,7 +3195,21 @@ ihm, so dass wir gerade Kontakt aufnehmen können.&lt;/p>
 &lt;/div>
 &lt;/div>&lt;p>Dieser Befehl ignoriert wenn ein Author nur Leerschläge geändert hat. Das hat den Vorteil, dass
 wir nur die Authoren bekommen, welche auch wirklich etwas am Code selbst geändert und ihn
-nicht nur formatiert haben.&lt;/p></description></item><item><title>Docs: Maven und Continuous Integration</title><link>/labs/docs/java/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/docs/java/maven/</guid><description>
+nicht nur formatiert haben.&lt;/p>
+&lt;h2 id="blobs-und-trees">Blobs und Trees&lt;/h2>
+&lt;h3 id="was-sind-blobs-und-trees-show">Was sind Blobs und Trees show?&lt;/h3>
+&lt;p>Zuerst zu den Blobs: Blobs werden benutzt, um die Inhalte einzelner Dateien zu speichern.
+Trees wiederum beinhalten Referenzen zu anderen Blobs oder Unterbäumen.&lt;/p>
+&lt;h3 id="wozu-braucht-es-sie">Wozu braucht es sie?&lt;/h3>
+&lt;p>Wenn man eine Datei staged wird eine Blob-Datei erstellt. Dieser Blob hat den
+Inhalt der Datei und hat den Typ &amp;ldquo;blob&amp;rdquo;. Ein Blob eigentlich der Inhalt der Datei
+an einer bestimmten Instanz. Die verschiedenen Blobs fallen danach unter einen
+Tree.&lt;/p>
+&lt;p>Nun bildet sich hier eine Kette: Das Commit-Objekt greift auf die Tree-Objekte zu.
+Diese wiederum geben uns die Blob-Objekte zurück. Deshalb brauchen wir diese Konstellation also.
+Ohne die Trees und Blobs hätten wir keinen Zugriff auf die Inhalte unserer Dateien mehr.&lt;/p>
+&lt;img src="https://miro.medium.com/max/541/1*ZGVkiRbMErfng2CqpU3YQQ.png">
+Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</description></item><item><title>Docs: Maven und Continuous Integration</title><link>/labs/docs/java/maven/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/docs/java/maven/</guid><description>
 &lt;h4 id="ziele">Ziele&lt;/h4>
 &lt;ul>
 &lt;li>Ich kenne die Grundlagen von Maven&lt;/li>
