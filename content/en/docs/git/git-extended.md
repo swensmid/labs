@@ -77,7 +77,7 @@ In ihrer einfachsten Form sind Pull-Requests eine Funktion für Entwickler
 die andere Teammitglieder darüber informiert, dass ein Feature fertiggestellt wurde.
 Dies lässt alle Beteiligten wissen, dass der Code bereit für eine überprüfung ist und danach in Hauptzweig eingeführt werden kann.
 
-###Wie kann eine Pull Request erstellt werden (IntelliJ)
+### Wie kann eine Pull Request erstellt werden (IntelliJ)
 Um eine Pull Request direkt aus Intelij zu erstellen, muss zuerst sichergestellt werden das man selber berechtigt ist eine Pull Request zu erstellen.
 Sind diese Berechtigungen vorhanden, kann die Pull Request in wenigen Schritten erstellt werden.
 Oben Links in IntelliJ befindet sich einen Button der mit Pull Request beschriftet ist.
@@ -87,10 +87,10 @@ Im Anschluss besteht die Möglichkeit einen Reviewer hinzuzufügen.
 Jetzt kann die Pull Request erstellt werden.
 
 ### Wie kann eine Pull Request erstellt werden (Github)
-Um eine Pull Request direkt von GitHub aus zu senden, muss zuerst der Reiter Pull Request ausgewählt werden, 
+Um eine Pull Request direkt von GitHub aus zu senden, muss zuerst der Reiter Pull Request ausgewählt werden,
 Jetzt stehen verschiedene Möglichkeiten zu Auswahl, in unserem Fall wollen wir aber nur eine neue Pull Request erstellen.
-Im Anschluss erscheint ein neues Panel, das wichtigste dabei ist die Wahl des richtigen source und target branches. 
-Als nächstes kann noch ein Name und eine Beschreibung für die Pull Request gesetzt werden. 
+Im Anschluss erscheint ein neues Panel, das wichtigste dabei ist die Wahl des richtigen source und target branches.
+Als nächstes kann noch ein Name und eine Beschreibung für die Pull Request gesetzt werden.
 Wie in IntelliJ besteht auch hier die Möglichkeit einen Reviewer hinzuzufügen, der Button dazu befindet sich mittig auf der linken Seite.
 Da nun alle Einstellungen vorgenommen wurden, kann die Pull Request erstellt werden.
 
@@ -99,7 +99,7 @@ Da nun alle Einstellungen vorgenommen wurden, kann die Pull Request erstellt wer
 ### Was ist Cherry-Pick ?
 git cherry-pick ist ein Befehl welcher es ermöglicht beliebige Git-Commits per Referenz
 anzusprechen und diese an den momentanen Arbeitskopf (HEAD) anzuheften.
-git cherry-pick kann sehr nützlich für das rückgängig Machen von Änderungen sein. 
+git cherry-pick kann sehr nützlich für das rückgängig Machen von Änderungen sein.
 
 Zum Beispiel: Ein Commit ist aus Versehen im falschen Branch. Nun kannst du zum korrekten
 Branch wechselt und brauchst git cherry-pick um den Commit am richtigen Ort zu befestigen.
@@ -109,10 +109,10 @@ Um Cherry Pick anzuwenden gibt man folgenden Befehl ein:
 ```
 git cherry-pick <commit-hash>
 ```
-Der <commit-hash> muss natürlich noch mit dem korrekten Hash des Commits ersetzt werden, welchen 
-man verschieben will. Anschliessend wird der Commit an den Branch angeheftet, auf dem man sich gerade 
+Der <commit-hash> muss natürlich noch mit dem korrekten Hash des Commits ersetzt werden, welchen
+man verschieben will. Anschliessend wird der Commit an den Branch angeheftet, auf dem man sich gerade
 befindet. Darum Achtung!: Immer zuerst kontrollieren ob man derzeit auch wirklich auf dem korrekten
-Branch ist. 
+Branch ist.
 
 ## Tag
 ### Was sind Tags ?
@@ -124,11 +124,11 @@ kann ein Tag nach dem Erstellen keine weiteren Commits
 beinhalten.
 
 ### Wie funktionieren Tags ?
-Um ein Tag zu erstellen wird folgender Befehl benötigt: 
+Um ein Tag zu erstellen wird folgender Befehl benötigt:
 ```
 git tag <tagname>
  ```
-Wobei der <tagname> auch wieder durch den gewünschten String ersetzt werden muss. 
+Wobei der <tagname> auch wieder durch den gewünschten String ersetzt werden muss.
 Will man zusätzlich zum Tag eine Beschriftung hinzufügen, macht man das mit:
 ```
 git tag <tagname> -a
@@ -140,7 +140,7 @@ nicht standardmässig mitgepusht. Dazu brauchst du dann:
 ```
 git push origin --tags
  ```
-Willst du nur ein einzelnes Tag pushen, brauche: 
+Willst du nur ein einzelnes Tag pushen, brauche:
 ```
 git push origin <tag>
  ```
@@ -149,9 +149,9 @@ git push origin <tag>
 ### Was sind Aliasse ?
 Ein Git-Alias ist zu vergleichen mit einem Shortcut. Aliasse werden z.b.
 auch beim Arbeiten mit der Bash-Konsole eingesetzt. Aliase werden gebraucht um kürzere Befehle
-zu realisieren. Sie ermöglichen effizienteres Programmieren. 
+zu realisieren. Sie ermöglichen effizienteres Programmieren.
 
-Nehmen wir zum Beispiel den git-checkout Befehl. 
+Nehmen wir zum Beispiel den git-checkout Befehl.
 Dieser Befehl wird häufig verwendet und muss immer wieder neu eingetippt werden. Mit den Git-Aliassen
 jedoch kann man git-checkout z.B. in git.co verwandeln. Dies spart enorme Schreibarbeit über längere Zeit
 und verliert dennoch nicht an Wirksamkeit.
@@ -169,7 +169,7 @@ minimieren und das eigene Programmieren praktischer zu machen.
 
 ## Gitg
 ### Was ist Gitg
-Gitg ist eine grafische Benutzeroberfläche für git. Es zielt darauf ab, ein kleines, 
+Gitg ist eine grafische Benutzeroberfläche für git. Es zielt darauf ab, ein kleines,
 schnelles und bequemes Werkzeug zu sein, um Git-Repositories zu visualisieren.
 Neben der Visualisierung bietet Gitg auch einfache Möglichkeiten zur Verwaltung eines Repositorys.
 Jedoch bietet IntelliJ standardmässig die dieselben Möglichkeiten, sollte man jedoch eine IDE ohne Git integration verwenden ist gitg ein praktisches Tool.
@@ -178,20 +178,20 @@ Jedoch bietet IntelliJ standardmässig die dieselben Möglichkeiten, sollte man 
 ### Installationsanleitung
 Unter Linux kann gitg mit folgendem Befehl installieren:
 <br>```sudo apt install gitg```<br>
-Leider ist git unter Windows nicht verfügbar. 
+Leider ist git unter Windows nicht verfügbar.
 Eine empfehlenswerte Alternative dazu ist der offizielle GitHub Client.
 
-## Github Client 
+## Github Client
 ### Was ist der GitHub Client
-Der GitHub Client ist ein Windows Programm für die Verwaltung von Git Repositorys. 
-Der GitHub Client funktioniert am besten mit GitHub repositorys, 
+Der GitHub Client ist ein Windows Programm für die Verwaltung von Git Repositorys.
+Der GitHub Client funktioniert am besten mit GitHub repositorys,
 das bedeutet aber nicht das dieser keine Repositorys von anderen Quellen unterstützt.
 Es ist lediglich ein wenig aufwändiger Repositorys aus anderen Quellen einzubinden.
 
 
 ### Installationsanleitung
-Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:
-<br>```https://desktop.github.com/``` <br>
+Unter Windows kann der GitHub Client auf der folgenden Seite heruntergeladen werden:<br>
+```https://desktop.github.com/``` <br>
 Unter Linux der Client mithilfe des folgenden Scripts heruntergeladen werden: <br>
 ```https://gist.github.com/berkorbay/6feda478a00b0432d13f1fc0a50467f1```
 =======
