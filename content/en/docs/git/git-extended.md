@@ -14,9 +14,77 @@ Nachdem du die Basics von git gelernt hast, ist es Zeit dich weiter zu vertiefen
 * [Alias](#Alias)
 
 ## Stash
-## Squash
+#### Was ist stash?
+Mit git stash ist es möglich Änderungen zwischenzuspeichern und diese später abzurufen.
+Nach dem stashen kannst du an anderen Dateien arbeiten bis du die zwischengespeicherten Daten problemlos wieder abrufen kannst.
 
-## Merge/Pullrequests
+#### Wie funktioniert stash?
+Um Dateien zu stashen wird der folgende Befehl verwendet:
+
+```bash
+git stash
+```
+Um Dateien im Anschluss abzurufen wird der folgende Befehl verwendet:
+```bash
+git stash pop
+```
+Mit ```git stash pop``` werden alle änderungen des stashes gelöscht und der ursprünglichen Datei hinzugefügt.
+
+Die Alternative dazu ist:
+```bash
+git stash apply
+```
+Mit ```git stash apply``` werden die änderungen ebenfalls übernommen,
+der Unterschied zu ```git stash pop``` liegt darin das stash apply die Dateien nicht aus dem Stash löscht,
+dies kann nützlich sein, wenn dieselbe Änderung mehreren Branches hinzugefügt werden soll.
+
+
+## Squash
+#### Was ist Squash
+squash in Git meint mehrere Commits zu vereinen.
+Squash wird meistens benutzt, wenn Branches gemerged werden.
+AN dieser Stelle ist es jedoch wichtig zu erwähnen das es keinen ```git squash``` Befehl gibt.
+
+
+#### Wie funktioniert squash?
+Es gibt verschiedene Wege um Commits zu squashen.
+Zum Beispiel gibt es die Methode des manuellen squashens, dazu wird das Interactive rebase feature von Git genutzt.
+Um die Interactive Rebase session zu starten wird der folgende Befehl verwendet:
+```bash
+git rebase -i HEAD~3
+```
+Danach öffnet sich ein Editor der die letzten n Commits anzeigt, n wird durch die Zahl nach dem "~" definiert.
+Um jetzt die Commits zu squashen muss das pick zu beginn der zeile mit squash ersetzt werden.
+Jetzt werden alle Commits mit dem squash Schlüsselwort an den obersten Commit hinzugefügt.
+
+
+#####Wieso sollte man Squashen:
+Angenommen du beendest die Arbeit an einem Featurebranch und willst diese in den Main branch mergen,
+jedoch enthält der Featurebranch viele Commits die nicht zwingend im Mainbranch aufgeführt werden sollen,
+in diesem Fall eignet sich das squashen, um diese Commits zusammenzufassen.
+
+
+
+## Merge/Pull Requests
+###Was ist der Unterschied zwischen einer Merge Request und einer Pull Request?
+Beide Begriffe meinen dasselbe, werden jedoch mit einer anderen Plattform assoziiert.
+Der Begriff Merge Request wird im Zusammenhang mit GitLab verwendet.
+Im Zusammenhang mit GitHub wird jedoch der Begriff Pull Request verwendet.
+Der Einfachheit wird im folgenden Text nur von Pull Request gesprochen.
+
+### Was ist eine Pull Request bzw. eine Merge Request?
+In ihrer einfachsten Form sind Pull-Requests eine Funktion für Entwickler
+die andere Teammitglieder darüber informiert, dass ein Feature fertiggestellt wurde.
+Dies lässt alle Beteiligten wissen, dass der Code bereit für eine überprüfung ist und danach in Hauptzweig eingeführt werden kann.
+
+###Wie kann eine Pull Request gesendet werden (IntelliJ)
+Um eine Pull Request direkt aus Intelij zu senden, muss zuerst sichergestellt werden das man selber berechtigt ist eine Pull Request zu stellen.
+Sind diese Berechtigungen vorhanden, kann die Pull Request in wenigen Schritten gesendet werden.
+Oben Links in IntelliJ befindet sich einen Button der mit Pull Request beschriftet ist.
+Danach öffnet sich ein Fenster in dem ausgewählt werden kann, welchen der lokalen Branches in das Ziel Repo gemerged werden soll.
+Danach muss nach noch einen Titel festgelegt werden. Es besteht ebenfalls die Möglichkeit eine Beschreibung hinzuzufügen, dies ist jedoch nur optional.
+Im Anschluss besteht die Möglichkeit einen Reviewer hinzuzufügen.
+Jetzt kann die Pull Request gesendet werden.
 
 ## Cherry Pick
 ### Was ist Cherry-Pick ?
