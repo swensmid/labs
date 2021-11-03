@@ -53,9 +53,3 @@ Meisterst du diese Challenges?
 ## Voraussetzungen
 
 * [git](https://git-scm.com/book/de/v2/Erste-Schritte-Git-installieren) installiert
-
-
-## Auch interessant, wird aber nicht behandelt:
-
-* Git Tags
-* Git Aliases
