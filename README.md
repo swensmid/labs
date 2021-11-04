@@ -1,7 +1,7 @@
 # IT Ninjas Labs
 
 
-The techlab is available on GitHub Pages [here](https://it-ninjas.github.io/labs/).
+The techlab is available on GitHub Pages [here](https://labs.it-ninjas.ch)
 
 
 ## Content Sections
