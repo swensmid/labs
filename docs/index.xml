@@ -5257,6 +5257,7 @@ v + Commit 4 |
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="mergen-der-branches">Mergen der Branches&lt;/h3>
+&lt;img style="padding-bottom: 30px;" src="../img/gitmerge.gif">
 &lt;p>Nach der Fehlerbehebung ist es nun an der Zeit, sie wieder in den Master-Branch einzubinden, damit andere Benutzer sie ebenfalls verwenden können.&lt;/p>
 &lt;h4 id="git-merge">git merge&lt;/h4>
 &lt;p>Merge ist eine Wiederholung der Änderungen eines benannten Commits (auch Branch genannt) in einen anderen Branch, da diese voneinander abwichen. Damit dies funktioniert, ändert man zuerst den Zielbranch. In diesem Fall ist das &lt;code>bugfix&lt;/code>. Die Änderungen sollen nach &lt;code>master&lt;/code> zurückgespielt werden. Da das Ziel &lt;code>master&lt;/code> ist, ist der erste Schritt, zu diesem Branch zu wechseln.&lt;/p>
