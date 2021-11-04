@@ -118,6 +118,8 @@ Mit der neuen Übergabe an `bugfix` fangen die Branches an, auseinanderzulaufen.
 
 ### Mergen der Branches
 
+<img style="padding-bottom: 30px;" src="../img/gitmerge.gif">
+
 Nach der Fehlerbehebung ist es nun an der Zeit, sie wieder in den Master-Branch einzubinden, damit andere Benutzer sie ebenfalls verwenden können.
 
 #### git merge
