@@ -1,7 +1,7 @@
 ---
 title: "Git Branches"
 linkTitle: "Git Branches"
-weight: 3
+weight: 5
 ---
 
 ## Inhalt
