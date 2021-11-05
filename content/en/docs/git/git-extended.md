@@ -1,7 +1,7 @@
 ---
 title: "Git Erweitert"
 linkTitle: "Git Erweitert"
-weight: 4
+weight: 2
 ---
 
 Nachdem du die Basics von git gelernt hast, ist es Zeit dich weiter zu vertiefen.

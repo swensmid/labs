@@ -37,7 +37,6 @@ Vielleicht sogar ...
 Dieses Lab unterteilt sich in folgende Themenbereiche:
 
 * [Was ist dieses Git?](was-ist-git)
-* [Git installieren](git-install)
 * [Git Basics](git-basics)
 * [Git Branches](git-branches)
 * [GitHub](git-hub)
