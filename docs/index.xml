@@ -4675,7 +4675,7 @@ index 1e6db46..dd7161b 100644
 &lt;/div>&lt;p>&lt;code>git diff&lt;/code> vergleicht die Änderungen welche noch nicht gestaged wurden, will man bereits gestagte Änderungen überprüfen braucht es zusätzlich das Flag &lt;code>--staged&lt;/code> oder &lt;code>--cached&lt;/code> (die beiden Flags sind Synonyme).&lt;/p>
 &lt;p>Anders als &lt;code>git diff&lt;/code> funktioniert &lt;code>git diff-tool&lt;/code> mit einem externen Tool, welches dir die Änderungen anzeigt. Beispiele dafür sind &amp;lsquo;P4Merge&amp;rsquo; oder auch &amp;lsquo;Beyond Compare&amp;rsquo;. Sie versuchen die Bearbeitungen besser zu visualisieren
 und es dem Benutzer einfacher zu machen, diese in einer Datei / im Code einzusehen.
-Jetzt bleibt die Frage: Wann brauchen wir &lt;code>git diff&lt;/code> und wann &lt;code>git diff-tool&lt;/code> ? Grundsätzlich
+Jetzt bleibt die Frage: Wann brauchen wir was? Grundsätzlich
 wird &lt;code>git diff&lt;/code> bei folgenden Situationen gebraucht:&lt;/p>
 &lt;ul>
 &lt;li>Wenn wir kein GUI haben und nur mit dem Output des Terminals arbeiten&lt;/li>
