@@ -47,7 +47,25 @@ matura_arbeit.docx matura_arbeit_fastfertig.docx matura_arbeit_wirklichfertig.do
 &lt;li>&lt;strong>Commited&lt;/strong>: Die Datei ist im aktuellen Zustand in die lokale Datenbank eingecheckt.&lt;/li>
 &lt;/ul>
 &lt;h3 id="minimaler-workflow">Minimaler Workflow&lt;/h3>
-&lt;p>Hat man ein Repository von einem anderen Rechner &lt;em>geklont&lt;/em>, kann man eine oder mehrere Dateien im Verzeichnisbaum editieren. Anschliessend &lt;em>staged&lt;/em> man diese Änderungen und &lt;em>commited&lt;/em> diese anschliessend.&lt;/p></description></item><item><title>Docs: Git Basics</title><link>/docs/git/git-basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/git-basics/</guid><description>
+&lt;p>Hat man ein Repository von einem anderen Rechner &lt;em>geklont&lt;/em>, kann man eine oder mehrere Dateien im Verzeichnisbaum editieren. Anschliessend &lt;em>staged&lt;/em> man diese Änderungen und &lt;em>commited&lt;/em> diese anschliessend.&lt;/p></description></item><item><title>Docs: Install Git</title><link>/docs/git/git-install/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/git-install/</guid><description>
+&lt;h2 id="inhalt">Inhalt&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#git-unter-windows-installieren">Git unter Windows installieren&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="git-unter-windows-installieren">Git unter Windows installieren&lt;/h2>
+&lt;ol>
+&lt;li>Navigiere zum &lt;a href="https://git-scm.com/download/win">Git für Windows Installer&lt;/a> und lade die neuste Version herunter.&lt;/li>
+&lt;li>Folge den Installationsanweisungen bis die Installation abgeschlossen ist.
+&lt;ul>
+&lt;li>Es wird empfohlen während der Installation Git Bash zu installieren
+&lt;img src="../git-install/git-setup-bash.png" alt="Git Setup Bash" title="Git Setup Bash">&lt;/li>
+&lt;li>Es wird empfohlen während der Installation den PATH zu ändern.
+&lt;img src="../git-install/git-setup-path.png" alt="Git Setup PATH" title="Git Setup PATH">&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Öffne Git Bash&lt;/li>
+&lt;li>Schreibe &lt;code>git version&lt;/code> zum Überprüfen, ob Git erfolgreich installiert wurde.&lt;/li>
+&lt;/ol></description></item><item><title>Docs: Git Basics</title><link>/docs/git/git-basics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/git-basics/</guid><description>
 &lt;p>Git kann auf unterschiedliche Arten eingesetzt werden, es gibt graphische Oberflächen und die meisten Git-Server Software bieten Weboberflächen, welche das interagieren mit Git Repositories kinderleicht gestalten. Da diese Oberflächen meist sehr Produktspezifisch sind und oft auch nicht alle Funktionen beinhaltet werden hier nur die Kommandozeilen Befehle angeschaut. Ausserdem empfiehlt es sich mit git auf der Kommandozeile zu starten da es so viel verständlicher ist.&lt;/p>
 &lt;h2 id="inhalt">Inhalt&lt;/h2>
 &lt;ul>
