@@ -1,7 +1,7 @@
 ---
 title: "GitHub"
 linkTitle: "GitHub"
-weight: 4
+weight: 6
 ---
 
 GitHub ist ein Webservice für das Verwalten von Software Code via Git. Darüber hinaus bietet GitHub viele weitere Funktionen, von Projektmanagement mit Taskverwaltung, über Wikis bis zum Buildserver. GitHub ist die Plattform für Opensource Projekte.
