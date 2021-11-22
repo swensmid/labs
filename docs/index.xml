@@ -1,4 +1,49 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – Docs</title><link>/docs/</link><description>Recent content in Docs on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Labs: Angular Setup</title><link>/labs/web/angular/angular_setup/</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>/labs/web/angular/angular_setup/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – Docs</title><link>/docs/</link><description>Recent content in Docs on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Exams: Exam Java Basics - Zahlen-Array</title><link>/exams/java/java-basics/</link><pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate><guid>/exams/java/java-basics/</guid><description>
+&lt;h2 id="gegeben">Gegeben&lt;/h2>
+&lt;p>Gegeben ist das folgende Array mit Zahlen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int[] numbers = {
+-8, 0, 13, 0, -8, 23, -22, 18, -6, -1,
+-21, -1, 2, 20, -24, 21, 25, -16, -10, -2,
+-20, 15, -15, 0, -16, -19, 13, 24, -3, 7,
+21, -15, 21, -11, 4, -17, 3, 11, 22, 12,
+11, 12, 6, -4, -21, -20, -24, -3, -25, -13,
+17, 19, 19, 20, 22, 9, -10, 12, 16, -1,
+21, -24, 12, 19, -7, 15, 5, -22, 23, 12,
+6, 2, -14, 12, 17, -13, 3, -4, -16, 8,
+16, 6, -23, 0, 3, -16, -6, -14, 8, 25,
+-22, 2, 7, 8, -6, 20, 3, -5, -19, -15 };
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="aufgabe-1">Aufgabe 1&lt;/h2>
+&lt;p>Schreibe eine Methode, welche alle Zahlen im Array zählt, welche zwischen 0 und 10 liegen und keine 5 sind.
+Die Methode liefert die Anzahl dieser Zahlen zurück.&lt;/p>
+&lt;h2 id="aufgabe-2">Aufgabe 2&lt;/h2>
+&lt;p>Schreibe eine Methode, welche aus dem Array alle positiven Zahlen inklusive 0 in ein neues Array schreibt
+Die Reihenfolge der Zahlen im Array muss gleich bleiben. Die Methode liefert das neue Array zurück.&lt;/p>
+&lt;h2 id="aufgabe-3">Aufgabe 3&lt;/h2>
+&lt;p>Schreibe eine Methode, welche aus dem Array alle Zahlen sucht, welche nicht mehr als 10 von der Zahl -6 abweichen.
+Schreibe diese Zahlen in ein neues Array. Die Methode liefert das neue Array zurück.&lt;/p>
+&lt;h2 id="aufgabe-4">Aufgabe 4&lt;/h2>
+&lt;p>Schreibe eine Methode, welche alle Zahlen aus dem Array in positive Zahlen verwandelt und diese in ein neues Array schreibt.
+Die Methode liefert das neue Array zurück.&lt;/p>
+&lt;h2 id="aufgabe-5">Aufgabe 5&lt;/h2>
+&lt;p>Schreibe eine Methode, welche alle Zahlen aus dem Array ausliest, die sich von ihren direkten Nachbarn um jeweils nicht mehr als den Wert 5 unterscheiden.
+Schreibe diese Zahlen in ein neues Array. Die Methode liefert das neue Array zurück. Für die erste und die letzte Zahl im Array gibt es nur einen Nachbar.&lt;/p></description></item><item><title>Labs: Angular Setup</title><link>/labs/web/angular/angular_setup/</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>/labs/web/angular/angular_setup/</guid><description>
 &lt;p>In diesem Lab wirst du Angular installieren.&lt;/p>
 &lt;p>Das Lab orientiert sich stark an der offiziellen Dokumentation von Angular. Die Dokumentation findest du unter &lt;a href="https://angular.io/docs" target="_blank">angular.io/docs&lt;/a>.&lt;/p>
 &lt;h3 id="teil-1---installation-von-nodejs">Teil 1 - Installation von Node.js&lt;/h3>
@@ -1053,9 +1098,7 @@
 &lt;/div>&lt;p>Im Fall eines Fehlers wird der Fehler auf der Konsole des Browsers ausgegeben, und manuell ein &lt;code>Observable&lt;/code> mit einem leeren Array als Antwort für den client konstruiert.&lt;/p>
 &lt;p>&lt;strong>HTPP Put, Post und Delete requests&lt;/strong>&lt;/p>
 &lt;p>Analog zu HTTP Get requests kann man auch Put, Post und Delete requests verwenden, abhängig von der REST-API des Servers.&lt;/p>
-&lt;p>WICHTIG: Damit ein HTTP request überhaupt ausgeführt wird, muss die Funktion &lt;code>subscribe()&lt;/code> des resultierenden &lt;code>Observable&lt;/code>-Objekts aufgerufen werden, auch wenn man keine Callback-Funktion registriert.&lt;/p></description></item><item><title>Exams: JUnit Exams</title><link>/exams/java/exam/</link><pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate><guid>/exams/java/exam/</guid><description>
-&lt;h2 id="1-einleitung">1: Einleitung&lt;/h2>
-&lt;p>&lt;em>TODO: Beschreibung zu diesem Kapitel&lt;/em>&lt;/p></description></item><item><title>Docs: Java Grundlagen</title><link>/docs/java/java-grundlagen/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/java-grundlagen/</guid><description>
+&lt;p>WICHTIG: Damit ein HTTP request überhaupt ausgeführt wird, muss die Funktion &lt;code>subscribe()&lt;/code> des resultierenden &lt;code>Observable&lt;/code>-Objekts aufgerufen werden, auch wenn man keine Callback-Funktion registriert.&lt;/p></description></item><item><title>Docs: Java Grundlagen</title><link>/docs/java/java-grundlagen/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/java-grundlagen/</guid><description>
 &lt;h4 id="ziele">Ziele&lt;/h4>
 &lt;ul>
 &lt;li>Ich weiss, was eine Klasse ist&lt;/li>
