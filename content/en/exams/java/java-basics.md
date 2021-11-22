@@ -5,7 +5,7 @@ type: docs
 weight: 1
 date: 2021-11-02
 description: >
-Einfache Aufgaben mit einem Zahlen-Array
+  Einfache Aufgaben mit einem Zahlen-Array
 ---
 
 ## Gegeben
