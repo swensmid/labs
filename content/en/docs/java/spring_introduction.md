@@ -507,7 +507,7 @@ $ curl -X GET http://localhost:8080/greetings
 
 Take a look at the classes in the chapter before and implement it yourself.
 
-{{% alert title="Solution Task 1" %}}
+{{% details title="Solution Task 1" %}}
 
 ```java
 package ch.itninja.helloworld.greetings.boundary;
@@ -535,7 +535,7 @@ $ curl http://localhost:8080/greetings
 Hello, World!%                                     
 ```
 
-{{% /alert %}}
+{{% /details %}}
 
 
 ##### {{% param sectionnumber %}}.4.4.2: Task 2
@@ -551,17 +551,18 @@ Take a look at the classes in the chapter before and implement it yourself.
 
 If you're stuck, take a look at the hint.
 
-{{% alert title="Hint Task 2" %}}
+{{% details title="Hint Task 2" %}}
 
 We can use the `@PathVariable` annotation to annotate a parameter of the function to get mapped to a path segment of the endpoint definition. Take a look at the example in {{% param sectionnumber %}}.3.1!
 
-{{% /alert %}}
+{{% /details %}}
 
 If you still cannot solve the Task, you can help yourself with the solution.
 
-{{% alert title="Solution Task 2" %}}
+{{% details title="Solution Task 2" %}}
 
 ```java
+
 package ch.itninja.helloworld.greetings.boundary;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -595,7 +596,7 @@ $ curl http://localhost:8080/greetings/raffael
 Hello raffael!%                                     
 ```
 
-{{% /alert %}}
+{{% /details %}}
 
 
 ##### {{% param sectionnumber %}}.4.4.3: Task 3: Setup application
@@ -609,13 +610,13 @@ Now let's build our Order application form the web shop example all the way! We 
 
 Let's start with the creation of our application. Create the spring application like we have already seen in the previous chapters. And make a quick check if your application is able to start up!
 
-{{% alert title="Hint Task 3" %}}
+{{% details title="Hint Task 3" %}}
 
 If you're stuck take a look at the first section {{% param sectionnumber %}}.4!
 
-{{% /alert %}}
+{{% /details %}}
 
-{{% alert title="Solution Task 3" %}}
+{{% details title="Solution Task 3" %}}
 
 Use the [spring initializr](https://start.spring.io/) or the CLI approach:
 
@@ -647,7 +648,7 @@ $ curl -G https://start.spring.io/starter.tgz \
 $ tar -xfv helloworld.tar
 ```
 
-{{% /alert %}}
+{{% /details %}}
 
 
 ##### {{% param sectionnumber %}}.4.4.3: Task 4: Database layer
@@ -668,4 +669,3 @@ We first create a simple `Order` class in the `order.entity` package. The `Order
 * adress
 * amount
 * date of order
-
