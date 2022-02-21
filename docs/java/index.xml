@@ -3773,9 +3773,10 @@ System.out.println(documentation.functionality());
 &lt;h2 id="50-meta">5.0: Meta&lt;/h2>
 &lt;h3 id="501-goals">5.0.1: Goals&lt;/h3>
 &lt;ul>
-&lt;li>Understanding how applications work in a modern world&lt;/li>
+&lt;li>I know how applications work in a modern world&lt;/li>
 &lt;li>I know what databases, backends, frontends are for&lt;/li>
-&lt;li>I know the difference between synchronous and asynchronous communication&lt;/li>
+&lt;li>I know what a monolithic application is&lt;/li>
+&lt;li>I can divide the modules of an application&lt;/li>
 &lt;/ul>
 &lt;h3 id="502-changelog">5.0.2: Changelog&lt;/h3>
 &lt;table>
@@ -3798,7 +3799,7 @@ System.out.println(documentation.functionality());
 &lt;/table>
 &lt;h3 id="503-requirements">5.0.3: Requirements&lt;/h3>
 &lt;ul>
-&lt;li>None // TODO:&lt;/li>
+&lt;li>None&lt;/li>
 &lt;/ul>
 &lt;h2 id="51-applications-in-the-modern-world">5.1: Applications in the modern world&lt;/h2>
 &lt;h3 id="511-state-of-the-world">5.1.1: State of the world&lt;/h3>
@@ -3893,4 +3894,838 @@ package, namespace, class, file, program, subsystem, function, configuration, da
 &lt;h3 id="542-microservices">5.4.2: Microservices&lt;/h3>
 &lt;p>In the monolithic architecture world we think about all components living in the same application. The application would be divided by multiple domains (for example the order domain) which is then divided into modules for data access, business logic and the API. If we take a step further and separate a bit more we could think of all these domains as single applications. Then we would have multiple applications instead of multiple domains in one application. When one part of the software changes, not the entire landscape has to be rebuilt and redeployed onto our servers. This will lead to flexibility and adaptability in our software, but brings a lot more technical complexity to the scene.&lt;/p>
 &lt;h3 id="543-assignment-2">5.4.3: Assignment 2&lt;/h3>
-&lt;p>It is now time for you as the architect in the web-shop project to decide how our application is built. Take your time and create two approaches for designing the application: a monolithic and microservice approach. Try to create an illustration on how your software is built, try to describe your software in a few sentences and show the different layers of your application.&lt;/p></description></item></channel></rss>
+&lt;p>It is now time for you as the architect in the web-shop project to decide how our application is built. Take your time and create two approaches for designing the application: a monolithic and microservice approach. Try to create an illustration on how your software is built, try to describe your software in a few sentences and show the different layers of your application.&lt;/p></description></item><item><title>Docs: Spring Framework Introduction</title><link>/docs/java/spring_introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/spring_introduction/</guid><description>
+&lt;h2 id="60-meta">6.0: Meta&lt;/h2>
+&lt;h3 id="601-goals">6.0.1: Goals&lt;/h3>
+&lt;ul>
+&lt;li>TODO&lt;/li>
+&lt;/ul>
+&lt;h3 id="602-changelog">6.0.2: Changelog&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Author&lt;/th>
+&lt;th>Version&lt;/th>
+&lt;th>Date&lt;/th>
+&lt;th>Change&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Raffael Hertle&lt;/td>
+&lt;td>0.1&lt;/td>
+&lt;td>23.1.2022&lt;/td>
+&lt;td>Initial version&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="603-requirements">6.0.3: Requirements&lt;/h3>
+&lt;ul>
+&lt;li>I understand Java basics&lt;/li>
+&lt;li>I understand the difference between classes and interfaces and their usages&lt;/li>
+&lt;/ul>
+&lt;h2 id="61-what-is-a-framework">6.1: What is a framework&lt;/h2>
+&lt;p>Before understanding what the Spring framework is and does, we need some kind of definition of a framework:&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Framework&lt;/h4>
+&lt;p>A framework, or software framework, is a platform for developing software applications. It provides a foundation on which software developers can build programs for a specific platform. For example, a framework may include predefined classes and functions that can be used to process input, manage hardware devices, and interact with system software. This streamlines the development process since programmers don&amp;rsquo;t need to reinvent the wheel each time they develop a new application.&lt;/p>
+&lt;p>A framework is similar to an application programming interface (API), though technically a framework includes an API. As the name suggests, a framework serves as a foundation for programming, while an API provides access to the elements supported by the framework. A framework may also include code libraries, a compiler, and other programs used in the software development process.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://techterms.com/definition/framework">TechTerms.com&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;h3 id="611-what-is-the-spring-framework">6.1.1: What is the Spring framework&lt;/h3>
+&lt;p>At its core the Spring framework is a dependency injection and inversion of control framework. Don&amp;rsquo;t get too confused over these two fancy words yet, we will take a look at them in a second. The Spring framework brings us utility to do almost anything we need in a basic web application: creating web-accessible API endpoints, connecting to a database and saving objects - all comes (more or less) out of the box with the Spring framework.&lt;/p>
+&lt;p>Let us dive a bit into the concepts and design patterns of enterprise application programming.&lt;/p>
+&lt;h3 id="62-core-concepts">6.2: Core concepts&lt;/h3>
+&lt;p>When designing software and facing problems, we often find ourselves in a similar situation. The problem might be similar, or the solution after a while might be very familiar with what we have done in an earlier project. By generalizing problems and their solutions we create reusable approaches which we call &amp;lsquo;design patterns&amp;rsquo;:&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Design pattern&lt;/h4>
+&lt;p>Design patterns are reusable solutions for software development. They serve as templates that programmers can use when creating applications. They are not specific to individual programming languages, but instead are best practices or heuristics that can be applied in different programming environments.&lt;/p>
+&lt;p>While design patterns are not language-dependent, they often include objects or classes. Therefore, they are typically associated with object-oriented programming. Individual patterns can be classified into three different categories: 1) creational patterns, 2) structural patterns, and 3) behavioral patterns.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://techterms.com/definition/design_pattern">TechTerms.com&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;p>The following core concepts are all general design patterns used in almost every enterprise application.&lt;/p>
+&lt;h4 id="621-inversion-of-control">6.2.1: Inversion of Control&lt;/h4>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Inversion of Control&lt;/h4>
+&lt;p>Inversion of Control (IoC) is a design principle (although, some people refer to it as a pattern). As the name suggests, it is used to invert different kinds of controls in object-oriented design to achieve loose coupling. Here, controls refer to any additional responsibilities a class has, other than its main responsibility. This includes control over the flow of an application, and control over the flow of an object creation or dependent object creation and binding.&lt;/p>
+&lt;p>IoC is all about inverting the control. To explain this in layman&amp;rsquo;s terms, suppose you drive a car to your work place. This means you control the car. The IoC principle suggests to invert the control, meaning that instead of driving the car yourself, you hire a cab, where another person will drive the car. Thus, this is called inversion of the control - from you to the cab driver. You don&amp;rsquo;t have to drive a car yourself and you can let the driver do the driving so that you can focus on your main work.&lt;/p>
+&lt;p>The IoC principle helps in designing loosely coupled classes which make them testable, maintainable and extensible.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://www.tutorialsteacher.com/ioc/inversion-of-control">tutorialsteacher.com&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;h4 id="622-dependency-injection">6.2.2: Dependency Injection&lt;/h4>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Dependency Injection&lt;/h4>
+&lt;p>“In software engineering, dependency injection is a technique whereby one object supplies the dependencies of another object. A ‘dependency’ is an object that can be used, for example as a service. Instead of a client specifying which service it will use, something tells the client what service to use. The ‘injection’ refers to the passing of a dependency (a service) into the object (a client) that would use it. The service is made part of the client&amp;rsquo;s state. Passing the service to the client, rather than allowing a client to build or find the service, is the fundamental requirement of the pattern.” Source: Wikipedia&lt;/p>
+&lt;p>Creating objects directly within the class is inflexible because it commits the class to particular objects and makes it impossible to change the instantiation later independently from the class. It stops the class from being reusable if other objects are required and it makes the class hard to test because real objects can not be replaced with mock objects.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://www.growin.com/blog/what-is-dependency-injection/">growin.com&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;p>We will see a practical example later. Keep the pattern in mind, even though it might be hard to understand at first.&lt;/p>
+&lt;h4 id="623-singleton">6.2.3: Singleton&lt;/h4>
+&lt;p>When talking about Singletons in programming, we talk about objects which are the only instantiation of its class. Meaning that when we use an object of said class, we can be sure that it is the only one instance at runtime of this class.&lt;/p>
+&lt;p>Read the explanation on &lt;a href="https://refactoring.guru/design-patterns/singleton">refactoring.guru&lt;/a>.&lt;/p>
+&lt;p>The usage shall yet be a mystery to you, we will also use this pattern a lot in the upcoming exercise.&lt;/p>
+&lt;h4 id="624-repository">6.2.4: Repository&lt;/h4>
+&lt;p>The Repository design pattern is a very common design pattern for managing data access. The repository will be the interface to access all our data stored in our database. Think of the repository being your library front desk manager. We want to access books in the library and we have no idea how they get them to us. We only know their API (instructions) and the results we can expect. The repository usually is an interface defined something like this:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">ArticleRepository&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Article&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">readAll&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Article&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">readLatest&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Article&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">readByTags&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Tag&lt;span style="color:#f92672">...&lt;/span> tags&lt;span style="color:#f92672">);&lt;/span>
+Article &lt;span style="color:#a6e22e">readById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">long&lt;/span> id&lt;span style="color:#f92672">);&lt;/span>
+Article &lt;span style="color:#a6e22e">create&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Article article&lt;span style="color:#f92672">);&lt;/span>
+Article &lt;span style="color:#a6e22e">update&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Article article&lt;span style="color:#f92672">);&lt;/span>
+Article &lt;span style="color:#a6e22e">delete&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Article article&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The implementation of the interface does not really concern us. Most of the times this is done by the frameworks behind the application. In our case with the Spring framework letting our class extend the &lt;code>Repository&lt;/code> class of Spring Data will suffice and all the implementation is magically going to happen!&lt;/p>
+&lt;h4 id="625-rest">6.2.5: REST&lt;/h4>
+&lt;p>The abbreviation &lt;strong>REST&lt;/strong> stands for &lt;strong>RE&lt;/strong>presentational &lt;strong>S&lt;/strong>tate &lt;strong>T&lt;/strong>ransfer. It is a architectural approach and became the standard for all web-based applications and is built upon the HTTP protocol. In a RESTful world everything is called a resource. Resources are accessed using standard HTTP methods (GET / POST / DELETE / PUT).&lt;/p>
+&lt;p>The REST server simply provides access to resources and the client can read and modify these resources. The resources itself are identified by URIs and IDs. REST does not define in which &amp;ldquo;language&amp;rdquo; server and client communicate, but most of the times resources are represented by JSON objects.&lt;/p>
+&lt;p>The following standards are defined for the HTTP methods to access resources:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>GET&lt;/strong>: Provides read only access to a resource&lt;/li>
+&lt;li>&lt;strong>POST&lt;/strong>: Creates new resources&lt;/li>
+&lt;li>&lt;strong>DELETE&lt;/strong>: Deletes resources&lt;/li>
+&lt;li>&lt;strong>PUT&lt;/strong>: Updates or creates resource if not found&lt;/li>
+&lt;/ul>
+&lt;p>Let us take a look at how our REST resources could look like at our store web-application. As we said resources and their access are defined by HTTP Method, Resource name and ID. For example a HTTP GET request to &lt;code>/orders/15&lt;/code> would return information about the order with ID 15. Resources in a RESTful world are always written in plural. Here are some other examples:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>POST /orders&lt;/code>: Create a new order&lt;/li>
+&lt;li>&lt;code>GET /orders&lt;/code>: List all orders available&lt;/li>
+&lt;li>&lt;code>PUT /orders/15&lt;/code>: Update order with ID 15&lt;/li>
+&lt;li>&lt;code>DELETE /orders/15&lt;/code>: Delete the order with ID 15&lt;/li>
+&lt;/ul>
+&lt;h4 id="626-rest--resource--controller">6.2.6: (REST-) Resource / Controller&lt;/h4>
+&lt;p>The resource or controller will be the entrypoint of all requests reaching our web-application. Users will make HTTP requests by the frontend to our backend. This API is going to be the code representation or our REST resources.&lt;/p>
+&lt;p>A representation of a REST resource for our &lt;code>/orders&lt;/code> resource might look like this:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/orders&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">OrderResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> OrderService orderService&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@GetMapping&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Order&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">getAllOrders&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// Get all orders from the order magical order service
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Order&lt;span style="color:#f92672">&amp;gt;&lt;/span> orders &lt;span style="color:#f92672">=&lt;/span> orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">findAll&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orders&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Do not yet care too much about the code itself. We are going to dive into the code in a few chapters.&lt;/p>
+&lt;h4 id="622-assignment-1">6.2.2: Assignment 1&lt;/h4>
+&lt;p>Can you provide a definition of a REST resource for an order resource in our theoretical web shop application? Define the methods and endpoints (&lt;code>/orders/15&lt;/code>). List at least 5 endpoints and their usage in the API.&lt;/p>
+&lt;h3 id="63-the-life-in-spring">6.3: The life in Spring&lt;/h3>
+&lt;p>Let us take a look at the freshly learned design patterns and how we can implement / use them with the help of the Spring framework. Up until now most of the part from this chapter might still be a lot of magic and sound confusing to you.&lt;/p>
+&lt;p>Most modern web applications are most commonly divided into three layers:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Boundary&lt;/strong>: The layer that represents the API boundary of the application&lt;/li>
+&lt;li>&lt;strong>Control&lt;/strong>: The control layer holds all classes with business logic&lt;/li>
+&lt;li>&lt;strong>Entity&lt;/strong>: The entity layer holds the representation of the data models and their data access classes (repositories)&lt;/li>
+&lt;/ul>
+&lt;p>Let us take a look at code examples representing the core concepts from the chapters before, layer by layer.&lt;/p>
+&lt;h4 id="631-boundary-layer">6.3.1: Boundary Layer&lt;/h4>
+&lt;p>In the boundary layer we define our REST resources. Without further theory, here is an example REST resource for a &lt;code>Order&lt;/code> class in our web shop:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/orders&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">OrderResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> OrderService orderService&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">OrderResource&lt;/span>&lt;span style="color:#f92672">(&lt;/span>OrderService orderService&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">orderService&lt;/span> &lt;span style="color:#f92672">=&lt;/span> orderService&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@GetMapping&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Order&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">findAll&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">findAll&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/{id}&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Order &lt;span style="color:#a6e22e">findById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@PathVariable&lt;/span> Long id&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">findById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">orElseThrow&lt;/span>&lt;span style="color:#f92672">(&lt;/span>EntityNotFoundException&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@PostMapping&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Order &lt;span style="color:#a6e22e">save&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@RequestBody&lt;/span> Order order&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">save&lt;/span>&lt;span style="color:#f92672">(&lt;/span>order&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@PutMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/{id}&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Order &lt;span style="color:#a6e22e">update&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@PathVariable&lt;/span> Long id&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#a6e22e">@RequestBody&lt;/span> Order order&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">update&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">,&lt;/span> order&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@DeleteMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/{id}&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> ResponseEntity &lt;span style="color:#a6e22e">delete&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@PathVariable&lt;/span> Long id&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">delete&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> ResponseEntity&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">ok&lt;/span>&lt;span style="color:#f92672">().&lt;/span>&lt;span style="color:#a6e22e">build&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>If we take a short look at the class above, we can guess what the class does and what it is used for. This class represents a REST resource in our application. The annotation &lt;code>@RestController&lt;/code> (Almost all annotations discussed here are from the Spring Framework) defines the class as a REST resource. The annotation &lt;code>@RequestMapping(&amp;quot;/orders&amp;quot;)&lt;/code> defines that all HTTP calls requesting the &lt;code>/orders&lt;/code> path, will invoke this REST controller.&lt;/p>
+&lt;p>Each method in this REST resource defines an endpoint serving the basic CRUD REST instructions. Let us take a look at one of the methods in detail:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">
+&lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/{id}&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Order &lt;span style="color:#a6e22e">findById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@PathVariable&lt;/span> Long id&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">findById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">orElseThrow&lt;/span>&lt;span style="color:#f92672">(&lt;/span>EntityNotFoundException&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This method defines that in the context of the resource (&lt;code>/orders&lt;/code>) all HTTP GET requests on the &lt;code>/{id}&lt;/code> path will get handled by the function &lt;code>OrderResource.findById(...)&lt;/code>. The only parameter of this function is &lt;code>id: Long&lt;/code> which is annotated by the &lt;code>@PathVariable&lt;/code> annotation, telling us that the parameter called &lt;code>id&lt;/code> will be handed over as a path variable. Meaning that any request coming to the endpoint &lt;code>/orders/10&lt;/code> will be interpreted as a call similar to &lt;code>OrderResource::findById(10)&lt;/code>. Inside the &lt;code>OrderResource::findById&lt;/code> function we simply delegate the job to the &lt;code>OrderService&lt;/code> instance to handle the request and fetch the desired order.&lt;/p>
+&lt;p>Most of the other REST endpoints are quite similar to the function described above, except for the PUT and POST request which have another annotation:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">
+&lt;span style="color:#a6e22e">@PutMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/{id}&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Order &lt;span style="color:#a6e22e">update&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@PathVariable&lt;/span> Long id&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#a6e22e">@RequestBody&lt;/span> Order order&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderService&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">update&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">,&lt;/span> order&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Here in the PUT mapping we have the annotation &lt;code>@PathVariable&lt;/code> on the parameter &lt;code>id: Long&lt;/code> which we already know. The next parameter &lt;code>order: Order&lt;/code> is annotated with &lt;code>@RequestBody&lt;/code>. This annotation tells the Spring framework that the parameter will come as the body part of the request:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">
+curl &lt;span style="color:#f92672">-&lt;/span>X POST &lt;span style="color:#f92672">-&lt;/span>d &lt;span style="color:#e6db74">&amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;Example&amp;#34;}&amp;#39;&lt;/span> &lt;span style="color:#f92672">-&lt;/span>H &lt;span style="color:#e6db74">&amp;#39;Content-Type: application/json&amp;#39;&lt;/span> http&lt;span style="color:#f92672">://&lt;/span>localhost&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span>&lt;span style="color:#f92672">/&lt;/span>orders
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This is an example for a valid request to the POST endpoint on &lt;code>/orders&lt;/code>. As you can see the request comes with a body &lt;code>-d '{&amp;quot;name&amp;quot;: &amp;quot;Example&amp;quot;}'&lt;/code> which holds a JSON representation of an Order object. The Spring framework will automatically map the JSON Object in the body to the Java Object as the parameter of the request.&lt;/p>
+&lt;p>Another thing that is new is how we utilize the &lt;code>OrderService&lt;/code> class. All the functions in the &lt;code>OrderResource&lt;/code> get passed over to the &lt;code>OrderService&lt;/code>. This is what we call separation of concern: We let the REST resource handle all the logic connected to the REST and HTTP world and the service class handle all the business logic. But as you already recognized, the object &lt;code>orderService: OrderService&lt;/code> does not get initialized in this class. It gets passed to the constructor. This is whwat we call &lt;strong>Constructor Injection&lt;/strong> and is a type of &lt;strong>Dependency Injection&lt;/strong>. Here is how this works: In the Spring framework there are several annotations which define &lt;strong>Beans&lt;/strong> in the applications context.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Bean&lt;/h4>
+&lt;p>The objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. These beans are created with the configuration metadata that you supply to the container.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://www.tutorialspoint.com/spring/spring_bean_definition.htm">tutorialspoint.com&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;p>In other words: Java classes with certain annotations (&lt;code>@Service&lt;/code> , &lt;code>@Repository&lt;/code>, &lt;code>@RestController&lt;/code>, &amp;hellip;) will define &lt;strong>Singletons&lt;/strong> in the Spring frameworks context. The framework now sees that another class uses one of these beans (for example defined by constructor injection) and injects the instance in the class automatically.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">
+&lt;span style="color:#f92672">[...]&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> OrderService orderService&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">OrderResource&lt;/span>&lt;span style="color:#f92672">(&lt;/span>OrderService orderService&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">orderService&lt;/span> &lt;span style="color:#f92672">=&lt;/span> orderService&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">[...]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="632-control-layer">6.3.2: Control Layer&lt;/h4>
+&lt;p>The control layer holds all the business logic and builds normally the core of all applications. On a technical level this is the most basic and least interesting layer in the application. The orders service class looks as the following:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@Service&lt;/span>
+&lt;span style="color:#a6e22e">@Transactional&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">OrderService&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> OrderRepository orderRepository&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">OrderService&lt;/span>&lt;span style="color:#f92672">(&lt;/span>OrderRepository orderRepository&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">orderRepository&lt;/span> &lt;span style="color:#f92672">=&lt;/span> orderRepository&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Order&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">findAll&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">(&lt;/span>List&lt;span style="color:#f92672">&amp;lt;&lt;/span>Order&lt;span style="color:#f92672">&amp;gt;)&lt;/span> orderRepository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">findAll&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Optional&lt;span style="color:#f92672">&amp;lt;&lt;/span>Order&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">findById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Long id&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderRepository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">findById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Order &lt;span style="color:#a6e22e">save&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Order order&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> orderRepository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">save&lt;/span>&lt;span style="color:#f92672">(&lt;/span>order&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Order &lt;span style="color:#a6e22e">update&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Long id&lt;span style="color:#f92672">,&lt;/span> Order order&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+Order toUpdate &lt;span style="color:#f92672">=&lt;/span> orderRepository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">findById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">orElseThrow&lt;/span>&lt;span style="color:#f92672">(&lt;/span>EntityNotFoundException&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+toUpdate&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">setName&lt;/span>&lt;span style="color:#f92672">(&lt;/span>order&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getName&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> toUpdate&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">delete&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Long id&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+orderRepository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">deleteById&lt;/span>&lt;span style="color:#f92672">(&lt;/span>id&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You can see directly that this class looks less complicated and has fewer annotations than the REST resource before. The only annotations in this class are &lt;code>@Service&lt;/code> and &lt;code>@Transactional&lt;/code>. The &lt;code>@Service&lt;/code> annotation tells the Spring framework that the following class is a Java bean holding business logic. The &lt;code>@Transactional&lt;/code> annotation will simply annotate that all the functions in the class should be executed in a single transaction. Don&amp;rsquo;t mind yet about the &lt;code>@Transactional&lt;/code> annotation. As you can see we also inject another bean into this class by constructor injection: the &lt;code>OrderRepository&lt;/code>.&lt;/p>
+&lt;h4 id="633-entity-layer">6.3.3: Entity Layer&lt;/h4>
+&lt;p>In the entity layer live the objects representing the database entities and their access classes (repositories). The &lt;code>Order&lt;/code> object is represented by the following class:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@Entity&lt;/span>
+&lt;span style="color:#a6e22e">@Table&lt;/span>&lt;span style="color:#f92672">(&lt;/span>name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;orders&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Order&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Id&lt;/span>
+&lt;span style="color:#a6e22e">@GeneratedValue&lt;/span>
+Long id&lt;span style="color:#f92672">;&lt;/span>
+String name&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Long &lt;span style="color:#a6e22e">getId&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> id&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setId&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Long id&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">id&lt;/span> &lt;span style="color:#f92672">=&lt;/span> id&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setName&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String name&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">name&lt;/span> &lt;span style="color:#f92672">=&lt;/span> name&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getName&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Without the annotations the class looks like one of the simplest java classes. The annotations are pretty straightforward too. The &lt;code>@Entity&lt;/code> annotation indicates that this is a managed persistence class. The &lt;code>@Table(name = &amp;quot;&amp;quot;)&lt;/code> annotations lets you define how the table is called managing this class. The &lt;code>@Id&lt;/code> annotations annotates the field &lt;code>id: Long&lt;/code> to define that the field is used as the primary key in the database. &lt;code>@GeneratedValue&lt;/code> lets you define values which are created by the underlying data store or database.&lt;/p>
+&lt;p>To access the database and manage the &lt;code>Order&lt;/code> objects in the application we use the &lt;code>OrderRepository&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@Repository&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">OrderRepository&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> CrudRepository&lt;span style="color:#f92672">&amp;lt;&lt;/span>Order&lt;span style="color:#f92672">,&lt;/span> Long&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You will notice that the &lt;code>OrderRepository&lt;/code> is not a &lt;code>class&lt;/code> but only an &lt;code>interface&lt;/code> extending Spring&amp;rsquo;s &lt;code>CrudRepository&lt;/code>. The type parameterization behind the &lt;code>CrudRepository&amp;lt;Order, Long&amp;gt;&lt;/code> indicates that the managed objects by this repository are &lt;code>Order&lt;/code> and identified by &lt;code>Long&lt;/code> (Remember the &lt;code>@Id Long id&lt;/code> from the &lt;code>Order&lt;/code> class?). If you check the &lt;a href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html">documentation&lt;/a> for Spring&amp;rsquo;s &lt;code>CrudRepository&lt;/code>, you can see what methods are already defined by the interface. You will also notice that we just define an interface and do not implement any of these methods. Spring does this magic for you,&lt;/p>
+&lt;h4 id="64-your-own-application">6.4: Your own application&lt;/h4>
+&lt;p>Now it is time to get your hands dirty! The first assignment will be to have a Spring Boot application up and running. We will set up a sample dummy application.&lt;/p>
+&lt;p>There are several ways to get your first application up and running, we will take a look at two of them.&lt;/p>
+&lt;h4 id="641-ui-approach">6.4.1: UI Approach&lt;/h4>
+&lt;p>To get started with Spring Boot you can use their own starter tool called &lt;a href="https://start.spring.io/">spring initializr&lt;/a>. Open the link in the browser of your choice and click through the setup. For a simple hello world example you can just use the following configuration:&lt;/p>
+&lt;ul>
+&lt;li>Project: Maven project&lt;/li>
+&lt;li>Language: Java&lt;/li>
+&lt;li>Spring Boot: Default&lt;/li>
+&lt;li>Project Metadata:
+&lt;ul>
+&lt;li>GroupId: ch.itninja&lt;/li>
+&lt;li>Artifact: helloworld&lt;/li>
+&lt;li>Name: helloworld&lt;/li>
+&lt;li>Description: &amp;hellip;&lt;/li>
+&lt;li>Package name: ch.sbbt.example.helloworld&lt;/li>
+&lt;li>Packaging: Jar&lt;/li>
+&lt;li>Java: 11&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Simply click generate afterwards and unzip the project.&lt;/p>
+&lt;h4 id="642-cli-approach">6.4.2: CLI Approach&lt;/h4>
+&lt;p>For the people who are more CLI focussed, you can use the same tool with your CLI favorites via HTTP.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl &lt;span style="color:#f92672">-&lt;/span>G https&lt;span style="color:#f92672">://&lt;/span>start.spring.io&lt;span style="color:#f92672">/&lt;/span>starter.zip \
+&lt;span style="color:#f92672">-&lt;/span>d dependencies&lt;span style="color:#f92672">=&lt;/span>web \
+&lt;span style="color:#f92672">-&lt;/span>d javaVersion&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">11&lt;/span> \
+&lt;span style="color:#f92672">-&lt;/span>d groupId&lt;span style="color:#f92672">=&lt;/span>ch.itninja \
+&lt;span style="color:#f92672">-&lt;/span>d artifactId&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>d baseDir&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>o helloworld.zip
+&lt;span style="color:#f92672">$&lt;/span> unzip helloworld.zip
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>or&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl &lt;span style="color:#f92672">-&lt;/span>G https&lt;span style="color:#f92672">://&lt;/span>start.spring.io&lt;span style="color:#f92672">/&lt;/span>starter.tgz \
+&lt;span style="color:#f92672">-&lt;/span>d dependencies&lt;span style="color:#f92672">=&lt;/span>web \
+&lt;span style="color:#f92672">-&lt;/span>d javaVersion&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">11&lt;/span> \
+&lt;span style="color:#f92672">-&lt;/span>d groupId&lt;span style="color:#f92672">=&lt;/span>ch.itninja \
+&lt;span style="color:#f92672">-&lt;/span>d artifactId&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>d baseDir&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>o helloworld.tar
+&lt;span style="color:#f92672">$&lt;/span> tar &lt;span style="color:#f92672">-&lt;/span>xfv helloworld.tar
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>depending on your preferences in compression tools.&lt;/p>
+&lt;h4 id="643-start-the-application">6.4.3: Start the Application&lt;/h4>
+&lt;p>Import the project in your favorite IDE. Most of the times this can be achieved by opening the maven project file &lt;code>pom.xml&lt;/code> in your IDE of choice and then import it as a project.&lt;/p>
+&lt;p>Most IDEs (including IntelliJ) support Spring applications out of the box. As soon as you have your project imported you can start up your application by running the pre-configured run-configuration. If you do not want to rely on your IDE to start up yo8ur application you can use any shell of your choice and simply execute:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">./mvnw spring&lt;span style="color:#f92672">-&lt;/span>boot&lt;span style="color:#f92672">:&lt;/span>run
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Let maven download and build your dependencies and as soon as you have a message like:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s"> . ____ _ __ _ _
+&lt;span style="color:#f92672">/&lt;/span>\\ &lt;span style="color:#f92672">/&lt;/span> ___&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">_ __ _ _(_)_ __ __ _ \ \ \ \&lt;/span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;span style="color:#e6db74">( ( )\___ | &amp;#39;&lt;/span>_ &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;_| | &amp;#39;&lt;/span>_ \&lt;span style="color:#f92672">/&lt;/span> _` &lt;span style="color:#f92672">|&lt;/span> \ \ \ \
+\\&lt;span style="color:#f92672">/&lt;/span> ___)&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">|&lt;/span>_)&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">||&lt;/span> (_&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">|&lt;/span> ) ) ) )
+&lt;span style="color:#e6db74">&amp;#39; |____| .__|_| |_|_| |_\__, | / / / /
+&lt;/span>&lt;span style="color:#e6db74"> =========|_|==============|___/=/_/_/_/
+&lt;/span>&lt;span style="color:#e6db74"> :: Spring Boot :: (v2.6.3)
+&lt;/span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:45.493 INFO 477193 --- [ main] ch.itninja.helloworld.DemoApplication : Starting DemoApplication using Java 11.0.2 on rhertle-puzzle with PID 477193 (**************************)
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:45.495 INFO 477193 --- [ main] ch.itninja.helloworld.DemoApplication : No active profile set, falling back to default profiles: default
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:46.050 INFO 477193 --- [ main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8080 (http)
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:46.057 INFO 477193 --- [ main] o.apache.catalina.core.StandardService : Starting service [Tomcat]
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:46.057 INFO 477193 --- [ main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.56]
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:46.100 INFO 477193 --- [ main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:46.100 INFO 477193 --- [ main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 569 ms
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:46.322 INFO 477193 --- [ main] o.s.b.w.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8080 (http) with context path &amp;#39;&amp;#39;
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:57:46.329 INFO 477193 --- [ main] ch.itninja.helloworld.DemoApplication : Started DemoApplication in 1.112 seconds (JVM running for 1.414)
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:58:03.800 INFO 477193 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet &amp;#39;&lt;/span>dispatcherServlet&lt;span style="color:#e6db74">&amp;#39;
+&lt;/span>&lt;span style="color:#e6db74">2022-02-09 13:58:03.801 INFO 477193 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet &amp;#39;&lt;/span>dispatcherServlet&lt;span style="color:#e6db74">&amp;#39;&lt;/span>
+&lt;span style="color:#ae81ff">2022-02-09&lt;/span> &lt;span style="color:#ae81ff">13&lt;/span>&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#ae81ff">58&lt;/span>&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#ae81ff">03.801&lt;/span> INFO &lt;span style="color:#ae81ff">477193&lt;/span> &lt;span style="color:#f92672">---&lt;/span> [nio&lt;span style="color:#ae81ff">-8080&lt;/span>&lt;span style="color:#f92672">-&lt;/span>exec&lt;span style="color:#ae81ff">-1&lt;/span>] o.s.web.servlet.DispatcherServlet &lt;span style="color:#f92672">:&lt;/span> Completed initialization in &lt;span style="color:#ae81ff">0&lt;/span> ms
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>your application has been successfully started! Congratulations!&lt;/p>
+&lt;h4 id="644-assignment-2">6.4.4: Assignment 2&lt;/h4>
+&lt;p>No it is your turn to implement some code!&lt;/p>
+&lt;h5 id="6441-task-1">6.4.4.1: Task 1&lt;/h5>
+&lt;p>Create a resource &lt;code>GreetingResource&lt;/code> at the path &lt;code>/greetings&lt;/code> which greets you with a String &amp;ldquo;Hello World!&amp;rdquo; response when sending a GET request to &lt;code>/greetings&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl &lt;span style="color:#f92672">-&lt;/span>X GET http&lt;span style="color:#f92672">://&lt;/span>localhost&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span>&lt;span style="color:#f92672">/&lt;/span>greetings
+&lt;span style="color:#e6db74">&amp;#34;Hello World!&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Take a look at the classes in the chapter before and implement it yourself.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Solution Task 1&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.itninja.helloworld.greetings.boundary&lt;span style="color:#f92672">;&lt;/span>
+&lt;p>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.GetMapping&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestMapping&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController&lt;span style="color:#f92672">;&lt;/span>&lt;/p>
+&lt;p>&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;quot;/greetings&amp;quot;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>&lt;/p>
+&lt;pre>&lt;code>&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@GetMapping&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;public&amp;lt;/span&amp;gt; String &amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;greeting&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;()&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;return&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;Hello, World!&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;/div>
+&lt;/div>&lt;p>The request should return the following:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl http&lt;span style="color:#f92672">://&lt;/span>localhost&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span>&lt;span style="color:#f92672">/&lt;/span>greetings
+Hello, World&lt;span style="color:#f92672">!&lt;/span>%
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h5 id="6442-task-2">6.4.4.2: Task 2&lt;/h5>
+&lt;p>Continue with your DemoApplication and extend your &lt;code>GreetingResource&lt;/code> by another endpoint. GET requests at &lt;code>/greeting/{name}&lt;/code> should return a personalized message &lt;code>Hello {name}!&lt;/code> as a response!&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl &lt;span style="color:#f92672">-&lt;/span>X GET http&lt;span style="color:#f92672">://&lt;/span>localhost&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span>&lt;span style="color:#f92672">/&lt;/span>greetings&lt;span style="color:#f92672">/&lt;/span>raffael
+&lt;span style="color:#e6db74">&amp;#34;Hello raffael!&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Take a look at the classes in the chapter before and implement it yourself.&lt;/p>
+&lt;p>If you&amp;rsquo;re stuck, take a look at the hint.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Hint Task 2&lt;/h4>
+We can use the &lt;code>@PathVariable&lt;/code> annotation to annotate a parameter of the function to get mapped to a path segment of the endpoint definition. Take a look at the example in 6.3.1!
+&lt;/div>
+&lt;p>If you still cannot solve the Task, you can help yourself with the solution.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Solution Task 2&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.itninja.helloworld.greetings.boundary&lt;span style="color:#f92672">;&lt;/span>
+&lt;p>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.GetMapping&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.PathVariable&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestMapping&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController&lt;span style="color:#f92672">;&lt;/span>&lt;/p>
+&lt;p>&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;quot;/greetings&amp;quot;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>&lt;/p>
+&lt;pre>&lt;code>&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@GetMapping&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;public&amp;lt;/span&amp;gt; String &amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;greeting&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;()&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;return&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;Hello, World!&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@GetMapping&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;/{name}&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;public&amp;lt;/span&amp;gt; String &amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;greetByName&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@PathVariable&amp;lt;/span&amp;gt; String name&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;return&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;Hello &amp;amp;#34;&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;+&amp;lt;/span&amp;gt; name &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;+&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;!&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
+&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>&lt;span style="color:#f92672">}&lt;/span>&lt;/p>
+&lt;p>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;/div>
+&lt;/div>&lt;p>The request should return the following:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl http&lt;span style="color:#f92672">://&lt;/span>localhost&lt;span style="color:#f92672">:&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span>&lt;span style="color:#f92672">/&lt;/span>greetings&lt;span style="color:#f92672">/&lt;/span>raffael
+Hello raffael&lt;span style="color:#f92672">!&lt;/span>%
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h5 id="6443-task-3-setup-application">6.4.4.3: Task 3: Setup application&lt;/h5>
+&lt;p>Now let&amp;rsquo;s build our Order application form the web shop example all the way! We will build all the resources for the &lt;code>Order&lt;/code> class from scratch:&lt;/p>
+&lt;ul>
+&lt;li>Setup Application&lt;/li>
+&lt;li>Setup database, application model and repository layer&lt;/li>
+&lt;li>Create service / business logic layer&lt;/li>
+&lt;li>Define REST endpoints for resources&lt;/li>
+&lt;/ul>
+&lt;p>Let&amp;rsquo;s start with the creation of our application. Create the spring application like we have already seen in the previous chapters. And make a quick check if your application is able to start up!&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Hint Task 3&lt;/h4>
+If you&amp;rsquo;re stuck take a look at the first section 6.4!
+&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Solution Task 3&lt;/h4>
+&lt;p>Use the &lt;a href="https://start.spring.io/">spring initializr&lt;/a> or the CLI approach:&lt;/p>
+&lt;p>With&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl &lt;span style="color:#f92672">-&lt;/span>G https&lt;span style="color:#f92672">://&lt;/span>start.spring.io&lt;span style="color:#f92672">/&lt;/span>starter.zip \
+&lt;span style="color:#f92672">-&lt;/span>d dependencies&lt;span style="color:#f92672">=&lt;/span>web \
+&lt;span style="color:#f92672">-&lt;/span>d javaVersion&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">11&lt;/span> \
+&lt;span style="color:#f92672">-&lt;/span>d groupId&lt;span style="color:#f92672">=&lt;/span>ch.itninja \
+&lt;span style="color:#f92672">-&lt;/span>d artifactId&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>d baseDir&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>o helloworld.zip
+&lt;p>&lt;span style="color:#f92672">$&lt;/span> unzip helloworld.zip
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;/div>
+&lt;/div>&lt;p>or&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-s" data-lang="s">&lt;span style="color:#f92672">$&lt;/span> curl &lt;span style="color:#f92672">-&lt;/span>G https&lt;span style="color:#f92672">://&lt;/span>start.spring.io&lt;span style="color:#f92672">/&lt;/span>starter.tgz \
+&lt;span style="color:#f92672">-&lt;/span>d dependencies&lt;span style="color:#f92672">=&lt;/span>web \
+&lt;span style="color:#f92672">-&lt;/span>d javaVersion&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">11&lt;/span> \
+&lt;span style="color:#f92672">-&lt;/span>d groupId&lt;span style="color:#f92672">=&lt;/span>ch.itninja \
+&lt;span style="color:#f92672">-&lt;/span>d artifactId&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>d baseDir&lt;span style="color:#f92672">=&lt;/span>helloworld \
+&lt;span style="color:#f92672">-&lt;/span>o helloworld.tar
+&lt;p>&lt;span style="color:#f92672">$&lt;/span> tar &lt;span style="color:#f92672">-&lt;/span>xfv helloworld.tar
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h5 id="6443-task-4-database-layer">6.4.4.3: Task 4: Database layer&lt;/h5>
+&lt;p>To work with a database we need some additional dependencies to the project.&lt;/p>
+&lt;p>Let us extend the dependency list in the &lt;code>pom.xml&lt;/code> and add the following entries:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>We first create a simple &lt;code>Order&lt;/code> class in the &lt;code>order.entity&lt;/code> package. The &lt;code>Order&lt;/code> class should have the following properties:&lt;/p>
+&lt;ul>
+&lt;li>name&lt;/li>
+&lt;li>adress&lt;/li>
+&lt;li>amount&lt;/li>
+&lt;li>date of order&lt;/li>
+&lt;/ul></description></item></channel></rss>
