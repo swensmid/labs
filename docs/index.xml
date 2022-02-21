@@ -7058,8 +7058,8 @@ String name&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Take a look at the classes in the chapter before and implement it yourself.&lt;/p>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Solution Task 1&lt;/h4>
+&lt;details>
+&lt;summary>Solution Task 1&lt;/summary>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -7081,19 +7081,18 @@ String name&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.itninja.helloworld.greetings.boundary&lt;span style="color:#f92672">;&lt;/span>
-&lt;p>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.GetMapping&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.GetMapping&lt;span style="color:#f92672">;&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestMapping&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController&lt;span style="color:#f92672">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color:#a6e22e">@RestController&lt;/span>
-&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;quot;/greetings&amp;quot;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>&lt;/p>
-&lt;pre>&lt;code>&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@GetMapping&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;public&amp;lt;/span&amp;gt; String &amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;greeting&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;()&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;return&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;Hello, World!&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/greetings&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@GetMapping&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">greeting&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>The request should return the following:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -7106,8 +7105,7 @@ String name&lt;span style="color:#f92672">;&lt;/span>
 Hello, World&lt;span style="color:#f92672">!&lt;/span>%
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>
-&lt;/div>
+&lt;/div>&lt;/details>
 &lt;h5 id="6442-task-2">6.4.4.2: Task 2&lt;/h5>
 &lt;p>Continue with your DemoApplication and extend your &lt;code>GreetingResource&lt;/code> by another endpoint. GET requests at &lt;code>/greeting/{name}&lt;/code> should return a personalized message &lt;code>Hello {name}!&lt;/code> as a response!&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -7122,13 +7120,13 @@ Hello, World&lt;span style="color:#f92672">!&lt;/span>%
 &lt;/div>
 &lt;/div>&lt;p>Take a look at the classes in the chapter before and implement it yourself.&lt;/p>
 &lt;p>If you&amp;rsquo;re stuck, take a look at the hint.&lt;/p>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Hint Task 2&lt;/h4>
-We can use the &lt;code>@PathVariable&lt;/code> annotation to annotate a parameter of the function to get mapped to a path segment of the endpoint definition. Take a look at the example in 6.3.1!
-&lt;/div>
+&lt;details>
+&lt;summary>Hint Task 2&lt;/summary>
+&lt;p>We can use the &lt;code>@PathVariable&lt;/code> annotation to annotate a parameter of the function to get mapped to a path segment of the endpoint definition. Take a look at the example in 6.3.1!&lt;/p>
+&lt;/details>
 &lt;p>If you still cannot solve the Task, you can help yourself with the solution.&lt;/p>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Solution Task 2&lt;/h4>
+&lt;details>
+&lt;summary>Solution Task 2&lt;/summary>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -7155,27 +7153,28 @@ We can use the &lt;code>@PathVariable&lt;/code> annotation to annotate a paramet
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.itninja.helloworld.greetings.boundary&lt;span style="color:#f92672">;&lt;/span>
-&lt;p>&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.GetMapping&lt;span style="color:#f92672">;&lt;/span>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">
+&lt;span style="color:#f92672">package&lt;/span> ch.itninja.helloworld.greetings.boundary&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.GetMapping&lt;span style="color:#f92672">;&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.PathVariable&lt;span style="color:#f92672">;&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RequestMapping&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController&lt;span style="color:#f92672">;&lt;/span>&lt;/p>
-&lt;p>&lt;span style="color:#a6e22e">@RestController&lt;/span>
-&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;quot;/greetings&amp;quot;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>&lt;/p>
-&lt;pre>&lt;code>&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@GetMapping&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;public&amp;lt;/span&amp;gt; String &amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;greeting&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;()&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;return&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;Hello, World!&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@GetMapping&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;/{name}&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;public&amp;lt;/span&amp;gt; String &amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;greetByName&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;(&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#a6e22e&amp;quot;&amp;gt;@PathVariable&amp;lt;/span&amp;gt; String name&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;)&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#66d9ef&amp;quot;&amp;gt;return&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;Hello &amp;amp;#34;&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;+&amp;lt;/span&amp;gt; name &amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;+&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;quot;color:#e6db74&amp;quot;&amp;gt;&amp;amp;#34;!&amp;amp;#34;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-&amp;lt;span style=&amp;quot;color:#f92672&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>&lt;span style="color:#f92672">}&lt;/span>&lt;/p>
-&lt;p>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;span style="color:#f92672">import&lt;/span> org.springframework.web.bind.annotation.RestController&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/greetings&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GreetingResource&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@GetMapping&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">greeting&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@GetMapping&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/{name}&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">greetByName&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#a6e22e">@PathVariable&lt;/span> String name&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> name &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;!&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>The request should return the following:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -7188,8 +7187,7 @@ We can use the &lt;code>@PathVariable&lt;/code> annotation to annotate a paramet
 Hello raffael&lt;span style="color:#f92672">!&lt;/span>%
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>
-&lt;/div>
+&lt;/div>&lt;/details>
 &lt;h5 id="6443-task-3-setup-application">6.4.4.3: Task 3: Setup application&lt;/h5>
 &lt;p>Now let&amp;rsquo;s build our Order application form the web shop example all the way! We will build all the resources for the &lt;code>Order&lt;/code> class from scratch:&lt;/p>
 &lt;ul>
@@ -7199,12 +7197,12 @@ Hello raffael&lt;span style="color:#f92672">!&lt;/span>%
 &lt;li>Define REST endpoints for resources&lt;/li>
 &lt;/ul>
 &lt;p>Let&amp;rsquo;s start with the creation of our application. Create the spring application like we have already seen in the previous chapters. And make a quick check if your application is able to start up!&lt;/p>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Hint Task 3&lt;/h4>
-If you&amp;rsquo;re stuck take a look at the first section 6.4!
-&lt;/div>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Solution Task 3&lt;/h4>
+&lt;details>
+&lt;summary>Hint Task 3&lt;/summary>
+&lt;p>If you&amp;rsquo;re stuck take a look at the first section 6.4!&lt;/p>
+&lt;/details>
+&lt;details>
+&lt;summary>Solution Task 3&lt;/summary>
 &lt;p>Use the &lt;a href="https://start.spring.io/">spring initializr&lt;/a> or the CLI approach:&lt;/p>
 &lt;p>With&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -7227,8 +7225,8 @@ If you&amp;rsquo;re stuck take a look at the first section 6.4!
 &lt;span style="color:#f92672">-&lt;/span>d artifactId&lt;span style="color:#f92672">=&lt;/span>helloworld \
 &lt;span style="color:#f92672">-&lt;/span>d baseDir&lt;span style="color:#f92672">=&lt;/span>helloworld \
 &lt;span style="color:#f92672">-&lt;/span>o helloworld.zip
-&lt;p>&lt;span style="color:#f92672">$&lt;/span> unzip helloworld.zip
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;span style="color:#f92672">$&lt;/span> unzip helloworld.zip
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>or&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -7251,11 +7249,10 @@ If you&amp;rsquo;re stuck take a look at the first section 6.4!
 &lt;span style="color:#f92672">-&lt;/span>d artifactId&lt;span style="color:#f92672">=&lt;/span>helloworld \
 &lt;span style="color:#f92672">-&lt;/span>d baseDir&lt;span style="color:#f92672">=&lt;/span>helloworld \
 &lt;span style="color:#f92672">-&lt;/span>o helloworld.tar
-&lt;p>&lt;span style="color:#f92672">$&lt;/span> tar &lt;span style="color:#f92672">-&lt;/span>xfv helloworld.tar
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/p>
+&lt;span style="color:#f92672">$&lt;/span> tar &lt;span style="color:#f92672">-&lt;/span>xfv helloworld.tar
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>
-&lt;/div>
+&lt;/div>&lt;/details>
 &lt;h5 id="6443-task-4-database-layer">6.4.4.3: Task 4: Database layer&lt;/h5>
 &lt;p>To work with a database we need some additional dependencies to the project.&lt;/p>
 &lt;p>Let us extend the dependency list in the &lt;code>pom.xml&lt;/code> and add the following entries:&lt;/p>
