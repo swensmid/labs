@@ -7,13 +7,17 @@ description: >
 sectionnumber: 5
 ---
 
+
 ## {{% param sectionnumber %}}.0: Meta
+
 
 ### {{% param sectionnumber %}}.0.1: Goals
 
-* Understanding how applications work in a modern world
+* I know how applications work in a modern world
 * I know what databases, backends, frontends are for
-* I know the difference between synchronous and asynchronous communication
+* I know what a monolithic application is
+* I can divide the modules of an application
+
 
 ### {{% param sectionnumber %}}.0.2: Changelog
 
@@ -21,11 +25,14 @@ sectionnumber: 5
 | --- | --- | --- | --- |  
 | Raffael Hertle | 0.1 | 18.1.2022 | Initial version |
 
+
 ### {{% param sectionnumber %}}.0.3: Requirements
 
-* None // TODO:
+* None
+
 
 ## {{% param sectionnumber %}}.1: Applications in the modern world
+
 
 ### {{% param sectionnumber %}}.1.1: State of the world
 
