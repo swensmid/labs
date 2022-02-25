@@ -6844,7 +6844,7 @@ orderRepository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#
 &lt;/div>
 &lt;/div>&lt;p>You can see directly that this class looks less complicated and has fewer annotations than the REST resource before. The only annotations in this class are &lt;code>@Service&lt;/code> and &lt;code>@Transactional&lt;/code>. The &lt;code>@Service&lt;/code> annotation tells the Spring framework that the following class is a Java bean holding business logic. The &lt;code>@Transactional&lt;/code> annotation will simply annotate that all the functions in the class should be executed in a single transaction. Don&amp;rsquo;t mind yet about the &lt;code>@Transactional&lt;/code> annotation. As you can see we also inject another bean into this class by constructor injection: the &lt;code>OrderRepository&lt;/code>.&lt;/p>
 &lt;h4 id="633-entity-layer">6.3.3: Entity Layer&lt;/h4>
-&lt;p>In the entity layer live the objects representing the database entities and their access classes (repositories). The &lt;code>Order&lt;/code> object is represented by the following class:&lt;/p>
+&lt;p>Classes in the entity layer represent the database entities and their access classes (repositories). The &lt;code>Order&lt;/code> object is represented by the following class:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
