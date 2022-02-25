@@ -6985,7 +6985,7 @@ String name&lt;span style="color:#f92672">;&lt;/span>
 &lt;/div>&lt;p>depending on your preferences in compression tools.&lt;/p>
 &lt;h4 id="643-start-the-application">6.4.3: Start the Application&lt;/h4>
 &lt;p>Import the project in your favorite IDE. Most of the times this can be achieved by opening the maven project file &lt;code>pom.xml&lt;/code> in your IDE of choice and then import it as a project.&lt;/p>
-&lt;p>Most IDEs (including IntelliJ) support Spring applications out of the box. As soon as you have your project imported you can start up your application by running the pre-configured run-configuration. If you do not want to rely on your IDE to start up yo8ur application you can use any shell of your choice and simply execute:&lt;/p>
+&lt;p>Most IDEs (including IntelliJ) support Spring applications out of the box. As soon as you have your project imported you can start up your application by running the pre-configured run-configuration. If you do not want to rely on your IDE to start up your application you can use any shell of your choice and simply execute:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -7189,7 +7189,7 @@ Hello raffael&lt;span style="color:#f92672">!&lt;/span>%
 &lt;/div>
 &lt;/div>&lt;/details>
 &lt;h5 id="6443-task-3-setup-application">6.4.4.3: Task 3: Setup application&lt;/h5>
-&lt;p>Now let&amp;rsquo;s build our Order application form the web shop example all the way! We will build all the resources for the &lt;code>Order&lt;/code> class from scratch:&lt;/p>
+&lt;p>Now let&amp;rsquo;s build our Order application from the web shop example all the way! We will build all the resources for the &lt;code>Order&lt;/code> class from scratch:&lt;/p>
 &lt;ul>
 &lt;li>Setup Application&lt;/li>
 &lt;li>Setup database, application model and repository layer&lt;/li>
