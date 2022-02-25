@@ -158,7 +158,7 @@ Let us take a look at how our REST resources could look like at our store web-ap
 
 #### {{% param sectionnumber %}}.2.6: (REST-) Resource / Controller
 
-The resource or controller will be the entrypoint of all requests reaching our web-application. Users will make HTTP requests by the frontend to our backend. This API is going to be the code representation or our REST resources.
+The resource or controller will be the entrypoint of all requests reaching our web-application. Users will make HTTP requests by the frontend to our backend. This API is going to be the code representation of our REST resources.
 
 A representation of a REST resource for our `/orders` resource might look like this:
 
