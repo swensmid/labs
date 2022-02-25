@@ -181,7 +181,7 @@ public class OrderResource {
 Do not yet care too much about the code itself. We are going to dive into the code in a few chapters.
 
 
-#### {{% param sectionnumber %}}.2.2: Assignment 1
+#### {{% param sectionnumber %}}.2.7 Assignment 1
 
 Can you provide a definition of a REST resource for an order resource in our theoretical web shop application? Define the methods and endpoints (`/orders/15`). List at least 5 endpoints and their usage in the API.
 
