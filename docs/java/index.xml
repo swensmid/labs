@@ -4028,7 +4028,7 @@ Article &lt;span style="color:#a6e22e">delete&lt;/span>&lt;span style="color:#f9
 &lt;li>&lt;code>DELETE /orders/15&lt;/code>: Delete the order with ID 15&lt;/li>
 &lt;/ul>
 &lt;h4 id="626-rest--resource--controller">6.2.6: (REST-) Resource / Controller&lt;/h4>
-&lt;p>The resource or controller will be the entrypoint of all requests reaching our web-application. Users will make HTTP requests by the frontend to our backend. This API is going to be the code representation or our REST resources.&lt;/p>
+&lt;p>The resource or controller will be the entrypoint of all requests reaching our web-application. Users will make HTTP requests by the frontend to our backend. This API is going to be the code representation of our REST resources.&lt;/p>
 &lt;p>A representation of a REST resource for our &lt;code>/orders&lt;/code> resource might look like this:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
