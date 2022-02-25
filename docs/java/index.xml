@@ -4061,7 +4061,7 @@ Article &lt;span style="color:#a6e22e">delete&lt;/span>&lt;span style="color:#f9
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Do not yet care too much about the code itself. We are going to dive into the code in a few chapters.&lt;/p>
-&lt;h4 id="622-assignment-1">6.2.2: Assignment 1&lt;/h4>
+&lt;h4 id="627-assignment-1">6.2.7 Assignment 1&lt;/h4>
 &lt;p>Can you provide a definition of a REST resource for an order resource in our theoretical web shop application? Define the methods and endpoints (&lt;code>/orders/15&lt;/code>). List at least 5 endpoints and their usage in the API.&lt;/p>
 &lt;h3 id="63-the-life-in-spring">6.3: The life in Spring&lt;/h3>
 &lt;p>Let us take a look at the freshly learned design patterns and how we can implement / use them with the help of the Spring framework. Up until now most of the part from this chapter might still be a lot of magic and sound confusing to you.&lt;/p>
