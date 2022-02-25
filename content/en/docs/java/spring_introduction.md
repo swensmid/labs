@@ -456,7 +456,7 @@ depending on your preferences in compression tools.
 
 Import the project in your favorite IDE. Most of the times this can be achieved by opening the maven project file `pom.xml` in your IDE of choice and then import it as a project.
 
-Most IDEs (including IntelliJ) support Spring applications out of the box. As soon as you have your project imported you can start up your application by running the pre-configured run-configuration. If you do not want to rely on your IDE to start up yo8ur application you can use any shell of your choice and simply execute:
+Most IDEs (including IntelliJ) support Spring applications out of the box. As soon as you have your project imported you can start up your application by running the pre-configured run-configuration. If you do not want to rely on your IDE to start up your application you can use any shell of your choice and simply execute:
 
 ```s
 ./mvnw spring-boot:run
@@ -601,7 +601,7 @@ Hello raffael!%
 
 ##### {{% param sectionnumber %}}.4.4.3: Task 3: Setup application
 
-Now let's build our Order application form the web shop example all the way! We will build all the resources for the `Order` class from scratch:
+Now let's build our Order application from the web shop example all the way! We will build all the resources for the `Order` class from scratch:
 
 * Setup Application
 * Setup database, application model and repository layer
