@@ -350,7 +350,7 @@ You can see directly that this class looks less complicated and has fewer annota
 
 #### {{% param sectionnumber %}}.3.3: Entity Layer
 
-In the entity layer live the objects representing the database entities and their access classes (repositories). The `Order` object is represented by the following class:
+Classes in the entity layer represent the database entities and their access classes (repositories). The `Order` object is represented by the following class:
 
 ```java
 @Entity
