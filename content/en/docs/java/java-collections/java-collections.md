@@ -31,8 +31,8 @@ description: >
 ## Einleitung
 
 Beim Programmieren müssen wir oft Daten speichern beziehungsweise Informationen verwalten, um gewisse Probleme lösen zu
-können. In diesem Modul werden wir Collections und das Java Collection Framework anschauen, weil Collections Objekte
-sind, mit welchen wir Informationen speichern können.
+können. In diesem Modul werden wir das Java Collection Framework anschauen, weil dieses Framework uns die Werkzeuge zum
+effizienten Verwalten von Informationen liefert.
 
 Eine *Collection* ist ein Objekt, dass eine Sammlung von Objekten darstellt, d.h. mehrere Elemente zu einer Einheit
 zusammenfasst. In der Regel enthält eine Collection Datenelemente, die zusammen eine natürliche Gruppe bilden, wie z.B.
@@ -68,9 +68,9 @@ Collection-Datenstrukturen liefern. Es bietet uns also sowohl Interfaces, die Co
 Klassen, die diese implementieren an. Obwohl es als Framework bezeichnet wird, funktioniert es im Grunde wie eine
 Library.
 
-Das Java Collections Frameworks, stellt also für uns Hochleistungsimplementierungen von Datenstrukturen und Algorithmen
-bereit, um Sammlungen von Objekten beliebiger Datentypen darzustellen, wodurch sich für uns der Programmieraufwand
-reduziert, weil diese nicht immer selber geschrieben werden müssen.
+Das Java Collections Frameworks, stellt für uns Hochleistungsimplementierungen von Datenstrukturen und Algorithmen
+bereit, um Sammlungen von Objekten beliebiger Datentypen darzustellen. Da wir diese Funktionalität nicht immer selber 
+programmieren müssen, reduziert sich für uns der Programmieraufwand markant.
 
 Das Java Collection Framework befindet sich im Paket java.util.
 
