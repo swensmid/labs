@@ -610,6 +610,21 @@ Now let's build our Order application from the web shop example all the way! We 
 
 Let's start with the creation of our application. Create the spring application like we have already seen in the previous chapters. And make a quick check if your application is able to start up!
 
+Try to already create folders for the different packages: order-entity, -control, -boundary:
+
+```s
+
+└── order
+    ├── boundary
+    │   └── OrderResource.java
+    ├── control
+    │   └── OrderService.java
+    └── entity
+        ├── Order.java
+        └── OrderRepository.java
+
+```
+
 {{% details title="Hint Task 3" %}}
 
 If you're stuck take a look at the first section {{% param sectionnumber %}}.4!
@@ -651,21 +666,167 @@ $ tar -xfv helloworld.tar
 {{% /details %}}
 
 
-##### {{% param sectionnumber %}}.4.4.3: Task 4: Database layer
+##### {{% param sectionnumber %}}.4.4.4: Task 4: Database entity
 
 To work with a database we need some additional dependencies to the project.
 
 Let us extend the dependency list in the `pom.xml` and add the following entries:
 
 ```xml
+    <dependencies>
+        <!-- COPY FROM HERE -->
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
 
+        <!-- -->
+    </dependencies>
+
+```
+
+These two dependencies allow us to start up a h2 database and add the support for JPA (Java Persistence API) to our application.
+
+Before we start implementing our services and data models, we need to configure the database connections. Copy the following into your `application.properties` file in your project:
+
+```s
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+
+spring.h2.console.enabled=true
 
 ```
 
 We first create a simple `Order` class in the `order.entity` package. The `Order` class should have the following properties:
 
+* id
 * name
-* adress
+* address
 * amount
 * date of order
+
+If you need a hint, here you go!
+
+{{% details title="Hint Task 4" %}}
+
+If you're stuck take a look at the first section {{% param sectionnumber %}}.3.3. The other properties can be represented by the following data types:
+
+* name: String
+* address: String
+* amount: Double
+* dataOfOrder: Instant
+
+The new fields do not need any annotations!
+
+{{% /details %}}
+
+If you are completely overwhelmed try the following solution:
+
+{{% details title="Solution Task 4" %}}
+
+```java
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.time.Instant;
+
+@Entity
+@Table(name = "orders")
+public class Order {
+
+    @Id
+    @GeneratedValue
+    Long id;
+    String name;
+    String address;
+    Double amount;
+    Instant dateOfOrder;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public Instant getDateOfOrder() {
+        return dateOfOrder;
+    }
+
+    public void setDateOfOrder(Instant dateOfOrder) {
+        this.dateOfOrder = dateOfOrder;
+    }
+}
+
+```
+
+{{% /details %}}
+
+Try to start up your application! If the application starts normally, you should be alright and ready to continue!
+
+
+##### {{% param sectionnumber %}}.4.4.5: Task 5: Database repository
+
+So far we have a web application and a data representation for our orders. To do anything with our data representation in our database, we need to access it. This is what the repository will be for. Create the interface `OrderRepository` in the `order.entity` package similar to the example in {{% param sectionnumber %}}.3.3!
+
+{{% details title="Solution Task 5" %}}
+
+```java
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface OrderRepository extends CrudRepository<Order, Long> {
+}
+
+
+```
+
+{{% /details %}}
+
+
+##### {{% param sectionnumber %}}.4.4.6: Task 6: Control / business logic layer
+
+In this task you will create a service bean to do the basic CRUD operations on the order entity. Take a look at the section {{% param sectionnumber %}}.3.2 and implement an `OrderService` on your own.
+
+To be continued...
