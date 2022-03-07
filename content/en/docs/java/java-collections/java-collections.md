@@ -99,7 +99,7 @@ folgendes enthält:
   Sortieren, von Objekten in Collections durchführen. Viele Methoden und Algorithmen sind für verschiedene Arten der
   Collections wiederverwendbar.
 
-![hierarchy](../../java-collections/hierarchy.png)
+![hierarchy3](../../java-collections/hierarchy3.png)
 
 Die Interfaces in der Abbildung (Collections, Set, List, Queue, Deque, Map ...)
 bilden die Grundlage des Collection Frameworks. Durch diese grundlegenden Interfaces bildet sich eine Hierarchie
@@ -216,6 +216,32 @@ Wrapper-Klassen verwendet werden. Wrapper-Klassen bieten eine Möglichkeit, prim
 char, ...) als Objekte zu verwenden:
 java.lang.Integer, java.lang.Double, java.lang.Boolean, java.lang.Character,..
 
+Schauen wir uns die folgenden Beispiele an, wo wir einer Liste mit Elementen vom Typ Integer das Element 3 hinzufügen:
+```java
+List<Integer> integerList = new ArrayList<>();
+integerList.add(Integer.valueOf(3));
+```
+Hier fügen wir der Liste das Integer-Objekt 3 hinzu, was gemäss der obigen Aussage korrekt ist.
+
+```java
+List<Integer> integerList = new ArrayList<>();
+integerList.add(3);
+```
+
+Hier fügen wir der Liste den int-Wert 3 als primitiven Datentyp hinzu.
+Obwohl wir den int-Wert 3 als primitiver Datentypen und nicht als Integer-Objekte zur Liste
+*integerList* hinzufügen, kompiliert dieser Code genau so ohne Fehler.
+*integerList* ist jedoch eine Liste von Integer-Objekten und nicht eine Liste von int-Werten,
+warum wir dann kein Fehler ausgegeben beim Kompilieren dieses Codes gemäss der obigen Aussage?
+
+Der Copmiler konvertiert den int-Wert zu einem Integer-Objekt und fügt dieses dann zur Liste *integerList* hinzu.
+Diese Konvertierung nennt man Autoboxing.
+Autoboxing ist die automatische Konvertierung zwischen den primitiven Datentypen zu Objekten ihrer entsprechenden Wrapper-Klassen, die der Java Compiler durchführt
+(beispielsweise int zu Integer, double zu Double, ect.).
+Wenn die Konvertierung in die andere Richtung erfolgt, nennt man dies Unboxing.
+
+Somit ist es nicht mehr nötig, dass wir dieses Autoboxing, wie im ersten Beispiel selber durchführen müssen.
+
 ### Einige Methoden vom Interface java.util.List
 
 ```java
@@ -283,17 +309,20 @@ void clear();
 ...
 ```
 
-Das Interface java.util.List im Collection Framework ist der Datentyp aller Listen, wobei in der abstrakten Klasse
+Das Interface java.util.List im Collection Framework ist der Datentyp der Listen, wobei in der abstrakten Klasse
 java.util.AbstractList die grundlegenden Funktionalitäten implementiert sind, sodass diese den verschiedenen konkreten
 Listen-Implementierungen weiter geerbt werden können.
 
-### java.util.ArrayList
+## java.util.ArrayList
 
 java.util.ArrayList erbt von der abstrakten Klasse java.util.AbstractList und liefert eine konkrete Implementierung für
 das Interface java.util.List. Die ArrayList Klasse implementiert alle Methoden des Interface java.util.List. Der
 Implementierung der ArrayList Klasse liegen Arrays zugrunde, weshalb diese konkrete Klasse auch *Array*List heisst.
+Die Klasse ArrayList enthält also ein normales Array. Wenn ein Element hinzugefügt wird, wird es in dieses Array eingefügt.
+Wenn das Array nicht groß genug ist, wird ein neues, größeres Array erstellt, um das alte zu ersetzen, d.h. die Kapazität
+des Arrays wird fortlaufend angepasst.
 
-#### Einige Methoden der Klasse java.util.ArrayList
+### Einige Methoden der Klasse java.util.ArrayList
 
 ```java
 /*
@@ -348,7 +377,7 @@ public boolean isEmpty()
 public boolean contains(Object o)
 ```
 
-#### IndexOutOfBoundsException
+### IndexOutOfBoundsException
 
 Die IndexOutOfBoundException wird geworfen, wenn versucht wird auf einen ungültigen Index innerhalb einer Collection
 zuzugreifen. Nehmen wir das Beispiel einer Liste mit der Grösse x. Dann sind die gültigen Indizes, um auf Elemente
@@ -361,9 +390,9 @@ Diese Exception kann bei den folgenden Methoden von oben geworfen werden:
 * public E remove(int index);
 * public E get(int index)
 
-#### Beispiele
+### Beispiele
 
-##### Beispiel 1
+#### Beispiel 1
 
 Im folgenden Beispiel erstellen wir zunächst eine leere ArrayList mit Elementen vom Typ String und wenden einige
 einfache ArrayList Methoden an und sehen, wie diese funktionieren (Das Hinzufügen von Elementen, das Entfernen von
@@ -411,7 +440,18 @@ public class Pets {
 
 ```
 
-##### Beispiel 2 (IndexOutOfBoundsException)
+Output:
+```
+[]
+[Cat, Hamster, Dog, Goldfish]
+[Cat, Hamster, Guinea pigs, Dog, Goldfish]
+[Cat, Hamster, Dog, Goldfish]
+[Cat, Hamster, Goldfish]
+[]
+
+```
+
+#### Beispiel 2 (IndexOutOfBoundsException)
 
 Dieses Beispiel soll zeigen wie das Werfen einer `java.lang.IndexOutOfBoundsException` verursacht werden könnte.
 
@@ -425,14 +465,25 @@ public class Hands {
             handlist.add("left hand");
             handlist.add("right hand");
 
-            System.out.println(handlist.get(2));
-// Exception in thread "main" java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+            System.out.println(handlist.get(2)); // Exception in thread "main" java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
         }
     }
 }
 ```
 
-##### Beispiel 3 (Iteration)
+
+Output:
+```
+Exception in thread "main" java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:459)
+	at ch.puzzle.arraylist.Hands.main(Hands.java:12)
+```
+
+#### Beispiel 3 (Iteration `for`-Schleife)
 
 Dieses Beispiel zeigt auf wie mit einer `for`-Schleife über die Elemente einer Liste iteriert werden kann.
 
@@ -457,10 +508,49 @@ class ListSum {
     }
 }
 ```
+Output:
+```
+Die Summe der Elemente beträgt 7875
 
-#### Übungen
+```
 
-##### Aufgabe 1
+#### Beispiel 4 (Iteration `while`-Schleife)
+
+Dieses Beispiel zeigt auf wie mit einer `while`-Schleife über die Elemente einer Liste iteriert werden kann.
+
+```java
+import java.util.Arrays;
+import java.util.List;
+
+public class WhileLoopExample {
+
+  public static void main(String[] args) {
+    String[] namesArray = { "Anna", "Simon", "Jan", "Nicole"};
+
+    // convert array to list
+    List<String> namesArrayList = Arrays.asList(namesArray);
+
+    int i = 0;
+    while (i < namesArrayList.size()) {
+      System.out.println(namesArrayList.get(i));
+      i++;
+    }
+  }
+}
+```
+
+Output:
+```
+Anna
+Simon
+Jan
+Nicole
+
+```
+
+### Übungen
+
+#### Aufgabe 1
 
 Versuche eine eigene ArrayList-Klasse (`MyArrayList<E>`) zu implementieren mithilfe von Arrays und verwende dabei keine
 anderen Collections-Klassen.
@@ -479,7 +569,7 @@ Implementiere die folgenden Methoden:
 Beachte, dass du die `toString()` Methode anpasst, sodass die MyArrayList-Listen beim printen übersichtlich
 dargestellt werden, wie im Beispiel oben: [Cat, Hamster, Dog, Goldfish]
 
-##### Aufgabe 2
+#### Aufgabe 2
 
 Erweitere deine MyArrayList Klasse. Implementiere zusätzlich die folgenden Methoden:
 
@@ -490,7 +580,7 @@ Erweitere deine MyArrayList Klasse. Implementiere zusätzlich die folgenden Meth
 * `boolean equals(Object o)`
 * `boolean remove(Object o)`
 
-##### Aufgabe 3
+#### Aufgabe 3
 
 Erstelle ein Programm, welches ein Zeugnis bestehend aus Modulen und deren Schlussnoten generiert und in der Konsole
 ausgibt.
@@ -514,7 +604,7 @@ Anforderungen an die `Modul`-Klasse:
 - Die Methode `printReportEntry()` soll den Zeugnis-Eintrag des Moduls generieren und ausgeben. Dieser ist im Format *<
   MODUL_NAME>* : *<MODUL_SCHLUSSNOTE>* auszugeben.
 
-### java.util.Stack
+## java.util.Stack
 
 java.util.Stack ist eine weitere Datenstruktur, bei der Elemente eingefügt und wieder entfernt werden können, wobei bei
 Stacks immer nur auf dasjenige Element zugegriffen werden kann, das zuletzt eingefügt wurde (Last-In-First-Out = LIFO).
@@ -526,7 +616,7 @@ Ein Stack kann leer sein oder kann beliebig wachsen. Mit der Methode `push(E ite
 Stack, d.h. man fügt es zu oberst hinzu.
 `pop()` entfernt das oberste Element vom Stack und gibt es zurück.
 
-![stack2](../../java-collections/stack2.jpeg)
+![stack2](../../java-collections/stack2.png)
 
 Die Methode `peek()` gibt das Element zu oberst auf dem Stack zurück, ohne den Stack zu verändern.
 
@@ -538,7 +628,7 @@ wird. Bei den Stacks hat das oberste Element des Stacks die Position 1 und das E
 Element darunter die Position 3, ect. Das heisst anders als bei den ArrayLists fangen wir nicht bei 0 an die Elemente zu
 indexieren, sondern bei 1.
 
-#### Alle Methoden der Klasse java.util.Stack
+### Alle Methoden der Klasse java.util.Stack
 
 ```java
 /*
@@ -577,9 +667,9 @@ public int search(Object o)
 
 ```
 
-#### Beispiel
+### Beispiel
 
-##### Beispiel 1
+#### Beispiel 1
 
 Im folgenden Beispiel erstellen wir zunächst ein leeres Stack mit Elementen vom Typ String und wenden die Methoden der
 Stack-Klasse an und sehen, wie diese funktionieren.
@@ -614,12 +704,27 @@ public class StackExample {
 }
 ```
 
+Output:
+```
+[blue, yellow, green, orange]
+Color on top: orange
+[blue, yellow, green, orange]
+Color on top: orange
+[blue, yellow, green]
+Is stack empty? false
+Size of stack: 3
+Position of element blue: 3
+Position of element yellow: 2
+Position of element green: 1
+
+```
+
 Im oberen Beispiel verwenden wir die Methode *size()*. Diese Methode ist nicht in der java.util.Stack-Klasse
 implementiert, wird jedoch von der Vector-Mutterklasse geerbt. Diese Vector-Klasse implementiert zusätzlich weitere
 Methoden des List-Interfaces, weshalb diese auch für Stacks verwendet werden können. Ein Stack bzw. die Datenstruktur des
 Stacks wird jedoch durch die oben aufgeführten Methoden ausgemacht.
 
-##### Beispiel 2 (EmptyStackException)
+#### Beispiel 2 (EmptyStackException)
 
 ```java
 import java.util.Stack;
@@ -630,6 +735,15 @@ public class StackExampleEmtpyStackExceptionA {
         colors.pop(); // Throws: Exception in thread "main" java.util.EmptyStackException
     }
 }
+```
+
+Output:
+```
+Exception in thread "main" java.util.EmptyStackException
+	at java.base/java.util.Stack.peek(Stack.java:102)
+	at java.base/java.util.Stack.pop(Stack.java:84)
+	at ch.puzzle.stack.StackExampleEmtpyStackExceptionA.main(StackExampleEmtpyStackExceptionA.java:8)
+
 ```
 
 ```java
@@ -643,9 +757,17 @@ public class StackExampleEmtpyStackExceptionB {
 }
 ```
 
-#### Übungen
+Output:
+```
+Exception in thread "main" java.util.EmptyStackException
+	at java.base/java.util.Stack.peek(Stack.java:102)
+	at ch.puzzle.stack.StackExampleEmtpyStackExceptionB.main(StackExampleEmtpyStackExceptionB.java:8)
 
-##### Aufgabe 1
+```
+
+### Übungen
+
+#### Aufgabe 1
 
 Versuche eine eigene Stack-Klasse (`MyStack<E>`) zu implementieren mithilfe von Arrays und verwende dabei keine anderen
 Collections-Klassen.
@@ -665,11 +787,369 @@ Implementiere die folgenden Methoden:
 Beachte, dass du die `toString()` Methode anpasst, sodass die MyStack-Stacks beim printen übersichtlich dargestellt
 werden, wie im Beispiel oben: [blue, yellow, green, orange]
 
-##### Aufgabe 2
+#### Aufgabe 2
 
 Erweitere deine MyStack Klasse. Implementiere zusätzlich die folgende Methode:
 
 * `public int search(Object o)`
+
+## java.util.Queue
+Eine Queue ist ähnlich einem Stack ein Behälter, in den Elemente eingefügt und nur in einer bestimmten Reihenfolge
+wieder entnommen werden können. Bei den Queues gilt das _First In First Out_ (=FIFO) Prinzip:
+Das Einfügen eines Elements erfolgt an einem Ende und heisst _EnQueue_. Die Entfernung eines Elements erfolgt dann am
+anderen Ende und heisst _DeQueue_. Das heisst also, das erste Elemente, das einer Queue eingefügt wird, ist das Element
+das zuerst der Queue entnommen werden kann.
+Queues können in ihrer Grösse beschränkt oder unbeschränkt sein.
+
+![queue2](../../java-collections/queue2.png)
+
+Auf Deutsch könnte man Queues als "Warteschlangen" bezeichnen.
+Wir kennen Warteschlangen von unserem Alltag:
+Beispielsweise vom Einkaufen, wo es eine Schlange von Kunden gibt, die an der Kasse auf einen Kassierer warten.
+Ein Kunde stellt sich zu hinterst an  und rückt "in der Warteschlange" vor, wenn vorherigen Kunden bedient wurden.
+
+![queue1](../../java-collections/queue1.png)
+
+### Alle Methoden vom Interface java.util.Queue
+
+```java
+/*
+ * Fügt das angegebene Element in diese Queue ein,
+ * wenn dies  möglich ist, ohne Kapazitätsbeschränkungen zu verletzen.
+ * Bei Erfolg wird true zurückgegeben und eine IllegalStateException ausgelöst wird, wenn derzeit
+ * kein Platz verfügbar ist.
+ */
+boolean add(E e);
+
+/*
+ * Fügt das angegebene Element in diese Queue ein,
+ * wenn dies  möglich ist, ohne Kapazitätsbeschränkungen zu verletzen.
+ * Bei Erfolg wird true zurückgegeben und sonst wird fals zurückgegeben.
+ *
+ * Bei der Verwendung einer Queue mit Kapazitätsbeschränkungen ist diese Methode in der Regel add(E e) vorzuziehen, 
+ * da bei Verletzung der Kapazitätsbeschränkungen keine Exception geworfen wird, sondern false zurückgegeben wird.
+ * 
+ */
+boolean offer(E e);
+
+/*
+ * Gibt das Element am Anfang des Queues zurück und entfernt es in der Queue.
+ * Falls die Queue leer ist, dann wird null zurückgegeben.
+ */
+E poll();
+
+/*
+ * Gibt das Element am Anfang des Queues zurück und entfernt es in der Queue.
+ * Diese Methode unterscheidet sich von poll() nur darin, dass sie eine Exception auslöst, wenn die Queue leer ist.
+ */
+E remove();
+
+/*
+ * Gibt das Element am Anfang des Queues zurück, entfernt es aber nicht.
+ * Gibt null zurück, wenn die Queue leer ist.
+ */
+E peek();
+
+/*
+ * Gibt das Element am Anfang des Queues zurück, entfernt es aber nicht.
+ * Diese Methode unterscheidet sich von peek() nur darin, dass sie eine Exception auslöst, wenn die Queue leer ist.
+ */
+E element();
+```
+## java.util.Deque
+Die Deque ist eine Queue mit zwei Enden, und Datenelemente können an beiden Enden hinzugefügt oder entfernt
+werden. Die Deque in Java wird über die das Interface java.util.Deque implementiert, die ein
+Subtyp des Interface java.util.Queue ist.
+
+![deque1](../../java-collections/deque1.png)
+
+
+### Alle Methoden vom Interface java.util.Deque
+
+```java
+
+/*
+ * Fügt das angegebene Element an den Anfang dieser Deque ein,
+ * wenn dies  möglich ist, ohne Kapazitätsbeschränkungen zu verletzen 
+ * und löst eine IllegalStateException aus, wenn derzeit kein Platz verfügbar ist.
+ */
+void addFirst(E e);
+
+/*
+ * Fügt das angegebene Element an das Ende dieser Deque ein,
+ * wenn dies  möglich ist, ohne Kapazitätsbeschränkungen zu verletzen
+ * und löst eine IllegalStateException aus, wenn derzeit kein Platz verfügbar ist.
+ */
+void addLast(E e);
+
+/*
+ * Fügt das angegebene Element an den Anfang dieser Deque ein,
+ * wenn dies  möglich ist, ohne Kapazitätsbeschränkungen zu verletzen.
+ * Bei Erfolg wird true zurückgegeben und sonst wird fals zurückgegeben.
+ *
+ * Bei der Verwendung einer Deque mit Kapazitätsbeschränkungen ist diese Methode in der Regel addFirst(E e) vorzuziehen, 
+ * da bei Verletzung der Kapazitätsbeschränkungen keine Exception geworfen wird, sondern false zurückgegeben wird.
+ * 
+ */
+boolean offerFirst(E e);
+
+/*
+ * Fügt das angegebene Element an das Ende dieser Deque ein,
+ * wenn dies  möglich ist, ohne Kapazitätsbeschränkungen zu verletzen.
+ * Bei Erfolg wird true zurückgegeben und sonst wird fals zurückgegeben.
+ *
+ * Bei der Verwendung einer Deque mit Kapazitätsbeschränkungen ist diese Methode in der Regel addLast(E e) vorzuziehen,
+ * da bei Verletzung der Kapazitätsbeschränkungen keine Exception geworfen wird, sondern false zurückgegeben wird.
+ *
+ */
+boolean offerLast(E e);
+
+/*
+ * Gibt das Element am Anfang des Deques zurück und entfernt es in der Deque.
+ * Falls die Deque leer ist, dann wird null zurückgegeben.
+ */
+E pollFirst();
+
+/*
+ * Gibt das Element am Ende des Deques zurück und entfernt es in der Deque.
+ * Falls die Deque leer ist, dann wird null zurückgegeben.
+ */
+E pollLast();
+
+/*
+ * Gibt das Element am Anfang des Deques zurück und entfernt es in der Deque.
+ * Diese Methode unterscheidet sich von pollFirst() nur darin, dass sie eine Exception auslöst, wenn die Deque leer ist.
+ */
+E removeFirst();
+
+/*
+ * Gibt das Element am Ende des Deques zurück und entfernt es in der Deque.
+ * Diese Methode unterscheidet sich von pollLast() nur darin, dass sie eine Exception auslöst, wenn die Deque leer ist.
+ */
+E removeLast();
+
+/*
+ * Gibt das Element am Anfang des Deques zurück, entfernt es aber nicht.
+ * Gibt null zurück, wenn die Deque leer ist.
+ */
+E peekFirst();
+
+/*
+ * Gibt das Element am Ende des Deques zurück, entfernt es aber nicht.
+ * Gibt null zurück, wenn die Deque leer ist.
+ */
+E peekLast();
+
+/*
+ * Gibt das Element am Anfang des Deques zurück, entfernt es aber nicht.
+ * Diese Methode unterscheidet sich von peekFirst() nur darin, dass sie eine Exception auslöst, wenn die Deque leer ist.
+ */
+E getFirst();
+
+/*
+ * Gibt das Element am Ende des Deques zurück, entfernt es aber nicht.
+ * Diese Methode unterscheidet sich von peekLast() nur darin, dass sie eine Exception auslöst, wenn die Deque leer ist.
+ */
+E getLast();
+
+/*
+ * Entfernt das erste Vorkommen des angegebenen Elements aus dieser Deque,
+ * sofern es vorhanden ist.  Wenn diese Deque das Element nicht enthält,
+ * bleibt sie unverändert.
+ */
+boolean removeFirstOccurrence(Object o);
+
+/*
+ * Entfernt das letzte Vorkommen des angegebenen Elements aus dieser Deque,
+ * sofern es vorhanden ist.  Wenn diese Deque das Element nicht enthält,
+ * bleibt sie unverändert.
+ */
+boolean removeLastOccurrence(Object o);
+
+// *** Queue methods ***
+...
+// *** Stack methods ***
+...
+
+```
+
+Im Interface java.util.Deque sind Queue und Stack Methoden ebenfalls deklariert.
+Deques, bei denen Elemente nur an einem Ende eingefügt und am nur anderen Ende entnommen werden,
+stellen wiederum Queues dar.
+Deques, bei denen Elemente an einem Ende eingefügt und am gleichen Ende entnommen werden,
+stellen Stacks dar.
+
+
+## java.util.LinkedList
+
+LinkedLists sind verkettete Listen. D.h. die Elemnte der Listen sind zu einander verkettet
+und nicht wie bei einer ArrayList an bestimmten Positionen platziert.
+
+java.util.LinkedList implementiert zwei Collection-Interfaces: java.util.List und java.util.Deque.
+Das bedeutet grundsätzlich, dass sie sowohl die Methoden des List-Interfaces implementiert, als auch die des Deque-Interfaces.
+
+Grundsätzlich gibt es zwei Arten von verketteten Listen: Einfach verkettete Listen und doppelt verkettete Liste.
+Wir werden beide anschauen, wie sie im Allgeimeinen aussehen.
+Die java.util.LinkedList ist die Implementierung einer doppelt verketteten Liste..
+
+### Einfach verkettete Listen
+
+Verkettete Listen bestehen aus Knoten (Nodes).
+Jeder Knoten enthält ein Element und eine Referenz auf einen weiteren Knoten, falls dieser vorhanden ist.
+Die Knoten sind somit über eine Referenz auf jeweils den nächsten Knoten miteinander verkettet.
+Die verkettete Liste enthält schlussendlich eine Referenz auf den ersten Knoten in der Liste.
+Der letzte Knoten enthält eine Referenz auf `null`.
+
+![linkedlist1](../../java-collections/linkedlist1.png)
+
+
+#### Element zu einer einfach verketten Liste hinzufügen
+
+Wird ein Knoten zu einer einfach verketteten Liste hinzugefügt, dann muss die Referenz des Knotens davor
+auf dieses Element zeigen und die Referenz des Elements, das hinzugefügt wird, muss auf den nächsten Knoten zeigen.
+So wird ein neuer Knoten zwischen zwei Knoten eingeschoben.
+
+![linkedlist2](../../java-collections/linkedlist2.png)
+
+#### Element zu aus einer einfach verketten Liste löschen
+
+Wird ein Knoten aus einer einfach verketteten Liste gelöscht, dann muss die Referenz des Knotens davor
+auf das zu löschende Element gelöscht werden und ersetzt werden mit der Referenz auf das nächste Element.
+Die Referenz des Elements, das gelöscht wird, auf das nächste Element muss auch gelöscht werden.
+So wird ein bestehender Knoten zwischen zwei Knoten entfernt.
+
+![linkedlist3](../../java-collections/linkedlist3.png)
+
+### Doppelt verkettete Listen
+
+In einer doppelt verketteten Liste haben die Knoten nicht nur eine Referenz auf den nächsten Knoten, sondern
+auch eine Referenzen auf den vorherigen Knoten.
+Eine mögliche Implementierung einder doppelt verketteten Liste könnte sein, dass der letzte Knoten,
+wie auch schon bei einer einfach verketteten Liste eine Referenz auf `null` hat als nächsten Knoten
+und der erste Knoten in einer doppelt verketteten Liste eine Referenz auf `null` hat als vorherigen Knoten.
+Zusätzlich hat man eine Referenz auf den Kopf der Liste, d.h. auf den ersten Knoten
+und eine Referenze auf den letzten Knoten der Liste.
+
+![linkedlist4](../../java-collections/linkedlist4.png)
+
+Das Einfügen und Entfernen funktioniert analog zu einer einfach verketteten Liste.
+
+#### Ein Element aus einer (einfach oder doppelt) verketteten Liste auslesen
+Wenn man ein Element in einer einfach verketteten Liste auslesen möchte, dann muss man vom ersten Knoten
+anfangen und ein Knoten nach dem anderen die Liste durchlaufen bis zu diesem Element. Im "schlimmsten" Fall
+muss über alle Knoten iteriert werden, wenn das Element, das mun sucht, im letzten Knoten ist.
+
+#### ArrayList vs. LinkedList
+
+Der Vorteil von LinkedLists besteht darin, dass Elemente schneller hinzugefügt und schneller aus der Liste
+gelöscht werden können im Vergleich zu ArrayLists.
+Bei einer LinkedList müssen nur die Referenzen zum "Vorgänger" und "Nachfolgen" angepasst werden, wenn man ein Element
+einfügen oder löschen möchte.
+Der Nachteil jedoch besteht darin, dass der Zugriff auf Elementen der Liste an einer bestimmten Position
+im Vergleich zu ArrayLists langsamer ist, da in diesem Fall die Liste bis zu dem entsprechenden Element
+durchlaufen werden muss.
+Die Entscheidung für einen bestimmten Listen-Typ ist also  abhängig von der Art und Anzahl
+der Zugriffe.
+
+### LinkedList-Klasse im Java
+Die LinkedList-Klasse im Java (java.util.LinkedList) implementiert eine doppelt verkettete Liste.
+Sie ist so implementiert, dass sie zwei Referenzen enthält, zum einen die Referenz
+zum ersten Knoten und zum anderen die Referenz zum zweiten Knoten:
+
+```java
+public class LinkedList<E>  extends AbstractSequentialList<E>  implements List<E>, Deque<E>, Cloneable, java.io.Serializable {
+  transient int size = 0;
+
+  /**
+   * Pointer to first node.
+   */
+  transient Node<E> first;
+
+  /**
+   * Pointer to last node.
+   */
+  transient Node<E> last;
+  
+  ...
+}
+
+```
+
+Ein Knoten also das Objekt _Node_ enthält das Element, welches einen generischen Typ hat (deshalb `Node<E>`),
+die Referenz auf den vorherigen Knoten, also auf ein Node-Objekt und eine Referenz auf den nächsten Knoten.
+Die statische Klasse `Node<E>` ist innerhalb der Klasse java.util.LinkedList definiert:
+
+```java
+    private static class Node<E> {
+        E item;
+        Node<E> next;
+        Node<E> prev;
+
+        Node(Node<E> prev, E element, Node<E> next) {
+            this.item = element;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
+```
+### Einige Methoden der Klasse java.util.LinkedList
+
+```java
+/*
+ * Konstruktor: Erstellt eine initial leere Liste
+ */
+public LinkedList()
+
+/*
+ * Gibt das erste Element der Liste zurück.
+ */
+public E getFirst()
+
+/*
+ * Gibt das letzte Element der Liste zurück.
+ */
+public E getLast()
+
+/*
+ * Entfernt das erste Element der Liste und gibt es zurück.
+ */
+public E removeFirst()
+
+/*
+ * Entfernt das letzte Element der Liste und gibt es zurück.
+ */
+public E removeLast()
+
+/*
+ * Fügt das angegeben Element an den Anfang der Liste ein.
+ */
+public void addFirst(E e)
+
+/*
+ * Fügt das angegebene Element an das Ende der Liste an.
+ */
+public void addLast(E e)
+...
+        
+// *** Queue and Deque methods ***
+        ...
+// *** Stack methods ***
+        ...
+// *** List methods ***
+        ...
+
+
+```
+
+### Beispiele
+
+Beispiele kommen noch
+
+### Übungen
+
+Übungen kommen noch
+
 
 
 Fortsetzung folgt...
