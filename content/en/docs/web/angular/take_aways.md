@@ -1,7 +1,7 @@
 ---
 title: "Heroes Tour: Take-aways"
 linkTitle: "Heroes Tour: Take-aways"
-weight: 1
+weight: 99
 date: 2021-11-01
 description: >
     Heroes Tour: Take-aways
