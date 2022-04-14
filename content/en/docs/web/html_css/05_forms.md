@@ -54,3 +54,92 @@ Fassen wir zusammen, weshalb wir das `label`-Element verwenden:
 ## Weitere Input-Elemente
 In HTML gibt es sehr viele weitere Input-Elemente. Eine grössere Liste findest du hier: https://www.w3schools.com/html/html_form_input_types.asp
 
+Kennen solltest du sicher die folgenden:
+* button
+* checkbox
+* date
+* email
+* file
+* hidden
+* number
+* password
+* radio
+
+Bitte schaue dir diese Elemente auf der obengennanten Seite rasch an. Du solltest wissen, wie diese Elemente aussehen und dass es sie gibt.
+
+## Formulare
+Nun solltest du im Stande sein, UI-Elemente (UI = User Interface -> Benutzerschnittstelle) mit HTML auf einer Seite anzuzeigen. Jetzt wäre es schön, wenn diese Daten auch irgendwie verwendet werden könnten.
+
+Theoretisch könntest du mit der Programmiersprache JavaScript direkt darauf zugreifen. Im Moment wollen wir aber bei HTML bleiben. Was wir mit HTML machen können, ist, die Werte an ein Backend (=Server) zu schicken.
+
+Als Backend verwenden wir die folgende URL: https://www.w3schools.com/action_page.php. Das ist eine spezielle Seite: sie zeigt die Daten an, die wir ihr schicken.
+
+Folgender Code zeigt ein Formular, das eine Email und ein Boolean beim Klick auf "Übermitteln" an das Backend schickt
+
+```html
+<form action="https://www.w3schools.com/action_page.php" method="get">
+    <label for="email">Email:</label><input type="email" name="email" id="email" required />
+    <br />
+    <input type="checkbox" name="interested" id="interested" />
+    <label for="interested">Newsletter abonnieren</label>
+    <br />
+    <input type="submit" value="Übermitteln" />
+</form>
+```
+
+Entscheidend ist hier das `<form>`-Tag. Das `action`-Attribut legt fest, wo die Daten hingeschickt werden. Die `method` legt fest, welche HTTP Request Method verwendet wird (GET oder POST). Bist du dir bei den Methoden nicht mehr so sicher, dann schaue bitte das "REST"-Kapitel hier noch einmal an: https://labs.it-ninjas.ch/docs/java/spring_introduction/#625-rest 
+
+Bei Formularen verwendet man meistens entweder GET oder POST. Der grosse Unterschied zwischen beiden Methoden ist, dass bei GET die Daten in der URL mitgegeben wird, wobei bei POST die Daten ein bisschen besser versteckt im HTTP Request Body mitgeschickt werden. Verschickst du ein Passwort, solltest du lieber POST verwenden, weil sonst das Passwort womöglich im Browser in der URL-Box einsehbar sein könnte. Die zu verwendende Methode wird meistens vom Backend festgelegt. Unser Backend unsterstützt beide Methoden.
+
+Wichtig für das Formular ist, dass es einen `submit`-Button besitzt. Dieser Submit-Button löst das Senden der Daten an die angegebene Url (`action`) mit der entsprechenden HTTP Request Method (`method`) aus. Probiere dieses Formular einmal aus. Du wirst sehen, dass etwas wie folgendes an den Server übermittel wird:
+
+```
+email=hello@world.com&interested=on 
+```
+
+Die Daten werden also als Text übermittelt. Die einzelnen Felder werden jeweils mit 
+```
+key=value
+```
+übermittelt und mit einem "&" miteinander kombiniert. Der `key` stammt jeweils vom `name`-Attribut der Input-Elemente.
+
+Im oben gezeigten Beispiel haben wir bereits eine kleine Validierung (Überprüfung der Eingaben) integriert:
+* Einerseits haben wir mit dem `required`-Attribut festgelegt, dass die Email-Box nicht leer sein darf beim Übermitteln.
+* Anderseits verbietet `type="email"` das Senden, wenn etwas anderes als eine Email-Adresse eingegeben wird. Aus diesem Grund verwenden wir lieber `type="email"` als `type="text"` für Email-Adressen, `type="tel"` für Telefonnummern und `type="date"` für ein Datum.
+
+### Ein komplexeres Beispiel
+Um zu zeigen, wie einfach Input-Elemente verwendet werden könnten, kannst du folgendes Beispiel ausprobieren:
+
+```html
+<h2>Login</h2>
+<form action="https://www.w3schools.com/action_page.php" method="get">
+    <label>email: <input type="email" name="your-email" /></label> <br />
+    <label for="pw">password:</label> <input type="password" name="your-password" id="pw" />
+    <br />
+    <label><input type="checkbox" name="stay" value="yes" />Stay logged in.</label>
+    <h4>Favorite Language?</h4>
+    <p>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+    </p>
+    <input type="submit" />
+</form>
+
+```
+
+### Aufgabe
+Nun bist du an der Reihe! Entwickle eine Registrierungsseite. Auf dieser Seite soll man mindestens folgendes angeben müssen:
+* Name
+* Email
+* Gewünschtes Passwort
+* Mögliche Interessen (mittels Checkboxen)
+* Geburtsdatum
+* Lieblingsfarbe
+* Geschlecht (mittels Radiobuttons)
+* Handynummer
+
+Als Backend kannst du "https://www.w3schools.com/action_page.php" (wie im vorherigen Beispiel) verwenden. Schaue nach dem Klick an, wie die Daten übermittelt worden sind. Wie sieht die URL im Browser aus? Variere die HTTP Request Method.
+
+Zeige deine Lösung dann einem Coach.
