@@ -216,6 +216,9 @@ Theoretisch reicht das Wissen über Flex-Boxen bereits, um eine ganze Seite zu l
 Hier kriegst du eine gute visuelle Übersicht über die einzelnen Flex-Properties: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties
 Hier sind von w3schools die wichtigsten Eingenschaften von Flex-Boxen beschrieben: https://www.w3schools.com/css/css3_flexbox.asp
 
+### Display-Flex-Properties üben
+Auf [Flexbox Froggy](https://flexboxfroggy.com/#de) kannst du dein Flexbox-Wissen auf lustige Art und Weise trainieren. Nimm dir rasch Zeit dafür.
+
 
 ### Autrag: Header-Navigation
 
