@@ -23,7 +23,7 @@ Are you a
     img {
         height: 1em;
     }
-    </style>
+</style>
 ```
 
 Dann wird das Bild wahrscheinlich nicht perfekt im Text ausgerichtet sein. In diesem Beispiel wollen wir das Bild ein bisschen nach unten verschieben. Dann kannst du das wie folgt machen:

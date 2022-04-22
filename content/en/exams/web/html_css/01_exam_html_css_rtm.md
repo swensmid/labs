@@ -96,3 +96,8 @@ Die Icons sind [hier](../icons/logos-rtm.zip) hinterlegt. <br>
     Hint: über allen hover-Elementen pointer<br>
     Schatten: box-shadow<br>
     Scrollleiste: overflow-y oder overflow-x<br>
+
+
+
+## Sobald du fertig bist...
+Wenn du fertig mit diesem Exam bist, zeige dein Resultat einem Coach. Nach dem Okay des Coaches kannst du mit der Theorie zu [JavaScript](../../../../docs/web/javascript/01_js_intro) beginnen. 
