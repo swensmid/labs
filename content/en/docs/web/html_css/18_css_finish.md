@@ -8,7 +8,10 @@ description: >
   Genug Theorie! Wage dich ans Exam!
 ---
 
-Prüfe zuerst dein Wissen mit dem [Exam](../../../../exams/web/html_css/01_exam_html_css_rtm).
+Bist du bereit für das Exam? Wenn nein, dann darfst du gerne den CSS-Teil aus dem [Intro to HTML and CSS - Udacity](https://www.udacity.com/course/intro-to-html-and-css--ud001)-Kurs anschauen.
+
+
+Wenn du bereit bist, dann prüfe dein Wissen mit dem [Exam](../../../../exams/web/html_css/01_exam_html_css_rtm).
 
 Anschliessend wirst du Code, der im Browser ausgeführt wird, schreiben lernen: JavaScript.
 
