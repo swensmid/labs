@@ -13,7 +13,7 @@ Wenn du eine Webanwendung schreibst, dann muss deine Website (=Frontend) wahrsch
 
 In den meisten Fällen werden hierfür HTTP-Requests verwendet, die du bereits kennengelernt hast (REST API bei Spring und HTML Forms).
 
-Um das einmal auszuprobieren, wollen wir eine API anfragen, die als Antwort zufällige "Fakten" über Chuck Norris zurückschickt. Wenn wir diese URL aufrufen (= HTTP GET), erhalten wir einen Witz in Form von JSON:
+Um das einmal auszuprobieren, wollen wir eine API anfragen, die als Antwort zufällige "Fakten" über Chuck Norris zurückschickt. Wenn wir diese URL im Browser aufrufen (= HTTP GET), erhalten wir einen Witz in Form von JSON:
 
 `GET https://api.chucknorris.io/jokes/random`
 
@@ -31,13 +31,13 @@ Um das einmal auszuprobieren, wollen wir eine API anfragen, die als Antwort zuf�
 
 Folglich interessiert uns der Wert für `"value"`.
 
-Damit für dich das Vorgehen verständlicher ist, führen wir Schritt für Schritt in der Browser-Konsole durch.
+Damit für dich das Vorgehen verständlicher ist, führen wir Schritt für Schritt in der Browser-Konsole aus.
 
-Die Abrage kannst du wie folgt durchführen:
+Die Abfrage kannst du wie folgt durchführen:
 ```javascript
 fetch('https://api.chucknorris.io/jokes/random', {method: 'get'})
 ```
-Du wirst sehen, dass dieser Funktionsaufruf ein `Promise {<pending>}` zurückgibt. Wir sehen, dass die Anfrage noch nicht vorbei ist (pending = anstehend). Dieses `Promise`-Objekt wird die Antwort enthalten, sobald die Antwort verfügbar ist. Da wir sowieso erst weiterfahren möchten, wenn die Antwort bereit ist, interessieren wir uns sowieso nicht für das `Promise`. Daher können wir einfach mit der Fortsetzung des Scriptes solange warten, bis wir die Antwort hätten. Das können wir wie folgt machen:
+Du wirst sehen, dass dieser Funktionsaufruf ein `Promise {<pending>}` zurückgibt. Wir sehen, dass die Anfrage noch nicht vorbei ist (pending = anstehend). Dieses `Promise`-Objekt wird die Antwort enthalten, sobald die Antwort verfügbar ist. Da wir sowieso erst weiterfahren möchten, wenn die Antwort bereit ist, interessieren wir uns  nicht für das `Promise`. Daher können wir einfach mit der Fortsetzung des Scriptes solange warten, bis wir die Antwort hätten. Das können wir wie folgt machen:
 
 ```javascript
 await fetch('https://api.chucknorris.io/jokes/random', {method: 'get'})
@@ -61,6 +61,7 @@ let response = await fetch('https://api.chucknorris.io/jokes/random', {method: '
 
 let jokeObject = await response.json()
 ```
+Dies ist notwendig, da die methodoe [json()](https://developer.mozilla.org/en-US/docs/Web/API/Response/json) asychron den response Stream ausliest. 
 
 Wenn du nun das `jokeObject` loggst (z.B. mit `console.log(jokeObject)`), siehst du, dass wir nun das gleiche Objekt, das wir ganz oben erwartet haben, erhalten haben.
 
@@ -69,8 +70,8 @@ Den Witz kannst du wie folgt ausgeben:
 console.log(jokeObject.value);
 ```
 
-### Anfrage in eine Funktion schmeissen
-Im Normalfall packt man solche Logik in eine Funktion. Den oberen Code könntest du wie folgt in eine Methode schmeissen:
+### Anfrage in eine Funktion einbinden
+Im Normalfall packt man solche Logik in eine Funktion. Den oberen Code könntest du wie folgt in eine Methode einbinden:
 
 ```javascript
 /** 
@@ -85,7 +86,7 @@ async function fetchJoke() {
 }
 ```
 
-Dir ist sicher aufgefallen, dass wir nun das `async`-Keyword vor `function` geschrieben haben. Dies ist erforderlich, wenn man `await` in einer Funktion brauchen möchte. Dieses `async`-Keyword führt auch dazu, dass die Methode ein Objekt vom Typ `Promise<...>` zurückgibt.
+Dir ist sicher aufgefallen, dass wir nun das `async`-Keyword vor `function` geschrieben haben. Dies ist erforderlich, wenn man `await` in einer Funktion verwenden möchte. Dieses `async`-Keyword führt auch dazu, dass die Methode ein Objekt vom Typ `Promise<...>` zurückgibt.
 
 Wenn du diese Funktion definiert hast, kannst du den Rückgabewert von ihr wie folgt loggen:
 ```javascript
@@ -103,7 +104,7 @@ fetchJoke().then(function(joke) {
 });
 ```
 
-Das kannst du auch schöner schreiben, funktioniert dann aber nicht mehr im Internet Explorer:
+Das kannst du auch schöner schreiben, funktioniert so aber nicht mehr im Internet Explorer:
 ```javascript
 fetchJoke().then(joke => console.log(joke));
 ```
@@ -118,7 +119,7 @@ Wir haben `fetchJoke()` asynchron aufgerufen, ohne auf die Antwort zu warten. De
 Solltest du fertig mit dieser Aufgabe sein, dann melde dich bei einem Coach.
 
 ### Zusatzauftrag: Eine andere API anbinden
-![task1](/images/task.png) Versuche eine andere API/Backend anzubinden und etwas auf einer Website anzuzeigen.
+![task1](/images/task.png) Versuche eine anderes API/Backend anzubinden und etwas auf einer Website anzuzeigen.
 
 ### Früher war alles besser?
 Die `fetch`-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selber: https://www.w3schools.com/xml/xml_http.asp 
