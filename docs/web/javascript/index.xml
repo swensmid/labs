@@ -1,1 +1,517 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – JavaScript</title><link>/docs/web/javascript/</link><description>Recent content in JavaScript on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/docs/web/javascript/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – JavaScript</title><link>/docs/web/javascript/</link><description>Recent content in JavaScript on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/docs/web/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: JavaScript: Einführung</title><link>/docs/web/javascript/01_js_intro/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/01_js_intro/</guid><description>
+&lt;p>Jetzt wird es Zeit, dass du auch Programm-Logik auf deiner Website einbauen kannst. Dafür lernst du gleich die Programmiersprache JavaScript kennen, die von praktisch allen bekannten Browsern unterstützt wird.&lt;/p>
+&lt;p>Damit du eine Übersicht über die Programmiersprache bekommst, kannst du z.B. &lt;a href="https://www.youtube.com/watch?v=DHjqpvDnNGE">dieses Video&lt;/a> schauen, ohne dass du den ersten Satz verstehen musst.&lt;/p>
+&lt;h2 id="motivation-für-javascript">Motivation für JavaScript&lt;/h2>
+&lt;p>Javascript hat sehr viele Verwendungen im Browser. Einerseits können Funktionen, ähnlich wie mit Java, prorammiert werden, sodass z.B. Berrechnungen ausgeführt werden können. Zudem kann aber auch direkt mit dem angezeigten Inhalt interagiert werden. So können Validierungen oder auch Anmiationen ausgeführt werden. Wenn du mal sehen willst, wie eine Website aussieht ohne JS kannst du dir &lt;a href="https://chrome.google.com/webstore/detail/disable-javascript/jfpdlihdedhlmhlbgooailmfhahieoem?hl=en">hier&lt;/a> eine Chrome extension herunterladne mit welcher du JS komplett ausschalten kanns.&lt;/p>
+&lt;p>Nun beginnen wir aber zuerst klein: Mit einem Button, der beim Klick eine MessageBox anzeigt.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;onClickMeClick()&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>&amp;gt;Klick mich&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">onClickMeClick&lt;/span>() {
+&lt;span style="color:#a6e22e">alert&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Klick mich nicht an!!&amp;#39;&lt;/span>);
+}
+&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Versuche zuerst, dieses Beispiel ohne Erläuterung zu verstehen.&lt;/p>
+&lt;details>
+&lt;summary>Erläuterung (click to expand)&lt;/summary>
+Zuerst hast du im HTML einen Button erstellt mit dem Text "Klick mich".
+&lt;p>Weiter unten siehts du ein &lt;code>&amp;lt;script&amp;gt;&lt;/code>-Element. Dort drin ist eine Funktion namens &lt;code>onClickMeClick()&lt;/code> definiert. Die Funktion ruft &lt;code>alert(message: string)&lt;/code> auf. Diese &lt;code>alert&lt;/code>-Funktion öffnet eine MessageBox mit der übergebenen Nachricht.&lt;/p>
+&lt;p>Wie du siehst, wird die selbst definierte Funktion beim Klick auf den Button aufgerufen. Dies passiert, weil du diesen Aufruf im &lt;code>onclick&lt;/code>-Attribut des &lt;code>&amp;lt;button&amp;gt;&lt;/code>s definiert hast. Beachte in diesem Beispiel, dass nicht die Funktion sondern deren Aufruf drin steht. Im Prinzip wird beim Button-Klick der Wert des &lt;code>onclick&lt;/code>-Attributs ausgeführt. Theoretisch könntest du auch direkt &lt;code>onclick=&amp;quot;alert('Klick mich nicht an!!')&amp;quot;&lt;/code> schreiben.&lt;/p>
+&lt;/details>
+&lt;h2 id="javascript-einbinden">JavaScript einbinden&lt;/h2>
+&lt;p>Wie du im oberen Beispiel gesehen hast, wird Javascript via Script Tag eingebunden. Dein Code kann entweder direkt im Script Tag geschrieben werden:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;my Js Code&amp;#39;&lt;/span>);
+&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Du kannst aber dein Code auch in einem separatem .js File haben und via Script Tag referenzieren:&lt;/p>
+&lt;p>&lt;strong>index.html&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;mycode.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>mycode.js&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;my Js Code&amp;#39;&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Die zweite Variante ist meist sauberer, da Code und Html sauber aufgeteilt wird. Bei unseren Übungen wirst du aber meist direkt im Script Tag arbeite können ohne separates JS File.&lt;/p></description></item><item><title>Docs: JavaScript: Konsole</title><link>/docs/web/javascript/02_js_browser_tools/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/02_js_browser_tools/</guid><description>
+&lt;h2 id="eine-nachricht-loggen">Eine Nachricht loggen&lt;/h2>
+&lt;p>In Java hast du Text mit &lt;code>System.out.println(...)&lt;/code>, in C# mit &lt;code>Console.WriteLine(...)&lt;/code> und in Python vielleicht mit &lt;code>print(...)&lt;/code> geloggt. Genau das gibt es auch in JavaScript.&lt;/p>
+&lt;p>In einer HTML-Datei kannst du folgendes hinzufügen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+...
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;hello world&amp;#39;&lt;/span>);
+&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Um diese Meldung sehen zu können, musst du die Konsole des Browsers öffnen. Dies kannst du machen, indem du die Entwickler-Tools des Browsers öffnest (z.B. mit der [F12]-Taste). Anschliessend navigierst du zum &amp;ldquo;Konsole&amp;rdquo;-Tab. Nun solltest du die geloggte Nachricht entdecken können:&lt;/p>
+&lt;p>&lt;img src="../images/console.png" alt="console">&lt;/p>
+&lt;h2 id="code-direkt-im-browser-ausführen">Code direkt im Browser ausführen&lt;/h2>
+&lt;p>Du kannst Code direkt in der Konsole des Browsers ausführen lassen. Klicke hierfür in das Eingabefeld unterhalt deiner geloggten Nachricht. Dort kannst du dann folgendes reinkopieren:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span>){
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">i&lt;/span>);
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Nun sollten in deiner Konsole die Zahen 0 - 9 geloggt worden sein. Den Code solltest du bereits seit deiner Einführung in Java verstehen. Das einzig neue hier ist, dass du hier die Nummer-Variable mit &lt;code>let&lt;/code> deklariert hast.&lt;/p>
+&lt;p>Du hast gesehen, wie einfach du Code auf der Website mit Hilfe der Konsole ausführen kannst. Die Konsole ist ein sehr mächtiges Tool, das die Entwicklung mit JavaScript extrem vereinfachen kann. Bevor du Code in der IDE (also deiner Entwicklungsumgebung) eingibst, kannst du vorher in der Konsole ausprobieren, ob dein Code zum gewünschten Resultat führt.&lt;/p></description></item><item><title>Docs: Mit JavaScript das DOM verändern</title><link>/docs/web/javascript/03_js_dom_manipulation/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/03_js_dom_manipulation/</guid><description>
+&lt;h2 id="auf-dom-elemente-zugreifen">Auf DOM-Elemente zugreifen&lt;/h2>
+&lt;p>Eines der häufigsten Anwendungszwecke von JavaScript ist es, mit Elementen auf einer Website zu interagieren.&lt;/p>
+&lt;p>Nehmen wir folgendes Code-schnipsel als Beispiel:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;message-div&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;This page has &amp;lt;&lt;span style="color:#f92672">span&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;likes-count&amp;#34;&lt;/span>&amp;gt;0&amp;lt;/&lt;span style="color:#f92672">span&lt;/span>&amp;gt; likes.&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>&amp;gt;+1&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Mit JavaScript möchten wir, dass sich die Zahl erhöht im &lt;code>&amp;lt;span&amp;gt;&lt;/code>. In einem ersten Schritt versuchen wir, auf das &lt;code>&amp;lt;span&amp;gt;&lt;/code>-Element zuzugreifen und eine andere Zahl reinzuschreiben. Das probieren wir direkt in der Konsole des Browsers aus:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">span&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;likes-count&amp;#39;&lt;/span>);
+&lt;span style="color:#a6e22e">span&lt;/span>.&lt;span style="color:#a6e22e">textContent&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">999&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Du wirst sehen, dass sich die Zahl im &lt;code>&amp;lt;span&amp;gt;&lt;/code> tatsächlich verändert hat. Probieren wir aber zuerst, den Code zu verstehen!&lt;/p>
+&lt;details>
+&lt;summary>Erläuterung (click to expand)&lt;/summary>
+&lt;ul>
+&lt;li>&lt;code>document&lt;/code> ist ein Objekt, das uns im Browser zur Verfügung steht. Dieses Objekt repräsentiert das DOM. Mit diesem &lt;code>document&lt;/code>-Objekt können wir auf die Elemente im Browser zugreifen.&lt;/li>
+&lt;li>&lt;code>getElementById(...)&lt;/code> ist eine Methode auf diesem &lt;code>document&lt;/code>-Objekt. Diese Methode sucht auf der aktuellen Seite ein Element, das die übergebene &lt;code>id&lt;/code> besitzt.&lt;/li>
+&lt;li>Das gefundene Element möchten wir in einer Variable namens &lt;code>span&lt;/code> zwischenspeichern.&lt;/li>
+&lt;li>&lt;code>textContent&lt;/code> ist ein Feld (= ein Attribut) auf diesem Element, das den Inhalt des Elements (als Text) repräsentiert. Diesen Wert können wir einfach so kopieren.&lt;/li>
+&lt;/ul>
+&lt;/details>
+&lt;p>Mit diesem Code konnten wir die Anzahl Likes auf eine andere Zahl setzen. Nun möchten wir aber, dass sich diese Anzahl um genau 1 erhöht. Dafür benötigen wir noch zwei Zwischenschritte:&lt;/p>
+&lt;ol>
+&lt;li>Die aktuelle Zahl auslesen&lt;/li>
+&lt;li>Diese Zahl von einem String in eine Nummer konvertieren&lt;/li>
+&lt;li>Und die erhöhte Zahl ins &lt;code>&amp;lt;span&amp;gt;&lt;/code> schreiben.&lt;/li>
+&lt;/ol>
+&lt;p>Versuche dies zu implementieren, bevor du dier die Lösung ansiehst.&lt;/p>
+&lt;details>
+&lt;summary>Lösung (click to expand)&lt;/summary>
+Das könnte ungefähr so aussehen:
+```javascript
+let span = document.getElementById('likes-count');
+let likes = parseInt(span.textContent);
+likes++;
+span.textContent = likes;
+```
+&lt;p>Neu dazugekommen ist&lt;/p>
+&lt;ul>
+&lt;li>der Aufruf von &lt;code>parseInt(...)&lt;/code>. Diese Methode ist standartmässig Global verfügbar und kann somit ohne imports verwendet werden. Diese Methode versucht, den übergeben Wert in eine Ganzzahl (Integer) zu konvertieren.&lt;/li>
+&lt;li>&lt;code>likes++&lt;/code> bedeutet gleich viel wie &lt;code>likes = likes + 1&lt;/code>. Damit erhöhen wir die &lt;code>likes&lt;/code>-Variable also um 1.&lt;/li>
+&lt;li>Mit &lt;code>span.textContent = likes&lt;/code> setzen wir den Text des &lt;code>span&lt;/code>s neu. Eine Umwandlung in String ist nicht notwendig.&lt;/li>
+&lt;/ul>
+&lt;p>Versuche das ganze nun mal ohne die parseInt Methode.
+Du wirst sehen, dass es trotzdem funktioniert. Das liegt daran, dass JS keine &amp;ldquo;starke&amp;rdquo; typen (strong types) kennt. Sprich der JS-Interpreter versucht auch ein string als zahl zu verwenden und wenn es sich wirklich um eine Zahl handlet funktioniert das auch:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js"> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">onLikeClick&lt;/span>() {
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">span&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;likes-count&amp;#39;&lt;/span>);
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">likes&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">span&lt;/span>.&lt;span style="color:#a6e22e">textContent&lt;/span>;
+&lt;span style="color:#a6e22e">likes&lt;/span>&lt;span style="color:#f92672">++&lt;/span>;
+&lt;span style="color:#a6e22e">span&lt;/span>.&lt;span style="color:#a6e22e">textContent&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">likes&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Dies ist aber sehr fragil, daher ist es good practice, die variabeln trotzdem in die korrekten typen umzuwandeln.
+Gut zu wissen, ist das sich Javascript teilweise etwas unerwartet verhält.&lt;/p>
+&lt;/details>
+&lt;h3 id="manipulation-beim-button-klick-ausführen-lassen">Manipulation beim Button-Klick ausführen lassen&lt;/h3>
+&lt;p>Nun wollen wir noch, dass das, was wir vorher programmiert haben, dann passiert, wenn der User auf den Button klickt. Ändere die HTML-Seite wie folgt ab:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">...
+&amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;onLikeClick()&amp;#34;&lt;/span>&amp;gt;+1&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">onLikeClick&lt;/span>() {
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">span&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;likes-count&amp;#39;&lt;/span>);
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">likes&lt;/span> &lt;span style="color:#f92672">=&lt;/span> parseInt(&lt;span style="color:#a6e22e">span&lt;/span>.&lt;span style="color:#a6e22e">textContent&lt;/span>);
+&lt;span style="color:#a6e22e">likes&lt;/span>&lt;span style="color:#f92672">++&lt;/span>;
+&lt;span style="color:#a6e22e">span&lt;/span>.&lt;span style="color:#a6e22e">textContent&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">likes&lt;/span>;
+}
+&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+...
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="ein-neues-element-hinzufügen">Ein neues Element hinzufügen&lt;/h2>
+&lt;p>Manchmal möchtes du ein neues Element auf der Website generieren lassen.&lt;/p>
+&lt;p>Im kommenden Beispiel möchten wir so viele Bilder von &amp;ldquo;Thumbs Ups&amp;rdquo; (also 👍) wie Likes anzeigen.&lt;/p>
+&lt;p>Um das zu erzielen, kannst du die &lt;code>onLikeClick&lt;/code>-Funktion wie folgt erweitern:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#75715e">// draw a thumb up for every like:
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">imgHtml&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;lt;img src=&amp;#34;https://upload.wikimedia.org/wikipedia/commons/c/ce/Emoji_u1f44d.svg&amp;#34; alt=&amp;#34;like&amp;#34; height=&amp;#34;25&amp;#34;&amp;gt;&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">insertHtml&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#a6e22e">likes&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;span style="color:#a6e22e">insertHtml&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#a6e22e">imgHtml&lt;/span>;
+}
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">messageDiv&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">querySelector&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;div#message-div&amp;#39;&lt;/span>);
+&lt;span style="color:#a6e22e">messageDiv&lt;/span>.&lt;span style="color:#a6e22e">innerHTML&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">insertHtml&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Dieser Code macht folgendes:&lt;/p>
+&lt;ul>
+&lt;li>für jedes Like, wird im &lt;code>&amp;lt;div id=&amp;quot;message-div&amp;quot;&amp;gt;&lt;/code> folgendes Element/Bild hinzugefügt: &lt;code>&amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/c/ce/Emoji_u1f44d.svg&amp;quot; alt=&amp;quot;like&amp;quot; height=&amp;quot;25&amp;quot;&amp;gt;&lt;/code>&lt;/li>
+&lt;li>Das HTML für dieses Bild haben wir zuerst in einer Konstante (&lt;code>const&lt;/code>) gespeichert. &lt;code>const&lt;/code> ist das Gleiche wie &lt;code>let&lt;/code> mit dem Unterschied, dass sich dieser Wert nie verändern darf innerhalb dieser Methode. Wenn sich eine Variable nie im definierten Block verändert, so wird empfohlen, &lt;code>const&lt;/code> statt &lt;code>let&lt;/code> zu verwenden.&lt;/li>
+&lt;li>Die String-Variable &lt;code>insertHtml&lt;/code> brauchen wir als Zwischenspeicher, in welcher wir den HTML string zusammensetzen, welche wir später im HTML/DOM haben möchten.&lt;/li>
+&lt;li>Die &lt;code>for&lt;/code>-Schlaufe wird so oft durchlaufen wie es Likes gab. Das bedutet, dass pro Like ein Bild ins &lt;code>insertHtml&lt;/code> kopiert wird.&lt;/li>
+&lt;li>Anschliessend holen wir uns das &lt;code>&amp;lt;div id=&amp;quot;message-div&amp;quot;&amp;gt;&lt;/code> via JavaScript. Wir hätten hier auch &lt;code>document.getElementById('message-div')&lt;/code> verwenden können. Aber &lt;code>querySelector&lt;/code> funktioniert hier auch. Die &lt;code>querySelector&lt;/code>-Methode akzeptiert ein CSS-Selektor und gibt dann das Element zurück, das damit angesprochen wird. In diesem Beispiel war &lt;code>div#message-div&lt;/code> ein möglicher CSS-Selektor (wie &lt;code>#message-div&lt;/code> eigentlich auch), der das &lt;code>&amp;lt;div id=&amp;quot;message-div&amp;quot;&lt;/code> anspricht.&lt;/li>
+&lt;li>Als letztes verändern wir das HTML dieses &lt;code>&amp;lt;div&amp;gt;&lt;/code>s, indem wir das &lt;code>innerHTML&lt;/code>-Feld neu setzen.&lt;/li>
+&lt;/ul>
+&lt;p>Super, nun hast du schon ein paar Dinge auf deiner Seite mit JavaScript dynamisch veräandert.&lt;/p>
+&lt;p>Bitte denke daran, dass das Verwenden von &lt;code>.innerHTML&lt;/code> als eine Art &amp;ldquo;Holzfäller-Methode&amp;rdquo; angesehen wird. JavaScript bietet hierfür bereits eine elegantere Möglichkeit, die aber oft viel zu umständlich ist. Bitte schaue dir diese trotzdem kurz an: &lt;a href="https://www.w3schools.com/js/js_htmldom_nodes.asp">https://www.w3schools.com/js/js_htmldom_nodes.asp&lt;/a>&lt;/p></description></item><item><title>Docs: JavaScript trainieren</title><link>/docs/web/javascript/04_js_training/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/04_js_training/</guid><description>
+&lt;h2 id="übung-macht-den-meiser">Übung macht den Meiser&lt;/h2>
+&lt;p>Bevor wir mit fortgeschrittenen JavaScript-Technologien weiterfahren, sollst du die Basics von JavaScript verstanden haben.&lt;/p>
+&lt;p>Hierfür empfehlen wir dir folgenden Online-Kurs: &lt;a href="https://www.codecademy.com/learn/introduction-to-javascript">https://www.codecademy.com/learn/introduction-to-javascript&lt;/a>&lt;/p>
+&lt;p>Dieser Kurs ist Grundlegend, vorallem da Javascript und Java im Syntax teilweise sehr ähnlich sind. Daher sollte ein grosser Teil für dich Repetition von Java sein.&lt;/p>
+&lt;p>Möchtest du z.B. zur nächsten Aufgabe ohne die aktuelle lösen zu müssen, dann kannst du 2x auf &amp;ldquo;Run&amp;rdquo; klicken, dann auf &amp;ldquo;View Solution&amp;rdquo; und anschliessend auf &amp;ldquo;Replace with Solution&amp;rdquo;.&lt;/p>
+&lt;p>Eine Übersicht über die Themen erhälst du via Klick oben links auf &amp;ldquo;Course Menu&amp;rdquo;.&lt;/p>
+&lt;p>Schaue, dass du mindestens folgendes verstanden hast und anwenden kannst:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Kaptiel&lt;/th>
+&lt;th>Das musst du anwenden können&lt;/th>
+&lt;th>Bemerkungen&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Introduction&lt;/td>
+&lt;td>Variablen definieren, Unterschied {var, let, const}, mathematische Operationen, typeof-Operator, String-Methoden wie {trim, startsWith, &amp;hellip;}&lt;/td>
+&lt;td>Prüfe zudem dein Wissen mit dem &amp;ldquo;Introduction to JavaScript&amp;rdquo;-Quiz&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Conditionals&lt;/td>
+&lt;td>if/else/switch statements, Vergleichoperatoren, du kennst truthy und falsy Werte&lt;/td>
+&lt;td>Löse auch ein paar Aufgaben und den Test &amp;ldquo;Conditional Statements&amp;rdquo; solltest du fehlerfrei abschliessen können.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Functions&lt;/td>
+&lt;td>Funktions-Definition, -Aufruf, Default-Parameter, Arrow Functions, Function Expressions, Globaler und Block-Scope&lt;/td>
+&lt;td>Die Tests sind leider nicht mehr in der konstenlosen Version inbegriffen.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Arrays&lt;/td>
+&lt;td>Arrays/Listen erstellen, updaten, Länge bestimmen, durch Array durch iterieren&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Loops&lt;/td>
+&lt;td>Du kannst &lt;code>for&lt;/code>-, &lt;code>while&lt;/code>- und &lt;code>do while&lt;/code>-Schlaufen benutzen und mit &lt;code>break&lt;/code> kontrolliert abbrechen.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Iterators&lt;/td>
+&lt;td>Functions as Data and Parameters, Iteratoren wie .forEach, .map, .filter, .reduce anwenden können&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Objects&lt;/td>
+&lt;td>Objekte erstellen mit Properties und Methoden, Pass By Reference verstehen, durch Objekte durchiterieren, Advanced Objects mit dem &lt;code>this&lt;/code>-Keyword, Getter und Setter&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Asynchrone Anfragen</title><link>/docs/web/javascript/05_js_async/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/05_js_async/</guid><description>
+&lt;h2 id="webanfrage-mit-javascript">Webanfrage mit JavaScript&lt;/h2>
+&lt;p>Wenn du eine Webanwendung schreibst, dann muss deine Website (=Frontend) wahrscheinlich Daten von (d)einem Backend abfragen.&lt;/p>
+&lt;p>In den meisten Fällen werden hierfür HTTP-Requests verwendet, die du bereits kennengelernt hast (REST API bei Spring und HTML Forms).&lt;/p>
+&lt;p>Um das einmal auszuprobieren, wollen wir eine API anfragen, die als Antwort zufällige &amp;ldquo;Fakten&amp;rdquo; über Chuck Norris zurückschickt. Wenn wir diese URL im Browser aufrufen (= HTTP GET), erhalten wir einen Witz in Form von JSON:&lt;/p>
+&lt;p>&lt;code>GET https://api.chucknorris.io/jokes/random&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;categories&amp;#34;&lt;/span>: [],
+&lt;span style="color:#f92672">&amp;#34;created_at&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2020-01-05 13:42:20.262289&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;icon_url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://assets.chucknorris.host/img/avatar/chuck-norris.png&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;6F3bv9fIRUGCPTcma6Je1w&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;updated_at&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2020-01-05 13:42:20.262289&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://api.chucknorris.io/jokes/6F3bv9fIRUGCPTcma6Je1w&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;value&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Albert Einstein&amp;#39;s hair used to be neatly combed...until the day he met Chuck Norris.&amp;#34;&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Folglich interessiert uns der Wert für &lt;code>&amp;quot;value&amp;quot;&lt;/code>.&lt;/p>
+&lt;p>Damit für dich das Vorgehen verständlicher ist, führen wir Schritt für Schritt in der Browser-Konsole aus.&lt;/p>
+&lt;p>Die Abfrage kannst du wie folgt durchführen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;https://api.chucknorris.io/jokes/random&amp;#39;&lt;/span>, {&lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;get&amp;#39;&lt;/span>})
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Du wirst sehen, dass dieser Funktionsaufruf ein &lt;code>Promise {&amp;lt;pending&amp;gt;}&lt;/code> zurückgibt. Wir sehen, dass die Anfrage noch nicht vorbei ist (pending = anstehend). Dieses &lt;code>Promise&lt;/code>-Objekt wird die Antwort enthalten, sobald die Antwort verfügbar ist. Da wir sowieso erst weiterfahren möchten, wenn die Antwort bereit ist, interessieren wir uns nicht für das &lt;code>Promise&lt;/code>. Daher können wir einfach mit der Fortsetzung des Scriptes solange warten, bis wir die Antwort hätten. Das können wir wie folgt machen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;https://api.chucknorris.io/jokes/random&amp;#39;&lt;/span>, {&lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;get&amp;#39;&lt;/span>})
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Das &lt;code>await&lt;/code> führt dazu, dass das Script erst weitergeht, wenn die Antwort da ist. Zusätzlich wird die Antwort automatisch aus dem &lt;code>Promise&lt;/code>-Objekt entpackt und wir erhalten so direkt ein Objekt vom Typ &lt;code>Response&lt;/code>.&lt;/p>
+&lt;p>Theoretisch haben wir nun die Daten, die wir wollen. Da wir als Antwort ein JSON-Objekt als Antwort erwarten, können wir direkt die Antwort als JavaScript-Objekt anfordern:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;https://api.chucknorris.io/jokes/random&amp;#39;&lt;/span>, {&lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;get&amp;#39;&lt;/span>});
+&lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">json&lt;/span>();
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Komischerweise erhalten wir wieder ein &lt;code>Promise {&amp;lt;pending&amp;gt;}&lt;/code>. Was müssen wir machen, um das JSON aus diesem Promise zu kriegen?&lt;/p>
+&lt;p>Genau: Wir müssen es &lt;code>await&lt;/code>en:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;https://api.chucknorris.io/jokes/random&amp;#39;&lt;/span>, {&lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;get&amp;#39;&lt;/span>});
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">jokeObject&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">json&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Dies ist notwendig, da die methodoe &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Response/json">json()&lt;/a> asychron den response Stream ausliest.&lt;/p>
+&lt;p>Wenn du nun das &lt;code>jokeObject&lt;/code> loggst (z.B. mit &lt;code>console.log(jokeObject)&lt;/code>), siehst du, dass wir nun das gleiche Objekt, das wir ganz oben erwartet haben, erhalten haben.&lt;/p>
+&lt;p>Den Witz kannst du wie folgt ausgeben:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">jokeObject&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="anfrage-in-eine-funktion-einbinden">Anfrage in eine Funktion einbinden&lt;/h3>
+&lt;p>Im Normalfall packt man solche Logik in eine Funktion. Den oberen Code könntest du wie folgt in eine Methode einbinden:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Requests a random Chuck Norris joke and returns it.
+&lt;/span>&lt;span style="color:#75715e"> * @return {Promise&amp;lt;string&amp;gt;} a random Chuck Norris joke.
+&lt;/span>&lt;span style="color:#75715e">*/&lt;/span>
+&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">fetchJoke&lt;/span>() {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">fetch&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;https://api.chucknorris.io/jokes/random&amp;#39;&lt;/span>, { &lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;get&amp;#39;&lt;/span> })
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">jokeObject&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">json&lt;/span>();
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">jokeObject&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Dir ist sicher aufgefallen, dass wir nun das &lt;code>async&lt;/code>-Keyword vor &lt;code>function&lt;/code> geschrieben haben. Dies ist erforderlich, wenn man &lt;code>await&lt;/code> in einer Funktion verwenden möchte. Dieses &lt;code>async&lt;/code>-Keyword führt auch dazu, dass die Methode ein Objekt vom Typ &lt;code>Promise&amp;lt;...&amp;gt;&lt;/code> zurückgibt.&lt;/p>
+&lt;p>Wenn du diese Funktion definiert hast, kannst du den Rückgabewert von ihr wie folgt loggen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">fetchJoke&lt;/span>());
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="await-umgehen">await umgehen&lt;/h3>
+&lt;p>Du wirst in die Situation kommen, wo du eine Antwort auf eine asynchrone Anfrage erhälst, aber kein &lt;code>await&lt;/code> brauchen darfst, weil du dich nicht in einer mit &lt;code>async&lt;/code> gekennzeichneten Funktion befindest.&lt;/p>
+&lt;p>Statt ein Promise zu awaiten, kannst du auch definieren, dass eine bestimmte Aktion durchgeführt werden soll, sobald die Antwort da ist. Dies kannst du mit &lt;code>Promise.then(...)&lt;/code> machen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">fetchJoke&lt;/span>().&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#66d9ef">function&lt;/span>(&lt;span style="color:#a6e22e">joke&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">joke&lt;/span>);
+});
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Das kannst du auch schöner schreiben, funktioniert so aber nicht mehr im Internet Explorer:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">fetchJoke&lt;/span>().&lt;span style="color:#a6e22e">then&lt;/span>(&lt;span style="color:#a6e22e">joke&lt;/span> =&amp;gt; &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#a6e22e">joke&lt;/span>));
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Was genau haben wir hier gemacht?&lt;/p>
+&lt;p>Wir haben &lt;code>fetchJoke()&lt;/code> asynchron aufgerufen, ohne auf die Antwort zu warten. Deswegen erhalten wir ein Promise-Objekt. Promise-Objekte enthalten eine &lt;code>then&lt;/code>-Methode. Bei dieser Methode kannst du eine Funktion übergeben. Die übergebene Funktion wird aufgerufen, sobald die Antwort erhalten wurde.&lt;/p>
+&lt;h3 id="auftrag-seite-mit-joke">Auftrag: Seite mit Joke&lt;/h3>
+&lt;p>&lt;img src="/images/task.png" alt="task1"> Schreibe eine Website, die auf Knopfdruck einen solchen Witz anzeigt.&lt;/p>
+&lt;p>Solltest du fertig mit dieser Aufgabe sein, dann melde dich bei einem Coach.&lt;/p>
+&lt;h3 id="zusatzauftrag-eine-andere-api-anbinden">Zusatzauftrag: Eine andere API anbinden&lt;/h3>
+&lt;p>&lt;img src="/images/task.png" alt="task1"> Versuche eine anderes API/Backend anzubinden und etwas auf einer Website anzuzeigen.&lt;/p>
+&lt;h3 id="früher-war-alles-besser">Früher war alles besser?&lt;/h3>
+&lt;p>Die &lt;code>fetch&lt;/code>-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selber: &lt;a href="https://www.w3schools.com/xml/xml_http.asp">https://www.w3schools.com/xml/xml_http.asp&lt;/a>&lt;/p></description></item><item><title>Docs: Timeouts und Intervalle</title><link>/docs/web/javascript/06_js_timeout_and_interval/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/06_js_timeout_and_interval/</guid><description>
+&lt;h2 id="code-verzögert-ausführen-settimeout">Code verzögert ausführen: setTimeout(&amp;hellip;)&lt;/h2>
+&lt;p>Manchmal muss eine Aktion verzögert ausgeführt werden. Dies kannst du ganz einfach mit der Funktion &lt;code>setTimeout(callback, time)&lt;/code> realisieren:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">setTimeout&lt;/span>(&lt;span style="color:#66d9ef">function&lt;/span>(){
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Thanks for waiting :)&amp;#39;&lt;/span>);
+}, &lt;span style="color:#ae81ff">5000&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Das erste Argument ist die Aktion/Funktion, die ausgeführt wird, sobald die Zeit abgelaufen ist. Das zweite Argument ist die Zeit in Millisekunden, die verstreichen muss, bis die übergebene Funktion ausgeführt wird.&lt;/p>
+&lt;h2 id="code-immer-wieder-ausführen-setinterval">Code immer wieder ausführen: setInterval(&amp;hellip;)&lt;/h2>
+&lt;p>Folgender Code wird jede Sekunde ausgeführt:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">setInterval&lt;/span>(&lt;span style="color:#66d9ef">function&lt;/span>(){
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;hey!&amp;#39;&lt;/span>);
+}, &lt;span style="color:#ae81ff">1000&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Vielleicht ist dir aufgefallen, dass &lt;code>setTimeout(...)&lt;/code> und &lt;code>setInterval(...)&lt;/code> eine Ganzzahl zurückgeben. Das ist die ID des Timeouts bzw. Intervalls. Es macht Sinn, diesen Wert zu merken, damit man das Intervall wieder beendet werden kann:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">intervalId&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">setInterval&lt;/span>(&lt;span style="color:#66d9ef">function&lt;/span>(){}, &lt;span style="color:#ae81ff">1000&lt;/span>);
+...
+&lt;span style="color:#a6e22e">clearInterval&lt;/span>(&lt;span style="color:#a6e22e">intervalId&lt;/span>);
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="aufgabe-uhr">Aufgabe: Uhr&lt;/h3>
+&lt;p>&lt;img src="/images/task.png" alt="task1"> Schreibe ein HTML, das eine Uhrzeit visuell anzeigt.&lt;/p>
+&lt;pre>&lt;code>Deine Website soll zentriert eine Uhrzeit anzeigen.
+Es steht dir frei, ob du die Uhrzeit anolog oder digital anzeigen möchtest.
+Wenn du eine analoge Uhr rendern möchtest, dann könnten Vektorgrafiken (SVGs) oder Canvas weiterbringen.
+Du kannst es aber auch mit gewöhnlichen HTML-Elementen versuchen.
+&lt;/code>&lt;/pre>
+&lt;p>Hilfestellungen zu&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.w3schools.com/graphics/svg_intro.asp">SVG&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.w3schools.com/html/html5_canvas.asp">Canvas&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
