@@ -11,7 +11,3 @@ description: >
 ## Einführung
 
 Javascript ist eine interpretierte (nicht kompilierte) "cross-platform" Sprache. Sie kann Client- wie auch Server-seitig eingesetzt werden.
-
-
-
-## Document Object Model (DOM)
