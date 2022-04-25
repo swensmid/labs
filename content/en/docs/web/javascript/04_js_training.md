@@ -13,7 +13,7 @@ Bevor wir mit fortgeschrittenen JavaScript-Technologien weiterfahren, sollst du 
 
 Hierfür empfehlen wir dir folgenden Online-Kurs: https://www.codecademy.com/learn/introduction-to-javascript
 
-Dieser Kurs beginnt weit von vorne. Daher kann es sein, dass ein grosser Teil für dich Repetition von Java ist.
+Dieser Kurs ist Grundlegend, vorallem da Javascript und Java im Syntax teilweise sehr ähnlich sind. Daher sollte ein grosser Teil für dich Repetition von Java sein.
 
 Möchtest du z.B. zur nächsten Aufgabe ohne die aktuelle lösen zu müssen, dann kannst du 2x auf "Run" klicken, dann auf "View Solution" und anschliessend auf "Replace with Solution".
 

@@ -9,9 +9,9 @@ description: >
 ---
 
 ## Auf DOM-Elemente zugreifen
-Eines der häufigsten Anwendungszwecke von JavaScript ist es, Elemente auf einer Website zu verändern.
+Eines der häufigsten Anwendungszwecke von JavaScript ist es, mit Elementen auf einer Website zu interagieren.
 
-Nehmen wir für ein Beispiel diese Seite:
+Nehmen wir folgendes Code-schnipsel als Beispiel:
 ```html
 <div id="message-div"></div>
 
@@ -26,18 +26,29 @@ let span = document.getElementById('likes-count');
 span.textContent = 999;
 ```
 
-Du wirst sehen, dass sich die Zahl im `<span>` sich tatsächlich verändert hat. Probieren wir aber zuerst, den Code zu verstehen!
-* `document` ist ein Objekt, das es im Browser einfach so gibt. Dieses Objekt repräsentiert so zu sagen das DOM. Mit diesem `document`-Objekt können wir auf die Elemente im Browser zugreifen.
-* `getElementById(...)` ist eine Methode auf diesem `document`-Objekt. Diese Methode sucht auf der aktuellen Seite dann ein Element, das die übergebene `id` besitzt.
+Du wirst sehen, dass sich die Zahl im `<span>` tatsächlich verändert hat. Probieren wir aber zuerst, den Code zu verstehen!
+<details>
+
+<summary>Erläuterung (click to expand)</summary>
+
+* `document` ist ein Objekt, das uns im Browser zur Verfügung steht. Dieses Objekt repräsentiert das DOM. Mit diesem `document`-Objekt können wir auf die Elemente im Browser zugreifen.
+* `getElementById(...)` ist eine Methode auf diesem `document`-Objekt. Diese Methode sucht auf der aktuellen Seite ein Element, das die übergebene `id` besitzt.
 * Das gefundene Element möchten wir in einer Variable namens `span` zwischenspeichern.
-* `textContent` ist ein Feld (= eine Variable) auf diesem Element, das den Inhalt des Elements (als Text) repräsentiert. Diesen Wert können wir einfach so kopieren.
+* `textContent` ist ein Feld (= ein Attribut) auf diesem Element, das den Inhalt des Elements (als Text) repräsentiert. Diesen Wert können wir einfach so kopieren.
+
+</details>
 
 
-Mit diesem Code konnten wir die Anzahl Likes auf eine bestimmte andere Zahl setzen. Nun möchten wir aber, dass sich diese Anzahl um genau 1 erhöht. Dafür benötigen wir noch zwei Zwischenschritte:
+Mit diesem Code konnten wir die Anzahl Likes auf eine andere Zahl setzen. Nun möchten wir aber, dass sich diese Anzahl um genau 1 erhöht. Dafür benötigen wir noch zwei Zwischenschritte:
 1. Die aktuelle Zahl auslesen
 2. Diese Zahl von einem String in eine Nummer konvertieren
 3. Und die erhöhte Zahl ins `<span>` schreiben.
 
+Versuche dies zu implementieren, bevor du dier die Lösung ansiehst.
+
+<details>
+
+<summary>Lösung (click to expand)</summary>
 Das könnte ungefähr so aussehen:
 ```javascript
 let span = document.getElementById('likes-count');
@@ -47,9 +58,26 @@ span.textContent = likes;
 ```
 
 Neu dazugekommen ist
-* der Aufruf von `parseInt(...)`. Diese Methode schwebt in JavaScript auch einfach so herum und kann einfach so verwendet werden. Diese Methode versucht, den übergeben Wert in eine Ganzzahl (Integer) zu konvertieren.
+* der Aufruf von `parseInt(...)`. Diese Methode ist standartmässig Global verfügbar und kann somit ohne imports verwendet werden. Diese Methode versucht, den übergeben Wert in eine Ganzzahl (Integer) zu konvertieren.
 * `likes++` bedeutet gleich viel wie `likes = likes + 1`. Damit erhöhen wir die `likes`-Variable also um 1.
 * Mit `span.textContent = likes` setzen wir den Text des `span`s neu. Eine Umwandlung in String ist nicht notwendig.
+
+Versuche das ganze nun mal ohne die parseInt Methode.
+Du wirst sehen, dass es trotzdem funktioniert. Das liegt daran, dass JS keine "starke" typen (strong types) kennt. Sprich der JS-Interpreter versucht auch ein string als zahl zu verwenden und wenn es sich wirklich um eine Zahl handlet funktioniert das auch:
+
+```js
+    function onLikeClick() {
+        let span = document.getElementById('likes-count');
+        let likes = span.textContent;
+        likes++;
+        span.textContent = likes;
+    }
+```
+
+Dies ist aber sehr fragil, daher ist es good practice, die variabeln trotzdem in die korrekten typen umzuwandeln. 
+Gut zu wissen, ist das sich Javascript teilweise etwas unerwartet verhält. 
+</details>
+
 
 ### Manipulation beim Button-Klick ausführen lassen
 Nun wollen wir noch, dass das, was wir vorher programmiert haben, dann passiert, wenn der User auf den Button klickt. Ändere die HTML-Seite wie folgt ab:
@@ -88,8 +116,8 @@ messageDiv.innerHTML = insertHtml;
 
 Dieser Code macht folgendes:
 * für jedes Like, wird im `<div id="message-div">` folgendes Element/Bild hinzugefügt: `<img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Emoji_u1f44d.svg" alt="like" height="25">`
-* Das HTML für dieses Bild haben wir zuerst in einer Konstante (`const`) gespeichert. `const` ist das Gleiche wie `let` mit dem Unterschied, dass sich dieser Wert nie verändern darf innerhalt dieser Methode. Wenn sich eine Variable nie im definierten Block verändert, so wird empfohlen, `const` statt `let` zu verwenden.
-* Die String-Variable `insertHtml` brauchen wir als Zwischenspeicher, wo wir alle Elemente reinkopieren, die wir später im HTML/DOM haben möchten.
+* Das HTML für dieses Bild haben wir zuerst in einer Konstante (`const`) gespeichert. `const` ist das Gleiche wie `let` mit dem Unterschied, dass sich dieser Wert nie verändern darf innerhalb dieser Methode. Wenn sich eine Variable nie im definierten Block verändert, so wird empfohlen, `const` statt `let` zu verwenden.
+* Die String-Variable `insertHtml` brauchen wir als Zwischenspeicher, in welcher wir den HTML string zusammensetzen, welche wir später im HTML/DOM haben möchten.
 * Die `for`-Schlaufe wird so oft durchlaufen wie es Likes gab. Das bedutet, dass pro Like ein Bild ins `insertHtml` kopiert wird.
 * Anschliessend holen wir uns das `<div id="message-div">` via JavaScript. Wir hätten hier auch `document.getElementById('message-div')` verwenden können. Aber `querySelector` funktioniert hier auch. Die `querySelector`-Methode akzeptiert ein CSS-Selektor und gibt dann das Element zurück, das damit angesprochen wird. In diesem Beispiel war `div#message-div` ein möglicher CSS-Selektor (wie `#message-div` eigentlich auch), der das `<div id="message-div"` anspricht.
 * Als letztes verändern wir das HTML dieses `<div>`s, indem wir das `innerHTML`-Feld neu setzen.

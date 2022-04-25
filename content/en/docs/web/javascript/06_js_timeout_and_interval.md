@@ -27,7 +27,7 @@ setInterval(function(){
 }, 1000);
 ```
 
-Vielleicht ist dir aufgefallen, dass `setTimeout(...)` und `setInterval(...)` eine Ganzzahl zurückgeben. Das ist die ID des Timeouts bzw. Intervalls. Es macht Sinn, diesen Wert zu merken, damit man das Intervall bei einer bestimmten Bedingung beenden kann:
+Vielleicht ist dir aufgefallen, dass `setTimeout(...)` und `setInterval(...)` eine Ganzzahl zurückgeben. Das ist die ID des Timeouts bzw. Intervalls. Es macht Sinn, diesen Wert zu merken, damit man das Intervall wieder beendet werden kann:
 
 ```javascript
 const intervalId = setInterval(function(){}, 1000);
