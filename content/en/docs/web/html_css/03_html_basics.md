@@ -24,7 +24,7 @@ Du hast gesehen, dass es das zwischen `<h1>` und `</h1>` wie ein Titel formatier
 
 ## HTML Tags
 
-Du hast schon die ersten "HTML Tags" kennengelernt: `<h1>` und `<p>`. `<h1>` wird für Titel und `<p>` wird für Paragraphen verwendet.
+Du hast schon die ersten "HTML Tags" kennengelernt: `<h1>` und `<p>`. `<h1>` wird für Titel und `<p>` wird für Paragrafen verwendet.
 
 HTML Tags sind wie Keywords (Schlüsselbegriffe), die beschreiben, wie der Browser deren Inhalt (Content) formatiert bzw. darstellt.
 

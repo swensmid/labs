@@ -5,12 +5,12 @@ linkTitle: "Bootstrap"
 weight: 19
 date: 2022-04-19
 description: >
-  Einmal CSS Schreiben genügt! Brauche ein CSS-Framework, damit wir nicht
+  Einmal CSS schreiben genügt! Brauch ein CSS-Framework, damit wir nicht
   immer wieder die gleichen CSS-Regeln schreiben.
 ---
 
 In Frontend-Projekten wirst du dich immer wieder fragen, ob bereits ein Objekt
-gleich gestylt wurde wie eines, das du gerade stylen möchtest. Du wirst es aber
+gleich gestylt wurde wie eines, welches du gerade stylen möchtest. Du wirst es aber
 vielleicht nicht finden oder du schreibst die genau gleiche Regel ein weiteres Mal.
 Das führt dazu, dass im Code sehr viele CSS-Leichen zu finden sein werden.
 
@@ -25,10 +25,10 @@ zu verwenden, wo die gleichen CSS-Klassen immer gleich heissen.
 
 Hier kommt Bootstrap ins Spiel: Es bietet viele CSS-Klassen bereits an und
 vereinfacht komplexes Styling teilweise extrem. Z.B. kannst du komplett mühelos
-Accordions (bzw. Tabs) erstellen, die dann beim Klick auf deren Titel ihren Inhalt dann anzeigen/verstecken inkl. Annimation.
+Accordions (bzw. Tabs) erstellen, die dann beim Klick auf deren Titel ihren Inhalt dann anzeigen/verstecken inkl. Animation.
 
 ## Bootstrap
-Bootstrap wird in sehr vielen Projekten bereits benutzt. Und so einfach kannst du es auch in deine HTML-Dateinen einbinden:
+Bootstrap wird in sehr vielen Projekten bereits benutzt. Und so einfach kannst du es auch in deine HTML-Dateien einbinden:
 
 ```html
 <!-- Latest compiled and minified CSS -->
@@ -40,7 +40,7 @@ Bootstrap wird in sehr vielen Projekten bereits benutzt. Und so einfach kannst d
 
 Eine grosse Stärke von Bootstrap ist es, dass sich deine Seite 'responsive' verhält: Du kannst mit einer CSS-Klasse (`col-md-4` z.B.) definieren, dass ein Element im Normallfall 4/12 der Breite einnimmt (4 ist in der Klasse angegeben, Bootstrap arbeitet mit 12 Spalten). Ist dein Browser weniger breit als eine bestimmte Weite (`md` -> medium), so werden dann die Elemente automatisch untereinander angezeigt.
 
-Da wir vermehrt Bootstrap einsetzen möchten, empfehlen wir dir, Bootstrap anzuschauen. Hier findes du ein Tutorial zur aktuellen Version: https://www.w3schools.com/bootstrap5/index.php.
+Da wir vermehrt Bootstrap einsetzen möchten, empfehlen wir dir, Bootstrap anzuschauen. Hier findest du ein Tutorial zur aktuellen Version: https://www.w3schools.com/bootstrap5/index.php.
 
 Bitte probiere folgendes so aus, dass du es anwenden kannst:
 * GET Started
@@ -51,7 +51,7 @@ Bitte probiere folgendes so aus, dass du es anwenden kannst:
 * Collapse
 * Flex
 
-Bei folgendem solltest du einfach wissen, dass Bootstrap hierfür auch eine Lösung bereit stellt:
+Bei den folgenden solltest du einfach wissen, dass Bootstrap hierfür auch eine Lösung bereitstellt:
 * Colors
 * Images
 * Alerts

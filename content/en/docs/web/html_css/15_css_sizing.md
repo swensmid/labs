@@ -9,7 +9,7 @@ description: >
 ---
 
 ## Block- und Inline-Elemente
-Bevor wir Elemente dimensioneren, müssen wir wissen, welche Elemente wir überhaupt dimensionieren können.
+Bevor wir Elemente dimensionieren, müssen wir wissen, welche Elemente wir überhaupt dimensionieren können.
 
 In CSS gibt es zwei grundlegende "Display"-Elemente:
 * Block-Elemente
@@ -18,9 +18,9 @@ In CSS gibt es zwei grundlegende "Display"-Elemente:
 Im Normalfall können wir nur Block-Elemente dimensionieren (eine Grösse geben). Was ist aber nun der Unterschied zwischen den beiden?
 
 ### Block-Elemente
-Block-Elemente starten im Normalfall immer auf einer neuen Zeile und haben per default um sich selbst herum einen Abstand zu anderen Elementen.
+Block-Elemente starten im Normalfall immer auf einer neuen Zeile und haben per Default um sich selbst herum einen Abstand zu anderen Elementen.
 
-Block-Elemente beanspruchen per default die volle Breite an Platz (von links bis rechts).
+Block-Elemente beanspruchen per Default die volle Breite an Platz (von links bis rechts).
 
 Typische Block-Elemente sind
 * `<p>`
@@ -59,7 +59,7 @@ Um das zu verstehen, probiere bitte diesen Code aus:
 </style>
 ```
 
-Dieser Code zeigt ziemlich gut, dass das Block-Element (hier `<p>`) die ganze Breite (abzüglich eines kleinen Randes) eingenommen hat, während das `<span>` sich auf das Wort beschränkt.
+Dieser Code zeigt gut, dass das Block-Element (hier `<p>`) die ganze Breite (abzüglich eines kleinen Randes) eingenommen hat, während das `<span>` sich auf das Wort beschränkt.
 
 ### Inline-Elemente
 Im obigen Beispiel hast du bereits ein Inline-Element kennengelernt: `<span>`.
@@ -135,7 +135,7 @@ Dieses Beispiel fügt einen schwarzen Rand von `1px` Breite hinzu. Das `solid` b
 #### Einheiten in der Übersicht
 Grundsätzlich empfehle ich dir diese Übersicht: https://www.w3schools.com/cssref/css_units.asp
 
-Unter den __absoluten Einheiten__ musst du eigentlich nur folgende kennen:
+Unter den __absoluten Einheiten__ musst du nur folgende kennen:
 * `px`
 
 Die absoluten Einheiten sollten immer gleich gross sein. Sie sind aber nicht speziell für im Browser geeignet, weil sich die Bildschirmgrössen der Enduser stark unterscheiden.
@@ -230,8 +230,8 @@ margin-left: 4px;
 
 Beachte bei der kurzen Schreibweise, dass es oben beginnt und im Uhrzeigersinn weitergeht, bzw. merke dir "TRouBLe" (Top Right Bottom Left).
 
-### Abtand vom Border zum Content (Padding)
-Oft sieht es ziemlich hässlich aus, wenn der Text direkt am Rand (am Border) ankommt. Das kann behoben werden, indem ein innerer Rand (Padding) eingefügt wird:
+### Abstand vom Border zum Content (Padding)
+Oft sieht es hässlich aus, wenn der Text direkt am Rand (am Border) ankommt. Das kann behoben werden, indem ein innerer Rand (Padding) eingefügt wird:
 
 ```css
 .half-width {

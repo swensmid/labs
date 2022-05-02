@@ -14,7 +14,7 @@ Die Benutzer deiner Webseite möchten oder sollen Daten eingeben können, z.B. f
 ## HTML-Input-Element
 Bevor wir uns HTML-Formulare genauer anschauen, wollen wir zuerst einen Blick auf Input-Elemente werfen, die das Eingeben von Daten überhaupt ermöglichen.
 
-Beginnen wir mit einer ganz einfachen TextBox:
+Beginnen wir mit einer einfachen TextBox:
 
 ```html
 Was ist dein Vorname?
@@ -22,10 +22,10 @@ Was ist dein Vorname?
 ```
 Probiere alle Beispiele immer selbst aus. Du hast gesehen, wie einfach eine TextBox in HTML eingebunden werden kann.
 
-Das `type`-Attribut definiert, um was für eine Art von Input-Element es sich handelt. `text` steht für eine ganz gewöhnliche TextBox. Das zweite Attribut kannst du im Moment noch ignorieren.
+Das `type`-Attribut definiert, um was für eine Art von Input-Element es sich handelt. `text` steht für eine gewöhnliche TextBox. Das zweite Attribut kannst du im Moment noch ignorieren.
 
 ## Label für Input-Elemente
-Vor der TextBox haben wir einen Text ("Was ist dein Vorname"). Dieser Text wird auch "Label" genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf den Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:
+Vor der TextBox haben wir einen Text ("Was ist dein Vorname"). Dieser Text wird auch "Label" genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf das Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:
 
 ```html
 <label>Was ist dein Vorname?<input type="text" name="firstname" /></label>
@@ -33,7 +33,7 @@ Vor der TextBox haben wir einen Text ("Was ist dein Vorname"). Dieser Text wird 
 
 Nun haben wir die gewünschte Funktionalität hinzufügen können. Aber was genau haben wir hier gemacht?
 
-Wir haben den Label als Label definiert (da im `label`-Element). Wenn wir ein Input-Element in einem Label hinzufügen, dann wird bei einem Klick auf diesen Label automatisch dieses Input-Element fokusiert.
+Wir haben das Label als Label definiert (da im `label`-Element). Wenn wir ein Input-Element in einem Label hinzufügen, dann wird bei einem Klick auf dieses Label automatisch dieses Input-Element fokussiert.
 
 Nun sieht das noch ein bisschen unübersichtlich aus. Das können wir besser! Zum Beispiel so:
 
@@ -47,7 +47,7 @@ Abgesehen davon, dass das Input-Element nicht mehr im Label ist, ist der grosse 
 * und dass der Label mit dem `for`-Attribut darauf referenziert.
 
 Fassen wir zusammen, weshalb wir das `label`-Element verwenden:
-* Beim Klick auf den Label wird das entsprechende Input-Element ausgewählt.
+* Beim Klick auf das Label wird das entsprechende Input-Element ausgewählt.
 * Beim Klick in das entsprechende Input-Element würde ein Screen-Reader den Namen des Labels laut vorlesen, (falls verwendet).
 * Und ausserdem kann man später die Labels so einfacher stylen mit CSS.
 
@@ -65,7 +65,7 @@ Kennen solltest du sicher die folgenden:
 * password
 * radio
 
-Bitte schaue dir diese Elemente auf der obengennanten Seite rasch an. Du solltest wissen, wie diese Elemente aussehen und dass es sie gibt.
+Bitte schaue dir diese Elemente auf der obengenannten Seite rasch an. Du solltest wissen, wie diese Elemente aussehen und dass es sie gibt.
 
 ## Formulare
 Nun solltest du im Stande sein, UI-Elemente (UI = User Interface -> Benutzerschnittstelle) mit HTML auf einer Seite anzuzeigen. Jetzt wäre es schön, wenn diese Daten auch irgendwie verwendet werden könnten.
@@ -74,7 +74,7 @@ Theoretisch könntest du mit der Programmiersprache JavaScript direkt darauf zug
 
 Als Backend verwenden wir die folgende URL: https://www.w3schools.com/action_page.php. Das ist eine spezielle Seite: sie zeigt die Daten an, die wir ihr schicken.
 
-Folgender Code zeigt ein Formular, das eine Email und ein Boolean beim Klick auf "Übermitteln" an das Backend schickt
+Folgender Code zeigt ein Formular, das eine E-Mail und ein Boolean beim Klick auf "Übermitteln" an das Backend schickt
 
 ```html
 <form action="https://www.w3schools.com/action_page.php" method="get">
@@ -89,9 +89,9 @@ Folgender Code zeigt ein Formular, das eine Email und ein Boolean beim Klick auf
 
 Entscheidend ist hier das `<form>`-Tag. Das `action`-Attribut legt fest, wo die Daten hingeschickt werden. Die `method` legt fest, welche HTTP Request Method verwendet wird (GET oder POST). Bist du dir bei den Methoden nicht mehr so sicher, dann schaue bitte das "REST"-Kapitel hier noch einmal an: https://labs.it-ninjas.ch/docs/java/spring_introduction/#625-rest 
 
-Bei Formularen verwendet man meistens entweder GET oder POST. Der grosse Unterschied zwischen beiden Methoden ist, dass bei GET die Daten in der URL mitgegeben wird, wobei bei POST die Daten ein bisschen besser versteckt im HTTP Request Body mitgeschickt werden. Verschickst du ein Passwort, solltest du lieber POST verwenden, weil sonst das Passwort womöglich im Browser in der URL-Box einsehbar sein könnte. Die zu verwendende Methode wird meistens vom Backend festgelegt. Unser Backend unsterstützt beide Methoden.
+Bei Formularen verwendet man meistens entweder GET oder POST. Der grosse Unterschied zwischen beiden Methoden ist, dass bei GET die Daten in der URL mitgegeben wird, wobei bei POST die Daten ein bisschen besser versteckt im HTTP Request Body mitgeschickt werden. Verschickst du ein Passwort, solltest du lieber POST verwenden, weil sonst das Passwort womöglich im Browser in der URL-Box einsehbar sein könnte. Die zu verwendende Methode wird meistens vom Backend festgelegt. Unser Backend unterstützt beide Methoden.
 
-Wichtig für das Formular ist, dass es einen `submit`-Button besitzt. Dieser Submit-Button löst das Senden der Daten an die angegebene Url (`action`) mit der entsprechenden HTTP Request Method (`method`) aus. Probiere dieses Formular einmal aus. Du wirst sehen, dass etwas wie folgendes an den Server übermittel wird:
+Wichtig für das Formular ist, dass es einen `submit`-Button besitzt. Dieser Submit-Button löst das Senden der Daten an die angegebene Url (`action`) mit der entsprechenden HTTP Request Method (`method`) aus. Probiere dieses Formular einmal aus. Du wirst sehen, dass etwas wie Folgendes an den Server übermittelt wird:
 
 ```
 email=hello@world.com&interested=on 
@@ -104,8 +104,8 @@ key=value
 übermittelt und mit einem "&" miteinander kombiniert. Der `key` stammt jeweils vom `name`-Attribut der Input-Elemente.
 
 Im oben gezeigten Beispiel haben wir bereits eine kleine Validierung (Überprüfung der Eingaben) integriert:
-* Einerseits haben wir mit dem `required`-Attribut festgelegt, dass die Email-Box nicht leer sein darf beim Übermitteln.
-* Anderseits verbietet `type="email"` das Senden, wenn etwas anderes als eine Email-Adresse eingegeben wird. Aus diesem Grund verwenden wir lieber `type="email"` als `type="text"` für Email-Adressen, `type="tel"` für Telefonnummern und `type="date"` für ein Datum.
+* Einerseits haben wir mit dem `required`-Attribut festgelegt, dass die E-Mail-Box nicht leer sein darf beim Übermitteln.
+* Anderseits verbietet `type="email"` das Senden, wenn etwas anderes als eine E-Mail-Adresse eingegeben wird. Aus diesem Grund verwenden wir lieber `type="email"` als `type="text"` für E-Mail-Adressen, `type="tel"` für Telefonnummern und `type="date"` für ein Datum.
 
 ### Ein komplexeres Beispiel
 Um zu zeigen, wie einfach Input-Elemente verwendet werden könnten, kannst du folgendes Beispiel ausprobieren:

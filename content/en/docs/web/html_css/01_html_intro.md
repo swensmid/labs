@@ -9,12 +9,12 @@ description: >
 ---
 
 ## Wie funktionieren Webseiten?
-Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten irgendwie so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.
+Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.
 
 Genau das wird mit HTML erreicht. Jeder Browser versteht HTML.
 
 ## Was ist HTML?
-Beginnen wir mit der Definition von der Abkürzung "HTML". Diese steht für "HyperText Markup Language". Okay, was aber bedeutet das?
+Beginnen wir mit der Definition der Abkürzung "HTML". Diese steht für "HyperText Markup Language". Okay, was aber bedeutet das?
 
 Mit HyperText ist ein Dokument gemeint, das nicht dafür gemacht ist, um von oben nach unten gelesen zu werden. HyperText enthält also z.B. Links, die auf andere Dokumente führen. Unter Markup ist zu verstehen, dass das Dokument strukturiert (Kopfzeilen, Hauptteil, Fusszeilen) und formatiert (z.B. kursiver/fetter Text) ist.
 

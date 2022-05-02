@@ -13,19 +13,19 @@ Bevor wir mit fortgeschrittenen JavaScript-Technologien weiterfahren, sollst du 
 
 Hierfür empfehlen wir dir folgenden Online-Kurs: https://www.codecademy.com/learn/introduction-to-javascript
 
-Dieser Kurs ist Grundlegend, vorallem da Javascript und Java im Syntax teilweise sehr ähnlich sind. Daher sollte ein grosser Teil für dich Repetition von Java sein.
+Dieser Kurs ist grundlegend. Da JavaScript und Java in der Syntax sehr ähnlich sind sollte ein grosser Teil für dich Repetition von Java-Teil sein.
 
 Möchtest du z.B. zur nächsten Aufgabe ohne die aktuelle lösen zu müssen, dann kannst du 2x auf "Run" klicken, dann auf "View Solution" und anschliessend auf "Replace with Solution".
 
-Eine Übersicht über die Themen erhälst du via Klick oben links auf "Course Menu".
+Eine Übersicht über die Themen erhältst du via Klick oben links auf "Course Menu".
 
 Schaue, dass du mindestens folgendes verstanden hast und anwenden kannst:
 
 | Kaptiel        | Das musst du anwenden können | Bemerkungen
 | -------------- | ---------------------------- | ------------
 | Introduction   | Variablen definieren, Unterschied {var, let, const}, mathematische Operationen, typeof-Operator, String-Methoden wie {trim, startsWith, ...}| Prüfe zudem dein Wissen mit dem "Introduction to JavaScript"-Quiz
-| Conditionals   | if/else/switch statements, Vergleichoperatoren, du kennst truthy und falsy Werte | Löse auch ein paar Aufgaben und den Test "Conditional Statements" solltest du fehlerfrei abschliessen können.
-| Functions      | Funktions-Definition, -Aufruf, Default-Parameter, Arrow Functions, Function Expressions, Globaler und Block-Scope | Die Tests sind leider nicht mehr in der konstenlosen Version inbegriffen.
+| Conditionals   | if/else/switch statements, Vergleichsoperatoren, du kennst truthy und falsy Werte | Löse auch ein paar Aufgaben und den Test "Conditional Statements" solltest du fehlerfrei abschliessen können.
+| Functions      | Funktions-Definition, -Aufruf, Default-Parameter, Arrow Functions, Function Expressions, Globaler und Block-Scope | Die Tests sind leider nicht mehr in der kostenlosen Version inbegriffen.
 | Arrays         | Arrays/Listen erstellen, updaten, Länge bestimmen, durch Array durch iterieren|
 | Loops          | Du kannst `for`-, `while`- und `do while`-Schlaufen benutzen und mit `break` kontrolliert abbrechen. |
 | Iterators      | Functions as Data and Parameters, Iteratoren wie .forEach, .map, .filter, .reduce anwenden können|

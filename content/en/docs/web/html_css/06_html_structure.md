@@ -9,7 +9,7 @@ description: >
 ---
 
 ## Struktur einer HTML-Seite
-Vorher haben wir ganz wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:
+Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@ Auf der ersten Zeile definieren wir, dass es sich um ein HTML-Dokument handelt. 
 Alle weiteren Elemente befinden sich dann im einzigen `<html>`-Element. Auf der nächsten Stufe gibt es nur `<head>` und `<body>`. Im `<head>` befinden sich Meta-Informationen über die Website wie z.B. der Tab-Titel der Website. Der eigentliche Seiteninhalt befindet sich dann im `<body>`.
 
 ### DOM (Document Object Model)
-In der Webentwicklung wird sehr oft vom "DOM" gesprochen. Visualisiert könnte der DOM aus dem obrigen Beispiel ungefähr so aussehen:
+In der Webentwicklung wird sehr oft vom "DOM" gesprochen. Visualisiert könnte der DOM aus dem obigen Beispiel ungefähr so aussehen:
 
 ![dom](../dom.png "(DOM einer einfachen HTML-Seite.)")
 

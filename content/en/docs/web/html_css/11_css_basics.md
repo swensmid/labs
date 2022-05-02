@@ -1,11 +1,11 @@
 ---
-title: "CSS Grundlagen"
+title: "CSS-Grundlagen"
 type: docs
-linkTitle: "CSS Grundlagen"
+linkTitle: "CSS-Grundlagen"
 weight: 11
 date: 2022-04-14
 description: >
-  Grundlagen der CSS Sprache.
+  Grundlagen der CSS-Sprache.
 ---
 
 ## Wie funktioniert CSS?
@@ -26,13 +26,13 @@ p {
 - Die Zeichenfolge vor den geschweiften Klammern ist der sogenannte Selektor (Englisch: Selector). Er definiert, auf welche Elemente das Styling angewendet werden soll. In diesem Fall würde das Styling auf alle Paragraphen angewendet werden.
 - Die Zeilen innerhalb der geschweiften Klammern, definieren was für ein Styling angwendet werden soll. Beim gezeigten Beispiel würde die Textfarbe auf blau eingestellt werden und die Hintergrundfarbe rot.
 
-## Wie kann ich CSS anweden?
+## Wie kann ich CSS anwenden?
 
 Als nächstes schauen wir an, wie man CSS in eine Webseite (bzw. in ein HTML File) einbinden kann. Dafür schauen wir uns folgende Abschnitte an:
 
 ### Direktes einbinden in HTML-Elemente
 
-Die wohl schnellste möglichkeit CSS auf ein HTML-Element anzuwenden, ist, das "style"-Attribut des HTML-Elements anzupassen. Dies würde wie folgt ausschauen:
+Die wohl schnellste Möglichkeit CSS auf ein HTML-Element anzuwenden, ist, das "style"-Attribut des HTML-Elements anzupassen. Dies würde wie folgt ausschauen:
 
 ```html
 <p style="color: blue; background-color: red">Hier steht blauer Text auf rotem Hintergrund</p>
@@ -61,7 +61,7 @@ Hierbei können wir innerhalb des Style-Tags herkömmliches CSS anwenden, wie wi
 
 ### Einbinden über ein externes CSS-File
 
-Die wohl am meist verbreiteste Methode CSS in eine Webseite einzubinden ist es, das CSS in ein CSS-File auszulagern und dann im HTML darauf zu verweisen.
+Die wohl am weitesten verbreitete Methode CSS in eine Webseite einzubinden ist es, das CSS in ein CSS-File auszulagern und dann im HTML darauf zu verweisen.
 
 Dies kann man wie folgt machen:
 
