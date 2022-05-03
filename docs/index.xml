@@ -2,7 +2,7 @@
 &lt;p>Jetzt wird es Zeit, dass du auch Programm-Logik auf deiner Website einbauen kannst. Dafür lernst du gleich die Programmiersprache JavaScript kennen, die von praktisch allen bekannten Browsern unterstützt wird.&lt;/p>
 &lt;p>Damit du eine Übersicht über die Programmiersprache bekommst, kannst du z.B. &lt;a href="https://www.youtube.com/watch?v=DHjqpvDnNGE">dieses Video&lt;/a> schauen, ohne dass du den ersten Satz verstehen musst.&lt;/p>
 &lt;h2 id="motivation-für-javascript">Motivation für JavaScript&lt;/h2>
-&lt;p>Javascript hat sehr viele Verwendungen im Browser. Einerseits können Funktionen, ähnlich wie mit Java, prorammiert werden, sodass z.B. Berrechnungen ausgeführt werden können. Zudem kann aber auch direkt mit dem angezeigten Inhalt interagiert werden. So können Validierungen oder auch Anmiationen ausgeführt werden. Wenn du mal sehen willst, wie eine Website aussieht ohne JS kannst du dir &lt;a href="https://chrome.google.com/webstore/detail/disable-javascript/jfpdlihdedhlmhlbgooailmfhahieoem?hl=en">hier&lt;/a> eine Chrome extension herunterladne mit welcher du JS komplett ausschalten kanns.&lt;/p>
+&lt;p>JavaScript hat sehr viele Verwendungen im Browser. Einerseits können Funktionen ähnlich wie mit Java programmiert werden, sodass z.B. Berechnungen ausgeführt werden können. Zudem kann aber auch direkt mit dem angezeigten Inhalt interagiert werden. So können Validierungen oder auch Animationen ausgeführt werden. Wenn du mal sehen willst, wie eine Website aussieht ohne JS kannst du dir &lt;a href="https://chrome.google.com/webstore/detail/disable-javascript/jfpdlihdedhlmhlbgooailmfhahieoem?hl=en">hier&lt;/a> eine Chrome extension herunterladen mit welcher du JS komplett ausschalten kannst.&lt;/p>
 &lt;p>Nun beginnen wir aber zuerst klein: Mit einem Button, der beim Klick eine MessageBox anzeigt.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -31,7 +31,7 @@ Zuerst hast du im HTML einen Button erstellt mit dem Text "Klick mich".
 &lt;p>Wie du siehst, wird die selbst definierte Funktion beim Klick auf den Button aufgerufen. Dies passiert, weil du diesen Aufruf im &lt;code>onclick&lt;/code>-Attribut des &lt;code>&amp;lt;button&amp;gt;&lt;/code>s definiert hast. Beachte in diesem Beispiel, dass nicht die Funktion sondern deren Aufruf drin steht. Im Prinzip wird beim Button-Klick der Wert des &lt;code>onclick&lt;/code>-Attributs ausgeführt. Theoretisch könntest du auch direkt &lt;code>onclick=&amp;quot;alert('Klick mich nicht an!!')&amp;quot;&lt;/code> schreiben.&lt;/p>
 &lt;/details>
 &lt;h2 id="javascript-einbinden">JavaScript einbinden&lt;/h2>
-&lt;p>Wie du im oberen Beispiel gesehen hast, wird Javascript via Script Tag eingebunden. Dein Code kann entweder direkt im Script Tag geschrieben werden:&lt;/p>
+&lt;p>Wie du im oberen Beispiel gesehen hast, wird Javascript via &lt;code>&amp;lt;script&amp;gt;&lt;/code>-Tag eingebunden. Dein Code kann direkt im &lt;code>&amp;lt;script&amp;gt;&lt;/code>-Tag geschrieben werden:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -64,12 +64,12 @@ Zuerst hast du im HTML einen Button erstellt mit dem Text "Klick mich".
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;my Js Code&amp;#39;&lt;/span>);
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Die zweite Variante ist meist sauberer, da Code und Html sauber aufgeteilt wird. Bei unseren Übungen wirst du aber meist direkt im Script Tag arbeite können ohne separates JS File.&lt;/p></description></item><item><title>Docs: HTML</title><link>/docs/web/html_css/01_html_intro/</link><pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/01_html_intro/</guid><description>
+&lt;/div>&lt;p>Die zweite Variante ist meist sauberer, da Code und HTML sauber aufgeteilt wird. Bei unseren Übungen wirst du aber meist direkt im &lt;code>&amp;lt;script&amp;gt;&lt;/code>-Tag arbeite können ohne separates JS File.&lt;/p></description></item><item><title>Docs: HTML</title><link>/docs/web/html_css/01_html_intro/</link><pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/01_html_intro/</guid><description>
 &lt;h2 id="wie-funktionieren-webseiten">Wie funktionieren Webseiten?&lt;/h2>
-&lt;p>Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten irgendwie so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.&lt;/p>
+&lt;p>Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.&lt;/p>
 &lt;p>Genau das wird mit HTML erreicht. Jeder Browser versteht HTML.&lt;/p>
 &lt;h2 id="was-ist-html">Was ist HTML?&lt;/h2>
-&lt;p>Beginnen wir mit der Definition von der Abkürzung &amp;ldquo;HTML&amp;rdquo;. Diese steht für &amp;ldquo;HyperText Markup Language&amp;rdquo;. Okay, was aber bedeutet das?&lt;/p>
+&lt;p>Beginnen wir mit der Definition der Abkürzung &amp;ldquo;HTML&amp;rdquo;. Diese steht für &amp;ldquo;HyperText Markup Language&amp;rdquo;. Okay, was aber bedeutet das?&lt;/p>
 &lt;p>Mit HyperText ist ein Dokument gemeint, das nicht dafür gemacht ist, um von oben nach unten gelesen zu werden. HyperText enthält also z.B. Links, die auf andere Dokumente führen. Unter Markup ist zu verstehen, dass das Dokument strukturiert (Kopfzeilen, Hauptteil, Fusszeilen) und formatiert (z.B. kursiver/fetter Text) ist.&lt;/p>
 &lt;p>Somit ist HTML also eine Sprache, die alle Elemente auf einer Webseite &lt;strong>BESCHREIBT&lt;/strong>. Die Betonung liegt hier auf &amp;ldquo;beschreibt&amp;rdquo;. Das bedeutet, dass HTML keine Programmiersprache ist. Code, der auf der Webseite ausgeführt wird, ist in JavaScript geschrieben.&lt;/p>
 &lt;h2 id="übersicht-zu-html-css-und-javascript-js">Übersicht zu HTML, CSS und JavaScript (JS)&lt;/h2>
@@ -1633,12 +1633,12 @@ matura_arbeit.docx matura_arbeit_fastfertig.docx matura_arbeit_wirklichfertig.do
 }
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Nun sollten in deiner Konsole die Zahen 0 - 9 geloggt worden sein. Den Code solltest du bereits seit deiner Einführung in Java verstehen. Das einzig neue hier ist, dass du hier die Nummer-Variable mit &lt;code>let&lt;/code> deklariert hast.&lt;/p>
+&lt;/div>&lt;p>Nun sollten in deiner Konsole die Zahlen 0 - 9 geloggt worden sein. Den Code solltest du bereits seit deiner Einführung in Java verstehen. Das einzig neue hier ist, dass du hier die Nummer-Variable mit &lt;code>let&lt;/code> deklariert hast.&lt;/p>
 &lt;p>Du hast gesehen, wie einfach du Code auf der Website mit Hilfe der Konsole ausführen kannst. Die Konsole ist ein sehr mächtiges Tool, das die Entwicklung mit JavaScript extrem vereinfachen kann. Bevor du Code in der IDE (also deiner Entwicklungsumgebung) eingibst, kannst du vorher in der Konsole ausprobieren, ob dein Code zum gewünschten Resultat führt.&lt;/p></description></item><item><title>Docs: Erste Seite erstellen</title><link>/docs/web/html_css/02_html_first_code/</link><pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/02_html_first_code/</guid><description>
 &lt;h2 id="eine-html-seite-mit-formatiertem-text-erstellen">Eine HTML-Seite mit formatiertem Text erstellen&lt;/h2>
 &lt;p>Wir beginnen ganz unkompliziert. Erstellen wir zuerst eine Text-Datei. Dafür erstellen wir zuerst ein Ordner, in dem wir später unsere Projekt-Dateien speichern. Anschliessend kannst du diesen Ordner mit der IDE (Entwicklungsumgebung) deiner Wahl öffnen (hier VS Code). Erstelle nun eine neue HTML-Datei im soeben erstellten Ordner. In VS Code kannst du das z.B. wie folgt machen:&lt;/p>
 &lt;p>&lt;img src="../vs-code-create-file.png" alt="createFile" title="Erstelle eine neue Datei, indem du im Explorer von VS Code mit deiner Maus über deinen Ordner bewegst. Klicke dann auf das Datei-Symbol und gib einen Dateinamen an, der mit .html endet.">&lt;/p>
-&lt;p>Fülle diese Datei nun mit irgend einem Text. Speichere diese Datei. Kopiere nun den Pfad zu dieser Datei. In VS Code kannst du den Pfad mit einem Rechtsklick auf die Datei kopieren:&lt;/p>
+&lt;p>Fülle diese Datei nun mit irgendeinem Text. Speichere diese Datei. Kopiere nun den Pfad zu dieser Datei. In VS Code kannst du den Pfad mit einem Rechtsklick auf die Datei kopieren:&lt;/p>
 &lt;p>&lt;img src="../vs-code-copy-path.png" alt="copyPath" title=" ">&lt;/p>
 &lt;p>Gib diesen Pfad nun im Browser deiner Wahl ein. Du solltest nun einen unformatierten Text im Browser sehen:&lt;/p>
 &lt;p>&lt;img src="../unformated-html-file.png" alt="unformatedHtmlFile" title=" ">&lt;/p>
@@ -2778,7 +2778,7 @@ Hint: über allen hover-Elementen pointer&lt;br>
 Schatten: box-shadow&lt;br>
 Scrollleiste: overflow-y oder overflow-x&lt;br>&lt;/p>
 &lt;h2 id="sobald-du-fertig-bist">Sobald du fertig bist&amp;hellip;&lt;/h2>
-&lt;p>Wenn du fertig mit diesem Exam bist, zeige dein Resultat einem Coach. Nach dem Okay des Coaches kannst du mit der Theorie zu &lt;a href="../../../../docs/web/javascript/01_js_intro">JavaScript&lt;/a> beginnen.&lt;/p></description></item><item><title>Exams: Exam zu den TypeScript-Basics</title><link>/exams/web/angular/03_2_intro_typescript_exam/</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>/exams/web/angular/03_2_intro_typescript_exam/</guid><description>
+&lt;p>Wenn du fertig mit diesem Exam bist, zeige dein Resultat einem Coach. Nach dem Okay des Coaches kannst du mit der Theorie zu &lt;a href="../../../../docs/web/html_css/19_css_bootstrap">Bootstrap&lt;/a> und dann mit &lt;a href="../../../../docs/web/javascript/01_js_intro">JavaScript&lt;/a> beginnen.&lt;/p></description></item><item><title>Exams: Exam zu den TypeScript-Basics</title><link>/exams/web/angular/03_2_intro_typescript_exam/</link><pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate><guid>/exams/web/angular/03_2_intro_typescript_exam/</guid><description>
 &lt;h1 id="übungen">Übungen&lt;/h1>
 &lt;h2 id="übung-1">Übung 1&lt;/h2>
 &lt;p>&lt;img src="/images/task.png" alt="task1"> 30' - Einzelarbeit &lt;a href="/files/exams/angular/uebung1.html">Übung 1&lt;/a>&lt;/p>
@@ -4256,7 +4256,7 @@ Der Deploy-Build dient dem Deployment einer bestimmten Version auf eine bestimmt
 &amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>&amp;gt;+1&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Mit JavaScript möchten wir, dass sich die Zahl erhöht im &lt;code>&amp;lt;span&amp;gt;&lt;/code>. In einem ersten Schritt versuchen wir, auf das &lt;code>&amp;lt;span&amp;gt;&lt;/code>-Element zuzugreifen und eine andere Zahl reinzuschreiben. Das probieren wir direkt in der Konsole des Browsers aus:&lt;/p>
+&lt;/div>&lt;p>Mit JavaScript möchten wir, dass sich die Zahl im &lt;code>&amp;lt;span&amp;gt;&lt;/code> erhöht. In einem ersten Schritt versuchen wir, auf das &lt;code>&amp;lt;span&amp;gt;&lt;/code>-Element zuzugreifen und eine andere Zahl reinzuschreiben. Das probieren wir direkt in der Konsole des Browsers aus:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -4273,7 +4273,7 @@ Der Deploy-Build dient dem Deployment einer bestimmten Version auf eine bestimmt
 &lt;ul>
 &lt;li>&lt;code>document&lt;/code> ist ein Objekt, das uns im Browser zur Verfügung steht. Dieses Objekt repräsentiert das DOM. Mit diesem &lt;code>document&lt;/code>-Objekt können wir auf die Elemente im Browser zugreifen.&lt;/li>
 &lt;li>&lt;code>getElementById(...)&lt;/code> ist eine Methode auf diesem &lt;code>document&lt;/code>-Objekt. Diese Methode sucht auf der aktuellen Seite ein Element, das die übergebene &lt;code>id&lt;/code> besitzt.&lt;/li>
-&lt;li>Das gefundene Element möchten wir in einer Variable namens &lt;code>span&lt;/code> zwischenspeichern.&lt;/li>
+&lt;li>Das gefundene Element möchten wir in einer Variablen namens &lt;code>span&lt;/code> zwischenspeichern.&lt;/li>
 &lt;li>&lt;code>textContent&lt;/code> ist ein Feld (= ein Attribut) auf diesem Element, das den Inhalt des Elements (als Text) repräsentiert. Diesen Wert können wir einfach so kopieren.&lt;/li>
 &lt;/ul>
 &lt;/details>
@@ -4283,24 +4283,32 @@ Der Deploy-Build dient dem Deployment einer bestimmten Version auf eine bestimmt
 &lt;li>Diese Zahl von einem String in eine Nummer konvertieren&lt;/li>
 &lt;li>Und die erhöhte Zahl ins &lt;code>&amp;lt;span&amp;gt;&lt;/code> schreiben.&lt;/li>
 &lt;/ol>
-&lt;p>Versuche dies zu implementieren, bevor du dier die Lösung ansiehst.&lt;/p>
+&lt;p>Versuche dies zu implementieren, bevor du dir die Lösung ansiehst.&lt;/p>
 &lt;details>
 &lt;summary>Lösung (click to expand)&lt;/summary>
 Das könnte ungefähr so aussehen:
-```javascript
-let span = document.getElementById('likes-count');
-let likes = parseInt(span.textContent);
-likes++;
-span.textContent = likes;
-```
-&lt;p>Neu dazugekommen ist&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">span&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;likes-count&amp;#39;&lt;/span>);
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">likes&lt;/span> &lt;span style="color:#f92672">=&lt;/span> parseInt(&lt;span style="color:#a6e22e">span&lt;/span>.&lt;span style="color:#a6e22e">textContent&lt;/span>);
+&lt;span style="color:#a6e22e">likes&lt;/span>&lt;span style="color:#f92672">++&lt;/span>;
+&lt;span style="color:#a6e22e">span&lt;/span>.&lt;span style="color:#a6e22e">textContent&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">likes&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Neu dazugekommen ist&lt;/p>
 &lt;ul>
 &lt;li>der Aufruf von &lt;code>parseInt(...)&lt;/code>. Diese Methode ist standartmässig Global verfügbar und kann somit ohne imports verwendet werden. Diese Methode versucht, den übergeben Wert in eine Ganzzahl (Integer) zu konvertieren.&lt;/li>
 &lt;li>&lt;code>likes++&lt;/code> bedeutet gleich viel wie &lt;code>likes = likes + 1&lt;/code>. Damit erhöhen wir die &lt;code>likes&lt;/code>-Variable also um 1.&lt;/li>
 &lt;li>Mit &lt;code>span.textContent = likes&lt;/code> setzen wir den Text des &lt;code>span&lt;/code>s neu. Eine Umwandlung in String ist nicht notwendig.&lt;/li>
 &lt;/ul>
 &lt;p>Versuche das ganze nun mal ohne die parseInt Methode.
-Du wirst sehen, dass es trotzdem funktioniert. Das liegt daran, dass JS keine &amp;ldquo;starke&amp;rdquo; typen (strong types) kennt. Sprich der JS-Interpreter versucht auch ein string als zahl zu verwenden und wenn es sich wirklich um eine Zahl handlet funktioniert das auch:&lt;/p>
+Du wirst sehen, dass es trotzdem funktioniert. Das liegt daran, dass JS keine &amp;ldquo;starke&amp;rdquo; typen (strong types) kennt. Sprich der JS-Interpreter versucht auch einen String als Zahl zu verwenden und wenn es sich wirklich um eine Zahl handelt, funktioniert das auch:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -4319,8 +4327,8 @@ Du wirst sehen, dass es trotzdem funktioniert. Das liegt daran, dass JS keine &a
 }
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Dies ist aber sehr fragil, daher ist es good practice, die variabeln trotzdem in die korrekten typen umzuwandeln.
-Gut zu wissen, ist das sich Javascript teilweise etwas unerwartet verhält.&lt;/p>
+&lt;/div>&lt;p>Dies ist aber sehr fragil, daher ist es good practice, die Variablen trotzdem in die korrekten typen umzuwandeln.
+Gut zu wissen, ist das sich JavaScript teilweise etwas unerwartet verhält.&lt;/p>
 &lt;/details>
 &lt;h3 id="manipulation-beim-button-klick-ausführen-lassen">Manipulation beim Button-Klick ausführen lassen&lt;/h3>
 &lt;p>Nun wollen wir noch, dass das, was wir vorher programmiert haben, dann passiert, wenn der User auf den Button klickt. Ändere die HTML-Seite wie folgt ab:&lt;/p>
@@ -4354,7 +4362,7 @@ Gut zu wissen, ist das sich Javascript teilweise etwas unerwartet verhält.&lt;/
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="ein-neues-element-hinzufügen">Ein neues Element hinzufügen&lt;/h2>
-&lt;p>Manchmal möchtes du ein neues Element auf der Website generieren lassen.&lt;/p>
+&lt;p>Manchmal möchtest du ein neues Element auf der Website generieren lassen.&lt;/p>
 &lt;p>Im kommenden Beispiel möchten wir so viele Bilder von &amp;ldquo;Thumbs Ups&amp;rdquo; (also 👍) wie Likes anzeigen.&lt;/p>
 &lt;p>Um das zu erzielen, kannst du die &lt;code>onLikeClick&lt;/code>-Funktion wie folgt erweitern:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -4383,12 +4391,12 @@ Gut zu wissen, ist das sich Javascript teilweise etwas unerwartet verhält.&lt;/
 &lt;ul>
 &lt;li>für jedes Like, wird im &lt;code>&amp;lt;div id=&amp;quot;message-div&amp;quot;&amp;gt;&lt;/code> folgendes Element/Bild hinzugefügt: &lt;code>&amp;lt;img src=&amp;quot;https://upload.wikimedia.org/wikipedia/commons/c/ce/Emoji_u1f44d.svg&amp;quot; alt=&amp;quot;like&amp;quot; height=&amp;quot;25&amp;quot;&amp;gt;&lt;/code>&lt;/li>
 &lt;li>Das HTML für dieses Bild haben wir zuerst in einer Konstante (&lt;code>const&lt;/code>) gespeichert. &lt;code>const&lt;/code> ist das Gleiche wie &lt;code>let&lt;/code> mit dem Unterschied, dass sich dieser Wert nie verändern darf innerhalb dieser Methode. Wenn sich eine Variable nie im definierten Block verändert, so wird empfohlen, &lt;code>const&lt;/code> statt &lt;code>let&lt;/code> zu verwenden.&lt;/li>
-&lt;li>Die String-Variable &lt;code>insertHtml&lt;/code> brauchen wir als Zwischenspeicher, in welcher wir den HTML string zusammensetzen, welche wir später im HTML/DOM haben möchten.&lt;/li>
-&lt;li>Die &lt;code>for&lt;/code>-Schlaufe wird so oft durchlaufen wie es Likes gab. Das bedutet, dass pro Like ein Bild ins &lt;code>insertHtml&lt;/code> kopiert wird.&lt;/li>
+&lt;li>Die String-Variable &lt;code>insertHtml&lt;/code> brauchen wir als Zwischenspeicher, in welcher wir den HTML-String zusammensetzen, welche wir später im HTML/DOM haben möchten.&lt;/li>
+&lt;li>Die &lt;code>for&lt;/code>-Schlaufe wird so oft durchlaufen, wie es Likes gab. Das bedeutet, dass pro Like ein Bild ins &lt;code>insertHtml&lt;/code> kopiert wird.&lt;/li>
 &lt;li>Anschliessend holen wir uns das &lt;code>&amp;lt;div id=&amp;quot;message-div&amp;quot;&amp;gt;&lt;/code> via JavaScript. Wir hätten hier auch &lt;code>document.getElementById('message-div')&lt;/code> verwenden können. Aber &lt;code>querySelector&lt;/code> funktioniert hier auch. Die &lt;code>querySelector&lt;/code>-Methode akzeptiert ein CSS-Selektor und gibt dann das Element zurück, das damit angesprochen wird. In diesem Beispiel war &lt;code>div#message-div&lt;/code> ein möglicher CSS-Selektor (wie &lt;code>#message-div&lt;/code> eigentlich auch), der das &lt;code>&amp;lt;div id=&amp;quot;message-div&amp;quot;&lt;/code> anspricht.&lt;/li>
 &lt;li>Als letztes verändern wir das HTML dieses &lt;code>&amp;lt;div&amp;gt;&lt;/code>s, indem wir das &lt;code>innerHTML&lt;/code>-Feld neu setzen.&lt;/li>
 &lt;/ul>
-&lt;p>Super, nun hast du schon ein paar Dinge auf deiner Seite mit JavaScript dynamisch veräandert.&lt;/p>
+&lt;p>Super, nun hast du schon ein paar Dinge auf deiner Seite mit JavaScript dynamisch verändert.&lt;/p>
 &lt;p>Bitte denke daran, dass das Verwenden von &lt;code>.innerHTML&lt;/code> als eine Art &amp;ldquo;Holzfäller-Methode&amp;rdquo; angesehen wird. JavaScript bietet hierfür bereits eine elegantere Möglichkeit, die aber oft viel zu umständlich ist. Bitte schaue dir diese trotzdem kurz an: &lt;a href="https://www.w3schools.com/js/js_htmldom_nodes.asp">https://www.w3schools.com/js/js_htmldom_nodes.asp&lt;/a>&lt;/p></description></item><item><title>Docs: Basics zu HTML</title><link>/docs/web/html_css/03_html_basics/</link><pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/03_html_basics/</guid><description>
 &lt;h2 id="erklärung-zum-vorherigen-beispiel">Erklärung zum vorherigen Beispiel&lt;/h2>
 &lt;p>Im vorherigen Beispiel hatten wir diesen Code:&lt;/p>
@@ -4410,7 +4418,7 @@ um eine Glühbirne auszuwechseln?&amp;lt;/&lt;span style="color:#f92672">p&lt;/s
 &lt;/div>
 &lt;/div>&lt;p>Du hast gesehen, dass es das zwischen &lt;code>&amp;lt;h1&amp;gt;&lt;/code> und &lt;code>&amp;lt;/h1&amp;gt;&lt;/code> wie ein Titel formatiert wurde. Der Text zwischen &lt;code>&amp;lt;p&amp;gt;&lt;/code> und &lt;code>&amp;lt;/p&amp;gt;&lt;/code> in eigenen Abschnitten dargestellt.&lt;/p>
 &lt;h2 id="html-tags">HTML Tags&lt;/h2>
-&lt;p>Du hast schon die ersten &amp;ldquo;HTML Tags&amp;rdquo; kennengelernt: &lt;code>&amp;lt;h1&amp;gt;&lt;/code> und &lt;code>&amp;lt;p&amp;gt;&lt;/code>. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> wird für Titel und &lt;code>&amp;lt;p&amp;gt;&lt;/code> wird für Paragraphen verwendet.&lt;/p>
+&lt;p>Du hast schon die ersten &amp;ldquo;HTML Tags&amp;rdquo; kennengelernt: &lt;code>&amp;lt;h1&amp;gt;&lt;/code> und &lt;code>&amp;lt;p&amp;gt;&lt;/code>. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> wird für Titel und &lt;code>&amp;lt;p&amp;gt;&lt;/code> wird für Paragrafen verwendet.&lt;/p>
 &lt;p>HTML Tags sind wie Keywords (Schlüsselbegriffe), die beschreiben, wie der Browser deren Inhalt (Content) formatiert bzw. darstellt.&lt;/p>
 &lt;p>Die Tags inklusiv deren Inhalt nennen wir &amp;ldquo;Element&amp;rdquo;. Das Element ist wie folgt aufgebaut:&lt;/p>
 &lt;p>&lt;img src="../html-tag.svg" alt="htmlElement" title="(Bild, das den Aufbau eines HTML-Elements zeigt.)">&lt;/p>
@@ -5425,9 +5433,9 @@ private git@github.com:Lehrling/training-sbb-puzzle.git &lt;span style="color:#f
 &lt;h2 id="übung-macht-den-meiser">Übung macht den Meiser&lt;/h2>
 &lt;p>Bevor wir mit fortgeschrittenen JavaScript-Technologien weiterfahren, sollst du die Basics von JavaScript verstanden haben.&lt;/p>
 &lt;p>Hierfür empfehlen wir dir folgenden Online-Kurs: &lt;a href="https://www.codecademy.com/learn/introduction-to-javascript">https://www.codecademy.com/learn/introduction-to-javascript&lt;/a>&lt;/p>
-&lt;p>Dieser Kurs ist Grundlegend, vorallem da Javascript und Java im Syntax teilweise sehr ähnlich sind. Daher sollte ein grosser Teil für dich Repetition von Java sein.&lt;/p>
+&lt;p>Dieser Kurs ist grundlegend. Da JavaScript und Java in der Syntax sehr ähnlich sind sollte ein grosser Teil für dich Repetition von Java-Teil sein.&lt;/p>
 &lt;p>Möchtest du z.B. zur nächsten Aufgabe ohne die aktuelle lösen zu müssen, dann kannst du 2x auf &amp;ldquo;Run&amp;rdquo; klicken, dann auf &amp;ldquo;View Solution&amp;rdquo; und anschliessend auf &amp;ldquo;Replace with Solution&amp;rdquo;.&lt;/p>
-&lt;p>Eine Übersicht über die Themen erhälst du via Klick oben links auf &amp;ldquo;Course Menu&amp;rdquo;.&lt;/p>
+&lt;p>Eine Übersicht über die Themen erhältst du via Klick oben links auf &amp;ldquo;Course Menu&amp;rdquo;.&lt;/p>
 &lt;p>Schaue, dass du mindestens folgendes verstanden hast und anwenden kannst:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -5445,13 +5453,13 @@ private git@github.com:Lehrling/training-sbb-puzzle.git &lt;span style="color:#f
 &lt;/tr>
 &lt;tr>
 &lt;td>Conditionals&lt;/td>
-&lt;td>if/else/switch statements, Vergleichoperatoren, du kennst truthy und falsy Werte&lt;/td>
+&lt;td>if/else/switch statements, Vergleichsoperatoren, du kennst truthy und falsy Werte&lt;/td>
 &lt;td>Löse auch ein paar Aufgaben und den Test &amp;ldquo;Conditional Statements&amp;rdquo; solltest du fehlerfrei abschliessen können.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Functions&lt;/td>
 &lt;td>Funktions-Definition, -Aufruf, Default-Parameter, Arrow Functions, Function Expressions, Globaler und Block-Scope&lt;/td>
-&lt;td>Die Tests sind leider nicht mehr in der konstenlosen Version inbegriffen.&lt;/td>
+&lt;td>Die Tests sind leider nicht mehr in der kostenlosen Version inbegriffen.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Arrays&lt;/td>
@@ -5501,9 +5509,9 @@ private git@github.com:Lehrling/training-sbb-puzzle.git &lt;span style="color:#f
 &lt;/div>
 &lt;/div>&lt;p>Dies führt zu folgendem Ergebnis:&lt;/p>
 &lt;p>&lt;img src="../headings.jpg" alt="headings" title="(Bild, das zeigt, wie Headings dargestellt werden.)">&lt;/p>
-&lt;p>Es gibt also Tags für Titel erster bis sechster Stufe. Grundsätzlich gilt, je kleiner die Zahl der Stufe, je grösser wird der Titel dargestellt. Das obrige Ergebnis zeigt, wie Titel per Default gestylt werden. Du kannst das Styling dieser Titel selbstverständlich anpassen (kommt im CSS-Teil).&lt;/p>
-&lt;h2 id="paragraphen">Paragraphen&lt;/h2>
-&lt;p>Du hast bereits erfahren, dass Zeilenumbrüche in HTML keine Wirkung haben. Möchtest du eine neue Zeile einfügen, könnte dir das &lt;code>&amp;lt;br/&amp;gt;&lt;/code>-Tag weiterhelfen. Besser ist aber, wenn du den Text, der zusammen gehört, auch entsprechend markierst: Das kannst du mit dem &lt;code>&amp;lt;p&amp;gt;&lt;/code>-Tag erreichen. Der Text, der innerhalb dieses Tags steht, wird in einem gleichen Abschnitt dargestellt. Ausserdem trennt es diesen Inhalt mit Leerschlag zum nächsten Element. Das wird im folgenden Beispiel verdeutlicht:&lt;/p>
+&lt;p>Es gibt also Tags für Titel erster bis sechste Stufe. Grundsätzlich gilt, je kleiner die Zahl der Stufe, je grösser wird der Titel dargestellt. Das obrige Ergebnis zeigt, wie Titel per Default gestylt werden. Du kannst das Styling dieser Titel selbstverständlich anpassen (kommt im CSS-Teil).&lt;/p>
+&lt;h2 id="paragrafen">Paragrafen&lt;/h2>
+&lt;p>Du hast bereits erfahren, dass Zeilenumbrüche in HTML keine Wirkung haben. Möchtest du eine neue Zeile einfügen, könnte dir das &lt;code>&amp;lt;br/&amp;gt;&lt;/code>-Tag weiterhelfen. Besser ist aber, wenn du den Text, der zusammengehört, auch entsprechend markierst: Das kannst du mit dem &lt;code>&amp;lt;p&amp;gt;&lt;/code>-Tag erreichen. Der Text, der innerhalb dieses Tags steht, wird in einem gleichen Abschnitt dargestellt. Ausserdem trennt es diesen Inhalt mit Leerschlag zum nächsten Element. Das wird im folgenden Beispiel verdeutlicht:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -5559,7 +5567,7 @@ the new restaurant called
 &lt;/div>
 &lt;/div>&lt;p>Um also einen bestimmten Text fett darzustellen, kannst du es in ein &lt;code>&amp;lt;strong&amp;gt;&lt;/code>- oder &lt;code>&amp;lt;b&amp;gt;&lt;/code>-Element schmeissen. Beide Tags MACHEN im Prinzip genau das Gleiche, MEINEN aber nicht zwingend das Gleiche: &lt;code>&amp;lt;b&amp;gt;&lt;/code>-Elemente sind einfach fett-gedruckt, während &lt;code>&amp;lt;strong&amp;gt;&lt;/code>-Elemente betont sein sollen. &lt;code>&amp;lt;strong&amp;gt;&lt;/code> soll dem fett-gedruckten Wort also mehr Ausdruck verleihen. Mit einem eigenen Styling (kommt im CSS-Teil) könntest du &lt;code>&amp;lt;strong&amp;gt;&lt;/code>-Elemente z.B. auch grösser oder rot darstellen. Mit einem &lt;code>&amp;lt;b&amp;gt;&lt;/code>-Element sagt man im Prinzip nur, dass der Text fett-gedruckt sein soll.&lt;/p>
 &lt;p>Einen Text kursiv darzustellen kannst du mit &lt;code>&amp;lt;i&amp;gt;&lt;/code> bzw. &lt;code>&amp;lt;em&amp;gt;&lt;/code>. Das Pendant zu &lt;code>&amp;lt;b&amp;gt;&lt;/code> ist &lt;code>&amp;lt;i&amp;gt;&lt;/code> (italic), und dasjenige zu &lt;code>&amp;lt;strong&amp;gt;&lt;/code> das &lt;code>&amp;lt;em&amp;gt;&lt;/code> (emphasis = Betonung).&lt;/p>
-&lt;p>Das obrige Beispiel wird so gerendert:&lt;/p>
+&lt;p>Das obige Beispiel wird so gerendert:&lt;/p>
 &lt;div style="border: 2px solid black; padding: 2em">
 &lt;p>
     &lt;strong>Heared&lt;/strong> about
@@ -5581,7 +5589,7 @@ the new restaurant called
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://www.sbb.ch/&amp;#34;&lt;/span>&amp;gt;Home&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Probiere das einaml aus.&lt;/p>
+&lt;/div>&lt;p>Probiere das einmal aus.&lt;/p>
 &lt;p>Du wirst einen blauen und unterstrichenen Text &amp;ldquo;Home&amp;rdquo; sehen. &lt;code>&amp;lt;a&amp;gt;&lt;/code> ist der Tag, der generell für Hyperlinks verwendet wird. &lt;code>href&lt;/code> ist ein Attribut des &lt;code>a&lt;/code>-Tags,
 mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https://www.sbb.ch/&lt;/code> die URL, die beim Klick aufgerufen wird. &lt;code>Home&lt;/code> ist der Text, der dem User angezeigt wird.&lt;/p>
 &lt;p>Ziemlich ähnlich kannst du auch ein Bild aus dem Internet einbinden:&lt;/p>
@@ -5597,7 +5605,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;span style="color:#a6e22e">width&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;300&amp;#34;&lt;/span> /&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Ganz offensichtlich wird das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag (Image) für Bilder verwendet. Das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag ist ein Tag, welches keinen Inhalt zwischen Opening- und Closing-Tag hat. Mit dem &lt;code>/&lt;/code> im Opening-Tag kannn man symbolisieren, dass das Tag ohne Closing-Tag geschlossen wird.&lt;/p>
+&lt;/div>&lt;p>Ganz offensichtlich wird das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag (Image) für Bilder verwendet. Das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag ist ein Tag, welches keinen Inhalt zwischen Opening- und Closing-Tag hat. Mit dem &lt;code>/&lt;/code> im Opening-Tag kann man symbolisieren, dass das Tag ohne Closing-Tag geschlossen wird.&lt;/p>
 &lt;p>Das wichtigste Attribut im &lt;code>img&lt;/code>-Tag ist &lt;code>src&lt;/code> (source = Quelle). Als &lt;code>src&lt;/code> wird eine URL zu einem Bild erwartet. Vergiss bei absoluten Pfaden (wird später noch erklärt) nicht das Protokoll (also https://) anzugeben. Nicht zwingend aber erwartet ist auch das &lt;code>alt&lt;/code>-Attribut (alternative). Dieser Text wird angezeigt, wenn das Bild nicht geladen werden konnte. Optional sind hingegen Attribute wie &lt;code>width&lt;/code> oder &lt;code>height&lt;/code>, welche die Breite und Höhe des Bildes festlegen. Diese Grössen werden aber besser mit CSS spezifiziert, da CSS genauere Spezifikationen zulässt (also nicht nur in &amp;lsquo;Pixel&amp;rsquo; sondern auch anderen Einheiten).&lt;/p>
 &lt;p>Wenn du willst, dass man beim Klick auf ein Bild weitergeleitet wird, kannst du dein Bild in ein &lt;code>&amp;lt;a&amp;gt;&lt;/code>-Element schmeissen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -5656,7 +5664,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &amp;lt;/&lt;span style="color:#f92672">ol&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Das ganze sieht dann ungefähr so aus:&lt;/p>
+&lt;/div>&lt;p>Das Ganze sieht dann ungefähr so aus:&lt;/p>
 &lt;div style="border: 2px solid black; padding: 2em">
 &lt;h4 id="what-do-you-do-in-case-of-emergencyh4">What do you do in case of emergency?&lt;/h4>&lt;/h4>
 &lt;ul>
@@ -6653,7 +6661,7 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">jokeObject&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">json&lt;/span>()
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Dies ist notwendig, da die methodoe &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Response/json">json()&lt;/a> asychron den response Stream ausliest.&lt;/p>
+&lt;/div>&lt;p>Dies ist notwendig, da die Methode &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Response/json">json()&lt;/a> asynchron den response Stream ausliest.&lt;/p>
 &lt;p>Wenn du nun das &lt;code>jokeObject&lt;/code> loggst (z.B. mit &lt;code>console.log(jokeObject)&lt;/code>), siehst du, dass wir nun das gleiche Objekt, das wir ganz oben erwartet haben, erhalten haben.&lt;/p>
 &lt;p>Den Witz kannst du wie folgt ausgeben:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -6691,7 +6699,7 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 }
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Dir ist sicher aufgefallen, dass wir nun das &lt;code>async&lt;/code>-Keyword vor &lt;code>function&lt;/code> geschrieben haben. Dies ist erforderlich, wenn man &lt;code>await&lt;/code> in einer Funktion verwenden möchte. Dieses &lt;code>async&lt;/code>-Keyword führt auch dazu, dass die Methode ein Objekt vom Typ &lt;code>Promise&amp;lt;...&amp;gt;&lt;/code> zurückgibt.&lt;/p>
+&lt;/div>&lt;p>Dir ist sicher aufgefallen, dass wir nun das &lt;code>async&lt;/code>-Keyword vor &lt;code>function&lt;/code> geschrieben haben. Dies ist erforderlich, wenn man &lt;code>await&lt;/code> in einer Funktion verwenden möchte. Dieses &lt;code>async&lt;/code>-Keyword führt auch dazu, dass die Methode ein Objekt des Typen &lt;code>Promise&amp;lt;...&amp;gt;&lt;/code> zurückgibt.&lt;/p>
 &lt;p>Wenn du diese Funktion definiert hast, kannst du den Rückgabewert von ihr wie folgt loggen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -6733,12 +6741,12 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;h3 id="zusatzauftrag-eine-andere-api-anbinden">Zusatzauftrag: Eine andere API anbinden&lt;/h3>
 &lt;p>&lt;img src="/images/task.png" alt="task1"> Versuche eine anderes API/Backend anzubinden und etwas auf einer Website anzuzeigen.&lt;/p>
 &lt;h3 id="früher-war-alles-besser">Früher war alles besser?&lt;/h3>
-&lt;p>Die &lt;code>fetch&lt;/code>-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selber: &lt;a href="https://www.w3schools.com/xml/xml_http.asp">https://www.w3schools.com/xml/xml_http.asp&lt;/a>&lt;/p></description></item><item><title>Docs: HTML Formulare</title><link>/docs/web/html_css/05_forms/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/05_forms/</guid><description>
+&lt;p>Die &lt;code>fetch&lt;/code>-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selbst: &lt;a href="https://www.w3schools.com/xml/xml_http.asp">https://www.w3schools.com/xml/xml_http.asp&lt;/a>&lt;/p></description></item><item><title>Docs: HTML Formulare</title><link>/docs/web/html_css/05_forms/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/05_forms/</guid><description>
 &lt;h2 id="wieso-html-formulare">Wieso HTML-Formulare?&lt;/h2>
 &lt;p>Die Benutzer deiner Webseite möchten oder sollen Daten eingeben können, z.B. für ein Kontakt-Formular oder eine Login-Seite. HTML-Formulare ermöglichen genau das, auch ohne JavaScript.&lt;/p>
 &lt;h2 id="html-input-element">HTML-Input-Element&lt;/h2>
 &lt;p>Bevor wir uns HTML-Formulare genauer anschauen, wollen wir zuerst einen Blick auf Input-Elemente werfen, die das Eingeben von Daten überhaupt ermöglichen.&lt;/p>
-&lt;p>Beginnen wir mit einer ganz einfachen TextBox:&lt;/p>
+&lt;p>Beginnen wir mit einer einfachen TextBox:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -6750,9 +6758,9 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Probiere alle Beispiele immer selbst aus. Du hast gesehen, wie einfach eine TextBox in HTML eingebunden werden kann.&lt;/p>
-&lt;p>Das &lt;code>type&lt;/code>-Attribut definiert, um was für eine Art von Input-Element es sich handelt. &lt;code>text&lt;/code> steht für eine ganz gewöhnliche TextBox. Das zweite Attribut kannst du im Moment noch ignorieren.&lt;/p>
+&lt;p>Das &lt;code>type&lt;/code>-Attribut definiert, um was für eine Art von Input-Element es sich handelt. &lt;code>text&lt;/code> steht für eine gewöhnliche TextBox. Das zweite Attribut kannst du im Moment noch ignorieren.&lt;/p>
 &lt;h2 id="label-für-input-elemente">Label für Input-Elemente&lt;/h2>
-&lt;p>Vor der TextBox haben wir einen Text (&amp;ldquo;Was ist dein Vorname&amp;rdquo;). Dieser Text wird auch &amp;ldquo;Label&amp;rdquo; genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf den Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:&lt;/p>
+&lt;p>Vor der TextBox haben wir einen Text (&amp;ldquo;Was ist dein Vorname&amp;rdquo;). Dieser Text wird auch &amp;ldquo;Label&amp;rdquo; genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf das Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -6762,7 +6770,7 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Nun haben wir die gewünschte Funktionalität hinzufügen können. Aber was genau haben wir hier gemacht?&lt;/p>
-&lt;p>Wir haben den Label als Label definiert (da im &lt;code>label&lt;/code>-Element). Wenn wir ein Input-Element in einem Label hinzufügen, dann wird bei einem Klick auf diesen Label automatisch dieses Input-Element fokusiert.&lt;/p>
+&lt;p>Wir haben das Label als Label definiert (da im &lt;code>label&lt;/code>-Element). Wenn wir ein Input-Element in einem Label hinzufügen, dann wird bei einem Klick auf dieses Label automatisch dieses Input-Element fokussiert.&lt;/p>
 &lt;p>Nun sieht das noch ein bisschen unübersichtlich aus. Das können wir besser! Zum Beispiel so:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -6781,7 +6789,7 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;/ul>
 &lt;p>Fassen wir zusammen, weshalb wir das &lt;code>label&lt;/code>-Element verwenden:&lt;/p>
 &lt;ul>
-&lt;li>Beim Klick auf den Label wird das entsprechende Input-Element ausgewählt.&lt;/li>
+&lt;li>Beim Klick auf das Label wird das entsprechende Input-Element ausgewählt.&lt;/li>
 &lt;li>Beim Klick in das entsprechende Input-Element würde ein Screen-Reader den Namen des Labels laut vorlesen, (falls verwendet).&lt;/li>
 &lt;li>Und ausserdem kann man später die Labels so einfacher stylen mit CSS.&lt;/li>
 &lt;/ul>
@@ -6799,12 +6807,12 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;li>password&lt;/li>
 &lt;li>radio&lt;/li>
 &lt;/ul>
-&lt;p>Bitte schaue dir diese Elemente auf der obengennanten Seite rasch an. Du solltest wissen, wie diese Elemente aussehen und dass es sie gibt.&lt;/p>
+&lt;p>Bitte schaue dir diese Elemente auf der obengenannten Seite rasch an. Du solltest wissen, wie diese Elemente aussehen und dass es sie gibt.&lt;/p>
 &lt;h2 id="formulare">Formulare&lt;/h2>
 &lt;p>Nun solltest du im Stande sein, UI-Elemente (UI = User Interface -&amp;gt; Benutzerschnittstelle) mit HTML auf einer Seite anzuzeigen. Jetzt wäre es schön, wenn diese Daten auch irgendwie verwendet werden könnten.&lt;/p>
 &lt;p>Theoretisch könntest du mit der Programmiersprache JavaScript direkt darauf zugreifen. Im Moment wollen wir aber bei HTML bleiben. Was wir mit HTML machen können, ist, die Werte an ein Backend (=Server) zu schicken.&lt;/p>
 &lt;p>Als Backend verwenden wir die folgende URL: &lt;a href="https://www.w3schools.com/action_page.php">https://www.w3schools.com/action_page.php&lt;/a>. Das ist eine spezielle Seite: sie zeigt die Daten an, die wir ihr schicken.&lt;/p>
-&lt;p>Folgender Code zeigt ein Formular, das eine Email und ein Boolean beim Klick auf &amp;ldquo;Übermitteln&amp;rdquo; an das Backend schickt&lt;/p>
+&lt;p>Folgender Code zeigt ein Formular, das eine E-Mail und ein Boolean beim Klick auf &amp;ldquo;Übermitteln&amp;rdquo; an das Backend schickt&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -6828,8 +6836,8 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Entscheidend ist hier das &lt;code>&amp;lt;form&amp;gt;&lt;/code>-Tag. Das &lt;code>action&lt;/code>-Attribut legt fest, wo die Daten hingeschickt werden. Die &lt;code>method&lt;/code> legt fest, welche HTTP Request Method verwendet wird (GET oder POST). Bist du dir bei den Methoden nicht mehr so sicher, dann schaue bitte das &amp;ldquo;REST&amp;rdquo;-Kapitel hier noch einmal an: &lt;a href="https://labs.it-ninjas.ch/docs/java/spring_introduction/#625-rest">https://labs.it-ninjas.ch/docs/java/spring_introduction/#625-rest&lt;/a>&lt;/p>
-&lt;p>Bei Formularen verwendet man meistens entweder GET oder POST. Der grosse Unterschied zwischen beiden Methoden ist, dass bei GET die Daten in der URL mitgegeben wird, wobei bei POST die Daten ein bisschen besser versteckt im HTTP Request Body mitgeschickt werden. Verschickst du ein Passwort, solltest du lieber POST verwenden, weil sonst das Passwort womöglich im Browser in der URL-Box einsehbar sein könnte. Die zu verwendende Methode wird meistens vom Backend festgelegt. Unser Backend unsterstützt beide Methoden.&lt;/p>
-&lt;p>Wichtig für das Formular ist, dass es einen &lt;code>submit&lt;/code>-Button besitzt. Dieser Submit-Button löst das Senden der Daten an die angegebene Url (&lt;code>action&lt;/code>) mit der entsprechenden HTTP Request Method (&lt;code>method&lt;/code>) aus. Probiere dieses Formular einmal aus. Du wirst sehen, dass etwas wie folgendes an den Server übermittel wird:&lt;/p>
+&lt;p>Bei Formularen verwendet man meistens entweder GET oder POST. Der grosse Unterschied zwischen beiden Methoden ist, dass bei GET die Daten in der URL mitgegeben wird, wobei bei POST die Daten ein bisschen besser versteckt im HTTP Request Body mitgeschickt werden. Verschickst du ein Passwort, solltest du lieber POST verwenden, weil sonst das Passwort womöglich im Browser in der URL-Box einsehbar sein könnte. Die zu verwendende Methode wird meistens vom Backend festgelegt. Unser Backend unterstützt beide Methoden.&lt;/p>
+&lt;p>Wichtig für das Formular ist, dass es einen &lt;code>submit&lt;/code>-Button besitzt. Dieser Submit-Button löst das Senden der Daten an die angegebene Url (&lt;code>action&lt;/code>) mit der entsprechenden HTTP Request Method (&lt;code>method&lt;/code>) aus. Probiere dieses Formular einmal aus. Du wirst sehen, dass etwas wie Folgendes an den Server übermittelt wird:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -6850,8 +6858,8 @@ Im Diagramm kann die Abhängigkeit dementsprechend besichtigt werden.</descripti
 &lt;/div>&lt;p>übermittelt und mit einem &amp;ldquo;&amp;amp;&amp;rdquo; miteinander kombiniert. Der &lt;code>key&lt;/code> stammt jeweils vom &lt;code>name&lt;/code>-Attribut der Input-Elemente.&lt;/p>
 &lt;p>Im oben gezeigten Beispiel haben wir bereits eine kleine Validierung (Überprüfung der Eingaben) integriert:&lt;/p>
 &lt;ul>
-&lt;li>Einerseits haben wir mit dem &lt;code>required&lt;/code>-Attribut festgelegt, dass die Email-Box nicht leer sein darf beim Übermitteln.&lt;/li>
-&lt;li>Anderseits verbietet &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> das Senden, wenn etwas anderes als eine Email-Adresse eingegeben wird. Aus diesem Grund verwenden wir lieber &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> als &lt;code>type=&amp;quot;text&amp;quot;&lt;/code> für Email-Adressen, &lt;code>type=&amp;quot;tel&amp;quot;&lt;/code> für Telefonnummern und &lt;code>type=&amp;quot;date&amp;quot;&lt;/code> für ein Datum.&lt;/li>
+&lt;li>Einerseits haben wir mit dem &lt;code>required&lt;/code>-Attribut festgelegt, dass die E-Mail-Box nicht leer sein darf beim Übermitteln.&lt;/li>
+&lt;li>Anderseits verbietet &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> das Senden, wenn etwas anderes als eine E-Mail-Adresse eingegeben wird. Aus diesem Grund verwenden wir lieber &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> als &lt;code>type=&amp;quot;text&amp;quot;&lt;/code> für E-Mail-Adressen, &lt;code>type=&amp;quot;tel&amp;quot;&lt;/code> für Telefonnummern und &lt;code>type=&amp;quot;date&amp;quot;&lt;/code> für ein Datum.&lt;/li>
 &lt;/ul>
 &lt;h3 id="ein-komplexeres-beispiel">Ein komplexeres Beispiel&lt;/h3>
 &lt;p>Um zu zeigen, wie einfach Input-Elemente verwendet werden könnten, kannst du folgendes Beispiel ausprobieren:&lt;/p>
@@ -7659,7 +7667,7 @@ package, namespace, class, file, program, subsystem, function, configuration, da
 &lt;/div>&lt;h3 id="aufgabe-uhr">Aufgabe: Uhr&lt;/h3>
 &lt;p>&lt;img src="/images/task.png" alt="task1"> Schreibe ein HTML, das eine Uhrzeit visuell anzeigt.&lt;/p>
 &lt;pre>&lt;code>Deine Website soll zentriert eine Uhrzeit anzeigen.
-Es steht dir frei, ob du die Uhrzeit anolog oder digital anzeigen möchtest.
+Es steht dir frei, ob du die Uhrzeit analog oder digital anzeigen möchtest.
 Wenn du eine analoge Uhr rendern möchtest, dann könnten Vektorgrafiken (SVGs) oder Canvas weiterbringen.
 Du kannst es aber auch mit gewöhnlichen HTML-Elementen versuchen.
 &lt;/code>&lt;/pre>
@@ -7669,7 +7677,7 @@ Du kannst es aber auch mit gewöhnlichen HTML-Elementen versuchen.
 &lt;li>&lt;a href="https://www.w3schools.com/html/html5_canvas.asp">Canvas&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: HTML-Struktur</title><link>/docs/web/html_css/06_html_structure/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/06_html_structure/</guid><description>
 &lt;h2 id="struktur-einer-html-seite">Struktur einer HTML-Seite&lt;/h2>
-&lt;p>Vorher haben wir ganz wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:&lt;/p>
+&lt;p>Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -7706,7 +7714,7 @@ Du kannst es aber auch mit gewöhnlichen HTML-Elementen versuchen.
 &lt;/div>&lt;p>Auf der ersten Zeile definieren wir, dass es sich um ein HTML-Dokument handelt. Diese Zeile ist erforderlich und seit HTML5 praktisch immer gleich.&lt;/p>
 &lt;p>Alle weiteren Elemente befinden sich dann im einzigen &lt;code>&amp;lt;html&amp;gt;&lt;/code>-Element. Auf der nächsten Stufe gibt es nur &lt;code>&amp;lt;head&amp;gt;&lt;/code> und &lt;code>&amp;lt;body&amp;gt;&lt;/code>. Im &lt;code>&amp;lt;head&amp;gt;&lt;/code> befinden sich Meta-Informationen über die Website wie z.B. der Tab-Titel der Website. Der eigentliche Seiteninhalt befindet sich dann im &lt;code>&amp;lt;body&amp;gt;&lt;/code>.&lt;/p>
 &lt;h3 id="dom-document-object-model">DOM (Document Object Model)&lt;/h3>
-&lt;p>In der Webentwicklung wird sehr oft vom &amp;ldquo;DOM&amp;rdquo; gesprochen. Visualisiert könnte der DOM aus dem obrigen Beispiel ungefähr so aussehen:&lt;/p>
+&lt;p>In der Webentwicklung wird sehr oft vom &amp;ldquo;DOM&amp;rdquo; gesprochen. Visualisiert könnte der DOM aus dem obigen Beispiel ungefähr so aussehen:&lt;/p>
 &lt;p>&lt;img src="../dom.png" alt="dom" title="(DOM einer einfachen HTML-Seite.)">&lt;/p>
 &lt;p>Was ist nun aber dieses &amp;ldquo;Document Object Model&amp;rdquo;? Ganz vereinfacht gesagt, beschreibt das DOM die Struktur der Website zur Laufzeit (also im Browser). Das DOM enthält also die Information, wie die Seite aufgebaut und verschachtelt ist mit ihren Elementen. Im Gegensatz zum HTML-Dokument kann sich das DOM während des Besuches der Seite verändern (z.B. durch JavaScript). Das DOM enthält also die Information, was aktuell auf der Seite ist.&lt;/p>
 &lt;p>Weitere Informationen erhälst du hier:&lt;/p>
@@ -9109,7 +9117,7 @@ Other Text
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Das ist ein typisches Beispiel für die Verwendung von &lt;code>&amp;lt;div&amp;gt;&lt;/code>s.&lt;/p>
-&lt;p>Möchtest du hingegen ein paar Wörter (aber nicht einen ganzen Block/Paragraphen) speziell stylen, wird oft ein &lt;code>&amp;lt;span&amp;gt;&lt;/code>-Element verwendet. Möchtest du z.B. das Datum in einem Text hervorheben, dann könnte das z.B. so aussehen:&lt;/p>
+&lt;p>Möchtest du hingegen ein paar Wörter (aber nicht einen ganzen Block/Paragrafen) speziell stylen, wird oft ein &lt;code>&amp;lt;span&amp;gt;&lt;/code>-Element verwendet. Möchtest du z.B. das Datum in einem Text hervorheben, dann könnte das z.B. so aussehen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -9160,11 +9168,11 @@ Other Text
 &lt;/div>
 &lt;/div>&lt;p>In HTML5 wurden viele neue Tags eingeführt, die die Struktur von HTML-Dateien genauer beschreiben. Oft hat eine Website eine ähnliche Struktur wie die folgende:&lt;/p>
 &lt;p>&lt;img src="https://www.w3schools.com/html/img_sem_elements.gif" alt="semanticTags" title="Semantic Tags, die es seit HTML5 gibt">&lt;/p>
-&lt;p>Der &lt;code>&amp;lt;header&amp;gt;&lt;/code> ist meistens das, was auf einer Website zu oberst ist. Dieser enthält oft den Titel der Applikation, das Logo der Firma und evtl. noch eine &lt;code>&amp;lt;nav&amp;gt;&lt;/code>igation (also Links wie für &amp;lsquo;Home&amp;rsquo;, &amp;lsquo;About&amp;rsquo;, &amp;hellip;).&lt;/p>
+&lt;p>Der &lt;code>&amp;lt;header&amp;gt;&lt;/code> ist meistens das, was auf einer Website zuoberst ist. Dieser enthält oft den Titel der Applikation, das Logo der Firma und evtl. noch eine &lt;code>&amp;lt;nav&amp;gt;&lt;/code>igation (also Links wie für &amp;lsquo;Home&amp;rsquo;, &amp;lsquo;About&amp;rsquo;, &amp;hellip;).&lt;/p>
 &lt;p>Das Gegenteil des &lt;code>&amp;lt;header&amp;gt;&lt;/code>s ist der &lt;code>&amp;lt;footer&amp;gt;&lt;/code>. Der Footer befindet sich oft am Ende der Website (also ganz unten) und enthält oft das Copyright sowie weiterführende Links wie z.B. solche zu den Datenschutzbestimmungen.&lt;/p>
 &lt;p>Nicht auf diesem Bild, aber trotzdem relevant: Oft befindet sich der Hauptteil einer Website (also nicht der Header, Footer, Werbung) in einem &lt;code>&amp;lt;main&amp;gt;&lt;/code>-Element. Wenn die Website einen Leseartikel beschreibt, dann wäre der Text inkl. Überschriften dort drin.&lt;/p>
 &lt;p>Einzelne Abschnitte (z.B. Unterkapitel inkl. Überschriften) werden oft in &lt;code>&amp;lt;section&amp;gt;&lt;/code>s gepackt und sind in diesem Beispiel eine gute Alternative zu &lt;code>&amp;lt;div&amp;gt;&lt;/code>s.&lt;/p>
-&lt;p>Was genau ein &lt;code>&amp;lt;article&amp;gt;&lt;/code> ist, würde den Rahmen hier definitiv sprengen. Auf jeden Fall beschreibt ein &lt;code>article&lt;/code> ein von der aktuellen Website unabhängigs und in sich abgeschlossenes Element. Ein &lt;code>article&lt;/code>-Element könnte man also einfach von der aktuellen Seite ausschneiden und in eine andere kopieren.&lt;/p>
+&lt;p>Was genau ein &lt;code>&amp;lt;article&amp;gt;&lt;/code> ist, würde den Rahmen hier definitiv sprengen. Auf jeden Fall beschreibt ein &lt;code>article&lt;/code> ein von der aktuellen Website unabhängiges und in sich abgeschlossenes Element. Ein &lt;code>article&lt;/code>-Element könnte man also einfach von der aktuellen Seite ausschneiden und in eine andere kopieren.&lt;/p>
 &lt;p>Bitte schaue dir diese Dokumentation zu HTML Semantic Tags an. Dort sind auch &lt;code>&amp;lt;article&amp;gt;&lt;/code>s genauer beschrieben: &lt;a href="https://www.w3schools.com/html/html5_semantic_elements.asp">https://www.w3schools.com/html/html5_semantic_elements.asp&lt;/a>&lt;/p>
 &lt;p>Mit semantischen Tags könnte man z.B. das&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -11049,7 +11057,7 @@ Node&lt;span style="color:#f92672">(&lt;/span>Node&lt;span style="color:#f92672"
 &lt;h3 id="übungen-2">Übungen&lt;/h3>
 &lt;p>Übungen kommen noch&lt;/p>
 &lt;p>Fortsetzung folgt&amp;hellip;&lt;/p></description></item><item><title>Docs: HTML Rekapitulieren</title><link>/docs/web/html_css/08_html_finish/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/08_html_finish/</guid><description>
-&lt;p>Beherrst du HTML? Wenn ja, dann gib deinem HTML ein Styling - mit CSS! Fahre hier fort.&lt;/p>
+&lt;p>Beherrschst du HTML? Wenn ja, dann gib deinem HTML ein Styling - mit CSS! Fahre hier fort.&lt;/p>
 &lt;p>Hast du nicht alles verstanden oder du fühlst dich noch nicht so sattelfest? Dann kannst du gerne HTML noch ein bisschen üben. Wir empfehlen den HTML-Teil aus dem folgenden Kurs:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://www.udacity.com/course/intro-to-html-and-css--ud001">Intro to HTML and CSS - Udacity&lt;/a>&lt;/li>
@@ -11442,7 +11450,7 @@ Legen Sie dort Ihre anwendungsweiten Stile ab.&lt;/p>
 &lt;li>Sie haben die erste Anwendungsstruktur mit dem Angular CLI erstellt.&lt;/li>
 &lt;li>Sie haben gelernt, dass Angular-Komponenten Daten anzeigen.&lt;/li>
 &lt;li>Sie haben die doppelten geschweiften Klammern der Interpolation verwendet, um den Titel der Anwendung anzuzeigen.&lt;/li>
-&lt;/ul></description></item><item><title>Docs: CSS Grundlagen</title><link>/docs/web/html_css/11_css_basics/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/11_css_basics/</guid><description>
+&lt;/ul></description></item><item><title>Docs: CSS-Grundlagen</title><link>/docs/web/html_css/11_css_basics/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/11_css_basics/</guid><description>
 &lt;h2 id="wie-funktioniert-css">Wie funktioniert CSS?&lt;/h2>
 &lt;p>Um CSS anwenden zu können, müssen wir das Grundprinzip verstehen:&lt;/p>
 &lt;p>Mit CSS werden selektiv HTML-Elemente ausgewählt und deren Styling angepasst. Hierfür gibt es verschiedene Möglichkeiten, welche wir im Verlaufe des Kurses kennenlernen werden.&lt;/p>
@@ -11465,10 +11473,10 @@ Legen Sie dort Ihre anwendungsweiten Stile ab.&lt;/p>
 &lt;li>Die Zeichenfolge vor den geschweiften Klammern ist der sogenannte Selektor (Englisch: Selector). Er definiert, auf welche Elemente das Styling angewendet werden soll. In diesem Fall würde das Styling auf alle Paragraphen angewendet werden.&lt;/li>
 &lt;li>Die Zeilen innerhalb der geschweiften Klammern, definieren was für ein Styling angwendet werden soll. Beim gezeigten Beispiel würde die Textfarbe auf blau eingestellt werden und die Hintergrundfarbe rot.&lt;/li>
 &lt;/ul>
-&lt;h2 id="wie-kann-ich-css-anweden">Wie kann ich CSS anweden?&lt;/h2>
+&lt;h2 id="wie-kann-ich-css-anwenden">Wie kann ich CSS anwenden?&lt;/h2>
 &lt;p>Als nächstes schauen wir an, wie man CSS in eine Webseite (bzw. in ein HTML File) einbinden kann. Dafür schauen wir uns folgende Abschnitte an:&lt;/p>
 &lt;h3 id="direktes-einbinden-in-html-elemente">Direktes einbinden in HTML-Elemente&lt;/h3>
-&lt;p>Die wohl schnellste möglichkeit CSS auf ein HTML-Element anzuwenden, ist, das &amp;ldquo;style&amp;rdquo;-Attribut des HTML-Elements anzupassen. Dies würde wie folgt ausschauen:&lt;/p>
+&lt;p>Die wohl schnellste Möglichkeit CSS auf ein HTML-Element anzuwenden, ist, das &amp;ldquo;style&amp;rdquo;-Attribut des HTML-Elements anzupassen. Dies würde wie folgt ausschauen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -11508,7 +11516,7 @@ Legen Sie dort Ihre anwendungsweiten Stile ab.&lt;/p>
 &lt;/div>
 &lt;/div>&lt;p>Hierbei können wir innerhalb des Style-Tags herkömmliches CSS anwenden, wie wir es bereits aus dem ersten Beispiel kennen. Der Style-Tag kann irgendwo (auch verschachtelt) irgendwo im &lt;code>&amp;lt;head&amp;gt;&lt;/code> oder &lt;code>&amp;lt;body&amp;gt;&lt;/code> stehen. Wo genau darin ist jedoch nicht wichtig. Best-Practice dafür wäre im &lt;code>&amp;lt;head&amp;gt;&lt;/code> nach den &lt;code>&amp;lt;meta&amp;gt;&lt;/code>-Tags.&lt;/p>
 &lt;h3 id="einbinden-über-ein-externes-css-file">Einbinden über ein externes CSS-File&lt;/h3>
-&lt;p>Die wohl am meist verbreiteste Methode CSS in eine Webseite einzubinden ist es, das CSS in ein CSS-File auszulagern und dann im HTML darauf zu verweisen.&lt;/p>
+&lt;p>Die wohl am weitesten verbreitete Methode CSS in eine Webseite einzubinden ist es, das CSS in ein CSS-File auszulagern und dann im HTML darauf zu verweisen.&lt;/p>
 &lt;p>Dies kann man wie folgt machen:&lt;/p>
 &lt;p>Datei: index.html&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -12071,8 +12079,8 @@ Warum hat die Anwendung dann funktioniert?&lt;/p>
 &lt;li>Du hast das &lt;code>FormsModule&lt;/code> in das &lt;code>AppModule&lt;/code> importiert, so dass Angular die &lt;code>ngModel&lt;/code>-Direktive erkennen und anwenden konnte.&lt;/li>
 &lt;li>Du hast gelernt, wie wichtig es ist, Komponenten im &lt;code>AppModule&lt;/code> zu deklarieren
 und schätzt es, dass die CLI sie für dich deklariert.&lt;/li>
-&lt;/ul></description></item><item><title>Docs: CSS Selektoren</title><link>/docs/web/html_css/12_css_selectors/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/12_css_selectors/</guid><description>
-&lt;h2 id="was-gibt-es-für-css-selektoren">Was gibt es für CSS Selektoren?&lt;/h2>
+&lt;/ul></description></item><item><title>Docs: CSS-Selektoren</title><link>/docs/web/html_css/12_css_selectors/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/12_css_selectors/</guid><description>
+&lt;h2 id="was-gibt-es-für-css-selektoren">Was gibt es für CSS-Selektoren?&lt;/h2>
 &lt;p>Nun da wir die Grundlagen von CSS gelernt haben, können wir uns die Selektoren genauer anschauen.
 Die Selektoren bestimmen, für welche HTML-Elemente die CSS-Regeln gelten (&amp;ldquo;ziehen&amp;rdquo;).&lt;/p>
 &lt;h2 id="selektoren-im-überblick">Selektoren im Überblick&lt;/h2>
@@ -12158,7 +12166,7 @@ Die Selektoren bestimmen, für welche HTML-Elemente die CSS-Regeln gelten (&amp;
 &lt;/div>&lt;p>In diesem Beispiel wurde die frei erfundene Klasse &lt;code>round-container&lt;/code>, die ID &lt;code>your-name&lt;/code> und das Element &lt;code>label&lt;/code> mit CSS versehen.&lt;/p>
 &lt;h2 id="spezifischere-selektoren">Spezifischere Selektoren&lt;/h2>
 &lt;h3 id="element-auf-grund-eines-attributes-setzen">Element auf Grund eines Attributes setzen&lt;/h3>
-&lt;p>Es kann vorkommen, dass du ein Element mit einem spezifischen Attribut stylen musst. Möchtest du z.B. alle Submit-Buttons stylen, dann könnte dir diese Selektor weiterhelfen: &lt;code>input[type=submit] {...}&lt;/code>&lt;/p>
+&lt;p>Es kann vorkommen, dass du ein Element mit einem spezifischen Attribut stylen musst. Möchtest du z.B. alle Submit-Buttons stylen, dann könnte dir dieser Selektor weiterhelfen: &lt;code>input[type=submit] {...}&lt;/code>&lt;/p>
 &lt;p>Es gibt aber auch die Möglichkeit, ob der Attribut-Wert einen bestimmten Text enthält, damit beginnt bzw. endet. Hierfür sei auf diese Seite verwiesen: &lt;a href="https://www.w3schools.com/cssref/css_selectors.asp">https://www.w3schools.com/cssref/css_selectors.asp&lt;/a>&lt;/p>
 &lt;h3 id="spezifisches-element-mit-klasse">Spezifisches Element mit Klasse&lt;/h3>
 &lt;p>Möchtest du z.B. alle &lt;code>&amp;lt;form&amp;gt;&lt;/code>-Elemente, die die Klasse &lt;code>round-container&lt;/code> enthalten, stylen, dann möchtest du wahrscheinlich folgenden Selektor: &lt;code>form.round-container {...}&lt;/code>&lt;/p>

@@ -1,9 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – HTML und CSS</title><link>/docs/web/html_css/</link><description>Recent content in HTML und CSS on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/docs/web/html_css/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: HTML</title><link>/docs/web/html_css/01_html_intro/</link><pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/01_html_intro/</guid><description>
 &lt;h2 id="wie-funktionieren-webseiten">Wie funktionieren Webseiten?&lt;/h2>
-&lt;p>Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten irgendwie so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.&lt;/p>
+&lt;p>Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.&lt;/p>
 &lt;p>Genau das wird mit HTML erreicht. Jeder Browser versteht HTML.&lt;/p>
 &lt;h2 id="was-ist-html">Was ist HTML?&lt;/h2>
-&lt;p>Beginnen wir mit der Definition von der Abkürzung &amp;ldquo;HTML&amp;rdquo;. Diese steht für &amp;ldquo;HyperText Markup Language&amp;rdquo;. Okay, was aber bedeutet das?&lt;/p>
+&lt;p>Beginnen wir mit der Definition der Abkürzung &amp;ldquo;HTML&amp;rdquo;. Diese steht für &amp;ldquo;HyperText Markup Language&amp;rdquo;. Okay, was aber bedeutet das?&lt;/p>
 &lt;p>Mit HyperText ist ein Dokument gemeint, das nicht dafür gemacht ist, um von oben nach unten gelesen zu werden. HyperText enthält also z.B. Links, die auf andere Dokumente führen. Unter Markup ist zu verstehen, dass das Dokument strukturiert (Kopfzeilen, Hauptteil, Fusszeilen) und formatiert (z.B. kursiver/fetter Text) ist.&lt;/p>
 &lt;p>Somit ist HTML also eine Sprache, die alle Elemente auf einer Webseite &lt;strong>BESCHREIBT&lt;/strong>. Die Betonung liegt hier auf &amp;ldquo;beschreibt&amp;rdquo;. Das bedeutet, dass HTML keine Programmiersprache ist. Code, der auf der Webseite ausgeführt wird, ist in JavaScript geschrieben.&lt;/p>
 &lt;h2 id="übersicht-zu-html-css-und-javascript-js">Übersicht zu HTML, CSS und JavaScript (JS)&lt;/h2>
@@ -15,7 +15,7 @@
 &lt;h2 id="eine-html-seite-mit-formatiertem-text-erstellen">Eine HTML-Seite mit formatiertem Text erstellen&lt;/h2>
 &lt;p>Wir beginnen ganz unkompliziert. Erstellen wir zuerst eine Text-Datei. Dafür erstellen wir zuerst ein Ordner, in dem wir später unsere Projekt-Dateien speichern. Anschliessend kannst du diesen Ordner mit der IDE (Entwicklungsumgebung) deiner Wahl öffnen (hier VS Code). Erstelle nun eine neue HTML-Datei im soeben erstellten Ordner. In VS Code kannst du das z.B. wie folgt machen:&lt;/p>
 &lt;p>&lt;img src="../vs-code-create-file.png" alt="createFile" title="Erstelle eine neue Datei, indem du im Explorer von VS Code mit deiner Maus über deinen Ordner bewegst. Klicke dann auf das Datei-Symbol und gib einen Dateinamen an, der mit .html endet.">&lt;/p>
-&lt;p>Fülle diese Datei nun mit irgend einem Text. Speichere diese Datei. Kopiere nun den Pfad zu dieser Datei. In VS Code kannst du den Pfad mit einem Rechtsklick auf die Datei kopieren:&lt;/p>
+&lt;p>Fülle diese Datei nun mit irgendeinem Text. Speichere diese Datei. Kopiere nun den Pfad zu dieser Datei. In VS Code kannst du den Pfad mit einem Rechtsklick auf die Datei kopieren:&lt;/p>
 &lt;p>&lt;img src="../vs-code-copy-path.png" alt="copyPath" title=" ">&lt;/p>
 &lt;p>Gib diesen Pfad nun im Browser deiner Wahl ein. Du solltest nun einen unformatierten Text im Browser sehen:&lt;/p>
 &lt;p>&lt;img src="../unformated-html-file.png" alt="unformatedHtmlFile" title=" ">&lt;/p>
@@ -59,7 +59,7 @@ um eine Glühbirne auszuwechseln?&amp;lt;/&lt;span style="color:#f92672">p&lt;/s
 &lt;/div>
 &lt;/div>&lt;p>Du hast gesehen, dass es das zwischen &lt;code>&amp;lt;h1&amp;gt;&lt;/code> und &lt;code>&amp;lt;/h1&amp;gt;&lt;/code> wie ein Titel formatiert wurde. Der Text zwischen &lt;code>&amp;lt;p&amp;gt;&lt;/code> und &lt;code>&amp;lt;/p&amp;gt;&lt;/code> in eigenen Abschnitten dargestellt.&lt;/p>
 &lt;h2 id="html-tags">HTML Tags&lt;/h2>
-&lt;p>Du hast schon die ersten &amp;ldquo;HTML Tags&amp;rdquo; kennengelernt: &lt;code>&amp;lt;h1&amp;gt;&lt;/code> und &lt;code>&amp;lt;p&amp;gt;&lt;/code>. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> wird für Titel und &lt;code>&amp;lt;p&amp;gt;&lt;/code> wird für Paragraphen verwendet.&lt;/p>
+&lt;p>Du hast schon die ersten &amp;ldquo;HTML Tags&amp;rdquo; kennengelernt: &lt;code>&amp;lt;h1&amp;gt;&lt;/code> und &lt;code>&amp;lt;p&amp;gt;&lt;/code>. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> wird für Titel und &lt;code>&amp;lt;p&amp;gt;&lt;/code> wird für Paragrafen verwendet.&lt;/p>
 &lt;p>HTML Tags sind wie Keywords (Schlüsselbegriffe), die beschreiben, wie der Browser deren Inhalt (Content) formatiert bzw. darstellt.&lt;/p>
 &lt;p>Die Tags inklusiv deren Inhalt nennen wir &amp;ldquo;Element&amp;rdquo;. Das Element ist wie folgt aufgebaut:&lt;/p>
 &lt;p>&lt;img src="../html-tag.svg" alt="htmlElement" title="(Bild, das den Aufbau eines HTML-Elements zeigt.)">&lt;/p>
@@ -91,9 +91,9 @@ um eine Glühbirne auszuwechseln?&amp;lt;/&lt;span style="color:#f92672">p&lt;/s
 &lt;/div>
 &lt;/div>&lt;p>Dies führt zu folgendem Ergebnis:&lt;/p>
 &lt;p>&lt;img src="../headings.jpg" alt="headings" title="(Bild, das zeigt, wie Headings dargestellt werden.)">&lt;/p>
-&lt;p>Es gibt also Tags für Titel erster bis sechster Stufe. Grundsätzlich gilt, je kleiner die Zahl der Stufe, je grösser wird der Titel dargestellt. Das obrige Ergebnis zeigt, wie Titel per Default gestylt werden. Du kannst das Styling dieser Titel selbstverständlich anpassen (kommt im CSS-Teil).&lt;/p>
-&lt;h2 id="paragraphen">Paragraphen&lt;/h2>
-&lt;p>Du hast bereits erfahren, dass Zeilenumbrüche in HTML keine Wirkung haben. Möchtest du eine neue Zeile einfügen, könnte dir das &lt;code>&amp;lt;br/&amp;gt;&lt;/code>-Tag weiterhelfen. Besser ist aber, wenn du den Text, der zusammen gehört, auch entsprechend markierst: Das kannst du mit dem &lt;code>&amp;lt;p&amp;gt;&lt;/code>-Tag erreichen. Der Text, der innerhalb dieses Tags steht, wird in einem gleichen Abschnitt dargestellt. Ausserdem trennt es diesen Inhalt mit Leerschlag zum nächsten Element. Das wird im folgenden Beispiel verdeutlicht:&lt;/p>
+&lt;p>Es gibt also Tags für Titel erster bis sechste Stufe. Grundsätzlich gilt, je kleiner die Zahl der Stufe, je grösser wird der Titel dargestellt. Das obrige Ergebnis zeigt, wie Titel per Default gestylt werden. Du kannst das Styling dieser Titel selbstverständlich anpassen (kommt im CSS-Teil).&lt;/p>
+&lt;h2 id="paragrafen">Paragrafen&lt;/h2>
+&lt;p>Du hast bereits erfahren, dass Zeilenumbrüche in HTML keine Wirkung haben. Möchtest du eine neue Zeile einfügen, könnte dir das &lt;code>&amp;lt;br/&amp;gt;&lt;/code>-Tag weiterhelfen. Besser ist aber, wenn du den Text, der zusammengehört, auch entsprechend markierst: Das kannst du mit dem &lt;code>&amp;lt;p&amp;gt;&lt;/code>-Tag erreichen. Der Text, der innerhalb dieses Tags steht, wird in einem gleichen Abschnitt dargestellt. Ausserdem trennt es diesen Inhalt mit Leerschlag zum nächsten Element. Das wird im folgenden Beispiel verdeutlicht:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -149,7 +149,7 @@ the new restaurant called
 &lt;/div>
 &lt;/div>&lt;p>Um also einen bestimmten Text fett darzustellen, kannst du es in ein &lt;code>&amp;lt;strong&amp;gt;&lt;/code>- oder &lt;code>&amp;lt;b&amp;gt;&lt;/code>-Element schmeissen. Beide Tags MACHEN im Prinzip genau das Gleiche, MEINEN aber nicht zwingend das Gleiche: &lt;code>&amp;lt;b&amp;gt;&lt;/code>-Elemente sind einfach fett-gedruckt, während &lt;code>&amp;lt;strong&amp;gt;&lt;/code>-Elemente betont sein sollen. &lt;code>&amp;lt;strong&amp;gt;&lt;/code> soll dem fett-gedruckten Wort also mehr Ausdruck verleihen. Mit einem eigenen Styling (kommt im CSS-Teil) könntest du &lt;code>&amp;lt;strong&amp;gt;&lt;/code>-Elemente z.B. auch grösser oder rot darstellen. Mit einem &lt;code>&amp;lt;b&amp;gt;&lt;/code>-Element sagt man im Prinzip nur, dass der Text fett-gedruckt sein soll.&lt;/p>
 &lt;p>Einen Text kursiv darzustellen kannst du mit &lt;code>&amp;lt;i&amp;gt;&lt;/code> bzw. &lt;code>&amp;lt;em&amp;gt;&lt;/code>. Das Pendant zu &lt;code>&amp;lt;b&amp;gt;&lt;/code> ist &lt;code>&amp;lt;i&amp;gt;&lt;/code> (italic), und dasjenige zu &lt;code>&amp;lt;strong&amp;gt;&lt;/code> das &lt;code>&amp;lt;em&amp;gt;&lt;/code> (emphasis = Betonung).&lt;/p>
-&lt;p>Das obrige Beispiel wird so gerendert:&lt;/p>
+&lt;p>Das obige Beispiel wird so gerendert:&lt;/p>
 &lt;div style="border: 2px solid black; padding: 2em">
 &lt;p>
     &lt;strong>Heared&lt;/strong> about
@@ -171,7 +171,7 @@ the new restaurant called
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://www.sbb.ch/&amp;#34;&lt;/span>&amp;gt;Home&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Probiere das einaml aus.&lt;/p>
+&lt;/div>&lt;p>Probiere das einmal aus.&lt;/p>
 &lt;p>Du wirst einen blauen und unterstrichenen Text &amp;ldquo;Home&amp;rdquo; sehen. &lt;code>&amp;lt;a&amp;gt;&lt;/code> ist der Tag, der generell für Hyperlinks verwendet wird. &lt;code>href&lt;/code> ist ein Attribut des &lt;code>a&lt;/code>-Tags,
 mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https://www.sbb.ch/&lt;/code> die URL, die beim Klick aufgerufen wird. &lt;code>Home&lt;/code> ist der Text, der dem User angezeigt wird.&lt;/p>
 &lt;p>Ziemlich ähnlich kannst du auch ein Bild aus dem Internet einbinden:&lt;/p>
@@ -187,7 +187,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;span style="color:#a6e22e">width&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;300&amp;#34;&lt;/span> /&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Ganz offensichtlich wird das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag (Image) für Bilder verwendet. Das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag ist ein Tag, welches keinen Inhalt zwischen Opening- und Closing-Tag hat. Mit dem &lt;code>/&lt;/code> im Opening-Tag kannn man symbolisieren, dass das Tag ohne Closing-Tag geschlossen wird.&lt;/p>
+&lt;/div>&lt;p>Ganz offensichtlich wird das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag (Image) für Bilder verwendet. Das &lt;code>&amp;lt;img/&amp;gt;&lt;/code>-Tag ist ein Tag, welches keinen Inhalt zwischen Opening- und Closing-Tag hat. Mit dem &lt;code>/&lt;/code> im Opening-Tag kann man symbolisieren, dass das Tag ohne Closing-Tag geschlossen wird.&lt;/p>
 &lt;p>Das wichtigste Attribut im &lt;code>img&lt;/code>-Tag ist &lt;code>src&lt;/code> (source = Quelle). Als &lt;code>src&lt;/code> wird eine URL zu einem Bild erwartet. Vergiss bei absoluten Pfaden (wird später noch erklärt) nicht das Protokoll (also https://) anzugeben. Nicht zwingend aber erwartet ist auch das &lt;code>alt&lt;/code>-Attribut (alternative). Dieser Text wird angezeigt, wenn das Bild nicht geladen werden konnte. Optional sind hingegen Attribute wie &lt;code>width&lt;/code> oder &lt;code>height&lt;/code>, welche die Breite und Höhe des Bildes festlegen. Diese Grössen werden aber besser mit CSS spezifiziert, da CSS genauere Spezifikationen zulässt (also nicht nur in &amp;lsquo;Pixel&amp;rsquo; sondern auch anderen Einheiten).&lt;/p>
 &lt;p>Wenn du willst, dass man beim Klick auf ein Bild weitergeleitet wird, kannst du dein Bild in ein &lt;code>&amp;lt;a&amp;gt;&lt;/code>-Element schmeissen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -246,7 +246,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &amp;lt;/&lt;span style="color:#f92672">ol&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Das ganze sieht dann ungefähr so aus:&lt;/p>
+&lt;/div>&lt;p>Das Ganze sieht dann ungefähr so aus:&lt;/p>
 &lt;div style="border: 2px solid black; padding: 2em">
 &lt;h4 id="what-do-you-do-in-case-of-emergencyh4">What do you do in case of emergency?&lt;/h4>&lt;/h4>
 &lt;ul>
@@ -303,7 +303,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;p>Die Benutzer deiner Webseite möchten oder sollen Daten eingeben können, z.B. für ein Kontakt-Formular oder eine Login-Seite. HTML-Formulare ermöglichen genau das, auch ohne JavaScript.&lt;/p>
 &lt;h2 id="html-input-element">HTML-Input-Element&lt;/h2>
 &lt;p>Bevor wir uns HTML-Formulare genauer anschauen, wollen wir zuerst einen Blick auf Input-Elemente werfen, die das Eingeben von Daten überhaupt ermöglichen.&lt;/p>
-&lt;p>Beginnen wir mit einer ganz einfachen TextBox:&lt;/p>
+&lt;p>Beginnen wir mit einer einfachen TextBox:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -315,9 +315,9 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Probiere alle Beispiele immer selbst aus. Du hast gesehen, wie einfach eine TextBox in HTML eingebunden werden kann.&lt;/p>
-&lt;p>Das &lt;code>type&lt;/code>-Attribut definiert, um was für eine Art von Input-Element es sich handelt. &lt;code>text&lt;/code> steht für eine ganz gewöhnliche TextBox. Das zweite Attribut kannst du im Moment noch ignorieren.&lt;/p>
+&lt;p>Das &lt;code>type&lt;/code>-Attribut definiert, um was für eine Art von Input-Element es sich handelt. &lt;code>text&lt;/code> steht für eine gewöhnliche TextBox. Das zweite Attribut kannst du im Moment noch ignorieren.&lt;/p>
 &lt;h2 id="label-für-input-elemente">Label für Input-Elemente&lt;/h2>
-&lt;p>Vor der TextBox haben wir einen Text (&amp;ldquo;Was ist dein Vorname&amp;rdquo;). Dieser Text wird auch &amp;ldquo;Label&amp;rdquo; genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf den Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:&lt;/p>
+&lt;p>Vor der TextBox haben wir einen Text (&amp;ldquo;Was ist dein Vorname&amp;rdquo;). Dieser Text wird auch &amp;ldquo;Label&amp;rdquo; genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf das Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -327,7 +327,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Nun haben wir die gewünschte Funktionalität hinzufügen können. Aber was genau haben wir hier gemacht?&lt;/p>
-&lt;p>Wir haben den Label als Label definiert (da im &lt;code>label&lt;/code>-Element). Wenn wir ein Input-Element in einem Label hinzufügen, dann wird bei einem Klick auf diesen Label automatisch dieses Input-Element fokusiert.&lt;/p>
+&lt;p>Wir haben das Label als Label definiert (da im &lt;code>label&lt;/code>-Element). Wenn wir ein Input-Element in einem Label hinzufügen, dann wird bei einem Klick auf dieses Label automatisch dieses Input-Element fokussiert.&lt;/p>
 &lt;p>Nun sieht das noch ein bisschen unübersichtlich aus. Das können wir besser! Zum Beispiel so:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -346,7 +346,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;/ul>
 &lt;p>Fassen wir zusammen, weshalb wir das &lt;code>label&lt;/code>-Element verwenden:&lt;/p>
 &lt;ul>
-&lt;li>Beim Klick auf den Label wird das entsprechende Input-Element ausgewählt.&lt;/li>
+&lt;li>Beim Klick auf das Label wird das entsprechende Input-Element ausgewählt.&lt;/li>
 &lt;li>Beim Klick in das entsprechende Input-Element würde ein Screen-Reader den Namen des Labels laut vorlesen, (falls verwendet).&lt;/li>
 &lt;li>Und ausserdem kann man später die Labels so einfacher stylen mit CSS.&lt;/li>
 &lt;/ul>
@@ -364,12 +364,12 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;li>password&lt;/li>
 &lt;li>radio&lt;/li>
 &lt;/ul>
-&lt;p>Bitte schaue dir diese Elemente auf der obengennanten Seite rasch an. Du solltest wissen, wie diese Elemente aussehen und dass es sie gibt.&lt;/p>
+&lt;p>Bitte schaue dir diese Elemente auf der obengenannten Seite rasch an. Du solltest wissen, wie diese Elemente aussehen und dass es sie gibt.&lt;/p>
 &lt;h2 id="formulare">Formulare&lt;/h2>
 &lt;p>Nun solltest du im Stande sein, UI-Elemente (UI = User Interface -&amp;gt; Benutzerschnittstelle) mit HTML auf einer Seite anzuzeigen. Jetzt wäre es schön, wenn diese Daten auch irgendwie verwendet werden könnten.&lt;/p>
 &lt;p>Theoretisch könntest du mit der Programmiersprache JavaScript direkt darauf zugreifen. Im Moment wollen wir aber bei HTML bleiben. Was wir mit HTML machen können, ist, die Werte an ein Backend (=Server) zu schicken.&lt;/p>
 &lt;p>Als Backend verwenden wir die folgende URL: &lt;a href="https://www.w3schools.com/action_page.php">https://www.w3schools.com/action_page.php&lt;/a>. Das ist eine spezielle Seite: sie zeigt die Daten an, die wir ihr schicken.&lt;/p>
-&lt;p>Folgender Code zeigt ein Formular, das eine Email und ein Boolean beim Klick auf &amp;ldquo;Übermitteln&amp;rdquo; an das Backend schickt&lt;/p>
+&lt;p>Folgender Code zeigt ein Formular, das eine E-Mail und ein Boolean beim Klick auf &amp;ldquo;Übermitteln&amp;rdquo; an das Backend schickt&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -393,8 +393,8 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Entscheidend ist hier das &lt;code>&amp;lt;form&amp;gt;&lt;/code>-Tag. Das &lt;code>action&lt;/code>-Attribut legt fest, wo die Daten hingeschickt werden. Die &lt;code>method&lt;/code> legt fest, welche HTTP Request Method verwendet wird (GET oder POST). Bist du dir bei den Methoden nicht mehr so sicher, dann schaue bitte das &amp;ldquo;REST&amp;rdquo;-Kapitel hier noch einmal an: &lt;a href="https://labs.it-ninjas.ch/docs/java/spring_introduction/#625-rest">https://labs.it-ninjas.ch/docs/java/spring_introduction/#625-rest&lt;/a>&lt;/p>
-&lt;p>Bei Formularen verwendet man meistens entweder GET oder POST. Der grosse Unterschied zwischen beiden Methoden ist, dass bei GET die Daten in der URL mitgegeben wird, wobei bei POST die Daten ein bisschen besser versteckt im HTTP Request Body mitgeschickt werden. Verschickst du ein Passwort, solltest du lieber POST verwenden, weil sonst das Passwort womöglich im Browser in der URL-Box einsehbar sein könnte. Die zu verwendende Methode wird meistens vom Backend festgelegt. Unser Backend unsterstützt beide Methoden.&lt;/p>
-&lt;p>Wichtig für das Formular ist, dass es einen &lt;code>submit&lt;/code>-Button besitzt. Dieser Submit-Button löst das Senden der Daten an die angegebene Url (&lt;code>action&lt;/code>) mit der entsprechenden HTTP Request Method (&lt;code>method&lt;/code>) aus. Probiere dieses Formular einmal aus. Du wirst sehen, dass etwas wie folgendes an den Server übermittel wird:&lt;/p>
+&lt;p>Bei Formularen verwendet man meistens entweder GET oder POST. Der grosse Unterschied zwischen beiden Methoden ist, dass bei GET die Daten in der URL mitgegeben wird, wobei bei POST die Daten ein bisschen besser versteckt im HTTP Request Body mitgeschickt werden. Verschickst du ein Passwort, solltest du lieber POST verwenden, weil sonst das Passwort womöglich im Browser in der URL-Box einsehbar sein könnte. Die zu verwendende Methode wird meistens vom Backend festgelegt. Unser Backend unterstützt beide Methoden.&lt;/p>
+&lt;p>Wichtig für das Formular ist, dass es einen &lt;code>submit&lt;/code>-Button besitzt. Dieser Submit-Button löst das Senden der Daten an die angegebene Url (&lt;code>action&lt;/code>) mit der entsprechenden HTTP Request Method (&lt;code>method&lt;/code>) aus. Probiere dieses Formular einmal aus. Du wirst sehen, dass etwas wie Folgendes an den Server übermittelt wird:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -415,8 +415,8 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;/div>&lt;p>übermittelt und mit einem &amp;ldquo;&amp;amp;&amp;rdquo; miteinander kombiniert. Der &lt;code>key&lt;/code> stammt jeweils vom &lt;code>name&lt;/code>-Attribut der Input-Elemente.&lt;/p>
 &lt;p>Im oben gezeigten Beispiel haben wir bereits eine kleine Validierung (Überprüfung der Eingaben) integriert:&lt;/p>
 &lt;ul>
-&lt;li>Einerseits haben wir mit dem &lt;code>required&lt;/code>-Attribut festgelegt, dass die Email-Box nicht leer sein darf beim Übermitteln.&lt;/li>
-&lt;li>Anderseits verbietet &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> das Senden, wenn etwas anderes als eine Email-Adresse eingegeben wird. Aus diesem Grund verwenden wir lieber &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> als &lt;code>type=&amp;quot;text&amp;quot;&lt;/code> für Email-Adressen, &lt;code>type=&amp;quot;tel&amp;quot;&lt;/code> für Telefonnummern und &lt;code>type=&amp;quot;date&amp;quot;&lt;/code> für ein Datum.&lt;/li>
+&lt;li>Einerseits haben wir mit dem &lt;code>required&lt;/code>-Attribut festgelegt, dass die E-Mail-Box nicht leer sein darf beim Übermitteln.&lt;/li>
+&lt;li>Anderseits verbietet &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> das Senden, wenn etwas anderes als eine E-Mail-Adresse eingegeben wird. Aus diesem Grund verwenden wir lieber &lt;code>type=&amp;quot;email&amp;quot;&lt;/code> als &lt;code>type=&amp;quot;text&amp;quot;&lt;/code> für E-Mail-Adressen, &lt;code>type=&amp;quot;tel&amp;quot;&lt;/code> für Telefonnummern und &lt;code>type=&amp;quot;date&amp;quot;&lt;/code> für ein Datum.&lt;/li>
 &lt;/ul>
 &lt;h3 id="ein-komplexeres-beispiel">Ein komplexeres Beispiel&lt;/h3>
 &lt;p>Um zu zeigen, wie einfach Input-Elemente verwendet werden könnten, kannst du folgendes Beispiel ausprobieren:&lt;/p>
@@ -472,7 +472,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;p>Als Backend kannst du &amp;ldquo;&lt;a href="https://www.w3schools.com/action_page.php%22">https://www.w3schools.com/action_page.php&amp;quot;&lt;/a> (wie im vorherigen Beispiel) verwenden. Schaue nach dem Klick an, wie die Daten übermittelt worden sind. Wie sieht die URL im Browser aus? Variere die HTTP Request Method.&lt;/p>
 &lt;p>Zeige deine Lösung dann einem Coach.&lt;/p></description></item><item><title>Docs: HTML-Struktur</title><link>/docs/web/html_css/06_html_structure/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/06_html_structure/</guid><description>
 &lt;h2 id="struktur-einer-html-seite">Struktur einer HTML-Seite&lt;/h2>
-&lt;p>Vorher haben wir ganz wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:&lt;/p>
+&lt;p>Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -509,7 +509,7 @@ mit dem die URL des Links spezifiziert wird. In unserem Fall ist &lt;code>https:
 &lt;/div>&lt;p>Auf der ersten Zeile definieren wir, dass es sich um ein HTML-Dokument handelt. Diese Zeile ist erforderlich und seit HTML5 praktisch immer gleich.&lt;/p>
 &lt;p>Alle weiteren Elemente befinden sich dann im einzigen &lt;code>&amp;lt;html&amp;gt;&lt;/code>-Element. Auf der nächsten Stufe gibt es nur &lt;code>&amp;lt;head&amp;gt;&lt;/code> und &lt;code>&amp;lt;body&amp;gt;&lt;/code>. Im &lt;code>&amp;lt;head&amp;gt;&lt;/code> befinden sich Meta-Informationen über die Website wie z.B. der Tab-Titel der Website. Der eigentliche Seiteninhalt befindet sich dann im &lt;code>&amp;lt;body&amp;gt;&lt;/code>.&lt;/p>
 &lt;h3 id="dom-document-object-model">DOM (Document Object Model)&lt;/h3>
-&lt;p>In der Webentwicklung wird sehr oft vom &amp;ldquo;DOM&amp;rdquo; gesprochen. Visualisiert könnte der DOM aus dem obrigen Beispiel ungefähr so aussehen:&lt;/p>
+&lt;p>In der Webentwicklung wird sehr oft vom &amp;ldquo;DOM&amp;rdquo; gesprochen. Visualisiert könnte der DOM aus dem obigen Beispiel ungefähr so aussehen:&lt;/p>
 &lt;p>&lt;img src="../dom.png" alt="dom" title="(DOM einer einfachen HTML-Seite.)">&lt;/p>
 &lt;p>Was ist nun aber dieses &amp;ldquo;Document Object Model&amp;rdquo;? Ganz vereinfacht gesagt, beschreibt das DOM die Struktur der Website zur Laufzeit (also im Browser). Das DOM enthält also die Information, wie die Seite aufgebaut und verschachtelt ist mit ihren Elementen. Im Gegensatz zum HTML-Dokument kann sich das DOM während des Besuches der Seite verändern (z.B. durch JavaScript). Das DOM enthält also die Information, was aktuell auf der Seite ist.&lt;/p>
 &lt;p>Weitere Informationen erhälst du hier:&lt;/p>
@@ -600,7 +600,7 @@ Other Text
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Das ist ein typisches Beispiel für die Verwendung von &lt;code>&amp;lt;div&amp;gt;&lt;/code>s.&lt;/p>
-&lt;p>Möchtest du hingegen ein paar Wörter (aber nicht einen ganzen Block/Paragraphen) speziell stylen, wird oft ein &lt;code>&amp;lt;span&amp;gt;&lt;/code>-Element verwendet. Möchtest du z.B. das Datum in einem Text hervorheben, dann könnte das z.B. so aussehen:&lt;/p>
+&lt;p>Möchtest du hingegen ein paar Wörter (aber nicht einen ganzen Block/Paragrafen) speziell stylen, wird oft ein &lt;code>&amp;lt;span&amp;gt;&lt;/code>-Element verwendet. Möchtest du z.B. das Datum in einem Text hervorheben, dann könnte das z.B. so aussehen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -651,11 +651,11 @@ Other Text
 &lt;/div>
 &lt;/div>&lt;p>In HTML5 wurden viele neue Tags eingeführt, die die Struktur von HTML-Dateien genauer beschreiben. Oft hat eine Website eine ähnliche Struktur wie die folgende:&lt;/p>
 &lt;p>&lt;img src="https://www.w3schools.com/html/img_sem_elements.gif" alt="semanticTags" title="Semantic Tags, die es seit HTML5 gibt">&lt;/p>
-&lt;p>Der &lt;code>&amp;lt;header&amp;gt;&lt;/code> ist meistens das, was auf einer Website zu oberst ist. Dieser enthält oft den Titel der Applikation, das Logo der Firma und evtl. noch eine &lt;code>&amp;lt;nav&amp;gt;&lt;/code>igation (also Links wie für &amp;lsquo;Home&amp;rsquo;, &amp;lsquo;About&amp;rsquo;, &amp;hellip;).&lt;/p>
+&lt;p>Der &lt;code>&amp;lt;header&amp;gt;&lt;/code> ist meistens das, was auf einer Website zuoberst ist. Dieser enthält oft den Titel der Applikation, das Logo der Firma und evtl. noch eine &lt;code>&amp;lt;nav&amp;gt;&lt;/code>igation (also Links wie für &amp;lsquo;Home&amp;rsquo;, &amp;lsquo;About&amp;rsquo;, &amp;hellip;).&lt;/p>
 &lt;p>Das Gegenteil des &lt;code>&amp;lt;header&amp;gt;&lt;/code>s ist der &lt;code>&amp;lt;footer&amp;gt;&lt;/code>. Der Footer befindet sich oft am Ende der Website (also ganz unten) und enthält oft das Copyright sowie weiterführende Links wie z.B. solche zu den Datenschutzbestimmungen.&lt;/p>
 &lt;p>Nicht auf diesem Bild, aber trotzdem relevant: Oft befindet sich der Hauptteil einer Website (also nicht der Header, Footer, Werbung) in einem &lt;code>&amp;lt;main&amp;gt;&lt;/code>-Element. Wenn die Website einen Leseartikel beschreibt, dann wäre der Text inkl. Überschriften dort drin.&lt;/p>
 &lt;p>Einzelne Abschnitte (z.B. Unterkapitel inkl. Überschriften) werden oft in &lt;code>&amp;lt;section&amp;gt;&lt;/code>s gepackt und sind in diesem Beispiel eine gute Alternative zu &lt;code>&amp;lt;div&amp;gt;&lt;/code>s.&lt;/p>
-&lt;p>Was genau ein &lt;code>&amp;lt;article&amp;gt;&lt;/code> ist, würde den Rahmen hier definitiv sprengen. Auf jeden Fall beschreibt ein &lt;code>article&lt;/code> ein von der aktuellen Website unabhängigs und in sich abgeschlossenes Element. Ein &lt;code>article&lt;/code>-Element könnte man also einfach von der aktuellen Seite ausschneiden und in eine andere kopieren.&lt;/p>
+&lt;p>Was genau ein &lt;code>&amp;lt;article&amp;gt;&lt;/code> ist, würde den Rahmen hier definitiv sprengen. Auf jeden Fall beschreibt ein &lt;code>article&lt;/code> ein von der aktuellen Website unabhängiges und in sich abgeschlossenes Element. Ein &lt;code>article&lt;/code>-Element könnte man also einfach von der aktuellen Seite ausschneiden und in eine andere kopieren.&lt;/p>
 &lt;p>Bitte schaue dir diese Dokumentation zu HTML Semantic Tags an. Dort sind auch &lt;code>&amp;lt;article&amp;gt;&lt;/code>s genauer beschrieben: &lt;a href="https://www.w3schools.com/html/html5_semantic_elements.asp">https://www.w3schools.com/html/html5_semantic_elements.asp&lt;/a>&lt;/p>
 &lt;p>Mit semantischen Tags könnte man z.B. das&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -831,7 +831,7 @@ Gravity causes the fruit to hang down.
 &lt;p>Suche auf dieser Website mit Hilfe der Entwicklertools ([F12]-Taste) den &lt;code>&amp;lt;header&amp;gt;&lt;/code>, eine &lt;code>&amp;lt;na&amp;gt;&lt;/code> und den &lt;code>&amp;lt;footer&amp;gt;&lt;/code>.&lt;/p>
 &lt;h2 id="auftrag-2">Auftrag 2&lt;/h2>
 &lt;p>Suche einen spanneden Text (z.B. aus einer alten Word-Datei, Wikipedia-Artikel, Anleitung). Dieser Text sollte mehrere Überschriften und Bilder besitzen. Setze diesen Text mit HTML um und versuche bereits, viele Semantic Tags zu verwenden. Zeige dein Resultat einem Coach.&lt;/p></description></item><item><title>Docs: HTML Rekapitulieren</title><link>/docs/web/html_css/08_html_finish/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/08_html_finish/</guid><description>
-&lt;p>Beherrst du HTML? Wenn ja, dann gib deinem HTML ein Styling - mit CSS! Fahre hier fort.&lt;/p>
+&lt;p>Beherrschst du HTML? Wenn ja, dann gib deinem HTML ein Styling - mit CSS! Fahre hier fort.&lt;/p>
 &lt;p>Hast du nicht alles verstanden oder du fühlst dich noch nicht so sattelfest? Dann kannst du gerne HTML noch ein bisschen üben. Wir empfehlen den HTML-Teil aus dem folgenden Kurs:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://www.udacity.com/course/intro-to-html-and-css--ud001">Intro to HTML and CSS - Udacity&lt;/a>&lt;/li>
@@ -839,7 +839,7 @@ Gravity causes the fruit to hang down.
 &lt;h2 id="was-ist-css">Was ist CSS?&lt;/h2>
 &lt;p>Nun haben wir gelernt, was HTML ist, und wie es angewendet werden kann. Wie euch wahrscheinlich bereits aufgefallen ist, sieht pures HTML jedoch nicht besonders schön aus.&lt;/p>
 &lt;p>Und genau da kommt CSS (Cascading Style Sheets) ins Spiel. CSS ist da, um unsere HTML-Elemente zu stylen, wodurch wir unser gewünschtes Design gestalten können.&lt;/p>
-&lt;p>Dabei gibt es verschiedene Wege CSS zu schreiben und auch dies dann in die Webseite einzubinden.&lt;/p></description></item><item><title>Docs: CSS Grundlagen</title><link>/docs/web/html_css/11_css_basics/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/11_css_basics/</guid><description>
+&lt;p>Dabei gibt es verschiedene Wege CSS zu schreiben und auch dies dann in die Webseite einzubinden.&lt;/p></description></item><item><title>Docs: CSS-Grundlagen</title><link>/docs/web/html_css/11_css_basics/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/11_css_basics/</guid><description>
 &lt;h2 id="wie-funktioniert-css">Wie funktioniert CSS?&lt;/h2>
 &lt;p>Um CSS anwenden zu können, müssen wir das Grundprinzip verstehen:&lt;/p>
 &lt;p>Mit CSS werden selektiv HTML-Elemente ausgewählt und deren Styling angepasst. Hierfür gibt es verschiedene Möglichkeiten, welche wir im Verlaufe des Kurses kennenlernen werden.&lt;/p>
@@ -862,10 +862,10 @@ Gravity causes the fruit to hang down.
 &lt;li>Die Zeichenfolge vor den geschweiften Klammern ist der sogenannte Selektor (Englisch: Selector). Er definiert, auf welche Elemente das Styling angewendet werden soll. In diesem Fall würde das Styling auf alle Paragraphen angewendet werden.&lt;/li>
 &lt;li>Die Zeilen innerhalb der geschweiften Klammern, definieren was für ein Styling angwendet werden soll. Beim gezeigten Beispiel würde die Textfarbe auf blau eingestellt werden und die Hintergrundfarbe rot.&lt;/li>
 &lt;/ul>
-&lt;h2 id="wie-kann-ich-css-anweden">Wie kann ich CSS anweden?&lt;/h2>
+&lt;h2 id="wie-kann-ich-css-anwenden">Wie kann ich CSS anwenden?&lt;/h2>
 &lt;p>Als nächstes schauen wir an, wie man CSS in eine Webseite (bzw. in ein HTML File) einbinden kann. Dafür schauen wir uns folgende Abschnitte an:&lt;/p>
 &lt;h3 id="direktes-einbinden-in-html-elemente">Direktes einbinden in HTML-Elemente&lt;/h3>
-&lt;p>Die wohl schnellste möglichkeit CSS auf ein HTML-Element anzuwenden, ist, das &amp;ldquo;style&amp;rdquo;-Attribut des HTML-Elements anzupassen. Dies würde wie folgt ausschauen:&lt;/p>
+&lt;p>Die wohl schnellste Möglichkeit CSS auf ein HTML-Element anzuwenden, ist, das &amp;ldquo;style&amp;rdquo;-Attribut des HTML-Elements anzupassen. Dies würde wie folgt ausschauen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -905,7 +905,7 @@ Gravity causes the fruit to hang down.
 &lt;/div>
 &lt;/div>&lt;p>Hierbei können wir innerhalb des Style-Tags herkömmliches CSS anwenden, wie wir es bereits aus dem ersten Beispiel kennen. Der Style-Tag kann irgendwo (auch verschachtelt) irgendwo im &lt;code>&amp;lt;head&amp;gt;&lt;/code> oder &lt;code>&amp;lt;body&amp;gt;&lt;/code> stehen. Wo genau darin ist jedoch nicht wichtig. Best-Practice dafür wäre im &lt;code>&amp;lt;head&amp;gt;&lt;/code> nach den &lt;code>&amp;lt;meta&amp;gt;&lt;/code>-Tags.&lt;/p>
 &lt;h3 id="einbinden-über-ein-externes-css-file">Einbinden über ein externes CSS-File&lt;/h3>
-&lt;p>Die wohl am meist verbreiteste Methode CSS in eine Webseite einzubinden ist es, das CSS in ein CSS-File auszulagern und dann im HTML darauf zu verweisen.&lt;/p>
+&lt;p>Die wohl am weitesten verbreitete Methode CSS in eine Webseite einzubinden ist es, das CSS in ein CSS-File auszulagern und dann im HTML darauf zu verweisen.&lt;/p>
 &lt;p>Dies kann man wie folgt machen:&lt;/p>
 &lt;p>Datei: index.html&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -967,8 +967,8 @@ Gravity causes the fruit to hang down.
 &lt;/div>&lt;p>Dieser Link-Tag definiert, dass der CSS-Code der Datei mit dem Pfad &amp;ldquo;styles.css&amp;rdquo; auf die aktuelle HTML-Datei angwendet werden soll.&lt;/p>
 &lt;h2 id="was-gibt-es-alles-für-css-styling-properties">Was gibt es alles für CSS-Styling-Properties?&lt;/h2>
 &lt;p>Es gibt unzählige CSS-Properties. Zu viele, um auf jedes detailliert einzugehen. Auf &lt;a href="https://www.tutorialrepublic.com/css-reference/css3-properties.php">dieser Seite&lt;/a> findet ihr eine ganze Reihe CSS-Properties.&lt;/p>
-&lt;p>Auf die wichtigsten Properties werden wir jedoch in den nächsten Seiten genauer eingehen.&lt;/p></description></item><item><title>Docs: CSS Selektoren</title><link>/docs/web/html_css/12_css_selectors/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/12_css_selectors/</guid><description>
-&lt;h2 id="was-gibt-es-für-css-selektoren">Was gibt es für CSS Selektoren?&lt;/h2>
+&lt;p>Auf die wichtigsten Properties werden wir jedoch in den nächsten Seiten genauer eingehen.&lt;/p></description></item><item><title>Docs: CSS-Selektoren</title><link>/docs/web/html_css/12_css_selectors/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/12_css_selectors/</guid><description>
+&lt;h2 id="was-gibt-es-für-css-selektoren">Was gibt es für CSS-Selektoren?&lt;/h2>
 &lt;p>Nun da wir die Grundlagen von CSS gelernt haben, können wir uns die Selektoren genauer anschauen.
 Die Selektoren bestimmen, für welche HTML-Elemente die CSS-Regeln gelten (&amp;ldquo;ziehen&amp;rdquo;).&lt;/p>
 &lt;h2 id="selektoren-im-überblick">Selektoren im Überblick&lt;/h2>
@@ -1054,7 +1054,7 @@ Die Selektoren bestimmen, für welche HTML-Elemente die CSS-Regeln gelten (&amp;
 &lt;/div>&lt;p>In diesem Beispiel wurde die frei erfundene Klasse &lt;code>round-container&lt;/code>, die ID &lt;code>your-name&lt;/code> und das Element &lt;code>label&lt;/code> mit CSS versehen.&lt;/p>
 &lt;h2 id="spezifischere-selektoren">Spezifischere Selektoren&lt;/h2>
 &lt;h3 id="element-auf-grund-eines-attributes-setzen">Element auf Grund eines Attributes setzen&lt;/h3>
-&lt;p>Es kann vorkommen, dass du ein Element mit einem spezifischen Attribut stylen musst. Möchtest du z.B. alle Submit-Buttons stylen, dann könnte dir diese Selektor weiterhelfen: &lt;code>input[type=submit] {...}&lt;/code>&lt;/p>
+&lt;p>Es kann vorkommen, dass du ein Element mit einem spezifischen Attribut stylen musst. Möchtest du z.B. alle Submit-Buttons stylen, dann könnte dir dieser Selektor weiterhelfen: &lt;code>input[type=submit] {...}&lt;/code>&lt;/p>
 &lt;p>Es gibt aber auch die Möglichkeit, ob der Attribut-Wert einen bestimmten Text enthält, damit beginnt bzw. endet. Hierfür sei auf diese Seite verwiesen: &lt;a href="https://www.w3schools.com/cssref/css_selectors.asp">https://www.w3schools.com/cssref/css_selectors.asp&lt;/a>&lt;/p>
 &lt;h3 id="spezifisches-element-mit-klasse">Spezifisches Element mit Klasse&lt;/h3>
 &lt;p>Möchtest du z.B. alle &lt;code>&amp;lt;form&amp;gt;&lt;/code>-Elemente, die die Klasse &lt;code>round-container&lt;/code> enthalten, stylen, dann möchtest du wahrscheinlich folgenden Selektor: &lt;code>form.round-container {...}&lt;/code>&lt;/p>
@@ -1226,7 +1226,7 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;ul>
 &lt;li>via Color-Name: &lt;code>orange&lt;/code>&lt;/li>
 &lt;li>via RGB-Angaben (red green blue): &lt;code>rgb(255,165,0)&lt;/code>&lt;/li>
-&lt;li>via Hexadecimaler-Wert (HEX color): &lt;code>#ffa500&lt;/code>&lt;/li>
+&lt;li>via hexadezimalen Wert (HEX color): &lt;code>#ffa500&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>Es gibt noch weitere Möglichkeiten. Du findest diese hier: &lt;a href="https://www.w3schools.com/colors/default.asp">https://www.w3schools.com/colors/default.asp&lt;/a>&lt;/p>
 &lt;p>Die folgende CSS-Regel setzt die Schriftfarbe auf Orange. Nur eine dieser 3 Regeln wird benötigt:&lt;/p>
@@ -1250,7 +1250,7 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;p>Obwohl die Angabe mit RGB in CSS möglich ist, sieht man in der Webentwicklung häufiger die hexadezimale Schreibweise.&lt;/p>
 &lt;p>Nachfolgend sind diese 3 Varianten genauer beschrieben.&lt;/p>
 &lt;h3 id="via-color-name">Via Color-Name&lt;/h3>
-&lt;p>Am lesbarsten ist die Angabe der Farben via Name. Es werden mindestens 140 Farben mit Namen unterstützt. Häufig verwendete Farben sind z.B.:&lt;/p>
+&lt;p>Am lesbarsten ist die Angabe der Farben via Namen. Es werden mindestens 140 Farben mit Namen unterstützt. Häufig verwendete Farben sind z.B.:&lt;/p>
 &lt;ul>
 &lt;li>black&lt;/li>
 &lt;li>white&lt;/li>
@@ -1263,7 +1263,7 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;/ul>
 &lt;p>Hier findest du eine Liste der Farben: &lt;a href="https://www.w3schools.com/colors/colors_names.asp">https://www.w3schools.com/colors/colors_names.asp&lt;/a>&lt;/p>
 &lt;h3 id="via-rgb">via RGB&lt;/h3>
-&lt;p>RGB steht für Rot-Grün-Blau. Wenn man die Farben via RGB angibt, so gibt man an, wie intensiv jede dieser 3 Farben in der gewünschten Farbe vorkommt. 0 bedeutet, das die Farbe nicht vorkommt, 255 bedeutet hingegen, dass die Farbe zu 100% gebraucht wird.&lt;/p>
+&lt;p>RGB steht für Rot-Grün-Blau. Wenn man die Farben via RGB angibt, so gibt man an, wie intensiv jede dieser 3 Farben in der gewünschten Farbe vorkommt. 0 bedeutet, dass die Farbe nicht vorkommt, 255 bedeutet hingegen, dass die Farbe zu 100% gebraucht wird.&lt;/p>
 &lt;p>Folgende RGB-Werte solltest du als Informatiker:in kennen:&lt;/p>
 &lt;table>
 &lt;thead>
@@ -1361,7 +1361,7 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;/table>
 &lt;p>Wenn bei allen Farben die beiden Ziffern gleich sind, dann kann bei jeder Farbe die zweite Ziffer weggelassen werden (siehe Tabelle).&lt;/p></description></item><item><title>Docs: Sizing</title><link>/docs/web/html_css/15_css_sizing/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/15_css_sizing/</guid><description>
 &lt;h2 id="block--und-inline-elemente">Block- und Inline-Elemente&lt;/h2>
-&lt;p>Bevor wir Elemente dimensioneren, müssen wir wissen, welche Elemente wir überhaupt dimensionieren können.&lt;/p>
+&lt;p>Bevor wir Elemente dimensionieren, müssen wir wissen, welche Elemente wir überhaupt dimensionieren können.&lt;/p>
 &lt;p>In CSS gibt es zwei grundlegende &amp;ldquo;Display&amp;rdquo;-Elemente:&lt;/p>
 &lt;ul>
 &lt;li>Block-Elemente&lt;/li>
@@ -1369,8 +1369,8 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;/ul>
 &lt;p>Im Normalfall können wir nur Block-Elemente dimensionieren (eine Grösse geben). Was ist aber nun der Unterschied zwischen den beiden?&lt;/p>
 &lt;h3 id="block-elemente">Block-Elemente&lt;/h3>
-&lt;p>Block-Elemente starten im Normalfall immer auf einer neuen Zeile und haben per default um sich selbst herum einen Abstand zu anderen Elementen.&lt;/p>
-&lt;p>Block-Elemente beanspruchen per default die volle Breite an Platz (von links bis rechts).&lt;/p>
+&lt;p>Block-Elemente starten im Normalfall immer auf einer neuen Zeile und haben per Default um sich selbst herum einen Abstand zu anderen Elementen.&lt;/p>
+&lt;p>Block-Elemente beanspruchen per Default die volle Breite an Platz (von links bis rechts).&lt;/p>
 &lt;p>Typische Block-Elemente sind&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>&amp;lt;p&amp;gt;&lt;/code>&lt;/li>
@@ -1421,7 +1421,7 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &amp;lt;/&lt;span style="color:#f92672">style&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Dieser Code zeigt ziemlich gut, dass das Block-Element (hier &lt;code>&amp;lt;p&amp;gt;&lt;/code>) die ganze Breite (abzüglich eines kleinen Randes) eingenommen hat, während das &lt;code>&amp;lt;span&amp;gt;&lt;/code> sich auf das Wort beschränkt.&lt;/p>
+&lt;/div>&lt;p>Dieser Code zeigt gut, dass das Block-Element (hier &lt;code>&amp;lt;p&amp;gt;&lt;/code>) die ganze Breite (abzüglich eines kleinen Randes) eingenommen hat, während das &lt;code>&amp;lt;span&amp;gt;&lt;/code> sich auf das Wort beschränkt.&lt;/p>
 &lt;h3 id="inline-elemente">Inline-Elemente&lt;/h3>
 &lt;p>Im obigen Beispiel hast du bereits ein Inline-Element kennengelernt: &lt;code>&amp;lt;span&amp;gt;&lt;/code>.&lt;/p>
 &lt;p>Inline-Elemente kommen meistens in einem Text vor. Inline-Elemente benötigen nur so viel Platz wie nötig. Als grossen Unterschied zu Block-Elementen, beginnen Inline-Elemente nicht auf einer neuen Zeile.&lt;/p>
@@ -1509,7 +1509,7 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;/div>&lt;p>Dieses Beispiel fügt einen schwarzen Rand von &lt;code>1px&lt;/code> Breite hinzu. Das &lt;code>solid&lt;/code> bedeutet, dass es eine normale Linie sein soll (also nicht gestrichtelt o.ä.).&lt;/p>
 &lt;h4 id="einheiten-in-der-übersicht">Einheiten in der Übersicht&lt;/h4>
 &lt;p>Grundsätzlich empfehle ich dir diese Übersicht: &lt;a href="https://www.w3schools.com/cssref/css_units.asp">https://www.w3schools.com/cssref/css_units.asp&lt;/a>&lt;/p>
-&lt;p>Unter den &lt;strong>absoluten Einheiten&lt;/strong> musst du eigentlich nur folgende kennen:&lt;/p>
+&lt;p>Unter den &lt;strong>absoluten Einheiten&lt;/strong> musst du nur folgende kennen:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>px&lt;/code>&lt;/li>
 &lt;/ul>
@@ -1671,8 +1671,8 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Beachte bei der kurzen Schreibweise, dass es oben beginnt und im Uhrzeigersinn weitergeht, bzw. merke dir &amp;ldquo;TRouBLe&amp;rdquo; (Top Right Bottom Left).&lt;/p>
-&lt;h3 id="abtand-vom-border-zum-content-padding">Abtand vom Border zum Content (Padding)&lt;/h3>
-&lt;p>Oft sieht es ziemlich hässlich aus, wenn der Text direkt am Rand (am Border) ankommt. Das kann behoben werden, indem ein innerer Rand (Padding) eingefügt wird:&lt;/p>
+&lt;h3 id="abstand-vom-border-zum-content-padding">Abstand vom Border zum Content (Padding)&lt;/h3>
+&lt;p>Oft sieht es hässlich aus, wenn der Text direkt am Rand (am Border) ankommt. Das kann behoben werden, indem ein innerer Rand (Padding) eingefügt wird:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -1767,7 +1767,7 @@ Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></descr
 &lt;p>&lt;img src="/images/task.png" alt="task1"> Ändere den Wert auf &lt;code>float: right&lt;/code>. Nun beginnt ist das erste Element rechts. Was müsstest du machen, damit die Elemente zwar rechtsbündig sind, aber das erste Element dennoch links vom zweiten usw. ist?&lt;/p>
 &lt;h2 id="flex-boxen">Flex-Boxen&lt;/h2>
 &lt;p>Wenn du Floating oft brauchen würdest, dann wirst du schnell merken, dass diese Technik sehr mühsam sein kann.&lt;/p>
-&lt;p>Die gute Nachricht ist, dass man die vorherige Technik praktisch gar nicht mehr benötigt seit der Einführung von Flex-Boxen. Das obrige Beispiel kann verkürzt werden auf:&lt;/p>
+&lt;p>Die gute Nachricht ist, dass man die vorherige Technik praktisch gar nicht mehr benötigt seit der Einführung von Flex-Boxen. Das obige Beispiel kann verkürzt werden auf:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1986,7 +1986,7 @@ gap: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">em
 &lt;p>Theoretisch reicht das Wissen über Flex-Boxen bereits, um eine ganze Seite zu layouten. Damit du ein Gefühl dafür bekommst, schaue dir bitte das unterste Beispiel auf dieser Seite an: &lt;a href="https://www.w3schools.com/css/css3_flexbox_responsive.asp">https://www.w3schools.com/css/css3_flexbox_responsive.asp&lt;/a>&lt;/p>
 &lt;h3 id="hilfestellung">Hilfestellung&lt;/h3>
 &lt;p>Hier kriegst du eine gute visuelle Übersicht über die einzelnen Flex-Properties: &lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties">https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties&lt;/a>
-Hier sind von w3schools die wichtigsten Eingenschaften von Flex-Boxen beschrieben: &lt;a href="https://www.w3schools.com/css/css3_flexbox.asp">https://www.w3schools.com/css/css3_flexbox.asp&lt;/a>&lt;/p>
+Hier sind von w3schools die wichtigsten Eigenschaften von Flex-Boxen beschrieben: &lt;a href="https://www.w3schools.com/css/css3_flexbox.asp">https://www.w3schools.com/css/css3_flexbox.asp&lt;/a>&lt;/p>
 &lt;h3 id="display-flex-properties-üben">Display-Flex-Properties üben&lt;/h3>
 &lt;p>Auf &lt;a href="https://flexboxfroggy.com/#de">Flexbox Froggy&lt;/a> kannst du dein Flexbox-Wissen auf lustige Art und Weise trainieren. Nimm dir rasch Zeit dafür.&lt;/p>
 &lt;h3 id="autrag-header-navigation">Autrag: Header-Navigation&lt;/h3>
@@ -2040,7 +2040,7 @@ Hier sind von w3schools die wichtigsten Eingenschaften von Flex-Boxen beschriebe
 }
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Mit &lt;code>position: relative&lt;/code> bewirken wir, dass CSS-Properties wie &lt;code>top&lt;/code>, &lt;code>bottom&lt;/code>, &lt;code>left&lt;/code>und &lt;code>right&lt;/code> beachtet werden. Dank der relativen Positionierung dürfen wir dann das Element verschieben, ohne dass es andere Elemente bzw. den Textfluss verändert. Wir haben hier &lt;code>top&lt;/code> verwendet, um oben einen Abstand einzufügen. Würdest du &lt;code>left&lt;/code> verwenden, so würde sich das Element entsprechend nach rechts verschieben.&lt;/p>
+&lt;/div>&lt;p>Mit &lt;code>position: relative&lt;/code> bewirken wir, dass CSS-Properties wie &lt;code>top&lt;/code>, &lt;code>bottom&lt;/code>, &lt;code>left&lt;/code> und &lt;code>right&lt;/code> beachtet werden. Dank der relativen Positionierung dürfen wir dann das Element verschieben, ohne dass es andere Elemente bzw. den Textfluss verändert. Wir haben hier &lt;code>top&lt;/code> verwendet, um oben einen Abstand einzufügen. Würdest du &lt;code>left&lt;/code> verwenden, so würde sich das Element entsprechend nach rechts verschieben.&lt;/p>
 &lt;h3 id="auftrag-relative-positionierung">Auftrag relative Positionierung&lt;/h3>
 &lt;p>Im Layouting-Kapitel hast du einen Auftrag gelöst, wo du eine Seite mit Header und Navigation erstellt hast.&lt;/p>
 &lt;p>&lt;img src="/images/task.png" alt="task1"> Adjustiere dort das Bild oben links.&lt;/p>
@@ -2081,5 +2081,76 @@ Hier sind von w3schools die wichtigsten Eingenschaften von Flex-Boxen beschriebe
 &lt;p>Inspiriere dich an den nervigen Cookie-Meldungen von anderen Seiten.&lt;/p>
 &lt;p>&lt;img src="../ex_pos_abs_cookie_banner.jpeg" alt="exCookieBanner">&lt;/p></description></item><item><title>Docs: Abschluss</title><link>/docs/web/html_css/18_css_finish/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/18_css_finish/</guid><description>
 &lt;p>Bist du bereit für das Exam? Wenn nein, dann darfst du gerne den CSS-Teil aus dem &lt;a href="https://www.udacity.com/course/intro-to-html-and-css--ud001">Intro to HTML and CSS - Udacity&lt;/a>-Kurs anschauen.&lt;/p>
-&lt;p>Wenn du bereit bist, dann prüfe dein Wissen mit dem &lt;a href="../../../../exams/web/html_css/01_exam_html_css_rtm">Exam&lt;/a>.&lt;/p>
-&lt;p>Anschliessend wirst du Code, der im Browser ausgeführt wird, schreiben lernen: JavaScript.&lt;/p></description></item></channel></rss>
+&lt;p>Wenn du bereit bist, dann prüfe dein Wissen mit dem &lt;a href="../../../../exams/web/html_css/01_exam_html_css_rtm">Exam&lt;/a>.&lt;/p></description></item><item><title>Docs: Bootstrap</title><link>/docs/web/html_css/19_css_bootstrap/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/19_css_bootstrap/</guid><description>
+&lt;p>In Frontend-Projekten wirst du dich immer wieder fragen, ob bereits ein Objekt
+gleich gestylt wurde wie eines, welches du gerade stylen möchtest. Du wirst es aber
+vielleicht nicht finden oder du schreibst die genau gleiche Regel ein weiteres Mal.
+Das führt dazu, dass im Code sehr viele CSS-Leichen zu finden sein werden.&lt;/p>
+&lt;p>Um diesem Problem entgegenzuwirken, verwendet man oft eine CSS-Datei, die für das
+ganze Projekt gelten soll.&lt;/p>
+&lt;p>Wenn du aber oft das Projekt wechselst, wirst du aber nicht den Überblick haben
+oder bekommen, was für ein Konzept früher im CSS-Code versucht wurde umzusetzen.&lt;/p>
+&lt;p>Aus diesem Grund kann es Sinn machen, projekt-übergreifend ein gleiches CSS-Framework
+zu verwenden, wo die gleichen CSS-Klassen immer gleich heissen.&lt;/p>
+&lt;p>Hier kommt Bootstrap ins Spiel: Es bietet viele CSS-Klassen bereits an und
+vereinfacht komplexes Styling teilweise extrem. Z.B. kannst du komplett mühelos
+Accordions (bzw. Tabs) erstellen, die dann beim Klick auf deren Titel ihren Inhalt dann anzeigen/verstecken inkl. Animation.&lt;/p>
+&lt;h2 id="bootstrap">Bootstrap&lt;/h2>
+&lt;p>Bootstrap wird in sehr vielen Projekten bereits benutzt. Und so einfach kannst du es auch in deine HTML-Dateien einbinden:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#75715e">&amp;lt;!-- Latest compiled and minified CSS --&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#f92672">link&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">rel&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;stylesheet&amp;#34;&lt;/span>&amp;gt;
+&lt;span style="color:#75715e">&amp;lt;!-- Latest compiled JavaScript --&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Eine grosse Stärke von Bootstrap ist es, dass sich deine Seite &amp;lsquo;responsive&amp;rsquo; verhält: Du kannst mit einer CSS-Klasse (&lt;code>col-md-4&lt;/code> z.B.) definieren, dass ein Element im Normallfall 4/12 der Breite einnimmt (4 ist in der Klasse angegeben, Bootstrap arbeitet mit 12 Spalten). Ist dein Browser weniger breit als eine bestimmte Weite (&lt;code>md&lt;/code> -&amp;gt; medium), so werden dann die Elemente automatisch untereinander angezeigt.&lt;/p>
+&lt;p>Da wir vermehrt Bootstrap einsetzen möchten, empfehlen wir dir, Bootstrap anzuschauen. Hier findest du ein Tutorial zur aktuellen Version: &lt;a href="https://www.w3schools.com/bootstrap5/index.php">https://www.w3schools.com/bootstrap5/index.php&lt;/a>.&lt;/p>
+&lt;p>Bitte probiere folgendes so aus, dass du es anwenden kannst:&lt;/p>
+&lt;ul>
+&lt;li>GET Started&lt;/li>
+&lt;li>Containers&lt;/li>
+&lt;li>Grid Basic&lt;/li>
+&lt;li>Tables&lt;/li>
+&lt;li>Buttons&lt;/li>
+&lt;li>Collapse&lt;/li>
+&lt;li>Flex&lt;/li>
+&lt;/ul>
+&lt;p>Bei den folgenden solltest du einfach wissen, dass Bootstrap hierfür auch eine Lösung bereitstellt:&lt;/p>
+&lt;ul>
+&lt;li>Colors&lt;/li>
+&lt;li>Images&lt;/li>
+&lt;li>Alerts&lt;/li>
+&lt;li>Button Groups&lt;/li>
+&lt;li>Badges&lt;/li>
+&lt;li>Progress Bars &amp;amp; Spinners&lt;/li>
+&lt;li>Pagination&lt;/li>
+&lt;li>List Groups&lt;/li>
+&lt;li>Cards&lt;/li>
+&lt;li>Dropdowns&lt;/li>
+&lt;li>Navbar&lt;/li>
+&lt;li>Carousel&lt;/li>
+&lt;li>Modal&lt;/li>
+&lt;li>Tooltip&lt;/li>
+&lt;li>Popover&lt;/li>
+&lt;li>Toast&lt;/li>
+&lt;li>Scrollspy&lt;/li>
+&lt;li>Utilities&lt;/li>
+&lt;li>alles unter Forms&lt;/li>
+&lt;/ul>
+&lt;h3 id="auftrag">Auftrag&lt;/h3>
+&lt;p>Nachfolgend ist eine Beispiel-Seite. Setze diese mit Bootstrap um:&lt;/p>
+&lt;p>&lt;img src="../bootstrap-pricing-page-example.jpg" alt="pricingPage">&lt;/p>
+&lt;p>Schaue dir &lt;a href="https://getbootstrap.com/docs/5.1/examples/pricing/">diese Seite&lt;/a> auf auf kleineren Bildschirmen an - also verändere die Fenster-Breite deines Browsers. Du wirst sehen, dass z.B. die einzelnen Abos untereinander erscheinen, wenn die Breite kleiner wird. Berücksichtige dies auch in deinem Code.&lt;/p>
+&lt;details>
+&lt;summary>Hinweis&lt;/summary>
+&lt;p>Solltest du nicht weiterkommen, dann schaue in den Entwickler-Tools ([F12]-Taste) im DOM nach. Da diese Seite auch mit Bootstrap umgesetzt wurde, kannst du nachschauen, welche Bootstrap-Klassen sie verwendet haben.&lt;/p>
+&lt;/details></description></item></channel></rss>
