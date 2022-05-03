@@ -13,7 +13,7 @@ Jetzt wird es Zeit, dass du auch Programm-Logik auf deiner Website einbauen kann
 Damit du eine Übersicht über die Programmiersprache bekommst, kannst du z.B. [dieses Video](https://www.youtube.com/watch?v=DHjqpvDnNGE) schauen, ohne dass du den ersten Satz verstehen musst.
 
 ## Motivation für JavaScript
-Javascript hat sehr viele Verwendungen im Browser. Einerseits können Funktionen, ähnlich wie mit Java, prorammiert werden, sodass z.B. Berrechnungen ausgeführt werden können. Zudem kann aber auch direkt mit dem angezeigten Inhalt interagiert werden. So können Validierungen oder auch Anmiationen ausgeführt werden. Wenn du mal sehen willst, wie eine Website aussieht ohne JS kannst du dir [hier](https://chrome.google.com/webstore/detail/disable-javascript/jfpdlihdedhlmhlbgooailmfhahieoem?hl=en) eine Chrome extension herunterladne mit welcher du JS komplett ausschalten kanns.
+JavaScript hat sehr viele Verwendungen im Browser. Einerseits können Funktionen ähnlich wie mit Java programmiert werden, sodass z.B. Berechnungen ausgeführt werden können. Zudem kann aber auch direkt mit dem angezeigten Inhalt interagiert werden. So können Validierungen oder auch Animationen ausgeführt werden. Wenn du mal sehen willst, wie eine Website aussieht ohne JS kannst du dir [hier](https://chrome.google.com/webstore/detail/disable-javascript/jfpdlihdedhlmhlbgooailmfhahieoem?hl=en) eine Chrome extension herunterladen mit welcher du JS komplett ausschalten kannst.
 
 Nun beginnen wir aber zuerst klein: Mit einem Button, der beim Klick eine MessageBox anzeigt.
 
@@ -41,7 +41,7 @@ Wie du siehst, wird die selbst definierte Funktion beim Klick auf den Button auf
 
 ## JavaScript einbinden
 
-Wie du im oberen Beispiel gesehen hast, wird Javascript via Script Tag eingebunden. Dein Code kann entweder direkt im Script Tag geschrieben werden:
+Wie du im oberen Beispiel gesehen hast, wird Javascript via `<script>`-Tag eingebunden. Dein Code kann direkt im `<script>`-Tag geschrieben werden:
 
 ```html
 <script>
@@ -61,4 +61,4 @@ Du kannst aber dein Code auch in einem separatem .js File haben und via Script T
 console.log('my Js Code');
 ```
 
-Die zweite Variante ist meist sauberer, da Code und Html sauber aufgeteilt wird. Bei unseren Übungen wirst du aber meist direkt im Script Tag arbeite können ohne separates JS File.
+Die zweite Variante ist meist sauberer, da Code und HTML sauber aufgeteilt wird. Bei unseren Übungen wirst du aber meist direkt im `<script>`-Tag arbeite können ohne separates JS File.

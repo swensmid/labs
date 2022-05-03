@@ -5,7 +5,7 @@ linkTitle: "Farben"
 weight: 14
 date: 2022-04-19
 description: >
-  Arten um Farben anzugeben.
+  Arten, um Farben anzugeben.
 ---
 
 ## Zuweisen von Farben
@@ -31,7 +31,7 @@ In den oberen Beispielen wurde die Farbe mit dem Wort `orange` bestimmt. Es gibt
 
 * via Color-Name: `orange`
 * via RGB-Angaben (red green blue): `rgb(255,165,0)`
-* via Hexadecimaler-Wert (HEX color): `#ffa500`
+* via hexadezimalen Wert (HEX color): `#ffa500`
 
 Es gibt noch weitere Möglichkeiten. Du findest diese hier: https://www.w3schools.com/colors/default.asp
 
@@ -51,7 +51,7 @@ Obwohl die Angabe mit RGB in CSS möglich ist, sieht man in der Webentwicklung h
 Nachfolgend sind diese 3 Varianten genauer beschrieben.
 
 ### Via Color-Name
-Am lesbarsten ist die Angabe der Farben via Name. Es werden mindestens 140 Farben mit Namen unterstützt. Häufig verwendete Farben sind z.B.:
+Am lesbarsten ist die Angabe der Farben via Namen. Es werden mindestens 140 Farben mit Namen unterstützt. Häufig verwendete Farben sind z.B.:
 * black
 * white
 * gray (American) oder grey (British), lightgray
@@ -64,7 +64,7 @@ Am lesbarsten ist die Angabe der Farben via Name. Es werden mindestens 140 Farbe
 Hier findest du eine Liste der Farben: https://www.w3schools.com/colors/colors_names.asp
 
 ### via RGB
-RGB steht für Rot-Grün-Blau. Wenn man die Farben via RGB angibt, so gibt man an, wie intensiv jede dieser 3 Farben in der gewünschten Farbe vorkommt. 0 bedeutet, das die Farbe nicht vorkommt, 255 bedeutet hingegen, dass die Farbe zu 100% gebraucht wird.
+RGB steht für Rot-Grün-Blau. Wenn man die Farben via RGB angibt, so gibt man an, wie intensiv jede dieser 3 Farben in der gewünschten Farbe vorkommt. 0 bedeutet, dass die Farbe nicht vorkommt, 255 bedeutet hingegen, dass die Farbe zu 100% gebraucht wird.
 
 Folgende RGB-Werte solltest du als Informatiker:in kennen:
 

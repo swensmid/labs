@@ -56,7 +56,7 @@ Was genau passiert hier? Wichtig ist, dass die gefloateten Elemente `display: bl
 ## Flex-Boxen
 Wenn du Floating oft brauchen würdest, dann wirst du schnell merken, dass diese Technik sehr mühsam sein kann.
 
-Die gute Nachricht ist, dass man die vorherige Technik praktisch gar nicht mehr benötigt seit der Einführung von Flex-Boxen. Das obrige Beispiel kann verkürzt werden auf:
+Die gute Nachricht ist, dass man die vorherige Technik praktisch gar nicht mehr benötigt seit der Einführung von Flex-Boxen. Das obige Beispiel kann verkürzt werden auf:
 
 ```html
 <div class="flex-container">
@@ -214,7 +214,7 @@ Theoretisch reicht das Wissen über Flex-Boxen bereits, um eine ganze Seite zu l
 
 ### Hilfestellung
 Hier kriegst du eine gute visuelle Übersicht über die einzelnen Flex-Properties: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties
-Hier sind von w3schools die wichtigsten Eingenschaften von Flex-Boxen beschrieben: https://www.w3schools.com/css/css3_flexbox.asp
+Hier sind von w3schools die wichtigsten Eigenschaften von Flex-Boxen beschrieben: https://www.w3schools.com/css/css3_flexbox.asp
 
 ### Display-Flex-Properties üben
 Auf [Flexbox Froggy](https://flexboxfroggy.com/#de) kannst du dein Flexbox-Wissen auf lustige Art und Weise trainieren. Nimm dir rasch Zeit dafür.

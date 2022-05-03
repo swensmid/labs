@@ -35,7 +35,7 @@ img {
 }
 ```
 
-Mit `position: relative` bewirken wir, dass CSS-Properties wie `top`, `bottom`, `left`und `right` beachtet werden. Dank der relativen Positionierung dürfen wir dann das Element verschieben, ohne dass es andere Elemente bzw. den Textfluss verändert. Wir haben hier `top` verwendet, um oben einen Abstand einzufügen. Würdest du `left` verwenden, so würde sich das Element entsprechend nach rechts verschieben.
+Mit `position: relative` bewirken wir, dass CSS-Properties wie `top`, `bottom`, `left` und `right` beachtet werden. Dank der relativen Positionierung dürfen wir dann das Element verschieben, ohne dass es andere Elemente bzw. den Textfluss verändert. Wir haben hier `top` verwendet, um oben einen Abstand einzufügen. Würdest du `left` verwenden, so würde sich das Element entsprechend nach rechts verschieben.
 
 ### Auftrag relative Positionierung
 Im Layouting-Kapitel hast du einen Auftrag gelöst, wo du eine Seite mit Header und Navigation erstellt hast.

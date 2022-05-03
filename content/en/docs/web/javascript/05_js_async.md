@@ -61,7 +61,7 @@ let response = await fetch('https://api.chucknorris.io/jokes/random', {method: '
 
 let jokeObject = await response.json()
 ```
-Dies ist notwendig, da die methodoe [json()](https://developer.mozilla.org/en-US/docs/Web/API/Response/json) asychron den response Stream ausliest. 
+Dies ist notwendig, da die Methode [json()](https://developer.mozilla.org/en-US/docs/Web/API/Response/json) asynchron den response Stream ausliest. 
 
 Wenn du nun das `jokeObject` loggst (z.B. mit `console.log(jokeObject)`), siehst du, dass wir nun das gleiche Objekt, das wir ganz oben erwartet haben, erhalten haben.
 
@@ -86,7 +86,7 @@ async function fetchJoke() {
 }
 ```
 
-Dir ist sicher aufgefallen, dass wir nun das `async`-Keyword vor `function` geschrieben haben. Dies ist erforderlich, wenn man `await` in einer Funktion verwenden möchte. Dieses `async`-Keyword führt auch dazu, dass die Methode ein Objekt vom Typ `Promise<...>` zurückgibt.
+Dir ist sicher aufgefallen, dass wir nun das `async`-Keyword vor `function` geschrieben haben. Dies ist erforderlich, wenn man `await` in einer Funktion verwenden möchte. Dieses `async`-Keyword führt auch dazu, dass die Methode ein Objekt des Typen `Promise<...>` zurückgibt.
 
 Wenn du diese Funktion definiert hast, kannst du den Rückgabewert von ihr wie folgt loggen:
 ```javascript
@@ -122,4 +122,4 @@ Solltest du fertig mit dieser Aufgabe sein, dann melde dich bei einem Coach.
 ![task1](/images/task.png) Versuche eine anderes API/Backend anzubinden und etwas auf einer Website anzuzeigen.
 
 ### Früher war alles besser?
-Die `fetch`-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selber: https://www.w3schools.com/xml/xml_http.asp 
+Die `fetch`-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selbst: https://www.w3schools.com/xml/xml_http.asp 

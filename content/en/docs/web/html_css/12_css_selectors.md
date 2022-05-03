@@ -1,14 +1,14 @@
 ---
-title: "CSS Selektoren"
+title: "CSS-Selektoren"
 type: docs
-linkTitle: "CSS Selektoren"
+linkTitle: "CSS-Selektoren"
 weight: 12
 date: 2022-04-14
 description: >
-  Die verschiedenen CSS Selektoren.
+  Die verschiedenen CSS-Selektoren.
 ---
 
-## Was gibt es für CSS Selektoren?
+## Was gibt es für CSS-Selektoren?
 
 Nun da wir die Grundlagen von CSS gelernt haben, können wir uns die Selektoren genauer anschauen. 
 Die Selektoren bestimmen, für welche HTML-Elemente die CSS-Regeln gelten ("ziehen").
@@ -53,7 +53,7 @@ In diesem Beispiel wurde die frei erfundene Klasse `round-container`, die ID `yo
 
 ## Spezifischere Selektoren
 ### Element auf Grund eines Attributes setzen
-Es kann vorkommen, dass du ein Element mit einem spezifischen Attribut stylen musst. Möchtest du z.B. alle Submit-Buttons stylen, dann könnte dir diese Selektor weiterhelfen: `input[type=submit] {...}`
+Es kann vorkommen, dass du ein Element mit einem spezifischen Attribut stylen musst. Möchtest du z.B. alle Submit-Buttons stylen, dann könnte dir dieser Selektor weiterhelfen: `input[type=submit] {...}`
 
 Es gibt aber auch die Möglichkeit, ob der Attribut-Wert einen bestimmten Text enthält, damit beginnt bzw. endet. Hierfür sei auf diese Seite verwiesen: https://www.w3schools.com/cssref/css_selectors.asp
 

@@ -26,10 +26,10 @@ Dies führt zu folgendem Ergebnis:
 
 ![headings](../headings.jpg "(Bild, das zeigt, wie Headings dargestellt werden.)")
 
-Es gibt also Tags für Titel erster bis sechster Stufe. Grundsätzlich gilt, je kleiner die Zahl der Stufe, je grösser wird der Titel dargestellt. Das obrige Ergebnis zeigt, wie Titel per Default gestylt werden. Du kannst das Styling dieser Titel selbstverständlich anpassen (kommt im CSS-Teil).
+Es gibt also Tags für Titel erster bis sechste Stufe. Grundsätzlich gilt, je kleiner die Zahl der Stufe, je grösser wird der Titel dargestellt. Das obrige Ergebnis zeigt, wie Titel per Default gestylt werden. Du kannst das Styling dieser Titel selbstverständlich anpassen (kommt im CSS-Teil).
 
-## Paragraphen
-Du hast bereits erfahren, dass Zeilenumbrüche in HTML keine Wirkung haben. Möchtest du eine neue Zeile einfügen, könnte dir das `<br/>`-Tag weiterhelfen. Besser ist aber, wenn du den Text, der zusammen gehört, auch entsprechend markierst: Das kannst du mit dem `<p>`-Tag erreichen. Der Text, der innerhalb dieses Tags steht, wird in einem gleichen Abschnitt dargestellt. Ausserdem trennt es diesen Inhalt mit Leerschlag zum nächsten Element. Das wird im folgenden Beispiel verdeutlicht:
+## Paragrafen
+Du hast bereits erfahren, dass Zeilenumbrüche in HTML keine Wirkung haben. Möchtest du eine neue Zeile einfügen, könnte dir das `<br/>`-Tag weiterhelfen. Besser ist aber, wenn du den Text, der zusammengehört, auch entsprechend markierst: Das kannst du mit dem `<p>`-Tag erreichen. Der Text, der innerhalb dieses Tags steht, wird in einem gleichen Abschnitt dargestellt. Ausserdem trennt es diesen Inhalt mit Leerschlag zum nächsten Element. Das wird im folgenden Beispiel verdeutlicht:
 
 ```html
 <h2>Title</h2>
@@ -74,7 +74,7 @@ Um also einen bestimmten Text fett darzustellen, kannst du es in ein `<strong>`-
 
 Einen Text kursiv darzustellen kannst du mit `<i>` bzw. `<em>`. Das Pendant zu `<b>` ist `<i>` (italic), und dasjenige zu `<strong>` das `<em>` (emphasis = Betonung).
 
-Das obrige Beispiel wird so gerendert:
+Das obige Beispiel wird so gerendert:
 <div style="border: 2px solid black; padding: 2em">
     <p>
         <strong>Heared</strong> about
@@ -95,7 +95,7 @@ Eines der wichtigsten Elemente in HTML sind Links auf andere Seiten. Links werde
 <a href="https://www.sbb.ch/">Home</a>
 ```
 
-Probiere das einaml aus.
+Probiere das einmal aus.
 
 Du wirst einen blauen und unterstrichenen Text "Home" sehen. `<a>` ist der Tag, der generell für Hyperlinks verwendet wird. `href` ist ein Attribut des `a`-Tags,
 mit dem die URL des Links spezifiziert wird. In unserem Fall ist `https://www.sbb.ch/` die URL, die beim Klick aufgerufen wird. `Home` ist der Text, der dem User angezeigt wird.
@@ -109,7 +109,7 @@ Ziemlich ähnlich kannst du auch ein Bild aus dem Internet einbinden:
      width="300" />
 ```
 
-Ganz offensichtlich wird das `<img/>`-Tag (Image) für Bilder verwendet. Das `<img/>`-Tag ist ein Tag, welches keinen Inhalt zwischen Opening- und Closing-Tag hat. Mit dem `/` im Opening-Tag kannn man symbolisieren, dass das Tag ohne Closing-Tag geschlossen wird.
+Ganz offensichtlich wird das `<img/>`-Tag (Image) für Bilder verwendet. Das `<img/>`-Tag ist ein Tag, welches keinen Inhalt zwischen Opening- und Closing-Tag hat. Mit dem `/` im Opening-Tag kann man symbolisieren, dass das Tag ohne Closing-Tag geschlossen wird.
 
 Das wichtigste Attribut im `img`-Tag ist `src` (source = Quelle). Als `src` wird eine URL zu einem Bild erwartet. Vergiss bei absoluten Pfaden (wird später noch erklärt) nicht das Protokoll (also https://) anzugeben. Nicht zwingend aber erwartet ist auch das `alt`-Attribut (alternative). Dieser Text wird angezeigt, wenn das Bild nicht geladen werden konnte. Optional sind hingegen Attribute wie `width` oder `height`, welche die Breite und Höhe des Bildes festlegen. Diese Grössen werden aber besser mit CSS spezifiziert, da CSS genauere Spezifikationen zulässt (also nicht nur in 'Pixel' sondern auch anderen Einheiten).
 
@@ -148,7 +148,7 @@ Möchtest du hingegen eine Nummerierung, dann verwende eine sortierte Liste (ord
 </ol>
 ```
 
-Das ganze sieht dann ungefähr so aus:
+Das Ganze sieht dann ungefähr so aus:
 
 <div style="border: 2px solid black; padding: 2em">
 

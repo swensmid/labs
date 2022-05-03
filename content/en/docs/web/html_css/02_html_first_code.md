@@ -13,7 +13,7 @@ Wir beginnen ganz unkompliziert. Erstellen wir zuerst eine Text-Datei. Dafür er
 
 ![createFile](../vs-code-create-file.png "Erstelle eine neue Datei, indem du im Explorer von VS Code mit deiner Maus über deinen Ordner bewegst. Klicke dann auf das Datei-Symbol und gib einen Dateinamen an, der mit .html endet.")
 
-Fülle diese Datei nun mit irgend einem Text. Speichere diese Datei. Kopiere nun den Pfad zu dieser Datei. In VS Code kannst du den Pfad mit einem Rechtsklick auf die Datei kopieren:
+Fülle diese Datei nun mit irgendeinem Text. Speichere diese Datei. Kopiere nun den Pfad zu dieser Datei. In VS Code kannst du den Pfad mit einem Rechtsklick auf die Datei kopieren:
 
 ![copyPath](../vs-code-copy-path.png " ")
 

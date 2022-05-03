@@ -40,7 +40,7 @@ clearInterval(intervalId);
 ![task1](/images/task.png) Schreibe ein HTML, das eine Uhrzeit visuell anzeigt.
 
     Deine Website soll zentriert eine Uhrzeit anzeigen.
-    Es steht dir frei, ob du die Uhrzeit anolog oder digital anzeigen möchtest.
+    Es steht dir frei, ob du die Uhrzeit analog oder digital anzeigen möchtest.
 
     Wenn du eine analoge Uhr rendern möchtest, dann könnten Vektorgrafiken (SVGs) oder Canvas weiterbringen.
 

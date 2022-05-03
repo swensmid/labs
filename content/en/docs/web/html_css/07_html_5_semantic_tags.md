@@ -33,7 +33,7 @@ Other Text
 
 Das ist ein typisches Beispiel für die Verwendung von `<div>`s. 
 
-Möchtest du hingegen ein paar Wörter (aber nicht einen ganzen Block/Paragraphen) speziell stylen, wird oft ein `<span>`-Element verwendet. Möchtest du z.B. das Datum in einem Text hervorheben, dann könnte das z.B. so aussehen:
+Möchtest du hingegen ein paar Wörter (aber nicht einen ganzen Block/Paragrafen) speziell stylen, wird oft ein `<span>`-Element verwendet. Möchtest du z.B. das Datum in einem Text hervorheben, dann könnte das z.B. so aussehen:
 
 ```html
 Das nächste Event findet am <span class="date">20. Mai</span> statt.
@@ -69,7 +69,7 @@ In HTML5 wurden viele neue Tags eingeführt, die die Struktur von HTML-Dateien g
 
 ![semanticTags](https://www.w3schools.com/html/img_sem_elements.gif "Semantic Tags, die es seit HTML5 gibt")
 
-Der `<header>` ist meistens das, was auf einer Website zu oberst ist. Dieser enthält oft den Titel der Applikation, das Logo der Firma und evtl. noch eine `<nav>`igation (also Links wie für 'Home', 'About', ...).
+Der `<header>` ist meistens das, was auf einer Website zuoberst ist. Dieser enthält oft den Titel der Applikation, das Logo der Firma und evtl. noch eine `<nav>`igation (also Links wie für 'Home', 'About', ...).
 
 Das Gegenteil des `<header>`s ist der `<footer>`. Der Footer befindet sich oft am Ende der Website (also ganz unten) und enthält oft das Copyright sowie weiterführende Links wie z.B. solche zu den Datenschutzbestimmungen.
 
@@ -77,7 +77,7 @@ Nicht auf diesem Bild, aber trotzdem relevant: Oft befindet sich der Hauptteil e
 
 Einzelne Abschnitte (z.B. Unterkapitel inkl. Überschriften) werden oft in `<section>`s gepackt und sind in diesem Beispiel eine gute Alternative zu `<div>`s.
 
-Was genau ein `<article>` ist, würde den Rahmen hier definitiv sprengen. Auf jeden Fall beschreibt ein `article` ein von der aktuellen Website unabhängigs und in sich abgeschlossenes Element. Ein `article`-Element könnte man also einfach von der aktuellen Seite ausschneiden und in eine andere kopieren.
+Was genau ein `<article>` ist, würde den Rahmen hier definitiv sprengen. Auf jeden Fall beschreibt ein `article` ein von der aktuellen Website unabhängiges und in sich abgeschlossenes Element. Ein `article`-Element könnte man also einfach von der aktuellen Seite ausschneiden und in eine andere kopieren.
 
 Bitte schaue dir diese Dokumentation zu HTML Semantic Tags an. Dort sind auch `<article>`s genauer beschrieben: https://www.w3schools.com/html/html5_semantic_elements.asp
 
