@@ -13,12 +13,12 @@ Es gibt neue Anforderungen für die Tour of Heroes-App:
 
 * Hinzufügen einer *Dashboard*-Ansicht.
 * Hinzufügen der Möglichkeit, zwischen den Ansichten *Helden* und *Dashboard* zu navigieren.
-* Wenn Benutzer auf einen Heldennamen in einer der beiden Ansichten klicken, navigieren sie zu einer Detailansicht des ausgewählten Helden.
+* Wenn Benutzer auf einen Heldennamen in einer der beiden Ansichten klicken, navigiere zu einer Detailansicht des ausgewählten Helden.
 * Wenn Benutzer auf einen *tiefen Link* in einer E-Mail klicken, wird die Detailansicht für einen bestimmten Helden geöffnet.
 
-> Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt5/stackblitz.html).
+> Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt5/stackblitz.html).
 
-Wenn Sie fertig sind, können die Benutzer wie folgt durch die Anwendung navigieren:
+Wenn du fertig bist, können die Benutzer wie folgt durch die Anwendung navigieren:
 
 ![Navigation](/images/angular/nav-diagram.png)
 
@@ -29,7 +29,7 @@ zu laden und zu konfigurieren, das dem Routing gewidmet ist und von der Wurzel `
 
 Konventionell heißt die Modulklasse `AppRoutingModule` und gehört in die `app-routing.module.ts` im Ordner `src/app`.
 
-Verwenden Sie die CLI, um es zu erzeugen.
+Verwende die CLI, um es zu erzeugen.
 
 ```shell
   ng generate module app-routing --flat --module=app
@@ -55,7 +55,7 @@ import { CommonModule } from '@angular/common';
 export class AppRoutingModule { }
 ```
 
-Ersetzen Sie es durch das folgende:
+Ersetze es durch das folgende:
 
 `src/app/app-routing.module.ts (updated)`
 ```typescript
@@ -74,19 +74,19 @@ const routes: Routes = [
 export class AppRoutingModule { }
 ```
 
-Zunächst importiert die Datei "app-routing.module.ts" die Module [RouterModule](https://angular.io/api/router/RouterModule) und [Routes](https://angular.io/api/router/Routes), damit die Anwendung über Routing-Funktionen verfügt. Der nächste Import, `HeroesComponent`, gibt dem Router einen Platz, wo er hingehen kann, sobald Sie die Routen konfiguriert haben.
+Zunächst importiert die Datei "app-routing.module.ts" die Module [RouterModule](https://angular.io/api/router/RouterModule) und [Routes](https://angular.io/api/router/Routes), damit die Anwendung über Routing-Funktionen verfügt. Der nächste Import, `HeroesComponent`, gibt dem Router einen Platz, wo er hingehen kann, sobald du die Routen konfiguriert hast.
 
-Beachten Sie, dass die `CommonModule` Referenzen und das `declarations` Array unnötig sind, also nicht mehr Teil von
+Beachte, dass die `CommonModule` Referenzen und das `declarations` Array unnötig sind, also nicht mehr Teil von
 nicht mehr Teil des `AppRoutingModule` sind. Die folgenden Abschnitte erklären den Rest des `AppRoutingModule` im Detail.
 
 
 ### Routes
 
-Im nächsten Teil der Datei konfigurieren Sie Ihre Routen.
+Im nächsten Teil der Datei konfigurierst du deine Routen.
 *Routen* teilen dem Router mit, welche Ansicht angezeigt werden soll, wenn ein Benutzer auf einen Link klickt oder
 eine URL in die Adresszeile des Browsers einfügt.
 
-Da `app-routing.module.ts` bereits `HeroesComponent` importiert, können Sie es im Array `routes` verwenden:
+Da `app-routing.module.ts` bereits `HeroesComponent` importiert, kannst du es im Array `routes` verwenden:
 
 `src/app/app-routing.module.ts`
 ```typescript
@@ -116,7 +116,7 @@ konfiguriert es mit den `Routen` in einem Schritt durch den Aufruf
 imports: [ RouterModule.forRoot(routes) ],
 ```
 
-> Die Methode heißt `forRoot()`, weil Sie den Router auf der Root-Ebene der Anwendung konfigurieren.
+> Die Methode heißt `forRoot()`, weil du den Router auf der Root-Ebene der Anwendung konfigurierst.
   Die Methode `forRoot()` liefert die für das Routing benötigten Service Provider und Direktiven,
   und führt die anfängliche Navigation auf der Grundlage der aktuellen Browser-URL durch.
 
@@ -129,7 +129,7 @@ exports: [ RouterModule ]
 
 ## Hinzufügen von `RouterOutlet`
 
-Öffnen Sie das Template `AppComponent` und ersetzen Sie das Element `<app-heroes>` durch ein Element `<router-outlet>`.
+Öffne das Template `AppComponent` und ersetze das Element `<app-heroes>` durch ein Element `<router-outlet>`.
 
 `src/app/app.component.html (router-outlet)`
 ```html
@@ -143,11 +143,11 @@ Das Template "AppComponent" benötigt kein `<app-heroes>` mehr, da die Anwendung
 Das `<router-outlet>` teilt dem Router mit, wo die gerouteten Ansichten angezeigt werden sollen.
 
 > Das `RouterOutlet` ist eine der Router-Direktiven, die für die `AppComponent` verfügbar wurden
-weil `AppModule` `AppRoutingModule` importiert, das `RouterModule` exportiert hat. Der Befehl `ng generate`, den Sie zu Beginn dieses Tutorials ausgeführt haben, fügte diesen Import aufgrund des `--module=app` Flags hinzu. Wenn Sie `app-routing.module.ts` manuell erstellt haben oder ein anderes Werkzeug als das CLI dafür verwendet haben, müssen Sie `AppRoutingModule` in `app.module.ts` importieren und es zum `imports`-Array des `NgModule` hinzufügen.
+weil `AppModule` `AppRoutingModule` importiert, das `RouterModule` exportiert hat. Der Befehl `ng generate`, den du zu Beginn dieses Tutorials ausgeführt hast, fügte diesen Import aufgrund des `--module=app` Flags hinzu. Wenn du `app-routing.module.ts` manuell erstellt hast oder ein anderes Werkzeug als das CLI dafür verwendet hast, musst du `AppRoutingModule` in `app.module.ts` importieren und es zum `imports`-Array des `NgModule` hinzufügen.
 
-#### Probieren Sie es aus.
+#### Probiere es aus.
 
-Mit diesem CLI-Befehl sollten Sie immer noch arbeiten.
+Mit diesem CLI-Befehl solltest du immer noch arbeiten.
 
 ```shell
   ng serve
@@ -155,14 +155,14 @@ Mit diesem CLI-Befehl sollten Sie immer noch arbeiten.
 
 Der Browser sollte aktualisiert werden und den Titel der Anwendung anzeigen, aber nicht die Liste der Helden.
 
-Sehen Sie sich die Adressleiste des Browsers an.
+Schau dir die Adressleiste des Browsers an.
 Die URL endet auf `/`.
 Der Routenpfad zu `HeroesComponent` ist `/heroes`.
 
-Hängen Sie `/heroes` an die URL in der Adressleiste des Browsers an.
-Sie sollten die bekannte Master-/Detailansicht von Helden sehen.
+Hänge `/heroes` an die URL in der Adressleiste des Browsers an.
+Du solltest die bekannte Master-/Detailansicht von Helden sehen.
 
-Entfernen Sie "heroes" aus der URL in der Adressleiste des Browsers.
+Entferne "heroes" aus der URL in der Adressleiste des Browsers.
 Der Browser sollte aktualisiert werden und den Titel der Anwendung anzeigen, aber nicht die Liste der Helden.
 
 
@@ -171,7 +171,7 @@ Der Browser sollte aktualisiert werden und den Titel der Anwendung anzeigen, abe
 Idealerweise sollten die Benutzer auf einen Link klicken können, um zu navigieren, anstatt
 als eine Routen-URL in die Adressleiste einzufügen.
 
-Fügen Sie ein `<nav>`-Element und darin ein Ankerelement ein, das, wenn es angeklickt wird,
+Füge ein `<nav>`-Element und darin ein Ankerelement ein, das, wenn es angeklickt wird,
 die Navigation zur `HeroesComponent` auslöst.
 Das überarbeitete "AppComponent"-Template sieht wie folgt aus:
 
@@ -194,11 +194,11 @@ Es ist eine weitere der öffentlichen Direktiven im `RouterModule`.
 Der Browser aktualisiert sich und zeigt den Titel der Anwendung und den Link zu den Helden an,
 aber nicht die Heldenliste.
 
-Klicken Sie auf den Link.
+Klicke auf den Link.
 Die Adressleiste wird auf `/heroes` aktualisiert und die Liste der Helden erscheint.
 
-> Verbessern Sie das Aussehen dieses und zukünftiger Navigationslinks, indem Sie private CSS-Stile in `app.component.css` hinzufügen
-wie in der endgültigen Codeüberprüfungunten aufgeführt.
+> Verbessere das Aussehen dieses und zukünftiger Navigationslinks, indem du private CSS-Stile in `app.component.css` hinzufügst
+wie in der endgültigen Codeüberprüfung unten aufgeführt.
 
 
 ## Hinzufügen einer Dashboard-Ansicht
@@ -206,7 +206,7 @@ wie in der endgültigen Codeüberprüfungunten aufgeführt.
 Das Routing macht mehr Sinn, wenn es mehrere Ansichten gibt.
 Bis jetzt gibt es nur die Heldenansicht.
 
-Fügen Sie eine `DashboardComponent` mit Hilfe der CLI hinzu:
+Füge eine `DashboardComponent` mit Hilfe der CLI hinzu:
 
 ```shell
   ng generate component dashboard
@@ -214,7 +214,7 @@ Fügen Sie eine `DashboardComponent` mit Hilfe der CLI hinzu:
 
 Die CLI generiert die Dateien für die `DashboardComponent` und deklariert sie in `AppModule`.
 
-Ersetzen Sie den Inhalt der Standarddateien in diesen drei Dateien wie folgt:
+Ersetze den Inhalt der Standarddateien in diesen drei Dateien wie folgt:
 
 1. `src/app/dashboard/dashboard.component.html`
 ```html
@@ -309,7 +309,7 @@ Das _Template_ zeigt ein Raster von Heldennamen-Links.
 
 * Der `*ngFor` Repeater erstellt so viele Links wie im `heroes` Array der Komponente enthalten sind.
 * Die Links sind als farbige Blöcke in der `dashboard.component.css` gestylt.
-* Die Links gehen noch nirgendwo hin, aber [sie werden in Kürze](#hero-details).
+* Die Links gehen noch nirgendwo hin, aber [sie werden in Kürze...](#hero-details).
 
 Die _Klasse_ ist ähnlich wie die Klasse `HeroesComponent`.
 * Sie definiert eine Array-Eigenschaft `Helden`.
@@ -330,14 +330,14 @@ getHeroes(): void {
 
 Um zum Dashboard zu navigieren, benötigt der Router eine entsprechende Route.
 
-Importieren Sie die `DashboardComponent` in die Datei `app-routing-module.ts`.
+Importiere die `DashboardComponent` in die Datei `app-routing-module.ts`.
 
 `src/app/app-routing.module.ts (import DashboardComponent)`
 ```typescript
 import { DashboardComponent } from './dashboard/dashboard.component';
 ```
 
-Fügen Sie dem Array `routes` eine Route hinzu, die einem Pfad zur `DashboardComponent` entspricht.
+Füge dem Array `routes` eine Route hinzu, die einem Pfad zur `DashboardComponent` entspricht.
 
 `src/app/app-routing.module.ts`
 ```typescript
@@ -350,7 +350,7 @@ Wenn die Anwendung gestartet wird, zeigt die Adressleiste des Browsers auf das S
 Das passt zu keiner bestehenden Route, so dass der Router nirgendwo hin navigiert.
 Der Platz unter dem `<router-outlet>` ist leer.
 
-Um die Anwendung automatisch zum Dashboard navigieren zu lassen, fügen Sie die folgende
+Um die Anwendung automatisch zum Dashboard navigieren zu lassen, füge die folgende
 Route in das Array `routes` ein.
 
 `src/app/app-routing.module.ts`
@@ -369,7 +369,7 @@ Der Benutzer sollte in der Lage sein, zwischen der
 `DashboardComponent` und der `HeroesComponent` hin und her navigieren können, indem er auf Links im
 Navigationsbereich am oberen Rand der Seite klicken.
 
-Fügen Sie einen Dashboard-Navigationslink zum Shell-Template `AppComponent` hinzu, direkt über dem Link *Heroes*.
+Füge einen Dashboard-Navigationslink zum Shell-Template `AppComponent` hinzu, direkt über dem Link *Heroes*.
 
 `src/app/app.component.html`
 ```html
@@ -382,7 +382,7 @@ Fügen Sie einen Dashboard-Navigationslink zum Shell-Template `AppComponent` hin
 <app-messages></app-messages>
 ```
 
-Nach dem Aktualisieren des Browsers können Sie frei zwischen den beiden Ansichten navigieren, indem Sie auf die Links klicken.
+Nach dem Aktualisieren des Browsers kannst du frei zwischen den beiden Ansichten navigieren, indem du auf die Links klickst.
 
 ## <a id="#hero-details"></a>Zu den Heldendetails navigieren
 
@@ -395,8 +395,8 @@ Der Benutzer sollte in der Lage sein, diese Details auf drei Arten zu erreichen.
 1. Durch Anklicken eines Helden in der Heldenliste.
 1. Durch Einfügen einer "Deep Link"-URL in die Adressleiste des Browsers, die den anzuzeigenden Helden identifiziert.
 
-In diesem Abschnitt werden Sie die Navigation zur `HeroDetailComponent` aktivieren
-und befreien sie von der `HeroesComponent`.
+In diesem Abschnitt wirst du die Navigation zur `HeroDetailComponent` aktivieren
+und befreist sie von der `HeroesComponent`.
 
 ### Löschen der _Helden-Details_ aus der `HeroesComponent`.
 
@@ -405,24 +405,24 @@ sollte die Anwendung zur `HeroDetailComponent` navigieren,
 und die Helden-Listenansicht durch die Helden-Detailansicht ersetzen.
 Die Ansicht der Heldenliste sollte keine Heldendetails mehr anzeigen, wie es jetzt der Fall ist.
 
-Öffnen Sie Das Template `HeroesComponent` (`heroes/heroes.component.html`) und
-löschen Sie das Element `<app-hero-detail>` von unten.
+Öffne Das Template `HeroesComponent` (`heroes/heroes.component.html`) und
+lösche das Element `<app-hero-detail>` von unten.
 
 Das Anklicken eines Heldenelements bewirkt jetzt nichts.
-Sie werden [das in Kürze beheben](#heroes-component-links), nachdem Sie das Routing zur `HeroDetailComponent` aktiviert haben.
+Du wirst [das in Kürze beheben](#heroes-component-links), nachdem du das Routing zur `HeroDetailComponent` aktiviert hast.
 
 ### Hinzufügen einer _Heldendetail_-Route
 
 Eine URL wie `~/detail/11` wäre eine gute URL, um zur *Helden-Detail*-Ansicht des Helden zu navigieren, dessen `id` `11` ist.
 
-Öffnen Sie `app-routing.module.ts` und importieren Sie `HeroDetailComponent`.
+Öffne `app-routing.module.ts` und importiere `HeroDetailComponent`.
 
 `src/app/app-routing.module.ts (import HeroDetailComponent)`
 ```typescript
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 ```
 
-Fügen Sie dann eine _parametrisierte_ Route zum Array `routes` hinzu, die dem Pfadmuster zur Ansicht _hero detail_ entspricht.
+Füge dann eine _parametrisierte_ Route zum Array `routes` hinzu, die dem Pfadmuster zur Ansicht _hero detail_ entspricht.
 
 `src/app/app-routing.module.ts`
 ```typescript
@@ -447,7 +447,7 @@ const routes: Routes = [
 Die `DashboardComponent`-Heldenlinks machen im Moment noch nichts.
 
 Jetzt, wo der Router eine Route zu `HeroDetailComponent` hat,
-fixieren Sie die Dashboard-Heldenlinks so, dass sie über die _parametrisierte_ Dashboard-Route navigieren.
+fixiere die Dashboard-Heldenlinks so, dass sie über die _parametrisierte_ Dashboard-Route navigieren.
 
 `src/app/dashboard/dashboard.component.html (hero links)`
 ```html
@@ -457,9 +457,9 @@ fixieren Sie die Dashboard-Heldenlinks so, dass sie über die _parametrisierte_ 
 </a>
 ```
 
-Sie verwenden Angular [interpolation binding](https://angular.io/guide/interpolation) innerhalb des `*ngFor` Repeaters
+Du verwendest Angular [interpolation binding](https://angular.io/guide/interpolation) innerhalb des `*ngFor` Repeaters
 um die `hero.id` der aktuellen Iteration in jeden
-[`routerLink`](#routerlink).
+[`routerLink`](#routerlink) anzuzeigen.
 
 ### <a id="heroes-component-links"></a>`HeroesComponent` Helden-Links
 
@@ -477,10 +477,10 @@ an die Methode `onSelect()` der Komponente gebunden sind.
 </ul>
 ```
 
-Entfernen Sie das `<li>` auf sein `*ngFor` zurück,
-verpacken Sie das Abzeichen und den Namen in ein Ankerelement (`<a>`),
-und fügen Sie ein `routerLink`-Attribut zu dem Anker hinzu, das
-dasselbe ist wie im Dashboard-Template
+Entferne das `<li>` auf sein `*ngFor` zurück,
+verpacke das Abzeichen und den Namen in ein Ankerelement (`<a>`),
+und füge ein `routerLink`-Attribut zu dem Anker hinzu, das
+dasselbe ist wie im Dashboard-Template.
 
 `src/app/heroes/heroes.component.html (list with links)`
 ```html
@@ -493,16 +493,15 @@ dasselbe ist wie im Dashboard-Template
 </ul>
 ```
 
-Sie müssen das private Stylesheet (`heroes.component.css`) anpassen, damit
-damit die Liste wie vorher aussieht.
+Du musst das private Stylesheet (`heroes.component.css`) anpassen, damit die Liste wie vorher aussieht.
 Die überarbeiteten Styles sind im [final code review](#final-code-review) am Ende dieser Anleitung zu finden.
 
-#### Entfernen Sie toten Code (optional)
+#### Entferne toten Code (optional)
 
 Während die `HeroesComponent` Klasse noch funktioniert,
 werden die Methode `onSelect()` und die Eigenschaft `selectedHero` nicht mehr verwendet.
 
-Es ist schön, aufzuräumen, und Sie werden sich später selbst dafür dankbar sein.
+Es ist schön, aufzuräumen, und du wirst dich später selbst dafür dankbar sein.
 Hier ist die Klasse, nachdem der tote Code entfernt wurde.
 
 `src/app/heroes/heroes.component.ts (cleaned up)`
@@ -536,7 +535,7 @@ Dieser Abschnitt erklärt das Folgende:
 
 * Abrufen der Route, die sie erstellt hat
 * Extrahieren der "ID" aus der Route
-* Erwerben Sie den Helden mit dieser "ID" vom Server mit Hilfe des "HeroService".
+* Erwerbe den Helden mit dieser "ID" vom Server mit Hilfe des "HeroService".
 
 Füge die folgenden Importe hinzu:
 
@@ -548,7 +547,7 @@ import { Location } from '@angular/common';
 import { HeroService } from '../hero.service';
 ```
 
-Injizieren Sie die Dienste `ActivatedRoute`, `HeroService` und `Location`
+Injiziere die Dienste `ActivatedRoute`, `HeroService` und `Location`
 in den Konstruktor und speichert ihre Werte in privaten Feldern:
 
 `src/app/hero-detail/hero-detail.component.ts`
@@ -568,12 +567,12 @@ Der [`HeroService`](05_5_Services_hinzufügen.md) erhält Heldendaten vom entfer
 und diese Komponente wird sie verwenden, um den anzuzeigenden Helden zu erhalten.
 
 Die [`location`](https://angular.io/api/common/Location) ist ein Angular-Dienst für die Interaktion mit dem Browser.
-Sie werden ihn [später](#goback) verwenden, um zurück zu der Ansicht zu navigieren, die hierher navigiert hat.
+Du wirst ihn [später](#goback) verwenden, um zurück zu der Ansicht zu navigieren, die hierher navigiert hat.
 
-### Extrahieren Sie den `id` Routenparameter
+### Extrahiere den `id`-Routenparameter
 
 In dem `ngOnInit()` [Lebenszyklus-Haken](https://angular.io/guide/lifecycle-hooks#oninit)
-Rufen Sie `getHero()` auf und definieren Sie es wie folgt.
+Rufe `getHero()` auf und definiere es wie folgt.
 
 `src/app/hero-detail/hero-detail.component.ts`
 ```typescript
@@ -599,11 +598,11 @@ was die "id" eines Helden sein sollte.
 
 Der Browser wird aktualisiert und die Anwendung stürzt mit einem Compilerfehler ab.
 `HeroService` hat keine `getHero()` Methode.
-Fügen Sie sie jetzt hinzu.
+Füge sie jetzt hinzu.
 
 ### Hinzufügen von `HeroService.getHero()`
 
-Öffnen Sie `HeroService` und fügen Sie die folgende `getHero()` Methode mit der `id` nach der `getHeroes()` Methode hinzu:
+Öffne `HeroService` und füge die folgende `getHero()` Methode mit der `id` nach der `getHeroes()` Methode hinzu:
 
 `src/app/hero.service.ts (getHero)`
 ```typescript
@@ -620,26 +619,26 @@ Wie [`getHeroes()`](05_5:Services_hinzufügen.md),
 hat `getHero()` eine asynchrone Signatur.
 Es gibt einen _mock hero_ als `Observable` zurück, unter Verwendung der RxJS `of()` Funktion.
 
-Sie können `getHero()` als echte `Http`-Anfrage neu implementieren
+Du kannst `getHero()` als echte `Http`-Anfrage neu implementieren
 ohne die `HeroDetailComponent` zu ändern, die sie aufruft.
 
-#### Versuchen Sie es
+#### Versuche es
 
 Der Browser aktualisiert sich und die Anwendung funktioniert wieder.
-Sie können auf einen Helden im Dashboard oder in der Heldenliste klicken und zur Detailansicht dieses Helden navigieren.
+Du kannst auf einen Helden im Dashboard oder in der Heldenliste klicken und zur Detailansicht dieses Helden navigieren.
 
-Wenn Sie `localhost:4200/detail/11` in die Adressleiste des Browsers einfügen,
+Wenn du `localhost:4200/detail/11` in die Adressleiste des Browsers einfügst,
 navigiert der Router zur Detailansicht für den Helden mit der `id: 11`, "Dr. Nice".
 
 ### Finde den Weg zurück
 
 Mit einem Klick auf den Zurück-Button des Browsers,
-können Sie zur Heldenliste oder zur Dashboard-Ansicht zurückkehren,
-je nachdem, von wo aus Sie zur Detailansicht gelangt sind.
+kannst du zur Heldenliste oder zur Dashboard-Ansicht zurückkehren,
+je nachdem, von wo aus du zur Detailansicht gelangt bist.
 
 Es wäre schön, eine Schaltfläche in der `HeroDetail`-Ansicht zu haben, die das kann.
 
-Fügen Sie eine *Zurück*-Schaltfläche am unteren Ende des Komponententemplate hinzu und binden Sie sie
+Füge eine *Zurück*-Schaltfläche am unteren Ende des Komponententemplate hinzu und binde sie
 an die Methode `goBack()` der Komponente.
 
 `src/app/hero-detail/hero-detail.component.html (back button)`
@@ -647,9 +646,9 @@ an die Methode `goBack()` der Komponente.
 <button (click)="goBack()">go back</button>
 ```
 
-Fügen Sie der Komponentenklasse eine "goBack()-Methode" hinzu, die einen Schritt zurückgeht
+Füge der Komponentenklasse eine "goBack()-Methode" hinzu, die einen Schritt zurückgeht
 im Verlaufsstapel des Browsers
-unter Verwendung des `Location`-Dienstes, den Sie zuvor injiziert haben.
+unter Verwendung des `Location`-Dienstes, den du zuvor injiziert hast.
 
 `src/app/hero-detail/hero-detail.component.ts (goBack)`
 ```typescript
@@ -658,11 +657,11 @@ goBack(): void {
 }
 ```
 
-Aktualisieren Sie den Browser und beginnen Sie zu klicken.
+Aktualisiere den Browser und beginne zu klicken.
 Benutzer können in der App navigieren, vom Dashboard zu den Heldendetails und zurück,
 von der Heldenliste zu den Minidetails, zu den Heldendetails und wieder zurück zu den Helden.
 
-Die Details sehen besser aus, wenn Sie die privaten CSS-Stile zu `hero-detail.component.css` hinzufügen
+Die Details sehen besser aus, wenn du die privaten CSS-Stile zu `hero-detail.component.css` hinzufügst
 wie in einem der ["final code review"](#final-code-review) Tabs unten aufgeführt.
 
 ## <a id="final-code-review"></a>Final code review
@@ -672,11 +671,11 @@ sind die auf dieser Seite besprochenen Codedateien.
 
 ## Zusammenfassung
 
-* Sie haben den Angular-Router hinzugefügt, um zwischen verschiedenen Komponenten zu navigieren.
-* Sie haben die `AppComponent` in eine Navigations-Shell mit `<a>`-Links und einem `<router-outlet>` verwandelt.
-* Sie haben den Router in einem "AppRoutingModule" konfiguriert.
-* Sie haben Routen, eine Redirect-Route und eine parametrisierte Route definiert.
-* Sie haben die `routerLink`-Direktive in Ankerelementen verwendet.
-* Sie haben eine eng gekoppelte Master/Detail-Ansicht in eine geroutete Detail-Ansicht umgewandelt.
-* Sie haben Router-Link-Parameter verwendet, um zur Detailansicht eines vom Benutzer ausgewählten Helden zu navigieren.
-* Sie haben den `HeroService` auf mehrere Komponenten verteilt.
+* Du hast den Angular-Router hinzugefügt, um zwischen verschiedenen Komponenten zu navigieren.
+* Du hast die `AppComponent` in eine Navigations-Shell mit `<a>`-Links und einem `<router-outlet>` verwandelt.
+* Du hast den Router in einem "AppRoutingModule" konfiguriert.
+* Du hast Routen, eine Redirect-Route und eine parametrisierte Route definiert.
+* Du hast die `routerLink`-Direktive in Ankerelementen verwendet.
+* Du hast eine eng gekoppelte Master/Detail-Ansicht in eine geroutete Detail-Ansicht umgewandelt.
+* Du hast Router-Link-Parameter verwendet, um zur Detailansicht eines vom Benutzer ausgewählten Helden zu navigieren.
+* Du hast den `HeroService` auf mehrere Komponenten verteilt.

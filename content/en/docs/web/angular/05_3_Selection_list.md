@@ -5,21 +5,21 @@ linkTitle: "Auswahlliste"
 weight: 12
 date: 2022-03-14
 description: >
-    Auf dieser Seite erweitern Sie die Anwendung Tour der Helden, um eine Liste von Helden anzuzeigen und
+    Auf dieser Seite erweiterst du die Anwendung Tour der Helden, um eine Liste von Helden anzuzeigen und
     den Benutzern die Möglichkeit geben, einen Helden auszuwählen und die Details des Helden anzuzeigen.
 ---
 
-# Eine Auswahlliste anzeigen
 
-> Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter [dieser Seite](hhttps://angular.io/generated/live-examples/toh-pt2/stackblitz.html).
+# Eine Auswahlliste anzeigen
+> Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt2/stackblitz.html).
 
 
 ## Mock Heroes erstellen
 
-Sie benötigen einige Helden, die angezeigt werden sollen.
+Du benötigst einige Helden, die angezeigt werden sollen.
 
-Letztendlich werden Sie diese von einem entfernten Datenserver erhalten.
-Für den Moment werden Sie einige _mock heroes_ erstellen und so tun, als kämen sie vom Server.
+Letztendlich wirst du diese von einem entfernten Datenserver erhalten.
+Für den Moment wirst du einige _mock heroes_ erstellen und so tun, als kämen sie vom Server.
 
 Erstelle eine Datei namens `mock-heroes.ts` im Ordner `src/app/`.
 Definiere eine `HEROES` Konstante als Array von zehn Helden und exportiere sie.
@@ -45,7 +45,7 @@ export const HEROES: Hero[] = [
 
 ## Anzeige der Helden
 
-Öffnen Sie die Klassendatei `HeroesComponent` und importieren Sie das Mock `HEROES`.
+Öffne die Klassendatei `HeroesComponent` und importiere das Mock `HEROES`.
 
 `src/app/heroes/heroes.component.ts (import HEROES)`
 ```typescript
@@ -65,7 +65,7 @@ export const HEROES: Hero[] = [
 ];
 ```
 
-Definieren Sie in derselben Datei (Klasse `HeroesComponent`) eine Komponenteneigenschaft namens `heroes`, um das Array `HEROES` zur Bindung freizugeben.
+Definiere in derselben Datei (Klasse `HeroesComponent`) eine Komponenteneigenschaft namens `heroes`, um das Array `HEROES` zur Bindung freizugeben.
 
 `src/app/heroes/heroes.component.ts`
 ```typescript
@@ -77,12 +77,12 @@ export class HeroesComponent implements OnInit {
 
 ### Auflisten von Helden mit [*ngFor](https://angular.io/api/common/NgForOf)
 
-Öffnen Sie die Templatedatei `HeroesComponent` und nehmen Sie die folgenden Änderungen vor:
+Öffne die Templatedatei `HeroesComponent` und nimm die folgenden Änderungen vor:
 
-* Fügen Sie ein `<h2>` am Anfang ein,
-* Darunter fügen Sie eine ungeordnete HTML-Liste (`<ul>`) ein.
-* Fügen Sie ein `<li>` innerhalb des `<ul>` ein, das die Eigenschaften eines `Helden` anzeigt.
-* Streuen Sie einige CSS-Klassen für die Gestaltung ein (Sie werden die CSS-Stile in Kürze hinzufügen).
+* Füge ein `<h2>` am Anfang ein,
+* Darunter fügst du eine ungeordnete HTML-Liste (`<ul>`) ein.
+* Füge ein `<li>` innerhalb des `<ul>` ein, das die Eigenschaften eines `Helden` anzeigt.
+* Streue einige CSS-Klassen für die Gestaltung ein (Du wirst die CSS-Stile in Kürze hinzufügen).
 
 Das Ganze soll so aussehen:
 
@@ -96,7 +96,7 @@ Das Ganze soll so aussehen:
 </ul>
 ```
 
-Es wird ein Fehler angezeigt, da die Eigenschaft "hero" nicht existiert. Um Zugriff auf jeden einzelnen Helden zu haben und sie alle aufzulisten, fügen Sie ein `*ngFor` zum `<li>` hinzu, um die Liste der Helden zu durchlaufen:
+Es wird ein Fehler angezeigt, da die Eigenschaft "hero" nicht existiert. Um Zugriff auf jeden einzelnen Helden zu haben und sie alle aufzulisten, füge ein `*ngFor` zum `<li>` hinzu, um die Liste der Helden zu durchlaufen:
 
 ```html
 <li *ngFor="let hero of heroes">
@@ -111,7 +111,7 @@ Die Syntax in diesem Beispiel ist wie folgt:
 * `heroes` enthält die Mock-Helden-Liste der Klasse `HeroesComponent`, die Mock-Helden-Liste.
 * `hero` enthält das aktuelle Heldenobjekt für jede Iteration durch die Liste.
 
-![asset](/images/hint.png) Vergessen Sie nicht das Sternchen (*) vor `ngFor`. Es ist ein wichtiger Teil der Syntax.
+![asset](/images/hint.png) Vergiss nicht das Sternchen (*) vor `ngFor`. Es ist ein wichtiger Teil der Syntax.
 
 
 Nachdem der Browser aktualisiert wurde, erscheint die Liste der Helden.
@@ -121,18 +121,18 @@ Nachdem der Browser aktualisiert wurde, erscheint die Liste der Helden.
 Die Heldenliste sollte ansprechend sein und visuell reagieren, wenn der Benutzer
 mit dem Mauszeiger einen Helden aus der Liste auswählen.
 
-Im [ersten Tutorial](https://angular.io/tutorial/toh-pt0#app-wide-styles) haben Sie die grundlegenden Stile für die gesamte Anwendung in `styles.css` festgelegt.
+Im [ersten Tutorial](https://angular.io/tutorial/toh-pt0#app-wide-styles) hast du die grundlegenden Stile für die gesamte Anwendung in `styles.css` festgelegt.
 Dieses Stylesheet enthielt keine Stile für diese Liste von Helden.
 
-Sie könnten weitere Stile zu `styles.css` hinzufügen und das Stylesheet mit dem Hinzufügen von Komponenten weiter ausbauen.
+Du kannst weitere Stile zu `styles.css` hinzufügen und das Stylesheet mit dem Hinzufügen von Komponenten weiter ausbauen.
 
-Vielleicht ziehen Sie es stattdessen vor, private Stile für eine bestimmte Komponente zu definieren und alles, was eine Komponente braucht, zu behalten&mdash; den Code, das HTML,
+Vielleicht ziehst du es stattdessen vor, private Stile für eine bestimmte Komponente zu definieren und alles, was eine Komponente braucht, zu behalten&mdash; den Code, das HTML,
 und das CSS &mdash;zusammen an einem Ort.
 
 Dieser Ansatz macht es einfacher, die Komponente an anderer Stelle wiederzuverwenden
 und das beabsichtigte Erscheinungsbild der Komponente zu erhalten, selbst wenn die globalen Stile unterschiedlich sind.
 
-Sie definieren private Stile entweder inline im Array `@Component.styles` oder
+Du definierst private Stile entweder inline im Array `@Component.styles` oder
 als Stylesheet-Datei(en), die im `@Component.styleUrls` Array identifiziert werden.
 
 Als die CLI die `HeroesComponent` generierte, erstellte sie ein leeres `heroes.component.css` Stylesheet für die `HeroesComponent`
@@ -147,8 +147,8 @@ und verwies in `@Component.styleUrls` wie folgt darauf.
 })
 ```
 
-Öffnen Sie die Datei `heroes.component.css` und fügen Sie die privaten CSS-Stile für die `HeroesComponent` ein.
-Sie finden sie in der [finalen Code-Übersicht](#final-code-review) am Ende dieser Anleitung.
+Öffne die Datei `heroes.component.css` und füge die privaten CSS-Stile für die `HeroesComponent` ein.
+Du findest sie in der [finalen Code-Übersicht](#final-code-review) am Ende dieser Anleitung.
 
 ![asset](/images/hint.png)
 Stile und Stylesheets, die in `@Component`-Metadaten identifiziert werden, sind auf diese spezifische Komponente beschränkt.
@@ -159,12 +159,12 @@ Die `heroes.component.css`-Stile gelten nur für die `HeroesComponent` und haben
 
 Wenn der Benutzer auf einen Helden in der Liste klickt, sollte die Komponente die Details des ausgewählten Helden unten auf der Seite anzeigen.
 
-In diesem Abschnitt werden Sie auf das Klick-Ereignis für das Heldenelement warten
+In diesem Abschnitt wirst du auf das Klick-Ereignis für das Heldenelement warten
 und aktualisieren die Heldendetails.
 
 ### Hinzufügen einer Klick-Ereignisbindung
 
-Fügen Sie eine Klick-Ereignis-Bindung zu `<li>` wie folgt hinzu:
+Füge eine Klick-Ereignis-Bindung zu `<li>` wie folgt hinzu:
 
 `heroes.component.html (template excerpt)`
 ```html
@@ -177,16 +177,16 @@ Die Klammern um `click` sagen Angular, dass es auf das `click`-Ereignis des `<li
 Wenn der Benutzer auf das Element `<li>` klickt, führt Angular den Ausdruck `onSelect(hero)` aus.
 
 
-Im nächsten Abschnitt definieren Sie eine `onSelect()` Methode in `HeroesComponent` um
+Im nächsten Abschnitt definierst du eine `onSelect()` Methode in `HeroesComponent` um
 um den Helden anzuzeigen, der in der `*ngFor` Expression definiert wurde.
 
 
-### Fügen Sie den Click-Event-Handler hinzu
+### Füge den Click-Event-Handler hinzu
 
-Benennen Sie die Eigenschaft `hero` der Komponente in `selectedHero` um, aber weisen Sie sie nicht zu.
+Benenne die Eigenschaft `hero` der Komponente in `selectedHero` um, aber weise sie nicht zu.
 Es gibt keinen _selected hero_, wenn die Anwendung startet.
 
-Fügen Sie die folgende Methode `onSelect()` hinzu, die den angeklickten Helden aus dem Template
+Füge die folgende Methode `onSelect()` hinzu, die den angeklickten Helden aus dem Template
 dem `selectedHero` der Komponente zuweist.
 
 `src/app/heroes/heroes.component.ts (onSelect)`
@@ -199,9 +199,9 @@ onSelect(hero: Hero): void {
 
 ### Hinzufügen eines Detailbereichs
 
-Derzeit haben Sie eine Liste in dem Komponententemplate. Um auf einen Helden in der Liste zu klicken
-zu klicken und Details über diesen Helden anzuzeigen, benötigen Sie einen Abschnitt für die Details, der im
-Template. Fügen Sie folgendes zu `heroes.component.html` unter dem Listenabschnitt hinzu:
+Derzeit hast du eine Liste in dem Komponententemplate. Um auf einen Helden in der Liste zu klicken
+ und Details über diesen Helden anzuzeigen, benötigst du einen Abschnitt für die Details, der im
+Template zu finden ist. Füge folgendes zu `heroes.component.html` unter dem Listenabschnitt hinzu:
 
 `heroes.component.html (selected hero details)`
 ```html
@@ -215,7 +215,7 @@ Template. Fügen Sie folgendes zu `heroes.component.html` unter dem Listenabschn
 
 Nach dem Aktualisieren des Browsers ist die Anwendung fehlerhaft.
 
-Öffnen Sie die Entwicklerwerkzeuge des Browsers und suchen Sie in der Konsole nach einer Fehlermeldung wie dieser:
+Öffne die Entwicklerwerkzeuge des Browsers und suche in der Konsole nach einer Fehlermeldung wie dieser:
 
 ```shell
 HeroesComponent.html:3 ERROR TypeError: Cannot read property 'name' of undefined
@@ -233,11 +233,11 @@ Bindungsausdrücke im Template, die sich auf Eigenschaften von `selectedHero` be
 
 Die Komponente sollte die ausgewählten Heldendetails nur anzeigen, wenn der `selectedHero` existiert.
 
-Wickeln Sie das HTML der Heldendetails in ein `<div>`.
-Fügen Sie die `*ngIf`-Direktive von Angular in das `<div>` ein und setzen Sie es auf `selectedHero`.
+Wickle das HTML der Heldendetails in ein `<div>` ein.
+Füge die `*ngIf`-Direktive von Angular in das `<div>` ein und setze es auf `selectedHero`.
 
 
-![asset](/images/hint.png) Vergessen Sie nicht das Sternchen (*) vor `ngIf`. Das ist ein wichtiger Teil der Syntax.
+![asset](/images/hint.png) Vergiss nicht, das Sternchen (*) vor `ngIf` zu setzen. Das ist ein wichtiger Teil der Syntax.
 
 
 `src/app/heroes/heroes.component.html (*ngIf)`
@@ -256,7 +256,7 @@ Fügen Sie die `*ngIf`-Direktive von Angular in das `<div>` ein und setzen Sie e
 
 Nach dem Aktualisieren des Browsers wird die Liste der Namen wieder angezeigt.
 Der Detailbereich ist leer.
-Klicken Sie auf einen Helden in der Liste der Helden und seine Details erscheinen.
+Klicke auf einen Helden in der Liste der Helden und seine Details erscheinen.
 Die Anwendung scheint wieder zu funktionieren.
 Die Helden werden in einer Liste angezeigt und die Details zu dem angeklickten Helden erscheinen unten auf der Seite.
 
@@ -270,15 +270,15 @@ ngIf" setzt das Heldendetail in das DOM.
 
 ### Den ausgewählten Helden gestalten
 
-Um den ausgewählten Helden zu identifizieren, können Sie die CSS-Klasse `.selected` in den [Stilen, die Sie zuvor hinzugefügt haben](#styles) verwenden.
-Um die Klasse `.selected` auf das `<li>` anzuwenden, wenn der Benutzer darauf klickt, verwenden Sie die Klassenbindung.
+Um den ausgewählten Helden zu identifizieren, kannst die CSS-Klasse `.selected` in den [Stilen, die du zuvor hinzugefügt hast](#styles) verwenden.
+Um die Klasse `.selected` auf das `<li>` anzuwenden (wenn der Benutzer darauf klickt), verwende die Klassenbindung.
 
 ![Ausgewählter Held mit dunklem Hintergrund und hellem Text, der ihn von nicht ausgewählten Listenelementen unterscheidet](/images/angular/heroes-list-selected.png)
 
 Angulars [class-binding](https://angular.io/guide/attribute-binding#class-binding) kann eine CSS-Klasse bedingt hinzufügen und entfernen.
-Fügen Sie `[class.some-css-class]="some-condition"` zu dem Element hinzu, das Sie gestalten möchten.
+Füge `[class.some-css-class]="some-condition"` zu dem Element hinzu, das du gestalten möchtest.
 
-Fügen Sie die folgende `[class.selected]` Bindung zum `<li>` im `HeroesComponent` Template hinzu:
+Füge die folgende `[class.selected]` Bindung zum `<li>` im `HeroesComponent` Template hinzu:
 
 `heroes.component.html (toggle the 'selected' CSS class)`
 ```typescript
@@ -428,6 +428,6 @@ input {
 
 * Die Anwendung "Tour of Heroes" zeigt eine Liste von Helden mit einer Detailansicht an.
 * Der Benutzer kann einen Helden auswählen und dessen Details sehen.
-* Sie haben `*ngFor` verwendet, um eine Liste anzuzeigen.
-* Sie haben `*ngIf` verwendet, um einen HTML-Block bedingt ein- oder auszuschließen.
-* Sie können eine CSS-Stilklasse mit einer `class`-Bindung umschalten.
+* Du hast `*ngFor` verwendet, um eine Liste anzuzeigen.
+* Du hast `*ngIf` verwendet, um einen HTML-Block bedingt ein- oder auszuschließen.
+* Du kannst eine CSS-Stilklasse mit einer `class`-Bindung umschalten.

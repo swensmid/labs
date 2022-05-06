@@ -50,7 +50,7 @@ import { RequestLogInterceptor} from '...';
         {
             provide: HTTP_INTERCEPTORS,
             useClass: RequestLogInterceptor,
-            mutli: true
+            multi: true
         },
         ...
     ],

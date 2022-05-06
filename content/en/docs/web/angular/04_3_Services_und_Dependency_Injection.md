@@ -35,7 +35,7 @@ Die Dependency injecten
       //....
   }
   ```
-2. Das Auto als Provider registrieren (in `main.ts`):
+2. Das Auto als Provider registrieren (in `module.ts`):
 ```typescript
 //...
 import {Auto} from './auto';
@@ -69,3 +69,13 @@ export class AutoNutzer{
 Das Minibeispiel soll lediglich die 3 wichtigen Schritte etwas besser darstellen.
 
 In Euren Projekten werdet ihr dieses Verfahren für die Services anwenden.
+
+## Aufgabe 2
+Folgende Datenbankstruktur ist gegeben:
+
+<img src="../04_03_Class_Diagram.png" alt="ERD" style="width:50%"/>
+
+- Erstelle für jede Entität ein geeignetes Model
+- Erstelle für jede Entität einen Service 
+- Erstelle bei jedem Service Musterdaten die du in einer geeigneten Component anzeigst. Design ist noch nicht wichig, es geht nur um das Verständnis
+- Behalte die Ordnerstruktur korrekt (Ordner für die Componenten, Ordner für die Services, etc.)

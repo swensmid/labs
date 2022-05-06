@@ -5,7 +5,7 @@ linkTitle: "Angular Material"
 weight: 8
 date: 2022-03-14
 description: >
-    IMaterial Design ist eine Designsprache, die für das neue Betriebssystem von Google Android entwickelt wurde, das im Sommer 2014 angekündigt wurde.
+    Material Design ist eine Designsprache, die für das neue Betriebssystem von Google Android entwickelt wurde, das im Sommer 2014 angekündigt wurde.
     Obwohl sich die Material Design hauptsächlich auf das Touch-Based-Design mobiler Apps konzentriert, ist es möglich, dieselben Ideen in das Webdesign zu übertragen.
 ---
 
@@ -77,3 +77,14 @@ Um ein solches Theme zu verwenden, müssen wir dies in unserem globalen Styleshe
 
 Natürlich kann man auch sein eigene Theme für Angular Material erstellen.
 Wie ihr dies machen könnt wird [hier](https://material.angular.io/guide/theming#defining-a-custom-theme) ausführlich beschrieben (Für diejenigen, die mit den Übungen frühzeitig fertig sind).
+
+## Aufgabe 5
+Um die Fahrrad-Seite nun ein bisschen schöner darzustellen, brauchen wir nun Angular Material
+- Folgende Material-Komponenten sollen die Seite verschönern (es ist dir überlassen, welches Material du welcher Komponente(n) zuordnest): 
+    - Card
+    - Sidenav
+    - Snackbar
+    - Toolbar
+    - Table
+    - Input
+    - Tabs

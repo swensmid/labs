@@ -66,3 +66,9 @@ Beispielsweise:
 ```html
 <a [routerLink]="'/contacts'">Contacts</a>
 ```
+
+## Aufgabe 4
+Nachdem du die Pipes erstellt hast, geht es darum das Routing auf die von dir erstellten Komponenten zu leiten.
+- Erstelle nach deinem Ermessen für die jeweiligen Komponenten die du routen willst, eine entsprechende Weiterleitung
+- Sofern du eine Komponente nur anzeigen lassen willst, wenn man beispielsweise angemeldet ist, versuche eine CanActivate Klasse zu erstellen
+- Erstelle auch ein Routing auf die Typ-Komponente, welche mit Hilfe eines Parameters den jweiligen Typ anzeigt 

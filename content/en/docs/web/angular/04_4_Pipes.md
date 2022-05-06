@@ -73,3 +73,11 @@ export class FileSizePipe implements PipeTransform{
 - Die Pipe-Klasse implementiert die Methode `transform` des PipeTransform Interface, die einen Eingabewert gefolgt von optionalen Parametern akzeptiert und den transformierten Wert zurückgibt.
 - Für jeden an die Pipe übergebenen Parameter gibt es ein zusätzliches Argument für die Methode `transform`. Unsere Pipe hat einen solchen Parameter: die `extension`.
 - Mit dem `@Pipe` Decorator können wir den Pipe-Namen definieren, welchen wir im Template verwenden.
+
+## Aufgabe 3
+In der vorherigen Aufgabe hast du eine Grundstruktur geschaffen für die Anzeige von diversen Fahrrädern und dessen Marken und Typ.
+- Erstelle nun eine Pipe welche die Spalte `wert` im Format `1'720.00 CHF` anzeigt. Der Währungstyp wird mit einem Parameter weitergegeben.
+Sofern nichts angegeben wird, wähle Standardmässig `CHF`.
+- Geh davon aus das in der Spalte `wert` auch Zahlen wie `1287.87` oder `5421.21` gespeichert sind. Runde diese je nachdem auf oder ab.
+- Auch das Hochzeichen (`'`) soll immer nach 3 Stellen erscheinen.
+- Erstelle eine weitere Pipe, welche den Markennamen nur mit Grossbuchstaben anzeigt und hinter den Markennamen ein Copyrightzeichen (`©`) setzt.
