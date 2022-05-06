@@ -86,7 +86,8 @@ export class FahrradComponent implements OnInit {
 ```
 Folgendes muss angezeigt werden, wenn die Seite geladen wurde:
 
-<img src="../assets/images/04_01_First_Page.PNG" alt="Components Description" style="width:20%"/>
+<img src="../04_01_First_Page.PNG" alt="Components Description" style="width:20%"/>
+
 - "Wie heisst mein Fahrrad?" ist mit der Funktion "nameDesFahrrads()" verknüpft.
 - "Mein Liebslingsfahrrad suchen" ist mit der Funktion "bildLiebslingsFahrrad()" verknüpft.
 - Für die Anzeige der Lieblingsfahrräder muss ein `*ngFor` gebraucht werden.
@@ -95,4 +96,4 @@ Folgendes muss angezeigt werden, wenn die Seite geladen wurde:
 Folgende Seite wird nach dem Klick auf "Mein Lieblingsfahrrad suchen" angezeigt:
 
 
-<img src="../assets/images/04_01_Second_Page.PNG" alt="Components Description" style="width:40%"/>
+<img src="../04_01_Second_Page.PNG" alt="Components Description" style="width:40%"/>

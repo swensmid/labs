@@ -73,7 +73,7 @@ In Euren Projekten werdet ihr dieses Verfahren für die Services anwenden.
 ## Aufgabe 2
 Folgende Datenbankstruktur ist gegeben:
 
-<img src="../assets/images/04_03_Class_Diagram.png" alt="ERD" style="width:50%"/>
+<img src="../04_03_Class_Diagram.png" alt="ERD" style="width:50%"/>
 
 - Erstelle für jede Entität ein geeignetes Model
 - Erstelle für jede Entität einen Service 
