@@ -1,0 +1,51 @@
+{
+    "currentWorkingHours": {
+        "reason": "Grund unbekannt (999)",
+        "organisation": "JBT Informatik Bern/1/1",
+        "time": {
+            "hours": 8,
+            "minutes": 50
+        }
+    },
+    "user": {
+        "displayName": "SBB Crackhead",
+        "available": false,
+        "reason": "Grund unbekannt",
+        "lastSeen": "Sa 25.12.2021 20:15"
+    },
+    "tiles": [
+        {
+            "title": "Personen",
+            "icon": "request.svg",
+            "amount": 21,
+            "action": null
+        },
+        {
+            "title": "Absenzen",
+            "icon": "request.svg",
+            "amount": 0,
+            "action": {
+                "title": "Anträge",
+                "action": "http://gugus.ch/"
+            }
+        },
+        {
+            "title": "Visum",
+            "icon": "request.svg",
+            "amount": 0,
+            "action": null
+        },
+        {
+            "title": "Warnungen",
+            "icon": "warning.svg",
+            "amount": 0,
+            "action": null
+        },
+        {
+            "title": "Alarme",
+            "icon": "alert.svg",
+            "amount": 4,
+            "action": null
+        }
+    ]
+}
