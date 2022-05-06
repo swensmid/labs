@@ -6,24 +6,24 @@ weight: 13
 date: 2022-03-14
 description: >
     Alle Funktionen in einer Komponente zu halten, während die Anwendung wächst, ist nicht wartbar.
-    Sie werden große Komponenten in kleinere Unterkomponenten aufteilen wollen, die jeweils auf eine bestimmte Aufgabe oder einen bestimmten Arbeitsablauf ausgerichtet sind.
+    Du wirst große Komponenten in kleinere Unterkomponenten aufteilen wollen, die jeweils auf eine bestimmte Aufgabe oder einen bestimmten Arbeitsablauf ausgerichtet sind.
 ---
 
-# Erstellen Sie eine Feature-Komponente
+# Erstelle eine Feature-Komponente
 
 Im Moment zeigt die Komponente `HeroesComponent` sowohl die Liste der Helden als auch die Details des ausgewählten Helden an.
 
-Auf dieser Seite werden Sie den ersten Schritt in diese Richtung machen, indem Sie die Heldendetails in eine separate, wiederverwendbare `HeroDetailComponent` verschieben.
+Auf dieser Seite wirst du den ersten Schritt in diese Richtung machen, indem du die Heldendetails in eine separate, wiederverwendbare `HeroDetailComponent` verschiebst.
 
 Die `HeroesComponent` wird nur die Liste der Helden darstellen.
 Die `HeroDetailComponent` wird die Details eines ausgewählten Helden anzeigen.
 
-> Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt3/stackblitz.html).
+> Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt3/stackblitz.html).
 
 
-## Erstellen Sie die `HeroDetailComponent`
+## Erstelle die `HeroDetailComponent`
 
-Verwenden Sie das Angular CLI, um eine neue Komponente mit dem Namen `hero-detail` zu erstellen.
+Verwende das Angular CLI, um eine neue Komponente mit dem Namen `hero-detail` zu erstellen.
 
 ```shell
   ng generate component hero-detail
@@ -43,15 +43,15 @@ Innerhalb dieses Verzeichnisses werden vier Dateien generiert:
 Der Befehl fügt auch die `HeroDetailComponent` als Deklaration in den `@NgModule` Dekorator der `src/app/app.module.ts` Datei ein.
 
 
-### Schreiben Sie das Template
+### Schreibe das Template
 
-Schneiden Sie das HTML für das Heldendetail aus dem unteren Teil der `HeroesComponent`- aus und fügen Sie es über die generierte Boilerplate in das `HeroDetailComponent`-Template ein.
+Schneide das HTML für das Heldendetail aus dem unteren Teil der `HeroesComponent`- aus und füge es über die generierte Boilerplate in das `HeroDetailComponent`-Template ein.
 
 Das eingefügte HTML bezieht sich auf einen `selectedHero`.
 Die neue `HeroDetailComponent` kann _jeden_ Helden darstellen, nicht nur einen ausgewählten Helden.
-Ersetzen Sie also "selectedHero" durch "hero" überall im Template.
+Ersetze also "selectedHero" durch "hero" überall im Template.
 
-Wenn Sie fertig sind, sollte das `HeroDetailComponent`-Template wie folgt aussehen:
+Wenn du fertig bist, sollte das `HeroDetailComponent`-Template wie folgt aussehen:
 
 `src/app/hero-detail/hero-detail.component.html`
 ```html
@@ -72,7 +72,7 @@ Wenn Sie fertig sind, sollte das `HeroDetailComponent`-Template wie folgt ausseh
 das Template `HeroDetailComponent` bindet sich an die Eigenschaft `Hero` der Komponente
 die vom Typ `Hero` ist.
 
-Öffnen Sie die Klassendatei `HeroDetailComponent` und importieren Sie das Symbol `Hero`.
+Öffne die Klassendatei `HeroDetailComponent` und importiere das Symbol `Hero`.
 
 `src/app/hero-detail/hero-detail.component.ts (import Hero)`
 ```typescript
@@ -88,42 +88,42 @@ denn die _externe_ `HeroesComponent` [wird sich wie folgt daran binden](#heroes-
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 ```
 
-Ändern Sie die Importanweisung `@angular/core`, um das Symbol `Input` aufzunehmen.
+Ändere die Importanweisung `@angular/core`, um das Symbol `Input` aufzunehmen.
 
 `src/app/hero-detail/hero-detail.component.ts (import Input)`
 ```typescript
 import { Component, OnInit, Input } from '@angular/core';
 ```
 
-Fügen Sie eine Eigenschaft "hero" hinzu, der der Dekorator "@Input()" vorangestellt ist.
+Füge eine Eigenschaft "hero" hinzu, der der Dekorator "@Input()" vorangestellt ist.
 
 `src/app/hero-detail/hero-detail.component.ts`
 ```typescript
 @Input() hero?: Hero;
 ```
 
-Das ist die einzige Änderung, die Sie an der Klasse `HeroDetailComponent` vornehmen sollten.
+Das ist die einzige Änderung, die du an der Klasse `HeroDetailComponent` vornehmen solltest.
 Es gibt keine weiteren Eigenschaften. Es gibt keine Präsentationslogik.
 Diese Komponente empfängt nur ein Heldenobjekt über die Eigenschaft `hero` und zeigt es an.
 
 ## Die `HeroDetailComponent` anzeigen
 
-Die `HeroesComponent` hat die Heldendetails selbständig angezeigt, bevor Sie diesen Teil des Templates entfernt haben.
-Dieser Abschnitt führt Sie durch die Delegierung von Logik an die `HeroDetailComponent`.
+Die `HeroesComponent` hat die Heldendetails selbständig angezeigt, bevor du diesen Teil des Templates entfernt hast.
+Dieser Abschnitt führt dich durch die Delegierung von Logik an die `HeroDetailComponent`.
 
 Die beiden Komponenten haben eine Eltern/Kind-Beziehung.
 Die übergeordnete Komponente `HeroesComponent` steuert die untergeordnete Komponente `HeroDetailComponent`
 indem sie ihr einen neuen Helden sendet, der angezeigt wird, wenn
 der Benutzer einen Helden aus der Liste auswählt.
 
-Sie ändern nicht die _Klasse_ von `HeroesComponent`, aber Sie ändern ihr _Template_.
+Ändere nicht die _Klasse_ von `HeroesComponent`, ändere ihr _Template_.
 
-### <a id="#heroes-component-template"></a>Aktualisieren Sie das `HeroesComponent`-Template
+### <a id="#heroes-component-template"></a>Aktualisiere das `HeroesComponent`-Template
 
 Der `HeroDetailComponent` Selektor ist `'app-hero-detail'`.
-Fügen Sie ein `<app-hero-detail>` Element in der Nähe des unteren Endes des `HeroesComponent` Template hinzu, wo die Helden-Detailansicht vorher war.
+Füge ein `<app-hero-detail>` Element in der Nähe des unteren Endes des `HeroesComponent` Template hinzu, wo die Helden-Detailansicht vorher war.
 
-Binden Sie die `HeroesComponent.selectedHero` an die Eigenschaft `hero` des Elements wie folgt.
+Binde die `HeroesComponent.selectedHero` an die Eigenschaft `hero` des Elements wie folgt.
 
 `heroes.component.html (HeroDetail binding)`
 ```html
@@ -166,11 +166,11 @@ Jetzt zeigt die `HeroDetailComponent` diese Details anstelle der `HeroesComponen
 
 Das Refactoring der ursprünglichen `HeroesComponent` in zwei Komponenten bringt Vorteile, sowohl jetzt als auch in Zukunft:
 
-1. Sie haben die Verantwortlichkeiten der `HeroesComponent` reduziert.
-2. Sie können die `HeroDetailComponent` zu einem umfangreichen Helden-Editor weiterentwickeln
+1. Du hast die Verantwortlichkeiten der `HeroesComponent` reduziert.
+2. Du kannst die `HeroDetailComponent` zu einem umfangreichen Helden-Editor weiterentwickeln
 ohne die übergeordnete `HeroesComponent` zu berühren.
-3. Sie können die `HeroesComponent` weiterentwickeln, ohne die Helden-Detailansicht zu berühren.
-4. Sie können die `HeroDetailComponent` im Template einer zukünftigen Komponente wiederverwenden.
+3. Du kannst die `HeroesComponent` weiterentwickeln, ohne die Helden-Detailansicht zu berühren.
+4. Du kannst die `HeroDetailComponent` im Template einer zukünftigen Komponente wiederverwenden.
 
 ## Abschließende Code-Überprüfung
 
@@ -250,12 +250,7 @@ export class AppModule { }
 
 ## Zusammenfassung
 
-* Sie haben eine separate, wiederverwendbare `HeroDetailComponent` erstellt.
-
-
-* Sie haben eine [Eigenschaftsbindung](https://angular.io/guide/property-binding) verwendet, um der übergeordneten `HeroesComponent` Kontrolle über die untergeordnete `HeroDetailComponent` zu geben.
-
-
-* Sie haben den [`@Input` decorator](https://angular.io/guide/inputs-outputs)
-um die `hero` Eigenschaft für die Bindung
-durch die externe `HeroesComponent`.
+* Du hast eine separate, wiederverwendbare `HeroDetailComponent` erstellt.
+* Du hast eine [Eigenschaftsbindung](https://angular.io/guide/property-binding) verwendet, um der übergeordneten `HeroesComponent` Kontrolle über die untergeordnete `HeroDetailComponent` zu geben.
+* Du hast den [`@Input` decorator](https://angular.io/guide/inputs-outputs)
+um die `hero` Eigenschaft für die Bindung durch die externe `HeroesComponent` ersetzt.

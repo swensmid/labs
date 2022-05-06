@@ -10,35 +10,37 @@ description: >
 
 # Ein neues Projekt erstellen
 
-In diesem Teil des Tutorials werden Sie Folgendes tun:
+Du beginnst mit der Erstellung einer ersten Anwendung mithilfe der Angular CLI. Im Laufe dieses Tutorials wirst du diese Startanwendung modifizieren und erweitern, um die Anwendung Tour of Heroes zu erstellen.
 
-1. Richten Sie Ihre Umgebung ein.
-2. Erstellen Sie einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt.
-3. Stellen Sie die Anwendung bereit.
-4. Nehmen Sie Änderungen an der Anwendung vor.
+In diesem Teil des Tutorials wirst du Folgendes tun:
 
-
-> Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt0/stackblitz.html).
-
-## Richten Sie Ihre Umgebung ein
-
-Um Ihre Entwicklungsumgebung einzurichten, folgen Sie den Anweisungen in [Local Environment Setup](https://angular.io/guide/setup-local).
+1. Richte deine Umgebung ein.
+2. Erstelle einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt.
+3. Stelle die Anwendung bereit.
+4. Nimm Änderungen an der Anwendung vor.
 
 
-## Erstellen Sie einen neuen Arbeitsbereich und eine erste Anwendung
+> Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt0/stackblitz.html).
 
-Sie entwickeln Anwendungen im Kontext eines Angular-[Workspace](https://angular.io/guide/glossary#workspace). Ein Arbeitsbereich enthält die Dateien für ein oder mehrere [Projekte](https://angular.io/guide/glossary#project). Ein Projekt ist eine Gruppe von Dateien, die eine Anwendung oder eine Bibliothek bilden. Für dieses Tutorial werden Sie einen neuen Arbeitsbereich erstellen.
+## Richten deine Umgebung ein
 
-So erstellen Sie einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt:
+Um Ihre Entwicklungsumgebung einzurichten, folge den Anweisungen in [Local Environment Setup](https://angular.io/guide/setup-local).
 
-  1. Stellen Sie sicher, dass Sie sich nicht bereits in einem Angular-Arbeitsbereich-Ordner befinden. Wenn Sie beispielsweise zuvor den Arbeitsbereich Erste Schritte erstellt haben, wechseln Sie in den übergeordneten Ordner dieses Ordners.
-  2. Führen Sie den CLI-Befehl `ng new` aus und geben Sie den Namen `angular-tour-of-heroes` ein, wie hier gezeigt:
+
+## Erstelle einen neuen Arbeitsbereich und eine erste Anwendung
+
+Du entwickelst Anwendungen im Kontext eines Angular-[Workspace](https://angular.io/guide/glossary#workspace). Ein Arbeitsbereich enthält die Dateien für ein oder mehrere [Projekte](https://angular.io/guide/glossary#project). Ein Projekt ist eine Gruppe von Dateien, die eine Anwendung oder eine Bibliothek bilden. Für dieses Tutorial wirst du einen neuen Arbeitsbereich erstellen.
+
+So erstellst du einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt:
+
+  1. Stelle sicher, dass du dich nicht bereits in einem Angular-Arbeitsbereich-Ordner befindest. Wenn du beispielsweise zuvor den Arbeitsbereich Erste Schritte erstellt hast, wechsle in den übergeordneten Ordner dieses Ordners.
+  2. Führe den CLI-Befehl `ng new` aus und gib den Namen `angular-tour-of-heroes` ein, wie hier gezeigt:
 
 ```
 ng new angular-tour-of-heroes
 ```
 
-  3. Der Befehl "ng new" fordert Sie auf, Informationen zu den Funktionen einzugeben, die in das ursprüngliche Anwendungsprojekt aufgenommen werden sollen. Akzeptieren Sie die Standardeinstellungen, indem Sie die Enter- oder Return-Taste drücken.
+  3. Der Befehl "ng new" fordert dich auf, Informationen zu den Funktionen einzugeben, die in das ursprüngliche Anwendungsprojekt aufgenommen werden sollen. Akzeptiere die Standardeinstellungen, indem du die Enter- oder Return-Taste drückst.
 
 Die Angular-CLI installiert die notwendigen Angular-"npm"-Pakete und andere Abhängigkeiten. Dies kann ein paar Minuten dauern.
 
@@ -52,7 +54,7 @@ Das anfängliche App-Projekt enthält eine einfache Willkommensanwendung, die so
 
 ## Serve the application
 
-Wechseln Sie in das Verzeichnis workspace und starten Sie die Anwendung.
+Wechsle in das Verzeichnis workspace und starte die Anwendung.
 
 ```
   cd angular-tour-of-heroes
@@ -62,7 +64,7 @@ Wechseln Sie in das Verzeichnis workspace und starten Sie die Anwendung.
 ![asset](/images/hint.png)
 
 > Der Befehl `ng serve` baut die App, startet den Entwicklungsserver,
-überwacht die Quelldateien und baut die Anwendung neu auf, wenn Sie Änderungen an diesen Dateien vornehmen.\
+überwacht die Quelldateien und baut die Anwendung neu auf, wenn du Änderungen an diesen Dateien vornimmst.\
 Das `--open` Flag öffnet einen Browser auf `http://localhost:4200/`.
 
 
@@ -70,7 +72,7 @@ Sie sollten die Anwendung in Ihrem Browser laufen sehen.
 
 ## Angular-Komponenten
 
-Die Seite, die Sie sehen, ist die _Anwendungsshell_.
+Die Seite, die du siehst, ist die _Anwendungsshell_.
 Die Shell wird von einer Angular **Komponente** namens `AppComponent` gesteuert.
 
 _Komponenten_ sind die grundlegenden Bausteine von Angular-Anwendungen.
@@ -78,9 +80,9 @@ Sie zeigen Daten auf dem Bildschirm an, warten auf Benutzereingaben und führen 
 
 ## Änderungen an der Anwendung vornehmen
 
-Öffnen Sie das Projekt in Ihrem bevorzugten Editor oder IDE und navigieren Sie zum Ordner `src/app`, um einige Änderungen an der Starter-Anwendung vorzunehmen.
+Öffne das Projekt in deinem bevorzugten Editor oder IDE und navigiere zum Ordner `src/app`, um einige Änderungen vorzunehmen.
 
-Sie werden die Implementierung der Shell `AppComponent` über drei Dateien verteilt finden:
+Du wirst die Implementierung der Shell `AppComponent` über drei Dateien verteilt finden:
 
 1. `app.component.ts` der Code der Komponentenklasse, geschrieben in TypeScript.
 1. `app.component.html` das Komponententemplate, geschrieben in HTML.
@@ -88,15 +90,15 @@ Sie werden die Implementierung der Shell `AppComponent` über drei Dateien verte
 
 ### Ändern Sie den Titel der Anwendung
 
-Öffnen Sie die Klassendatei der Komponente (`app.component.ts`) und ändern Sie den Wert der Eigenschaft `title` in 'Tour of Heroes'.
+Öffne die Klassendatei der Komponente (`app.component.ts`) und ändere den Wert der Eigenschaft `title` in 'Tour of Heroes'.
 
 ```typescript
 title = 'Tour of Heroes';
 ```
 
-Öffnen Sie die Komponententemplatendatei (`app.component.html`) und
-löschen Sie die von der Angular CLI generierte Standardtemplate.
-Ersetzen Sie es durch die folgende HTML-Zeile.
+Öffne die Komponententemplatendatei (`app.component.html`) und
+lösche die von der Angular CLI generierte Standardtemplate.
+Ersetze es durch die folgende HTML-Zeile.
 
 ```html
 <h1>{{title}}</h1>
@@ -112,9 +114,9 @@ Der Browser aktualisiert sich und zeigt den neuen Anwendungstitel an.
 
 Die meisten Anwendungen streben ein einheitliches Aussehen in der gesamten Anwendung an.
 Das CLI generiert zu diesem Zweck eine leere `styles.css`.
-Legen Sie dort Ihre anwendungsweiten Stile ab.
+Lege dort deine anwendungsweiten Stile ab.
 
-Öffnen Sie `src/styles.css` und fügen Sie den folgenden Code in die Datei ein.
+Öffne `src/styles.css` und füge den folgenden Code in die Datei ein.
 
 ```css
 /* Application-wide Styles */
@@ -189,6 +191,6 @@ body, input[type="text"], button {
 ```
 ## Zusammenfassung
 
-* Sie haben die erste Anwendungsstruktur mit dem Angular CLI erstellt.
-* Sie haben gelernt, dass Angular-Komponenten Daten anzeigen.
-* Sie haben die doppelten geschweiften Klammern der Interpolation verwendet, um den Titel der Anwendung anzuzeigen.
+* Du hast die erste Anwendungsstruktur mit dem Angular CLI erstellt.
+* Du hast gelernt, dass Angular-Komponenten Daten anzeigen.
+* Du hast die doppelten geschweiften Klammern der Interpolation verwendet, um den Titel der Anwendung anzuzeigen.

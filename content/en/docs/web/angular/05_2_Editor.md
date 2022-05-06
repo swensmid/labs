@@ -6,17 +6,15 @@ weight: 11
 date: 2022-03-14
 description: >
     Die Anwendung hat jetzt einen einfachen Titel.
-    Als Nächstes erstellen Sie eine neue Komponente zur Anzeige von Heldeninformationen
-    und platzieren diese Komponente in der Anwendungsschale.
+    Als Nächstes erstellst du eine neue Komponente zur Anzeige von Heldeninformationen
+    und platzierst diese Komponente in der Anwendungsschale.
 ---
 
-# Der Helden-Editor
+> Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt1/stackblitz.html).
 
-> Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt1/stackblitz.html).
+## Erstelle die Komponente heroes
 
-## Erstellen Sie die Komponente heroes
-
-Erzeugen Sie mit der Angular CLI eine neue Komponente mit dem Namen `heroes`.
+Erzeuge mit der Angular CLI eine neue Komponente mit dem Namen `heroes`.
 
 ```
   ng generate component heroes
@@ -67,7 +65,7 @@ Die Komponentenklasse immer `export`, damit man sie an anderer Stelle `import` k
 
 ### Hinzufügen einer Hero-Eigenschaft
 
-Fügen Sie der `HeroesComponent` eine `Helden`-Eigenschaft für einen Helden namens "Windstorm" hinzu.
+Füge der `HeroesComponent` eine `Helden`-Eigenschaft für einen Helden namens "Windstorm" hinzu.
 
 `heroes.component.ts (hero property)`
 ```typescript
@@ -76,9 +74,9 @@ hero = 'Windstorm';
 
 ### Den Helden anzeigen
 
-Öffnen Sie die Templatedatei "heroes.component.html".
-Löschen Sie den von der Angular CLI generierten Standardtext und
-ersetzen Sie ihn durch eine Datenbindung an die neue `hero` Eigenschaft.
+Öffne die Templatedatei "heroes.component.html".
+Lösche den von der Angular CLI generierten Standardtext und
+ersetze ihn durch eine Datenbindung an die neue `hero` Eigenschaft.
 
 ```html
 <h2>{{hero}}</h2>
@@ -86,10 +84,10 @@ ersetzen Sie ihn durch eine Datenbindung an die neue `hero` Eigenschaft.
 
 ## Die Ansicht `HeroesComponent` anzeigen
 
-Um die `HeroesComponent` anzuzeigen, müssen Sie sie zum Template der Shell `AppComponent` hinzufügen.
+Um die `HeroesComponent` anzuzeigen, müsst du sie zum Template der Shell `AppComponent` hinzufügen.
 
-Denken Sie daran, dass `app-heroes` der [Element-Selektor](#selector) für die `HeroesComponent` ist.
-Fügen Sie also ein `<app-heroes>`-Element in die `AppComponent`-Templatdatei ein, direkt unter dem Titel.
+Denke daran, dass `app-heroes` der [Element-Selektor](#selector) für die `HeroesComponent` ist.
+Füge also ein `<app-heroes>`-Element in die `AppComponent`-Templatdatei ein, direkt unter dem Titel.
 
 `src/app/app.component.html`
 ```html
@@ -104,7 +102,7 @@ sollte der Browser aktualisiert werden und sowohl den Titel der Anwendung als au
 
 Ein echter Held ist mehr als nur ein Name.
 
-Erstellen Sie eine `Hero`-Schnittstelle in einer eigenen Datei im Ordner `src/app`.
+Erstelle eine `Hero`-Schnittstelle in einer eigenen Datei im Ordner `src/app`.
 Gib ihr die Eigenschaften `id` und `name`.
 
 `src/app/hero.ts`
@@ -116,10 +114,10 @@ export interface Hero {
 ```
 
 
-Kehren Sie zur Klasse `HeroesComponent` zurück und importieren Sie die Schnittstelle `Hero`.
+Kehre zur Klasse `HeroesComponent` zurück und importiere die Schnittstelle `Hero`.
 
-Refaktorieren Sie die Eigenschaft `hero` der Komponente, so dass sie vom Typ `Hero` ist.
-Initialisieren Sie sie mit einer `id` von `1` und dem Namen `Windstorm`.
+Refaktoriere die Eigenschaft `hero` der Komponente, so dass sie vom Typ `Hero` ist.
+Initialisiere sie mit einer `id` von `1` und dem Namen `Windstorm`.
 
 Die überarbeitete Klassendatei `HeroesComponent` sollte wie folgt aussehen:
 
@@ -147,12 +145,12 @@ export class HeroesComponent implements OnInit {
 }
 ```
 
-Die Seite wird nicht mehr richtig angezeigt, weil Sie den Helden von einer Zeichenkette in ein Objekt geändert haben.
+Die Seite wird nicht mehr richtig angezeigt, weil du den Helden von einer Zeichenkette in ein Objekt geändert hast.
 
-## Zeigen Sie das Hero-Objekt an
+## Zeige das Hero-Objekt an
 
-Aktualisieren Sie die Bindung im Template, um den Namen des Helden anzuzeigen
-und zeigen Sie sowohl `id` als auch `name` in einem Detail-Layout wie diesem:
+Aktualisiere die Bindung im Template, um den Namen des Helden anzuzeigen
+und zeige sowohl `id` als auch `name` in einem Detail-Layout wie diesem:
 
 `heroes.component.html (HeroesComponent's template)`
 ```html
@@ -165,7 +163,7 @@ Der Browser aktualisiert sich und zeigt die Informationen über den Helden an.
 
 ## Formatieren mit der _UppercasePipe_
 
-Ändern Sie die Bindung `hero.name` wie folgt.
+Ändere die Bindung `hero.name` wie folgt.
 
 `src/app/heroes/heroes.component.html`
 ```html
@@ -179,7 +177,7 @@ direkt nach dem Pipe-Operator ( | ),
 aktiviert die eingebaute `UppercasePipe`.
 
 [Pipes](https://angular.io/guide/pipes) sind ein guter Weg, um Strings, Währungsbeträge, Daten und andere Anzeigedaten zu formatieren.
-Angular wird mit mehreren eingebauten Pipes ausgeliefert und Sie können Ihre eigenen erstellen.
+Angular wird mit mehreren eingebauten Pipes ausgeliefert und du kannst deine eigenen erstellen.
 
 
 ## Den Helden bearbeiten
@@ -191,11 +189,11 @@ und diese Eigenschaft während der Eingabe des Benutzers aktualisieren.
 Das heißt, die Daten fließen von der Komponentenklasse nach draußen auf den Bildschirm und
 vom Bildschirm zurück zur Klasse.
 
-Um diesen Datenfluss zu automatisieren, richten Sie eine zweiseitige Datenbindung zwischen dem Formularelement `<input>` und der Eigenschaft `hero.name` ein.
+Um diesen Datenfluss zu automatisieren, richte eine zweiseitige Datenbindung zwischen dem Formularelement `<input>` und der Eigenschaft `hero.name` ein.
 
 ### Zwei-Wege-Bindung
 
-Überarbeiten Sie den Detailbereich im Template `HeroesComponent` so, dass er wie folgt aussieht:
+Überarbeite den Detailbereich im Template `HeroesComponent` so, dass er wie folgt aussieht:
 
 `src/app/heroes/heroes.component.html (HeroesComponent's template)`
 ```html
@@ -211,9 +209,9 @@ Hier bindet sie die Eigenschaft `hero.name` an die HTML-Textbox, so dass Daten i
 
 ### Das fehlende _FormsModule_
 
-Beachten Sie, dass die Anwendung nicht mehr funktioniert, wenn Sie `[(ngModel)]` hinzufügen.
+Beachte, dass die Anwendung nicht mehr funktioniert, wenn du `[(ngModel)]` hinzufügst.
 
-Um den Fehler zu sehen, öffnen Sie die Browser-Entwicklungswerkzeuge und suchen Sie in der Konsole
+Um den Fehler zu sehen, öffne die Browser-Entwicklungswerkzeuge und suche in der Konsole
 nach einer Meldung wie
 
 ```shell
@@ -231,24 +229,24 @@ Angular muss wissen, wie die Teile Ihrer Anwendung zusammenpassen
 und welche anderen Dateien und Bibliotheken die Anwendung benötigt.
 Diese Informationen werden _Metadaten_ genannt.
 
-Einige der Metadaten befinden sich in den `@Component`-Dekoratoren, die Sie zu Ihren Komponentenklassen hinzugefügt haben.
+Einige der Metadaten befinden sich in den `@Component`-Dekoratoren, die du zu deinen Komponentenklassen hinzugefügt hast.
 Andere wichtige Metadaten befinden sich in [`@NgModule`](https://angular.io/guide/ngmodules) Dekoratoren.
 
 Der wichtigste [`@NgModule`](https://angular.io/guide/ngmodules) Dekorator annotiert die Top-Level **AppModule** Klasse.
 
 Das Angular CLI generierte eine `AppModule` Klasse in `src/app/app.module.ts` als es das Projekt erstellte.
-Dies ist der Ort, an dem Sie das [FormsModule](https://angular.io/api/forms/FormsModule) einfügen.
+Dies ist der Ort, an dem du das [FormsModule](https://angular.io/api/forms/FormsModule) einfügst.
 
-### Importieren Sie _FormsModule
+### Importiere _FormsModule
 
-Öffnen Sie `AppModule` (`app.module.ts`) und importieren Sie das Symbol `FormsModule` aus der Bibliothek `@angular/forms`.
+Öffnen `AppModule` (`app.module.ts`) und importiere das Symbol `FormsModule` aus der Bibliothek `@angular/forms`.
 
 `app.module.ts (FormsModule symbol import)`
 ```typescript
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 ```
 
-Fügen Sie dann `FormsModule` zum `@NgModule`-Metadaten-Array `imports` hinzu, das eine Liste der externen Module enthält, die die Anwendung benötigt.
+Füge dann `FormsModule` zum `@NgModule`-Metadaten-Array `imports` hinzu, das eine Liste der externen Module enthält, die die Anwendung benötigt.
 
 `app.module.ts (@NgModule imports)`
 ```typescript
@@ -257,9 +255,9 @@ imports: [
   FormsModule
 ],
 ```
-Wenn der Browser aktualisiert wird, sollte die Anwendung wieder funktionieren. Sie können den Namen des Helden bearbeiten und sehen, dass die Änderungen sofort in der `<h2>` oberhalb des Textfeldes angezeigt werden.
+Wenn der Browser aktualisiert wird, sollte die Anwendung wieder funktionieren. Du kannst den Namen des Helden bearbeiten und sehen, dass die Änderungen sofort in der `<h2>` oberhalb des Textfeldes angezeigt werden.
 
-### Deklarieren Sie `HeroesComponent`
+### Deklariere `HeroesComponent`
 
 Jede Komponente muss in _exakt einem_ [NgModule](guide/ngmodules) deklariert werden.
 
@@ -268,7 +266,7 @@ Warum hat die Anwendung dann funktioniert?
 
 Sie funktionierte, weil das Angular CLI `HeroesComponent` im `AppModule` deklarierte, als es diese Komponente generierte.
 
-Öffnen Sie `src/app/app.module.ts` und finden Sie `HeroesComponent`, das ganz oben importiert wurde.
+Öffne `src/app/app.module.ts` und finde `HeroesComponent`, das ganz oben importiert wurde.
 
 `src/app/app.module.ts`
 ```typescript
@@ -284,7 +282,7 @@ declarations: [
 ],
 ```
 
-Beachten Sie, dass `AppModule` beide Anwendungskomponenten, `AppComponent` und `HeroesComponent`, deklariert.
+Beachte, dass `AppModule` beide Anwendungskomponenten, `AppComponent` und `HeroesComponent`, deklariert.
 
 
 ## Abschließende Überprüfung des Codes
@@ -375,9 +373,9 @@ export interface Hero {
 
 ## Zusammenfassung
 
-* Sie haben die CLI verwendet, um eine zweite `HeroesComponent` zu erstellen.
-* Sie haben die `HeroesComponent` angezeigt, indem Sie sie der `AppComponent`-Shell hinzugefügt haben.
-* Sie haben die `UppercasePipe` angewendet, um den Namen zu formatieren.
+* Du hast die CLI verwendet, um eine zweite `HeroesComponent` zu erstellen.
+* Du hast die `HeroesComponent` angezeigt, indem du sie der `AppComponent`-Shell hinzugefügt hast.
+* Du hast die `UppercasePipe` angewendet, um den Namen zu formatieren.
 * Du hast die Zwei-Wege-Datenbindung mit der `ngModel`-Direktive benutzt.
 * Du hast etwas über das `AppModule` gelernt.
 * Du hast das `FormsModule` in das `AppModule` importiert, so dass Angular die `ngModel`-Direktive erkennen und anwenden konnte.

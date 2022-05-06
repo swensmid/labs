@@ -5,31 +5,32 @@ linkTitle: "Daten von einem Server abrufen"
 weight: 16
 date: 2022-03-14
 description: >
-    In diesem Tutorial fügen Sie die folgenden Datenpersistenzfunktionen mit Hilfe von
-    Angulars HttpClient hinzu.
+    In diesem Tutorial fügst du die folgenden Datenpersistenzfunktionen mit Hilfe von
+    Angulars `HttpClient` hinzu.
 ---
 
 
 # Daten von einem Server abrufen
 
+
 * Der `HeroService` holt Heldendaten mit HTTP-Anfragen.
 * Benutzer können Helden hinzufügen, bearbeiten und löschen und diese Änderungen über HTTP speichern.
 * Benutzer können nach Helden anhand ihres Namens suchen.
 
-> Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt6/stackblitz.html).
+> Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter [dieser Seite](https://angular.io/generated/live-examples/toh-pt6/stackblitz.html).
 
-## Aktivieren Sie HTTP-Dienste
+## Aktiviere HTTP-Dienste
 
 [`HttpClient`](https://angular.io/api/common/http/HttpClient) ist Angulars Mechanismus, um mit einem entfernten Server über HTTP zu kommunizieren.
 
-Machen Sie `HttpClient` überall in der Anwendung in zwei Schritten verfügbar. Erstens, fügen Sie es zum Root `AppModule` hinzu, indem Sie es importieren:
+Mache `HttpClient` überall in der Anwendung in zwei Schritten verfügbar. Erstens, füge es zum Root `AppModule` hinzu, indem du es importierst:
 
 `src/app/app.module.ts (HttpClientModule import)`
 ```typescript
 import { HttpClientModule } from '@angular/common/http';
 ```
 
-Als Nächstes, immer noch im `AppModule`, fügen Sie `HttpClientModule` in das `imports` Array ein:
+Als Nächstes, immer noch im `AppModule`, füge `HttpClientModule` in das `imports` Array ein:
 
 `src/app/app.module.ts (imports array excerpt)`
 ```typescript
@@ -50,16 +51,16 @@ Nach der Installation des Moduls wird die Anwendung Anfragen an den `HttpClient`
 ohne zu wissen, dass die *In-memory Web API* diese Anfragen abfängt,
 sie auf einen In-Memory-Datenspeicher anwendet und simulierte Antworten zurückgibt.
 
-Wenn Sie die In-Memory-Web-API verwenden, müssen Sie keinen Server einrichten, um etwas über den `HttpClient` zu erfahren.
+Wenn du die In-Memory-Web-API verwendest, musst du keinen Server einrichten, um etwas über den `HttpClient` zu erfahren.
 
-Installieren Sie das In-memory Web API Paket von npm mit dem folgenden Befehl:
+Installiere das In-memory Web API Paket von npm mit dem folgenden Befehl:
 
 ```shell
   npm install angular-in-memory-web-api --save
 ```
 
-Im `AppModule` importieren Sie das `HttpClientInMemoryWebApiModule` und die Klasse `InMemoryDataService`,
-die Sie in einem Moment erstellen werden.
+Im `AppModule` importiere das `HttpClientInMemoryWebApiModule` und die Klasse `InMemoryDataService`,
+die du in einem Moment erstellen wirst.
 
 `src/app/app.module.ts (In-memory Web API imports)`
 ```typescript
@@ -67,7 +68,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 ```
 
-Nach dem `HttpClientModule` fügen Sie das `HttpClientInMemoryWebApiModule`
+Nach dem `HttpClientModule` füge das `HttpClientInMemoryWebApiModule`
 zum `AppModule` `imports` Array hinzu und konfigurieren es mit dem `InMemoryDataService`.
 
 `src/app/app.module.ts (imports array excerpt)`
@@ -76,7 +77,7 @@ HttpClientModule,
 
 // Das Modul HttpClientInMemoryWebApiModule fängt HTTP-Anfragen ab
 // und gibt simulierte Serverantworten zurück.
-// Entfernen Sie es, wenn ein echter Server bereit ist, Anfragen zu empfangen.
+// Entferne es, wenn ein echter Server bereit ist, Anfragen zu empfangen.
 HttpClientInMemoryWebApiModule.forRoot(
   InMemoryDataService, { dataEncapsulation: false }
 )
@@ -85,13 +86,13 @@ HttpClientInMemoryWebApiModule.forRoot(
 Die Konfigurationsmethode "forRoot()" nimmt eine "InMemoryDataService"-Klasse
 die die In-Memory-Datenbank vorbereiten.
 
-Erzeugen Sie die Klasse `src/app/in-memory-data.service.ts` mit dem folgenden Befehl:
+Erzeuge die Klasse `src/app/in-memory-data.service.ts` mit dem folgenden Befehl:
 
 ```shell
   ng generate service InMemoryData
 ```
 
-Ersetzen Sie den Standardinhalt von `in-memory-data.service.ts` durch den folgenden:
+Ersetze den Standardinhalt von `in-memory-data.service.ts` durch den folgenden:
 
 `src/app/in-memory-data.service.ts`
 ```typescript
@@ -131,21 +132,21 @@ export class InMemoryDataService implements InMemoryDbService {
 ```
 
 Die Datei `in-memory-data.service.ts` wird die Funktion von `mock-heroes.ts` übernehmen.
-Löschen Sie die Datei `mock-heroes.ts` jedoch noch nicht, da Sie sie noch für einige weitere Schritte dieses Tutorials benötigen.
+Lösche die Datei `mock-heroes.ts` jedoch noch nicht, da du sie noch für einige weitere Schritte dieses Tutorials benötigst.
 
-Wenn der Server bereit ist, lösen Sie die In-Memory-Web-API, und die Anfragen der Anwendung werden an den Server weitergeleitet.
+Wenn der Server bereit ist, löse die In-Memory-Web-API aus, und die Anfragen der Anwendung werden an den Server weitergeleitet.
 
 
 ## Helden und HTTP
 
-Im `HeroService` importieren Sie `HttpClient` und `HttpHeaders`:
+Im `HeroService` importiere `HttpClient` und `HttpHeaders`:
 
 `src/app/hero.service.ts (import HTTP symbols)`
 ```typescript
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 ```
 
-Noch im `HeroService`, injizieren Sie `HttpClient` in den Konstruktor in einer privaten Eigenschaft namens `http`.
+Noch im `HeroService`, injiziere `HttpClient` in den Konstruktor in einer privaten Eigenschaft namens `http`.
 
 `src/app/hero.service.ts`
 ```typescript
@@ -154,7 +155,7 @@ constructor(
   private messageService: MessageService) { }
 ```
 
-Beachten Sie, dass Sie den `MessageService` weiterhin injizieren, aber da Sie ihn so häufig aufrufen werden, verpacken Sie ihn in eine private `log()` Methode:
+Beachte, dass du den `MessageService` weiterhin injizierst, aber da du ihn so häufig aufrufen wirst, verpackst du ihn in eine private `log()` Methode:
 
 `src/app/hero.service.ts`
 ```typescript
@@ -164,7 +165,7 @@ private log(message: string) {
 }
 ```
 
-Definieren Sie die `heroesUrl` der Form `:base/:collectionName` mit der Adresse der heroes-Ressource auf dem Server.
+Definiere die `heroesUrl` der Form `:base/:collectionName` mit der Adresse der heroes-Ressource auf dem Server.
  Dabei ist `base` die Ressource, an die Anfragen gestellt werden,
  und `collectionName` ist das heroes-Datenobjekt in der `in-memory-data-service.ts`.
 
@@ -187,7 +188,7 @@ getHeroes(): Observable<Hero[]> {
 }
 ```
 
-Konvertieren Sie diese Methode zur Verwendung von `HttpClient` wie folgt:
+Konvertiere diese Methode zur Verwendung von `HttpClient` wie folgt:
 
 `src/app/hero.service.ts`
 ```typescript
@@ -197,10 +198,10 @@ getHeroes(): Observable<Hero[]> {
 }
 ```
 
-Aktualisieren Sie den Browser. Die Heldendaten sollten erfolgreich vom
+Aktualisiere den Browser. Die Heldendaten sollten erfolgreich vom
 Mock-Server geladen werden.
 
-Sie haben `of()` gegen `http.get()` ausgetauscht und die Anwendung funktioniert ohne weitere Änderungen
+Du hast `of()` gegen `http.get()` ausgetauscht und die Anwendung funktioniert ohne weitere Änderungen
 weil beide Funktionen ein `Observable<Hero[]>` zurückgeben.
 
 ### [`HttpClient`](https://angular.io/api/common/http/HttpClient)-Methoden geben einen Wert zurück
@@ -224,7 +225,7 @@ Die Daten-API des Servers bestimmt die Form der JSON-Daten.
 Die Daten-API von _Tour of Heroes_ gibt die Heldendaten als Array zurück.
 
 > Andere APIs verbergen die gewünschten Daten möglicherweise in einem Objekt.
-Sie müssen diese Daten möglicherweise durch Verarbeitung des `Observable`-Ergebnisses
+Du musst diese Daten möglicherweise durch Verarbeitung des `Observable`-Ergebnisses
 mit dem RxJS-Operator "map()" verarbeiten.
 
 Obwohl hier nicht besprochen, gibt es ein Beispiel für `map()` in der `getHeroNo404()`
@@ -236,17 +237,17 @@ Methode, die im Quellcode des Beispiels enthalten ist.
 Dinge gehen schief, besonders wenn man Daten von einem entfernten Server erhält.
 Die Methode `HeroService.getHeroes()` sollte Fehler abfangen und etwas Passendes tun.
 
-Um Fehler abzufangen, **"pipen" Sie das Observable** Ergebnis von `http.get()` durch einen RxJS `catchError()` Operator.
+Um Fehler abzufangen, **"pipe" das Observable** Ergebnis von `http.get()` durch einen RxJS `catchError()` Operator.
 
-Importieren Sie das Symbol `catchError` aus `rxjs/operators`, zusammen mit einigen anderen Operatoren, die Sie später benötigen werden.
+Importiere das Symbol `catchError` aus `rxjs/operators`, zusammen mit einigen anderen Operatoren, die du später benötigen wirst.
 
 `src/app/hero.service.ts`
 ```typescript
 import { catchError, map, tap } from 'rxjs/operators';
 ```
 
-Erweitern Sie nun das Observable Ergebnis mit der Methode `pipe()` und
-geben Sie ihm einen `catchError()` Operator.
+Erweitere nun das Observable Ergebnis mit der Methode `pipe()` und
+gib ihm einen `catchError()` Operator.
 
 `src/app/hero.service.ts`
 ```typescript
@@ -289,7 +290,7 @@ private handleError<T>(operation = 'operation', result?: T) {
     // TODO: Fehler besser für den Benutzer aufbereiten
     this.log(`${operation} failed: ${error.message}`);
 
-    // Lassen Sie die Anwendung weiterlaufen, indem Sie ein leeres Ergebnis zurückgeben.
+    // Lasse die Anwendung weiterlaufen, indem du ein leeres Ergebnis zurückgibst.
     return of(result as T);
   };
 }
@@ -301,12 +302,12 @@ eine benutzerfreundliche Meldung und gibt einen sicheren Wert an die Anwendung z
 Weil jede Dienstmethode eine andere Art von `Observable`-Ergebnis zurückgibt,
 handleError()` einen Typ-Parameter, um den sicheren Wert als den von der Anwendung erwarteten Typ zurückgeben zu können.
 
-### Tippen Sie auf das Observable
+### Tippe auf das Observable
 
 Die `HeroService`-Methoden **zapfen** den Fluss der Observable Werte an
 und senden mit der Methode `log()` eine Nachricht an den Nachrichtenbereich am unteren Rand der Seite.
 
-Sie tun dies mit dem RxJS-Operator "tap()",
+Du tust dies mit dem RxJS-Operator "tap()",
 der sich die Observable Werte ansieht, etwas mit diesen Werten macht
 und sie weitergibt.
 Der `tap()` Rückruf berührt die Werte selbst nicht.
@@ -330,9 +331,9 @@ getHeroes(): Observable<Hero[]> {
 Die meisten Web APIs unterstützen eine _get by id_ Anfrage in der Form `:baseURL/:id`.
 
 Hier ist die _Basis-URL_ die `heroesURL`, die im Abschnitt Heroes und HTTP definiert ist (`api/heroes`) und _id_ ist
-die Nummer des Helden, den Sie abrufen wollen. Zum Beispiel, `api/heroes/11`.
+die Nummer des Helden, den du abrufen willst. Zum Beispiel, `api/heroes/11`.
 
-Aktualisieren Sie die `HeroService` `getHero()` Methode mit dem Folgenden, um diese Anfrage zu stellen:
+Aktualisiere die `HeroService` `getHero()` Methode mit dem Folgenden, um diese Anfrage zu stellen:
 
 `src/app/hero.service.ts`
 ```typescript
@@ -355,14 +356,14 @@ Es gibt drei wesentliche Unterschiede zu `getHeroes()`:
 
 ## Helden aktualisieren
 
-Bearbeiten Sie den Namen eines Helden in der Helden-Detailansicht.
-Während Sie tippen, wird der Name des Helden in der Überschrift oben auf der Seite aktualisiert.
-Wenn Sie jedoch auf die Schaltfläche "Zurück" klicken, gehen die Änderungen verloren.
+Bearbeite den Namen eines Helden in der Helden-Detailansicht.
+Während du tippst, wird der Name des Helden in der Überschrift oben auf der Seite aktualisiert.
+Wenn du jedoch auf die Schaltfläche "Zurück" klickst, gehen die Änderungen verloren.
 
-Wenn Sie möchten, dass die Änderungen erhalten bleiben, müssen Sie sie zurück auf den
+Wenn du möchtest, dass die Änderungen erhalten bleiben, musst du sie zurück auf den
 den Server zurückschreiben.
 
-Fügen Sie am Ende der Vorlage für die Heldendetails eine Schaltfläche zum Speichern mit einem "Klick"-Ereignis
+Füge am Ende der Vorlage für die Heldendetails eine Schaltfläche zum Speichern mit einem "Klick"-Ereignis
 Bindung, die eine neue Komponentenmethode namens `save()` aufruft.
 
 `src/app/hero-detail/hero-detail.component.html (save)`
@@ -370,7 +371,7 @@ Bindung, die eine neue Komponentenmethode namens `save()` aufruft.
 <button (click)="save()">save</button>
 ```
 
-Fügen Sie in der Komponentenklasse `HeroDetail` die folgende `save()`-Methode hinzu, die Änderungen des Heldennamens mithilfe des Heldendienstes speichert
+Füge in der Komponentenklasse `HeroDetail` die folgende `save()`-Methode hinzu, die Änderungen des Heldennamens mithilfe des Heldendienstes speichert
 `updateHero()` Methode und navigiert dann zurück zur vorherigen Ansicht.
 
 `src/app/hero-detail/hero-detail.component.ts (save)`
@@ -387,7 +388,7 @@ save(): void {
 
 Die allgemeine Struktur der `updateHero()` Methode ist ähnlich wie die von
 `getHeroes()`, aber sie verwendet `http.put()` um den geänderten Helden
-auf dem Server. Fügen Sie das Folgende zum `HeroService` hinzu.
+auf dem Server. Füge das Folgende zum `HeroService` hinzu.
 
 `src/app/hero.service.ts (update)`
 ```typescript
@@ -408,7 +409,7 @@ Die Methode `HttpClient.put()` benötigt drei Parameter:
 Die URL ist unverändert. Die Web-API von heroes weiß, welcher Held zu aktualisieren ist, indem sie sich die `id` des Helden ansieht.
 
 Die heroes-Web-API erwartet eine spezielle Kopfzeile in HTTP-Speicheranforderungen.
-Dieser Header ist in der Konstante `httpOptions` im `HeroService` definiert. Fügen Sie Folgendes zur Klasse `HeroService` hinzu.
+Dieser Header ist in der Konstante `httpOptions` im `HeroService` definiert. Füge Folgendes zur Klasse `HeroService` hinzu.
 
 `src/app/hero.service.ts`
 ```typescript
@@ -417,7 +418,7 @@ httpOptions = {
 };
 ```
 
-Aktualisieren Sie den Browser, ändern Sie einen Heldennamen und speichern Sie Ihre Änderung. Die `save()`
+Aktualisiere den Browser, ändere einen Heldennamen und speichere deine Änderung. Die `save()`
 Methode in `HeroDetailComponent` navigiert zur vorherigen Ansicht.
 Der Held erscheint nun in der Liste mit dem geänderten Namen.
 
@@ -427,7 +428,7 @@ Der Held erscheint nun in der Liste mit dem geänderten Namen.
 Um einen Helden hinzuzufügen, benötigt diese Anwendung nur den Namen des Helden. Man kann ein `<input>`
 Element gepaart mit einer Hinzufügen-Schaltfläche.
 
-Fügen Sie das Folgende in die `HeroesComponent`-Vorlage ein, nach
+Füge das Folgende in die `HeroesComponent`-Vorlage ein, nach
 der Überschrift ein:
 
 `src/app/heroes/heroes.component.html (add)`
@@ -443,8 +444,8 @@ der Überschrift ein:
 </div>
 ```
 
-Rufen Sie als Reaktion auf ein Klick-Ereignis den Click-Handler der Komponente, `add()`, auf und löschen Sie dann
-löschen Sie das Eingabefeld, damit es für einen anderen Namen bereit ist. Fügen Sie das Folgende zu der
+Rufe als Reaktion auf ein Klick-Ereignis den Click-Handler der Komponente, `add()`, auf und lösche dann
+das Eingabefeld, damit es für einen anderen Namen bereit ist. Füge das Folgende zu der
 Klasse `HeroesComponent` hinzu:
 
 `src/app/heroes/heroes.component.ts (add)`
@@ -465,7 +466,7 @@ aus dem Namen (es fehlt nur die `id`) und übergibt es an die Methode `addHero()
 Wenn `addHero()` erfolgreich speichert, erhält der `subscribe()` Callback
 den neuen Helden und schiebt ihn zur Anzeige in die `Heldenliste`.
 
-Fügen Sie die folgende Methode `addHero()` zur Klasse `HeroService` hinzu.
+Füge die folgende Methode `addHero()` zur Klasse `HeroService` hinzu.
 
 `src/app/hero.service.ts (addHero)`
 ```typescript
@@ -484,13 +485,13 @@ Die Funktion `addHero()` unterscheidet sich von `updateHero()` in zweierlei Hins
 * Es erwartet, dass der Server eine ID für den neuen Helden erzeugt,
 die er in `Observable<Hero>` an den Aufrufer zurückgibt.
 
-Aktualisieren Sie den Browser und fügen Sie einige Helden hinzu.
+Aktualisiere den Browser und füge einige Helden hinzu.
 
 ## Einen Helden löschen
 
 Jeder Held in der Heldenliste sollte einen Löschknopf haben.
 
-Fügen Sie das folgende Schaltflächenelement in die `HeroesComponent`-Vorlage ein, nach dem Helden
+Füge das folgende Schaltflächenelement in die `HeroesComponent`-Vorlage ein, nach dem Helden
 Namen in dem wiederholten `<li>` Element.
 
 `src/app/heroes/heroes.component.html`
@@ -514,11 +515,11 @@ Der HTML-Code für die Liste der Helden sollte wie folgt aussehen:
 </ul>
 ```
 
-So positionieren Sie die Schaltfläche zum Löschen ganz rechts im Heldeneintrag,
-fügen Sie der Datei `heroes.component.css` etwas CSS hinzu. Sie finden dieses CSS
+So positionierst du die Schaltfläche zum Löschen ganz rechts im Heldeneintrag,
+füge der Datei `heroes.component.css` etwas CSS hinzu. Du findest dieses CSS
 im Überprüfungscode unten.
 
-Fügen Sie der Komponentenklasse den Handler `delete()` hinzu.
+Füge der Komponentenklasse den Handler `delete()` hinzu.
 
 `src/app/heroes/heroes.component.ts (delete)`
 ```typescript
@@ -538,14 +539,14 @@ Es gibt wirklich nichts, was die Komponente mit dem `Observable` tun könnte, da
 
 ![asset](/images/hint.png)
     
-    Wenn Sie es versäumen, `subscribe()` zu abonnieren, wird der Dienst die Löschanfrage nicht an den Server senden.
+    Wenn du es versäumst, `subscribe()` zu abonnieren, wird der Dienst die Löschanfrage nicht an den Server senden.
     In der Regel tut ein `Observable` _nichts_, bis sich etwas anmeldet.
 
-    Bestätigen Sie dies selbst, indem Sie `subscribe()` vorübergehend entfernen,
-    auf "Dashboard" und dann auf "Heroes" klicken.
-    Sie werden wieder die vollständige Liste der Helden sehen.
+    Bestätige dies selbst, indem du `subscribe()` vorübergehend entfernst,
+    auf "Dashboard" und dann auf "Heroes" klickst.
+    Du wirst wieder die vollständige Liste der Helden sehen.
 
-Als nächstes fügen Sie eine Methode `deleteHero()` zu `HeroService` wie folgt hinzu.
+Als nächstes füge eine Methode `deleteHero()` zu `HeroService` wie folgt hinzu.
 
 `src/app/hero.service.ts (delete)`
 ```typescript
@@ -560,29 +561,29 @@ deleteHero(id: number): Observable<Hero> {
 }
 ```
 
-Beachten Sie die folgenden wichtigen Punkte:
+Beachte die folgenden wichtigen Punkte:
 
 * `deleteHero()` ruft `HttpClient.delete()` auf.
 * Die URL ist die Ressourcen-URL des Helden plus die `id` des zu löschenden Helden.
 * Man sendet keine Daten wie bei `put()` und `post()`.
 * Sie senden immer noch die `httpOptions`.
 
-Aktualisieren Sie den Browser und probieren Sie die neue Löschfunktion aus.
+Aktualisiere den Browser und probiere die neue Löschfunktion aus.
 
 ## Suche nach Namen
 
-In dieser letzten Übung lernen Sie, wie man `Observable`-Operatoren miteinander verkettet
-so dass Sie die Anzahl ähnlicher HTTP-Anfragen minimieren können
-und die Netzwerkbandbreite sparsam zu nutzen.
+In dieser letzten Übung lernst du, wie man `Observable`-Operatoren miteinander verkettet
+so dass du die Anzahl ähnlicher HTTP-Anfragen minimieren kannst
+und lernst die Netzwerkbandbreite sparsam zu nutzen.
 
-Sie werden dem Dashboard eine Helden-Suchfunktion hinzufügen.
+Du wirst dem Dashboard eine Helden-Suchfunktion hinzufügen.
 Wenn der Benutzer einen Namen in ein Suchfeld eingibt,
-werden Sie wiederholte HTTP-Anfragen für nach diesem Namen gefilterte Helden stellen.
-Ihr Ziel ist es, nur so viele Anfragen wie nötig zu stellen.
+wirst du wiederholte HTTP-Anfragen für nach diesem Namen gefilterte Helden stellen.
+Dein Ziel ist es, nur so viele Anfragen wie nötig zu stellen.
 
 #### `HeroService.searchHeroes()`
 
-Beginnen Sie mit dem Hinzufügen einer Methode `searchHeroes()` zum `HeroService`.
+Beginne mit dem Hinzufügen einer Methode `searchHeroes()` zum `HeroService`.
 
 `src/app/hero.service.ts`
 ```typescript
@@ -607,8 +608,8 @@ die URL, die einen Abfrage-String mit dem Suchbegriff enthält.
 
 ### Suche zum Dashboard hinzufügen
 
-Öffnen Sie die Vorlage `DashboardComponent` und
-fügen Sie das Hero-Such-Element, `<app-hero-search>`, am unteren Ende des Markups hinzu.
+Öffne die Vorlage `DashboardComponent` und
+füge das Hero-Such-Element, `<app-hero-search>`, am unteren Ende des Markups hinzu.
 
 `src/app/dashboard/dashboard.component.html`
 ```html
@@ -630,7 +631,7 @@ Damit dies funktioniert, muss im nächsten Schritt eine Komponente mit einem Sel
 
 ### `HeroSearchComponent` erstellen
 
-Erstellen Sie eine `HeroSearchComponent` mit der CLI.
+Erstelle eine `HeroSearchComponent` mit der CLI.
 
 ```shell
   ng generate component hero-search
@@ -638,7 +639,7 @@ Erstellen Sie eine `HeroSearchComponent` mit der CLI.
 
 Das CLI generiert die drei `HeroSearchComponent` Dateien und fügt die Komponente zu den `AppModule` Deklarationen hinzu.
 
-Ersetzen Sie die generierte `HeroSearchComponent` Vorlage mit einem `<input>` und einer Liste von passenden Suchergebnissen, wie folgt.
+Ersetze die generierte `HeroSearchComponent` Vorlage mit einem `<input>` und einer Liste von passenden Suchergebnissen, wie folgt.
 
 `src/app/hero-search/hero-search.component.html`
 ```html
@@ -656,7 +657,7 @@ Ersetzen Sie die generierte `HeroSearchComponent` Vorlage mit einem `<input>` un
 </div>
 ```
 
-Fügen Sie private CSS-Stile zu `hero-search.component.css` hinzu
+Füge private CSS-Stile zu `hero-search.component.css` hinzu
 wie in der Code-Überprüfung unten aufgeführt.
 
 Wenn der Benutzer in das Suchfeld eingibt, ruft eine Eingabe-Ereignisbindung die
@@ -664,7 +665,7 @@ Komponente die Methode `search()` mit dem neuen Wert des Suchfeldes auf.
 
 ### [`AsyncPipe`](https://angular.io/api/common/AsyncPipe)
 
-Der `*ngFor` wiederholt Heldenobjekte. Beachten Sie, dass `*ngFor` über eine Liste namens `heroes$` iteriert, nicht `heroes`. Das `$` ist eine Konvention, die anzeigt, dass `heroes$` ein `Observable` ist, nicht ein Array.
+Der `*ngFor` wiederholt Heldenobjekte. Beachte, dass `*ngFor` über eine Liste namens `heroes$` iteriert, nicht `heroes`. Das `$` ist eine Konvention, die anzeigt, dass `heroes$` ein `Observable` ist, nicht ein Array.
 
 
 `src/app/hero-search/hero-search.component.html`
@@ -672,13 +673,13 @@ Der `*ngFor` wiederholt Heldenobjekte. Beachten Sie, dass `*ngFor` über eine Li
 <li *ngFor="let hero of heroes$ | async" >
 ```
 
-Da `*ngFor` nichts mit einem `Observable` machen kann, verwenden Sie das
-Pipe-Zeichen (`|`) gefolgt von `async`. Dies identifiziert Angulars `AsyncPipe` und abonniert automatisch ein `Observable`, so dass Sie dies nicht
-in der Komponentenklasse zu tun.
+Da `*ngFor` nichts mit einem `Observable` machen kann, verwende das
+Pipe-Zeichen (`|`) gefolgt von `async`. Dies identifiziert Angulars `AsyncPipe` und abonniert automatisch ein `Observable`, so dass du dies nicht
+in der Komponentenklasse zu machen hast.
 
-### Bearbeiten Sie die Klasse `HeroSearchComponent`.
+### Bearbeite die Klasse `HeroSearchComponent`.
 
-Ersetzen Sie die generierte `HeroSearchComponent` Klasse und die Metadaten wie folgt.
+Ersetze die generierte `HeroSearchComponent` Klasse und die Metadaten wie folgt.
 
 `src/app/hero-search/hero-search.component.ts`
 ```typescript
@@ -724,15 +725,15 @@ export class HeroSearchComponent implements OnInit {
 }
 ```
 
-Beachten Sie die Deklaration von `heroes$` als `Observable`:
+Beachte die Deklaration von `heroes$` als `Observable`:
 
 `src/app/hero-search/hero-search.component.ts`
 ```typescript
 heroes$!: Observable<Hero[]>;
 ```
 
-Sie werden es in `ngOnInit()` einstellen.
-Bevor Sie das tun, konzentrieren Sie sich auf die Definition von `searchTerms`.
+Du wirst es in `ngOnInit()` einstellen.
+Bevor du das tust, konzentrierst du dich auf die Definition von `searchTerms`.
 
 ### Das RxJS-Subjekt `searchTerms`
 
@@ -791,7 +792,7 @@ this.heroes$ = this.searchTerms.pipe(
 Jeder Operator funktioniert wie folgt:
 
 * `debounceTime(300)` wartet, bis der Fluss neuer String-Ereignisse für 300 Millisekunden pausiert
-bevor er die letzte Zeichenkette weitergibt. Sie werden nie häufiger als 300ms Anfragen stellen.
+bevor er die letzte Zeichenkette weitergibt. Du wirst nie häufiger als 300ms Anfragen stellen.
 
 * `distinctUntilChanged()` stellt sicher, dass eine Anfrage nur gesendet wird, wenn sich der Filtertext geändert hat.
 
@@ -805,18 +806,18 @@ Selbst bei einer Pause von 300 ms zwischen den Anfragen können mehrere HTTP-Anf
 und diese kehren möglicherweise nicht in der gesendeten Reihenfolge zurück.\
 `switchMap()` behält die ursprüngliche Reihenfolge der Anfragen bei und gibt nur die Observable des letzten HTTP-Methodenaufrufs zurück.
 Ergebnisse von früheren Aufrufen werden abgebrochen und verworfen.\
-Beachten Sie, dass das Abbrechen einer vorherigen `searchHeroes()` Observable
+Beachte, dass das Abbrechen einer vorherigen `searchHeroes()` Observable
 nicht wirklich eine anhängige HTTP-Anfrage abbricht.
 Unerwünschte Ergebnisse werden verworfen, bevor sie Ihren Anwendungscode erreichen.
 
 
-Denken Sie daran, dass die _Klasse_ der Komponente nicht die _Observable_ "heroes$" abonniert.
+Denke daran, dass die _Klasse_ der Komponente nicht die _Observable_ "heroes$" abonniert.
 Das ist die Aufgabe der `AsyncPipe` in der Vorlage.
 
-#### Versuchen Sie es
+#### Versuche es
 
-Starten Sie die Anwendung erneut. Geben Sie im *Dashboard* einen Text in das Suchfeld ein.
-Wenn Sie Zeichen eingeben, die mit einem vorhandenen Heldennamen übereinstimmen, sehen Sie etwas wie das hier.
+Starte die Anwendung erneut. Gib im *Dashboard* einen Text in das Suchfeld ein.
+Wenn du Zeichen eingibst, die mit einem vorhandenen Heldennamen übereinstimmen, siehst du etwas wie das hier.
 
 ![Helden-Suchfeld mit den Buchstaben 'm' und 'a' sowie vier Suchergebnissen, die mit der Anfrage übereinstimmen und in einer Liste unterhalb der Sucheingabe angezeigt werden](/images/angular/toh-hero-search.png)
 
@@ -827,12 +828,12 @@ sind die auf dieser Seite besprochenen Codedateien.
 
 ## Zusammenfassung
 
-Sie sind am Ende Ihrer Reise angelangt und haben eine Menge erreicht.
-* Sie haben die notwendigen Abhängigkeiten hinzugefügt, um HTTP in der Anwendung zu verwenden.
-* Sie haben `HeroService` umstrukturiert, um Helden von einer Web-API zu laden.
+Du bist am Ende Ihrer Reise angelangt und hast eine Menge erreicht.
+* Du hast die notwendigen Abhängigkeiten hinzugefügt, um HTTP in der Anwendung zu verwenden.
+* Du hast `HeroService` umstrukturiert, um Helden von einer Web-API zu laden.
 * Du hast `HeroService` erweitert, um die Methoden `post()`, `put()` und `delete()` zu unterstützen.
-* Sie haben die Komponenten aktualisiert, um das Hinzufügen, Bearbeiten und Löschen von Helden zu ermöglichen.
-* Sie haben eine speicherinterne Web-API konfiguriert.
-* Sie haben gelernt, wie man Observables verwendet.
+* Du hast die Komponenten aktualisiert, um das Hinzufügen, Bearbeiten und Löschen von Helden zu ermöglichen.
+* Du hast eine speicherinterne Web-API konfiguriert.
+* Du hast gelernt, wie man Observables verwendet.
 
 Dies ist der Abschluss des Tutorials "Tour of Heroes" herzlichen Glückwunsch.
