@@ -4239,7 +4239,54 @@ Die häufigsten Steps sind:&lt;/p>
 &lt;p>Der Continuous-Build dient dabei Branches vom Typ feature oder bugfix (je nach Konfiguration) zu bauen. Nur erfolgreiche Builds dieser Weiterentwicklungen oder Bugfixes können anschliessend in den Haupt-Entwicklungsbranch zurück gemerged werden. Dieser Build wird nicht auf eine Stage ausgeliefert.
 Der Release-Build dient der Herstellung einer neuen Version einer Anwendung. Dieser Build taggt die Version auf dem GIT-Repository und liefert sie auf die entsprechend konfigurierten Stages aus. Vorbehalten bleibt normalerweise der Release auf eine produktive Umgebung.
 Der Deploy-Build dient dem Deployment einer bestimmten Version auf eine bestimmte Stage. Die Stage kann dabei gewählt werden. Dieser Step-Typ wird normalerweise für den Release auf Integration- oder Produktionsplattformen verwendet.&lt;/p>
-&lt;p>Zum Nachlesen gibt es hier noch die Dokumentation der Pipeline: &lt;a href="https://confluence.sbb.ch/display/CLEW/Esta+Cloud+Pipeline">https://confluence.sbb.ch/display/CLEW/Esta+Cloud+Pipeline&lt;/a>&lt;/p></description></item><item><title>Docs: Mit JavaScript das DOM verändern</title><link>/docs/web/javascript/03_js_dom_manipulation/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/03_js_dom_manipulation/</guid><description>
+&lt;p>Zum Nachlesen gibt es hier noch die Dokumentation der Pipeline: &lt;a href="https://confluence.sbb.ch/display/CLEW/Esta+Cloud+Pipeline">https://confluence.sbb.ch/display/CLEW/Esta+Cloud+Pipeline&lt;/a>&lt;/p></description></item><item><title>Exams: Exam zu JavaScript</title><link>/exams/web/html_css/02_exam_js/</link><pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate><guid>/exams/web/html_css/02_exam_js/</guid><description>
+&lt;h1 id="exam-1---zeiterfassungs-dashboard-mit-javascript-ergänzen">Exam 1 - Zeiterfassungs-Dashboard mit JavaScript ergänzen&lt;/h1>
+&lt;p>&lt;img src="/images/task.png" alt="task1"> - Einzelarbeit&lt;/p>
+&lt;p>Bei diesem Exam geht es darum, dass du das Dashboard, welches du im &lt;a href="../01_exam_html_css_rtm">HTML-CSS-Exam&lt;/a> geschrieben hast, mit JavaScript-Logik ergänzt.&lt;/p>
+&lt;p>Die Seite sollte ungefähr so aussehen:&lt;/p>
+&lt;p>&lt;img src="../rtm_home_page.png" alt="asset">&lt;/p>
+&lt;h2 id="zeitangaben-aktualisieren">Zeitangaben aktualisieren&lt;/h2>
+&lt;p>Oben links im Zeiterfassungstool ist die aktuelle Zeit zu finden.&lt;/p>
+&lt;pre>&lt;code>Schreibe ein JavaScript auf dieser Seite, das die aktuelle Zeit oben links anzeigt.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="/images/hint.png" alt="task1"> Hinweis:&lt;/p>
+&lt;p>Um auf die aktuelle Uhrzeit und auf das Datum zuzugreifen, wirst du sicher auf die Klasse &lt;code>Date&lt;/code> zugreifen müssen. Hier findest du mehr Informationen darüber: &lt;a href="https://www.w3schools.com/jsref/jsref_obj_date.asp">https://www.w3schools.com/jsref/jsref_obj_date.asp&lt;/a>&lt;/p>
+&lt;p>Die Kalenderwoche (KW) hinzuzufügen, ist ein bisschen tricky und deswegen optional. Wenn du diese trotzdem hinzufügen möchtest, dann informiere dich bitte zuerst darüber, was genau eine Kalenderwoche ist. Soweit ich weiss, gibt es keine eingebaute Methode, mit der du die Kalenderwoche bekommst, aber du kannst sie berechnen.&lt;/p>
+&lt;h2 id="navigation-zuklappen">Navigation zuklappen&lt;/h2>
+&lt;p>Auf der linken Seite hast du eine Navigation. Das Element für &amp;ldquo;Abfragen&amp;rdquo; hat wiederum Elemente untergeordnet. Diese Unterelemente sollten beim Klick auf den Pfeil gegen oben (^) verschwinden/zugeklappt werden.&lt;/p>
+&lt;pre>&lt;code>Schreibe ein JavaScript, das dem User erlaubt,
+das &amp;quot;Abfragen&amp;quot;-Element zuzuklappen und wenn es zugeklappt ist, wieder aufzuklappen.
+&lt;/code>&lt;/pre>
+&lt;details>
+&lt;summary>Animationen&lt;/summary>
+&lt;p>Wenn du möchtest, kannst du dem Ganzen Animationen verleihen:&lt;/p>
+&lt;ul>
+&lt;li>der Pfleil dreht sich, jenachdem ob das Element zu- oder aufgeklappt ist&lt;/li>
+&lt;li>das &amp;ldquo;Berichte&amp;rdquo;-Element geht langsam nach oben (bzw. der Container mit den Unterelementen wird immer kleiner)&lt;/li>
+&lt;/ul>
+&lt;p>Animationen (bzw. &lt;code>transition&lt;/code>s) können sehr einfach mit CSS umgesetzt werden, siehe &lt;a href="https://www.w3schools.com/css/css3_transitions.asp">https://www.w3schools.com/css/css3_transitions.asp&lt;/a>.&lt;/p>
+&lt;p>Damit du weniger Schwierigkeiten damit hast, hier ein kleiner Tipp:
+Gib allen CSS-Properties einen Default-Wert. Wenn du z.B. einen Wert ändern möchtest, füge dem Element eine genauere CSS-Klasse mit JavaScript hinzu, welche die entsprechenden Regeln überschreibt. Du kannst einem Element eine Klasse hinzufügen bzw. entfernen mit &lt;code>.classList.toggle(className, show?)&lt;/code> (Beispiel: &lt;code>document.getElementById('abfragen').classList.toggle('show-child-elements', true)&lt;/code>).&lt;/p>
+&lt;/details>
+&lt;h2 id="dashboard-daten-dynamisch-laden">Dashboard-Daten dynamisch laden&lt;/h2>
+&lt;p>Im HTML-CSS-Exam hast du den Text für die Kacheln hartcodiert. Das soll sich nun ändern.&lt;/p>
+&lt;pre>&lt;code>Schreibe nun ein JavaScript, dass den Inhalt der Kacheln dynamisch befüllt.
+Dein Script soll die Daten von hier laden:
+https://raw.githubusercontent.com/it-ninjas/labs/master/static/files/json/dashboard.json
+&lt;/code>&lt;/pre>
+&lt;h2 id="personen-für-den-chat-dynamisch-laden">Personen für den Chat dynamisch laden&lt;/h2>
+&lt;p>Auf der rechten Seite hast du eine Liste mit Personen für einen Chat. Nun geht es darum, auch diese Liste anhand eines JSONs zu generieren.&lt;/p>
+&lt;pre>&lt;code>Ergänze dein JavaScript so, dass die Namen für die Chat-Liste von hier geladen werden:
+https://raw.githubusercontent.com/it-ninjas/labs/master/static/files/json/chat.json
+Zeige die Personen dann zeitlich versetzt an:
+Füge zuerst die erste Person ein, warte dann ca. 0.3 Sekunden, zeige dann die zweite Person an usw.
+&lt;/code>&lt;/pre>
+&lt;h2 id="refresh-button">Refresh-Button&lt;/h2>
+&lt;p>Oben rechts gibt es einen Refresh-Button.&lt;/p>
+&lt;pre>&lt;code>Verändere dein HTML und JavaScript so, dass die Daten neu geladen werden, wenn der User auf diesen Refresh-Button klickt.
+Neu geladen werden sollen die Zeitangaben, die Kacheln und der Chat
+Achte darauf, dass du möglichst keine Code-Duplikation hast.
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Mit JavaScript das DOM verändern</title><link>/docs/web/javascript/03_js_dom_manipulation/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/03_js_dom_manipulation/</guid><description>
 &lt;h2 id="auf-dom-elemente-zugreifen">Auf DOM-Elemente zugreifen&lt;/h2>
 &lt;p>Eines der häufigsten Anwendungszwecke von JavaScript ist es, mit Elementen auf einer Website zu interagieren.&lt;/p>
 &lt;p>Nehmen wir folgendes Code-schnipsel als Beispiel:&lt;/p>
@@ -12883,343 +12930,4 @@ Fügen Sie &lt;code>[class.some-css-class]=&amp;quot;some-condition&amp;quot;&lt
 &lt;h2 id="auftrag">Auftrag&lt;/h2>
 &lt;p>Im Rahmen der Semantic-Tags hast du ein HTML-Dokument erstellt.&lt;/p>
 &lt;p>&lt;img src="/images/task.png" alt="task1">
-Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></description></item><item><title>Docs: Komponenten</title><link>/docs/web/angular/05_4_feature_component/</link><pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/05_4_feature_component/</guid><description>
-&lt;h1 id="erstellen-sie-eine-feature-komponente">Erstellen Sie eine Feature-Komponente&lt;/h1>
-&lt;p>Im Moment zeigt die Komponente &lt;code>HeroesComponent&lt;/code> sowohl die Liste der Helden als auch die Details des ausgewählten Helden an.&lt;/p>
-&lt;p>Auf dieser Seite werden Sie den ersten Schritt in diese Richtung machen, indem Sie die Heldendetails in eine separate, wiederverwendbare &lt;code>HeroDetailComponent&lt;/code> verschieben.&lt;/p>
-&lt;p>Die &lt;code>HeroesComponent&lt;/code> wird nur die Liste der Helden darstellen.
-Die &lt;code>HeroDetailComponent&lt;/code> wird die Details eines ausgewählten Helden anzeigen.&lt;/p>
-&lt;blockquote>
-&lt;p>Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter &lt;a href="https://angular.io/generated/live-examples/toh-pt3/stackblitz.html">dieser Seite&lt;/a>.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="erstellen-sie-die-herodetailcomponent">Erstellen Sie die &lt;code>HeroDetailComponent&lt;/code>&lt;/h2>
-&lt;p>Verwenden Sie das Angular CLI, um eine neue Komponente mit dem Namen &lt;code>hero-detail&lt;/code> zu erstellen.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell"> ng generate component hero-detail
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Der Befehl führt die folgenden Schritte aus:&lt;/p>
-&lt;ul>
-&lt;li>Erzeugt ein Verzeichnis &lt;code>src/app/hero-detail&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;p>Innerhalb dieses Verzeichnisses werden vier Dateien generiert:&lt;/p>
-&lt;ul>
-&lt;li>Eine CSS-Datei für die Stile der Komponente.&lt;/li>
-&lt;li>Eine HTML-Datei für die Komponententemplate.&lt;/li>
-&lt;li>Eine TypeScript-Datei mit einer Komponentenklasse namens &lt;code>HeroDetailComponent&lt;/code>.&lt;/li>
-&lt;li>Eine Testdatei für die Klasse &lt;code>HeroDetailComponent&lt;/code>.&lt;/li>
-&lt;/ul>
-&lt;p>Der Befehl fügt auch die &lt;code>HeroDetailComponent&lt;/code> als Deklaration in den &lt;code>@NgModule&lt;/code> Dekorator der &lt;code>src/app/app.module.ts&lt;/code> Datei ein.&lt;/p>
-&lt;h3 id="schreiben-sie-das-template">Schreiben Sie das Template&lt;/h3>
-&lt;p>Schneiden Sie das HTML für das Heldendetail aus dem unteren Teil der &lt;code>HeroesComponent&lt;/code>- aus und fügen Sie es über die generierte Boilerplate in das &lt;code>HeroDetailComponent&lt;/code>-Template ein.&lt;/p>
-&lt;p>Das eingefügte HTML bezieht sich auf einen &lt;code>selectedHero&lt;/code>.
-Die neue &lt;code>HeroDetailComponent&lt;/code> kann &lt;em>jeden&lt;/em> Helden darstellen, nicht nur einen ausgewählten Helden.
-Ersetzen Sie also &amp;ldquo;selectedHero&amp;rdquo; durch &amp;ldquo;hero&amp;rdquo; überall im Template.&lt;/p>
-&lt;p>Wenn Sie fertig sind, sollte das &lt;code>HeroDetailComponent&lt;/code>-Template wie folgt aussehen:&lt;/p>
-&lt;p>&lt;code>src/app/hero-detail/hero-detail.component.html&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">*&lt;/span>&lt;span style="color:#a6e22e">ngIf&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hero&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;{{hero.name | uppercase}} Details&amp;lt;/&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;&amp;lt;&lt;span style="color:#f92672">span&lt;/span>&amp;gt;id: &amp;lt;/&lt;span style="color:#f92672">span&lt;/span>&amp;gt;{{hero.id}}&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">label&lt;/span> &lt;span style="color:#a6e22e">for&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hero-name&amp;#34;&lt;/span>&amp;gt;Hero name: &amp;lt;/&lt;span style="color:#f92672">label&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hero-name&amp;#34;&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">[(&lt;/span>&lt;span style="color:#a6e22e">ngModel&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">.&lt;/span>&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="hinzufügen-der-inputhttpsangularioapicoreinput-hero-eigenschaft">Hinzufügen der &lt;a href="https://angular.io/api/core/Input">&lt;code>@Input()&lt;/code>&lt;/a> Hero-Eigenschaft&lt;/h3>
-&lt;p>das Template &lt;code>HeroDetailComponent&lt;/code> bindet sich an die Eigenschaft &lt;code>Hero&lt;/code> der Komponente
-die vom Typ &lt;code>Hero&lt;/code> ist.&lt;/p>
-&lt;p>Öffnen Sie die Klassendatei &lt;code>HeroDetailComponent&lt;/code> und importieren Sie das Symbol &lt;code>Hero&lt;/code>.&lt;/p>
-&lt;p>&lt;code>src/app/hero-detail/hero-detail.component.ts (import Hero)&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">Hero&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;../hero&amp;#39;&lt;/span>;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Die Eigenschaft &lt;code>hero&lt;/code>
-&lt;a href="https://angular.io/guide/inputs-outputs">muss eine &lt;em>Input&lt;/em>-Eigenschaft sein&lt;/a>,
-annotiert mit dem &lt;code>@Input()&lt;/code> Dekorator,
-denn die &lt;em>externe&lt;/em> &lt;code>HeroesComponent&lt;/code> &lt;a href="#heroes-component-template">wird sich wie folgt daran binden&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">app-hero-detail&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">[&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">selectedHero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">app-hero-detail&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Ändern Sie die Importanweisung &lt;code>@angular/core&lt;/code>, um das Symbol &lt;code>Input&lt;/code> aufzunehmen.&lt;/p>
-&lt;p>&lt;code>src/app/hero-detail/hero-detail.component.ts (import Input)&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">Component&lt;/span>, &lt;span style="color:#a6e22e">OnInit&lt;/span>, &lt;span style="color:#a6e22e">Input&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/core&amp;#39;&lt;/span>;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Fügen Sie eine Eigenschaft &amp;ldquo;hero&amp;rdquo; hinzu, der der Dekorator &amp;ldquo;@Input()&amp;rdquo; vorangestellt ist.&lt;/p>
-&lt;p>&lt;code>src/app/hero-detail/hero-detail.component.ts&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">@Input&lt;/span>() &lt;span style="color:#a6e22e">hero?&lt;/span>: &lt;span style="color:#66d9ef">Hero&lt;/span>;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Das ist die einzige Änderung, die Sie an der Klasse &lt;code>HeroDetailComponent&lt;/code> vornehmen sollten.
-Es gibt keine weiteren Eigenschaften. Es gibt keine Präsentationslogik.
-Diese Komponente empfängt nur ein Heldenobjekt über die Eigenschaft &lt;code>hero&lt;/code> und zeigt es an.&lt;/p>
-&lt;h2 id="die-herodetailcomponent-anzeigen">Die &lt;code>HeroDetailComponent&lt;/code> anzeigen&lt;/h2>
-&lt;p>Die &lt;code>HeroesComponent&lt;/code> hat die Heldendetails selbständig angezeigt, bevor Sie diesen Teil des Templates entfernt haben.
-Dieser Abschnitt führt Sie durch die Delegierung von Logik an die &lt;code>HeroDetailComponent&lt;/code>.&lt;/p>
-&lt;p>Die beiden Komponenten haben eine Eltern/Kind-Beziehung.
-Die übergeordnete Komponente &lt;code>HeroesComponent&lt;/code> steuert die untergeordnete Komponente &lt;code>HeroDetailComponent&lt;/code>
-indem sie ihr einen neuen Helden sendet, der angezeigt wird, wenn
-der Benutzer einen Helden aus der Liste auswählt.&lt;/p>
-&lt;p>Sie ändern nicht die &lt;em>Klasse&lt;/em> von &lt;code>HeroesComponent&lt;/code>, aber Sie ändern ihr &lt;em>Template&lt;/em>.&lt;/p>
-&lt;h3 id="a-idheroes-component-templateaaktualisieren-sie-das-heroescomponent-template">&lt;a id="#heroes-component-template">&lt;/a>Aktualisieren Sie das &lt;code>HeroesComponent&lt;/code>-Template&lt;/h3>
-&lt;p>Der &lt;code>HeroDetailComponent&lt;/code> Selektor ist &lt;code>'app-hero-detail'&lt;/code>.
-Fügen Sie ein &lt;code>&amp;lt;app-hero-detail&amp;gt;&lt;/code> Element in der Nähe des unteren Endes des &lt;code>HeroesComponent&lt;/code> Template hinzu, wo die Helden-Detailansicht vorher war.&lt;/p>
-&lt;p>Binden Sie die &lt;code>HeroesComponent.selectedHero&lt;/code> an die Eigenschaft &lt;code>hero&lt;/code> des Elements wie folgt.&lt;/p>
-&lt;p>&lt;code>heroes.component.html (HeroDetail binding)&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">app-hero-detail&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">[&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">selectedHero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">app-hero-detail&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;code>[hero]=&amp;quot;selectedHero&amp;quot;&lt;/code> ist eine Angular-&lt;a href="https://angular.io/guide/property-binding">Eigenschaftsbindung(property binding)&lt;/a>.&lt;/p>
-&lt;p>Es ist eine &lt;em>einfache&lt;/em> Datenbindung von
-der &amp;ldquo;selectedHero&amp;rdquo;-Eigenschaft der &amp;ldquo;HeroComponent&amp;rdquo; an die &amp;ldquo;hero&amp;rdquo;-Eigenschaft des Zielelements, die der &amp;ldquo;hero&amp;rdquo;-Eigenschaft der &amp;ldquo;HeroDetailComponent&amp;rdquo; zugeordnet ist.&lt;/p>
-&lt;p>Wenn der Benutzer nun auf einen Helden in der Liste klickt, ändert sich der &lt;code>selectedHero&lt;/code>.
-Wenn sich der &lt;code>selectedHero&lt;/code> ändert, aktualisiert die &lt;em>Eigenschaftsbindung&lt;/em> &lt;code>hero&lt;/code>
-und die &lt;code>HeroDetailComponent&lt;/code> zeigt den neuen Helden an.&lt;/p>
-&lt;p>Das überarbeitete &lt;code>HeroesComponent&lt;/code>-Template sollte wie folgt aussehen:&lt;/p>
-&lt;p>&lt;code>heroes.component.html&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;My Heroes&amp;lt;/&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">ul&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;heroes&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">li&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">*&lt;/span>&lt;span style="color:#a6e22e">ngFor&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;let hero of heroes&amp;#34;&lt;/span>
-&lt;span style="color:#960050;background-color:#1e0010">[&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">.&lt;/span>&lt;span style="color:#a6e22e">selected&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">hero &lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">==&lt;/span> &lt;span style="color:#a6e22e">selectedHero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span>
-&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>&lt;span style="color:#a6e22e">click&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">onSelect&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">span&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;badge&amp;#34;&lt;/span>&amp;gt;{{hero.id}}&amp;lt;/&lt;span style="color:#f92672">span&lt;/span>&amp;gt; {{hero.name}}
-&amp;lt;/&lt;span style="color:#f92672">li&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">ul&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">app-hero-detail&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">[&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">selectedHero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">app-hero-detail&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Der Browser wird aktualisiert und die Anwendung funktioniert wieder wie zuvor.&lt;/p>
-&lt;h2 id="was-hat-sich-geändert">Was hat sich geändert?&lt;/h2>
-&lt;p>Wie &lt;a href="05_3_Selection_list.md">vorher&lt;/a>, wenn ein Benutzer auf einen Heldennamen klickt,
-erscheint das Heldendetail unterhalb der Heldenliste.
-Jetzt zeigt die &lt;code>HeroDetailComponent&lt;/code> diese Details anstelle der &lt;code>HeroesComponent&lt;/code> an.&lt;/p>
-&lt;p>Das Refactoring der ursprünglichen &lt;code>HeroesComponent&lt;/code> in zwei Komponenten bringt Vorteile, sowohl jetzt als auch in Zukunft:&lt;/p>
-&lt;ol>
-&lt;li>Sie haben die Verantwortlichkeiten der &lt;code>HeroesComponent&lt;/code> reduziert.&lt;/li>
-&lt;li>Sie können die &lt;code>HeroDetailComponent&lt;/code> zu einem umfangreichen Helden-Editor weiterentwickeln
-ohne die übergeordnete &lt;code>HeroesComponent&lt;/code> zu berühren.&lt;/li>
-&lt;li>Sie können die &lt;code>HeroesComponent&lt;/code> weiterentwickeln, ohne die Helden-Detailansicht zu berühren.&lt;/li>
-&lt;li>Sie können die &lt;code>HeroDetailComponent&lt;/code> im Template einer zukünftigen Komponente wiederverwenden.&lt;/li>
-&lt;/ol>
-&lt;h2 id="abschließende-code-überprüfung">Abschließende Code-Überprüfung&lt;/h2>
-&lt;p>Hier sind die auf dieser Seite besprochenen Codedateien.&lt;/p>
-&lt;ol>
-&lt;li>&lt;code>src/app/hero-detail/hero-detail.component.ts&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">Component&lt;/span>, &lt;span style="color:#a6e22e">OnInit&lt;/span>, &lt;span style="color:#a6e22e">Input&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/core&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">Hero&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;../hero&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">@Component&lt;/span>({
-&lt;span style="color:#a6e22e">selector&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;app-hero-detail&amp;#39;&lt;/span>,
-&lt;span style="color:#a6e22e">templateUrl&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./hero-detail.component.html&amp;#39;&lt;/span>,
-&lt;span style="color:#a6e22e">styleUrls&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;./hero-detail.component.css&amp;#39;&lt;/span>]
-})
-&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">HeroDetailComponent&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> &lt;span style="color:#a6e22e">OnInit&lt;/span> {
-&lt;span style="color:#66d9ef">@Input&lt;/span>() &lt;span style="color:#a6e22e">hero?&lt;/span>: &lt;span style="color:#66d9ef">Hero&lt;/span>;
-&lt;span style="color:#66d9ef">constructor&lt;/span>() { }
-&lt;span style="color:#a6e22e">ngOnInit() {&lt;/span>
-}
-}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="2">
-&lt;li>&lt;code>src/app/hero-detail/hero-detail.component.html&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">*&lt;/span>&lt;span style="color:#a6e22e">ngIf&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hero&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;{{hero.name | uppercase}} Details&amp;lt;/&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;&amp;lt;&lt;span style="color:#f92672">span&lt;/span>&amp;gt;id: &amp;lt;/&lt;span style="color:#f92672">span&lt;/span>&amp;gt;{{hero.id}}&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">label&lt;/span> &lt;span style="color:#a6e22e">for&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hero-name&amp;#34;&lt;/span>&amp;gt;Hero name: &amp;lt;/&lt;span style="color:#f92672">label&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hero-name&amp;#34;&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">[(&lt;/span>&lt;span style="color:#a6e22e">ngModel&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">.&lt;/span>&lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="3">
-&lt;li>&lt;code>src/app/heroes/heroes.component.html&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;My Heroes&amp;lt;/&lt;span style="color:#f92672">h2&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">ul&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;heroes&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">li&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">*&lt;/span>&lt;span style="color:#a6e22e">ngFor&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;let hero of heroes&amp;#34;&lt;/span>
-&lt;span style="color:#960050;background-color:#1e0010">[&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">.&lt;/span>&lt;span style="color:#a6e22e">selected&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">hero &lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">==&lt;/span> &lt;span style="color:#a6e22e">selectedHero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span>
-&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>&lt;span style="color:#a6e22e">click&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">onSelect&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">)&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">span&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;badge&amp;#34;&lt;/span>&amp;gt;{{hero.id}}&amp;lt;/&lt;span style="color:#f92672">span&lt;/span>&amp;gt; {{hero.name}}
-&amp;lt;/&lt;span style="color:#f92672">li&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">ul&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">app-hero-detail&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">[&lt;/span>&lt;span style="color:#a6e22e">hero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">]=&amp;#34;&lt;/span>&lt;span style="color:#a6e22e">selectedHero&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">app-hero-detail&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="4">
-&lt;li>&lt;code>src/app/app.module.ts&lt;/code>&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">BrowserModule&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/platform-browser&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">NgModule&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/core&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">FormsModule&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/forms&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">AppComponent&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./app.component&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">HeroesComponent&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./heroes/heroes.component&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">HeroDetailComponent&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./hero-detail/hero-detail.component&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">@NgModule&lt;/span>({
-&lt;span style="color:#a6e22e">declarations&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [
-&lt;span style="color:#a6e22e">AppComponent&lt;/span>,
-&lt;span style="color:#a6e22e">HeroesComponent&lt;/span>,
-&lt;span style="color:#a6e22e">HeroDetailComponent&lt;/span>
-],
-&lt;span style="color:#a6e22e">imports&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [
-&lt;span style="color:#a6e22e">BrowserModule&lt;/span>,
-&lt;span style="color:#a6e22e">FormsModule&lt;/span>
-],
-&lt;span style="color:#a6e22e">providers&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [],
-&lt;span style="color:#a6e22e">bootstrap&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [&lt;span style="color:#a6e22e">AppComponent&lt;/span>]
-})
-&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AppModule&lt;/span> { }
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="zusammenfassung">Zusammenfassung&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>Sie haben eine separate, wiederverwendbare &lt;code>HeroDetailComponent&lt;/code> erstellt.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Sie haben eine &lt;a href="https://angular.io/guide/property-binding">Eigenschaftsbindung&lt;/a> verwendet, um der übergeordneten &lt;code>HeroesComponent&lt;/code> Kontrolle über die untergeordnete &lt;code>HeroDetailComponent&lt;/code> zu geben.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Sie haben den &lt;a href="https://angular.io/guide/inputs-outputs">&lt;code>@Input&lt;/code> decorator&lt;/a>
-um die &lt;code>hero&lt;/code> Eigenschaft für die Bindung
-durch die externe &lt;code>HeroesComponent&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+Versuche alle Properties von dieser Seite auf deiner zu verwenden.&lt;/p></description></item></channel></rss>
