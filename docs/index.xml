@@ -4497,7 +4497,105 @@ Zum Beispiel das Klicken eines Buttons.&lt;/li>
 Dies bedeutet also, dass Änderungen, die an den Daten des Components vorgenommen wurden, werden mit dem Template synchronisiert und sofort aktualisiert.&lt;br>
 Umgekehrt funktioniert es auf dieselbe Weise, daher auch der Name &amp;ldquo;Two-Way-Binding&amp;rdquo;.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/images/angular/component-of-Data-Binding.png" alt="Databinding">&lt;/p></description></item><item><title>Docs: Exception Handling</title><link>/docs/java/exception_handling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/exception_handling/</guid><description>
+&lt;p>&lt;img src="/images/angular/component-of-Data-Binding.png" alt="Databinding">&lt;/p>
+&lt;h2 id="aufgabe-1">Aufgabe 1&lt;/h2>
+&lt;p>Folgender Code ist gegeben:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Fahrrad&lt;/span>{
+&lt;span style="color:#a6e22e">name?&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>;
+&lt;span style="color:#a6e22e">url?&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>;
+}
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">HttpClient&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/common/http&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">Component&lt;/span>, &lt;span style="color:#a6e22e">OnInit&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/core&amp;#39;&lt;/span>;
+&lt;span style="color:#66d9ef">@Component&lt;/span>({
+&lt;span style="color:#a6e22e">selector&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;app-fahrrad&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">templateUrl&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./fahrrad.component.html&amp;#39;&lt;/span>,
+&lt;span style="color:#a6e22e">styleUrls&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;./fahrrad.component.scss&amp;#39;&lt;/span>]
+})
+&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">FahrradComponent&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> &lt;span style="color:#a6e22e">OnInit&lt;/span> {
+&lt;span style="color:#a6e22e">fahrrad&lt;/span>: &lt;span style="color:#66d9ef">Fahrrad&lt;/span>;
+&lt;span style="color:#a6e22e">liebslingsFahrraeder&lt;/span>:&lt;span style="color:#66d9ef">any&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;span style="color:#66d9ef">constructor&lt;/span>(&lt;span style="color:#66d9ef">protected&lt;/span> &lt;span style="color:#a6e22e">httpClient&lt;/span>: &lt;span style="color:#66d9ef">HttpClient&lt;/span>) {
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">fahrrad&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#a6e22e">Fahrrad&lt;/span>();
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">fahrrad&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Specialized Diverge Pro Carbon&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">fahrrad&lt;/span>.&lt;span style="color:#a6e22e">url&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://assets.specialized.com/i/specialized/96220-10_DIVERGE-PRO-CARBON-ETAP-REDWD-SMK-CHRM_HERO?bg=rgb(241,241,241)&amp;amp;w=2500&amp;amp;h=1406&amp;amp;fmt=auto&amp;#34;&lt;/span>
+}
+&lt;span style="color:#a6e22e">ngOnInit&lt;/span>()&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> {
+}
+&lt;span style="color:#a6e22e">nameDesFahrrads&lt;/span>(){
+&lt;span style="color:#a6e22e">alert&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">fahrrad&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span>);
+}
+&lt;span style="color:#a6e22e">bildLiebslingsFahrrad&lt;/span>(){
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">liebslingsFahrraeder&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [];
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">url&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://www.googleapis.com/customsearch/v1?key=AIzaSyDNGfS6NUdgwXOwKu9xlZPJFm84ylG6J4g&amp;amp;cx=005124428384360536924:rstfldysumw&amp;amp;q=&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">fahrrad&lt;/span>.&lt;span style="color:#a6e22e">name&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;amp;searchType=image&amp;amp;safe=high&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">httpClient&lt;/span>.&lt;span style="color:#66d9ef">get&lt;/span>(&lt;span style="color:#a6e22e">url&lt;/span>).&lt;span style="color:#a6e22e">subscribe&lt;/span>((&lt;span style="color:#a6e22e">response&lt;/span>:&lt;span style="color:#66d9ef">any&lt;/span>) &lt;span style="color:#f92672">=&amp;gt;&lt;/span>{
+&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span>; &lt;span style="color:#a6e22e">i&lt;/span>&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">item&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">items&lt;/span>[&lt;span style="color:#a6e22e">i&lt;/span>];
+&lt;span style="color:#a6e22e">item&lt;/span>.&lt;span style="color:#a6e22e">image&lt;/span>.&lt;span style="color:#a6e22e">height&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">200&lt;/span> &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#a6e22e">item&lt;/span>.&lt;span style="color:#a6e22e">image&lt;/span>.&lt;span style="color:#a6e22e">width&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">item&lt;/span>.&lt;span style="color:#a6e22e">image&lt;/span>.&lt;span style="color:#a6e22e">height&lt;/span>;
+&lt;span style="color:#a6e22e">item&lt;/span>.&lt;span style="color:#a6e22e">image&lt;/span>.&lt;span style="color:#a6e22e">width&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">200&lt;/span>;
+&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">liebslingsFahrraeder&lt;/span>.&lt;span style="color:#a6e22e">push&lt;/span>(&lt;span style="color:#a6e22e">item&lt;/span>);
+}
+});
+}
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Folgendes muss angezeigt werden, wenn die Seite geladen wurde:&lt;/p>
+&lt;img src="../04_01_First_Page.PNG" alt="Components Description" style="width:20%"/>
+&lt;ul>
+&lt;li>&amp;ldquo;Wie heisst mein Fahrrad?&amp;rdquo; ist mit der Funktion &amp;ldquo;nameDesFahrrads()&amp;rdquo; verknüpft.&lt;/li>
+&lt;li>&amp;ldquo;Mein Liebslingsfahrrad suchen&amp;rdquo; ist mit der Funktion &amp;ldquo;bildLiebslingsFahrrad()&amp;rdquo; verknüpft.&lt;/li>
+&lt;li>Für die Anzeige der Lieblingsfahrräder muss ein &lt;code>*ngFor&lt;/code> gebraucht werden.&lt;/li>
+&lt;li>Tipp: Die Weite und Höhe der Bilder kann direkt mit einem Propertybinding gemacht werden.&lt;/li>
+&lt;/ul>
+&lt;p>Folgende Seite wird nach dem Klick auf &amp;ldquo;Mein Lieblingsfahrrad suchen&amp;rdquo; angezeigt:&lt;/p>
+&lt;img src="../04_01_Second_Page.PNG" alt="Components Description" style="width:40%"/></description></item><item><title>Docs: Exception Handling</title><link>/docs/java/exception_handling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/exception_handling/</guid><description>
 &lt;h4 id="ziele">Ziele&lt;/h4>
 &lt;ul>
 &lt;li>Ich kenne die Schlüsselwörter try, catch, finally, throw und throws&lt;/li>
@@ -6998,7 +7096,7 @@ Die Dependency injecten&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ol start="2">
-&lt;li>Das Auto als Provider registrieren (in &lt;code>main.ts&lt;/code>):&lt;/li>
+&lt;li>Das Auto als Provider registrieren (in &lt;code>module.ts&lt;/code>):&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -7063,7 +7161,16 @@ Die Dependency injecten&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Das Minibeispiel soll lediglich die 3 wichtigen Schritte etwas besser darstellen.&lt;/p>
-&lt;p>In Euren Projekten werdet ihr dieses Verfahren für die Services anwenden.&lt;/p></description></item><item><title>Docs: Git Branches</title><link>/docs/git/git-branches/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/git-branches/</guid><description>
+&lt;p>In Euren Projekten werdet ihr dieses Verfahren für die Services anwenden.&lt;/p>
+&lt;h2 id="aufgabe-2">Aufgabe 2&lt;/h2>
+&lt;p>Folgende Datenbankstruktur ist gegeben:&lt;/p>
+&lt;img src="../04_03_Class_Diagram.png" alt="ERD" style="width:50%"/>
+&lt;ul>
+&lt;li>Erstelle für jede Entität ein geeignetes Model&lt;/li>
+&lt;li>Erstelle für jede Entität einen Service&lt;/li>
+&lt;li>Erstelle bei jedem Service Musterdaten die du in einer geeigneten Component anzeigst. Design ist noch nicht wichig, es geht nur um das Verständnis&lt;/li>
+&lt;li>Behalte die Ordnerstruktur korrekt (Ordner für die Componenten, Ordner für die Services, etc.)&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Git Branches</title><link>/docs/git/git-branches/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/git-branches/</guid><description>
 &lt;h2 id="inhalt">Inhalt&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="#beispiel-f%C3%BCr-branching-merging-und-rebasing">Beispiel für Branching, Merging und Rebasing&lt;/a>&lt;/li>
@@ -7905,6 +8012,15 @@ ngekettet, um den Geburtstag in Grossbuchstaben anzuzeigen.&lt;/p>
 &lt;li>Die Pipe-Klasse implementiert die Methode &lt;code>transform&lt;/code> des PipeTransform Interface, die einen Eingabewert gefolgt von optionalen Parametern akzeptiert und den transformierten Wert zurückgibt.&lt;/li>
 &lt;li>Für jeden an die Pipe übergebenen Parameter gibt es ein zusätzliches Argument für die Methode &lt;code>transform&lt;/code>. Unsere Pipe hat einen solchen Parameter: die &lt;code>extension&lt;/code>.&lt;/li>
 &lt;li>Mit dem &lt;code>@Pipe&lt;/code> Decorator können wir den Pipe-Namen definieren, welchen wir im Template verwenden.&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-3">Aufgabe 3&lt;/h2>
+&lt;p>In der vorherigen Aufgabe hast du eine Grundstruktur geschaffen für die Anzeige von diversen Fahrrädern und dessen Marken und Typ.&lt;/p>
+&lt;ul>
+&lt;li>Erstelle nun eine Pipe welche die Spalte &lt;code>wert&lt;/code> im Format &lt;code>1'720.00 CHF&lt;/code> anzeigt. Der Währungstyp wird mit einem Parameter weitergegeben.
+Sofern nichts angegeben wird, wähle Standardmässig &lt;code>CHF&lt;/code>.&lt;/li>
+&lt;li>Geh davon aus das in der Spalte &lt;code>wert&lt;/code> auch Zahlen wie &lt;code>1287.87&lt;/code> oder &lt;code>5421.21&lt;/code> gespeichert sind. Runde diese je nachdem auf oder ab.&lt;/li>
+&lt;li>Auch das Hochzeichen (&lt;code>'&lt;/code>) soll immer nach 3 Stellen erscheinen.&lt;/li>
+&lt;li>Erstelle eine weitere Pipe, welche den Markennamen nur mit Grossbuchstaben anzeigt und hinter den Markennamen ein Copyrightzeichen (&lt;code>©&lt;/code>) setzt.&lt;/li>
 &lt;/ul></description></item><item><title>Docs: GitHub</title><link>/docs/git/git-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/git-hub/</guid><description>
 &lt;p>GitHub ist ein Webservice für das Verwalten von Software Code via Git. Darüber hinaus bietet GitHub viele weitere Funktionen, von Projektmanagement mit Taskverwaltung, über Wikis bis zum Buildserver. GitHub ist die Plattform für Opensource Projekte.&lt;/p>
 &lt;p>Weitere Infos:&lt;/p>
@@ -9467,7 +9583,7 @@ Angenommen, wir haben unser HttpClientModule in das AppModule importiert, müsse
 {
 &lt;span style="color:#a6e22e">provide&lt;/span>: &lt;span style="color:#66d9ef">HTTP_INTERCEPTORS&lt;/span>,
 &lt;span style="color:#a6e22e">useClass&lt;/span>: &lt;span style="color:#66d9ef">RequestLogInterceptor&lt;/span>,
-&lt;span style="color:#a6e22e">mutli&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;span style="color:#a6e22e">multi&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
 },
 ...
 ],
@@ -11208,7 +11324,22 @@ Oftmals werden hier auch erweiterte Funktionen eines Components aufgelistet. Dah
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Natürlich kann man auch sein eigene Theme für Angular Material erstellen.
-Wie ihr dies machen könnt wird &lt;a href="https://material.angular.io/guide/theming#defining-a-custom-theme">hier&lt;/a> ausführlich beschrieben (Für diejenigen, die mit den Übungen frühzeitig fertig sind).&lt;/p></description></item><item><title>Docs: Lazy Loading</title><link>/docs/web/angular/04_8_lazy_loading/</link><pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/04_8_lazy_loading/</guid><description>
+Wie ihr dies machen könnt wird &lt;a href="https://material.angular.io/guide/theming#defining-a-custom-theme">hier&lt;/a> ausführlich beschrieben (Für diejenigen, die mit den Übungen frühzeitig fertig sind).&lt;/p>
+&lt;h2 id="aufgabe-5">Aufgabe 5&lt;/h2>
+&lt;p>Um die Fahrrad-Seite nun ein bisschen schöner darzustellen, brauchen wir nun Angular Material&lt;/p>
+&lt;ul>
+&lt;li>Folgende Material-Komponenten sollen die Seite verschönern (es ist dir überlassen, welches Material du welcher Komponente(n) zuordnest):
+&lt;ul>
+&lt;li>Card&lt;/li>
+&lt;li>Sidenav&lt;/li>
+&lt;li>Snackbar&lt;/li>
+&lt;li>Toolbar&lt;/li>
+&lt;li>Table&lt;/li>
+&lt;li>Input&lt;/li>
+&lt;li>Tabs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Lazy Loading</title><link>/docs/web/angular/04_8_lazy_loading/</link><pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/04_8_lazy_loading/</guid><description>
 &lt;p>&lt;img src="/images/angular/lazy_loading.png" alt="Lazy loading">&lt;/p>
 &lt;h2 id="lazy-loading-in-angular">Lazy Loading in Angular&lt;/h2>
 &lt;p>Standardmässig lädt der Browser alle Angular-Module, bevor der Benutzer mit ihnen arbeiten kann.&lt;br>
@@ -11248,24 +11379,25 @@ Inhalte werden erst geladen wenn sich das Expansion-Panel öffnet.&lt;/p>
 &lt;p>Und genau da kommt CSS (Cascading Style Sheets) ins Spiel. CSS ist da, um unsere HTML-Elemente zu stylen, wodurch wir unser gewünschtes Design gestalten können.&lt;/p>
 &lt;p>Dabei gibt es verschiedene Wege CSS zu schreiben und auch dies dann in die Webseite einzubinden.&lt;/p></description></item><item><title>Docs: Projekt aufsetzen</title><link>/docs/web/angular/05_1_tour_of_heroes/</link><pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/05_1_tour_of_heroes/</guid><description>
 &lt;h1 id="ein-neues-projekt-erstellen">Ein neues Projekt erstellen&lt;/h1>
-&lt;p>In diesem Teil des Tutorials werden Sie Folgendes tun:&lt;/p>
+&lt;p>Du beginnst mit der Erstellung einer ersten Anwendung mithilfe der Angular CLI. Im Laufe dieses Tutorials wirst du diese Startanwendung modifizieren und erweitern, um die Anwendung Tour of Heroes zu erstellen.&lt;/p>
+&lt;p>In diesem Teil des Tutorials wirst du Folgendes tun:&lt;/p>
 &lt;ol>
-&lt;li>Richten Sie Ihre Umgebung ein.&lt;/li>
-&lt;li>Erstellen Sie einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt.&lt;/li>
-&lt;li>Stellen Sie die Anwendung bereit.&lt;/li>
-&lt;li>Nehmen Sie Änderungen an der Anwendung vor.&lt;/li>
+&lt;li>Richte deine Umgebung ein.&lt;/li>
+&lt;li>Erstelle einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt.&lt;/li>
+&lt;li>Stelle die Anwendung bereit.&lt;/li>
+&lt;li>Nimm Änderungen an der Anwendung vor.&lt;/li>
 &lt;/ol>
 &lt;blockquote>
-&lt;p>Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter &lt;a href="https://angular.io/generated/live-examples/toh-pt0/stackblitz.html">dieser Seite&lt;/a>.&lt;/p>
+&lt;p>Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter &lt;a href="https://angular.io/generated/live-examples/toh-pt0/stackblitz.html">dieser Seite&lt;/a>.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="richten-sie-ihre-umgebung-ein">Richten Sie Ihre Umgebung ein&lt;/h2>
-&lt;p>Um Ihre Entwicklungsumgebung einzurichten, folgen Sie den Anweisungen in &lt;a href="https://angular.io/guide/setup-local">Local Environment Setup&lt;/a>.&lt;/p>
-&lt;h2 id="erstellen-sie-einen-neuen-arbeitsbereich-und-eine-erste-anwendung">Erstellen Sie einen neuen Arbeitsbereich und eine erste Anwendung&lt;/h2>
-&lt;p>Sie entwickeln Anwendungen im Kontext eines Angular-&lt;a href="https://angular.io/guide/glossary#workspace">Workspace&lt;/a>. Ein Arbeitsbereich enthält die Dateien für ein oder mehrere &lt;a href="https://angular.io/guide/glossary#project">Projekte&lt;/a>. Ein Projekt ist eine Gruppe von Dateien, die eine Anwendung oder eine Bibliothek bilden. Für dieses Tutorial werden Sie einen neuen Arbeitsbereich erstellen.&lt;/p>
-&lt;p>So erstellen Sie einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt:&lt;/p>
+&lt;h2 id="richten-deine-umgebung-ein">Richten deine Umgebung ein&lt;/h2>
+&lt;p>Um Ihre Entwicklungsumgebung einzurichten, folge den Anweisungen in &lt;a href="https://angular.io/guide/setup-local">Local Environment Setup&lt;/a>.&lt;/p>
+&lt;h2 id="erstelle-einen-neuen-arbeitsbereich-und-eine-erste-anwendung">Erstelle einen neuen Arbeitsbereich und eine erste Anwendung&lt;/h2>
+&lt;p>Du entwickelst Anwendungen im Kontext eines Angular-&lt;a href="https://angular.io/guide/glossary#workspace">Workspace&lt;/a>. Ein Arbeitsbereich enthält die Dateien für ein oder mehrere &lt;a href="https://angular.io/guide/glossary#project">Projekte&lt;/a>. Ein Projekt ist eine Gruppe von Dateien, die eine Anwendung oder eine Bibliothek bilden. Für dieses Tutorial wirst du einen neuen Arbeitsbereich erstellen.&lt;/p>
+&lt;p>So erstellst du einen neuen Arbeitsbereich und ein erstes Anwendungsprojekt:&lt;/p>
 &lt;ol>
-&lt;li>Stellen Sie sicher, dass Sie sich nicht bereits in einem Angular-Arbeitsbereich-Ordner befinden. Wenn Sie beispielsweise zuvor den Arbeitsbereich Erste Schritte erstellt haben, wechseln Sie in den übergeordneten Ordner dieses Ordners.&lt;/li>
-&lt;li>Führen Sie den CLI-Befehl &lt;code>ng new&lt;/code> aus und geben Sie den Namen &lt;code>angular-tour-of-heroes&lt;/code> ein, wie hier gezeigt:&lt;/li>
+&lt;li>Stelle sicher, dass du dich nicht bereits in einem Angular-Arbeitsbereich-Ordner befindest. Wenn du beispielsweise zuvor den Arbeitsbereich Erste Schritte erstellt hast, wechsle in den übergeordneten Ordner dieses Ordners.&lt;/li>
+&lt;li>Führe den CLI-Befehl &lt;code>ng new&lt;/code> aus und gib den Namen &lt;code>angular-tour-of-heroes&lt;/code> ein, wie hier gezeigt:&lt;/li>
 &lt;/ol>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11276,7 +11408,7 @@ Inhalte werden erst geladen wenn sich das Expansion-Panel öffnet.&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ol start="3">
-&lt;li>Der Befehl &amp;ldquo;ng new&amp;rdquo; fordert Sie auf, Informationen zu den Funktionen einzugeben, die in das ursprüngliche Anwendungsprojekt aufgenommen werden sollen. Akzeptieren Sie die Standardeinstellungen, indem Sie die Enter- oder Return-Taste drücken.&lt;/li>
+&lt;li>Der Befehl &amp;ldquo;ng new&amp;rdquo; fordert dich auf, Informationen zu den Funktionen einzugeben, die in das ursprüngliche Anwendungsprojekt aufgenommen werden sollen. Akzeptiere die Standardeinstellungen, indem du die Enter- oder Return-Taste drückst.&lt;/li>
 &lt;/ol>
 &lt;p>Die Angular-CLI installiert die notwendigen Angular-&amp;ldquo;npm&amp;rdquo;-Pakete und andere Abhängigkeiten. Dies kann ein paar Minuten dauern.&lt;/p>
 &lt;p>Außerdem werden die folgenden Dateien für den Arbeitsbereich und das Starterprojekt erstellt:&lt;/p>
@@ -11287,7 +11419,7 @@ Inhalte werden erst geladen wenn sich das Expansion-Panel öffnet.&lt;/p>
 &lt;/ul>
 &lt;p>Das anfängliche App-Projekt enthält eine einfache Willkommensanwendung, die sofort ausgeführt werden kann.&lt;/p>
 &lt;h2 id="serve-the-application">Serve the application&lt;/h2>
-&lt;p>Wechseln Sie in das Verzeichnis workspace und starten Sie die Anwendung.&lt;/p>
+&lt;p>Wechsle in das Verzeichnis workspace und starte die Anwendung.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -11301,25 +11433,25 @@ ng serve --open
 &lt;/div>&lt;p>&lt;img src="/images/hint.png" alt="asset">&lt;/p>
 &lt;blockquote>
 &lt;p>Der Befehl &lt;code>ng serve&lt;/code> baut die App, startet den Entwicklungsserver,
-überwacht die Quelldateien und baut die Anwendung neu auf, wenn Sie Änderungen an diesen Dateien vornehmen.&lt;br>
+überwacht die Quelldateien und baut die Anwendung neu auf, wenn du Änderungen an diesen Dateien vornimmst.&lt;br>
 Das &lt;code>--open&lt;/code> Flag öffnet einen Browser auf &lt;code>http://localhost:4200/&lt;/code>.&lt;/p>
 &lt;/blockquote>
 &lt;p>Sie sollten die Anwendung in Ihrem Browser laufen sehen.&lt;/p>
 &lt;h2 id="angular-komponenten">Angular-Komponenten&lt;/h2>
-&lt;p>Die Seite, die Sie sehen, ist die &lt;em>Anwendungsshell&lt;/em>.
+&lt;p>Die Seite, die du siehst, ist die &lt;em>Anwendungsshell&lt;/em>.
 Die Shell wird von einer Angular &lt;strong>Komponente&lt;/strong> namens &lt;code>AppComponent&lt;/code> gesteuert.&lt;/p>
 &lt;p>&lt;em>Komponenten&lt;/em> sind die grundlegenden Bausteine von Angular-Anwendungen.
 Sie zeigen Daten auf dem Bildschirm an, warten auf Benutzereingaben und führen Aktionen basierend auf diesen Eingaben aus.&lt;/p>
 &lt;h2 id="änderungen-an-der-anwendung-vornehmen">Änderungen an der Anwendung vornehmen&lt;/h2>
-&lt;p>Öffnen Sie das Projekt in Ihrem bevorzugten Editor oder IDE und navigieren Sie zum Ordner &lt;code>src/app&lt;/code>, um einige Änderungen an der Starter-Anwendung vorzunehmen.&lt;/p>
-&lt;p>Sie werden die Implementierung der Shell &lt;code>AppComponent&lt;/code> über drei Dateien verteilt finden:&lt;/p>
+&lt;p>Öffne das Projekt in deinem bevorzugten Editor oder IDE und navigiere zum Ordner &lt;code>src/app&lt;/code>, um einige Änderungen vorzunehmen.&lt;/p>
+&lt;p>Du wirst die Implementierung der Shell &lt;code>AppComponent&lt;/code> über drei Dateien verteilt finden:&lt;/p>
 &lt;ol>
 &lt;li>&lt;code>app.component.ts&lt;/code> der Code der Komponentenklasse, geschrieben in TypeScript.&lt;/li>
 &lt;li>&lt;code>app.component.html&lt;/code> das Komponententemplate, geschrieben in HTML.&lt;/li>
 &lt;li>&lt;code>app.component.css&lt;/code> die privaten CSS-Stile der Komponente.&lt;/li>
 &lt;/ol>
 &lt;h3 id="ändern-sie-den-titel-der-anwendung">Ändern Sie den Titel der Anwendung&lt;/h3>
-&lt;p>Öffnen Sie die Klassendatei der Komponente (&lt;code>app.component.ts&lt;/code>) und ändern Sie den Wert der Eigenschaft &lt;code>title&lt;/code> in &amp;lsquo;Tour of Heroes&amp;rsquo;.&lt;/p>
+&lt;p>Öffne die Klassendatei der Komponente (&lt;code>app.component.ts&lt;/code>) und ändere den Wert der Eigenschaft &lt;code>title&lt;/code> in &amp;lsquo;Tour of Heroes&amp;rsquo;.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -11328,9 +11460,9 @@ Sie zeigen Daten auf dem Bildschirm an, warten auf Benutzereingaben und führen 
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#a6e22e">title&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Tour of Heroes&amp;#39;&lt;/span>;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Öffnen Sie die Komponententemplatendatei (&lt;code>app.component.html&lt;/code>) und
-löschen Sie die von der Angular CLI generierte Standardtemplate.
-Ersetzen Sie es durch die folgende HTML-Zeile.&lt;/p>
+&lt;/div>&lt;p>Öffne die Komponententemplatendatei (&lt;code>app.component.html&lt;/code>) und
+lösche die von der Angular CLI generierte Standardtemplate.
+Ersetze es durch die folgende HTML-Zeile.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -11346,8 +11478,8 @@ innerhalb des HTML-Header-Tags.&lt;/p>
 &lt;h3 id="hinzufügen-von-anwendungsstilen">Hinzufügen von Anwendungsstilen&lt;/h3>
 &lt;p>Die meisten Anwendungen streben ein einheitliches Aussehen in der gesamten Anwendung an.
 Das CLI generiert zu diesem Zweck eine leere &lt;code>styles.css&lt;/code>.
-Legen Sie dort Ihre anwendungsweiten Stile ab.&lt;/p>
-&lt;p>Öffnen Sie &lt;code>src/styles.css&lt;/code> und fügen Sie den folgenden Code in die Datei ein.&lt;/p>
+Lege dort deine anwendungsweiten Stile ab.&lt;/p>
+&lt;p>Öffne &lt;code>src/styles.css&lt;/code> und füge den folgenden Code in die Datei ein.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -11494,9 +11626,9 @@ Legen Sie dort Ihre anwendungsweiten Stile ab.&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="zusammenfassung">Zusammenfassung&lt;/h2>
 &lt;ul>
-&lt;li>Sie haben die erste Anwendungsstruktur mit dem Angular CLI erstellt.&lt;/li>
-&lt;li>Sie haben gelernt, dass Angular-Komponenten Daten anzeigen.&lt;/li>
-&lt;li>Sie haben die doppelten geschweiften Klammern der Interpolation verwendet, um den Titel der Anwendung anzuzeigen.&lt;/li>
+&lt;li>Du hast die erste Anwendungsstruktur mit dem Angular CLI erstellt.&lt;/li>
+&lt;li>Du hast gelernt, dass Angular-Komponenten Daten anzeigen.&lt;/li>
+&lt;li>Du hast die doppelten geschweiften Klammern der Interpolation verwendet, um den Titel der Anwendung anzuzeigen.&lt;/li>
 &lt;/ul></description></item><item><title>Docs: CSS-Grundlagen</title><link>/docs/web/html_css/11_css_basics/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/11_css_basics/</guid><description>
 &lt;h2 id="wie-funktioniert-css">Wie funktioniert CSS?&lt;/h2>
 &lt;p>Um CSS anwenden zu können, müssen wir das Grundprinzip verstehen:&lt;/p>
@@ -11626,12 +11758,11 @@ Legen Sie dort Ihre anwendungsweiten Stile ab.&lt;/p>
 &lt;h2 id="was-gibt-es-alles-für-css-styling-properties">Was gibt es alles für CSS-Styling-Properties?&lt;/h2>
 &lt;p>Es gibt unzählige CSS-Properties. Zu viele, um auf jedes detailliert einzugehen. Auf &lt;a href="https://www.tutorialrepublic.com/css-reference/css3-properties.php">dieser Seite&lt;/a> findet ihr eine ganze Reihe CSS-Properties.&lt;/p>
 &lt;p>Auf die wichtigsten Properties werden wir jedoch in den nächsten Seiten genauer eingehen.&lt;/p></description></item><item><title>Docs: Editor</title><link>/docs/web/angular/05_2_editor/</link><pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/05_2_editor/</guid><description>
-&lt;h1 id="der-helden-editor">Der Helden-Editor&lt;/h1>
 &lt;blockquote>
-&lt;p>Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter &lt;a href="https://angular.io/generated/live-examples/toh-pt1/stackblitz.html">dieser Seite&lt;/a>.&lt;/p>
+&lt;p>Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter &lt;a href="https://angular.io/generated/live-examples/toh-pt1/stackblitz.html">dieser Seite&lt;/a>.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="erstellen-sie-die-komponente-heroes">Erstellen Sie die Komponente heroes&lt;/h2>
-&lt;p>Erzeugen Sie mit der Angular CLI eine neue Komponente mit dem Namen &lt;code>heroes&lt;/code>.&lt;/p>
+&lt;h2 id="erstelle-die-komponente-heroes">Erstelle die Komponente heroes&lt;/h2>
+&lt;p>Erzeuge mit der Angular CLI eine neue Komponente mit dem Namen &lt;code>heroes&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -11691,7 +11822,7 @@ Angular ruft &lt;code>ngOnInit()&lt;/code> kurz nach der Erstellung einer Kompon
 Es ist ein guter Ort, um die Initialisierungslogik zu platzieren.&lt;/p>
 &lt;p>Die Komponentenklasse immer &lt;code>export&lt;/code>, damit man sie an anderer Stelle &lt;code>import&lt;/code> kann &amp;hellip; wie im &lt;code>AppModule&lt;/code>.&lt;/p>
 &lt;h3 id="hinzufügen-einer-hero-eigenschaft">Hinzufügen einer Hero-Eigenschaft&lt;/h3>
-&lt;p>Fügen Sie der &lt;code>HeroesComponent&lt;/code> eine &lt;code>Helden&lt;/code>-Eigenschaft für einen Helden namens &amp;ldquo;Windstorm&amp;rdquo; hinzu.&lt;/p>
+&lt;p>Füge der &lt;code>HeroesComponent&lt;/code> eine &lt;code>Helden&lt;/code>-Eigenschaft für einen Helden namens &amp;ldquo;Windstorm&amp;rdquo; hinzu.&lt;/p>
 &lt;p>&lt;code>heroes.component.ts (hero property)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11702,9 +11833,9 @@ Es ist ein guter Ort, um die Initialisierungslogik zu platzieren.&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="den-helden-anzeigen">Den Helden anzeigen&lt;/h3>
-&lt;p>Öffnen Sie die Templatedatei &amp;ldquo;heroes.component.html&amp;rdquo;.
-Löschen Sie den von der Angular CLI generierten Standardtext und
-ersetzen Sie ihn durch eine Datenbindung an die neue &lt;code>hero&lt;/code> Eigenschaft.&lt;/p>
+&lt;p>Öffne die Templatedatei &amp;ldquo;heroes.component.html&amp;rdquo;.
+Lösche den von der Angular CLI generierten Standardtext und
+ersetze ihn durch eine Datenbindung an die neue &lt;code>hero&lt;/code> Eigenschaft.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -11714,9 +11845,9 @@ ersetzen Sie ihn durch eine Datenbindung an die neue &lt;code>hero&lt;/code> Eig
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="die-ansicht-heroescomponent-anzeigen">Die Ansicht &lt;code>HeroesComponent&lt;/code> anzeigen&lt;/h2>
-&lt;p>Um die &lt;code>HeroesComponent&lt;/code> anzuzeigen, müssen Sie sie zum Template der Shell &lt;code>AppComponent&lt;/code> hinzufügen.&lt;/p>
-&lt;p>Denken Sie daran, dass &lt;code>app-heroes&lt;/code> der &lt;a href="#selector">Element-Selektor&lt;/a> für die &lt;code>HeroesComponent&lt;/code> ist.
-Fügen Sie also ein &lt;code>&amp;lt;app-heroes&amp;gt;&lt;/code>-Element in die &lt;code>AppComponent&lt;/code>-Templatdatei ein, direkt unter dem Titel.&lt;/p>
+&lt;p>Um die &lt;code>HeroesComponent&lt;/code> anzuzeigen, müsst du sie zum Template der Shell &lt;code>AppComponent&lt;/code> hinzufügen.&lt;/p>
+&lt;p>Denke daran, dass &lt;code>app-heroes&lt;/code> der &lt;a href="#selector">Element-Selektor&lt;/a> für die &lt;code>HeroesComponent&lt;/code> ist.
+Füge also ein &lt;code>&amp;lt;app-heroes&amp;gt;&lt;/code>-Element in die &lt;code>AppComponent&lt;/code>-Templatdatei ein, direkt unter dem Titel.&lt;/p>
 &lt;p>&lt;code>src/app/app.component.html&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11732,7 +11863,7 @@ Fügen Sie also ein &lt;code>&amp;lt;app-heroes&amp;gt;&lt;/code>-Element in die
 sollte der Browser aktualisiert werden und sowohl den Titel der Anwendung als auch den Namen des Helden anzeigen.&lt;/p>
 &lt;h2 id="erstellen-einer-hero-interface">Erstellen einer Hero-Interface&lt;/h2>
 &lt;p>Ein echter Held ist mehr als nur ein Name.&lt;/p>
-&lt;p>Erstellen Sie eine &lt;code>Hero&lt;/code>-Schnittstelle in einer eigenen Datei im Ordner &lt;code>src/app&lt;/code>.
+&lt;p>Erstelle eine &lt;code>Hero&lt;/code>-Schnittstelle in einer eigenen Datei im Ordner &lt;code>src/app&lt;/code>.
 Gib ihr die Eigenschaften &lt;code>id&lt;/code> und &lt;code>name&lt;/code>.&lt;/p>
 &lt;p>&lt;code>src/app/hero.ts&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -11749,9 +11880,9 @@ Gib ihr die Eigenschaften &lt;code>id&lt;/code> und &lt;code>name&lt;/code>.&lt;
 }
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Kehren Sie zur Klasse &lt;code>HeroesComponent&lt;/code> zurück und importieren Sie die Schnittstelle &lt;code>Hero&lt;/code>.&lt;/p>
-&lt;p>Refaktorieren Sie die Eigenschaft &lt;code>hero&lt;/code> der Komponente, so dass sie vom Typ &lt;code>Hero&lt;/code> ist.
-Initialisieren Sie sie mit einer &lt;code>id&lt;/code> von &lt;code>1&lt;/code> und dem Namen &lt;code>Windstorm&lt;/code>.&lt;/p>
+&lt;/div>&lt;p>Kehre zur Klasse &lt;code>HeroesComponent&lt;/code> zurück und importiere die Schnittstelle &lt;code>Hero&lt;/code>.&lt;/p>
+&lt;p>Refaktoriere die Eigenschaft &lt;code>hero&lt;/code> der Komponente, so dass sie vom Typ &lt;code>Hero&lt;/code> ist.
+Initialisiere sie mit einer &lt;code>id&lt;/code> von &lt;code>1&lt;/code> und dem Namen &lt;code>Windstorm&lt;/code>.&lt;/p>
 &lt;p>Die überarbeitete Klassendatei &lt;code>HeroesComponent&lt;/code> sollte wie folgt aussehen:&lt;/p>
 &lt;p>&lt;code>src/app/heroes/heroes.component.ts&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -11796,10 +11927,10 @@ Initialisieren Sie sie mit einer &lt;code>id&lt;/code> von &lt;code>1&lt;/code> 
 }
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Die Seite wird nicht mehr richtig angezeigt, weil Sie den Helden von einer Zeichenkette in ein Objekt geändert haben.&lt;/p>
-&lt;h2 id="zeigen-sie-das-hero-objekt-an">Zeigen Sie das Hero-Objekt an&lt;/h2>
-&lt;p>Aktualisieren Sie die Bindung im Template, um den Namen des Helden anzuzeigen
-und zeigen Sie sowohl &lt;code>id&lt;/code> als auch &lt;code>name&lt;/code> in einem Detail-Layout wie diesem:&lt;/p>
+&lt;/div>&lt;p>Die Seite wird nicht mehr richtig angezeigt, weil du den Helden von einer Zeichenkette in ein Objekt geändert hast.&lt;/p>
+&lt;h2 id="zeige-das-hero-objekt-an">Zeige das Hero-Objekt an&lt;/h2>
+&lt;p>Aktualisiere die Bindung im Template, um den Namen des Helden anzuzeigen
+und zeige sowohl &lt;code>id&lt;/code> als auch &lt;code>name&lt;/code> in einem Detail-Layout wie diesem:&lt;/p>
 &lt;p>&lt;code>heroes.component.html (HeroesComponent's template)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11815,7 +11946,7 @@ und zeigen Sie sowohl &lt;code>id&lt;/code> als auch &lt;code>name&lt;/code> in 
 &lt;/div>
 &lt;/div>&lt;p>Der Browser aktualisiert sich und zeigt die Informationen über den Helden an.&lt;/p>
 &lt;h2 id="formatieren-mit-der-_uppercasepipe_">Formatieren mit der &lt;em>UppercasePipe&lt;/em>&lt;/h2>
-&lt;p>Ändern Sie die Bindung &lt;code>hero.name&lt;/code> wie folgt.&lt;/p>
+&lt;p>Ändere die Bindung &lt;code>hero.name&lt;/code> wie folgt.&lt;/p>
 &lt;p>&lt;code>src/app/heroes/heroes.component.html&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11830,16 +11961,16 @@ und zeigen Sie sowohl &lt;code>id&lt;/code> als auch &lt;code>name&lt;/code> in 
 direkt nach dem Pipe-Operator ( | ),
 aktiviert die eingebaute &lt;code>UppercasePipe&lt;/code>.&lt;/p>
 &lt;p>&lt;a href="https://angular.io/guide/pipes">Pipes&lt;/a> sind ein guter Weg, um Strings, Währungsbeträge, Daten und andere Anzeigedaten zu formatieren.
-Angular wird mit mehreren eingebauten Pipes ausgeliefert und Sie können Ihre eigenen erstellen.&lt;/p>
+Angular wird mit mehreren eingebauten Pipes ausgeliefert und du kannst deine eigenen erstellen.&lt;/p>
 &lt;h2 id="den-helden-bearbeiten">Den Helden bearbeiten&lt;/h2>
 &lt;p>Die Benutzer sollten den Namen des Helden in einem Textfeld &amp;ldquo;&lt;input>&amp;rdquo; bearbeiten können.&lt;/p>
 &lt;p>Das Textfeld sollte sowohl die Eigenschaft &amp;ldquo;Name&amp;rdquo; des Helden anzeigen
 und diese Eigenschaft während der Eingabe des Benutzers aktualisieren.
 Das heißt, die Daten fließen von der Komponentenklasse nach draußen auf den Bildschirm und
 vom Bildschirm zurück zur Klasse.&lt;/p>
-&lt;p>Um diesen Datenfluss zu automatisieren, richten Sie eine zweiseitige Datenbindung zwischen dem Formularelement &lt;code>&amp;lt;input&amp;gt;&lt;/code> und der Eigenschaft &lt;code>hero.name&lt;/code> ein.&lt;/p>
+&lt;p>Um diesen Datenfluss zu automatisieren, richte eine zweiseitige Datenbindung zwischen dem Formularelement &lt;code>&amp;lt;input&amp;gt;&lt;/code> und der Eigenschaft &lt;code>hero.name&lt;/code> ein.&lt;/p>
 &lt;h3 id="zwei-wege-bindung">Zwei-Wege-Bindung&lt;/h3>
-&lt;p>Überarbeiten Sie den Detailbereich im Template &lt;code>HeroesComponent&lt;/code> so, dass er wie folgt aussieht:&lt;/p>
+&lt;p>Überarbeite den Detailbereich im Template &lt;code>HeroesComponent&lt;/code> so, dass er wie folgt aussieht:&lt;/p>
 &lt;p>&lt;code>src/app/heroes/heroes.component.html (HeroesComponent's template)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11858,8 +11989,8 @@ vom Bildschirm zurück zur Klasse.&lt;/p>
 &lt;/div>&lt;p>&lt;strong>[(ngModel)]&lt;/strong> ist Angulars Syntax für die Zwei-Wege-Datenbindung.&lt;/p>
 &lt;p>Hier bindet sie die Eigenschaft &lt;code>hero.name&lt;/code> an die HTML-Textbox, so dass Daten in beide Richtungen fließen können: von der Eigenschaft &lt;code>hero.name&lt;/code> zur Textbox und von der Textbox zurück zum &lt;code>hero.name&lt;/code>.&lt;/p>
 &lt;h3 id="das-fehlende-_formsmodule_">Das fehlende &lt;em>FormsModule&lt;/em>&lt;/h3>
-&lt;p>Beachten Sie, dass die Anwendung nicht mehr funktioniert, wenn Sie &lt;code>[(ngModel)]&lt;/code> hinzufügen.&lt;/p>
-&lt;p>Um den Fehler zu sehen, öffnen Sie die Browser-Entwicklungswerkzeuge und suchen Sie in der Konsole
+&lt;p>Beachte, dass die Anwendung nicht mehr funktioniert, wenn du &lt;code>[(ngModel)]&lt;/code> hinzufügst.&lt;/p>
+&lt;p>Um den Fehler zu sehen, öffne die Browser-Entwicklungswerkzeuge und suche in der Konsole
 nach einer Meldung wie&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11877,13 +12008,13 @@ Can&lt;span style="color:#e6db74">&amp;#39;t bind to &amp;#39;&lt;/span>ngModel&
 &lt;p>Angular muss wissen, wie die Teile Ihrer Anwendung zusammenpassen
 und welche anderen Dateien und Bibliotheken die Anwendung benötigt.
 Diese Informationen werden &lt;em>Metadaten&lt;/em> genannt.&lt;/p>
-&lt;p>Einige der Metadaten befinden sich in den &lt;code>@Component&lt;/code>-Dekoratoren, die Sie zu Ihren Komponentenklassen hinzugefügt haben.
+&lt;p>Einige der Metadaten befinden sich in den &lt;code>@Component&lt;/code>-Dekoratoren, die du zu deinen Komponentenklassen hinzugefügt hast.
 Andere wichtige Metadaten befinden sich in &lt;a href="https://angular.io/guide/ngmodules">&lt;code>@NgModule&lt;/code>&lt;/a> Dekoratoren.&lt;/p>
 &lt;p>Der wichtigste &lt;a href="https://angular.io/guide/ngmodules">&lt;code>@NgModule&lt;/code>&lt;/a> Dekorator annotiert die Top-Level &lt;strong>AppModule&lt;/strong> Klasse.&lt;/p>
 &lt;p>Das Angular CLI generierte eine &lt;code>AppModule&lt;/code> Klasse in &lt;code>src/app/app.module.ts&lt;/code> als es das Projekt erstellte.
-Dies ist der Ort, an dem Sie das &lt;a href="https://angular.io/api/forms/FormsModule">FormsModule&lt;/a> einfügen.&lt;/p>
-&lt;h3 id="importieren-sie-_formsmodule">Importieren Sie _FormsModule&lt;/h3>
-&lt;p>Öffnen Sie &lt;code>AppModule&lt;/code> (&lt;code>app.module.ts&lt;/code>) und importieren Sie das Symbol &lt;code>FormsModule&lt;/code> aus der Bibliothek &lt;code>@angular/forms&lt;/code>.&lt;/p>
+Dies ist der Ort, an dem du das &lt;a href="https://angular.io/api/forms/FormsModule">FormsModule&lt;/a> einfügst.&lt;/p>
+&lt;h3 id="importiere-_formsmodule">Importiere _FormsModule&lt;/h3>
+&lt;p>Öffnen &lt;code>AppModule&lt;/code> (&lt;code>app.module.ts&lt;/code>) und importiere das Symbol &lt;code>FormsModule&lt;/code> aus der Bibliothek &lt;code>@angular/forms&lt;/code>.&lt;/p>
 &lt;p>&lt;code>app.module.ts (FormsModule symbol import)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11893,7 +12024,7 @@ Dies ist der Ort, an dem Sie das &lt;a href="https://angular.io/api/forms/FormsM
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">import&lt;/span> { &lt;span style="color:#a6e22e">FormsModule&lt;/span> } &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/forms&amp;#39;&lt;/span>; &lt;span style="color:#75715e">// &amp;lt;-- NgModel lives here
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Fügen Sie dann &lt;code>FormsModule&lt;/code> zum &lt;code>@NgModule&lt;/code>-Metadaten-Array &lt;code>imports&lt;/code> hinzu, das eine Liste der externen Module enthält, die die Anwendung benötigt.&lt;/p>
+&lt;/div>&lt;p>Füge dann &lt;code>FormsModule&lt;/code> zum &lt;code>@NgModule&lt;/code>-Metadaten-Array &lt;code>imports&lt;/code> hinzu, das eine Liste der externen Module enthält, die die Anwendung benötigt.&lt;/p>
 &lt;p>&lt;code>app.module.ts (@NgModule imports)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11909,13 +12040,13 @@ Dies ist der Ort, an dem Sie das &lt;a href="https://angular.io/api/forms/FormsM
 ],
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Wenn der Browser aktualisiert wird, sollte die Anwendung wieder funktionieren. Sie können den Namen des Helden bearbeiten und sehen, dass die Änderungen sofort in der &lt;code>&amp;lt;h2&amp;gt;&lt;/code> oberhalb des Textfeldes angezeigt werden.&lt;/p>
-&lt;h3 id="deklarieren-sie-heroescomponent">Deklarieren Sie &lt;code>HeroesComponent&lt;/code>&lt;/h3>
+&lt;/div>&lt;p>Wenn der Browser aktualisiert wird, sollte die Anwendung wieder funktionieren. Du kannst den Namen des Helden bearbeiten und sehen, dass die Änderungen sofort in der &lt;code>&amp;lt;h2&amp;gt;&lt;/code> oberhalb des Textfeldes angezeigt werden.&lt;/p>
+&lt;h3 id="deklariere-heroescomponent">Deklariere &lt;code>HeroesComponent&lt;/code>&lt;/h3>
 &lt;p>Jede Komponente muss in &lt;em>exakt einem&lt;/em> &lt;a href="guide/ngmodules">NgModule&lt;/a> deklariert werden.&lt;/p>
 &lt;p>&lt;em>Du&lt;/em> hast die &lt;code>HeroesComponent&lt;/code> nicht deklariert.
 Warum hat die Anwendung dann funktioniert?&lt;/p>
 &lt;p>Sie funktionierte, weil das Angular CLI &lt;code>HeroesComponent&lt;/code> im &lt;code>AppModule&lt;/code> deklarierte, als es diese Komponente generierte.&lt;/p>
-&lt;p>Öffnen Sie &lt;code>src/app/app.module.ts&lt;/code> und finden Sie &lt;code>HeroesComponent&lt;/code>, das ganz oben importiert wurde.&lt;/p>
+&lt;p>Öffne &lt;code>src/app/app.module.ts&lt;/code> und finde &lt;code>HeroesComponent&lt;/code>, das ganz oben importiert wurde.&lt;/p>
 &lt;p>&lt;code>src/app/app.module.ts&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -11941,7 +12072,7 @@ Warum hat die Anwendung dann funktioniert?&lt;/p>
 ],
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Beachten Sie, dass &lt;code>AppModule&lt;/code> beide Anwendungskomponenten, &lt;code>AppComponent&lt;/code> und &lt;code>HeroesComponent&lt;/code>, deklariert.&lt;/p>
+&lt;/div>&lt;p>Beachte, dass &lt;code>AppModule&lt;/code> beide Anwendungskomponenten, &lt;code>AppComponent&lt;/code> und &lt;code>HeroesComponent&lt;/code>, deklariert.&lt;/p>
 &lt;h2 id="abschließende-überprüfung-des-codes">Abschließende Überprüfung des Codes&lt;/h2>
 &lt;p>Hier sind die auf dieser Seite besprochenen Codedateien.&lt;/p>
 &lt;ol>
@@ -12118,9 +12249,9 @@ Warum hat die Anwendung dann funktioniert?&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="zusammenfassung">Zusammenfassung&lt;/h2>
 &lt;ul>
-&lt;li>Sie haben die CLI verwendet, um eine zweite &lt;code>HeroesComponent&lt;/code> zu erstellen.&lt;/li>
-&lt;li>Sie haben die &lt;code>HeroesComponent&lt;/code> angezeigt, indem Sie sie der &lt;code>AppComponent&lt;/code>-Shell hinzugefügt haben.&lt;/li>
-&lt;li>Sie haben die &lt;code>UppercasePipe&lt;/code> angewendet, um den Namen zu formatieren.&lt;/li>
+&lt;li>Du hast die CLI verwendet, um eine zweite &lt;code>HeroesComponent&lt;/code> zu erstellen.&lt;/li>
+&lt;li>Du hast die &lt;code>HeroesComponent&lt;/code> angezeigt, indem du sie der &lt;code>AppComponent&lt;/code>-Shell hinzugefügt hast.&lt;/li>
+&lt;li>Du hast die &lt;code>UppercasePipe&lt;/code> angewendet, um den Namen zu formatieren.&lt;/li>
 &lt;li>Du hast die Zwei-Wege-Datenbindung mit der &lt;code>ngModel&lt;/code>-Direktive benutzt.&lt;/li>
 &lt;li>Du hast etwas über das &lt;code>AppModule&lt;/code> gelernt.&lt;/li>
 &lt;li>Du hast das &lt;code>FormsModule&lt;/code> in das &lt;code>AppModule&lt;/code> importiert, so dass Angular die &lt;code>ngModel&lt;/code>-Direktive erkennen und anwenden konnte.&lt;/li>
@@ -12254,12 +12385,12 @@ Die Selektoren bestimmen, für welche HTML-Elemente die CSS-Regeln gelten (&amp;
 &lt;/div>&lt;p>Viele weitere interessante Pseudoklassen findest du hier beschrieben: &lt;a href="https://web.dev/learn/css/pseudo-classes/">https://web.dev/learn/css/pseudo-classes/&lt;/a>&lt;/p></description></item><item><title>Docs: Auswahlliste</title><link>/docs/web/angular/05_3_selection_list/</link><pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/05_3_selection_list/</guid><description>
 &lt;h1 id="eine-auswahlliste-anzeigen">Eine Auswahlliste anzeigen&lt;/h1>
 &lt;blockquote>
-&lt;p>Die Beispielanwendung, die auf dieser Seite beschrieben wird, finden Sie unter &lt;a href="hhttps://angular.io/generated/live-examples/toh-pt2/stackblitz.html">dieser Seite&lt;/a>.&lt;/p>
+&lt;p>Die Beispielanwendung, die auf dieser Seite beschrieben wird, findest du unter &lt;a href="https://angular.io/generated/live-examples/toh-pt2/stackblitz.html">dieser Seite&lt;/a>.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="mock-heroes-erstellen">Mock Heroes erstellen&lt;/h2>
-&lt;p>Sie benötigen einige Helden, die angezeigt werden sollen.&lt;/p>
-&lt;p>Letztendlich werden Sie diese von einem entfernten Datenserver erhalten.
-Für den Moment werden Sie einige &lt;em>mock heroes&lt;/em> erstellen und so tun, als kämen sie vom Server.&lt;/p>
+&lt;p>Du benötigst einige Helden, die angezeigt werden sollen.&lt;/p>
+&lt;p>Letztendlich wirst du diese von einem entfernten Datenserver erhalten.
+Für den Moment wirst du einige &lt;em>mock heroes&lt;/em> erstellen und so tun, als kämen sie vom Server.&lt;/p>
 &lt;p>Erstelle eine Datei namens &lt;code>mock-heroes.ts&lt;/code> im Ordner &lt;code>src/app/&lt;/code>.
 Definiere eine &lt;code>HEROES&lt;/code> Konstante als Array von zehn Helden und exportiere sie.
 Die Datei sollte wie folgt aussehen.&lt;/p>
@@ -12298,7 +12429,7 @@ Die Datei sollte wie folgt aussehen.&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="anzeige-der-helden">Anzeige der Helden&lt;/h2>
-&lt;p>Öffnen Sie die Klassendatei &lt;code>HeroesComponent&lt;/code> und importieren Sie das Mock &lt;code>HEROES&lt;/code>.&lt;/p>
+&lt;p>Öffne die Klassendatei &lt;code>HeroesComponent&lt;/code> und importiere das Mock &lt;code>HEROES&lt;/code>.&lt;/p>
 &lt;p>&lt;code>src/app/heroes/heroes.component.ts (import HEROES)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -12333,7 +12464,7 @@ Die Datei sollte wie folgt aussehen.&lt;/p>
 ];
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Definieren Sie in derselben Datei (Klasse &lt;code>HeroesComponent&lt;/code>) eine Komponenteneigenschaft namens &lt;code>heroes&lt;/code>, um das Array &lt;code>HEROES&lt;/code> zur Bindung freizugeben.&lt;/p>
+&lt;/div>&lt;p>Definiere in derselben Datei (Klasse &lt;code>HeroesComponent&lt;/code>) eine Komponenteneigenschaft namens &lt;code>heroes&lt;/code>, um das Array &lt;code>HEROES&lt;/code> zur Bindung freizugeben.&lt;/p>
 &lt;p>&lt;code>src/app/heroes/heroes.component.ts&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -12349,12 +12480,12 @@ Die Datei sollte wie folgt aussehen.&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="auflisten-von-helden-mit-ngforhttpsangularioapicommonngforof">Auflisten von Helden mit &lt;a href="https://angular.io/api/common/NgForOf">*ngFor&lt;/a>&lt;/h3>
-&lt;p>Öffnen Sie die Templatedatei &lt;code>HeroesComponent&lt;/code> und nehmen Sie die folgenden Änderungen vor:&lt;/p>
+&lt;p>Öffne die Templatedatei &lt;code>HeroesComponent&lt;/code> und nimm die folgenden Änderungen vor:&lt;/p>
 &lt;ul>
-&lt;li>Fügen Sie ein &lt;code>&amp;lt;h2&amp;gt;&lt;/code> am Anfang ein,&lt;/li>
-&lt;li>Darunter fügen Sie eine ungeordnete HTML-Liste (&lt;code>&amp;lt;ul&amp;gt;&lt;/code>) ein.&lt;/li>
-&lt;li>Fügen Sie ein &lt;code>&amp;lt;li&amp;gt;&lt;/code> innerhalb des &lt;code>&amp;lt;ul&amp;gt;&lt;/code> ein, das die Eigenschaften eines &lt;code>Helden&lt;/code> anzeigt.&lt;/li>
-&lt;li>Streuen Sie einige CSS-Klassen für die Gestaltung ein (Sie werden die CSS-Stile in Kürze hinzufügen).&lt;/li>
+&lt;li>Füge ein &lt;code>&amp;lt;h2&amp;gt;&lt;/code> am Anfang ein,&lt;/li>
+&lt;li>Darunter fügst du eine ungeordnete HTML-Liste (&lt;code>&amp;lt;ul&amp;gt;&lt;/code>) ein.&lt;/li>
+&lt;li>Füge ein &lt;code>&amp;lt;li&amp;gt;&lt;/code> innerhalb des &lt;code>&amp;lt;ul&amp;gt;&lt;/code> ein, das die Eigenschaften eines &lt;code>Helden&lt;/code> anzeigt.&lt;/li>
+&lt;li>Streue einige CSS-Klassen für die Gestaltung ein (Du wirst die CSS-Stile in Kürze hinzufügen).&lt;/li>
 &lt;/ul>
 &lt;p>Das Ganze soll so aussehen:&lt;/p>
 &lt;p>&lt;code>heroes.component.html (heroes template)&lt;/code>&lt;/p>
@@ -12376,7 +12507,7 @@ Die Datei sollte wie folgt aussehen.&lt;/p>
 &amp;lt;/&lt;span style="color:#f92672">ul&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Es wird ein Fehler angezeigt, da die Eigenschaft &amp;ldquo;hero&amp;rdquo; nicht existiert. Um Zugriff auf jeden einzelnen Helden zu haben und sie alle aufzulisten, fügen Sie ein &lt;code>*ngFor&lt;/code> zum &lt;code>&amp;lt;li&amp;gt;&lt;/code> hinzu, um die Liste der Helden zu durchlaufen:&lt;/p>
+&lt;/div>&lt;p>Es wird ein Fehler angezeigt, da die Eigenschaft &amp;ldquo;hero&amp;rdquo; nicht existiert. Um Zugriff auf jeden einzelnen Helden zu haben und sie alle aufzulisten, füge ein &lt;code>*ngFor&lt;/code> zum &lt;code>&amp;lt;li&amp;gt;&lt;/code> hinzu, um die Liste der Helden zu durchlaufen:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -12393,19 +12524,19 @@ Sie wiederholt das Host-Element für jedes Element in einer Liste.&lt;/p>
 &lt;li>&lt;code>heroes&lt;/code> enthält die Mock-Helden-Liste der Klasse &lt;code>HeroesComponent&lt;/code>, die Mock-Helden-Liste.&lt;/li>
 &lt;li>&lt;code>hero&lt;/code> enthält das aktuelle Heldenobjekt für jede Iteration durch die Liste.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/images/hint.png" alt="asset"> Vergessen Sie nicht das Sternchen (*) vor &lt;code>ngFor&lt;/code>. Es ist ein wichtiger Teil der Syntax.&lt;/p>
+&lt;p>&lt;img src="/images/hint.png" alt="asset"> Vergiss nicht das Sternchen (*) vor &lt;code>ngFor&lt;/code>. Es ist ein wichtiger Teil der Syntax.&lt;/p>
 &lt;p>Nachdem der Browser aktualisiert wurde, erscheint die Liste der Helden.&lt;/p>
 &lt;h3 id="a-idstylesastil-der-helden">&lt;a id="styles">&lt;/a>Stil der Helden&lt;/h3>
 &lt;p>Die Heldenliste sollte ansprechend sein und visuell reagieren, wenn der Benutzer
 mit dem Mauszeiger einen Helden aus der Liste auswählen.&lt;/p>
-&lt;p>Im &lt;a href="https://angular.io/tutorial/toh-pt0#app-wide-styles">ersten Tutorial&lt;/a> haben Sie die grundlegenden Stile für die gesamte Anwendung in &lt;code>styles.css&lt;/code> festgelegt.
+&lt;p>Im &lt;a href="https://angular.io/tutorial/toh-pt0#app-wide-styles">ersten Tutorial&lt;/a> hast du die grundlegenden Stile für die gesamte Anwendung in &lt;code>styles.css&lt;/code> festgelegt.
 Dieses Stylesheet enthielt keine Stile für diese Liste von Helden.&lt;/p>
-&lt;p>Sie könnten weitere Stile zu &lt;code>styles.css&lt;/code> hinzufügen und das Stylesheet mit dem Hinzufügen von Komponenten weiter ausbauen.&lt;/p>
-&lt;p>Vielleicht ziehen Sie es stattdessen vor, private Stile für eine bestimmte Komponente zu definieren und alles, was eine Komponente braucht, zu behalten— den Code, das HTML,
+&lt;p>Du kannst weitere Stile zu &lt;code>styles.css&lt;/code> hinzufügen und das Stylesheet mit dem Hinzufügen von Komponenten weiter ausbauen.&lt;/p>
+&lt;p>Vielleicht ziehst du es stattdessen vor, private Stile für eine bestimmte Komponente zu definieren und alles, was eine Komponente braucht, zu behalten— den Code, das HTML,
 und das CSS —zusammen an einem Ort.&lt;/p>
 &lt;p>Dieser Ansatz macht es einfacher, die Komponente an anderer Stelle wiederzuverwenden
 und das beabsichtigte Erscheinungsbild der Komponente zu erhalten, selbst wenn die globalen Stile unterschiedlich sind.&lt;/p>
-&lt;p>Sie definieren private Stile entweder inline im Array &lt;code>@Component.styles&lt;/code> oder
+&lt;p>Du definierst private Stile entweder inline im Array &lt;code>@Component.styles&lt;/code> oder
 als Stylesheet-Datei(en), die im &lt;code>@Component.styleUrls&lt;/code> Array identifiziert werden.&lt;/p>
 &lt;p>Als die CLI die &lt;code>HeroesComponent&lt;/code> generierte, erstellte sie ein leeres &lt;code>heroes.component.css&lt;/code> Stylesheet für die &lt;code>HeroesComponent&lt;/code>
 und verwies in &lt;code>@Component.styleUrls&lt;/code> wie folgt darauf.&lt;/p>
@@ -12426,17 +12557,17 @@ und verwies in &lt;code>@Component.styleUrls&lt;/code> wie folgt darauf.&lt;/p>
 })
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Öffnen Sie die Datei &lt;code>heroes.component.css&lt;/code> und fügen Sie die privaten CSS-Stile für die &lt;code>HeroesComponent&lt;/code> ein.
-Sie finden sie in der &lt;a href="#final-code-review">finalen Code-Übersicht&lt;/a> am Ende dieser Anleitung.&lt;/p>
+&lt;/div>&lt;p>Öffne die Datei &lt;code>heroes.component.css&lt;/code> und füge die privaten CSS-Stile für die &lt;code>HeroesComponent&lt;/code> ein.
+Du findest sie in der &lt;a href="#final-code-review">finalen Code-Übersicht&lt;/a> am Ende dieser Anleitung.&lt;/p>
 &lt;p>&lt;img src="/images/hint.png" alt="asset">
 Stile und Stylesheets, die in &lt;code>@Component&lt;/code>-Metadaten identifiziert werden, sind auf diese spezifische Komponente beschränkt.
 Die &lt;code>heroes.component.css&lt;/code>-Stile gelten nur für die &lt;code>HeroesComponent&lt;/code> und haben keine Auswirkungen auf das äußere HTML oder das HTML in anderen Komponenten.&lt;/p>
 &lt;h2 id="anzeigen-von-details">Anzeigen von Details&lt;/h2>
 &lt;p>Wenn der Benutzer auf einen Helden in der Liste klickt, sollte die Komponente die Details des ausgewählten Helden unten auf der Seite anzeigen.&lt;/p>
-&lt;p>In diesem Abschnitt werden Sie auf das Klick-Ereignis für das Heldenelement warten
+&lt;p>In diesem Abschnitt wirst du auf das Klick-Ereignis für das Heldenelement warten
 und aktualisieren die Heldendetails.&lt;/p>
 &lt;h3 id="hinzufügen-einer-klick-ereignisbindung">Hinzufügen einer Klick-Ereignisbindung&lt;/h3>
-&lt;p>Fügen Sie eine Klick-Ereignis-Bindung zu &lt;code>&amp;lt;li&amp;gt;&lt;/code> wie folgt hinzu:&lt;/p>
+&lt;p>Füge eine Klick-Ereignis-Bindung zu &lt;code>&amp;lt;li&amp;gt;&lt;/code> wie folgt hinzu:&lt;/p>
 &lt;p>&lt;code>heroes.component.html (template excerpt)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -12449,12 +12580,12 @@ und aktualisieren die Heldendetails.&lt;/p>
 &lt;/div>&lt;p>Dies ist ein Beispiel für die &lt;a href="https://angular.io/guide/event-binding">Ereignisbindung&lt;/a>-Syntax von Angular.&lt;/p>
 &lt;p>Die Klammern um &lt;code>click&lt;/code> sagen Angular, dass es auf das &lt;code>click&lt;/code>-Ereignis des &lt;code>&amp;lt;li&amp;gt;&lt;/code>-Elements warten soll.
 Wenn der Benutzer auf das Element &lt;code>&amp;lt;li&amp;gt;&lt;/code> klickt, führt Angular den Ausdruck &lt;code>onSelect(hero)&lt;/code> aus.&lt;/p>
-&lt;p>Im nächsten Abschnitt definieren Sie eine &lt;code>onSelect()&lt;/code> Methode in &lt;code>HeroesComponent&lt;/code> um
+&lt;p>Im nächsten Abschnitt definierst du eine &lt;code>onSelect()&lt;/code> Methode in &lt;code>HeroesComponent&lt;/code> um
 um den Helden anzuzeigen, der in der &lt;code>*ngFor&lt;/code> Expression definiert wurde.&lt;/p>
-&lt;h3 id="fügen-sie-den-click-event-handler-hinzu">Fügen Sie den Click-Event-Handler hinzu&lt;/h3>
-&lt;p>Benennen Sie die Eigenschaft &lt;code>hero&lt;/code> der Komponente in &lt;code>selectedHero&lt;/code> um, aber weisen Sie sie nicht zu.
+&lt;h3 id="füge-den-click-event-handler-hinzu">Füge den Click-Event-Handler hinzu&lt;/h3>
+&lt;p>Benenne die Eigenschaft &lt;code>hero&lt;/code> der Komponente in &lt;code>selectedHero&lt;/code> um, aber weise sie nicht zu.
 Es gibt keinen &lt;em>selected hero&lt;/em>, wenn die Anwendung startet.&lt;/p>
-&lt;p>Fügen Sie die folgende Methode &lt;code>onSelect()&lt;/code> hinzu, die den angeklickten Helden aus dem Template
+&lt;p>Füge die folgende Methode &lt;code>onSelect()&lt;/code> hinzu, die den angeklickten Helden aus dem Template
 dem &lt;code>selectedHero&lt;/code> der Komponente zuweist.&lt;/p>
 &lt;p>&lt;code>src/app/heroes/heroes.component.ts (onSelect)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -12472,9 +12603,9 @@ dem &lt;code>selectedHero&lt;/code> der Komponente zuweist.&lt;/p>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="hinzufügen-eines-detailbereichs">Hinzufügen eines Detailbereichs&lt;/h3>
-&lt;p>Derzeit haben Sie eine Liste in dem Komponententemplate. Um auf einen Helden in der Liste zu klicken
-zu klicken und Details über diesen Helden anzuzeigen, benötigen Sie einen Abschnitt für die Details, der im
-Template. Fügen Sie folgendes zu &lt;code>heroes.component.html&lt;/code> unter dem Listenabschnitt hinzu:&lt;/p>
+&lt;p>Derzeit hast du eine Liste in dem Komponententemplate. Um auf einen Helden in der Liste zu klicken
+und Details über diesen Helden anzuzeigen, benötigst du einen Abschnitt für die Details, der im
+Template zu finden ist. Füge folgendes zu &lt;code>heroes.component.html&lt;/code> unter dem Listenabschnitt hinzu:&lt;/p>
 &lt;p>&lt;code>heroes.component.html (selected hero details)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -12495,7 +12626,7 @@ Template. Fügen Sie folgendes zu &lt;code>heroes.component.html&lt;/code> unter
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Nach dem Aktualisieren des Browsers ist die Anwendung fehlerhaft.&lt;/p>
-&lt;p>Öffnen Sie die Entwicklerwerkzeuge des Browsers und suchen Sie in der Konsole nach einer Fehlermeldung wie dieser:&lt;/p>
+&lt;p>Öffne die Entwicklerwerkzeuge des Browsers und suche in der Konsole nach einer Fehlermeldung wie dieser:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -12509,9 +12640,9 @@ Template. Fügen Sie folgendes zu &lt;code>heroes.component.html&lt;/code> unter
 &lt;p>Bindungsausdrücke im Template, die sich auf Eigenschaften von &lt;code>selectedHero&lt;/code> beziehen—Ausdrücke wie &lt;code>{{selectedHero.name}}&lt;/code>—&lt;em>müssen fehlschlagen&lt;/em>, weil es keinen ausgewählten Helden gibt.&lt;/p>
 &lt;h4 id="die-lösung---leere-details-mit-_ngif_-ausblenden">Die Lösung - leere Details mit &lt;em>*ngIf&lt;/em> ausblenden&lt;/h4>
 &lt;p>Die Komponente sollte die ausgewählten Heldendetails nur anzeigen, wenn der &lt;code>selectedHero&lt;/code> existiert.&lt;/p>
-&lt;p>Wickeln Sie das HTML der Heldendetails in ein &lt;code>&amp;lt;div&amp;gt;&lt;/code>.
-Fügen Sie die &lt;code>*ngIf&lt;/code>-Direktive von Angular in das &lt;code>&amp;lt;div&amp;gt;&lt;/code> ein und setzen Sie es auf &lt;code>selectedHero&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="/images/hint.png" alt="asset"> Vergessen Sie nicht das Sternchen (*) vor &lt;code>ngIf&lt;/code>. Das ist ein wichtiger Teil der Syntax.&lt;/p>
+&lt;p>Wickle das HTML der Heldendetails in ein &lt;code>&amp;lt;div&amp;gt;&lt;/code> ein.
+Füge die &lt;code>*ngIf&lt;/code>-Direktive von Angular in das &lt;code>&amp;lt;div&amp;gt;&lt;/code> ein und setze es auf &lt;code>selectedHero&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="/images/hint.png" alt="asset"> Vergiss nicht, das Sternchen (*) vor &lt;code>ngIf&lt;/code> zu setzen. Das ist ein wichtiger Teil der Syntax.&lt;/p>
 &lt;p>&lt;code>src/app/heroes/heroes.component.html (*ngIf)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -12539,7 +12670,7 @@ Fügen Sie die &lt;code>*ngIf&lt;/code>-Direktive von Angular in das &lt;code>&a
 &lt;/div>
 &lt;/div>&lt;p>Nach dem Aktualisieren des Browsers wird die Liste der Namen wieder angezeigt.
 Der Detailbereich ist leer.
-Klicken Sie auf einen Helden in der Liste der Helden und seine Details erscheinen.
+Klicke auf einen Helden in der Liste der Helden und seine Details erscheinen.
 Die Anwendung scheint wieder zu funktionieren.
 Die Helden werden in einer Liste angezeigt und die Details zu dem angeklickten Helden erscheinen unten auf der Seite.&lt;/p>
 &lt;h4 id="warum-es-funktioniert">Warum es funktioniert&lt;/h4>
@@ -12547,12 +12678,12 @@ Die Helden werden in einer Liste angezeigt und die Details zu dem angeklickten H
 &lt;p>Wenn der Benutzer einen Helden auswählt, hat &lt;code>selectedHero&lt;/code> einen Wert und
 ngIf&amp;quot; setzt das Heldendetail in das DOM.&lt;/p>
 &lt;h3 id="den-ausgewählten-helden-gestalten">Den ausgewählten Helden gestalten&lt;/h3>
-&lt;p>Um den ausgewählten Helden zu identifizieren, können Sie die CSS-Klasse &lt;code>.selected&lt;/code> in den &lt;a href="#styles">Stilen, die Sie zuvor hinzugefügt haben&lt;/a> verwenden.
-Um die Klasse &lt;code>.selected&lt;/code> auf das &lt;code>&amp;lt;li&amp;gt;&lt;/code> anzuwenden, wenn der Benutzer darauf klickt, verwenden Sie die Klassenbindung.&lt;/p>
+&lt;p>Um den ausgewählten Helden zu identifizieren, kannst die CSS-Klasse &lt;code>.selected&lt;/code> in den &lt;a href="#styles">Stilen, die du zuvor hinzugefügt hast&lt;/a> verwenden.
+Um die Klasse &lt;code>.selected&lt;/code> auf das &lt;code>&amp;lt;li&amp;gt;&lt;/code> anzuwenden (wenn der Benutzer darauf klickt), verwende die Klassenbindung.&lt;/p>
 &lt;p>&lt;img src="/images/angular/heroes-list-selected.png" alt="Ausgewählter Held mit dunklem Hintergrund und hellem Text, der ihn von nicht ausgewählten Listenelementen unterscheidet">&lt;/p>
 &lt;p>Angulars &lt;a href="https://angular.io/guide/attribute-binding#class-binding">class-binding&lt;/a> kann eine CSS-Klasse bedingt hinzufügen und entfernen.
-Fügen Sie &lt;code>[class.some-css-class]=&amp;quot;some-condition&amp;quot;&lt;/code> zu dem Element hinzu, das Sie gestalten möchten.&lt;/p>
-&lt;p>Fügen Sie die folgende &lt;code>[class.selected]&lt;/code> Bindung zum &lt;code>&amp;lt;li&amp;gt;&lt;/code> im &lt;code>HeroesComponent&lt;/code> Template hinzu:&lt;/p>
+Füge &lt;code>[class.some-css-class]=&amp;quot;some-condition&amp;quot;&lt;/code> zu dem Element hinzu, das du gestalten möchtest.&lt;/p>
+&lt;p>Füge die folgende &lt;code>[class.selected]&lt;/code> Bindung zum &lt;code>&amp;lt;li&amp;gt;&lt;/code> im &lt;code>HeroesComponent&lt;/code> Template hinzu:&lt;/p>
 &lt;p>&lt;code>heroes.component.html (toggle the 'selected' CSS class)&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -12830,9 +12961,9 @@ Fügen Sie &lt;code>[class.some-css-class]=&amp;quot;some-condition&amp;quot;&lt
 &lt;ul>
 &lt;li>Die Anwendung &amp;ldquo;Tour of Heroes&amp;rdquo; zeigt eine Liste von Helden mit einer Detailansicht an.&lt;/li>
 &lt;li>Der Benutzer kann einen Helden auswählen und dessen Details sehen.&lt;/li>
-&lt;li>Sie haben &lt;code>*ngFor&lt;/code> verwendet, um eine Liste anzuzeigen.&lt;/li>
-&lt;li>Sie haben &lt;code>*ngIf&lt;/code> verwendet, um einen HTML-Block bedingt ein- oder auszuschließen.&lt;/li>
-&lt;li>Sie können eine CSS-Stilklasse mit einer &lt;code>class&lt;/code>-Bindung umschalten.&lt;/li>
+&lt;li>Du hast &lt;code>*ngFor&lt;/code> verwendet, um eine Liste anzuzeigen.&lt;/li>
+&lt;li>Du hast &lt;code>*ngIf&lt;/code> verwendet, um einen HTML-Block bedingt ein- oder auszuschließen.&lt;/li>
+&lt;li>Du kannst eine CSS-Stilklasse mit einer &lt;code>class&lt;/code>-Bindung umschalten.&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Schriftarten</title><link>/docs/web/html_css/13_css_fonts/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/13_css_fonts/</guid><description>
 &lt;h2 id="arten-von-schriftarten">Arten von Schriftarten&lt;/h2>
 &lt;p>Browser unterstützen mindestens diese 5 Arten von Schriftarten:&lt;/p>
