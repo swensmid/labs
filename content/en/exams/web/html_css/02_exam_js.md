@@ -8,7 +8,7 @@ description: >
     Erweitere dein eigenes Zeiterfassungs-Dashboard - mit JavaScript.
 ---
 
-# Exam 1 - Zeiterfassungs-Dashboard mit JavaScript ergänzen
+# Exam - Zeiterfassungs-Dashboard mit JavaScript ergänzen
 ![task1](/images/task.png) - Einzelarbeit
 
 Bei diesem Exam geht es darum, dass du das Dashboard, welches du im [HTML-CSS-Exam](../01_exam_html_css_rtm) geschrieben hast, mit JavaScript-Logik ergänzt.
