@@ -1,8 +1,8 @@
 ---
 title: "Web Exams"
-linkTitle: "Java"
+linkTitle: "Web Exams"
 type: docs
-weight: 1
+weight: 2
 date: 2022-02-16
 description: >
   Exams zu Web-Technologien
