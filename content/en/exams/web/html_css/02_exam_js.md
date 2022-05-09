@@ -68,6 +68,14 @@ Auf der rechten Seite hast du eine Liste mit Personen für einen Chat. Nun geht 
     Zeige die Personen dann zeitlich versetzt an:
     Füge zuerst die erste Person ein, warte dann ca. 0.3 Sekunden, zeige dann die zweite Person an usw.
 
+## Suchfunktion
+Oben rechts hast du eine "Suche".
+
+    Implementiere eine Suchfunktion, die nur noch diejenigen Chat-Kontakte anzeigt,
+    wenn der Suchbegriff in deren Namen vorkommt.
+
+    Implementiere die Suche so, dass die Liste beim Tippen aktualisiert wird.
+
 
 ## Refresh-Button
 Oben rechts gibt es einen Refresh-Button.
