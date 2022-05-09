@@ -4281,6 +4281,12 @@ https://raw.githubusercontent.com/it-ninjas/labs/master/static/files/json/chat.j
 Zeige die Personen dann zeitlich versetzt an:
 Füge zuerst die erste Person ein, warte dann ca. 0.3 Sekunden, zeige dann die zweite Person an usw.
 &lt;/code>&lt;/pre>
+&lt;h2 id="suchfunktion">Suchfunktion&lt;/h2>
+&lt;p>Oben rechts hast du eine &amp;ldquo;Suche&amp;rdquo;.&lt;/p>
+&lt;pre>&lt;code>Implementiere eine Suchfunktion, die nur noch diejenigen Chat-Kontakte anzeigt,
+wenn der Suchbegriff in deren Namen vorkommt.
+Implementiere die Suche so, dass die Liste beim Tippen aktualisiert wird.
+&lt;/code>&lt;/pre>
 &lt;h2 id="refresh-button">Refresh-Button&lt;/h2>
 &lt;p>Oben rechts gibt es einen Refresh-Button.&lt;/p>
 &lt;pre>&lt;code>Verändere dein HTML und JavaScript so, dass die Daten neu geladen werden, wenn der User auf diesen Refresh-Button klickt.
