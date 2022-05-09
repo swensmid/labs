@@ -6232,7 +6232,88 @@ sind die auf dieser Seite besprochenen Codedateien.&lt;/p>
 &lt;/div>&lt;p>Im Fall eines Fehlers wird der Fehler auf der Konsole des Browsers ausgegeben, und manuell ein &lt;code>Observable&lt;/code> mit einem leeren Array als Antwort für den client konstruiert.&lt;/p>
 &lt;p>&lt;strong>HTPP Put, Post und Delete requests&lt;/strong>&lt;/p>
 &lt;p>Analog zu HTTP Get requests kann man auch Put, Post und Delete requests verwenden, abhängig von der REST-API des Servers.&lt;/p>
-&lt;p>WICHTIG: Damit ein HTTP request überhaupt ausgeführt wird, muss die Funktion &lt;code>subscribe()&lt;/code> des resultierenden &lt;code>Observable&lt;/code>-Objekts aufgerufen werden, auch wenn man keine Callback-Funktion registriert.&lt;/p></description></item><item><title>Docs:</title><link>/docs/web/angular/04_5_routing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/web/angular/04_5_routing/</guid><description>
+&lt;p>WICHTIG: Damit ein HTTP request überhaupt ausgeführt wird, muss die Funktion &lt;code>subscribe()&lt;/code> des resultierenden &lt;code>Observable&lt;/code>-Objekts aufgerufen werden, auch wenn man keine Callback-Funktion registriert.&lt;/p></description></item><item><title>Docs: Json Web Token Authorisation (JWT)</title><link>/docs/web/angular/06_1_einfuehrung_jwt/</link><pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/06_1_einfuehrung_jwt/</guid><description>
+&lt;h2 id="sichere-kommunikation-mit-json-web-token">Sichere Kommunikation mit JSON Web Token&lt;/h2>
+&lt;p>Ein JWT kann von jedem dekodiert und gelesen werden. Tatsächlich ist das für den Client und das Debuggen nützlich. Die Payload wird nicht verschlüsselt (für Verschlüsselung s. JWE), aber gültige Signaturen können nur erstellt werden, wenn man ein Geheimnis kennt. Jedes Mal, wenn ein Token empfangen wird, muss eine Integritätsprüfung die Signatur bestätigen. So wird sichergestellt, dass der Token nicht manipuliert wurde. Danach wird sein Inhalt als vertrauenswürdig eingestuft.&lt;/p>
+&lt;p>Die Gültigkeitsdauer des Token kann begrenzt werden, indem zeitbezogene Claims wie iat (&amp;ldquo;Issued At&amp;rdquo;), nbf (&amp;ldquo;Not Before&amp;rdquo;) und exp (&amp;ldquo;Expiration Time&amp;rdquo;) einbezogen werden. Ein abgelaufener JWT ist zwar weiterhin gültig, da es jedoch nicht möglich ist, Einträge zu manipulieren, ohne die Signatur zu zerstören, wird bei der serverseitigen Integritätsprüfung das Ablaufdatum des Tokens gelesen und der Zugriff verweigert.&lt;/p>
+&lt;p>Ein Nachteil ist das sehr komplizierte Widerrufen eines Tokens. Eine gängige Lösung ist das &lt;strong>Blacklisting&lt;/strong>. Außerdem helfen kurze Gültigkeitsdauern.&lt;/p>
+&lt;p>&lt;strong>Beispiel für die Erstellung eines JSON Web Token&lt;/strong>&lt;/p>
+&lt;p>Ein typisches JWT sieht folgendermassen aus (Header, Payload, Signature):&lt;/p>
+&lt;p>&lt;strong>xxxxx.yyyyyy.zzzzzz&lt;/strong>&lt;/p>
+&lt;h3 id="header">Header&lt;/h3>
+&lt;p>Der Header ist typischerweise in zwei Parts aufgeteilt: der erste Part ist der benötigte Algorythmus und der zweite der Typ des Tokens. Unten ein Beispiel dazu:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;alg&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;HS256&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;typ&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;JWT&amp;#34;&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="payload">Payload&lt;/h3>
+&lt;p>Der zweite Teil des Tokens der Payload, welche die erstellten Forderungen enthält. Forderungen sind Aussagen über eine Entität (normalerweise den Benutzer) und zusätzliche Daten. Es gibt drei Arten von Forderungen : registrierte, öffentliche und private.&lt;/p>
+&lt;ol>
+&lt;li>Registrierte: Reihe vordefinierter Forderungen die nicht obligatorisch aber empfohlen sind; iss(Emittent), exp(Ablaufzeit), sub(Betreff) und aud(Publikum)&lt;/li>
+&lt;li>Öffentliche: Können nach Belieben definiert werden. Um Kollisionen zu vermeiden, sollten sie jedoch in der IANA JSON Web Token Registry definiert sein.&lt;/li>
+&lt;li>Private: Hierbei handelt es sich um benutzerdefinierte Forderungen, die erstellt wurden, um Informationen zwischen Parteien auszutauschen, die sich auf deren Verwendung einigen und weder registrierte noch öffentliche Forderungen sind&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
+&lt;span style="color:#f92672">&amp;#34;sub&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;1234567890&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;John Doe&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;admin&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="signatur">Signatur&lt;/h3>
+&lt;p>Um den Signaturteil zu erstellen, muss man den codierten Header, den codierten Payload, ein Secret und den im Header angegebenen Algorithmus verwenden und diesen signieren.
+Wenn man beispielsweise den HMAC SHA256-Algorithmus verwenden möchte, wird die Signatur folgendermaßen erstellt:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">&lt;span style="color:#960050;background-color:#1e0010">HMACSHA&lt;/span>&lt;span style="color:#ae81ff">256&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">(&lt;/span>
+&lt;span style="color:#960050;background-color:#1e0010">base&lt;/span>&lt;span style="color:#ae81ff">64&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">UrlEncode(header)&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">+&lt;/span>
+&lt;span style="color:#960050;background-color:#1e0010">base&lt;/span>&lt;span style="color:#ae81ff">64&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">UrlEncode(payload),&lt;/span>
+&lt;span style="color:#960050;background-color:#1e0010">secret)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Die Signatur wird verwendet, um zu überprüfen, ob die Nachricht unterwegs nicht geändert wurde. Bei Token, die mit einem privaten Schlüssel signiert wurden, kann auch überprüft werden, ob der Absender des JWT derjenige ist, für den er sich ausgibt.&lt;/p>
+&lt;h2 id="alles-zusammenführen">Alles zusammenführen&lt;/h2>
+&lt;p>Die Ausgabe besteht aus drei durch Punkte getrennten Base64-URL-Zeichenfolgen, die in HTML- und HTTP-Umgebungen problemlos übergeben werden können und im Vergleich zu XML-basierten Standards wie SAML kompakter sind.&lt;/p>
+&lt;p>Das Folgende zeigt eine JWT, bei der der vorherige Header und die Nutzdaten codiert sind und die mit einem Geheimnis signiert ist.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&lt;/span>.
+&lt;span style="color:#a6e22e">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ&lt;/span>.
+&lt;span style="color:#a6e22e">SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="auftrag">Auftrag&lt;/h2>
+&lt;p>Du hast nun alle Theorie die du für das nächste Projekt brauchst. Teste nun &lt;a href="../../../../exams/web/angular/07_2_exam_angular">hier&lt;/a>, ob du alles verstanden hast.&lt;/p></description></item><item><title>Docs:</title><link>/docs/web/angular/04_5_routing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/web/angular/04_5_routing/</guid><description>
 &lt;h1 id="routing">Routing&lt;/h1>
 &lt;h2 id="routing-1">Routing&lt;/h2>
 &lt;p>Angular Router ist ein leistungsstarker JavaScript-Router, der vom Angular Core Team erstellt und gewartet wird. Der Router wird über das Paket &amp;ldquo;@angular/router&amp;rdquo; installiert.
