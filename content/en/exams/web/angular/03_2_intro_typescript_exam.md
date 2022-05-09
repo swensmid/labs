@@ -10,7 +10,7 @@ description: >
 
 # Übungen
 ## Übung 1
-![task1](/images/task.png) 30' - Einzelarbeit [Übung 1](/files/exams/angular/uebung1.html)
+![task1](/images/task.png) - Einzelarbeit [Übung 1](/files/exams/angular/uebung1.html)
     
     Erstelle eine Website, welche anhand von Observables eine Browsernotification ausgibt.
     Dazu soll sich auf der Website ein Button befinden, welcher das Event auslöst, um die Notification im Browser anzuzeigen.
@@ -48,14 +48,14 @@ Diese kannst du nun anhand von Node ausführen: <br>
 Falls alles funktioniert hat, gibt die Konsole `Hello World` aus.
 
 ### Übung
-![task2](/images/task.png) 20' - Einzelarbeit [Übung 2](/files/exams/angular/uebung2.ts)
+![task2](/images/task.png) - Einzelarbeit [Übung 2](/files/exams/angular/uebung2.ts)
     
     Lade die Datei im Titel herunter und fülle wo nötig Quellcode ein.
     Die Person soll sich folgendermassen vorstellen: "Hallo, mein Name ist  [Name]"
     Die Grundstruktur, sowie die letzten 2 Codezeilen dürfen nicht verändert werden.
 
 ## Übung 3
-![task3](/images/task.png) 20' - Einzelarbeit
+![task3](/images/task.png) - Einzelarbeit
 
     In dieser Übung wollen wir die Vererbung in einem Fallbeispiel anwenden.
     Wir erweitern in dieser Aufgabe den Quellcode von Übung 2.
@@ -74,7 +74,7 @@ In der Konsole sollte Dir nun folgendes angezeigt werden.<br>
 <br>
 
 ## Übung 4
-![task4](/images/task.png) 30' - Einzelarbeit [Übung 4](/files/exams/angular/uebung4.ts), https://nodejs.org/api/readline.html
+![task4](/images/task.png) - Einzelarbeit [Übung 4](/files/exams/angular/uebung4.ts), https://nodejs.org/api/readline.html
     
     In dieser Aufgabe wollen wir Benutzereingabe in der Konsole verarbeiten.
     Dazu verwenden wir in diesem Beispiel readline von NodeJS.
