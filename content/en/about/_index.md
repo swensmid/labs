@@ -2,7 +2,7 @@
 title: About
 menu:
   main:
-    weight: 4
+    weight: 5
 ---
 
 {{< blocks/cover title="IT Ninjas" image_anchor="bottom" height="min" >}}

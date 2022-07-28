@@ -1,16 +1,15 @@
 ---
-title: "Exam Java Basics - Zahlen-Array"
-linkTitle: "Java Basics"
+title: "Exam Java Grundlagen - Zahlen-Array"
+linkTitle: "Exam Java Grundlagen - Zahlen-Array"
 type: docs
 weight: 1
-date: 2021-11-02
 description: >
   Einfache Aufgaben mit einem Zahlen-Array
 ---
 
 ## Gegeben
 Gegeben ist das folgende Array mit Zahlen:
-```
+```java
 int[] numbers = {
     -8, 0, 13, 0, -8, 23, -22, 18, -6, -1,
     -21, -1, 2, 20, -24, 21, 25, -16, -10, -2,
