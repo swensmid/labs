@@ -1,3 +1,77 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – Java Labs</title><link>/labs/java/</link><description>Recent content in Java Labs on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 23 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/labs/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Labs: Lab JUnit-Tests</title><link>/labs/java/junit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/junit/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – Java Labs</title><link>/labs/java/</link><description>Recent content in Java Labs on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/labs/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Labs: Java Exercises - Grundlagen</title><link>/labs/java/java-grundlagen/01_basicexercises/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-grundlagen/01_basicexercises/</guid><description>
+&lt;h2 id="ziele">Ziele&lt;/h2>
+&lt;ul>
+&lt;li>Ich kann Text und Zahlen auf der Konsole ausgeben&lt;/li>
+&lt;li>Ich kann Text und Zahlen auf der Konsole eingeben und diese wieder ausgeben&lt;/li>
+&lt;li>Ich kann statische Methoden schreiben, die einfache Rechnungen durchführen&lt;/li>
+&lt;li>Ich kann statische Methoden mit Parametern und Return-Statements schreiben&lt;/li>
+&lt;li>Ich verstehe und kenne die verschiedenen Conditional Statements&lt;/li>
+&lt;li>Ich weiss, wann und wie ich welches Conditional Statement einsetzen sollte&lt;/li>
+&lt;li>Ich verstehe, was Loops sind und kenne die verschiedenen Loops&lt;/li>
+&lt;li>Ich weiss, wann und wie ich welchen Loop brauchen soll&lt;/li>
+&lt;li>Ich kann mit Hilfe von String-Methoden Strings bearbeiten&lt;/li>
+&lt;li>Ich kann Arrays initialisieren, auf deren Werte zugreifen und Werte in einem Array verändern&lt;/li>
+&lt;li>Ich kann mein Programm mit einem Debugger zur Laufzeit untersuchen&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-1---ausgaben-auf-die-kommandozeile">Aufgabe 1 - Ausgaben auf die Kommandozeile&lt;/h2>
+&lt;p>Gib die folgenden Daten auf die Kommandozeile aus:&lt;/p>
+&lt;ul>
+&lt;li>Hello World&lt;/li>
+&lt;li>Hello + &lt;Dein Name>&lt;/li>
+&lt;li>Zeichne ein Haus, nutze dazu beliebige Zeichen&lt;/li>
+&lt;li>Zeichne eine Schweizerfahne&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-2---eingaben-von-der-kommandozeile">Aufgabe 2 - Eingaben von der Kommandozeile&lt;/h2>
+&lt;p>Lies zuerst deinen Namen und danach dein Alter über einen Scanner von der Kommandozeile ein und gib dann die folgenden Daten auf die Kommandozeile aus&lt;/p>
+&lt;ul>
+&lt;li>Hello + &lt;Dein Name> + you are + &lt;Dein Alter> + years old&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-3---einfache-berechnungen">Aufgabe 3 - Einfache Berechnungen&lt;/h2>
+&lt;p>Berechne die folgenden Dinge:&lt;/p>
+&lt;ul>
+&lt;li>Fläche eines Rechtecks&lt;/li>
+&lt;li>Fläche eines Kreises&lt;/li>
+&lt;li>Umfang eines Rechtecks&lt;/li>
+&lt;li>Inhalt einer Pyramide mit quadratischen Grundriss und einer bestimmten Höhe&lt;/li>
+&lt;li>Berechne dein Alter am heutigen Tag in Jahren, Monaten und Tagen&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-4---methoden">Aufgabe 4 - Methoden&lt;/h2>
+&lt;p>Löse die folgende Aufgaben:&lt;/p>
+&lt;ul>
+&lt;li>Schreibe eine Methode, die zwei beliebigen Ganzzahlen als Parameter übernimmt und die Summe der beiden zurückliefert.&lt;/li>
+&lt;li>Schreibe eine eigene Methode, die als Parameter einen Namen übernimmt. Die Methode soll dann die folgenden Daten auf die Kommandozeile ausgeben &lt;code>Hello + &amp;lt;Parameter-Name&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-5---conditional-statements">Aufgabe 5 - Conditional Statements&lt;/h2>
+&lt;p>Löse die folgende Aufgaben:&lt;/p>
+&lt;ul>
+&lt;li>Schreibe eine Methode, die feststellen kann, ob eine Zahl (als Parameter) grösser, kleiner oder gleich 0 ist&lt;/li>
+&lt;li>Schreibe eine Methode, die dich begrüsst wenn dein Name als Parameter übergeben wird&lt;/li>
+&lt;li>Schreibe eine Methode, die feststellt, ob das übergebene Jahr ein Schaltjahr ist&lt;/li>
+&lt;li>Schreibe eine Methode, die überprüft, ob eine Zahl (als Parameter) gerade oder ungerade ist&lt;/li>
+&lt;li>Debugge mindestens zwei dieser Methoden mit einem Breakpoint&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-6---loops">Aufgabe 6 - Loops&lt;/h2>
+&lt;p>Löse die folgenden Aufgaben:&lt;/p>
+&lt;ul>
+&lt;li>Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die &lt;a href="https://www.studysmarter.de/schule/mathe/algebra/fakultaet/">Vielfache&lt;/a> von 3 zusammen mit der Vielfache von 5 dieser Zahl summiert.&lt;/li>
+&lt;li>Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die &lt;a href="https://www.studysmarter.de/schule/mathe/algebra/vielfaches/">Fakultät&lt;/a> dieser Zahl berechnet.&lt;/li>
+&lt;li>Schreibe einen Loop, welcher alle Zahlen von 1 bis 100 zusammenzählt, welche durch 8 teilbar sind
+&lt;ul>
+&lt;li>Erweitere deine Lösung mit einer Methode, welche eine Zahl entgegennimmt und dann die Zahlen zusammenzählt, welche durch diese Zahl teilbar sind&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-7---strings">Aufgabe 7 - Strings&lt;/h2>
+&lt;p>Löse die folgende Aufgaben:&lt;/p>
+&lt;ul>
+&lt;li>Schreibe eine Methode, welche als Parameter einen beliebigen String übernimmt und dessen Zeichenfolge umkehrt&lt;/li>
+&lt;li>Schreibe eine Methode, welche als Parameter einen beliebigen String übernimmt und die Anzahl Wörter darin ausgibt&lt;/li>
+&lt;/ul>
+&lt;h2 id="aufgabe-8---arrays">Aufgabe 8 - Arrays&lt;/h2>
+&lt;p>Löse die folgenden Aufgaben:&lt;/p>
+&lt;ul>
+&lt;li>Schreibe eine Methode, welche zwei Parametern übernimmt: einen beliebigen Zahlen-Array und eine beliebige Zahl. Die Methode gibt die Position der Zahl im Array aus.&lt;/li>
+&lt;li>Schreibe eine Methode, welche als Parameter einen beliebigen Zahlen-Array übernimmt und die grösste Zahl im Array zurückliefert.&lt;/li>
+&lt;/ul></description></item><item><title>Labs: Java Exercises - OOP</title><link>/labs/java/java-oop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-oop/</guid><description/></item><item><title>Labs: Lab JUnit-Tests</title><link>/labs/java/junit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/junit/</guid><description>
 &lt;h2 id="1-einleitung">1: Einleitung&lt;/h2>
 &lt;p>&lt;em>TODO: Beschreibung zu diesem Lab&lt;/em>&lt;/p></description></item></channel></rss>

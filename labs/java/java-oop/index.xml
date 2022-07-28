@@ -1,0 +1,131 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IT Ninjas – Java Exercises - OOP</title><link>/labs/java/java-oop/</link><description>Recent content in Java Exercises - OOP on IT Ninjas</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/labs/java/java-oop/index.xml" rel="self" type="application/rss+xml"/><item><title>Labs: Patienten</title><link>/labs/java/java-oop/01_patienten/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-oop/01_patienten/</guid><description>
+&lt;p>Schreibe eine Anwendung, in welcher Patienten einen medizinischen Check-Up durchgehen,
+um ihre Daten für das Spital zu erfassen.&lt;/p>
+&lt;p>Ein Patient&lt;/p>
+&lt;ul>
+&lt;li>hat einen Namen&lt;/li>
+&lt;/ul>
+&lt;p>Der Checkup nimmt&lt;/p>
+&lt;ul>
+&lt;li>die Grösse,&lt;/li>
+&lt;li>das Gewicht,&lt;/li>
+&lt;li>die Temperatur und&lt;/li>
+&lt;li>ob der Patient geimpft ist&lt;/li>
+&lt;/ul>
+&lt;h4 id="die-anwendung-soll">Die Anwendung soll&lt;/h4>
+&lt;ul>
+&lt;li>mit einem Patienten einen Check-Up durchführen&lt;/li>
+&lt;li>die Grösse eines Patienten zurückgeben&lt;/li>
+&lt;li>das Gewicht eines Patienten zurückgeben&lt;/li>
+&lt;li>die Temperatur eines Patienten zurückgeben&lt;/li>
+&lt;li>Überprüfen ob der Patient geimpft ist&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Es sollen keine Set Methoden für das Einfügen der Werte verwendet werden!&lt;/em>&lt;/p></description></item><item><title>Labs: Adressbuch</title><link>/labs/java/java-oop/02_adressbuch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-oop/02_adressbuch/</guid><description>
+&lt;p>Schreibe ein Programm, welches ein Adressbuch implementiert.
+Die Anwendung soll die einzelnen Kontakte der Personen in ein Adressbuch eintragen,
+wenn die entsprechende Methode aufgerufen wurde.&lt;/p>
+&lt;p>Eine Person besitzt&lt;/p>
+&lt;ul>
+&lt;li>einen Namen&lt;/li>
+&lt;li>eine Email-Adresse&lt;/li>
+&lt;li>eine Telefonnummer&lt;/li>
+&lt;/ul>
+&lt;p>Das Adressbuch soll&lt;/p>
+&lt;ul>
+&lt;li>die Anzahl der Kontakte im Adressbuch zurückliefern können&lt;/li>
+&lt;li>einen neuen Kontakt in das Adressbuch einfügen&lt;/li>
+&lt;li>einen Kontakt im Adressbuch durch den Namen finden&lt;/li>
+&lt;li>einen Kontakt aus dem Adressbuch über die E-Mail-Adresse entfernen&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Generell gilt die Regel, dass jede E-Mail-Adresse einzigartig sein muss&lt;/em>&lt;/p></description></item><item><title>Labs: Streaming Dienst</title><link>/labs/java/java-oop/03_streaming_dienst/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-oop/03_streaming_dienst/</guid><description>
+&lt;p>Schreibe ein Programm, welches einen Streaming Dienst nachstellt.
+Die Anwendung soll die Filme und Serien in einem Streaming Dienst abspeichern,
+wenn die entsprechende Methode aufgerufen wurde.
+Der Streaming Dienst hat auch eine Liste an Personen,
+welche ein Abonnement bei dem Streaming Dienst gelöst haben.&lt;/p>
+&lt;p>Eine Person besitzt&lt;/p>
+&lt;ul>
+&lt;li>einen Namen&lt;/li>
+&lt;li>eine Email-Adresse&lt;/li>
+&lt;li>eine Kreditkarte&lt;/li>
+&lt;/ul>
+&lt;p>Ein Film&lt;/p>
+&lt;ul>
+&lt;li>einen Namen&lt;/li>
+&lt;li>eine Dauer&lt;/li>
+&lt;li>ein Genre&lt;/li>
+&lt;li>einen Produzenten&lt;/li>
+&lt;/ul>
+&lt;p>Eine Person kann&lt;/p>
+&lt;ul>
+&lt;li>einen Film als gesehen markieren (&lt;em>View&lt;/em>)&lt;/li>
+&lt;li>seine Kreditkarte ändern&lt;/li>
+&lt;li>zwischen der Zahlungsart Monatlich oder Jährlich entscheiden&lt;/li>
+&lt;/ul>
+&lt;p>Der Streaming Dienst kann&lt;/p>
+&lt;ul>
+&lt;li>die Anzahl der Personen zurückliefern, welche ein Abonnement gelöst haben&lt;/li>
+&lt;li>eine neue Person registrieren&lt;/li>
+&lt;li>eine Person löschen&lt;/li>
+&lt;li>nach einem Film über den Namen suchen&lt;/li>
+&lt;li>nach Filmen eines bestimmten Genres suchen&lt;/li>
+&lt;li>die anzahl &lt;em>Views&lt;/em> auf einem Film wiedergeben&lt;/li>
+&lt;li>alle Kreditkarten der Kunden ausgeben &lt;em>(println)&lt;/em>
+die das Abonnemente per Monatlichen Zahlung bezahlen&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Generell gilt die Regel, dass jede E-Mail-Adresse und jeder Film-Name einzigartig sein muss&lt;/em>&lt;/p>
+&lt;h2 id="zusatzaufgabe-muss-nicht-gelöst-werden">Zusatzaufgabe (muss nicht gelöst werden):&lt;/h2>
+&lt;p>Dies ist eine Liste aller europäischen Sprachen:
+&lt;code>BULGARIAN,CROATIAN,CZECH,DANISH,DUTCH,ENGLISH,ESTONIAN,FINNISH,FRENCH,GERMAN,GREEK,HUNGARIAN,IRISH,ITALIAN,SLOVENIA,LATVIAN,LITHUANIAN,MALTESE,POLISH,PORTUGUESE,ROMANIAN,SLOVAK,SLOVENE,SPANISH,SWEDISH&lt;/code>&lt;/p>
+&lt;p>Ein Film soll um den Wert &lt;em>Sprachen&lt;/em> erweitert werden. Darin wird gepseichert, in welchen Sprachen der Film verfügbar ist.
+&lt;strong>Speichert die Sprache nicht in Form eines Strings!!!&lt;/strong>&lt;/p></description></item><item><title>Labs: Immobilienfirma</title><link>/labs/java/java-oop/04_immofirma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-oop/04_immofirma/</guid><description>
+&lt;h2 id="ziele">Ziele&lt;/h2>
+&lt;ul>
+&lt;li>Ich kann Namen für Objekte in einem Text identifizieren&lt;/li>
+&lt;li>Ich kann gute Namen für Attribute und Methoden wählen&lt;/li>
+&lt;li>Ich kann Objekte erstellen und ihnen entsprechende Eigenschaften geben&lt;/li>
+&lt;li>Ich kann Objekte untereinander verknüpfen&lt;/li>
+&lt;/ul>
+&lt;h3 id="immobilienfirma">Immobilienfirma&lt;/h3>
+&lt;p>In dieser Aufgabe soll eine Immobilienfirma mit Objekten abgebildet werden.
+Eine solche Firma besitzt beliebige Immobilien und hat einen Firmensitz an einer bestimmten Adresse.
+Die Firma hat diverse Angestellte und einen Namen.
+Eine Immobilie kann aus diversen Wohnungen bestehen, welche vermietet werden.
+Eine Immobilie hat eine bestimmte Adresse und ein Angestellter der Firma ist der Immobilie als Abwart zugeteilt.
+Ein Angestellter der Firma ist zudem der Verwalter einer solchen Immobilie.
+Eine Wohnung befindet sich in einem bestimmten Stockwerk, besitzt eine Wohnungsnummer und eine Beschreibung.
+Wenn ein Mieter in eine Wohnung einzieht, so gibt es zwischen Firma und Mieter einen Vertrag für eine bestimmte Wohnung.
+Jeder Vertrag hat ein Start- und ein End-Datum, zudem regelt der Vertrag den monatlichen Preis für eine Wohnung.
+Die Standardangaben für eine Person werden durch ein Geburtsdatum und ein Geschlecht ergänzt.&lt;/p>
+&lt;h4 id="teil-1">Teil 1&lt;/h4>
+&lt;p>Ermittle aus dem Text oben die verschiedenen Objekte und ihre Eigenschaften.
+Verknüpfe dann die Objekte miteinander, zum Beispiel hat eine Immobilienfirma eine Adresse als Firmensitz.&lt;/p>
+&lt;h4 id="teil-2">Teil 2&lt;/h4>
+&lt;p>Erstelle für deine Firma mindestens zwei Immobilien mit unterschiedlichen Wohnungen.
+Definiere Angestellte und Abwarte. Erstelle Mieter und Verträge.&lt;/p>
+&lt;h4 id="teil-3">Teil 3&lt;/h4>
+&lt;p>Erstelle für die Firma die folgenden Funktionen:&lt;/p>
+&lt;ul>
+&lt;li>Ermittle die total Anzahl an Wohnungen von allen Immobilien&lt;/li>
+&lt;li>Ermittle den Abwart für eine bestimmte Wohnung&lt;/li>
+&lt;li>Ermittle die Verträge für eine bestimmte Immobilie&lt;/li>
+&lt;li>Ermittle die leeren Wohnungen für eine bestimmte Immobilie&lt;/li>
+&lt;li>Ermittle die Verträge, die im nächsten Monat ablaufen&lt;/li>
+&lt;li>Ermittle alle Verträge sortiert nach Personen (eine Person kann mehrere Wohnungen mieten)&lt;/li>
+&lt;li>Ermittle das monatliche Einkommen pro Immobilie&lt;/li>
+&lt;li>Ermittle das jährliche Einkommen der Firma (ein Vertrag kann während dem Jahr ablaufen)&lt;/li>
+&lt;/ul></description></item><item><title>Labs: Wassermenge</title><link>/labs/java/java-oop/05_wassermenge/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-oop/05_wassermenge/</guid><description>
+&lt;p>Schreibe eine Anwendung, welche entscheidet ob ein Damm geöffnet sein muss oder nicht.
+Die Entscheidung wird anhand der Wassermenge, welche in einen See hineinfliesst, verglichen
+mit der Wassermenge, welche aus diesem See wieder herausfliesst, gefällt.&lt;/p>
+&lt;p>Eine Wassermenge&lt;/p>
+&lt;ul>
+&lt;li>hat eine Menge&lt;/li>
+&lt;li>hat eine Einheit&lt;/li>
+&lt;/ul>
+&lt;h4 id="die-anwendung-soll">Die Anwendung soll&lt;/h4>
+&lt;ul>
+&lt;li>Auskunft geben, ob die hineinfliessende Wassermenge gleich ist wie die herausfliessende Wassermenge&lt;/li>
+&lt;li>Den Damm nur dann öffnen, wenn die hineinfliessende Wassermenge grösser ist als die herausfliessende Wassermenge.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Es sollen keine Set Methoden für das Einfügen der Werte verwendet werden!&lt;/em>&lt;/p></description></item></channel></rss>
