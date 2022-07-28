@@ -7,7 +7,7 @@ description: >
 ---
 
 
-### Ziele
+#### Ziele
 * Ich weiss, was eine Klasse ist
 * Ich weiss, was Variablen und Datentypen sind
 * Ich kenne die primitiven Datentypen in Java: boolean, byte, short, int, long, double, float, char
@@ -30,40 +30,14 @@ description: >
 * Ich kann eine Schleife programmieren: for, foreach, while und do-while
 * Ich kenne die switch-Anweisung
 
-### Inhalte
-* Einführung
-  * Was ist Java?
-  * Wichtigste Merkmale von Java
-    * Plattformunabhängigkeit
-    * Mehrfach-Paradigma
-    * Garbage Collector
-    * Multithreading
-  * Code, Compile, Run
-* Terminologie
-* Hello World
-* Variablen
-* Datentypen
-  * Primitive Datentypen
-    * Integraler Datentyp
-    * Gleitkomma-Datentyp
-    * Zeichen-Datentyp
-    * Logischer Datentyp
-  * Referenzdatentypen
-    * Arrays
-    * Strings
-* Scanner
-* Statische Methoden
-* Mathematik und Logik
-* Kontrollstrukturen
-
-### Cheatsheet zum Herunterladen
+#### Cheatsheet zum Herunterladen
 [Core Java Cheatsheet](../java-grundlagen/cheatsheet.pdf)
 
 ---
 
-# Einführung
+## Einführung
 
-## Was ist Java?
+### Was ist Java?
 Java ist eine objektorientierte Programmiersprache, die schon seit ca. zwei Jahrzehnten große Popularität genießt.
 Die Entwicklung von Java begann Anfang der 1990er-Jahre beim US-amerikanischen Hard- und Softwarehersteller Sun Microsystems.
 1995 wurde die erste Version veröffentlicht. 2010 wurde Sun Microsystems von Oracle übernommen.
@@ -71,44 +45,44 @@ Gegenwärtig erscheinen im Halbjahrestakt neue Java-Versionen; die neuste Versio
 
 ---
 
-## Wichtigste Merkmale von Java
+### Wichtigste Merkmale von Java
 
-### Plattformunabhängigkeit: «Write once, Run anywhere»
+#### Plattformunabhängigkeit: «Write once, Run anywhere»
 Der Compiler wandelt den Quellcode in Bytecode um (Kompilat) und anschliessend führt die Java Virtual Machine (JVM) den Bytecode aus.
 Jedes Betriebssystem hat eine andere JVM, aber jede JVM kann den Bytecode ausführen, daher kann ein- und dieselbe Java-Anwendung auf Windows, Linux, Mac OS und anderen Plattformen lauffähig sein.
 
-### Mehrfach-Paradigma
+#### Mehrfach-Paradigma
 Java ist in erster Linie eine objektorientierte und imperative Programmiersprache, bei der fast alles ein Objekt einer Klasse (eines Typs) ist.
 Wir können ein typisches Java-Programm als eine Menge von interagierenden Objekten betrachten. Die Objekte können Entitäten aus der realen Welt oder eine Art von Programmierabstraktionen darstellen.
 Wenn wir ein Programm schreiben, erklären wir, wie die Objekte miteinander interagieren sollen.
 Java unterstützt aber auch andere Programmierparadigmen, darunter generische Programmierung, parallele Programmierung, funktionale Programmierung (teilweise unterstützt) und andere.
 
-### Ausführbarer Bytecode
+#### Ausführbarer Bytecode
 Eine kompilierte Klasse, welche bestimmte Voraussetzungen erfüllt (dazu später), kann eigenständig ausgeführt werden.
 Applikationen und Klassenbibliotheken bestehen oft aus mehreren Klassen und werden als Java Archive (JAR-Datei genannt) verpackt, verteilt und bereitgestellt.
 Eine JAR-Datei ist technisch gesehen eine komprimierte Datei in ZIP-Format und kann auch so erstellt werden, dass sie von der JVM ausgeführt werden kann.
 
-### Klassenpfad
+#### Klassenpfad
 Um den Bytecode ausführen zu können, muss die JVM wissen wo sich dieser befindet.
 Damit die JVM nicht überall suchen muss, wird mit einem Klassenpfad (Classpath) angegeben, wo sie nach dem Bytecode suchen soll.
 Der Klassenpfad besteht aus einer Liste von Ordnern und .jar Dateien (sog. Java-Archive) und kann entweder als Parameter bei der Ausführung des Programms oder als eine Umgebungsvariable angegeben werden.
 
-### Garbage Collector
+#### Garbage Collector
 Der Garbage Collector (Teil der JVM) führt zur Laufzeit eine automatische Speicherbereinigung von unbenutzten Objekten durch. Der Entwickler muss sich also nicht um das Aufräumen von unbenutzen Objekten kümmern.
 
-### Multithreading
+#### Multithreading
 Java unterstützt Multithreading auf der Ebene der Sprache und der Standardbibliothek. Es ermöglicht die gleichzeitige und parallele Ausführung mehrerer Teile eines Java-Programms.
 
 ---
 
-## Code, Compile, Run
+### Code, Compile, Run
 Ein/e Java-Entwickler/in schreibt ein Programm in eine Textdatei mit der Erweiterung .java. Ein Programm kann eine Vielzahl solcher Dateien enthalten. Dann übersetzt der Compiler (normalerweise javac) das Programm in eine .class-Datei, die den Bytecode des Programms enthält. Danach führt die JVM das Programm aus und gibt Low-Level-Befehle an den Computer. Der Computer ist hier eine Abstraktion, welche ein Server, ein PC oder sogar ein mobiles Gerät sein kann.
 Tatsächlich sind die Prozesse komplexer, als hier gezeigt wird. Es ist wichtig, Folgendes zu verstehen: Der Teil vor der JVM ist plattformunabhängig, der Teil nach der JVM ist plattformabhängig.
 ![](../java-grundlagen/code-compile-run.png)
 
 ---
 
-# Terminologie
+## Terminologie
 | Begriff                           | Beschreibung                                                                                                                                                                                                                   |
 |-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Programm                          | Eine Folge von Anweisungen (engl. “statement”), welche nacheinander ausgeführt werden (von oben nach unten)                                                                                                                    |
@@ -123,7 +97,7 @@ Tatsächlich sind die Prozesse komplexer, als hier gezeigt wird. Es ist wichtig,
 
 ---
 
-# Hello World
+## Hello World
 Anhand des simplen Hello-World-Programms können wir bereits vieles über die zentralen Bestandteile einer Java-Anwendung erklären. Der folgende Sourcecode ist in einer Datei mit dem Namen HelloWorld.java abgelegt.
 ```java
 public class HelloWorld {
@@ -143,7 +117,7 @@ Die statische Methode _println()_ auf dem öffentlich zugänglichen _Feld_ der K
 
 ---
 
-# Variablen
+## Variablen
 
 #### Namensgebung
 Variablen dienen dazu Werte aufzunehmen. Je nach _Scope_ leben diese Variablen unterschiedlich lang. Zur Benennung von Variablen gibt es vier Regeln:
@@ -194,7 +168,7 @@ Formal:
 
 ---
 
-# Datentypen
+## Datentypen
 In Java sind Variablen stark typisiert. Das heisst, dass alle Variablen bei ihrer Erstellung mit einem Datentyp versehen werden müssen.
 Seit Java 10 gibt es Typinferenz für lokale Variablen, das heisst, eine lokale Variable kann deklariert und initialisiert werden (muss gleichzeitig geschehen), ohne dass ein Datentyp angegeben werden muss - anstelle des Datentyps kann _var_ verwendet werden:
 ```java
@@ -207,9 +181,9 @@ Dieser fundamentale Unterschied ist relevant beim Vergleich von Werten und Refer
 
 ---
 
-## Primitive Datentypen
+### Primitive Datentypen
 
-### Integraler Datentyp
+#### Integraler Datentyp
 Integrale Datentypen sind immer ganze Zahlen, sie besitzen also keine Nachkommastellen.
 Die folgenden Datentypen speichern ganzzahlige Werte, sie unterscheiden sich nur in ihrer Grösse:
 | Datentyp | Speicherbedarf | Bereich |
@@ -227,7 +201,7 @@ int count = 0;
 int million = 1_000_000;
 ```
 
-### Gleitkomma-Datentyp
+#### Gleitkomma-Datentyp
 Gleitkomma-Datentypen speichern wie der Name bereits sagt, Zahlen mit Nachkommastellen. Diese Zahlen besitzen nur eine bestimmte Genauigkeit, sie dürfen also nicht als unendlich genau betrachtet werden.
 Die folgenden Datentypen speichern Zahlen mit Nachkommastellen, sie unterscheiden sich in ihrer Grösse und der Art und Weise wie sie innerhalb von Java abgelegt werden:
 | Datentyp | Speicherbedarf | Bereich | Interne Ablage |
@@ -243,7 +217,7 @@ double area = 16.48739d;
 
 Trotz Nachkommastellen dürfen Fliesskommzahlen des Typs float niemals zur Berechnung von Währungen verwendet werden. Innerhalb von Java wird ein float stets als Dezimalbruch geführt und die Ungenauigkeit verunmöglicht es diesen Datentyp für Währungsrechnungen zu verwenden.
 
-### Zeichen-Datentyp
+#### Zeichen-Datentyp
 
 Ein **char** ist ein (vorzeichenloser) 16-Bit-Integer-Datentyp, der ein einzelnes Zeichen darstellt. Dieser Datentyp erlaubt die Repräsentation von Zeichen im so genannten Unicode-Zeichensatz.
 
@@ -256,8 +230,9 @@ Zeichenliterale können Symbole eines Alphabets, Ziffern von '0' bis '9', Whites
 Ein Zeichen kann nicht zwei und mehr Ziffern oder Buchstaben enthalten, da es nur ein einziges Symbol darstellt.
 
 Wir können Zeichen auf verschiedene Arten initialisieren:
-| Einfache Anführungszeichen | ```char A = 'A';``` |
+| Beschreibung | Code |
 | --- | --- |
+| Einfache Anführungszeichen | ```char A = 'A';``` |
 | Wir können ein Char-Literal als Integral-Literal angeben, das den Unicode-Wert des Zeichens darstellt, und Integral-Literale können entweder in Dezimal-, Oktal- oder Hexadezimalform angegeben werden.Der zulässige Bereich liegt zwischen 0 und 65535. | ```char A = 65;``` |
 | In der Unicode-Darstellung ```'\\uxxxx'``` können Zeichenliterale angegeben werden. Hier steht xxxx für 4 Hexadezimalzahlen. | ```char A = '\u0041';``` |
 
@@ -268,12 +243,12 @@ char point = '.';
 letter++; // 'b'
 ```
 
-#### _Don’t get confused:_
+##### _Don’t get confused:_
 * 123 ist ein Integer, "123" ist ein String;
 * 'A' ein Zeichen (char), "A" ist ein String;
 * '1' ist ein Zeichen (char), 1 ist ein Integer;
 
-### Logischer Datentyp
+#### Logischer Datentyp
 Dieser Datentyp bezieht sich nur auf die zwei Werte _true_ und _false_.
 ```java
 boolean done = false;
@@ -282,7 +257,7 @@ boolean isBigger = true;
 
 ---
 
-## Referenztypen
+### Referenztypen
 Nebst primitiven Datentypen gibt es Referenzdatentypen. Eine Variable diesen Typs enthält nicht die Werte selbst wie eine Variable primitiven Typs, sondern nur einen Verweis (Referenz) auf den  
 Speicherort der Daten. Der Standardwert von Referenzvariablen ist null, welcher besagt, dass die Variable auf kein Objekt verweist.
 
@@ -292,14 +267,14 @@ Es gibt zwei Unterarten von Referenztypen:
 
 ---
 
-### Arrays
+#### Arrays
 
-### Definition
+##### Definition
 Häufig benötigen Software-Entwickler mehrere zusammengehörige Variablen desselben Datentyps, die logisch oder verwaltungstechnisch zusammengehören. Es wäre aber sehr aufwendig, diese Variablen alle einzeln zu deklarieren und zu verarbeiten. Zudem ist es möglich, dass die Anzahl an Objekten noch unbekannt ist und erst bei der Ausführung des Programms definiert wird. Deswegen wird in Java, wie in anderen Programmiersprachen auch, die Verwendung von Arrays unterstützt. In Arrays lassen sich beliebige primitiven Datentypen und Objekte speichern und systematisch bearbeiten. Alle Variablen haben einen gemeinsamen Namen, werden aber über unterschiedliche Indizes angesprochen.
 
-### Deklaration
+##### Deklaration
 Die Deklaration eines Arrays enthält folgende Bestandteile:
-| Reihenfolge | W   |     |
+| Reihenfolge | Bedeutung | Beispiel |
 | --- | --- | --- |
 | 1. | Typ | ```String, int, double, char, ...``` |
 | 2. | Eckige Klammern | ```[]``` |
@@ -309,7 +284,7 @@ Die Deklaration eines Arrays enthält folgende Bestandteile:
 String[] words;
 ```
 
-### Länge eines Arrays
+##### Länge eines Arrays
 Die Anzahl der Elemente in einem Array wird als Länge eines Arrays bezeichnet. Diese Länge wird zum Zeitpunkt der Erstellung eines Arrays einmal festgelegt. Sie kann später in einem Programm nur durch Definition eines neuen Arrays und dem Kopieren von Werten geändert werden.
 
 Wir können die Länge eines Arrays mithilfe einer in Java integrierten Funktionalität überprüfen:
@@ -317,10 +292,10 @@ Wir können die Länge eines Arrays mithilfe einer in Java integrierten Funktion
 words.length
 ```
 
-### Indizierung
+##### Indizierung
 Die Indizes in einem Array reichen immer von 0 bis length-1. Ein Array mit den ersten 100 natürlichen Zahlen hat beispielsweise eine Länge von 100 und Indizes von 0 bis 99.
 
-### Syntax
+##### Syntax
 In Java müssen wir zum Zeitpunkt der Deklaration eines Arrays folgendes angeben:
 * den Datentyp
 * den Namen
@@ -347,7 +322,7 @@ String[] words = { "Hai", "Oktopus", "Rochen", "Wal", "Fisch" };
 ```
 Es wird also ein Array mit der Grösse 5 und den angegebenen Werten erstellt.
 
-### Zugriff auf Elemente
+##### Zugriff auf Elemente
 Wenn wir den Wert eines Elements in unserem Array verändern möchten, geschieht dies folgendermaßen:
 ```java
 words[index] = value;
@@ -360,7 +335,7 @@ String value = words[index];
 
 ---
 
-## String
+#### String
 Eine Variable, die eine Zeichenkette enthält, hat den Typ String.
 ```java
 String hello = "Hello, Java";
@@ -368,7 +343,7 @@ String hello = "Hello, Java";
 
 Diese Zeichenkette besteht aus 11 Zeichen, einschließlich eines Leerzeichens. Wie wir hier ebenfalls sehen, müssen String-Literale von doppelten Anführungszeichen umgeben sein. Ein Objekt des Typs String ist unveränderlich, die Werte innerhalb eines Strings können also nach dessen Erstellung nicht mehr verändert werden.
 
-### Methoden
+##### Methoden
 Der folgende Code zeigt die Verwendung einiger Methoden der Klasse String. Alle Methoden sind in der API unter [java.lang.String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) zu finden.
 ```java
 public class StringMethoden {
@@ -499,7 +474,7 @@ public class StringMethoden {
 
 ---
 
-# Scanner
+## Scanner
 
 Eine Möglichkeit, Benutzereingaben in Java vorzunehmen, besteht in der Verwendung der Scanner-Klasse, die verwendet wird, indem zuerst die Definition der Klasse wie in Zeile 1 importiert und dann ein Objekt dieser Klasse wie in Zeile 6 erstellt wird.
 ```java
@@ -533,7 +508,7 @@ Es ist einfach zu bedienen, muss jedoch importiert werden, damit die Klasse funk
 
 ---
 
-# Statische Methoden
+## Statische Methoden
 Mittlerweile hast du bereits einige statische Methoden kennengelernt, wie zum Beispiel die Main-Methode oder die Methode println() der Klasse System oder die Methode valueOf() der String-Klasse.
 Hier wollen wir uns nun genauer anschauen, was statische Methoden sind, denn diese wirst du unter anderem für das Lösen der Übungen benötigen.
 Das Keyword _static_ ist ein sehr nützliches Werkzeug in Java. Bei statischen Methoden sind einige wichtige Punkte zu beachten.
@@ -567,12 +542,12 @@ public static void methodName(type identifier) {
 ```
 Ein Parameter besteht immer aus dem Datentyp und einem Bezeichner. Wir können beliebig viele Parameter an eine Methode übergeben. Gemäss den SBB Code Conventions (Regeln für den Programmcode) sollte eine Methode nicht mehr als acht Parameter haben.
 
-## Regeln
+#### Regeln
 * Die Reihenfolge der Schlüsselwörter im Methodenkopf darf nicht verändert werden
 * Bei der Auswahl des Methodennamens müssen die gleichen Regeln wie bei der Benennung einer Variablen eingehalten werden
 * Keine doppelten Methoden: Jede Methodensignatur darf in einer Klasse nur einmal vorkommen
 
-## Aufruf
+#### Aufruf
 Innerhalb der gleichen Klasse
 ```
 methodName();
@@ -584,11 +559,11 @@ ClassName.methodName();
 
 ---
 
-# Mathematik & Logik
+## Mathematik & Logik
 
 Mathe in Java ist sehr einfach. Beachte, dass mathematische Java-Operationen einer bestimmten Reihenfolge folgen (Punkt-Operationen vor Strich-Operationen)
 
-## Arithmetische Operatoren
+#### Arithmetische Operatoren
 | Symbol | Arithmetische Operation                 | Beispiel                              |
 |--------|-----------------------------------------|---------------------------------------|
 | +      | Addition                                | ```int sum = 2 + 3;```                |
@@ -599,7 +574,7 @@ Mathe in Java ist sehr einfach. Beachte, dass mathematische Java-Operationen ein
 | ++     | Post und Prä-Inkrement (1 addieren)     | ```count++; // (count = count + 1)``` |
 | - -    | Post und Prä-Dekrement (1 subtrahieren) | ```count--; // (count = count – 1)``` |
 
-### Post- und Prä-Inkrement
+#### Post- und Prä-Inkrement
 Das Inkrementieren und Dekrementieren von Variablen ist eine sehr häufige Operation.
 Von diesem Operator gibt es zwei Varianten:
 * Er kann vor der Variable stehen, wie in ```++i``` (Präfix-Schreibweise) oder
@@ -635,7 +610,7 @@ int f = --i; // f = 4
 
 ---
 
-## Vegleichsoperatoren
+#### Vegleichsoperatoren
 Die Ergebnisse dieser Operationen sind stets Boolean-Werte.
 | Symbol | Vergleich | Beispiel |
 | --- | --- | --- |
@@ -646,7 +621,7 @@ Die Ergebnisse dieser Operationen sind stets Boolean-Werte.
 | == | gleich | 2 == 2 |
 | != | ungleich | 2 != 4 |
 
-## Boolsche Operatoren
+#### Boolsche Operatoren
 Diese Operatoren basieren auf der boolschen Algebra. Daher arbeiten boolsche Operatoren direkt mit boolschen Werten. Es gibt vier Arten von boolschen Operatoren. Schauen wir uns zunächst ihre Symbole und deren Inhalt in der folgenden Tabelle an, bevor wir erläutern, welche Funktionen sie ausführen.
 | Symbol | Boolsche Operation | Erklärung |
 | --- | --- | --- |
@@ -659,14 +634,14 @@ Diese Operatoren basieren auf der boolschen Algebra. Daher arbeiten boolsche Ope
 
 ---
 
-# Kontrollstrukturen
+## Kontrollstrukturen
 Kontrollstrukturen dienen dazu, den Ablauf eines Programms zu steuern.
 Damit bietet eine Kontrollstruktur die Möglichkeit, Programmteile nur unter gewissen Bedingungen ( → bedingte Anweisungen) auszuführen oder Programmteile zu wiederholen ( → Schleifen).
 
-## Bedingte Anweisungen
+#### Bedingte Anweisungen
 Eine bedingte Anweisung ist eine Konstruktion, mit der ein Programm abhängig vom Wert eines boolschen Ausdrucks (true oder false) unterschiedliche Wege geht.
 
-### If-Statement
+##### If-Statement
 Die einfachste Form der bedingten Anweisung besteht aus dem Schlüsselwort if, einem boolschen Ausdruck und einem Block.
 ```java
 if (expression) {
@@ -675,7 +650,7 @@ if (expression) {
 ```
 Wenn der Ausdruck true ist, werden die Anweisungen im Codeblock ausgeführt. Andernfalls werden sie übersprungen.
 
-### If-Else Statement
+##### If-Else Statement
 Der obige if-Fall kann mit dem Schlüsselwort else erweitert werden, um alternative Aktionen auszuführen, wenn der Ausdruck false ist.
 ```java
 if (expression) {
@@ -696,7 +671,7 @@ if (num % 2 == 0) {
 ```
 Da eine Zahl nur gerade oder ungerade sein kann, wird nur eine der beiden Ausgaben gemacht.
 
-### Else-If-Statements
+##### Else-If-Statements
 Ein Else-Statement kann durch ein If-Statement erweitert werden.
 ```java
 if (expression0) {
@@ -725,7 +700,7 @@ if (dollars < 1000) {
 }
 ```
 
-### Switch-Statement
+##### Switch-Statement
 Die Switch-Anweisung bietet eine Möglichkeit, basierend auf dem Wert einer einzelnen Variablen (kein Ausdruck!) zwischen mehreren Fällen zu wählen. Die Variable kann eine Ganzzahl, ein Zeichen, eine Zeichenfolge oder eine Aufzählung sein.
 
 ```java
@@ -748,10 +723,10 @@ switch (variable) {
 Die Schlüsselwörter switch und case werden hier immer benötigt. Die Schlüsselwörter break und default sind optional. Das Schlüsselwort break verlässt die Switch-Anweisung.
 Wenn ein Fall nicht über das Keyword _break_ verfügt, wird auch der darauffolgende Fall ausgewertet. Dies ist spannend, um die einzelnen Auswertungen verketten zu können. Der Default-Fall wird ausgewertet, wenn kein Fall mit dem Variablenwert übereinstimmt.
 
-## Schleifen (Loops)
+#### Schleifen (Loops)
 Manchmal müssen wir einen Codeblock für eine bestimmte Anzahl wiederholen. Zu diesem Zweck stellt Java die Schleife bereit. Diese Schleife wird häufig verwendet, um über einen Wertebereich oder durch ein Array zu iterieren. For-Loops arbeiten mit einem Schleifenzähler, welcher sehr gut für Indizes von Arrays verwendet werden kann. Bei allen Schleifen ist Vorsicht geboten, da es rasch zu einer unendlichen Anzahl von Ausführungen kommen kann.
 
-### For-Loop
+##### For-Loop
 ```java
 for (initialization; condition; modification) {
     // do something
@@ -786,7 +761,7 @@ for (int i = startIncl; i < endExcl; i++) {
 System.out.println(sum); // Output: 55
 ```
 
-### For-Each Loop
+##### For-Each Loop
 Der For-Each-Loop durchläuft alle Elemente eines Arrays oder einer Collection. Die Angaben aus dem For-Loop werden durch eine Schleifenvariable und ein Doppelpunkt ersetzt.
 ```java
 int[] numbers = { 125, 381, 98, 12, 235 };
@@ -797,7 +772,7 @@ for (int number: numbers) {
 ```
 Der gezeigte Loop wird also fünfmal ausgeführt und der Wert der Variable _number_ nimmt bei jedem Durchlauf den jeweils nächsten Wert aus dem Array an.
 
-### While-Loop
+##### While-Loop
 Die while- Schleife besteht aus einem Codeblock und einer Bedingung (einem booleschen Ausdruck). Wenn die Bedingung erfüllt ist, wird der Code innerhalb des Blocks ausgeführt. Dieser Code wird solange wiederholt, bis die Bedingung nicht mehr erfüllt ist.
 ```java
 while (condition) {
@@ -817,7 +792,7 @@ while (i < 5) {
 // Output: 0 1 2 3 4
 ```
 
-### Do-While Loop
+##### Do-While Loop
 Die Do-While-Schleife besteht aus einem Codeblock und einer Bedingung (einem boolschen Ausdruck) am Ende. Im Gegensatz zur While-Schleife wird die Do-While-Schleife mindestens einmal ausgeführt, da die Bedingung am Ende steht.
 ```java
 do {
