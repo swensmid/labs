@@ -1,7 +1,7 @@
 ---
 title: "Maven und Continuous Integration"
 linkTitle: "Maven"
-weight: 2
+weight: 100
 description: >
   Maven Continuous Integration
 ---
