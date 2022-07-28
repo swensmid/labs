@@ -219,46 +219,18 @@ Schreibe diese Zahlen in ein neues Array. Die Methode liefert das neue Array zur
 &lt;li>Ich kann eine Schleife programmieren: for, foreach, while und do-while&lt;/li>
 &lt;li>Ich kenne die switch-Anweisung&lt;/li>
 &lt;/ul>
-&lt;h4 id="änderungskontrolle">Änderungskontrolle&lt;/h4>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Autor&lt;/th>
-&lt;th>Version&lt;/th>
-&lt;th>Datum&lt;/th>
-&lt;th>Änderungen&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Ann-Sophie Junele&lt;/td>
-&lt;td>0.1&lt;/td>
-&lt;td>Mai 2020&lt;/td>
-&lt;td>* Initiale Version erstellt&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Claudio Zesiger&lt;/td>
-&lt;td>0.2&lt;/td>
-&lt;td>23.07.2020&lt;/td>
-&lt;td>* Modul überprüft&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h4 id="cheatsheet-zum-downloaden">Cheatsheet zum Downloaden&lt;/h4>
-&lt;p>&lt;img src="../java-grundlagen/chaetsheet.pdf" alt="Cheatsheet" title="Cheatsheet">&lt;/p>
+&lt;h4 id="cheatsheet-zum-herunterladen">Cheatsheet zum Herunterladen&lt;/h4>
+&lt;p>&lt;a href="../java-grundlagen/cheatsheet.pdf">Core Java Cheatsheet&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="einführung">Einführung&lt;/h2>
 &lt;h3 id="was-ist-java">Was ist Java?&lt;/h3>
 &lt;p>Java ist eine objektorientierte Programmiersprache, die schon seit ca. zwei Jahrzehnten große Popularität genießt.
 Die Entwicklung von Java begann Anfang der 1990er-Jahre beim US-amerikanischen Hard- und Softwarehersteller Sun Microsystems.
 1995 wurde die erste Version veröffentlicht. 2010 wurde Sun Microsystems von Oracle übernommen.
-Gegenwärtig erscheinen im Halbjahrestakt neue Java-Versionen; die neuste Version, Java 16, wurde im März 2021 veröffentlicht.&lt;/p>
+Gegenwärtig erscheinen im Halbjahrestakt neue Java-Versionen; die neuste Version, Java 17, wurde im September 2022 veröffentlicht.&lt;/p>
 &lt;hr>
 &lt;h3 id="wichtigste-merkmale-von-java">Wichtigste Merkmale von Java&lt;/h3>
-&lt;h4 id="plattformunabhängigkeit">Plattformunabhängigkeit&lt;/h4>
-&lt;blockquote>
-&lt;p>«Write once, Run anywhere»&lt;/p>
-&lt;/blockquote>
+&lt;h4 id="plattformunabhängigkeit-write-once-run-anywhere">Plattformunabhängigkeit: «Write once, Run anywhere»&lt;/h4>
 &lt;p>Der Compiler wandelt den Quellcode in Bytecode um (Kompilat) und anschliessend führt die Java Virtual Machine (JVM) den Bytecode aus.
 Jedes Betriebssystem hat eine andere JVM, aber jede JVM kann den Bytecode ausführen, daher kann ein- und dieselbe Java-Anwendung auf Windows, Linux, Mac OS und anderen Plattformen lauffähig sein.&lt;/p>
 &lt;h4 id="mehrfach-paradigma">Mehrfach-Paradigma&lt;/h4>
@@ -266,6 +238,14 @@ Jedes Betriebssystem hat eine andere JVM, aber jede JVM kann den Bytecode ausfü
 Wir können ein typisches Java-Programm als eine Menge von interagierenden Objekten betrachten. Die Objekte können Entitäten aus der realen Welt oder eine Art von Programmierabstraktionen darstellen.
 Wenn wir ein Programm schreiben, erklären wir, wie die Objekte miteinander interagieren sollen.
 Java unterstützt aber auch andere Programmierparadigmen, darunter generische Programmierung, parallele Programmierung, funktionale Programmierung (teilweise unterstützt) und andere.&lt;/p>
+&lt;h4 id="ausführbarer-bytecode">Ausführbarer Bytecode&lt;/h4>
+&lt;p>Eine kompilierte Klasse, welche bestimmte Voraussetzungen erfüllt (dazu später), kann eigenständig ausgeführt werden.
+Applikationen und Klassenbibliotheken bestehen oft aus mehreren Klassen und werden als Java Archive (JAR-Datei genannt) verpackt, verteilt und bereitgestellt.
+Eine JAR-Datei ist technisch gesehen eine komprimierte Datei in ZIP-Format und kann auch so erstellt werden, dass sie von der JVM ausgeführt werden kann.&lt;/p>
+&lt;h4 id="klassenpfad">Klassenpfad&lt;/h4>
+&lt;p>Um den Bytecode ausführen zu können, muss die JVM wissen wo sich dieser befindet.
+Damit die JVM nicht überall suchen muss, wird mit einem Klassenpfad (Classpath) angegeben, wo sie nach dem Bytecode suchen soll.
+Der Klassenpfad besteht aus einer Liste von Ordnern und .jar Dateien (sog. Java-Archive) und kann entweder als Parameter bei der Ausführung des Programms oder als eine Umgebungsvariable angegeben werden.&lt;/p>
 &lt;h4 id="garbage-collector">Garbage Collector&lt;/h4>
 &lt;p>Der Garbage Collector (Teil der JVM) führt zur Laufzeit eine automatische Speicherbereinigung von unbenutzten Objekten durch. Der Entwickler muss sich also nicht um das Aufräumen von unbenutzen Objekten kümmern.&lt;/p>
 &lt;h4 id="multithreading">Multithreading&lt;/h4>
@@ -273,8 +253,8 @@ Java unterstützt aber auch andere Programmierparadigmen, darunter generische Pr
 &lt;hr>
 &lt;h3 id="code-compile-run">Code, Compile, Run&lt;/h3>
 &lt;p>Ein/e Java-Entwickler/in schreibt ein Programm in eine Textdatei mit der Erweiterung .java. Ein Programm kann eine Vielzahl solcher Dateien enthalten. Dann übersetzt der Compiler (normalerweise javac) das Programm in eine .class-Datei, die den Bytecode des Programms enthält. Danach führt die JVM das Programm aus und gibt Low-Level-Befehle an den Computer. Der Computer ist hier eine Abstraktion, welche ein Server, ein PC oder sogar ein mobiles Gerät sein kann.
-Tatsächlich sind die Prozesse komplexer, als hier gezeigt wird. Es ist wichtig, Folgendes zu verstehen: Der Teil vor der JVM ist plattformunabhängig, der Teil nach der JVM ist plattformabhängig.&lt;/p>
-&lt;p>&lt;img src="../java-grundlagen/codeCompileRun.png" alt="codeCompileRun" title="Code, Compile, Run">&lt;/p>
+Tatsächlich sind die Prozesse komplexer, als hier gezeigt wird. Es ist wichtig, Folgendes zu verstehen: Der Teil vor der JVM ist plattformunabhängig, der Teil nach der JVM ist plattformabhängig.
+&lt;img src="../java-grundlagen/code-compile-run.png" alt="">&lt;/p>
 &lt;hr>
 &lt;h2 id="terminologie">Terminologie&lt;/h2>
 &lt;table>
@@ -335,19 +315,16 @@ Tatsächlich sind die Prozesse komplexer, als hier gezeigt wird. Es ist wichtig,
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">public class HelloWorld {
-public static void main(String[] args) {
-System.out.println(&amp;#34;Hello, world!&amp;#34;);
-}
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">HelloWorld&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Hello, world!&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h4 id="public-class">Public class&lt;/h4>
-&lt;p>Bei diesem Beispiel arbeiten wir uns nun von aussen nach innen vor. Der erste Teil definiert eine neue Klasse mit dem Namen &lt;em>HelloWorld&lt;/em>. Die Deklaration der Klasse besteht aus dem Zugriffsmodifizierer &lt;em>public&lt;/em> (dazu später mehr) gefolgt vom Keyword &lt;em>class&lt;/em> und dem Klassennamen. Jede Java-Datei darf nur eine Klasse mit dem Zugriffsmodifizierer &lt;em>public&lt;/em> enthalten, weitere Klassen ohne &lt;em>public&lt;/em> sind jedoch erlaubt. Der Name der Klasse mit dem Modifizierer &lt;em>public&lt;/em> muss stets mit dem Dateinamen übereinstimmen. Der Klassenname wird stets gross geschrieben, einzelne Wörter werden durch einen erneuten Grossbuchstaben getrennt. Dies wird CamelCase genannt. Der &lt;em>Block&lt;/em> der Klasse wird durch geschweifte Klammern angegeben.&lt;/p>
-&lt;h4 id="die-main-methode">Die Main-Methode&lt;/h4>
+&lt;/div>&lt;p>Bei diesem Beispiel arbeiten wir uns nun von aussen nach innen vor. Der erste Teil definiert eine neue Klasse mit dem Namen &lt;em>HelloWorld&lt;/em>. Die Deklaration der Klasse besteht aus dem Zugriffsmodifizierer &lt;em>public&lt;/em> (dazu später mehr) gefolgt vom Keyword &lt;em>class&lt;/em> und dem Klassennamen. Jede Java-Datei darf nur eine Klasse mit dem Zugriffsmodifizierer &lt;em>public&lt;/em> enthalten, weitere Klassen ohne &lt;em>public&lt;/em> sind jedoch erlaubt. Der Name der Klasse mit dem Modifizierer &lt;em>public&lt;/em> muss stets mit dem Dateinamen übereinstimmen. Der Klassenname wird stets gross geschrieben, einzelne Wörter werden durch einen erneuten Grossbuchstaben getrennt. Dies wird CamelCase genannt. Der &lt;em>Block&lt;/em> der Klasse wird durch geschweifte Klammern angegeben.&lt;/p>
 &lt;p>Innerhalb der Klasse wird nun eine Main-Methode definiert. Diese Methode ist der Einstiegspunkt eines jeden Java-Programms. Nur über eine solche Methode kann eine Java-Anwendung gestartet werden. Die Methode besteht aus dem Zugriffsmodifizierer &lt;em>public&lt;/em>, dem Keyword &lt;em>static&lt;/em>, dem Rückgabewert &lt;em>void&lt;/em> und dem Methodennamen &lt;em>main&lt;/em>.
 An den Namen der Methode schliesst sich ein paar runde Klammern an. Innerhalb dieser Klammern befinden sich die &lt;em>Parameter&lt;/em> der Methode, in diesem Fall handelt es sich um ein &lt;em>String&lt;/em>-&lt;em>Array&lt;/em>. Die Angabe der genannten Teile einer Methode nennt man Methodensignatur. Der &lt;em>Block&lt;/em> der Methode wird durch geschweifte Klammern angegeben. Die Main-Methode hat immer die oben gezeigte Signatur.&lt;/p>
-&lt;h4 id="hello-world-ausgeben">&amp;ldquo;Hello World&amp;rdquo; ausgeben&lt;/h4>
 &lt;p>Innerhalb der Main-Methode sehen wir ein einzelnes Statement. Es besteht aus einer einfachen Anweisung, welche den Text &amp;ldquo;Hello, world!&amp;rdquo; auf die Kommandozeile ausgibt.
 Die statische Methode &lt;em>println()&lt;/em> auf dem öffentlich zugänglichen &lt;em>Feld&lt;/em> der Klasse &lt;em>System&lt;/em> dient dazu Text auf der Konsole auszugeben. Das Statement wird mit einem Semikolon abgeschlossen.&lt;/p>
 &lt;hr>
@@ -387,11 +364,11 @@ Lokale Variablen (Variablen, die lediglich innerhalb einer Methode gültig sind)
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">public static void main(String[] args) {
-int firstSummand = 2;
-int secondSummand;
-int sum = firstSummand + secondSummand;
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> firstSummand &lt;span style="color:#f92672">=&lt;/span> 2&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> secondSummand&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> sum &lt;span style="color:#f92672">=&lt;/span> firstSummand &lt;span style="color:#f92672">+&lt;/span> secondSummand&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Die Variable &lt;strong>secondSummand&lt;/strong> wurde nicht initialisiert. Die Zuweisung &lt;strong>int sum = firstSummand + secondSummand&lt;/strong> wird also nicht funktionieren.&lt;/p>
@@ -405,10 +382,11 @@ int sum = firstSummand + secondSummand;
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int number; // 1. Deklaration
-number = 2; // 2. Initialisierung
-int number = 2; // beides in einer Zeile
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> number&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// 1. Deklaration
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>number &lt;span style="color:#f92672">=&lt;/span> 2&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// 2. Initialisierung
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> number &lt;span style="color:#f92672">=&lt;/span> 2&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// beides in einer Zeile
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Formal:&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -428,11 +406,11 @@ Seit Java 10 gibt es Typinferenz für lokale Variablen, das heisst, eine lokale 
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">var sum = 20;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">var sum &lt;span style="color:#f92672">=&lt;/span> 20&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Es gibt zwei Arten von Datentypen: Primitive Datentypen und Referenztypen. Der grundlegende Unterschied besteht darin, dass eine primitive Variable den tatsächlichen Wert speichert, während eine Referenzvariable die Adresse des Objekts speichert, auf welches sie sich bezieht. Dies hat mit dem Java Memory Modell zu tun. Das nachfolgende Bild zeigt das Java Memory Modell als einfache Darstellung, es besteht grundsätzlich aus dem Stack Memory und dem Heap Space. Primitive Datentypen werden nur auf dem Stack angelegt. Objekte, wie das im Bild gezeigte Auto (Car), sind im Heap abgelegt. Die Referenz auf das Objekt wird auf dem Stack angelegt. Die Referenz &amp;ldquo;zeigt&amp;rdquo; also auf das Objekt im Heap.&lt;/p>
-&lt;p>&lt;img src="../java-grundlagen/datentypen.png" alt="Datentypen" title="Datentypen">&lt;/p>
+&lt;/div>&lt;p>Es gibt zwei Arten von Datentypen: Primitive Datentypen und Referenztypen. Der grundlegende Unterschied besteht darin, dass eine primitive Variable den tatsächlichen Wert speichert, während eine Referenzvariable die Adresse des Objekts speichert, auf welches sie sich bezieht. Dies hat mit dem Java Memory Modell zu tun. Das nachfolgende Bild zeigt das Java Memory Modell als einfache Darstellung, es besteht grundsätzlich aus dem Stack Memory und dem Heap Space. Primitive Datentypen werden nur auf dem Stack angelegt. Objekte, wie das im Bild gezeigte Auto (Car), sind im Heap abgelegt. Die Referenz auf das Objekt wird auf dem Stack angelegt. Die Referenz &amp;ldquo;zeigt&amp;rdquo; also auf das Objekt im Heap.
+&lt;img src="../java-grundlagen/Datentypen.png" alt="">&lt;/p>
 &lt;p>Dieser fundamentale Unterschied ist relevant beim Vergleich von Werten und Referenzen. Der Operator für den Vergleich ==, vergleicht stets die Werte auf dem Stack miteinander. Bei Referenzen wird dort also überprüft, ob sie auf dasselbe Objekt zeigen. Wenn der Inhalt von Objekten verglichen werden soll, so muss dies mit der Methode &lt;em>equals&lt;/em> gemacht werden.&lt;/p>
 &lt;hr>
 &lt;h3 id="primitive-datentypen">Primitive Datentypen&lt;/h3>
@@ -478,8 +456,8 @@ Die folgenden Datentypen speichern ganzzahlige Werte, sie unterscheiden sich nur
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int count = 0;
-int million = 1_000_000;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> count &lt;span style="color:#f92672">=&lt;/span> 0&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> million &lt;span style="color:#f92672">=&lt;/span> 1_000_000&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h4 id="gleitkomma-datentyp">Gleitkomma-Datentyp&lt;/h4>
@@ -516,8 +494,8 @@ Die folgenden Datentypen speichern Zahlen mit Nachkommastellen, sie unterscheide
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">float radius = 8.5f;
-double area = 16.48739d;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">float&lt;/span> radius &lt;span style="color:#f92672">=&lt;/span> 8&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">5f&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">double&lt;/span> area &lt;span style="color:#f92672">=&lt;/span> 16&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">48739d&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Trotz Nachkommastellen dürfen Fliesskommzahlen des Typs float niemals zur Berechnung von Währungen verwendet werden. Innerhalb von Java wird ein float stets als Dezimalbruch geführt und die Ungenauigkeit verunmöglicht es diesen Datentyp für Währungsrechnungen zu verwenden.&lt;/p>
@@ -538,11 +516,15 @@ Ein Zeichen kann nicht zwei und mehr Ziffern oder Buchstaben enthalten, da es nu
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Einfache Anführungszeichen&lt;/th>
-&lt;th>&lt;code>char A = 'A';&lt;/code>&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;th>Code&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
+&lt;tr>
+&lt;td>Einfache Anführungszeichen&lt;/td>
+&lt;td>&lt;code>char A = 'A';&lt;/code>&lt;/td>
+&lt;/tr>
 &lt;tr>
 &lt;td>Wir können ein Char-Literal als Integral-Literal angeben, das den Unicode-Wert des Zeichens darstellt, und Integral-Literale können entweder in Dezimal-, Oktal- oder Hexadezimalform angegeben werden.Der zulässige Bereich liegt zwischen 0 und 65535.&lt;/td>
 &lt;td>&lt;code>char A = 65;&lt;/code>&lt;/td>
@@ -561,10 +543,10 @@ Ein Zeichen kann nicht zwei und mehr Ziffern oder Buchstaben enthalten, da es nu
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">char letter = &amp;#39;a&amp;#39;;
-char point = &amp;#39;.&amp;#39;;
-letter++; // &amp;#39;b&amp;#39;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">char&lt;/span> letter &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">char&lt;/span> point &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;.&amp;#39;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+letter&lt;span style="color:#f92672">++;&lt;/span> &lt;span style="color:#75715e">// &amp;#39;b&amp;#39;
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h5 id="_dont-get-confused_">&lt;em>Don’t get confused:&lt;/em>&lt;/h5>
 &lt;ul>
@@ -580,8 +562,8 @@ letter++; // &amp;#39;b&amp;#39;
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">boolean done = false;
-boolean isBigger = true;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">boolean&lt;/span> done &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">boolean&lt;/span> isBigger &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;hr>
@@ -603,8 +585,8 @@ Speicherort der Daten. Der Standardwert von Referenzvariablen ist null, welcher 
 &lt;thead>
 &lt;tr>
 &lt;th>Reihenfolge&lt;/th>
-&lt;th>W&lt;/th>
-&lt;th>&lt;/th>
+&lt;th>Bedeutung&lt;/th>
+&lt;th>Beispiel&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
@@ -630,7 +612,7 @@ Speicherort der Daten. Der Standardwert von Referenzvariablen ist null, welcher 
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">String[] words;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">String&lt;span style="color:#f92672">[]&lt;/span> words&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h5 id="länge-eines-arrays">Länge eines Arrays&lt;/h5>
@@ -641,7 +623,7 @@ Speicherort der Daten. Der Standardwert von Referenzvariablen ist null, welcher 
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">words.length
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">words&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">length&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h5 id="indizierung">Indizierung&lt;/h5>
@@ -663,8 +645,8 @@ Speicherort der Daten. Der Standardwert von Referenzvariablen ist null, welcher 
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">String[] words;
-String words[];
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">String&lt;span style="color:#f92672">[]&lt;/span> words&lt;span style="color:#f92672">;&lt;/span>
+String words&lt;span style="color:#f92672">[];&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Die zweite Form wird bei uns nicht verwendet.&lt;/p>
@@ -674,7 +656,7 @@ String words[];
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">String[] words = new String[5];
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">String&lt;span style="color:#f92672">[]&lt;/span> words &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> String&lt;span style="color:#f92672">[&lt;/span>5&lt;span style="color:#f92672">];&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Damit wird ein Array-Objekt der Länge 5 instanziiert. Die fünf Elemente dieses Arrays wurden mit Standardwerten initialisiert. Bei einem Array des Datentyps String ist der Default-Wert null. Alle Werte im Array werden also mit null aufgefüllt.&lt;/p>
@@ -684,7 +666,7 @@ String words[];
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">String[] words = { &amp;#34;Hai&amp;#34;, &amp;#34;Oktopus&amp;#34;, &amp;#34;Rochen&amp;#34;, &amp;#34;Wal&amp;#34;, &amp;#34;Fisch&amp;#34; };
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">String&lt;span style="color:#f92672">[]&lt;/span> words &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">{&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hai&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Oktopus&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Rochen&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Wal&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Fisch&amp;#34;&lt;/span> &lt;span style="color:#f92672">};&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Es wird also ein Array mit der Grösse 5 und den angegebenen Werten erstellt.&lt;/p>
@@ -695,7 +677,7 @@ String words[];
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">words[index] = value;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">words&lt;span style="color:#f92672">[&lt;/span>index&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">=&lt;/span> value&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Wenn wir den Wert eines Array-Elements in einer Variablen außerhalb des Arrays speichern wollen:&lt;/p>
@@ -704,7 +686,7 @@ String words[];
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">String value = words[index];
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">String value &lt;span style="color:#f92672">=&lt;/span> words&lt;span style="color:#f92672">[&lt;/span>index&lt;span style="color:#f92672">];&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;hr>
@@ -715,12 +697,12 @@ String words[];
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">String hello = &amp;#34;Hello, Java&amp;#34;;
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">String hello &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, Java&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Diese Zeichenkette besteht aus 11 Zeichen, einschließlich eines Leerzeichens. Wie wir hier ebenfalls sehen, müssen String-Literale von doppelten Anführungszeichen umgeben sein. Ein Objekt des Typs String ist unveränderlich, die Werte innerhalb eines Strings können also nach dessen Erstellung nicht mehr verändert werden.&lt;/p>
 &lt;h5 id="methoden">Methoden&lt;/h5>
-&lt;p>Der folgende Code zeigt die Verwendung einiger Methoden der Klasse String. Alle Methoden sind in der API unter &lt;a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html&lt;/a> zu finden.&lt;/p>
+&lt;p>Der folgende Code zeigt die Verwendung einiger Methoden der Klasse String. Alle Methoden sind in der API unter &lt;a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">java.lang.String&lt;/a> zu finden.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -849,109 +831,114 @@ String words[];
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">public class StringMethoden {
-public static void main(String\[\] args) {
-String house = &amp;#34;house&amp;#34;;
-/**
-* Returns the char value at the specified index (indexing starts from 0)
-*/
-char o = house.charAt(1);
-/**
-* Returns the length of this string.
-*/
-int length = house.length();
-/**
-* Returns true if and only if this string contains the specified sequence of char values
-*/
-boolean isContaining = house.contains(&amp;#34;us&amp;#34;);
-/**
-* Returns the index within this string of the first occurrence of the specified character
-*/
-int indexChar = house.indexOf(&amp;#39;s&amp;#39;);
-/**
-* Returns the index within this string of the first occurrence of the specified substring
-*/
-int indexSubstring = house.indexOf(&amp;#34;us&amp;#34;);
-/**
-* Tests if this string starts with the specified prefix
-*/
-boolean startsWithPrefix = house.startsWith(&amp;#34;Ho&amp;#34;); // false
-boolean startsWithPrefix2 = house.startsWith(&amp;#34;ho&amp;#34;); // true
-/**
-* Tests if this string ends with the specified suffix
-*/
-boolean endsWithSuffix = house.endsWith(&amp;#34;se&amp;#34;); // true
-/**
-* Returns a new string resulting from replacing all occurrences of oldChar in this string with newChar
-*/
-String mouse = house.replace(&amp;#39;h&amp;#39;, &amp;#39;m&amp;#39;);
-String houseHouse = &amp;#34;House, House&amp;#34;;
-String mouseMouse = houseHouse.replace(&amp;#39;H&amp;#39;, &amp;#39;M&amp;#39;);
-/**
-* Returns a new string that is a substring of this string, starting from the specified index
-*/
-String applePearLemon = &amp;#34;Apple, pear, lemon&amp;#34;;
-String pearLemon = applePearLemon.substring(7);
-/**
-* Returns a new string that is a substring of this string
-*/
-String pear = applePearLemon.substring(7, 11);
-/**
-* Converts all of the characters in this String to upper case
-*/
-String apple = &amp;#34;Apple&amp;#34;;
-String appleUpperCase = apple.toUpperCase(); // APPLE
-/**
-* Converts all of the characters in this String to lower case.
-*/
-String appleLowerCase = apple.toLowerCase(); // apple
-/**
-* Splits this string around matches of the given regular expression, puts them in a String array
-*/
-String applePear = &amp;#34;Apple, pear&amp;#34;;
-String[] fruits = applePear.split(&amp;#34;,\\s&amp;#34;); // \\s means whitespace
-/**
-* Converts this string to a new character array
-*/
-char[] charArray = applePearLemon.toCharArray();
-/**
-* Compares this string to the specified object
-*/
-String appleOne = &amp;#34;Apple&amp;#34;;
-String appleTwo = &amp;#34;Apple&amp;#34;;
-boolean isEqual = appleOne.equals(appleTwo);
-/**
-* Compares two strings lexicographically.
-* The comparison is based on the Unicode value of each character in the strings.
-* The result is a negative integer if this String object lexicographically precedes the argument string.
-* The result is a positive integer if this String object lexicographically follows the argument string.
-* The result is zero if the strings are equal
-*/
-String abcd = &amp;#34;abcd&amp;#34;;
-String cdef = &amp;#34;cdef&amp;#34;;
-if (abcd.compareTo(cdef) &amp;lt; 0) {
-System.out.println(abcd + &amp;#34; precedes &amp;#34; + cdef);
-}
-if (house.compareTo(house) == 0) {
-System.out.println(house + &amp;#34; is equal to &amp;#34; + house);
-}
-if (cdef.compareTo(abcd) &amp;gt; 0) {
-System.out.println(cdef + &amp;#34; follows &amp;#34; + abcd);
-}
-/**
-* Capital letters precede lower case letters
-*/
-String houseLowerCase = &amp;#34;house&amp;#34;;
-String houseUpperCase = &amp;#34;HOUSE&amp;#34;;
-if (houseLowerCase.compareTo(houseUpperCase) &amp;gt; 0) {
-System.out.println(houseUpperCase + &amp;#34; precedes + &amp;#34; houseLowerCase);
-}
-/**
-* Compares two strings lexicographically, ignoring case differences
-*/
-System.out.println(houseLowerCase.compareToIgnoreCase(houseUpperCase));
-}
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">StringMethoden&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+String house &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;house&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns the char value at the specified index (indexing starts from 0)
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">char&lt;/span> o &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">charAt&lt;/span>&lt;span style="color:#f92672">(&lt;/span>1&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns the length of this string.
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> length &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">length&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns true if and only if this string contains the specified sequence of char values
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">boolean&lt;/span> isContaining &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">contains&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;us&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns the index within this string of the first occurrence of the specified character
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> indexChar &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">indexOf&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;s&amp;#39;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns the index within this string of the first occurrence of the specified substring
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> indexSubstring &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">indexOf&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;us&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Tests if this string starts with the specified prefix
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">boolean&lt;/span> startsWithPrefix &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">startsWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Ho&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// false
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> startsWithPrefix2 &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">startsWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ho&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// true
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Tests if this string ends with the specified suffix
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">boolean&lt;/span> endsWithSuffix &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">endsWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;se&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// true
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns a new string resulting from replacing all occurrences of oldChar in this string with newChar
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String mouse &lt;span style="color:#f92672">=&lt;/span> house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">replace&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;h&amp;#39;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#39;m&amp;#39;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+String houseHouse &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;House, House&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+String mouseMouse &lt;span style="color:#f92672">=&lt;/span> houseHouse&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">replace&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;H&amp;#39;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#39;M&amp;#39;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns a new string that is a substring of this string, starting from the specified index
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String applePearLemon &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Apple, pear, lemon&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+String pearLemon &lt;span style="color:#f92672">=&lt;/span> applePearLemon&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">substring&lt;/span>&lt;span style="color:#f92672">(&lt;/span>7&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Returns a new string that is a substring of this string
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String pear &lt;span style="color:#f92672">=&lt;/span> applePearLemon&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">substring&lt;/span>&lt;span style="color:#f92672">(&lt;/span>7&lt;span style="color:#f92672">,&lt;/span> 11&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Converts all of the characters in this String to upper case
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String apple &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Apple&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+String appleUpperCase &lt;span style="color:#f92672">=&lt;/span> apple&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">toUpperCase&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// APPLE
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Converts all of the characters in this String to lower case.
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String appleLowerCase &lt;span style="color:#f92672">=&lt;/span> apple&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">toLowerCase&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// apple
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Splits this string around matches of the given regular expression, puts them in a String array
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String applePear &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Apple, pear&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+String&lt;span style="color:#f92672">[]&lt;/span> fruits &lt;span style="color:#f92672">=&lt;/span> applePear&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">split&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;,\\s&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// \\s means whitespace
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Converts this string to a new character array
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> charArray &lt;span style="color:#f92672">=&lt;/span> applePearLemon&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">toCharArray&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Compares this string to the specified object
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String appleOne &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Apple&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+String appleTwo &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Apple&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">boolean&lt;/span> isEqual &lt;span style="color:#f92672">=&lt;/span> appleOne&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">equals&lt;/span>&lt;span style="color:#f92672">(&lt;/span>appleTwo&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Compares two strings lexicographically.
+&lt;/span>&lt;span style="color:#75715e"> * The comparison is based on the Unicode value of each character in the strings.
+&lt;/span>&lt;span style="color:#75715e"> * The result is a negative integer if this String object lexicographically precedes the argument string.
+&lt;/span>&lt;span style="color:#75715e"> * The result is a positive integer if this String object lexicographically follows the argument string.
+&lt;/span>&lt;span style="color:#75715e"> * The result is zero if the strings are equal
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String abcd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;abcd&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+String cdef &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;cdef&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>abcd&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">compareTo&lt;/span>&lt;span style="color:#f92672">(&lt;/span>cdef&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> 0&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>abcd &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; precedes &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> cdef&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>house&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">compareTo&lt;/span>&lt;span style="color:#f92672">(&lt;/span>house&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">==&lt;/span> 0&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>house &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; is equal to &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> house&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>cdef&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">compareTo&lt;/span>&lt;span style="color:#f92672">(&lt;/span>abcd&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span> 0&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>cdef &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; follows &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> abcd&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Capital letters precede lower case letters
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+String houseLowerCase &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;house&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+String houseUpperCase &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;HOUSE&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>houseLowerCase&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">compareTo&lt;/span>&lt;span style="color:#f92672">(&lt;/span>houseUpperCase&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span> 0&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>houseUpperCase &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; precedes + &amp;#34;&lt;/span> houseLowerCase&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Compares two strings lexicographically, ignoring case differences
+&lt;/span>&lt;span style="color:#75715e"> */&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>houseLowerCase&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">compareToIgnoreCase&lt;/span>&lt;span style="color:#f92672">(&lt;/span>houseUpperCase&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;hr>
@@ -971,19 +958,19 @@ System.out.println(houseLowerCase.compareToIgnoreCase(houseUpperCase));
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">import java.util.Scanner;
-public class TakeInput {
-public static void main (String\[\] args) {
-Scanner scanner = new Scanner(System.in);
-System.out.println(&amp;#34;Enter your name: &amp;#34;);
-String name = scanner.nextLine();
-System.out.println(&amp;#34;Your name is: &amp;#34; + name);
-}
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">import&lt;/span> java.util.Scanner&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TakeInput&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span> &lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+Scanner scanner &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Scanner&lt;span style="color:#f92672">(&lt;/span>System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">in&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Enter your name: &amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+String name &lt;span style="color:#f92672">=&lt;/span> scanner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">nextLine&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Your name is: &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> name&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>&lt;strong>Zeile 1&lt;/strong>&lt;/p>
-&lt;p>Der erste Schritt besteht darin, die Scanner-Klasse zu importieren, damit sie im folgenden Code verwendet werden kann. Die &lt;em>Java&lt;/em> Scanner-Klasse stammt aus dem Paket &lt;a href="https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html">java.util&lt;/a>.
+&lt;p>Der erste Schritt besteht darin, die Scanner-Klasse zu importieren, damit sie im folgenden Code verwendet werden kann. Die &lt;em>Java&lt;/em> Scanner-Klasse stammt aus dem Paket &lt;a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/package-summary.html">java.util&lt;/a>.
 Es ist einfach zu bedienen, muss jedoch importiert werden, damit die Klasse funktioniert.&lt;/p>
 &lt;p>&lt;strong>Zeile 6&lt;/strong>&lt;/p>
 &lt;ul>
@@ -1015,9 +1002,9 @@ Wenn eine Methode einen Wert an ihren Aufrufer zurückgeben soll, sprechen wir v
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">public static returnType methodName() {
-return returnValue; // der Typ des Rückgabewerts muss vom Typ sein, welcher im Methodenkopf steht
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> returnType &lt;span style="color:#a6e22e">methodName&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> returnValue&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// der Typ des Rückgabewerts muss vom Typ sein, welcher im Methodenkopf steht
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Wir sehen, dass in der Methodendeklaration angeben werden muss, welcher Typ zurückgegeben wird.&lt;/p>
@@ -1029,8 +1016,8 @@ return returnValue; // der Typ des Rückgabewerts muss vom Typ sein, welcher im 
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">public static void methodName() {
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">methodName&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Das Keyword &lt;em>return&lt;/em> ist in Methoden ohne Rückgabewert weiterhin zulässig um die Methode zu verlassen. Die Angabe eines Rückgabewerts entfällt in diesem Fall.&lt;/p>
@@ -1042,8 +1029,8 @@ return returnValue; // der Typ des Rückgabewerts muss vom Typ sein, welcher im 
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">public static void methodName(type identifier) {
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">methodName&lt;/span>&lt;span style="color:#f92672">(&lt;/span>type identifier&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Ein Parameter besteht immer aus dem Datentyp und einem Bezeichner. Wir können beliebig viele Parameter an eine Methode übergeben. Gemäss den SBB Code Conventions (Regeln für den Programmcode) sollte eine Methode nicht mehr als acht Parameter haben.&lt;/p>
@@ -1138,10 +1125,10 @@ Von diesem Operator gibt es zwei Varianten:&lt;/p>
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int i = 5;
-int c = i++; // c = 5
-// ab hier ist i = 6
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> c &lt;span style="color:#f92672">=&lt;/span> i&lt;span style="color:#f92672">++;&lt;/span> &lt;span style="color:#75715e">// c = 5
+&lt;/span>&lt;span style="color:#75715e">// ab hier ist i = 6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h4 id="präinkrement">Präinkrement&lt;/h4>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -1150,9 +1137,9 @@ int c = i++; // c = 5
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int i = 5;
-int d = ++i; // d = 6
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> d &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">++&lt;/span>i&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// d = 6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h4 id="postdekrement">Postdekrement&lt;/h4>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -1162,10 +1149,10 @@ int d = ++i; // d = 6
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int i = 5;
-int e = i--; // e = 5
-// ab hier ist i = 4
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> e &lt;span style="color:#f92672">=&lt;/span> i&lt;span style="color:#f92672">--;&lt;/span> &lt;span style="color:#75715e">// e = 5
+&lt;/span>&lt;span style="color:#75715e">// ab hier ist i = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h4 id="prädekrement">Prädekrement&lt;/h4>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -1174,9 +1161,9 @@ int e = i--; // e = 5
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int i = 5;
-int f = --i; // f = 4
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> f &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">--&lt;/span>i&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// f = 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;hr>
 &lt;h4 id="vegleichsoperatoren">Vegleichsoperatoren&lt;/h4>
@@ -1280,8 +1267,8 @@ Damit bietet eine Kontrollstruktur die Möglichkeit, Programmteile nur unter gew
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">if (expression) {
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>expression&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Wenn der Ausdruck true ist, werden die Anweisungen im Codeblock ausgeführt. Andernfalls werden sie übersprungen.&lt;/p>
@@ -1296,11 +1283,11 @@ Damit bietet eine Kontrollstruktur die Möglichkeit, Programmteile nur unter gew
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">if (expression) {
-// do something
-} else {
-// do something else
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>expression&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// do something
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// do something else
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Im folgenden Beispiel gibt das Programm je nach Wert von num (gerade oder ungerade) unterschiedlichen Text aus.&lt;/p>
@@ -1314,12 +1301,12 @@ Damit bietet eine Kontrollstruktur die Möglichkeit, Programmteile nur unter gew
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int num = ...; // the num is initialized by some value
-if (num % 2 == 0) {
-System.out.println(&amp;#34;It&amp;#39;s an even number&amp;#34;);
-} else {
-System.out.println(&amp;#34;It&amp;#39;s an odd number&amp;#34;);
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> num &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span> &lt;span style="color:#75715e">// the num is initialized by some value
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>num &lt;span style="color:#f92672">%&lt;/span> 2 &lt;span style="color:#f92672">==&lt;/span> 0&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;It&amp;#39;s an even number&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;It&amp;#39;s an odd number&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Da eine Zahl nur gerade oder ungerade sein kann, wird nur eine der beiden Ausgaben gemacht.&lt;/p>
@@ -1338,15 +1325,15 @@ System.out.println(&amp;#34;It&amp;#39;s an odd number&amp;#34;);
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">if (expression0) {
-// do something
-} else if (expression1) {
-// do something else 1
-} else if (expressionN) {
-// do something else N
-} else {
-// in all other cases: do this…
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>expression0&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// do something
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>expression1&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// do something else 1
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>expressionN&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// do something else N
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// in all other cases: do this…
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Wenn also der erste Ausdruck false ist, wird der zweite Ausdruck überprüft, usw.&lt;/p>
@@ -1365,16 +1352,16 @@ System.out.println(&amp;#34;It&amp;#39;s an odd number&amp;#34;);
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">long dollars = ...; // your budget
-if (dollars &amp;lt; 1000) {
-System.out.println(&amp;#34;Buy a laptop&amp;#34;);
-} else if (dollars &amp;lt; 2000) {
-System.out.println(&amp;#34;Buy a personal computer&amp;#34;);
-} else if (dollars &amp;lt; 100_000) {
-System.out.println(&amp;#34;Buy a server&amp;#34;);
-} else {
-System.out.println(&amp;#34;Buy a data center or a quantum computer&amp;#34;);
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">long&lt;/span> dollars &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span> &lt;span style="color:#75715e">// your budget
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>dollars &lt;span style="color:#f92672">&amp;lt;&lt;/span> 1000&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Buy a laptop&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>dollars &lt;span style="color:#f92672">&amp;lt;&lt;/span> 2000&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Buy a personal computer&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>dollars &lt;span style="color:#f92672">&amp;lt;&lt;/span> 100_000&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Buy a server&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Buy a data center or a quantum computer&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h5 id="switch-statement">Switch-Statement&lt;/h5>
@@ -1398,21 +1385,21 @@ System.out.println(&amp;#34;Buy a data center or a quantum computer&amp;#34;);
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">switch (variable) {
-case value1:
-// do something here
-break;
-case value2:
-// do something here
-break;
-//... other cases
-case valueN:
-// do something here
-break;
-default:
-// do something by default
-break; // it can be omitted
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">switch&lt;/span> &lt;span style="color:#f92672">(&lt;/span>variable&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">case&lt;/span> value1&lt;span style="color:#f92672">:&lt;/span>
+&lt;span style="color:#75715e">// do something here
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">break&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">case&lt;/span> value2&lt;span style="color:#f92672">:&lt;/span>
+&lt;span style="color:#75715e">// do something here
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">break&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">//... other cases
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">case&lt;/span> valueN&lt;span style="color:#f92672">:&lt;/span>
+&lt;span style="color:#75715e">// do something here
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">break&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">default&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;span style="color:#75715e">// do something by default
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">break&lt;/span>&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// it can be omitted
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Die Schlüsselwörter switch und case werden hier immer benötigt. Die Schlüsselwörter break und default sind optional. Das Schlüsselwort break verlässt die Switch-Anweisung.
@@ -1427,9 +1414,9 @@ Wenn ein Fall nicht über das Keyword &lt;em>break&lt;/em> verfügt, wird auch d
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">for (initialization; condition; modification) {
-// do something
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>initialization&lt;span style="color:#f92672">;&lt;/span> condition&lt;span style="color:#f92672">;&lt;/span> modification&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// do something
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;ul>
@@ -1447,12 +1434,12 @@ Wenn ein Fall nicht über das Keyword &lt;em>break&lt;/em> verfügt, wird auch d
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int n = 9;
-for (int i = 0; i &amp;lt;= n; i++) {
-System.out.print(i + &amp;#34; &amp;#34;);
-}
-// Output: 0 1 2 3 4 5 6 7 8 9
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> n &lt;span style="color:#f92672">=&lt;/span> 9&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 0&lt;span style="color:#f92672">;&lt;/span> i &lt;span style="color:#f92672">&amp;lt;=&lt;/span> n&lt;span style="color:#f92672">;&lt;/span> i&lt;span style="color:#f92672">++)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">print&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#75715e">// Output: 0 1 2 3 4 5 6 7 8 9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Innerhalb des Schleifenkörpers kann das Programm wiederum alle möglichen Java-Anweisungen ausführen. Es kann sogar andere Schleifen enthalten. Wie bei allen Blöcken sind die Schleifenvariablen nur innerhalb des Schleifenkörpers sichtbar.
 Die Schleifenvariable wird meistens mit einfachen Variablennamen wie i, j, k oder index benannt.&lt;/p>
@@ -1470,14 +1457,14 @@ Die Schleifenvariable wird meistens mit einfachen Variablennamen wie i, j, k ode
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int startIncl = 1;
-int endExcl = 11;
-int sum = 0;
-for (int i = startIncl; i &amp;lt; endExcl; i++) {
-sum += i;
-}
-System.out.println(sum); // Output: 55
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> startIncl &lt;span style="color:#f92672">=&lt;/span> 1&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> endExcl &lt;span style="color:#f92672">=&lt;/span> 11&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> sum &lt;span style="color:#f92672">=&lt;/span> 0&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> startIncl&lt;span style="color:#f92672">;&lt;/span> i &lt;span style="color:#f92672">&amp;lt;&lt;/span> endExcl&lt;span style="color:#f92672">;&lt;/span> i&lt;span style="color:#f92672">++)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+sum &lt;span style="color:#f92672">+=&lt;/span> i&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>sum&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// Output: 55
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h5 id="for-each-loop">For-Each Loop&lt;/h5>
 &lt;p>Der For-Each-Loop durchläuft alle Elemente eines Arrays oder einer Collection. Die Angaben aus dem For-Loop werden durch eine Schleifenvariable und ein Doppelpunkt ersetzt.&lt;/p>
@@ -1490,12 +1477,12 @@ System.out.println(sum); // Output: 55
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int[] numbers = { 125, 381, 98, 12, 235 };
-for (int number: numbers) {
-System.out.print(number + &amp;#34; &amp;#34;);
-}
-// Output: 125 381 98 12 235
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> numbers &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">{&lt;/span> 125&lt;span style="color:#f92672">,&lt;/span> 381&lt;span style="color:#f92672">,&lt;/span> 98&lt;span style="color:#f92672">,&lt;/span> 12&lt;span style="color:#f92672">,&lt;/span> 235 &lt;span style="color:#f92672">};&lt;/span>
+&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> number&lt;span style="color:#f92672">:&lt;/span> numbers&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">print&lt;/span>&lt;span style="color:#f92672">(&lt;/span>number &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#75715e">// Output: 125 381 98 12 235
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Der gezeigte Loop wird also fünfmal ausgeführt und der Wert der Variable &lt;em>number&lt;/em> nimmt bei jedem Durchlauf den jeweils nächsten Wert aus dem Array an.&lt;/p>
 &lt;h5 id="while-loop">While-Loop&lt;/h5>
@@ -1507,9 +1494,9 @@ System.out.print(number + &amp;#34; &amp;#34;);
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">while (condition) {
-// body: do something
-}
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#f92672">(&lt;/span>condition&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// body: do something
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Innerhalb des Schleifenkörpers kann das Programm wiederum alle möglichen Java-Anweisungen ausführen. Es kann sogar andere Schleifen enthalten.&lt;/p>
@@ -1525,13 +1512,13 @@ System.out.print(number + &amp;#34; &amp;#34;);
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">int i = 0;
-while (i &amp;lt; 5) {
-System.out.print(i + &amp;#34; &amp;#34;);
-i++;
-}
-// Output: 0 1 2 3 4
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 0&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#f92672">(&lt;/span>i &lt;span style="color:#f92672">&amp;lt;&lt;/span> 5&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">print&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+i&lt;span style="color:#f92672">++;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#75715e">// Output: 0 1 2 3 4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h5 id="do-while-loop">Do-While Loop&lt;/h5>
 &lt;p>Die Do-While-Schleife besteht aus einem Codeblock und einer Bedingung (einem boolschen Ausdruck) am Ende. Im Gegensatz zur While-Schleife wird die Do-While-Schleife mindestens einmal ausgeführt, da die Bedingung am Ende steht.&lt;/p>
@@ -1542,9 +1529,9 @@ i++;
 &lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">do {
-// body: do something
-} while (condition);
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">do&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// body: do something
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#f92672">(&lt;/span>condition&lt;span style="color:#f92672">);&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>Labs: Lab JUnit-Tests</title><link>/labs/java/junit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/junit/</guid><description>
