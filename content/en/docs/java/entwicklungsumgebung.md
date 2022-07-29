@@ -3,7 +3,7 @@ title: "Entwicklungsumgebung einrichten"
 linkTitle: "Entwicklungsumgebung einrichten"
 weight: 1
 description: >
-  Modul #O1
+  Modul #O4 - Entwicklungsumgebung
 ---
 
 #### Ziele
