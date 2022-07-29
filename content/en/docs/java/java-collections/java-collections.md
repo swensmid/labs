@@ -1,7 +1,7 @@
 ---
 title: "Java Collections"
 linkTitle: "Java Collections"
-weight: 7
+weight: 98
 description: >
   Java Collections
 ---
