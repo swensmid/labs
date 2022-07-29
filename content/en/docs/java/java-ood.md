@@ -1,6 +1,6 @@
 ---
 title: "Objektorientiertes Design"
-linkTitle: "Objektori~~~~entiertes Design"
+linkTitle: "Objektorientiertes Design"
 weight: 7
 description: >
   Modul #J3
