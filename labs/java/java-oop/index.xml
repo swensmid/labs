@@ -79,7 +79,7 @@ die das Abonnemente per Monatlichen Zahlung bezahlen&lt;/li>
 &lt;code>BULGARIAN,CROATIAN,CZECH,DANISH,DUTCH,ENGLISH,ESTONIAN,FINNISH,FRENCH,GERMAN,GREEK,HUNGARIAN,IRISH,ITALIAN,SLOVENIA,LATVIAN,LITHUANIAN,MALTESE,POLISH,PORTUGUESE,ROMANIAN,SLOVAK,SLOVENE,SPANISH,SWEDISH&lt;/code>&lt;/p>
 &lt;p>Ein Film soll um den Wert &lt;em>Sprachen&lt;/em> erweitert werden. Darin wird gepseichert, in welchen Sprachen der Film verfügbar ist.
 &lt;strong>Speichert die Sprache nicht in Form eines Strings!!!&lt;/strong>&lt;/p></description></item><item><title>Labs: Immobilienfirma</title><link>/labs/java/java-oop/04_immofirma/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-oop/04_immofirma/</guid><description>
-&lt;h2 id="ziele">Ziele&lt;/h2>
+&lt;h4 id="ziele">Ziele&lt;/h4>
 &lt;ul>
 &lt;li>Ich kann Namen für Objekte in einem Text identifizieren&lt;/li>
 &lt;li>Ich kann gute Namen für Attribute und Methoden wählen&lt;/li>
