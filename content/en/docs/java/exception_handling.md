@@ -1,7 +1,7 @@
 ---
 title: "Exception Handling"
 linkTitle: "Exception Handling"
-weight: 3
+weight: 99
 description: >
   Exception Handling
 ---
@@ -15,10 +15,10 @@ description: >
 * Ich kenne die beiden Interfaces AutoCloseable und Closeable
 
 #### Änderungskontrolle
-| Autor | Version | Datum | Änderungen |
-| --- | --- | --- | --- |  
-| Claudio Zesiger | 0.1 | 01.09.2020 | * Initiale Version erstellt |
-| Claudio Zesiger | 0.2 | 21.10.2020 | * Initiale Version abgeschlossen |
+| Autor           | Version | Datum      | Änderungen                       |
+|-----------------|---------|------------|----------------------------------|
+| Claudio Zesiger | 0.1     | 01.09.2020 | * Initiale Version erstellt      |
+| Claudio Zesiger | 0.2     | 21.10.2020 | * Initiale Version abgeschlossen |
 
 #### Voraussetzungen
 * Gute Grundlagenkenntnisse von Java-Anwendungen

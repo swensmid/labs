@@ -1,12 +1,12 @@
 ---
 title: "Objektorientierte Programmierung"
 linkTitle: "Objektorientierte Programmierung"
-weight: 2
+weight: 4
 description: >
   Modul #J2 - OOP
 ---
 
-## Ziele
+#### Ziele
 * Ich verstehe, wie eine Klasse aufgebaut ist
 * Ich verstehe den Unterschied zwischen einer Klasse und einem Objekt
 * Ich weiss, was Datenfelder sind und verstehe den Unterschied zwischen statischen und nicht-statischen Feldern

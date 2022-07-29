@@ -7,7 +7,7 @@ description: >
   Exercises zu Modul #J1
 ---
 
-## Ziele
+#### Ziele
 * Ich kann Text und Zahlen auf der Konsole ausgeben
 * Ich kann Text und Zahlen auf der Konsole eingeben und diese wieder ausgeben
 * Ich kann statische Methoden schreiben, die einfache Rechnungen durchführen

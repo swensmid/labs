@@ -7,7 +7,7 @@ description: >
   Immobilienfirma
 ---
 
-## Ziele
+#### Ziele
 * Ich kann Namen für Objekte in einem Text identifizieren
 * Ich kann gute Namen für Attribute und Methoden wählen
 * Ich kann Objekte erstellen und ihnen entsprechende Eigenschaften geben

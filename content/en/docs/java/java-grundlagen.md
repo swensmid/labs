@@ -1,7 +1,7 @@
 ---
 title: "Java Grundlagen"
 linkTitle: "Java Grundlagen"
-weight: 1
+weight: 3
 description: >
   Modul #J1
 ---
