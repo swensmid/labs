@@ -2,7 +2,7 @@
 title: "Lab JUnit-Tests"
 linkTitle: "JUnit-Tests"
 type: docs
-weight: 3
+weight: 100
 sectionnumber: 1
 description: >
  Unit-Tests mit JUnit
