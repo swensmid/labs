@@ -6,4 +6,5 @@ menu:
     weight: 1
 ---
 
-## Übersicht
+## Übersicht Ausführungsprogramm
+[![Ausbildungsprogramm Übersicht](../docs/overview/ausbildungsprogramm_uebersicht.png)](../docs/overview/ausbildungsprogramm_uebersicht.png)
