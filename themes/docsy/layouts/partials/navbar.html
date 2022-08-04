@@ -1,33 +1,108 @@
 {{ $cover := .HasShortcode "blocks/cover" }}
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
-		<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="text-uppercase font-weight-bold">{{ .Site.Title }}</span>
-	</a>
-	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
-		<ul class="navbar-nav mt-2 mt-lg-0">
-			{{ $p := . }}
-			{{ range .Site.Menus.main }}
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				{{ $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
-				{{ with .Page }}
-				{{ $active = or $active ( $.IsDescendant .)  }}
-				{{ end }}
-				{{ $url := urls.Parse .URL }}
-				{{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
-				<a class="nav-link{{if $active }} active{{end}}" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }}><span{{if $active }} class="active"{{end}}>{{ .Name }}</span></a>
-			</li>
-			{{ end }}
-			{{ if  .Site.Params.versions }}
-			<li class="nav-item dropdown d-none d-lg-block">
-				{{ partial "navbar-version-selector.html" . }}
-			</li>
-			{{ end }}
-			{{ if  (gt (len .Site.Home.Translations) 0) }}
-			<li class="nav-item dropdown d-none d-lg-block">
-				{{ partial "navbar-lang-selector.html" . }}
-			</li>
-			{{ end }}
-		</ul>
-	</div>
-	<div class="navbar-nav d-none d-lg-block">{{ partial "search-input.html" . }}</div>
+    <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+        <span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="text-uppercase font-weight-bold">{{ .Site.Title }}</span>
+    </a>
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            {{ $p := . }} {{ range .Site.Menus.main }}
+            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                {{ $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }} {{ with .Page }} {{ $active = or $active ( $.IsDescendant .) }} {{ end }} {{ $url := urls.Parse .URL }} {{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+                <a class="nav-link{{if $active }} active{{end}}" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }}>
+                    <span{{if $active }} class="active" {{end}}>{{ .Name }}</span>
+                </a>
+            </li>
+            {{ end }} {{ if .Site.Params.versions }}
+            <li class="nav-item dropdown d-none d-lg-block">
+                {{ partial "navbar-version-selector.html" . }}
+            </li>
+            {{ end }} {{ if (gt (len .Site.Home.Translations) 0) }}
+            <li class="nav-item dropdown d-none d-lg-block">
+                {{ partial "navbar-lang-selector.html" . }}
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    <div>
+        <h3>SBB Inhalte</h3>
+        <label class="toggle">
+			<input id="toggleswitch" type="checkbox">
+			<span class="roundbutton"></span>
+		  </label>
+    </div>
+    <style>
+        .toggle {
+            margin: 0 0 0 2rem;
+            position: relative;
+            display: inline-block;
+            width: 6rem;
+            height: 3.4rem;
+        }
+        
+        .toggle input {
+            display: none;
+        }
+        
+        .roundbutton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            background-color: #33455e;
+            display: block;
+            transition: all 0.3s;
+            border-radius: 3.4rem;
+            cursor: pointer;
+        }
+        
+        .roundbutton:before {
+            position: absolute;
+            content: "";
+            height: 2.4rem;
+            width: 2.5rem;
+            border-radius: 100%;
+            display: block;
+            left: 0.5rem;
+            bottom: 0.5rem;
+            background-color: white;
+            transition: all 0.3s;
+        }
+        
+        input:checked+.roundbutton {
+            background-color: #FF6E48;
+        }
+        
+        input:checked+.roundbutton:before {
+            transform: translate(2.6rem, 0);
+        }
+    </style>
+    <script>
+        var sbb = false;
+        var input = document.getElementById('toggleswitch');
+
+        input.addEventListener('change', function() {
+            sbb = !sbb;
+            changeInvisibility();
+        });
+
+        function changeInvisibility() {
+            console.log("2");
+            if (sbb) {
+                for (var element of document.getElementsByClassName("sbb")) {
+                    element.classList.remove("invisible")
+                }
+            } else {
+                for (var element of document.getElementsByClassName("sbb")) {
+                    element.classList.add("invisible")
+                }
+            }
+        }
+        document.addEventListener('readystatechange', event => {
+            changeInvisibility();
+        });
+    </script>
+
+    <div class="navbar-nav d-none d-lg-block">{{ partial "search-input.html" . }}</div>
 </nav>

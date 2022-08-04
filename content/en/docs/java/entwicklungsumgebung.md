@@ -16,8 +16,8 @@ description: >
 
 ---
 
+{{% sbb %}}
 ### Adminrechte überprüfen / bestellen
-
 Damit du auf deinem SBB-Laptop Programme installieren kannst, muss dein angemeldeter Benutzer über Adminrechte verfügen.
 Über den folgenden Link kannst du dein Inventar anzeigen lassen und überprüfen, ob dein Benutzer bereits Adminrechte besitzt: https://sbb.service-now.com/sbb?id=show_inventory
 Wenn die Liste deines Inventars den Eintrag "Local admin right" enthält, dann besitzt du bereits Adminrechte und musst nichts weiter unternehmen.
@@ -33,6 +33,9 @@ Nach der Bestellung muss eine Weile gewartet werden, bis die Bestellung abgeschl
 
 Die Bestellung von Hardware oder lizenzierter Software ist über das [Service-Now](https://sbb.service-now.com/sbb?id=sc_home) möglich.
 
+
+{{% /sbb %}}
+
 ---
 
 ### Programme und Tools
@@ -42,7 +45,7 @@ Die folgenden Programme sollten heruntergeladen und installiert werden, sie werd
 | Anwendung                    | Link                                                                                                                                           | Zweck                                                                                         |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | JetBrains Toolbox (optional) | [https://www.jetbrains.com/toolbox/app/](https://www.jetbrains.com/toolbox/app/)                                                               | Management für Entwicklungsumgebungen                                                         |
-| IntelliJ IDEA                | Durch die JetBrains Toolbox oder direkt unter [https://www.jetbrains.com/de-de/idea/download/](https://www.jetbrains.com/de-de/idea/download/) | Entwicklungsumgebung, beim Starten den Lizenzserver eintragen: http://intellij-license.sbb.ch |
+| IntelliJ IDEA                | Durch die JetBrains Toolbox oder direkt unter [https://www.jetbrains.com/de-de/idea/download/](https://www.jetbrains.com/de-de/idea/download/) | Entwicklungsumgebung {{% sbb %}}, beim Starten den Lizenzserver eintragen: http://intellij-license.sbb.ch {{% /sbb %}} |
 | Notepad++                    | [https://notepad-plus-plus.org/downloads/](https://notepad-plus-plus.org/downloads/)                                                           | Erweiterter Texteditor mit vielen nützlichen Funktionen                                       |
 | Google Chrome                | [https://www.google.com/intl/de/chrome/](https://www.google.com/intl/de/chrome/)                                                               | Web-Browser von Google mit sehr guten Entwickler-Funktionen                                   |
 | GIT                          | [https://git-scm.com/download/win](https://git-scm.com/download/win)                                                                           | Zugriff auf das Versionsverwaltungssystem GIT                                                 |
@@ -52,6 +55,7 @@ Die folgenden Programme sollten heruntergeladen und installiert werden, sie werd
 
 ---
 
+{{% sbb %}}
 ### Citrix Gateway
 
 Auf deinem SBB-Laptop befindet sich eine Anwendung mit dem Namen Citrix Gateway. Diese Anwendung erlaubt dir eine Verbindung zum SBB Intranet.
@@ -65,8 +69,9 @@ Durch einen Klick auf das Icon siehst du den Verbindungsstatus
 Innerhalb eines SBB-Gebäudes mit Verbindung zu einem LAN oder WLAN der SBB brauchst du diese Anwendung nicht.
 Falls keine Verbindung zu irgendeiner Webseite oder einer Anwendung im SBB-Intranet besteht prüfe immer zuerst, ob der Citrix Gateway aktiv ist und ob du dort eine Verbindung hast.
 
+{{% /sbb %}}
 ---
-
+{{% sbb %}}
 ### Firewall / Sicherheit
 
 Dein Betriebssystem verfügt mit dem Windows-Betriebssystem über eine eigene Firewall. Du bist persönlich für deren Konfiguration verantwortlich.
@@ -75,8 +80,10 @@ Im Intranet der SBB ist der Besuch von diversen Webseiten eingeschränkt. Dein B
 
 Lies den folgenden Artikel im Intranet betreffend Weisungen über Datensicherheit und Datenschutz: [https://sbb.sharepoint.com/sites/intranet_servicessupport/SitePages/datensicherheit-und-datenschutz.aspx](https://sbb.sharepoint.com/sites/intranet_servicessupport/SitePages/datensicherheit-und-datenschutz.aspx)
 
+{{% /sbb %}}
 ---
 
+{{% sbb %}}
 ### Proxy
 
 Ein Proxy ist eine Kommunikationsstelle in einem Netzwerk. Je nachdem, in welchem Netzwerk du dich befindest ist die Konfiguration eines Proxys unumgänglich.
@@ -94,3 +101,5 @@ Diese Einstellungen können in Applikationen wie IntelliJ oder Postman hinterleg
 
 Um bessere Verbindungen zu ermöglichen, gibt es noch den DEV-Proxy der Werkzeugunterstützung (WZU).
 Das Tutorial zum Einrichten gibt es hier: [Entwickler-Proxy](https://confluence.sbb.ch/x/lQL8Nw)
+
+{{% /sbb %}}
