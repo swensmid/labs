@@ -4719,7 +4719,1614 @@ Von Aussen will man lediglich dem Student ein Kurs zuweisen können und alle Inf
 &lt;li>Die Attribute und damit der Zustand einer Klasse bzw. eines Objektes sind vor &amp;ldquo;fremden&amp;rdquo; Zugriff geschützt (Data-Hiding)&lt;/li>
 &lt;li>Die Klasse hat eine öffentliche API, welche von Benutzer der Klasse verwendet werden können. Somit ist auch klar definiert, was die Aufgabe dieser Klasse ist.&lt;/li>
 &lt;li>Die öffentliche API einer Klasse ermöglicht das Verbergen von Umsetzungsdetails. Somit haben interne Strukturänderungen dieser Klasse keinen Einfluss auf den Code des Benutzers&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Java Collections</title><link>/docs/java/java-collections/java-collections/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/java-collections/java-collections/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Testing</title><link>/docs/java/java-testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/java-testing/</guid><description>
+&lt;h4 id="ziele">Ziele&lt;/h4>
+&lt;ul>
+&lt;li>Ich weiss, warum das Testen in der Softwareentwicklung eine zentrale Bedeutung hat&lt;/li>
+&lt;li>Ich kenne die gängigen Testarten in der Software-Entwicklung und deren Zweck&lt;/li>
+&lt;li>Ich kenne die wichtigsten Funktionen des Frameworks JUnit 5&lt;/li>
+&lt;li>Ich kann für einfache Anwendungen selber Unit-Tests implementieren&lt;/li>
+&lt;li>Ich kenne die wichtigsten Funktionen des Frameworks Mockito&lt;/li>
+&lt;li>Ich weiss was Mocks und Spies sind und kenne den Unterschied dazwischen&lt;/li>
+&lt;li>Ich weiss, was Test-Driven-Development ist und wie ich die Methodik anwenden kann&lt;/li>
+&lt;/ul>
+&lt;h2 id="einführung">Einführung&lt;/h2>
+&lt;p>Tests in den unterschiedlichen Phasen der Softwareentwicklung dienen dazu festzustellen,
+ob die entwickelte Software die spezifizierten Anforderungen erfüllt oder nicht.
+Ausserdem können Tests Mängel in dem produzierten Code aufdecken noch bevor der Code
+produktiv geschaltet wird und stellen damit sicher, dass das Endprodukt fehlerfrei funktioniert.&lt;/p>
+&lt;p>Tests sind vor allem aus folgenden Gründen sehr wichtig und sollen entsprechend sehr früh (dazu später)
+in den Entwicklungsprozess integriert werden:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Testing erhöht die Qualität des entwickelten Produkts&lt;/strong> da damit Mängel frühzeitig entdeckt und beseitigt werden können&lt;/li>
+&lt;li>&lt;strong>Testing gibt mehr Sicherheit bei Änderungen am Code&lt;/strong> da damit sichergestellt werden kann, dass die Änderung nicht zu unerwünschten Nebenwirkungen geführt haben.&lt;/li>
+&lt;li>&lt;strong>Testing spart Geld&lt;/strong> da damit weniger Nachbearbeitungsaufwand in Form von Bug/Hot-Fixes betrieben werden muss.&lt;/li>
+&lt;li>&lt;strong>Testing führt zu höherer Kundenzufriedenheit&lt;/strong> da damit weniger Fehler den Kunden davor hindern, fehlerfrei mit dem Produkt zu arbeiten&lt;/li>
+&lt;/ul>
+&lt;h2 id="testarten">Testarten&lt;/h2>
+&lt;p>Es gibt viele verschiedene Softwaretestverfahren und Methoden, mit denen sichergestellt werden kann,
+dass Änderungen am Code wie erwartet funktionieren.&lt;/p>
+&lt;p>Softwaretests können in zwei Bereiche unterteilt werden: manuelles Testen und automatisiertes Testen.
+Beim manuellen Testen werden Testfälle manuell durch einen Menschen und ohne Unterstützung durch Werkzeuge oder Skripte ausgeführt.&lt;br>
+Beim automatisierten Testen werden Testfälle jedoch mithilfe von Tools, Skripten und Software ausgeführt.&lt;br>&lt;/p>
+&lt;p>Hier werden wir uns auf das automatisierte Testen konzentrieren, da dieses im Softwareentwicklungsprozess
+essenziell ist.&lt;/p>
+&lt;h3 id="unit-tests">Unit-Tests&lt;/h3>
+&lt;p>Unit-Tests sind sehr einfach und erfolgen nah an der Quelle der Anwendung.&lt;br>
+Sie dienen zum Testen einzelner Methoden und Funktionen der von der Software verwendeten Klassen,
+Komponenten oder Module.&lt;/p>
+&lt;p>Mit Unit-Tests stellen wir sicher, dass eine Applikation mit ihren Funktionen genau das macht,
+was eigentlich beabsichtigt war. Dazu genügt es nicht nur die &amp;ldquo;guten&amp;rdquo; Fälle zu testen,
+es sollten auch Tests für Grenzwerte durchgeführt werden.
+Ein Unit-Test ist immer ein sog. &amp;ldquo;White-Box&amp;rdquo; Test, da der Entwickler bei der Implementation
+von Unit-Tests den Sourcecode kennt oder ihn einsehen kann.&lt;/p>
+&lt;p>Bei Unit-Tests in Java ist der Testumfang eines Unit-Tests normalerweise in der Grössenordnung einer Methode.&lt;/p>
+&lt;p>In der Regel lassen sich Unit-Tests automatisieren und können einzeln oder auch in Gruppen (sog. Test-Suites)
+lokal (an der eigenen Maschine) oder von einem Continuous-Integration-Server (eine externe Maschine, der dafür sorgt, dass Programmteile sofort
+getestet und zusammengeführt werden können) sehr schnell durchgeführt werden.&lt;/p>
+&lt;h3 id="integrations-tests">Integrations-Tests&lt;/h3>
+&lt;p>Mit Integrationstests wird sichergestellt, dass verschiedene Programmteile der Anwendung
+problemlos ineinandergreifen. So kann beispielsweise die Interaktion mit einer Datenbank oder das
+Zusammenspiel von Mikroservices getestet werden.&lt;/p>
+&lt;p>Tests dieser Art sind kostspieliger und können auch länger dauern als Unit-Tests, weil dafür mehrere
+Teile der Anwendung funktionsfähig sein müssen.&lt;/p>
+&lt;h3 id="end-to-end-tests">End-to-End-Tests&lt;/h3>
+&lt;p>Bei End-to-End-Tests wird der Umgang des Benutzers (oder auch andere, externe Programme) mit der Software
+in einer vollständigen Anwendungsumgebung repliziert.
+Auf diese Weise wird das ordnungsgemässe Funktionieren von Benutzerabläufen überprüft.
+Die Szenarien können ganz einfach sein (z.B. Laden einer Website, Anmeldevorgang) oder auch sehr komplex
+(z.B. E-Mail-Benachrichtigungen, Onlinezahlungen).&lt;/p>
+&lt;p>End-to-End-Tests sind sehr nützlich, aber auch aufwändiger zu erstellen und in automatisierter Form unter Umständen schwer zu verwalten.
+Es empfiehlt sich deshalb, eher weniger End-to-End-Tests zu implementieren und stattdessen eher auf
+weniger aufwändigen Testarten (Unit- und Integrationstests) zu setzen, um riskante Änderungen schnell erkennen zu können.&lt;/p>
+&lt;hr>
+&lt;h2 id="junit">Junit&lt;/h2>
+&lt;p>Zur Implementation von Unit-Tests steht in Java das Framework JUnit zur Verfügung.
+Die aktuellste Version ist 5.9.0. Dies ändert aber stetig, da das Produkt weiterentwickelt wird.
+Vielfach ist in Produkten und Projekten auch JUnit 4 im Einsatz.
+In diesem Modul wird jedoch nur die aktuellste Version von JUnit behandelt.
+Wir schreiben Unit-Tests also mit JUnit 5.&lt;/p>
+&lt;h3 id="wie-ist-junit-5-aufgebaut">Wie ist JUnit 5 aufgebaut?&lt;/h3>
+&lt;p>Das Framework besteht aus folgenden Teilen:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Teil&lt;/th>
+&lt;th>Verwendung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>JUnit Plattform&lt;/td>
+&lt;td>Grundlage zur Einführung von Testframeworks in die JVM. Definition der Test-Engine zur Entwicklung von Testframeworks auf der jeweiligen Plattform. Plattform-Konsole zum Starten der Plattform. Kurz gesagt: Plattform zur Ausführung von Unit-Tests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JUnit Jupiter&lt;/td>
+&lt;td>Programmiermodell zur Implementation von Unit-Tests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JUnit Vintage&lt;/td>
+&lt;td>Ermöglicht die Ausführung von Tests, die mit JUnit 3 oder JUnit 4 geschrieben wurden&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="wo-kann-ich-das-framework-herunterladen">Wo kann ich das Framework herunterladen?&lt;/h3>
+&lt;p>Damit wir nun Unit-Tests implementieren können benötigen wir zuerst die Bibliotheken von JUnit 5, dies wird in den beiden folgenden Abschnitten beschrieben.&lt;/p>
+&lt;h4 id="abhängigkeiten-einbinden-ohne-maven">Abhängigkeiten einbinden ohne Maven&lt;/h4>
+&lt;p>Dieser Abschnitt kann übersprungen werden, wenn mit einem Maven-Projekt gearbeitet wird.
+Alle Bibliotheken sind unter den beiden folgenden Links zu finden:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://search.maven.org/search?q=g:org.junit.jupiter%20AND%20v:5.9.0">org.junit.jupiter&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://search.maven.org/search?q=g:org.junit.platform%20AND%20v:1.9.0">org.junit.platform&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Die folgenden JARs werden benötigt:&lt;/p>
+&lt;ul>
+&lt;li>Aus dem ersten Link
+&lt;ul>
+&lt;li>junit-jupiter-engine&lt;/li>
+&lt;li>junit-jupiter-params&lt;/li>
+&lt;li>junit-jupiter&lt;/li>
+&lt;li>junit-jupiter-api&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Aus dem zweiten Link
+&lt;ul>
+&lt;li>junit-platform-engine&lt;/li>
+&lt;li>junit-platform-commons&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Die Einbindung in ein Projekt muss (ohne Maven) manuell gemacht werden. Die folgende Anleitung soll dabei helfen:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>#&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;th>Screenshot&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>Ordner für Bibliotheken im Projekt anlegen. Im Projekt (Root) einfach einen neuen Ordner &amp;ldquo;lib&amp;rdquo; erzeugen.&lt;/td>
+&lt;td>&lt;img src="../java-testing/1518642046.png" alt="lib-Verzeichnis erstellen">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>Die oben genannten JAR-Bibliotheken in den neuen Ordner kopieren&lt;/td>
+&lt;td>&lt;img src="../java-testing/1616908690.png" alt="JARs kopieren">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>Projekteinstellungen öffnen. Das Projekt mit einem Klick markieren und Taste F4 drücken. Die Projekteinstellungen werden geöffnet&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>Auf der linken Seite den Tab &amp;ldquo;Libraries&amp;rdquo; auswählen&lt;/td>
+&lt;td>&lt;img src="../java-testing/1518642115.png" alt="Lib-Tab auswählen">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>Oben auf das Plus-Icon klicken und Java auswählen&lt;/td>
+&lt;td>&lt;img src="../java-testing/1518642153.png" alt="Bibliothek hinzufügen">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>Die vorhin kopierten Bibliotheken auswählen und alle Dialoge mit OK bestätigen&lt;/td>
+&lt;td>&lt;img src="../java-testing/1616908730.png" alt="Bibliotheken auswählen">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>Die Bibliothek muss anschliessend dem Modul hinzugefügt werden. Der Scope sollte auf Test gestellt werden, da es sich um reine Test-Bibliotheken handelt.&lt;/td>
+&lt;td>&lt;img src="../java-testing/1616908738.png" alt="Ins Modul aufnehmen">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="abhängigkeiten-einbinden-mit-maven">Abhängigkeiten einbinden mit Maven&lt;/h4>
+&lt;p>Dieser Abschnitt kann übersprungen werden, wenn es sich nicht um ein Maven Projekt handelt.&lt;/p>
+&lt;p>Die entsprechenden Abhängigkeiten für das Project Object Model (pom.xml) sind:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;span style="color:#75715e">&amp;lt;!-- Plattform --&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.junit.jupiter&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit-jupiter&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>5.9.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#75715e">&amp;lt;!-- API, enthält unter anderem alle Annotationen --&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.junit.jupiter&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit-jupiter-api&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>5.9.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#75715e">&amp;lt;!-- Test-Engine zur Ausführung von Unit-Tests, die mit JUnit 5 geschrieben wurden --&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.junit.jupiter&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit-jupiter-engine&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>5.9.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#75715e">&amp;lt;!-- JUnit 5 Erweiterung für parametrisierte Tests (Optional) --&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.junit.jupiter&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit-jupiter-params&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>5.9.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#75715e">&amp;lt;!-- Test-Enginge zur Ausführung von Unit-Tests, die mit JUnit 3 oder JUnit 4 geschrieben wurden (Optional) --&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.junit.vintage&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit-vintage-engine&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>5.9.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#75715e">&amp;lt;!-- Bibliotheken für die Ausführung von Unit-Tests --&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.junit.platform&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit-platform-engine&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.9.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.junit.platform&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>junit-platform-commons&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.9.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Füge diese Abhängigkeiten (ohne die optionalen) in dein pom.xml ein. Danach besitzt du alle Bibliotheken, die zur Implementation von Unit-Tests notwendig sind.&lt;/p>
+&lt;h3 id="ordnerstruktur-anlegen">Ordnerstruktur anlegen&lt;/h3>
+&lt;p>Um Unit-Tests implementieren zu können benötigen wir grundsätzlich die folgende Ordnerstruktur im IntelliJ IDEA.&lt;/p>
+&lt;p>&lt;img src="../java-testing/1518642456.png" alt="Ordnerstruktur IntelliJ IDEA">&lt;/p>
+&lt;p>Falls dein Projekt kein Maven-Projekt ist, kannst du die Verzeichnisse einfach manuell anlegen. Mit einem Rechtsklick auf die Verzeichnisse, kannst du sie mit dem Befehl &amp;ldquo;Mark Directory as&amp;rdquo; aus dem Kontext-Menü wie folgt markieren:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Verzeichnis&lt;/th>
+&lt;th>Markierung&lt;/th>
+&lt;th>Zweck&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>src/main/java&lt;/td>
+&lt;td>Sources Root&lt;/td>
+&lt;td>Source Code deiner Applikation&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>src/main/resources&lt;/td>
+&lt;td>Resources Root&lt;/td>
+&lt;td>Ressourcen deiner Applikation, die nicht Programmcode sind&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>src/test/java&lt;/td>
+&lt;td>Test Sources Root&lt;/td>
+&lt;td>Source Code deiner Unit-Tests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>src/test/resources&lt;/td>
+&lt;td>Test Resources Root&lt;/td>
+&lt;td>Ressourcen deiner Unit-Tests, die nicht Programmcode sind&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Diese Ordnerstruktur wurde ursprünglich vom Projektmanagement-Tool Gradle &amp;ldquo;erfunden&amp;rdquo; und dann von Maven übernommen. Stand heute ist dies die Standard-Ordnerstruktur innerhalb von Java-Projekten.&lt;/p>
+&lt;h3 id="implementation-von-unit-tests-an-einem-beispiel">Implementation von Unit-Tests an einem Beispiel&lt;/h3>
+&lt;p>Nach all den Vorbereitungen sind wir nun bereit Unit-Tests zu implementieren. Der folgende Abschnitt beschreibt die Grundlagen für das Schreiben von Unit-Tests.&lt;/p>
+&lt;p>Das JUnit-Framework&lt;/p>
+&lt;ul>
+&lt;li>nutzt Assertions, um Resultate innerhalb eines Tests zu überprüfen&lt;/li>
+&lt;li>nutzt Annotationen, um Testfälle zu finden und durchzuführen&lt;/li>
+&lt;/ul>
+&lt;h4 id="erklärung">Erklärung&lt;/h4>
+&lt;p>Beispiel einer Unit-Test Implementation anhand eines einfachen Beispiels.&lt;/p>
+&lt;p>&lt;strong>Source-Code&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Calculator&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> i1&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> i2&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> i1 &lt;span style="color:#f92672">+&lt;/span> i2&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Test-Code&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CalculatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Calculator uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Calculator&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAdd&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// prepare test data
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> i1 &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i2 &lt;span style="color:#f92672">=&lt;/span> 9&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">plus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i1&lt;span style="color:#f92672">,&lt;/span> i2&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>14&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Der Unit-Test befindet sich im gleichen Package wie die zu testende Klasse. Innerhalb der weiter oben genannten Ordnerstruktur ist die Test-Klasse aber nicht am gleichen Ort abgelegt! Innerhalb des Unit-Tests wird zuerst eine Instanz der zu testenden Klasse angelegt. Die Bezeichnung für diese Instanz lautet normalerweise UUT, dies steht für &amp;ldquo;Unit Under Test&amp;rdquo;. Für jeden Test einer der Methoden aus dem UUT wird anschliessend eine Test-Methode implementiert. Diese Methoden sind mit @Test zu annotieren, so werden sie anschliessend vom Test-Framework als eigenständiger Test erkannt und ausgeführt. Ein Unit-Test kann beliebig viele Testmethoden enthalten. Grundsätzlich reichen aber je nach Funktionalität ein paar wenige Tests aus, um die ganze Funktionalität einer Methode zu überprüfen. Innerhalb der Test-Methoden implementieren wir dann &amp;ldquo;normalen&amp;rdquo; Programmcode, welcher den Code aus dem UUT &amp;ldquo;überprüft&amp;rdquo;. In unserem Beispiel setzen wir zwei Variablen und rufen damit die zu testende Methode auf. Mit einer Assertion vergleichen wir dann einen erwarteten Wert mit dem von der Methode zurückgelieferten Resultat. Beachte, dass der erwartete Wert in der Assertion immer an erster Stelle stehen muss. Wenn die beiden Werte identisch sind, dann ist der Unit-Test erfolgreich.&lt;/p>
+&lt;h3 id="vorgehen-beim-schreiben-von-unit-tests">Vorgehen beim Schreiben von Unit-Tests&lt;/h3>
+&lt;p>Grundsätzlich sollte die AAA-Methode angewendet werden, sie ist auch im Beispiel oben ersichtlich. AAA steht für &amp;ldquo;Arrange&amp;rdquo;, &amp;ldquo;Act&amp;rdquo; und &amp;ldquo;Assert&amp;rdquo;. &amp;ldquo;Arrange&amp;rdquo; steht dabei für die Vorbereitung des Tests, &amp;ldquo;Act&amp;rdquo; ist die eigentliche Durchführung und mit &amp;ldquo;Assert&amp;rdquo; werden die Resultate des Tests überprüft.&lt;/p>
+&lt;h3 id="grenzwerte-austesten">Grenzwerte austesten&lt;/h3>
+&lt;p>Vielfach sind gewisse Funktionen in einer Applikation so implementiert, dass sie sich mit wenigen Unit-Tests komplett testen lassen. Dazu ein kleines Beispiel: gegeben ist ein Rechteck mit bestimmten Koordinaten (Ecke oben links) und einer bestimmten Grösse (Höhe und Breite).&lt;br>
+Eine Methode innerhalb des Rechtecks dient dazu herauszufinden, ob eine bestimmte Koordinate inner- oder ausserhalb des Rechtecks liegt. Punkte, die auf dem Rand zu liegen kommen gelten in diesem Sinne nicht als innerhalb des Rechtecks.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.rectangle&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Rectangle&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> top&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> left&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> width&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> height&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Rectangle&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> top&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> left&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> width&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> height&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">top&lt;/span> &lt;span style="color:#f92672">=&lt;/span> top&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">left&lt;/span> &lt;span style="color:#f92672">=&lt;/span> left&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">width&lt;/span> &lt;span style="color:#f92672">=&lt;/span> width&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">height&lt;/span>&lt;span style="color:#f92672">=&lt;/span> height&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isInside&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> x&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> y&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>x &lt;span style="color:#f92672">&amp;gt;&lt;/span> left &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> x &lt;span style="color:#f92672">&amp;lt;&lt;/span> left &lt;span style="color:#f92672">+&lt;/span> width&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>y &lt;span style="color:#f92672">&amp;gt;&lt;/span> top &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> y &lt;span style="color:#f92672">&amp;lt;&lt;/span> top &lt;span style="color:#f92672">+&lt;/span> height&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Damit keine Verwirrung entsteht, hier das verwendete Koordinatensystem.
+&lt;img src="../java-testing/1623657498.png" alt="Koordinatensystem">&lt;/p>
+&lt;p>Wie wir in der Implementation sehen können gibt es hier vier verschiedene Bedingungen. Das Ziel des Tests muss es also sein, dass wir alle diese Bedingungen überprüfen. Wenn immer möglich, sollten alle möglichen Kombinationen getestet werden. Nur so kann sichergestellt werden, dass die Methode wie gewünscht funktioniert. Aufgrund der AND-Verknüpfung werden die zweiten Bedingungen der jeweiligen Statements nicht mehr ausgewertet. Damit müssen die folgenden Kombinationen durch einen Unit-Test abgedeckt werden&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Bedingung&lt;/th>
+&lt;th>x &amp;gt; left&lt;/th>
+&lt;th>x &amp;lt; left + width&lt;/th>
+&lt;th>y &amp;gt; top&lt;/th>
+&lt;th>y &amp;lt; top + height&lt;/th>
+&lt;th>Resultat&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Variante 1&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>False&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Variante 2&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>False&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Variante 3&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>False&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Variante 4&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>False&lt;/td>
+&lt;td>False&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Variante 5&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>True&lt;/td>
+&lt;td>True&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Dies bedeutet wir implementieren fünf Unit-Tests, um die Methode vollständig abzudecken.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.rectangle&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">RectangleTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// I know this is a square ;-)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">private&lt;/span> Rectangle uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Rectangle&lt;span style="color:#f92672">(&lt;/span>0&lt;span style="color:#f92672">,&lt;/span> 0&lt;span style="color:#f92672">,&lt;/span> 10&lt;span style="color:#f92672">,&lt;/span> 10&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testIsInside&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isInside&lt;/span>&lt;span style="color:#f92672">(-&lt;/span>1&lt;span style="color:#f92672">,&lt;/span> 5&lt;span style="color:#f92672">));&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isInside&lt;/span>&lt;span style="color:#f92672">(&lt;/span>11&lt;span style="color:#f92672">,&lt;/span> 5&lt;span style="color:#f92672">));&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isInside&lt;/span>&lt;span style="color:#f92672">(&lt;/span>5&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#f92672">-&lt;/span>1&lt;span style="color:#f92672">));&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isInside&lt;/span>&lt;span style="color:#f92672">(&lt;/span>5&lt;span style="color:#f92672">,&lt;/span> 11&lt;span style="color:#f92672">));&lt;/span>
+assertTrue&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isInside&lt;/span>&lt;span style="color:#f92672">(&lt;/span>5&lt;span style="color:#f92672">,&lt;/span> 5&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Im IntelliJ gibt es wie bei der Ausführung einer Applikation auch die Möglichkeit einen Unit-Test zu debuggen.
+Zusätzlich können wir die Testabdeckung anschauen, wenn wir den Unit-Test mit &amp;ldquo;Coverage&amp;rdquo; durchlaufen lassen. Wenn der Test erfolgreich durchgelaufen ist, dann kann die getestete Klasse geöffnet werden.&lt;/p>
+&lt;p>&lt;img src="../java-testing/1623656576.png" alt="Klasse mit Coverage">&lt;/p>
+&lt;p>Die grünen Balken auf der linken Seite zeigen die Testabdeckung an. In diesem Fall sind sämtliche Zeilen durch einen Test durchlaufen worden.&lt;/p>
+&lt;p>Da der Unit-Test nun alle Möglichkeiten der Methode abdeckt, kann ein einfaches Refactoring durchgeführt werden. In unserem Fall kann die Methode wie folgt vereinfacht werden:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isInside&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> x&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> y&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> x &lt;span style="color:#f92672">&amp;gt;&lt;/span> left &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> x &lt;span style="color:#f92672">&amp;amp;&lt;/span>lt&lt;span style="color:#f92672">;&lt;/span> left &lt;span style="color:#f92672">+&lt;/span> width &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> y &lt;span style="color:#f92672">&amp;amp;&lt;/span>gt&lt;span style="color:#f92672">;&lt;/span> top &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> y &lt;span style="color:#f92672">&amp;lt;&lt;/span> top &lt;span style="color:#f92672">+&lt;/span> height&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Der Test kann dann beliebig oft erneut durchgeführt werden, um das Refactoring zu überprüfen.&lt;/p>
+&lt;h3 id="annotationen-von-junit5">Annotationen von JUnit5&lt;/h3>
+&lt;p>Die folgende Tabelle zeigt eine Übersicht über die wichtigsten Annotationen von JUnit 5. Mehr Informationen zu den jeweiligen Annotationen finden sich in den nächsten Kapiteln.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Annotation&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>@Test&lt;/td>
+&lt;td>Bezeichnet einen Test&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@ParameterizedTest&lt;/td>
+&lt;td>Bezeichnet einen parametrisierten Test&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@RepeatedTest&lt;/td>
+&lt;td>Bezeichnet einen sich wiederholenden Test&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@DisplayName&lt;/td>
+&lt;td>Namensgebung für Testklassen und -methoden&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@Disabled&lt;/td>
+&lt;td>Möglichkeit eine Testklasse oder -methode nicht ausführen zu lassen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@TestMethodOrder&lt;br>@Order&lt;/td>
+&lt;td>Ausführungsreihenfolge der Tests bestimmen.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@BeforeAll&lt;br>@BeforeEach&lt;br>@AfterAll&lt;br>@AfterEach&lt;/td>
+&lt;td>Initialiserungen und Aufräumarbeiten vor und nach Unit-Tests&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="parametrisierte-unit-tests">Parametrisierte Unit-Tests&lt;/h3>
+&lt;p>Der oben gezeigte Unit-Test ist ein typisches Beispiel für einen Test, der mit vielen unterschiedlichen Parametern durchlaufen werden sollte.
+Wenn wir den Test parametrisieren, können wir die Test-Methode wiederverwenden.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CalculatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Calculator uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Calculator&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#a6e22e">@ParameterizedTest&lt;/span>
+&lt;span style="color:#a6e22e">@ValueSource&lt;/span>&lt;span style="color:#f92672">(&lt;/span>ints &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">{&lt;/span> 1&lt;span style="color:#f92672">,&lt;/span> 2&lt;span style="color:#f92672">,&lt;/span> 3&lt;span style="color:#f92672">,&lt;/span> 4&lt;span style="color:#f92672">,&lt;/span> 5&lt;span style="color:#f92672">,&lt;/span> 6&lt;span style="color:#f92672">,&lt;/span> 7&lt;span style="color:#f92672">,&lt;/span> 8&lt;span style="color:#f92672">,&lt;/span> 9 &lt;span style="color:#f92672">})&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAddParameterized&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> operand1&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>operand1&lt;span style="color:#f92672">,&lt;/span> 5&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>operand1 &lt;span style="color:#f92672">+&lt;/span> 5&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Der gezeigte Test wird so insgesamt neun Mal durchlaufen, wobei der Parameter &lt;strong>operand1&lt;/strong> jeweils die Werte des angegebenen Arrays durchläuft.&lt;/p>
+&lt;h3 id="wiederholende-unit-tests">Wiederholende Unit-Tests&lt;/h3>
+&lt;p>Unit-Tests können mehrmals hintereinander ausgeführt werden, dabei wird die annotierte Test-Methode einfach mehrfach aufgerufen. Die Anzahl Aufrufe wird durch den Parameter in der Annotation bestimmt.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CalculatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Calculator uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Calculator&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#a6e22e">@RepeatedTest&lt;/span>&lt;span style="color:#f92672">(&lt;/span>10&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAddRepeated&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// prepare test data
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> Random random &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Random&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i1 &lt;span style="color:#f92672">=&lt;/span> random&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">nextInt&lt;/span>&lt;span style="color:#f92672">(&lt;/span>100&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i2 &lt;span style="color:#f92672">=&lt;/span> random&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">nextInt&lt;/span>&lt;span style="color:#f92672">(&lt;/span>100&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">plus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i1&lt;span style="color:#f92672">,&lt;/span> i2&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>i1 &lt;span style="color:#f92672">+&lt;/span> i2&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Repetierende Tests können wie oben gezeigt benutzt werden, um beispielsweise mit generierten Zufallszahlen bestimmte Funktionen zu überprüfen.&lt;/p>
+&lt;h3 id="display-names">Display Names&lt;/h3>
+&lt;p>Testklassen und -methoden können mit der Annotation @DisplayName beliebig umbenannt werden.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@DisplayName&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Special test for calculator&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CalculatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Calculator uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Calculator&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#a6e22e">@DisplayName&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Ultimate addition test&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAdd&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// prepare test data
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> i1 &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i2 &lt;span style="color:#f92672">=&lt;/span> 9&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">plus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i1&lt;span style="color:#f92672">,&lt;/span> i2&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>14&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Der angegebene Name erscheint dann in der Testauswertung.&lt;/p>
+&lt;h3 id="tests-ausschalten">Tests ausschalten&lt;/h3>
+&lt;p>Testklassen und -methoden können mit der Annotation @Disabled aus den Testläufen ausgeschlossen werden.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@Disabled&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Test disabled until calculator is finished&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CalculatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Calculator uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Calculator&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAdd&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// prepare test data
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> i1 &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i2 &lt;span style="color:#f92672">=&lt;/span> 9&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">plus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i1&lt;span style="color:#f92672">,&lt;/span> i2&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>14&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="reihenfolge-der-ausführung">Reihenfolge der Ausführung&lt;/h3>
+&lt;p>Die Reihenfolge von Tests bei der Ausführung kann durch die Verwendung von @TestExecutionOrder und @Order bestimmt werden.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@TestExecutionOrder&lt;/span>&lt;span style="color:#f92672">(&lt;/span>OrderAnnotation&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CalculatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Calculator uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Calculator&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#a6e22e">@Order&lt;/span>&lt;span style="color:#f92672">(&lt;/span>1&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAdd&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// prepare test data
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> i1 &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i2 &lt;span style="color:#f92672">=&lt;/span> 9&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">plus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i1&lt;span style="color:#f92672">,&lt;/span> i2&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>14&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#a6e22e">@Order&lt;/span>&lt;span style="color:#f92672">(&lt;/span>2&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAdd&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// prepare test data
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> i1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">-&lt;/span>1&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i2 &lt;span style="color:#f92672">=&lt;/span> 3&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">plus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i1&lt;span style="color:#f92672">,&lt;/span> i2&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>2&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Die Annotation @Order wird nur verwendet, wenn der Typ der Ausführung OrderAnnation.class ist.
+Weitere Angaben sind &amp;ldquo;Alphanumeric&amp;rdquo; (Sortierung nach Methodenname) und &amp;ldquo;Random&amp;rdquo; (Zufällige Ausführungsreihenfolge).&lt;/p>
+&lt;h3 id="daten-initialisieren--aufräumen">Daten initialisieren / aufräumen&lt;/h3>
+&lt;p>Mit den Annotationen @BeforeEach, @AfterEach, @BeforeAll und @AfterAll können bestimmte Initialisierungen und Aufräumarbeiten vor und nach Unit-Tests ausgeführt werden.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">package&lt;/span> ch.sbb.talentfactory.calculator&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertEquals&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CalculatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Calculator uut &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Calculator&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#a6e22e">@BeforeAll&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setUpAll&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// Diese Methode wird VOR allen Test-Methoden EINMALIG ausgeführt
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@BeforeEach&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">setUp&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// Diese Methode wird VOR jeder Test-Methode ERNEUT ausgeführt
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testAdd&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// prepare test data
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> i1 &lt;span style="color:#f92672">=&lt;/span> 5&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">int&lt;/span> i2 &lt;span style="color:#f92672">=&lt;/span> 9&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#75715e">// call method
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">plus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i1&lt;span style="color:#f92672">,&lt;/span> i2&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">// verify
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>14&lt;span style="color:#f92672">,&lt;/span> result&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@AfterEach&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">tearDown&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// Diese Methode wird NACH jeder Test-Methode ERNEUT ausgeführt
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@AfterAll&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">tearDownAll&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// Diese Methode wird NACH allen Test-Methoden einmalig ausgeführt
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="verwendung-von-providern">Verwendung von Providern&lt;/h3>
+&lt;p>Bei der Verwendung von parametrisierten Tests ist es möglich, dem Unit-Test über einen Stream von Argumenten entsprechende Testdaten oder Instanzen von verschiedenen Objekten zukommen zu lassen. Das folgende Beispiel illustriert die Verwendung eines solchen Providers.&lt;/p>
+&lt;p>&lt;strong>Vier Gewinnt Interface&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">ConnectFourCheck&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+String &lt;span style="color:#a6e22e">checkWin&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[][]&lt;/span> board&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">VierGewinntTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> String&lt;span style="color:#f92672">[][]&lt;/span> testBoard &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">{&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;O&amp;#34;&lt;/span>&lt;span style="color:#f92672">},&lt;/span>
+&lt;span style="color:#f92672">{&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;O&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;X&amp;#34;&lt;/span>&lt;span style="color:#f92672">},&lt;/span>
+&lt;span style="color:#f92672">{&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;O&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;X&amp;#34;&lt;/span>&lt;span style="color:#f92672">},&lt;/span>
+&lt;span style="color:#f92672">{&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;O&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;X&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;X&amp;#34;&lt;/span>&lt;span style="color:#f92672">},&lt;/span>
+&lt;span style="color:#f92672">{&lt;/span>&lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34; &amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#e6db74">&amp;#34;X&amp;#34;&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">};&lt;/span>
+&lt;span style="color:#75715e">// Alle Klassen des Streams (VierGewinntSolution1 und VierGewinntSolution2) implementieren das oben gezeigte Interface
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> Stream&lt;span style="color:#f92672">&amp;lt;&lt;/span>Arguments&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">instances&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> Stream&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">of&lt;/span>&lt;span style="color:#f92672">(&lt;/span>
+Arguments&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">of&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span> VierGewinntSolution1&lt;span style="color:#f92672">()),&lt;/span>
+Arguments&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">of&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">new&lt;/span> VierGewinntSolution2&lt;span style="color:#f92672">())&lt;/span>
+&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@ParameterizedTest&lt;/span>
+&lt;span style="color:#a6e22e">@MethodSource&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;instances&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testBoardWithWinnerX&lt;/span>&lt;span style="color:#f92672">(&lt;/span>ConnectFourCheck cfc&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">try&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+String winner &lt;span style="color:#f92672">=&lt;/span> cfc&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">checkWin&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">testBoard&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+assertEquals&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;X&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> winner&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">catch&lt;/span> &lt;span style="color:#f92672">(&lt;/span>Exception e&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+fail&lt;span style="color:#f92672">(&lt;/span>e&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Mit einem solchen Provider kann derselbe Unit-Test für verschiedene Implementation (zum Beispiel eines Interfaces) wiederverwendet werden.&lt;/p>
+&lt;hr>
+&lt;h2 id="mockito">Mockito&lt;/h2>
+&lt;p>Mockito ist ein Framework zum Erstellen und Benutzen von Mocks in Softwaretests.
+Es bietet die Möglichkeit, Verhalten von noch nicht implementierten Klassen und Methoden rudimentär zu simulieren,
+um so das zu testende System (trotz fehlender Teile) testen zu können.
+Mockito ermöglicht auch andere Systeme/Services zu simulieren, welche z.B. von einem anderen Team entwickelt werden
+wie auch solche, deren echtes Verhalten zum Testzweck nicht interessiert oder sogar nicht erwünscht ist
+(man will aber z.B. wissen, dass diese Systeme/Services vom getesteten Code angesprochen worden sind).&lt;/p>
+&lt;p>Mockito kann in Unit-Tests wie auch in Integrations-Tests verwendet werden.&lt;/p>
+&lt;h3 id="wo-kann-ich-das-framework-herunterladen-1">Wo kann ich das Framework herunterladen?&lt;/h3>
+&lt;p>Wie bei JUnit, werden auch für die Arbeit mit Mockito die Bibliotheken davon benötigt.&lt;/p>
+&lt;h4 id="abhängigkeiten-einbinden-ohne-maven-1">Abhängigkeiten einbinden ohne Maven&lt;/h4>
+&lt;p>Dieser Abschnitt kann übersprungen werden, wenn mit einem Maven-Projekt gearbeitet wird.
+Das letzte Release (aktuell 4.6.1) kann hier heruntergeladen werden:
+&lt;a href="https://repo1.maven.org/maven2/org/mockito/mockito-core/4.6.1/mockito-core-4.6.1.jar">Mockito Core 4.6.1 Jar-Datei&lt;/a>&lt;/p>
+&lt;p>Die Heruntergeladene Jar-Datei kann nun genau wie die JUnit-Jar-Dateien eingebunden werden.&lt;/p>
+&lt;h4 id="abhängigkeiten-einbinden-mit-maven-1">Abhängigkeiten einbinden mit Maven&lt;/h4>
+&lt;p>Dieser Abschnitt kann übersprungen werden, wenn es sich nicht um ein Maven Projekt handelt.&lt;/p>
+&lt;p>Die entsprechende Abhängigkeit für das Project Object Model (pom.xml) ist:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-xml" data-lang="xml">&lt;span style="color:#f92672">&amp;lt;dependencies&amp;gt;&lt;/span>
+&lt;span style="color:#75715e">&amp;lt;!-- https://mvnrepository.com/artifact/org.mockito/mockito-core --&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.mockito&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>mockito-core&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>4.6.1&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;span style="color:#f92672">&amp;lt;/dependencies&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="mockito-begriffe">Mockito Begriffe&lt;/h3>
+&lt;h4 id="mock">Mock&lt;/h4>
+&lt;p>Mocks sind ein vollständiger Ersatz für Objekte, Services usw., von denen der zu testende Code abhängt,
+um seine Kernlogik zu testen.
+Ein Mock kann so programmiert werden, dass es eine angegebene Ausgabe zurückgibt, wenn eine Methode
+des Mocks aufgerufen wird.&lt;/p>
+&lt;p>Mockito bietet eine Standardimplementierung für alle Methoden eines Mocks. Das bedeutet, dass beim
+Aufrufen einer Methode eines Mocks, nicht der &amp;ldquo;echte&amp;rdquo; Code der Methode aufgerufen wird, sondern es wird
+ein von Mockito vordefinierter Wert zurückgeliefert (abhängig vom Rückgabewert-Typ der Methode).&lt;/p>
+&lt;p>Es gibt Situationen, in denen es nützlich sein kann, bestimmte Werte aus einer Methode zurückzuliefern
+statt die Mockito-Standardwerte. In diesen Situationen kann ein gewünschter Rückgabewert vorkonfiguriert werden,
+so dass beim Aufruf der Methode, dieser Wert zurückgeliefert wird.&lt;/p>
+&lt;h4 id="spy">Spy&lt;/h4>
+&lt;p>Ein Spy (&amp;lsquo;Spion&amp;rsquo;) ist im Wesentlichen ein Wrapper für eine &amp;ldquo;echte&amp;rdquo; Instanz eines gemockten Objekts.
+Dies bedeutet, dass eine neue Instanz des Objektes erforderlich ist und dann ein Spy darüber hinzugefügt wird.&lt;/p>
+&lt;p>Standardmässig leiten Spies Methodenaufrufe an die &amp;ldquo;echten&amp;rdquo; Methoden des Objekts weiter. Das ist auch der
+Hauptunterschied zwischen Spies und Mocks. Letztere überschreiben den &amp;ldquo;echten&amp;rdquo; Methoden-Code.&lt;/p>
+&lt;p>Spies bieten aber auch die Möglichkeit, bestimmte Methoden als Mock-Methoden vorzukonfigurieren. In
+solchen Fällen, wird der Methodenaufruf nicht auf den &amp;ldquo;echten&amp;rdquo; Code weitergeleitet, sondern es wird,
+wie beim Mock, der vorgegebene Rückgabewert zurückgeliefert.&lt;/p>
+&lt;h3 id="mockito-annotationen">Mockito Annotationen&lt;/h3>
+&lt;p>Damit die Mockito-Annotationen innerhalb eines JUnit-Tests verwendet werden könnten, müssen sie zuerst eingeschaltet werden.
+Eine Möglichkeit dies zu tun ist, die Unit-Test-Klasse mit @RunWith zu annotieren und als Parameter den Wert &lt;em>MockitoJUnitRunner.class&lt;/em> anzugeben:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>MockitoJUnitRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyUnitTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">//TODO write tests
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Die folgende Tabelle zeigt eine Übersicht über die wichtigsten Annotationen von Mockito:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Annotation&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>@Mock&lt;/td>
+&lt;td>Mock-Objekte erzeugen lassen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@InjectMock&lt;/td>
+&lt;td>Markiert ein Feld, welches mit Mocks initiiert wird&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@Spy&lt;/td>
+&lt;td>Spy-Objekte erzeugen lassen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@Captor&lt;/td>
+&lt;td>ArgumentCaptor Objekte erzeugen lassen&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Wie diese Annotationen verwendet werden, wird in den folgenden Kapiteln gezeigt.&lt;/p>
+&lt;h4 id="mock-annotation">@Mock Annotation&lt;/h4>
+&lt;p>Diese Annotation wird dazu verwendet, um Mock-Objekte komplett von Mockito erzeugen zu lassen.
+Das heisst, die gesamte Mock-Funktionalität wird von Mockito zur Verfügung gestellt.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>MockitoJUnitRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyUnitTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Mock&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> mockedList&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// hier wird eine Liste von Strings gemockt.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Mockito stellt eine rudimentäre Umsetzung für JEDE Methode der Liste zur Verfügung
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">//TODO write tests
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Was mit einem Mock gemacht werden kann und wie der Mock vorkonfiguriert werden kann, wird in einem späteren Kapitel erklärt.&lt;/p>
+&lt;h4 id="injectmocks-annotation">@InjectMocks Annotation&lt;/h4>
+&lt;p>Wenn eine Klasse ein Objekt-Feld beinhaltet, kann Mockito dieses Feld mit einem Mock initiieren.
+Damit es funktioniert, muss das Feld entweder via Konstruktor, via Setter oder via Property-Injection initialisiert werden.&lt;/p>
+&lt;p>Im folgenden Beispiel, hat die Klasse &lt;em>Display&lt;/em> ein Feld vom Typ &lt;em>ColorSelector&lt;/em>, welches mittels Konstruktor
+initialisiert werden kann:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Display&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> ColorSelector colorSelector&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Display&lt;/span>&lt;span style="color:#f92672">(&lt;/span>ColorSelector colorSelector&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">colorSelector&lt;/span> &lt;span style="color:#f92672">=&lt;/span> colorSelector&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Im Test, wird ein Mock für ein ColorSelector erstellt und mit der Annotation @InjectMocks, via
+Konstruktor-Initialisierung in dem display-Objekt injektiert (der Konstruktor muss also nicht noch dazu aufgerufen werden):&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>MockitoJUnitRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">DisplayTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Mock&lt;/span>
+ColorSelector mockedColorSelector&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// hier wird ein ColorSelector gemockt.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#a6e22e">@InjectMocks&lt;/span>
+Display display&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// der Mock von ColorSelector wird in die Display-Instanz &amp;#34;injiziiert&amp;#34;, das heisst
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// überall im Display-Objekt, wo der ColorSelector verwendet wird, wird der Mock zum Zug kommen!
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">//TODO write tests
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="spy-annotation">@Spy Annotation&lt;/h4>
+&lt;p>Ein Spy wird auf einem &amp;ldquo;echten&amp;rdquo; Objekt erzeugt. Dieser Spy leitet, sofern nichts anderes konfiguriert wurde, alle Methodenaufrufe an das echte Objekt weiter.
+Mit Hilfe der Mockito-Methoden, kann jedoch definiert werden, dass bestimmte Methoden &amp;ldquo;umgeleitet&amp;rdquo; werden und eine andere Umsetzung dafür angewendet wird.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>MockitoJUnitRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyUnitTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Spy&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> spiedList&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// Ein Spy über eine Liste. Wenn nichts anders konfiguriert wird
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// werden die &amp;#34;echte&amp;#34; Listen-Methoden aufgerufen, wenn der Spy verwendet wird.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">//TODO write tests
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Wie ein Spy verwendet werden kann, um nur einige Methoden umzuleiten, wird in einem späteren Kapitel erklärt.&lt;/p>
+&lt;h4 id="captor-annotation">@Captor Annotation&lt;/h4>
+&lt;p>Ein ArgumentCaptor kann Argumente einer Methode &amp;ldquo;fangen&amp;rdquo; damit diese danach inspiziert werden könnten.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>MockitoJUnitRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyUnitTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Mock&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> mockedList&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@Captor&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> ArgumentCaptor&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> stringCaptor&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// stringCaptor wird ein Argument vom Typ String &amp;#34;fangen&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testMockedList&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;one&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
+Mockito&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">verify&lt;/span>&lt;span style="color:#f92672">(&lt;/span>mockedList&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>stringCaptor&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">capture&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// während der Prüfung wird das Argument
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// für die Methode add() gefangen
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// und im stringCaptor aufbewahrt
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+assertEquals&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;one&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> stringCaptor&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getValue&lt;/span>&lt;span style="color:#f92672">());&lt;/span> &lt;span style="color:#75715e">// mit getValue() kann das gefangene Argument inspiziert werden
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="mockito-statische-methoden">Mockito statische Methoden&lt;/h3>
+&lt;p>Mockito stellt mehrere statische Methoden zur Verfügung, welche das Konfigurieren von Mocks und Spies
+wie auch deren Überwachung ermöglichen. In diesem Kapitel werden die wichtigsten Methoden
+anhand von Beispielen erklärt.&lt;/p>
+&lt;h4 id="mockitowhen-kombiniert-mit-mockitothenreturn">Mockito.when kombiniert mit Mockito.thenReturn&lt;/h4>
+&lt;p>Die &lt;em>Mockito.when&lt;/em> Methode kombiniert mit der Methode &lt;em>Mockito.thenReturn&lt;/em> ermöglicht es, die Standardimplementierung einer Methode für ein gegebenen Mock zu überschreiben.
+Dasselbe kann auch mit der Kombination &lt;em>Mockito.doReturn&lt;/em> und danach &lt;em>when&lt;/em> erreicht werden.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>MockitoJUnitRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyUnitTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Mock&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> mockedList&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// eine Mock-Liste, mit Mockitos-Standardimplementierung für alle Methoden
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testMockedList&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertEquals&lt;span style="color:#f92672">(&lt;/span>0&lt;span style="color:#f92672">,&lt;/span> mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">());&lt;/span> &lt;span style="color:#75715e">// die Mockito-Standardimplementierung für &amp;#34;size()&amp;#34;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// liefert immer 0 zurück
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+Mockito&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">when&lt;/span>&lt;span style="color:#f92672">(&lt;/span>mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">()).&lt;/span>&lt;span style="color:#a6e22e">thenReturn&lt;/span>&lt;span style="color:#f92672">(&lt;/span>10&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// hier wird die Standardimplementierung der Methode
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// size() auf dem Mock-Objekt überschrieben,
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// sodass immer der Wert 10 zurückgeliefert wird.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>10&lt;span style="color:#f92672">,&lt;/span> mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+Mockito&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">doReturn&lt;/span>&lt;span style="color:#f92672">(&lt;/span>20&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">when&lt;/span>&lt;span style="color:#f92672">(&lt;/span>mockedList&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// auch hier wird die Standardimplementierung der Methode
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// size() auf dem Mock-Objekt überschrieben,
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// diesmal mit dem Wert 20.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertEquals&lt;span style="color:#f92672">(&lt;/span>20&lt;span style="color:#f92672">,&lt;/span> mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="mockitoverify">Mockito.verify&lt;/h4>
+&lt;p>Die &lt;em>Mockito.verify&lt;/em> Methode prüft, ob eine Interaktion mit dem Mock/Spy-Objekt stattgefunden hat.
+Geprüft werden kann unter anderem folgendes (weitere Prüfungen werden &lt;a href="https://www.baeldung.com/mockito-verify">hier&lt;/a> anhand von Beispielen erklärt):&lt;/p>
+&lt;ul>
+&lt;li>Es gab keine Interaktion mit dem Mock/Spy&lt;/li>
+&lt;li>Es gab eine Interaktion mit dem Mock/Spy&lt;/li>
+&lt;li>Es gab eine gewisse Anzahl an Interaktionen mit dem Mock/Spy&lt;/li>
+&lt;li>Es gab mindestens eine gewisse Anzahl an Interaktionen mit dem Mock/Spy&lt;/li>
+&lt;li>Es gab nicht mehr als eine gewisse Anzahl an Interaktionen mit dem Mock/Spy&lt;/li>
+&lt;/ul>
+&lt;p>Interaktion in diesem Sinn kann entweder eine Interaktion mit dem Objekt oder mit einer seiner Methoden sein.&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#a6e22e">@RunWith&lt;/span>&lt;span style="color:#f92672">(&lt;/span>MockitoJUnitRunner&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyUnitTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Mock&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> mockedList&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// eine Mock-Liste, mit Mockitos-Standardimplementierung für alle Methoden
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#a6e22e">@Spy&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> spiedList&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// ein Spy über eine Liste.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testSpiedList&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+spiedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;one&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// hier wird die &amp;#34;echte&amp;#34; add Methode einer Liste aufgerufen!
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+Mockito&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">verify&lt;/span>&lt;span style="color:#f92672">(&lt;/span>spyList&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;one&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// prüfe, ob die &amp;#34;add&amp;#34; Methode mit dem Parameter &amp;#34;one&amp;#34; auf dem spyList aufgerufen wurde
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> Mockito&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">verify&lt;/span>&lt;span style="color:#f92672">(&lt;/span>spiedList&lt;span style="color:#f92672">,&lt;/span> never&lt;span style="color:#f92672">()).&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// prüfe, ob die size() Methode nie aufgerufen wurde
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+spiedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">clear&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+spiedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">clear&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+Mockito&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">verify&lt;/span>&lt;span style="color:#f92672">(&lt;/span>spiedList&lt;span style="color:#f92672">,&lt;/span> times&lt;span style="color:#f92672">(&lt;/span>2&lt;span style="color:#f92672">)).&lt;/span>&lt;span style="color:#a6e22e">clear&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// prüfe, ob die clear() Methode genau 2 Mal aufgerufen wurde
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testMockedList&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+Mockito&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">verifyNoInteractions&lt;/span>&lt;span style="color:#f92672">(&lt;/span>mockedList&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// bis hier gab es keine Interaktionen mit dem mockedList Objekt
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+mockedList&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+verify&lt;span style="color:#f92672">(&lt;/span>mockedList&lt;span style="color:#f92672">,&lt;/span> atLeast&lt;span style="color:#f92672">(&lt;/span>1&lt;span style="color:#f92672">)).&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// prüfe, ob die size() Methode mindestens einmal aufgerufen wurde
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> verify&lt;span style="color:#f92672">(&lt;/span>mockedList&lt;span style="color:#f92672">,&lt;/span> atMost&lt;span style="color:#f92672">(&lt;/span>5&lt;span style="color:#f92672">)).&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// prüfe, ob die size() Methode nicht mehr als 5 Mal aufgerufen wurde
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="test-driven-development-tdd">Test Driven Development (TDD)&lt;/h2>
+&lt;p>Test Driven Development (TDD) (Testgetriebene Entwicklung) ist ein Softwareentwicklungsansatz,
+bei dem ein Test geschrieben wird, bevor der Code geschrieben wird.
+Sobald der neue Code den Test besteht, wird er auf einen akzeptablen Standard umgestellt.&lt;/p>
+&lt;p>TDD stellt sicher, dass der Quellcode gründlich getestet wird und zu modularisiertem, flexiblem und
+erweiterbarem Code führt. Es konzentriert sich darauf, nur den Code zu schreiben, der notwendig ist,
+um Tests zu bestehen, wodurch das Design einfach und klar wird.&lt;br>
+Mit TDD kann der Programmierer beim Schreiben von Software kleine Schritte unternehmen.&lt;/p>
+&lt;p>Der Test wird vor dem Testen der Funktionalität geschrieben und stellt sicher, dass die Anwendung
+für die Testbarkeit geeignet ist, erst danach wird die Funktionalität implementiert. Dies wird als „Rot-Grün-Refaktor“ bezeichnet,
+wobei Rot bedeutet, fehlgeschlagen zu sein, und Grün zeigt einen erfolgreichen Durchlauf an.
+Diese Schritte werden dann wiederholt.&lt;/p>
+&lt;h3 id="schritte-eines-test-gesteuerten-entwicklungszyklus">Schritte eines test gesteuerten Entwicklungszyklus&lt;/h3>
+&lt;p>Der test-gesteuerte Entwicklungszyklus besteht aus folgenden, sich immer wiederholenden, Schritten:&lt;/p>
+&lt;p>&lt;img src="../java-testing/tdd.png" alt="TDD Entwicklungszyklus">&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Hinzufügen eines Tests, der fehlschlägt&lt;/strong>: Jedes neue Feature in TDD beginnt mit einem Test, der nach seiner Implementation fehlschlagen muss, bevor die Features implementiert werden.&lt;/li>
+&lt;li>&lt;strong>Code schreiben und damit den Test &amp;ldquo;begrünen&amp;rdquo;&lt;/strong>: Es wird nur soviel Code geschrieben, wie zum &amp;ldquo;Begrünen&amp;rdquo; des Tests nötig ist - nicht mehr! (alle bisherigen Tests müssen weiterhin erfolgreich durchlaufen!!)&lt;/li>
+&lt;li>&lt;strong>Code verbessern, ohne dabei die Funktionalität zu verändern (Refactor)&lt;/strong>: Code bereinigen (z.B. das Entfernen von Duplikaten, kleinere Methoden usw.) und auf &amp;ldquo;Clean Code&amp;rdquo; Standard bringen&lt;/li>
+&lt;/ul>
+&lt;h3 id="tdd-walkthrough">TDD Walkthrough&lt;/h3>
+&lt;p>In diesem Walkthrough wird der TDD Entwicklungszyklus anhand eines Beispiels erläutert.&lt;/p>
+&lt;p>In diesem Beispiel geht es darum eine Klasse zu schreiben, welche ein Tier modelliert.
+Das Tier soll uns informieren, ob es Hunger hat oder nicht.&lt;/p>
+&lt;p>&lt;strong>&lt;em>Hinweis&lt;/em>&lt;/strong> im Beispielcode, wird folgendes Namensschema für Tests verwendet:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">given_when_then&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">...&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Wobei:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>given&lt;/strong> die Ausgangslage definiert (z.B. &lt;em>newAnimal&lt;/em> oder &lt;em>animalAte&lt;/em>)&lt;/li>
+&lt;li>&lt;strong>when&lt;/strong> ist der Name der Methode, welche getestet wird (z.B. &lt;em>isHungry&lt;/em>)&lt;/li>
+&lt;li>&lt;strong>then&lt;/strong> ist das Ergebnis, welche erwartet wird (z.B. &lt;em>returnTrue&lt;/em> oder &lt;em>returnFalse&lt;/em>)&lt;/li>
+&lt;/ul>
+&lt;h4 id="schritt-1-grundgerüst-erstellen">Schritt 1: Grundgerüst erstellen&lt;/h4>
+&lt;p>Es wird nur die Klasse erstellt, welche dann getestet werden soll:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="schritt-2-fehlschlagender-test-schreiben">Schritt 2: Fehlschlagender Test schreiben&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AnimalTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">newAnimal_isHungry_returnTrue&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+Animal myAnimal &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Animal&lt;span style="color:#f92672">();&lt;/span>
+assertTrue&lt;span style="color:#f92672">(&lt;/span>myAnimal&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isHungry&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Zu diesem Zeitpunkt existiert die Methode &amp;ldquo;isHungry&amp;rdquo; nicht (Kompilierfehler) und natürlich gibt sie kein &amp;ldquo;true&amp;rdquo; zurück.
+Im nächsten Schritt wird die Methode hinzugefügt und der Test &amp;ldquo;begrünt&amp;rdquo;.&lt;/p>
+&lt;h4 id="schritt-3-test-begrünen">Schritt 3: Test &amp;ldquo;begrünen&amp;rdquo;&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isHungry&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Der Test, welcher vorher geschrieben wurde, kompiliert nun und kann erfolgreich durchlaufen werden.
+Somit ist dieser Zyklus beendet (es gibt noch nichts, was refactored werden soll)&lt;/p>
+&lt;h4 id="schritt-4-neuer-fehlschlagender-test-schreiben">Schritt 4: Neuer, fehlschlagender Test schreiben&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AnimalTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span> &lt;span style="color:#75715e">// Dieser Test ist nun grün...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">newAnimal_isHungry_returnTrue&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+Animal myAnimal &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Animal&lt;span style="color:#f92672">();&lt;/span>
+assertTrue&lt;span style="color:#f92672">(&lt;/span>myAnimal&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isHungry&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">animalAte_isHungry_returnFalse&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+Animal myAnimal &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Animal&lt;span style="color:#f92672">();&lt;/span>
+animal&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">eat&lt;/span>&lt;span style="color:#f92672">();&lt;/span> &lt;span style="color:#75715e">// Kompilierfehler, da es diese Methode noch nicht gibt
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> assertFalse&lt;span style="color:#f92672">(&lt;/span>myAnimal&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isHungry&lt;/span>&lt;span style="color:#f92672">());&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="schritt-5-zweiter-test-begrünen-ohne-den-ersten-test-kaputt-zu-machen">Schritt 5: zweiter Test &amp;ldquo;begrünen&amp;rdquo;, ohne den ersten Test &amp;ldquo;kaputt&amp;rdquo; zu machen&lt;/h4>
+&lt;p>In diesem Schritt finden wir heraus, dass wir einen Hunger-Zustand für unser Tier haben müssen,
+welcher sich ändert, wenn das Tier gefressen hat:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> isHungry &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// müssen wir hier so setzen, damit der erste Test noch funktioniert!
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isHungry&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>isHungry&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+isHungry &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Nach diesem Schritt kompiliert der Test wieder erfolgreich und beide Tests werden erfolgreich durchlaufen.&lt;/p>
+&lt;h4 id="schritt-6-refactor">Schritt 6: Refactor&lt;/h4>
+&lt;p>Unser Code kann nun eleganter geschrieben werden, ohne dabei die Funktionalität zu ändern:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> isHungry &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isHungry&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> isHungry&lt;span style="color:#f92672">;&lt;/span> &lt;span style="color:#75715e">// if-else ersetzt, da nicht nötig
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+isHungry &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Somit ist auch dieser Zyklus beendet.&lt;/p>
+&lt;p>Der code wird so stetig weiterentwickelt und neue Funktionalitäten werden auf diese Weise Schritt für Schritt und getestet hinzugefügt.
+Dabei werden die bereits bestehenden Funktionalitäten durch die bisherigen Tests vor ungewollten Änderungen geschützt.&lt;/p></description></item><item><title>Docs: Java Collections</title><link>/docs/java/java-collections/java-collections/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/java-collections/java-collections/</guid><description>
 &lt;h4 id="ziele">Ziele&lt;/h4>
 &lt;ul>
 &lt;li>Ich kann erklären, was Collections sind.&lt;/li>

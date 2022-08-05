@@ -488,7 +488,261 @@ liest und die unsortierte wie auch die sortierte Liste in der Konsole ausgibt.&l
 &lt;h3 id="aufgabe-2">Aufgabe 2&lt;/h3>
 &lt;p>Schreibe ein Programm, welches aus der Kommandozeile eine Reihe von Zahlen in einer beliebigen Reihenfolge
 liest. Jede Zahl in der Liste wird mit sich selber multipliziert und schlussendlich werden die
-ursprüngliche wie auch die neue Liste (mit den Berechnungen) in der Konsole ausgegeben - einmal unsortiert und einmal sortiert.&lt;/p></description></item><item><title>Docs: Was ist Git</title><link>/docs/git/was-ist-git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/was-ist-git/</guid><description>
+ursprüngliche wie auch die neue Liste (mit den Berechnungen) in der Konsole ausgegeben - einmal unsortiert und einmal sortiert.&lt;/p></description></item><item><title>Labs: Unit Testing mit JUnit - Aufgaben</title><link>/labs/java/java-testing/01_unit-testing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-testing/01_unit-testing/</guid><description>
+&lt;p>Die folgenden Aufgaben bestehen darin für bestehende Programmlogik entsprechende Unit-Tests zu schreiben.&lt;/p>
+&lt;h3 id="aufgabe-1-tageszeit">Aufgabe 1: Tageszeit&lt;/h3>
+&lt;p>Schreibe Unit-Tests, um die Logik der folgenden Methode zu testen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">import&lt;/span> java.time.LocalDateTime&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TimeOfDay&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getTimeOfDay&lt;/span>&lt;span style="color:#f92672">(&lt;/span>LocalDateTime time&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>time&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getHour&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> 6&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Night&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>time&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getHour&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> 12&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Morning&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>time&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getHour&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span> 18&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Afternoon&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Evening&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="aufgabe-2">Aufgabe 2&lt;/h3>
+&lt;p>Schreibe Unit-Tests, um die Methode &lt;strong>move&lt;/strong> zu testen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Mover&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> LocalDateTime lastMovingTime&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> Direction lastDirection&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">move&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Direction direction&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">(&lt;/span>Direction&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getOpposite&lt;/span>&lt;span style="color:#f92672">(&lt;/span>direction&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">lastDirection&lt;/span>&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">lastDirection&lt;/span> &lt;span style="color:#f92672">=&lt;/span> direction&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">lastMovingTime&lt;/span> &lt;span style="color:#f92672">=&lt;/span> LocalDateTime&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">now&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> LocalDateTime &lt;span style="color:#a6e22e">getLastMovingTime&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> lastMovingTime&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> Direction &lt;span style="color:#a6e22e">getLastDirection&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> lastDirection&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">enum&lt;/span> Direction &lt;span style="color:#f92672">{&lt;/span>
+NORTH&lt;span style="color:#f92672">,&lt;/span>
+EAST&lt;span style="color:#f92672">,&lt;/span>
+SOUTH&lt;span style="color:#f92672">,&lt;/span>
+WEST&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> Direction &lt;span style="color:#a6e22e">getOpposite&lt;/span>&lt;span style="color:#f92672">(&lt;/span>Direction direction&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">switch&lt;/span> &lt;span style="color:#f92672">(&lt;/span>direction&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">case&lt;/span> NORTH &lt;span style="color:#f92672">-&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> SOUTH&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">case&lt;/span> EAST &lt;span style="color:#f92672">-&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> WEST&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">case&lt;/span> SOUTH &lt;span style="color:#f92672">-&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> NORTH&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">case&lt;/span> WEST &lt;span style="color:#f92672">-&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> EAST&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Falls du meinst, dass es unmöglich ist diese Methode genau zu testen. Schreibe die Methode um, damit sie einfacher zu testen ist. Benutze dazu ein Clock-Objekt. Weitere Informationen findest du &lt;a href="https://www.baeldung.com/java-override-system-time">hier&lt;/a>.&lt;/p>
+&lt;h3 id="aufgabe-3">Aufgabe 3&lt;/h3>
+&lt;p>In dieser Aufgabe geht es darum, dass die Unit-Tests für eine bestimmte Methode schon geschrieben wurden. Die Methode muss nun implementiert werden, so dass sie alle Unit-Tests erfüllt. Arbeite dich von Test zu Test durch.&lt;/p>
+&lt;p>&lt;strong>Test Source&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">import static&lt;/span> org.junit.jupiter.api.Assertions.assertTrue&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">import&lt;/span> org.junit.jupiter.api.Test&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">PasswordValidatorTest&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> PasswordValidator uut&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordNull&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordTooShort&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1234567&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordTooLong&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ABCDEFGHIJKLMNOPQRSTU&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordContainsNoSpace&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ABCDEFGHIJKLMNOPQR T&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordContainsNoNumeric&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ABCDEFGHIJKLMNOPQRST&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordContainsNoLowercaseChar&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ABCDEFGHIJ0123456789&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordContainsNoUppercaseChar&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;abcdefghij0123456789&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordContainsNoSpecialChar&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertFalse&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;abcdeFGHIJ0123456789&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">testPasswordValid&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+assertTrue&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">uut&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;abcdeFGHIJ01234$*%?+&amp;#34;&lt;/span>&lt;span style="color:#f92672">));&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;strong>Source&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">PasswordValidator&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isPasswordValid&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String password&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">// Ersetze die Exception durch deine Implementation...
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">throw&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> IllegalStateException&lt;span style="color:#f92672">();&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Wenn du eine Lösung gefunden hast, dann kannst du diese noch aufräumen (Refactoring).&lt;/p></description></item><item><title>Docs: Was ist Git</title><link>/docs/git/was-ist-git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/was-ist-git/</guid><description>
 &lt;blockquote>
 &lt;p>Git [ɡɪt] ist eine freie Software zur verteilten Versionsverwaltung von Dateien, die durch Linus Torvalds initiiert wurde.&lt;/p>
 &lt;/blockquote>
@@ -2267,7 +2521,200 @@ Die Einstellungen richten sich nach den beiden folgenden Screenshots:
 &lt;h3 id="debugging-grundlagen">Debugging-Grundlagen&lt;/h3>
 &lt;p>Der Debugger wird benutzt, um mithilfe von Breakpoints den Code während der Ausführung anzuhalten, zu analysieren und Fehler im Code zu finden.
 Mehr Informationen dazu gibt es unter dem folgenden Link:
-&lt;a href="https://www.jetbrains.com/help/idea/debugging-code.html">Debug Code&lt;/a>&lt;/p></description></item><item><title>Exams: Objektorientierte Programmierung Exam</title><link>/exams/java/java-oop/oopexam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/exams/java/java-oop/oopexam/</guid><description>
+&lt;a href="https://www.jetbrains.com/help/idea/debugging-code.html">Debug Code&lt;/a>&lt;/p></description></item><item><title>Labs: Mockito - Aufgaben</title><link>/labs/java/java-testing/02_mockito/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-testing/02_mockito/</guid><description>
+&lt;p>Eine Wörterbuch-Anwendung bewahrt die Einträge in einer Datenbank.
+Die Interaktion mit der Datenbank wird durch ein DictionaryRepository umgesetzt.&lt;/p>
+&lt;p>Ein DictionaryRepository setzt folgendes Interface um:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">DictionaryRepository&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Die Methode erhält ein Wort und die Definition dazu und speichert diese als Eintrag in der Datenbank
+&lt;/span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;span style="color:#75715e"> * @Param word das Wort, welche in dem Wörterbuch hinzugefügt werden soll
+&lt;/span>&lt;span style="color:#75715e"> * @Param definition die Definition des Wortes
+&lt;/span>&lt;span style="color:#75715e"> * */&lt;/span>
+&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String key&lt;span style="color:#f92672">,&lt;/span> String value&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Die Methode aktualisiert die Definition des Wortes in der Wörterbuch-Datenbank
+&lt;/span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;span style="color:#75715e"> * @Param word das Wort, welche in dem Wörterbuch bereits existiert
+&lt;/span>&lt;span style="color:#75715e"> * @Param definition die aktualisierte Definition des Wortes
+&lt;/span>&lt;span style="color:#75715e"> * */&lt;/span>
+&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">update&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String key&lt;span style="color:#f92672">,&lt;/span> String value&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Die Methode liefert die Definition für das gegebene Wort aus der Wörterbuch-Datenbank zurück.
+&lt;/span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;span style="color:#75715e"> * @Param word das Wort, dessen Definition gesucht wird
+&lt;/span>&lt;span style="color:#75715e"> * @Return die Definition des Wortes aus der Wörterbuch-Datenbank, falls vorhanden, ansonsten null
+&lt;/span>&lt;span style="color:#75715e"> * */&lt;/span>
+String &lt;span style="color:#a6e22e">getDefinition&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String word&lt;span style="color:#f92672">);&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Die Klasse &lt;em>Dictionary&lt;/em> beinhaltet die Business-Logik des Wörterbuchs und verwendet ein &lt;em>DictionaryRepository&lt;/em>,
+um die Einträge in der Datenbank zu speichern und zu finden:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">enum&lt;/span> DictionaryStatus &lt;span style="color:#f92672">{&lt;/span>
+ADDED&lt;span style="color:#f92672">,&lt;/span>
+UPDATED&lt;span style="color:#f92672">,&lt;/span>
+INVALID&lt;span style="color:#f92672">,&lt;/span>
+NOT_FOUND
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Dictionary&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> DictionaryRepository repository&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">Dictionary&lt;/span>&lt;span style="color:#f92672">(&lt;/span>DictionaryRepository repository&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">repository&lt;/span> &lt;span style="color:#f92672">=&lt;/span> repository&lt;span style="color:#f92672">;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Die Methode schreibt eine Definition für ein Wort in der Wörterbuch-Datenbank.
+&lt;/span>&lt;span style="color:#75715e"> * Zuerst wird geschaut, ob das Wort in der Datenbank bereits existiert.
+&lt;/span>&lt;span style="color:#75715e"> * Falls das Wort noch nicht existiert, wird einen neuen Eintrag in der Datenbank erstellt.
+&lt;/span>&lt;span style="color:#75715e"> * Falls das Wort bereits existiert, wird seine Definition aktualisiert.
+&lt;/span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;span style="color:#75715e"> * @Param word das Wort, welche in dem Wörterbuch hinzugefügt oder aktualisiert werden soll
+&lt;/span>&lt;span style="color:#75715e"> * @Param definition die Definition des Wortes
+&lt;/span>&lt;span style="color:#75715e"> * @Return DictionaryStatus.ADDED falls das Wort neu ist, DictionaryStatus.UPDATED falls das Wort
+&lt;/span>&lt;span style="color:#75715e"> * bereits vorhanden war und DictionaryStatus.INVALID, falls das Wort ein leerer String ist oder Zahlen beinhaltet
+&lt;/span>&lt;span style="color:#75715e"> * */&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> DictionaryStatus &lt;span style="color:#a6e22e">addOrUpdateWord&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String word&lt;span style="color:#f92672">,&lt;/span> String definition&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">//TODO gemäss JavaDoc umsetzen
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#75715e">/**
+&lt;/span>&lt;span style="color:#75715e"> * Die Methode sucht nach der Definition des gegebenen Worts.
+&lt;/span>&lt;span style="color:#75715e"> * Falls das Wort existiert, wird die Definition zurückgeliefert und ansonsten einen
+&lt;/span>&lt;span style="color:#75715e"> * Text, welcher darauf hinweist, dass das Wort nicht vorhanden ist.
+&lt;/span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;span style="color:#75715e"> * @Param word das Wort, dessen Definition gesucht wird
+&lt;/span>&lt;span style="color:#75715e"> * @Return die Definition des Wortes, falls das Wort im Wörterbuch existiert. Ansonsten folgenden Text:
+&lt;/span>&lt;span style="color:#75715e"> * &amp;#34;Das Wort xxx konnte im Wörterbuch nicht gefunden werden&amp;#34; (xxx steht als Platzhalter für das gesuchte Wort)
+&lt;/span>&lt;span style="color:#75715e"> * */&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">getDefinition&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String word&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e">//TODO gemäss JavaDoc umsetzen
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="aufgabe">Aufgabe&lt;/h4>
+&lt;p>Schreibe eine Test-Klasse für &lt;em>Dictionary&lt;/em>, welche folgende Tests beinhaltet:&lt;/p>
+&lt;ul>
+&lt;li>Tests der Methode &lt;em>addOrUpdateWord&lt;/em>:
+&lt;ul>
+&lt;li>Das Wort befindet sich noch nicht in der Datenbank&lt;/li>
+&lt;li>Das Wort befindet sich bereits in der Datenbank&lt;/li>
+&lt;li>Das Wort ist ein leerer String&lt;/li>
+&lt;li>Das Wort beinhaltet Zahlen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tests der Methode &lt;em>getDefinition&lt;/em>:
+&lt;ul>
+&lt;li>Das gesuchte Wort existiert in der Datenbank&lt;/li>
+&lt;li>Das gesuchte Wort existiert nicht in der Datenbank&lt;/li>
+&lt;li>Das gesuchte Wort is ungültig: leerer String&lt;/li>
+&lt;li>Das gesuchte Wort is ungültig: das Wort beinhaltet Zahlen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Anforderungen&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Schreibe jeweils einen Test und erweitere den Code dann nur soweit bis der Test grün ist. Wiederhole dies für alle Tests (die bestehende Tests müssen weiterhin funktionieren!).&lt;/li>
+&lt;li>Der Interface &lt;em>DictionaryRepository&lt;/em> darf nicht umgesetzt werden. Für die Tests wird ein Mock oder ein Spy aus dem Mockito-Framework verwendet.&lt;/li>
+&lt;li>Jede Test-Methode hat folgendes Namensschema:
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">given_when_then&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#f92672">...&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Wobei:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>given&lt;/strong> die Ausgangslage definiert&lt;/li>
+&lt;li>&lt;strong>when&lt;/strong> ist der Name der Methode, welche getestet wird&lt;/li>
+&lt;li>&lt;strong>then&lt;/strong> ist das Ergebnis, welche erwartet wird&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Jede Test-Methode prüft, dass alle Methoden eines Mocks/Spy&amp;rsquo;s welche aufgerufen werden müssen, auch aufgerufen wurden.&lt;/li>
+&lt;li>Jede Test-Methode prüft, dass alle Methoden eines Mocks/Spy&amp;rsquo;s welche NICHT aufgerufen werden sollen, auch nicht aufgerufen wurden.&lt;/li>
+&lt;/ul></description></item><item><title>Exams: Objektorientierte Programmierung Exam</title><link>/exams/java/java-oop/oopexam/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/exams/java/java-oop/oopexam/</guid><description>
 &lt;h2 id="cøøp">CØØP&lt;/h2>
 &lt;p>Unsere Supermarkt-Kette heisst CØØP.
 CØØP ist ein Supermarkt welcher an vielen Orten in der Schweiz vertreten ist.
@@ -7833,679 +8280,4 @@ Sofern nichts angegeben wird, wähle Standardmässig &lt;code>CHF&lt;/code>.&lt;
 &lt;li>Geh davon aus das in der Spalte &lt;code>wert&lt;/code> auch Zahlen wie &lt;code>1287.87&lt;/code> oder &lt;code>5421.21&lt;/code> gespeichert sind. Runde diese je nachdem auf oder ab.&lt;/li>
 &lt;li>Auch das Hochzeichen (&lt;code>'&lt;/code>) soll immer nach 3 Stellen erscheinen.&lt;/li>
 &lt;li>Erstelle eine weitere Pipe, welche den Markennamen nur mit Grossbuchstaben anzeigt und hinter den Markennamen ein Copyrightzeichen (&lt;code>©&lt;/code>) setzt.&lt;/li>
-&lt;/ul></description></item><item><title>Docs: GitHub</title><link>/docs/git/git-hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/git/git-hub/</guid><description>
-&lt;p>GitHub ist ein Webservice für das Verwalten von Software Code via Git. Darüber hinaus bietet GitHub viele weitere Funktionen, von Projektmanagement mit Taskverwaltung, über Wikis bis zum Buildserver. GitHub ist die Plattform für Opensource Projekte.&lt;/p>
-&lt;p>Weitere Infos:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://de.wikipedia.org/wiki/GitHub">Wikipedia&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://try.github.com/">GitHub Doku&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="github-alternativen">GitHub Alternativen&lt;/h2>
-&lt;p>Natürlich ist GitHub nicht die einzige Plattform, welche diesen Service anbietet. Alle Alternativen haben ihre eigenen Features und Limitierungen, im Kern verwenden aber alle Git.&lt;/p>
-&lt;p>Alternativen:&lt;/p>
-&lt;ul>
-&lt;li>Gitea: &lt;a href="https://gitea.io">https://gitea.io&lt;/a>&lt;/li>
-&lt;li>Gitolite: &lt;a href="https://gitolite.com">https://gitolite.com&lt;/a>&lt;/li>
-&lt;li>Gitosis: &lt;a href="https://github.com/tv42/gitosis">https://github.com/tv42/gitosis&lt;/a>&lt;/li>
-&lt;li>GitLab: &lt;a href="https://gitlab.com/">https://gitlab.com/&lt;/a>&lt;/li>
-&lt;li>Bitbucket: &lt;a href="https://bitbucket.org">https://bitbucket.org&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="github-account">GitHub Account&lt;/h2>
-&lt;p>Falls du noch keinen GitHub-Account hast, wäre jetzt der Moment einen zu erstellen. &lt;a href="https://github.com/signup">https://github.com/signup&lt;/a>&lt;/p>
-&lt;h2 id="git-protokolle">Git Protokolle&lt;/h2>
-&lt;p>Um auf ein entferntes Git Repository zuzugreifen, gibt es in der Regel zwei Varianten:&lt;/p>
-&lt;ul>
-&lt;li>HTTPS&lt;/li>
-&lt;li>SSH&lt;/li>
-&lt;/ul>
-&lt;p>Beide Protokolle bieten standardmässig Verschlüsselung, Authentifizierung und Komprimierung.&lt;/p>
-&lt;h3 id="git-über-https">Git über HTTPS&lt;/h3>
-&lt;p>Kurze Wiederholung: Um ein Repository über HTTPS zu klonen verwendet man den Befehl:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ git clone https://github.com/kelseyhightower/nocode.git
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Dies ist die einfachste Variante, um Code schnell herunterzuladen und lokal im eigenen Editor zu betrachten.&lt;/p>
-&lt;p>Vorteile:&lt;/p>
-&lt;ul>
-&lt;li>Anonymer Zugriff möglich&lt;/li>
-&lt;li>Zugriff für Systeme, auf denen SSH weniger verbreitet ist&lt;/li>
-&lt;li>HTTPS ist auf vielen Corporate Firewalls standardmässig offen&lt;/li>
-&lt;/ul>
-&lt;p>Nachteile:&lt;/p>
-&lt;ul>
-&lt;li>Zwischenspeicherung der Anmeldedaten mit HTTPS weniger benutzerfreundlich als mit SSH Keys&lt;/li>
-&lt;li>Konfiguration des Webservers etwas komplizierter als die von SSH&lt;/li>
-&lt;/ul>
-&lt;h3 id="git-über-ssh">Git über SSH&lt;/h3>
-&lt;p>Um ein Repository mit SSH zu klonen, kommt folgender Befehl zum Einsatz:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ git clone git@github.com:cajotafer/10xengineers.git
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Für die meisten Anwendungsfälle ist dies der bevorzugte Weg, um entfernte Git Repositories zu verwenden.&lt;/p>
-&lt;p>Vorteile:&lt;/p>
-&lt;ul>
-&lt;li>SSH ist auf jedem Linux System bereits vorinstalliert (server- wie clientseitig)&lt;/li>
-&lt;li>SSH Server sind sehr einfach zu konfigurieren&lt;/li>
-&lt;li>Der Zugriff via SSH ist sehr sicher&lt;/li>
-&lt;/ul>
-&lt;p>Nachteile:&lt;/p>
-&lt;ul>
-&lt;li>Bietet keinen anonymen Zugriff&lt;/li>
-&lt;/ul>
-&lt;h2 id="github-features">GitHub Features&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Feature&lt;/th>
-&lt;th>Funktion&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Issues&lt;/td>
-&lt;td>Ermöglichen es, Tasks in einem Repo zu erstellen und zu tracken.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Pull Requests&lt;/td>
-&lt;td>Ein Pull Request ermöglicht es, Changes zu Reviewen und zu besprechen, bevor sie in einen Branch gemerged werden.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Forks&lt;/td>
-&lt;td>Eine Fork ist eine Kopie von einem Git-Repo. Die Fork kann dann bearbeitet und angepasst werden, ohne dass das originale Repo davon betroffen ist.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>GitHub Pages&lt;/td>
-&lt;td>Basic Webseiten welche auf GitHub gehostet werden&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>GitHub Actions&lt;/td>
-&lt;td>CI/CD Integration von GitHub&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="hands-on">Hands On&lt;/h2>
-&lt;p>Für dieses Hands-On werden wir alles via Webinterface von GitHub machen. Ein Grossteil der Tasks können jedoch auch Lokal mit Git im Terminal gemacht werden.&lt;/p>
-&lt;h3 id="branches-und-pull-requests">Branches und Pull Requests&lt;/h3>
-&lt;ol>
-&lt;li>&lt;a href="https://guides.github.com/activities/hello-world/">https://guides.github.com/activities/hello-world/&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;h3 id="forks-pull-requests-reviews">Forks, Pull Requests, Reviews&lt;/h3>
-&lt;ol>
-&lt;li>Fork erstellen vom &lt;a href="https://github.com/SylivanKenobi/hello-world">Repo&lt;/a>.
-&lt;img src="../github/create-fork.png" alt="Create Fork" title="Create Fork">&lt;/li>
-&lt;li>Weitere User auf Fork hinzufügen
-&lt;img src="../github/add-user.png" alt="Add User" title="Add User">&lt;/li>
-&lt;li>Branch auf Fork erstellen&lt;/li>
-&lt;li>&lt;code>hello-world.sh&lt;/code> auf dem Master Branch anpassen und committen.
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e">#!/bin/bash
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>
-echo &lt;span style="color:#e6db74">&amp;#39;Hello World Master&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>&lt;code>hello-world.sh&lt;/code> auf dem neuen Branch anpassen und committen.
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e">#!/bin/bash
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>
-echo &lt;span style="color:#e6db74">&amp;#39;Hello World Feature&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>Pull Request erstellen&lt;/li>
-&lt;li>Da auf beiden Branches die gleich Zeile bearbeitet wurde, kann GitHub die Branches nicht automatisch Mergen. Aus diesem Grund müssen zuerst die Konflikte gelöst werden
-&lt;img src="../github/fix-merge.png" alt="Fix Merge" title="Fix Merge">&lt;/li>
-&lt;li>Teamkollege als Reviewer zuweisen.&lt;/li>
-&lt;li>Review Changes umsetzen.&lt;/li>
-&lt;li>Pull Request mergen.&lt;/li>
-&lt;li>Merge Request auf &lt;a href="https://github.com/SylivanKenobi/hello-world">Original Repo&lt;/a> erstellen&lt;/li>
-&lt;li>Ende&lt;/li>
-&lt;/ol></description></item><item><title>Docs: Java Generics Grundlagen</title><link>/docs/java/java-generics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/java/java-generics/</guid><description>
-&lt;h4 id="ziele">Ziele&lt;/h4>
-&lt;ul>
-&lt;li>Ich weiss, was generische Programmierung ist&lt;/li>
-&lt;li>Ich weiss, was Typsicherheit ist und wie Typverletzung entsteht&lt;/li>
-&lt;li>Ich kenne die Vorteile von Generics&lt;/li>
-&lt;li>Ich weiss, wann Generics angewendet werden sollen&lt;/li>
-&lt;li>Ich weiss, was &amp;ldquo;bounded types&amp;rdquo; sind und warum sie angewendet werden&lt;/li>
-&lt;li>Ich weiss, was Wildcards im Kontext von Generics sind und wie sie verwendet werden&lt;/li>
-&lt;li>Ich weiss, was mit Generics nach der Kompilierung passiert (&amp;ldquo;type erasure&amp;rdquo;)&lt;/li>
-&lt;li>Ich kann generische Klassen und Methoden definieren&lt;/li>
-&lt;li>Ich kann generische Klassen und Methoden in meinem Code anwenden&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="einführung">Einführung&lt;/h2>
-&lt;p>Mit Generics sind im Java-Umfeld parametrisierte Datentypen gemeint.
-So werden mit Generics Datentypen (Integer, String oder auch benutzerdefinierte Datentypen) als Parameter für Klassen, Interfaces und Methoden mitgegeben.
-Mit Generics ist es also möglich Klassen, Interfaces und Methoden zu schreiben, welche mit unterschiedlichen Datentypen arbeiten können.&lt;/p>
-&lt;p>Generics funktionieren nur mit Referenz-Datentypen (also nicht mit primitiven Datentypen) und werden nur während der Kompilierung ausgewertet.&lt;/p>
-&lt;h2 id="typsicherheit">Typsicherheit&lt;/h2>
-&lt;p>Typsicherheit ist einen Zustand, bei dem Datentypen gemäss ihren Definitionen verwendet werden und keine sog. Typverletzungen auftreten.&lt;/p>
-&lt;p>In der Regel wird bei einer Variable der Datentyp festgelegt. Diesen Datentyp schränkt die Menge der konkreten, zulässigen Werte für diese Variable ein.
-Versucht man der Variable nun einen Wert ausserhalb diesen zulässigen Bereich zuzuweisen, so liegt eine Typverletzung vor.&lt;/p>
-&lt;p>Die Überprüfung der Typsicherheit in Java ist eine Aufgabe des Java-Compilers.
-Wenn der Compiler eine Typverletzung zur &amp;ldquo;Compile-Zeit&amp;rdquo; entdeckt gibt es einen sog. Kompilierfehler, welcher davor warnt.
-Wenn eine Typverletzung unentdeckt bleibt, können zur Laufzeit des Programms schwer analysierbare Fehler auftreten.&lt;/p>
-&lt;p>&lt;strong>Beispiel einer Typverletzung, welche vom Compiler entdeckt wird&lt;/strong>&lt;/p>
-&lt;p>In der folgenden Klasse wird versucht, ein String zu einer Variable des Typs Integer zuzuweisen&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-Integer myInteger&lt;span style="color:#f92672">;&lt;/span>
-myInteger &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;this is not an integer...&amp;#34;&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Beim Versuch, die Klasse zu kompilieren erscheint folgende Fehlermeldung:
-&lt;img src="../java-generics/typverletzung-compile-time.png" alt="">&lt;/p>
-&lt;h2 id="warum-generics">Warum Generics?&lt;/h2>
-&lt;p>Programme, welche Generics verwenden, haben mehrere Vorteile gegenüber Programmen ohne Generics:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Wiederverwendbarer Code:&lt;/strong> eine Klasse oder eine Methode kann einmal geschrieben werden und mit unterschiedlichen Datentypen verwendet werden.&lt;/li>
-&lt;li>&lt;strong>Typsicherheit:&lt;/strong> Generics lösen Fehler während der Kompilierung aus, welche ansonsten erst zur Laufzeit ausgelöst wären.&lt;/li>
-&lt;li>&lt;strong>Individuelle Typ-Casting ist nicht nötig:&lt;/strong> Wenn bei der Anwendung von Generics der konkrete Typ angegeben wird, muss danach kein Typ-Casting stattfinden.&lt;/li>
-&lt;/ul>
-&lt;p>Schauen wir wie die Typsicherheit eines Programms mit Generics verbessert werden kann.&lt;/p>
-&lt;p>Die Object-Klasse in Java ist die Super-Klasse aller anderen Klassen und eine Object-Referenz kann beliebige Objekte referenzieren.
-Diese Features sind nicht typsicher. Auch durch das Verwenden von Polymorphismus können Typverletzungen entstehen.&lt;/p>
-&lt;p>&lt;strong>Beispiel Typverletzung, welche nicht zu einem Compiler-Fehler führt&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#f92672">import&lt;/span> java.util.ArrayList&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#75715e">// ArrayList erstellen ohne den Typ der Daten darin zu definieren
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> ArrayList hitchhikersInfo &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ArrayList&lt;span style="color:#f92672">();&lt;/span>
-hitchhikersInfo&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Douglas&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
-hitchhikersInfo&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Adams&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
-hitchhikersInfo&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>42&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// Der Compiler erlaubt diese Zuweisung, da wir den Datentyp in der ArrayList nicht definiert haben
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>
-&lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>0&lt;span style="color:#f92672">;&lt;/span> i&lt;span style="color:#f92672">&amp;lt;=&lt;/span>hitchhikersInfo&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">size&lt;/span>&lt;span style="color:#f92672">();&lt;/span> i&lt;span style="color:#f92672">++)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">((&lt;/span>String&lt;span style="color:#f92672">)&lt;/span> hitchhikersInfo&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">get&lt;/span>&lt;span style="color:#f92672">(&lt;/span>i&lt;span style="color:#f92672">));&lt;/span> &lt;span style="color:#75715e">// diesen Typ-Casting wäre nicht nötig gewesen, wenn wir die ArrayListe richtig definiert hätten!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Diese Klasse kompiliert ohne Fehler. Der Compiler warnt zwar, dass hier eine unsichere Operation
-durchgeführt wird, aber er erlaubt diese Operation und die Kompilation ist erfolgreich.
-Beim Ausführen des Programms kommt es jedoch zu einem Laufzeitfehler vom Typ ClassCastException, weil versucht wird
-ein Integer in einen String umzuwandeln (Typ-Casting):
-&lt;img src="../java-generics/typverletzung-run-time.png" alt="">&lt;/p>
-&lt;p>Generics helfen solche Laufzeitfehler mit sog. Typvariablen zu vermeiden.
-Diese Typvariablen werden zur Zeit der Implementierung zunächst durch Platzhalter repräsentiert
-und dann zum Zeitpunkt der Anwendung konkretisiert.
-Im obigen Beispiel hätte der Laufzeitfehler vermieden werden können, in dem wir die ArrayList als
-eine Liste von Strings definiert hätten:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java"> &lt;span style="color:#75715e">// ArrayList mit Elementen vom Typ String
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> ArrayList&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> hitchhikersInfo &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ArrayList&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#f92672">...&lt;/span>
-hitchhikersInfo&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>42&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// Der Compiler erlaubt diese Zuweisung nicht mehr
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Beim Versuch, die Klasse erneut zu kompilieren, kommt es zum folgenden Fehler und die Kompilierung schlägt fehl:
-&lt;img src="../java-generics/typverletzung-arraylist-compile-time.png" alt="">&lt;/p>
-&lt;h2 id="generics-in-der-praxis">Generics in der Praxis&lt;/h2>
-&lt;p>In Java gibt es zwei Typen von Generics: generische Methoden und generische Klassen.&lt;/p>
-&lt;p>Eine &lt;strong>generische Methode&lt;/strong> kann - wie andere &amp;ldquo;normale&amp;rdquo; Methoden auch - Parameter und einen Rückgabewert enthalten.
-Der Unterschied zu einer &amp;ldquo;normalen&amp;rdquo; Methode liegt darin, dass eine generische Methode sog. Typparameter bearbeitet.
-Somit kann eine generische Methode mit unterschiedlichen Datentypen benutzt werden.&lt;/p>
-&lt;p>Eine &lt;strong>generische Klasse&lt;/strong> wird genau gleich wie eine nicht-generische Klasse umgesetzt.
-Der Unterschied liegt darin, dass die generische Klasse einen oder mehrere Typparameter definiert.&lt;/p>
-&lt;h3 id="typparameter-definieren">Typparameter definieren&lt;/h3>
-&lt;p>In generischen Klassen wie auch in generischen Methoden, werden Typparameter mittels eines Grossbuchstabens definiert,
-welcher innerhalb spitziger Klammern geschrieben wird z.B: &amp;lt;T&amp;gt; oder &amp;lt;I&amp;gt;.&lt;/p>
-&lt;p>Multiple Typparameter werden durch ein Komma getrennt: &amp;lt;T, V&amp;gt;&lt;/p>
-&lt;h4 id="typparameter-namenskonvention">Typparameter Namenskonvention&lt;/h4>
-&lt;p>Die Buchstaben, welche für die Definition von Typparametern verwendet werden, nutzen die folgende Namenskonvention:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Typname&lt;/th>
-&lt;th>Zweck&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>T&lt;/td>
-&lt;td>Type&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>E&lt;/td>
-&lt;td>Element&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>K&lt;/td>
-&lt;td>Key&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>N&lt;/td>
-&lt;td>Number&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>V&lt;/td>
-&lt;td>Value&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 id="generische-klasse">Generische Klasse&lt;/h3>
-&lt;p>Um generische Klassen zu verwenden, wird zunächst die Klasse mit einem Typparameter definiert
-und bei der Anwendung dieser Klasse (bei der Instanziierung) wird innerhalb der spitzigen Klammern
-der konkrete Datentyp geschrieben.&lt;/p>
-&lt;p>&lt;strong>Beispiel einer benutzer-definierten, generischen Klasse&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#75715e">// &amp;lt;T&amp;gt; definiert einen Typparameter
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#75715e">// Deklaration einer Member-Variable vom Typ T
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> T obj&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#75715e">// Konstruktor, erhält ein Object vom Typ T und initialisiert die Member-Variable damit
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> Test&lt;span style="color:#f92672">(&lt;/span>T obj&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">obj&lt;/span> &lt;span style="color:#f92672">=&lt;/span> obj&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#75715e">// die Getter-Methode liefert ein Objekt vom Typ T zurück
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">public&lt;/span> T &lt;span style="color:#a6e22e">getObject&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">obj&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Sofern sich die obige Klasse auf dem Klassenpfad befindet, kann sie nun wie folgt verwendet werden:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyProgram&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#75715e">// Instanziieren der generischen Klasse und setzen den Typ auf Integer
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> Test&lt;span style="color:#f92672">&amp;lt;&lt;/span>Integer&lt;span style="color:#f92672">&amp;gt;&lt;/span> integerObject &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Test&lt;span style="color:#f92672">&amp;lt;&lt;/span>Integer&lt;span style="color:#f92672">&amp;gt;(&lt;/span>42&lt;span style="color:#f92672">);&lt;/span>
-System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>integerObject&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getObject&lt;/span>&lt;span style="color:#f92672">());&lt;/span> &lt;span style="color:#75715e">// Output: 42
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>
-&lt;span style="color:#75715e">// instance of String type
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> Test&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> stringObject &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Test&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Generics are great!&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
-System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>stringObject&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getObject&lt;/span>&lt;span style="color:#f92672">());&lt;/span> &lt;span style="color:#75715e">// Output: Generics are great!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>In diesem Beispiel wurde dieselbe generische Klasse einmal mit einem Integer und einmal mit String
-verwendet. Dabei wurde die Typsicherheit sichergestellt.&lt;/p>
-&lt;h3 id="generische-methode">Generische Methode&lt;/h3>
-&lt;p>Wie bei generischen Klassen werden auch bei generischen Methoden zunächst die Typparameter
-als Argumente für die Methode definiert und beim Aufruf der Methode werden die konkreten Datentypen mitgegeben.&lt;/p>
-&lt;p>&lt;strong>Beispiel einer generischen Methode&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#75715e">// Definition einer generischen Methode
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">genericDisplay&lt;/span>&lt;span style="color:#f92672">(&lt;/span>T element&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>element&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getClass&lt;/span>&lt;span style="color:#f92672">().&lt;/span>&lt;span style="color:#a6e22e">getName&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34; = &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> element&lt;span style="color:#f92672">);&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#75715e">// Die generische Methode wird mit einem Integer-Argument aufgerufen
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Achtung: hier wird nicht das primitive Typ &amp;#34;int&amp;#34; verwendet sondern die Wrapper-Klasse Integer!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> genericDisplay&lt;span style="color:#f92672">(&lt;/span>42&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// Output: java.lang.Integer = 42
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>
-&lt;span style="color:#75715e">// Die generische Methode wird mit einem String-Argument aufgerufen
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> genericDisplay&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Generics are great!!&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// Output: java.lang.String = Generics are great!!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>
-&lt;span style="color:#75715e">// Die generische Methode wird mit einem Double-Argument aufgerufen
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Achtung: hier wird nicht das primitive Typ &amp;#34;double&amp;#34; verwendet sondern die Wrapper-Klasse Double!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> genericDisplay&lt;span style="color:#f92672">(&lt;/span>42&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">0&lt;/span>&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// Output: java.lang.Double = 42.0
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>
-&lt;span style="color:#75715e">// Primitive Typen können nicht mit Generics verwendet werden
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// aber eine ArrayList aus einem Array mit primitiven Typen ist erlaubt, weil Arrays Referenz-Typen sind!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> ArrayList&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&amp;gt;&lt;/span> arrayListOfIntArray &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ArrayList&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> oneAndTwo &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">{&lt;/span>1&lt;span style="color:#f92672">,&lt;/span> 2&lt;span style="color:#f92672">};&lt;/span>
-&lt;span style="color:#66d9ef">int&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> threeAndFour &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">{&lt;/span>3&lt;span style="color:#f92672">,&lt;/span> 4&lt;span style="color:#f92672">};&lt;/span>
-arrayListOfIntArray&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>oneAndTwo&lt;span style="color:#f92672">);&lt;/span>
-arrayListOfIntArray&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">add&lt;/span>&lt;span style="color:#f92672">(&lt;/span>threeAndFour&lt;span style="color:#f92672">);&lt;/span>
-genericDisplay&lt;span style="color:#f92672">(&lt;/span>arrayListOfIntArray&lt;span style="color:#f92672">);&lt;/span> &lt;span style="color:#75715e">// Output: java.util.ArrayList = [[I@6b2fad11, [I@79698539]
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Bei der Definition von generischen Methoden gibt es einen Unterschied zwischen statischen Methoden und Member-Methoden einer Klasse.&lt;/p>
-&lt;p>Bei Member-Methoden, wird die generische Deklaration aus der Klassendefinition verwendet.
-Das heisst, der Typparameter, welche bei der Klassendefinition deklariert wird,
-wird dasselbe sein wie denjenigen, welche in der Member-Methode verwendet wird.&lt;/p>
-&lt;p>Statische Methoden brauchen jedoch ihre eigen generische Deklaration - vor dem Rückgabewert-Typ.
-Das bedeutet, dass der Typparameter einer statischen Methode nicht vom selben Typ sein muss
-wie demjenigen aus der Klassendefinition (auch wenn beide Typparameter gleich heissen!).&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-T obj&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#75715e">// Hier ist T nicht zwingend gleicher Typ wie denjenigen aus der Klassendefinition
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">staticMethod&lt;/span>&lt;span style="color:#f92672">(&lt;/span>T element&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{...}&lt;/span>
-&lt;span style="color:#75715e">// Hier entspricht der Rückgabewert-Typ denjenigen aus der Klassendefinition
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">public&lt;/span> T &lt;span style="color:#a6e22e">getObject&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">obj&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="bounded-typparameter">Bounded Typparameter&lt;/h2>
-&lt;p>Es gibt Situationen, in denen es Sinn macht die Datentypen, welche als Argument in einem
-parametrisierten Typ verwendet werden dürfen, einzuschränken. Zum Beispiel, eine Methode,
-welche nur mit Zahlen funktionieren kann, sollte keine Datentypen zulassen,
-welche keine Zahl darstellen. Zu diesem Zweck werden sog. Bounded Type-Parameter verwendet.&lt;/p>
-&lt;p>Bounded Typparameter schränken die möglichen Typen schon bei der Erstellung der generischen Klasse/Methode ein.&lt;/p>
-&lt;p>Um ein Bounded Typparameter zu definieren wird bei der Definition des Typparameters noch das Wort &amp;ldquo;extends&amp;rdquo; und der begrenzende Typ (&amp;ldquo;upper bound type&amp;rdquo;) hinzugefügt:&lt;/p>
-&lt;p>Beispiel: &lt;strong>&amp;lt;T extends Number&amp;gt;&lt;/strong>: T muss zwingend vom Typ Number sein&lt;/p>
-&lt;p>Im folgenden Beispiel wird die Klasse &amp;ldquo;ZooExhibit&amp;rdquo; (Zoogehege) definiert, welche unterschiedlichen Arten von Tieren beherbergen kann:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">ZooExhibit&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> animals&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">...&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Wenn wir die Klasse so definieren, könnte T durch alle mögliche Datentypen ersetzt werden:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Main&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#75715e">// T kann gemäss Definition auch z.B ein Integer sein!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// auch wenn ein Integer im Zoogehege nichts verloren hat...
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&lt;/span>Integer&lt;span style="color:#f92672">&amp;gt;&lt;/span> zooExhibit &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Angenommen, wir haben eine Klasse &amp;ldquo;Animal&amp;rdquo; (mit Subklassen wie &amp;ldquo;Elephant&amp;rdquo;, &amp;ldquo;Zebra&amp;rdquo; usw.), können wir
-unsere ZooExhibit-Klasse so definieren, dass nur Animal-Typen verwendet werden dürfen:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Elephant&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> Animal &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Zebra&lt;/span> &lt;span style="color:#66d9ef">extends&lt;/span> Animal &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">ZooExhibit&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>T &lt;span style="color:#66d9ef">extends&lt;/span> Animal&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">private&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> animals&lt;span style="color:#f92672">;&lt;/span>
-&lt;span style="color:#f92672">...&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Wenn wir nun unserem ZooExhibit befüllen möchten, erlaubt uns der Compiler dies nur mit Animal oder mit einer seinen Subklassen zu tun:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Main&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#75715e">// Die folgende Zeile wird nun vom Compiler nicht akzeptiert:
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&lt;/span>Integer&lt;span style="color:#f92672">&amp;gt;&lt;/span> zooExhibit &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#75715e">// Zoogehege für Elefanten ist erlaubt, da Elephant ein Animal ist:
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&lt;/span>Elephant&lt;span style="color:#f92672">&amp;gt;&lt;/span> elephantExhibit &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#75715e">// Dasselbe gilt für Zebras:
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&lt;/span>Zebra&lt;span style="color:#f92672">&amp;gt;&lt;/span> zebraExhibit &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ZooExhibit&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="wildcards">Wildcards&lt;/h2>
-&lt;p>In der generischen Programmierung wird das Fragezeichen (?) als Wildcard bezeichnet.
-Es repräsentiert eine Referenz auf einen unbekannten Typ.&lt;/p>
-&lt;p>Um zu verstehen, wozu es Wildcards braucht, schauen wir uns ein Beispiel an:
-Angenommen, wir haben die Animal, Elephant und Zebra Klassen vom vorherigen Abschnitt definiert und dazu auch die folgende generische Klasse:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AnimalList&lt;/span>&lt;span style="color:#f92672">&amp;lt;&lt;/span>T &lt;span style="color:#66d9ef">extends&lt;/span> Animal&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> List&lt;span style="color:#f92672">&amp;lt;&lt;/span>T&lt;span style="color:#f92672">&amp;gt;&lt;/span> animals &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ArrayList&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#f92672">...&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Nun möchten wir diese Klasse in einer anderen Klasse wie folgt verwenden:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Zoo&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String&lt;span style="color:#f92672">[]&lt;/span> args&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-AnimalList&lt;span style="color:#f92672">&amp;lt;&lt;/span>Elephant&lt;span style="color:#f92672">&amp;gt;&lt;/span> elephants &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> AnimalList&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-AnimalList&lt;span style="color:#f92672">&amp;lt;&lt;/span>Zebra&lt;span style="color:#f92672">&amp;gt;&lt;/span> zebras &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> AnimalList&lt;span style="color:#f92672">&amp;lt;&amp;gt;();&lt;/span>
-&lt;span style="color:#75715e">// Der Compiler gibt bei folgenden Zeilen eine Fehlermeldung!
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> printAnimalList&lt;span style="color:#f92672">(&lt;/span>elephants&lt;span style="color:#f92672">);&lt;/span>
-printAnimalList&lt;span style="color:#f92672">(&lt;/span>zebras&lt;span style="color:#f92672">);&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">printAnimalList&lt;/span>&lt;span style="color:#f92672">(&lt;/span>AnimalList&lt;span style="color:#f92672">&amp;lt;&lt;/span>Animal&lt;span style="color:#f92672">&amp;gt;&lt;/span> animals&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>animals&lt;span style="color:#f92672">)&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Obwohl Elephant und auch Zebra beide ein Animal sind, gibt der Compiler eine Fehlermeldung beim Versuch,
-die Methode &lt;em>printAnimalList&lt;/em> mit AnimalList&lt;Elephant> resp. mit AnimalList&lt;Zebra> aufzurufen.&lt;/p>
-&lt;p>Dieser Ansatz (die Super-Klasse zu verwenden, damit die Subklassen auch am gleichen Ort verwendet sein dürfen),
-funktioniert zwar mit Arrays, nicht aber mit generischen Klassen.&lt;/p>
-&lt;p>Der Grund dafür ist der Zeitpunkt der Typ-Prüfung:
-Bei Arrays wird erst zur Laufzeit auf den richtigen Typ geprüft (und darum werden allfällige Fehler erst zur Laufzeit entdeckt).
-Bei Generics wird diese Prüfung durch den Compiler übernommen da sie zur Laufzeit wegen dem sog. Type-Erasure (dazu später) nicht erfolgen kann.&lt;/p>
-&lt;p>Der Einsatz von Wildcards ermöglicht es, jeden beliebigen generischen Typ zu akzeptieren.
-Wenn wir nun die Methode &lt;em>printAnimalList&lt;/em> mit einer Wildcard definieren, kompiliert der Rest vom Code einwandfrei:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-java" data-lang="java"> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">printAnimalList&lt;/span>&lt;span style="color:#f92672">(&lt;/span>AnimalList&lt;span style="color:#f92672">&amp;lt;?&amp;gt;&lt;/span> animals&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-System&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">out&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">println&lt;/span>&lt;span style="color:#f92672">(&lt;/span>animals&lt;span style="color:#f92672">)&lt;/span>
-&lt;span style="color:#f92672">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Wenn man &amp;lt;?&amp;gt; verwendet, wird dies &amp;ldquo;unbeschränkter Wildcard Typ&amp;rdquo; (&amp;ldquo;unbounded wildcard&amp;rdquo;) genannt.
-Es besteht aber auch die Möglichkeit, Wildcards zu beschränken und zwar in zwei verschiedene Arten:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Upper-Bound Beschränkung:&lt;/strong> Beschränkung auf einen Typ und dessen Kindtypen. Die Syntax sieht dann z.B. so aus: &lt;strong>&amp;lt;? extends Number&amp;gt;&lt;/strong> (also irgendein Typ, solange er vom Typ Number oder einer Subklasse davon ist)&lt;/li>
-&lt;li>&lt;strong>Lower-Bound Beschränkung:&lt;/strong> Beschränkung auf einen Typ und dessen Supertypen. Die Syntax sieht dann z.B. so aus: &lt;strong>&amp;lt;? super Integer&amp;gt;&lt;/strong> (also irgendein Typ, solange er vom Typ Integer oder einer Superklasse davon ist)&lt;/li>
-&lt;/ul>
-&lt;h2 id="type-erasure">Type Erasure&lt;/h2>
-&lt;p>Generics werden nur vom Compiler behandelt und verschwinden zur Laufzeit.
-Das heisst, der Compiler entfernt beim Kompilieren alle Informationen, die durch Generics definiert wurden.
-Das bedeutet, dass zur Laufzeit nicht bestimmt werden kann, welcher generische Typ verwendet wurde.
-Grund für dieses Verhalten war die Notwendigkeit zur Bewahrung der Abwärtskompatibilität zu älteren Java-Versionen, welche keine Generics kennen.&lt;/p>
-&lt;p>Das Entfernen der generischen Informationen heisst &amp;ldquo;type erasure&amp;rdquo; und der Compiler wendet dies an um:&lt;/p>
-&lt;ul>
-&lt;li>Alle Typparameter in generischen Typen mit ihren &amp;ldquo;bound&amp;rdquo;-Typen (falls definiert) oder mit Object umzutauschen. Der prduzierte Bytecode beinhaltet dann nur &amp;ldquo;normale&amp;rdquo; Klassen, Interfaces und Methoden.&lt;/li>
-&lt;li>Type-Casting dort wo nötig hinzuzufügen, um die Typsicherheit bewahren zu können&lt;/li>
-&lt;li>Sog. Bridge-Methoden zu generieren, um Polymorphismus in erweiterte generische Typen zu bewahren&lt;/li>
 &lt;/ul></description></item></channel></rss>
