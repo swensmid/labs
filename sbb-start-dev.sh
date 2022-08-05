@@ -9,5 +9,3 @@ podman run \
   -v $(pwd):/src \
   klakegg/hugo:0.81.0-ext-ubuntu \
   server -p 8095 --bind 0.0.0.0
-
-
