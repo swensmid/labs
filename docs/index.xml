@@ -791,7 +791,57 @@ matura_arbeit.docx matura_arbeit_fastfertig.docx matura_arbeit_wirklichfertig.do
 &lt;li>&lt;strong>Commited&lt;/strong>: Die Datei ist im aktuellen Zustand in die lokale Datenbank eingecheckt.&lt;/li>
 &lt;/ul>
 &lt;h3 id="minimaler-workflow">Minimaler Workflow&lt;/h3>
-&lt;p>Hat man ein Repository von einem anderen Rechner &lt;em>geklont&lt;/em>, kann man eine oder mehrere Dateien im Verzeichnisbaum editieren. Anschliessend &lt;em>staged&lt;/em> man diese Änderungen und &lt;em>commited&lt;/em> diese anschliessend.&lt;/p></description></item><item><title>Docs: JavaScript: Konsole</title><link>/docs/web/javascript/02_js_browser_tools/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/02_js_browser_tools/</guid><description>
+&lt;p>Hat man ein Repository von einem anderen Rechner &lt;em>geklont&lt;/em>, kann man eine oder mehrere Dateien im Verzeichnisbaum editieren. Anschliessend &lt;em>staged&lt;/em> man diese Änderungen und &lt;em>commited&lt;/em> diese anschliessend.&lt;/p></description></item><item><title>Labs: Zoo</title><link>/labs/java/java-ood/01_zoo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-ood/01_zoo/</guid><description>
+&lt;p>Schreibe eine Anwendung, welche einen Zoo modelliert. Die Anwendung soll folgende Klassen enthalten:&lt;/p>
+&lt;ul>
+&lt;li>Personen&lt;/li>
+&lt;li>Gehege&lt;/li>
+&lt;li>Tiere&lt;/li>
+&lt;/ul>
+&lt;p>Jede dieser Klassen soll mehrere Spezialisierungen enthalten.&lt;/p>
+&lt;p>Bei den Personen wird zwischen Mitarbeitern und Mitgliedern unterschieden.
+Ein Mitarbeiter hat beispielsweise einen Lohn, welcher ein Mitglied nicht hat.
+Die folgenden Attribute sollen vorhanden sein:&lt;/p>
+&lt;ul>
+&lt;li>Lohn&lt;/li>
+&lt;li>Beschreibung des Jobs&lt;/li>
+&lt;li>Telefonnummer&lt;/li>
+&lt;li>Mitglied seit&lt;/li>
+&lt;li>Nummer der Mitglied-Karte&lt;/li>
+&lt;/ul>
+&lt;p>Verteile die Attribute also korrekt auf die Generalisierung und die Spezialisierungen.&lt;/p>
+&lt;p>Bei den Gehegen wird unterschieden zwischen Gelände, Terrarium, Aquarium und Käfig.
+Die einzigartigen Eigenschaften der verschiedenen Gehege sollen wie folgt modelliert werden:&lt;/p>
+&lt;ul>
+&lt;li>Gehege-Nummer&lt;/li>
+&lt;li>Grösse in Quadratmeter&lt;/li>
+&lt;li>Temperatur&lt;/li>
+&lt;li>Feuchtigkeit&lt;/li>
+&lt;li>Süss- / Salzwasser&lt;/li>
+&lt;li>Fassungsvermögen&lt;/li>
+&lt;li>Zaunhöhe&lt;/li>
+&lt;li>Wassergraben vorhanden&lt;/li>
+&lt;/ul>
+&lt;p>Verteile die Attribute also korrekt auf die Generalisierung und die Spezalisierung.
+Selbstverständlich kann ein Gehege auch von einem anderen abgeleitet werden.&lt;/p>
+&lt;p>Bei den Tieren könnt ihr selber entscheiden, welche Tiere euer Zoo enthalten soll und wie diese auf die Gehege verteilt werden.&lt;br>
+Falls ihr keine Ideen habt, gibt es hier ein paar Beispiele:&lt;/p>
+&lt;ul>
+&lt;li>Landtiere&lt;/li>
+&lt;li>Amphibien&lt;/li>
+&lt;li>Wassertiere&lt;/li>
+&lt;li>Vögel&lt;/li>
+&lt;/ul>
+&lt;p>oder&lt;/p>
+&lt;ul>
+&lt;li>Aufteilung nach Spezies wie Insekten, Säugetiere, Wirbeltiere, Reptilien&lt;/li>
+&lt;/ul>
+&lt;p>oder&lt;/p>
+&lt;ul>
+&lt;li>Aufteilung nach Ernährung (Fleischfresser, Pflanzenfresser, Allesfresser :-))&lt;/li>
+&lt;/ul>
+&lt;p>Der Zoo hat also Mitarbeiter und Mitglieder und verschiedene Tiere, die in verschiedenen Gehegen leben.
+Die Beziehung zwischen den einzelnen Klassen wie dem Zoo seinen Gehegen und Tieren soll sich an der realen Welt orientieren.&lt;/p></description></item><item><title>Docs: JavaScript: Konsole</title><link>/docs/web/javascript/02_js_browser_tools/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/javascript/02_js_browser_tools/</guid><description>
 &lt;h2 id="eine-nachricht-loggen">Eine Nachricht loggen&lt;/h2>
 &lt;p>In Java hast du Text mit &lt;code>System.out.println(...)&lt;/code>, in C# mit &lt;code>Console.WriteLine(...)&lt;/code> und in Python vielleicht mit &lt;code>print(...)&lt;/code> geloggt. Genau das gibt es auch in JavaScript.&lt;/p>
 &lt;p>In einer HTML-Datei kannst du folgendes hinzufügen:&lt;/p>
@@ -2736,7 +2786,218 @@ Falls die Schüpercard beim Einkaufen gescannt, so wird dem Konto des Kunden pro
 (Es werden keine halben Punkte verteilt und es wird immer abgerundet).&lt;/p>
 &lt;p>Jeder Mitarbeiter einer CØØP Filiale ist im System hinterlegt.
 Es wird auch jederzeit nachgeführt, welcher Mitarbeiter sich zurzeit in welcher Filiale befindet.
-So kann der Chef die Anwesenheit aller Mitarbeiter sauber überprüfen.&lt;/p></description></item><item><title>Exams: Exam zu JavaScript</title><link>/exams/web/html_css/02_exam_js/</link><pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate><guid>/exams/web/html_css/02_exam_js/</guid><description>
+So kann der Chef die Anwesenheit aller Mitarbeiter sauber überprüfen.&lt;/p></description></item><item><title>Labs: Rollenspiel</title><link>/labs/java/java-ood/02_rollenspiel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/labs/java/java-ood/02_rollenspiel/</guid><description>
+&lt;p>In dieser Aufgabe wird ein Fantasy-Rollenspiel mit Vererbung modelliert.
+Lies zuerst die Einführung und arbeite dann die untenstehenden Aufgaben ab.&lt;/p>
+&lt;h2 id="einführung">Einführung&lt;/h2>
+&lt;h3 id="spielfiguren">Spielfiguren&lt;/h3>
+&lt;ul>
+&lt;li>Es gibt verschiedene Spielfiguren:
+&lt;ul>
+&lt;li>Menschen&lt;/li>
+&lt;li>Zwerge&lt;/li>
+&lt;li>Elfen&lt;/li>
+&lt;li>Orks&lt;/li>
+&lt;li>Goblins&lt;/li>
+&lt;li>Trolle&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Jede Spielfigur hat einen Namen und besitzt eine bestimmte Anzahl an Lebenspunkten. Diese Lebenspunkte werden später im Kampf mit anderen Spielfiguren verringert&lt;/li>
+&lt;li>Jede Spielfigur hat eine gewisse Tragkraft um Gegenstände und Ausrüstung mit sich herumtragen zu können (siehe weiter unten)&lt;/li>
+&lt;li>Elfen können zaubern und haben einen Zauberwert&lt;/li>
+&lt;li>Alle Spielfigur-Klassen sollen in einem entsprechenden Package angelegt werden&lt;/li>
+&lt;/ul>
+&lt;h3 id="waffen">Waffen&lt;/h3>
+&lt;ul>
+&lt;li>Es gibt verschiedene Waffenarten
+&lt;ul>
+&lt;li>Nahkampfwaffen (Schwert und Keule)&lt;/li>
+&lt;li>Fernkampfwaffen (Bogen und Wurfmesser)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Alle Waffen haben einen Angriffswert&lt;/li>
+&lt;li>Nahkampfwaffen haben zusätzlich zu ihrem Angriffswert noch einen Verteidigungswert&lt;/li>
+&lt;li>Alle Waffen haben ein Gewicht&lt;/li>
+&lt;li>Alle Waffen-Klassen sollen in einem entsprechenden Package angelegt werden&lt;/li>
+&lt;/ul>
+&lt;h3 id="gegenstände">Gegenstände&lt;/h3>
+&lt;ul>
+&lt;li>Es gibt verschiedene Gegenstände
+&lt;ul>
+&lt;li>Tränke (Heiltrank und Stärketrank)
+&lt;ul>
+&lt;li>Ein Heiltrank kann bei einer Spielfigur eine bestimmte Anzahl an Lebenspunkten wiederherstellen&lt;/li>
+&lt;li>Ein Stärketrank erhöht den Angriffswert einer Spielfigur dauerhaft um einen bestimmten Wert&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Zauberringe (Kraftring, Schutzring)
+&lt;ul>
+&lt;li>Ein Kraftring erhöht die Tragkraft einer Spielfigur dauerhaft um einen bestimmten Wert&lt;/li>
+&lt;li>Ein Schutzring verringert dauerhaft den erlittenen Schaden&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Jeder Gegenstand hat eine Bezeichnung und ein Gewicht&lt;/li>
+&lt;li>Alle Gegenstand-Klassen sollen in einem entsprechenden Package angelegt werden&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-1">Aufgabe 1&lt;/h2>
+&lt;p>Implementation&lt;/p>
+&lt;ul>
+&lt;li>der Packages&lt;/li>
+&lt;li>der Klassen&lt;/li>
+&lt;li>der Instanzvariablen in den Klassen&lt;/li>
+&lt;li>der Beziehungen zwischen den einzelnen Klassen&lt;/li>
+&lt;/ul>
+&lt;p>Vergiss nicht, dass es Generalisierungen und Spezalisierungen gibt. Achte auf eine gute Namensgebung bei Klassen und Variablen.&lt;/p>
+&lt;hr>
+&lt;h2 id="aufgabe-2">Aufgabe 2&lt;/h2>
+&lt;p>Ergänze die Applikation mit den folgenden Möglichkeiten:&lt;/p>
+&lt;h4 id="spielfigur">Spielfigur&lt;/h4>
+&lt;ul>
+&lt;li>Jede Spielfigur braucht einen Namen um instanziiert werden zu können&lt;/li>
+&lt;li>Zu Beginn hat eine Spielfigur keine Waffe&lt;/li>
+&lt;li>Jede Spielfigur hat eine Methode, die ihren Kampfwert zurückgibt
+&lt;ul>
+&lt;li>Der Kampfwert der Spielfigur setzt sich aus dem Kampfwert der akitven Waffe und der Multiplikation mit einer Zufallszahl zusammen. Die Zufallszahl liegt zwischen 0.9 und 1.1&lt;/li>
+&lt;li>Wenn eine Spielfigur keine Waffe besitzt, so ist ihr Kampfwert 1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Elfen&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Um einen Elfen instanziieren zu können, muss zusätzlich zum Namen der Zauberwert des Elfen angegeben werden&lt;/li>
+&lt;li>Einem Elfen wird die Hälfte seines Zauberwerts zum Kampfwert addiert&lt;/li>
+&lt;li>Elfen sind gute Bogenschützen, ihr Kampfwert erhöht sich um 50%, wenn sie einen Bogen als aktive Waffe benutzen&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Goblins&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Goblins sind gute Bogenschützen, ihr Kampfwert erhöht sich um 50%, wenn sie einen Bogen als aktive Waffe benutzen&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Trolle&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Trolle verdoppeln ihren Kampfwert wenn sie eine Keule verwenden&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Orks&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Orks können in einen Kampfrausch verfallen, wenn ihre Lebenspunkte unter 25% fallen. Sie erhalten dann den dreifachen Kampfwert und erleiden nur den halben Schaden&lt;/li>
+&lt;/ul>
+&lt;h4 id="waffen-1">Waffen&lt;/h4>
+&lt;ul>
+&lt;li>Jede Spielfigur kann mit einer Waffe ausgerüstet werden
+&lt;ul>
+&lt;li>Wird eine Waffe aufgenommen, wird die Tragkraft entsprechend reduziert&lt;/li>
+&lt;li>Ist die Waffe zu schwer für die verbleibende Tragkraft, so kann die Spielfigur die Waffe nicht aufnehmen&lt;/li>
+&lt;li>Eine Spielfigur kann mehrere Waffen mit sich rumtragen, aber jeweils nur eine Waffe aktiv verwenden&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Spielfiguren können Waffen ablegen, um die verbleibende Tragkraft zu erhöhen&lt;/li>
+&lt;li>Alle Keulen haben den Angriffswert 5 und den Verteidigungswert 5. Die beiden Werte sind also konstant&lt;/li>
+&lt;li>Jede Waffe hat einen Kampfwert
+&lt;ul>
+&lt;li>Waffen geben als Kampfwert ihren Angriffswert zurück&lt;/li>
+&lt;li>Bei Nahkampfwaffen wird zum Angriffswert der halbe Verteidigungswert hinzuaddiert&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="gegenstände-1">Gegenstände&lt;/h4>
+&lt;ul>
+&lt;li>Jede Spielfigur kann Gegenstände bis zur maximalen Tragkraft aufnehmen
+&lt;ul>
+&lt;li>Wird ein Gegenstand aufgenommen, wird die Tragkraft entsprechend reduziert&lt;/li>
+&lt;li>Ist der Gegenstand zu schwer für die verbleibende Tragkraft, so kann die Spielfigur den Gegenstand nicht aufnehmen&lt;/li>
+&lt;li>Eine Spielfigur kann mehrere Gegenstände mit sich rumtragen und diese Gegenstände später im Kampf aktiv einsetzen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="kampf">Kampf&lt;/h4>
+&lt;ul>
+&lt;li>Jede Spielfigur kann gegen eine andere Spielfigur kämpfen
+&lt;ul>
+&lt;li>Der Kampf findet in Runden statt&lt;/li>
+&lt;li>Es wird solange gekämpft, bis eine oder beide Spielfiguren keine Lebenspunkte mehr haben&lt;/li>
+&lt;li>Steht nach 20 Runden noch kein Sieger fest, wird der Kampf abgebrochen&lt;/li>
+&lt;li>Bei jeder Runde wird der Kampfwert der einen Spielfigur den Lebenspunkten des Gegners abgezogen und umgekehrt&lt;/li>
+&lt;li>Diejenige Spielfigur mit den meisten verbliebenen Lebenspunkten gewinnt&lt;/li>
+&lt;li>Jede Spielfigur kann in einem Kampf von ihren Gegenständen Gebrauch machen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-3">Aufgabe 3&lt;/h2>
+&lt;ul>
+&lt;li>Definiere nun eigene Regeln für deine Spielfiguren, damit das Spiel ein wenig ausgeglichener wird&lt;/li>
+&lt;li>Die Regeln können beliebig geändert werden&lt;/li>
+&lt;li>Es dürfen natürlich auch neue Waffen und Gegenstände eingeführt werden&lt;/li>
+&lt;li>Dein Entwurf soll mindestens eine neue Spielfigur, eine neue Waffe, einen neuen Gegenstand und eine neue Spezialität für eine Spielfigur enthalten&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-4">Aufgabe 4&lt;/h2>
+&lt;ul>
+&lt;li>Die Kämpfe können sehr unausgeglichen sein&lt;/li>
+&lt;li>Das Spiel soll so gestaltet werden, dass nicht immer die gleichen Spielfiguren gewinnen&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-5">Aufgabe 5&lt;/h2>
+&lt;ul>
+&lt;li>Das Spiel soll für alle Aktionen einen übersichtlichen Log generieren&lt;/li>
+&lt;li>Eine Ausgabe für die Kommandozeile genügt, wenn sie sauber formatiert ist&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-6">Aufgabe 6&lt;/h2>
+&lt;p>Die Applikation hat nun aufgrund der vielen Klassen und Möglichkeiten eine gewisse Grösse erreicht und damit auch an Übersichtlichkeit verloren.
+Die Logik der Applikation ist nun, je nach Implementation, in sehr vielen unterschiedlichen Klassen vorhanden.
+In bestimmten Fällen, wie der Spezalisierung einer bestimmten Klasse, ist dies in Ordnung.&lt;/p>
+&lt;p>Wir arbeiten aber wenn immer möglich nach dem Single-Responsibility-Principle. Dieses Prinzip besagt, dass jeder Teil (bspw. Klasse, Methode) einer Applikation
+nur für genau eine Aufgabe innerhalb dieser Applikation zuständig und verantwortlich ist. Kurz gesagt: eine Methode macht beispielsweise niemals zwei verschiedene Dinge gleichzeitig.&lt;/p>
+&lt;ul>
+&lt;li>Erstelle eine Klasse, welche den Kampf zwischen zwei Spielfiguren verwaltet. Diese Klasse enthält diverse Methoden und ist verantwortlich für:
+&lt;ul>
+&lt;li>das Starten eines neuen Kampfes zwischen zwei Spielfiguren&lt;/li>
+&lt;li>das Zählen der Kampfrunden&lt;/li>
+&lt;li>das Verrechnen von Schaden&lt;/li>
+&lt;li>das Ermitteln des Gewinners&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Stelle sicher, dass die spezalisierten Modell-Klassen (Elf, Heiltrank) nur die Logik enthalten, die für eine Spezalisierung gerechtfertigt ist
+&lt;ul>
+&lt;li>Beispiel 1: die Berechnung des Kampfwerts eines Elfen gehört in die Elf-Klasse, die diese die Spezialisierung für einen Elfen enthält&lt;/li>
+&lt;li>Beispiel 2: der Kampf zwischen zwei Spielfiguren gehört NICHT in die Spielfigur-Klasse, da diese generell gültige Informationen zu einer Spielfigur enthält und das eigentliche &amp;ldquo;Spiel&amp;rdquo; mit dem Kampf zweier Spielfiguren nicht die Aufgabe dieser Klasse ist&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-7">Aufgabe 7&lt;/h2>
+&lt;ul>
+&lt;li>Das Spiel soll erweitert werden, dass eine Spielfigur eine Rüstung tragen kann&lt;/li>
+&lt;li>Es gibt leichte und schwere Rüstungen
+&lt;ul>
+&lt;li>Elfen und Goblins dürfen nur leichte Rüstungen tragen&lt;/li>
+&lt;li>Menschen, Zwerge und Orks dürfen schwere Rüstungen tragen&lt;/li>
+&lt;li>Trolle können aufgrund ihrer Grösse keine Rüstung tragen&lt;/li>
+&lt;li>Eine Spielfigur, welche eine schwere Rüstung tragen kann, kann selbstverständlich auch eine leichte Rüstung anziehen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Eine Spielfigur muss nicht zwingend eine Rüstung tragen&lt;/li>
+&lt;li>Jede Rüstung hat ein Gewicht, welches die Tragkraft der Spielfigur entsprechend verringert&lt;/li>
+&lt;li>Eine Spielfigur kann eine Rüstung anziehen oder sie ablegen&lt;/li>
+&lt;li>Mit dem Tragen einer Rüstung ist es einer Spielfigur möglich im Kampf pro Runde den Schaden komplett zu verhindern. Die schwere Rüstung ist dabei erfolgreicher. Das Verhindern von Schaden passiert zufällig&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-8">Aufgabe 8&lt;/h2>
+&lt;ul>
+&lt;li>Verhindere die Instanziierung von Klassen, die keinen Sinn ergeben (Beispiel Waffe, Spielfigur, &amp;hellip;)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="aufgabe-9">Aufgabe 9&lt;/h2>
+&lt;ul>
+&lt;li>Jede Spielfigur erhält einen Initiative-Wert&lt;/li>
+&lt;li>Je höher der Wert, desto früher darf die Spielfigur im Kampf zuschlagen&lt;/li>
+&lt;li>Tiefere Werte verteilen also ihren Schaden später als höhere Werte&lt;/li>
+&lt;li>Eine Spielfigur mit tiefem Initiative-Wert kann nicht mehr zurückschlagen wenn sie getötet wird&lt;/li>
+&lt;li>Das Tragen von schweren Rüstungen verringert den Initiative-Wert&lt;/li>
+&lt;/ul></description></item><item><title>Exams: Exam zu JavaScript</title><link>/exams/web/html_css/02_exam_js/</link><pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate><guid>/exams/web/html_css/02_exam_js/</guid><description>
 &lt;h1 id="exam---zeiterfassungs-dashboard-mit-javascript-ergänzen">Exam - Zeiterfassungs-Dashboard mit JavaScript ergänzen&lt;/h1>
 &lt;p>&lt;img src="/images/task.png" alt="task1"> - Einzelarbeit&lt;/p>
 &lt;p>Bei diesem Exam geht es darum, dass du das Dashboard, welches du im &lt;a href="../01_exam_html_css_rtm">HTML-CSS-Exam&lt;/a> geschrieben hast, mit JavaScript-Logik ergänzt.&lt;/p>
@@ -8088,196 +8349,4 @@ Du kannst es aber auch mit gewöhnlichen HTML-Elementen versuchen.
 &lt;ul>
 &lt;li>&lt;a href="https://www.w3schools.com/graphics/svg_intro.asp">SVG&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.w3schools.com/html/html5_canvas.asp">Canvas&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: HTML-Struktur</title><link>/docs/web/html_css/06_html_structure/</link><pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate><guid>/docs/web/html_css/06_html_structure/</guid><description>
-&lt;h2 id="struktur-einer-html-seite">Struktur einer HTML-Seite&lt;/h2>
-&lt;p>Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
-&amp;lt;&lt;span style="color:#f92672">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-&lt;span style="color:#75715e">&amp;lt;!-- Place for external resources and meta tags. --&amp;gt;&lt;/span>
-&amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;My Website&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
-&lt;span style="color:#75715e">&amp;lt;!-- Place for your website&amp;#39;s content. --&amp;gt;&lt;/span>
-&amp;lt;&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;Hello&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;This is my amazing website!&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Auf der ersten Zeile definieren wir, dass es sich um ein HTML-Dokument handelt. Diese Zeile ist erforderlich und seit HTML5 praktisch immer gleich.&lt;/p>
-&lt;p>Alle weiteren Elemente befinden sich dann im einzigen &lt;code>&amp;lt;html&amp;gt;&lt;/code>-Element. Auf der nächsten Stufe gibt es nur &lt;code>&amp;lt;head&amp;gt;&lt;/code> und &lt;code>&amp;lt;body&amp;gt;&lt;/code>. Im &lt;code>&amp;lt;head&amp;gt;&lt;/code> befinden sich Meta-Informationen über die Website wie z.B. der Tab-Titel der Website. Der eigentliche Seiteninhalt befindet sich dann im &lt;code>&amp;lt;body&amp;gt;&lt;/code>.&lt;/p>
-&lt;h3 id="dom-document-object-model">DOM (Document Object Model)&lt;/h3>
-&lt;p>In der Webentwicklung wird sehr oft vom &amp;ldquo;DOM&amp;rdquo; gesprochen. Visualisiert könnte der DOM aus dem obigen Beispiel ungefähr so aussehen:&lt;/p>
-&lt;p>&lt;img src="../dom.png" alt="dom" title="(DOM einer einfachen HTML-Seite.)">&lt;/p>
-&lt;p>Was ist nun aber dieses &amp;ldquo;Document Object Model&amp;rdquo;? Ganz vereinfacht gesagt, beschreibt das DOM die Struktur der Website zur Laufzeit (also im Browser). Das DOM enthält also die Information, wie die Seite aufgebaut und verschachtelt ist mit ihren Elementen. Im Gegensatz zum HTML-Dokument kann sich das DOM während des Besuches der Seite verändern (z.B. durch JavaScript). Das DOM enthält also die Information, was aktuell auf der Seite ist.&lt;/p>
-&lt;p>Weitere Informationen erhälst du hier:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://www.w3schools.com/js/js_htmldom.asp">https://www.w3schools.com/js/js_htmldom.asp&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>Wie das DOM auf deiner aktuellen Seite aussieht, kannst du ganz einfach herausfinden:&lt;/p>
-&lt;ul>
-&lt;li>Öffne die Entwickler-Tools von deinem Browser (z.B. mit der [F12]-taste)&lt;/li>
-&lt;li>Wechsle zum Reiter &amp;ldquo;Elemente&amp;rdquo;&lt;/li>
-&lt;li>Nun siehst du das aktuellen DOM:&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="../browser_dom.jpg" alt="domBrowser" title="(DOM im Browser einer einfachen HTML-Seite.)">&lt;/p>
-&lt;p>Mache dich mit diesen Entwickler-Tools (z.B. auch mit dem Button ganz oben links im Bild) vertraut!!&lt;/p>
-&lt;p>Diese Tools sind sehr praktische Hilfsmittel bei der Entwicklung von HTML-Seiten, da du damit den aktuellen Zustand deiner Seite inspizieren kannst.&lt;/p>
-&lt;h3 id="der-head">Der Head&lt;/h3>
-&lt;p>Wichtig für dich zum Wissen ist auch, dass deine HTML-Seite bestimmte Meta-Tags haben sollte, damit sie als &amp;ldquo;valid&amp;rdquo; gilt. Nachfolgend ein paar wichtigere &lt;code>&amp;lt;meta&amp;gt;&lt;/code>-Tags:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-    &lt;span style="color:#75715e">&amp;lt;!-- Place for external resources and meta tags. --&amp;gt;&lt;/span>
-    &amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;My Website&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
-    &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&amp;gt;
-    &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;description&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;A simple useless website&amp;#34;&lt;/span>&amp;gt;
-    &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;keywords&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;HTML, Meta tags&amp;#34;&lt;/span>&amp;gt;
-    &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;author&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Karl Klammer&amp;#34;&lt;/span>&amp;gt;
-    &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;width=device-width, initial-scale=1&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>Der &lt;code>title&lt;/code> ist der Tab-Text&lt;/li>
-&lt;li>&lt;code>charset&lt;/code> beschreibt, welche Zeichensatz im Dokument vorkommt. Damit du alle gängigen Zeichen brauchen kannst, wird &amp;ldquo;UTF-8&amp;rdquo; empfohlen. Das Fehlen dieser Zeile führt oft dazu, dass bestimmte Zeichen falsch dargestellt werden.&lt;/li>
-&lt;li>Die &lt;code>description&lt;/code> wird zum Beispiel von Suchmaschinen verwendet. Wie z.B. Google solche Tags auswertet, erfährst du hier: &lt;a href="https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=de">https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=de&lt;/a>. &lt;code>keywords&lt;/code> geht in eine ähnliche Richtung.&lt;/li>
-&lt;li>Die Zeile für den &lt;code>viewport&lt;/code> kann praktisch immer 1-zu-1 übernommen werden. Dieser Wert führt dazu, dass die Seite auf mobilen Endgeräten nicht wie eine Desktop-Seite aussieht. Mit diesem Element wird der Text auf Smartphones meistens grösser. Dieses Meta-Tag wird empfohlen, wenn die Seite auf Smartphones gut aussehen soll.&lt;/li>
-&lt;/ul>
-&lt;h3 id="ist-meine-seite-valid">Ist meine Seite valid?&lt;/h3>
-&lt;p>Um die Seite auf Syntax-Fehlern und gängige Fehler zu überprüfen, kann es Sinn machen, die Seite von einem Validator überprüfen zu lassen. Ein bekannter ist z.B. dieser: &lt;a href="https://validator.w3.org/#validate_by_input">https://validator.w3.org/#validate_by_input&lt;/a>&lt;/p>
-&lt;p>Hier kannst du deinen HTML-Code eingeben und der Validator zeigt dir dann gängige Fehler an, die es in deinem Code entdeckt hat.&lt;/p></description></item><item><title>Docs: Pipes</title><link>/docs/web/angular/04_4_pipes/</link><pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate><guid>/docs/web/angular/04_4_pipes/</guid><description>
-&lt;p>Sobald Daten eingehen, könnte man ihre rohen toString-Werte direkt in die View übertragen. Dies führt jedoch selten zu einer guten user experience. In den meisten Anwendungsfällen
-bevorzugen Benutzer beispielsweise die Anzeige eines Datums in einem einfachen Format wie &lt;code>15. January 1929&lt;/code> anstelle des rohen Stringformats &lt;code>Tu 15. January 1929 00:00:00 GMT-0700 (Pacific Daylight Time)&lt;/code>.&lt;/p>
-&lt;p>Es ist klar, dass einige Werte von etwas Bearbeitung profitieren. Viele der Transformationen werden sowohl innerhalb als auch zwischen Anwendungen wiederholt.
-Dazu sind Pipes sehr praktisch. Man kann sie sich fast als Stile vorstellen.&lt;/p>
-&lt;p>Eine Pipe nimmt Daten als Eingabe auf und wandelt sie in eine gewünschte Ausgabe um.
-In diesem Beispiel verwenden wir Pipes, um das Geburtstags-Property eines Components in ein leserfreundliches Datum umzuwandeln.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">import&lt;/span> {&lt;span style="color:#a6e22e">Component&lt;/span>} &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/core&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">@Component&lt;/span>({
-&lt;span style="color:#a6e22e">selector&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;app-birthday&amp;#39;&lt;/span>,
-&lt;span style="color:#a6e22e">template&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">`&amp;lt;p&amp;gt;The birthday is {{birthday | date}}&amp;lt;/p&amp;gt;`&lt;/span>
-})
-&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">BirthdayComponent&lt;/span>{
-&lt;span style="color:#a6e22e">birthday&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Date(&lt;span style="color:#ae81ff">1929&lt;/span>,&lt;span style="color:#ae81ff">0&lt;/span>,&lt;span style="color:#ae81ff">15&lt;/span>) &lt;span style="color:#75715e">// Month start by 0 =&amp;gt; January 15, 1929
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="parametrisierte-pipes">Parametrisierte Pipes&lt;/h2>
-&lt;p>Eine Pipe kann eine beliebige Anzahl optionaler Parameter akzeptieren, um ihre Ausgabe zu optimieren. Um einer Pipe Parameter hinzuzufügen,
-fügen wir nach dem Pipe-Namen einen Doppelpunkt (:) und danach den Parameterwert (z. B. currency: &lt;code>EUR&lt;/code>) hinzu.
-Wenn die Pipe mehrere Parameter akzeptiert, trennen wir die Werte durch Doppelpunkte (z. B. Slice: 1: 5).&lt;/p>
-&lt;p>Unser Beispiel von vorher könnten wir z.B. so ausgeben:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;The birthday of Martin Luther King Jr is {{ birthday | date:&amp;#34;mm/dd/yy&amp;#34; }} &amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="chaining-pipes">Chaining Pipes&lt;/h2>
-&lt;p>Wir können Pipes in nützlichen Kombinationen miteinander verketten. Im folgenden Beispiel wird der Geburtstag an die DatePipe und an die UpperCasePipe
-ngekettet, um den Geburtstag in Grossbuchstaben anzuzeigen.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;The chained birthday of Martin Luther King Jr is {{ birthday | date | uppercase }} &amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Der Geburtstag wird nun so angezeigt: APR 15, 1988&lt;/p>
-&lt;h2 id="custom-pipes">Custom Pipes&lt;/h2>
-&lt;p>Für spezielle Anwendungsfälle können wir auch unsere eigenen Pipes schreiben.&lt;/p>
-&lt;p>Wir können Beispielsweise das size eines Files anhand einer custom Pipe im Template darstellen.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">{{ file.size | filesize: &amp;#34;megabyte&amp;#34; }}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Der Code für die custom Pipe dieses Beispiels würde so aussehen:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-typescript" data-lang="typescript">&lt;span style="color:#66d9ef">import&lt;/span> {&lt;span style="color:#a6e22e">Pipe&lt;/span>, &lt;span style="color:#a6e22e">PipeTransform&lt;/span>} &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;@angular/core&amp;#39;&lt;/span>;
-&lt;span style="color:#66d9ef">@Pipe&lt;/span>({ &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;filesize&amp;#39;&lt;/span> })
-&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">FileSizePipe&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> &lt;span style="color:#a6e22e">PipeTransform&lt;/span>{
-&lt;span style="color:#a6e22e">transform&lt;/span>(&lt;span style="color:#a6e22e">size&lt;/span>: &lt;span style="color:#66d9ef">number&lt;/span>, &lt;span style="color:#a6e22e">extensions&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;MB&amp;#34;&lt;/span>){
-&lt;span style="color:#66d9ef">return&lt;/span> (&lt;span style="color:#a6e22e">size&lt;/span> &lt;span style="color:#f92672">/&lt;/span> (&lt;span style="color:#ae81ff">1024&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span>)).&lt;span style="color:#a6e22e">toFixed&lt;/span>(&lt;span style="color:#ae81ff">2&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">extension&lt;/span>;
-}
-}
-&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>Um Angular mitzuteilen, dass dies eine Pipe ist, wenden wir den &lt;code>@Pipe&lt;/code> Decorator an, welchen wir aus &lt;code>@angular/core&lt;/code> importieren.&lt;/li>
-&lt;li>Die Pipe-Klasse implementiert die Methode &lt;code>transform&lt;/code> des PipeTransform Interface, die einen Eingabewert gefolgt von optionalen Parametern akzeptiert und den transformierten Wert zurückgibt.&lt;/li>
-&lt;li>Für jeden an die Pipe übergebenen Parameter gibt es ein zusätzliches Argument für die Methode &lt;code>transform&lt;/code>. Unsere Pipe hat einen solchen Parameter: die &lt;code>extension&lt;/code>.&lt;/li>
-&lt;li>Mit dem &lt;code>@Pipe&lt;/code> Decorator können wir den Pipe-Namen definieren, welchen wir im Template verwenden.&lt;/li>
-&lt;/ul>
-&lt;h2 id="aufgabe-3">Aufgabe 3&lt;/h2>
-&lt;p>In der vorherigen Aufgabe hast du eine Grundstruktur geschaffen für die Anzeige von diversen Fahrrädern und dessen Marken und Typ.&lt;/p>
-&lt;ul>
-&lt;li>Erstelle nun eine Pipe welche die Spalte &lt;code>wert&lt;/code> im Format &lt;code>1'720.00 CHF&lt;/code> anzeigt. Der Währungstyp wird mit einem Parameter weitergegeben.
-Sofern nichts angegeben wird, wähle Standardmässig &lt;code>CHF&lt;/code>.&lt;/li>
-&lt;li>Geh davon aus das in der Spalte &lt;code>wert&lt;/code> auch Zahlen wie &lt;code>1287.87&lt;/code> oder &lt;code>5421.21&lt;/code> gespeichert sind. Runde diese je nachdem auf oder ab.&lt;/li>
-&lt;li>Auch das Hochzeichen (&lt;code>'&lt;/code>) soll immer nach 3 Stellen erscheinen.&lt;/li>
-&lt;li>Erstelle eine weitere Pipe, welche den Markennamen nur mit Grossbuchstaben anzeigt und hinter den Markennamen ein Copyrightzeichen (&lt;code>©&lt;/code>) setzt.&lt;/li>
 &lt;/ul></description></item></channel></rss>
