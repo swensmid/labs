@@ -4,7 +4,7 @@ linkTitle: "Wassermenge"
 type: docs
 weight: 5
 description: >
-  Wassermenge
+  Aufgabe zu Modul #J2 - OOP - Wassermenge
 ---
 
 Schreibe eine Anwendung, welche entscheidet ob ein Damm geöffnet sein muss oder nicht.

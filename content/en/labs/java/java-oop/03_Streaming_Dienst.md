@@ -4,7 +4,7 @@ linkTitle: "Streaming Dienst"
 type: docs
 weight: 3
 description: >
-  Streaming Dienst
+  Aufgabe zu Modul #J2 - OOP - Streaming Dienst
 ---
 
 Schreibe ein Programm, welches einen Streaming Dienst nachstellt. 
