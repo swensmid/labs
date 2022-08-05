@@ -4,7 +4,7 @@ linkTitle: "Patienten"
 type: docs
 weight: 1
 description: >
-  Patienten
+  Aufgabe zu Modul #J2 - OOP - Patienten
 ---
 
 Schreibe eine Anwendung, in welcher Patienten einen medizinischen Check-Up durchgehen,

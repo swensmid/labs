@@ -4,7 +4,7 @@ linkTitle: "Adressbuch"
 type: docs
 weight: 2
 description: >
-  Adressbuch
+  Aufgabe zu Modul #J2 - OOP - Adressbuch
 ---
 
 Schreibe ein Programm, welches ein Adressbuch implementiert. 

@@ -4,7 +4,7 @@ linkTitle: "Immobilienfirma"
 type: docs
 weight: 4
 description: >
-  Immobilienfirma
+  Aufgabe zu Modul #J2 - OOP - Immobilienfirma
 ---
 
 #### Ziele
