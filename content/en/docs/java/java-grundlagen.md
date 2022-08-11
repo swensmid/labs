@@ -499,7 +499,7 @@ public class TakeInput {
 Der erste Schritt besteht darin, die Scanner-Klasse zu importieren, damit sie im folgenden Code verwendet werden kann. Die _Java_ Scanner-Klasse stammt aus dem Paket [java.util](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/package-summary.html).
 Es ist einfach zu bedienen, muss jedoch importiert werden, damit die Klasse funktioniert.
 
-**Zeile 6**
+**Zeile 5**
 
 * Wir deklarieren den Datentyp als _Scanner_ und geben ihm den Bezeichner _scanner_
 * Wir weisen der Variable scanner ein neues Objekt zu, welches den System-Eingabestream enthält ([System.in](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#in))
