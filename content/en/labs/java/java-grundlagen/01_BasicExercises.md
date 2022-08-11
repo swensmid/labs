@@ -38,6 +38,7 @@ Berechne die folgenden Dinge:
 * Umfang eines Rechtecks
 * Inhalt einer Pyramide mit quadratischen Grundriss und einer bestimmten Höhe
 * Berechne dein Alter am heutigen Tag in Jahren, Monaten und Tagen
+* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Vielfache](https://www.studysmarter.de/schule/mathe/algebra/vielfaches/) von 3 zusammen mit der Vielfache von 5 dieser Zahl summiert.
 
 ## Aufgabe 4 - Methoden
 Löse die folgende Aufgaben:
@@ -54,8 +55,7 @@ Löse die folgende Aufgaben:
 
 ## Aufgabe 6 - Loops
 Löse die folgenden Aufgaben:
-* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Vielfache](https://www.studysmarter.de/schule/mathe/algebra/fakultaet/) von 3 zusammen mit der Vielfache von 5 dieser Zahl summiert.
-* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Fakultät](https://www.studysmarter.de/schule/mathe/algebra/vielfaches/) dieser Zahl berechnet.
+* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Fakultät](https://www.studysmarter.de/schule/mathe/algebra/fakultaet/) dieser Zahl berechnet.
 * Schreibe einen Loop, welcher alle Zahlen von 1 bis 100 zusammenzählt, welche durch 8 teilbar sind
   * Erweitere deine Lösung mit einer Methode, welche eine Zahl entgegennimmt und dann die Zahlen zusammenzählt, welche durch diese Zahl teilbar sind
 
