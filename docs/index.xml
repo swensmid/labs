@@ -349,6 +349,7 @@ Operationen auf diesen Zahlen ausführen kann:&lt;/p>
 &lt;li>Umfang eines Rechtecks&lt;/li>
 &lt;li>Inhalt einer Pyramide mit quadratischen Grundriss und einer bestimmten Höhe&lt;/li>
 &lt;li>Berechne dein Alter am heutigen Tag in Jahren, Monaten und Tagen&lt;/li>
+&lt;li>Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die &lt;a href="https://www.studysmarter.de/schule/mathe/algebra/vielfaches/">Vielfache&lt;/a> von 3 zusammen mit der Vielfache von 5 dieser Zahl summiert.&lt;/li>
 &lt;/ul>
 &lt;h2 id="aufgabe-4---methoden">Aufgabe 4 - Methoden&lt;/h2>
 &lt;p>Löse die folgende Aufgaben:&lt;/p>
@@ -368,8 +369,7 @@ Operationen auf diesen Zahlen ausführen kann:&lt;/p>
 &lt;h2 id="aufgabe-6---loops">Aufgabe 6 - Loops&lt;/h2>
 &lt;p>Löse die folgenden Aufgaben:&lt;/p>
 &lt;ul>
-&lt;li>Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die &lt;a href="https://www.studysmarter.de/schule/mathe/algebra/fakultaet/">Vielfache&lt;/a> von 3 zusammen mit der Vielfache von 5 dieser Zahl summiert.&lt;/li>
-&lt;li>Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die &lt;a href="https://www.studysmarter.de/schule/mathe/algebra/vielfaches/">Fakultät&lt;/a> dieser Zahl berechnet.&lt;/li>
+&lt;li>Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die &lt;a href="https://www.studysmarter.de/schule/mathe/algebra/fakultaet/">Fakultät&lt;/a> dieser Zahl berechnet.&lt;/li>
 &lt;li>Schreibe einen Loop, welcher alle Zahlen von 1 bis 100 zusammenzählt, welche durch 8 teilbar sind
 &lt;ul>
 &lt;li>Erweitere deine Lösung mit einer Methode, welche eine Zahl entgegennimmt und dann die Zahlen zusammenzählt, welche durch diese Zahl teilbar sind&lt;/li>
