@@ -85,7 +85,7 @@ Für die Nutzung von Services wie beispielsweise GIT sollten generell die folgen
 Typ: HTTP<br>
 Hostname: zscaler.sbb.ch<br>
 Port: 10465<br>
-Kein Proxy für: localhost<br>
+Kein Proxy für: localhost, 127.0.0.0/24, 10.0.0.0/8, 192.168.0.0/16, *.sbb.ch, *.cff.ch, *.ffs.ch, *.adrail.ch, *.sbb-wzu.net, *.wzu.io, *.sbb-aws.net, *.sbb-cloud.net, *.sbbintra.ch, *.swisspass.ch, *.sbbcargo.com<br>
 Proxy Authentifizierung: Personalnummer und Passwort
 
 Diese Einstellungen können in Applikationen wie IntelliJ oder Postman hinterlegt werden.
