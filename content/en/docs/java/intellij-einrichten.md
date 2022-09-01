@@ -40,7 +40,7 @@ Falls Du die Tastenkombinationen deinen Bedürfnissen angepasst hast, kannst du 
 #### Wichtige Kombinationen für den Anfang
 
 | Funktion                                           | Shortcut          |
-| -------------------------------------------------- | ----------------- |
+|----------------------------------------------------|-------------------|
 | Einstellungen öffnen                               | Ctrl + Alt + S    |
 | Überall suchen                                     | 2x Shift          |
 | Smart Code Completion                              | Ctr + Alt + Space |
@@ -54,7 +54,7 @@ IntelliJ bietet nicht nur Tastenkombinationen, um die Produktivität zu verbesse
 Mit der Tastenkombination Ctrl + J kannst du diese anzeigen lassen.
   
 | Code                                                             | Shortcut |
-| ---------------------------------------------------------------- | -------- |
+|------------------------------------------------------------------|----------|
 | eine main()-Methode                                              | psvm     |
 | eine forEach-Schleife                                            | foreach  |
 | eine for-Schleife mit "i" als Zähler                             | fori     |
