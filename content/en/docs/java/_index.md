@@ -1,6 +1,6 @@
 ---
 title: "Java"
-weight: 1
+weight: 2
 description: >
   Einrichten der Entwicklungsumgebung<br>
   IntelliJ IDEA und Plugins<br>
