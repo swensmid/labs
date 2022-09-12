@@ -17,7 +17,6 @@ Schreibe eine generische Klasse "NumberList", welche eine Liste von Zahlen erhä
 Operationen auf diesen Zahlen ausführen kann:
 - Die grösste Zahl in der Liste finden
 - Die kleinste Zahl in der Liste finden
-- Die grösste Zahl mit der kleinsten Zahl multiplizieren
 
 *Die Typen der Input-Zahlen können unterschiedlich sein (Ganzzahlen, Kommazahlen...)*
 
