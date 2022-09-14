@@ -6,7 +6,7 @@ weight: 2
 description: >
   Exam zu Modul #J2
 ---
-*Für dieses Modul dürfen auch Inhalte der Themen Lists und Generics gebraucht werden*
+*Für dieses Exam dürfen auch Inhalte der Themen Lists und Generics verwendet werden*
 
 
 ## CØØP
