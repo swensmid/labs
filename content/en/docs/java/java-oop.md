@@ -16,6 +16,9 @@ description: >
 * Ich kenne die Zugriffsmodifikatoren 'public', 'private' und 'protected'
 * Ich weiss, dass Instanzvariablen immer mit dem Schlüsselwort 'private' deklariert werden
 * Ich kenne die Methoden equals() und hashCode() und weiss unter welchen Umständen und wie ich diese überschreiben soll
+* Ich weiss was ein Enum ist und wann es benötigt wird
+* Ich kann Enums sinnvoll einsetzen
+* Ich kann Methoden und Konstruktoren in Enums anwenden
 
 ---
 
@@ -557,3 +560,146 @@ Auch für diese Methode definiert die [API-Definition für hashCode()](https://d
 - **Zusammenhang not-equals**: Zwei Objekte die gemäss equals() verschieden sind, müssen nicht zwingend unterschiedliche Hashwerte liefern. Grundsätzlich wäre es aber besser für die Performanz, wenn verschiedene Objekte auch verschiedene Hashwerte liefern würden.
 
 In der Regel entscheiden wir uns aufgrund von fachlichen Gegebenheiten für die Überschreibung der Methode *equals()*. Die Überschreibung von *hashCode()* resultiert daraus als Konsequenz der Bedingung "Zusammenhang equals".
+
+## Enums
+Enums (kurz für "enumeration", zu Deutsch: Aufzählung) bieten die Möglichkeit, vordefinierte Konstanten zusammen zu gruppieren.
+Enums werden dann verwendet, wenn alle mögliche Werte zur Kompilierzeit bekannt sind (z.B. alle Wochentage, alle Planeten im Sonnensystem usw.).
+
+In Java sind Aufzählungstypen als Klassen realisiert und die definierten Werte sind als Objekte implementiert. 
+Daraus ergeben sich folgenden nützlichen Eigenschaften:
+- Enums können Konstruktoren, Instanzvariablen und Instanz-Methoden beinhalten
+- Der Name der Enum-Werte kann mithilfe der toString-Methode (oder mit dem Keywort _this_) im Klartext ausgegeben werden.
+- Mithilfe der equals-Methode kann auf Gleichheit geprüft werden.
+- Enumerations können in switch-Anweisungen verwendet werden.
+- Mithilfe der values-Methode wird ein Array zurückgegeben, das alle Elemente der Enumeration enthält. In Verbindung mit der erweiterten for-Schleife (for-each) können die Elemente sehr einfach durchlaufen werden.
+
+Obwohl Java Enums als Klassen realisiert werden, müssen sie nicht mit _new_ instanziiert werden.
+Im Gegensatz zu Klassen können Java-Enums weder erweitert werden noch von anderen Klassen erben.
+
+### Enums definieren
+Enums können innerhalb oder ausserhalb einer Klasse definiert werden (nicht aber innerhalb einer Methode!).
+Um ein Enum zu definieren, wird das Java-Schlüsselwort _enum_ verwendet.
+
+Die erste Zeile(n) innerhalb der Enum-Definition soll eine kommagetrennte Liste von Konstanten beinhalten (per Konvention mit Grossbuchstaben geschrieben).
+Danach werden allfällige Variablen, Methoden und Konstruktoren definiert.
+
+Jede Enum-Konstante ist implizit _**public static final**_.
+Weil es _static_ ist, kann über den Enum-Namen darauf zugegriffen werden.
+Weil es _final_ ist, kann es nicht erweitert werden.
+
+#### Definition ausserhalb einer Klasse
+```java
+enum Weekday {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+public class DailyPlanner {
+    private static void dailyMood(Weekday weekday) {
+        switch (weekday) {
+            case MONDAY:
+                System.out.println("I don't like Mondays");
+                break;
+            case FRIDAY:
+                System.out.println("Thank God it's Friday");
+                break;
+            case SATURDAY:
+            case SUNDAY:
+                System.out.println("There aren't enough days in the weekend");
+                break;
+            default:
+                System.out.println("Some Midweek days feel like Mondays when I wish the were Fridays");
+                break;
+        }
+    }
+
+    public static void main(String[] args) {
+        dailyMood(Weekday.MONDAY);
+    }
+}
+```
+
+#### Definition innerhalb einer Klasse
+```java
+public class DailyPlanner {
+    enum Weekday {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+
+    public static void main(String[] args) {
+        System.out.println("I like " + Weekday.SATURDAY + " and " + Weekday.SUNDAY + " the best");
+    }
+}
+```
+
+### Enum mit einem Konstruktor
+Ein Enum-Konstruktor wird für jeder Enum-Konstante während dem Klassenladen des Enums ausgeführt.
+Es ist unmöglich Enum-Objekte explizit zu erzeugen. Darum kann ein Enum-Konstruktor auch nicht direkt aufgerufen werden.
+
+**Beispiel**
+```java
+enum Weekday {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+    
+    Weekday() {
+        System.out.println("Konstruktor für Tag " + this.toString() + " wird ausgeführt");
+    }
+}
+
+public class TestDays {
+    public static void main(String[] args) {
+        Weekday monday = Weekday.MONDAY; // Output:
+                                         // Konstruktor für Tag MONDAY wird ausgeführt
+                                         // Konstruktor für Tag TUESDAY wird ausgeführt
+                                         // Konstruktor für Tag WEDNESDAY wird ausgeführt
+                                         // Konstruktor für Tag THURSDAY wird ausgeführt
+                                         // Konstruktor für Tag FRIDAY wird ausgeführt
+                                         // Konstruktor für Tag SATURDAY wird ausgeführt
+                                         // Konstruktor für Tag SUNDAY wird ausgeführt
+        System.out.println(monday); // Output: MONDAY
+    }
+}
+```
+
+### Enum mit Methoden
+Ein Enum kann konkrete wie auch abstrakte Methoden beinhalten. Wenn ein Enum eine abstrakte Methode beinhaltet
+muss jede Instanz (also jede Konstante) dieses Enums diese Methode umsetzen (mehr Information über abstrakten Methoden findest du im Modul OOD).
+
+**Beispiel** 
+```java
+enum Color {
+    RED {
+        // Umsetzung der abstrakten Methode für die Farbe RED
+        @Override
+        public void colorPoem() {
+            System.out.println("Roses are red");
+        }
+    },
+    VIOLET {
+        // Umsetzung der abstrakten Methode für die Farbe VIOLET
+        @Override
+        public void colorPoem() {
+            System.out.println("Violets are blue");
+        }
+    };
+
+    // Konkrete Methode, welche für alle Werte im Enum, dasselbe tut
+    public void generalColorInfo(){
+        System.out.println("Everyday color is a great color!");
+    }
+
+    // Abstrakte Methode, welche von jedem Wert im Enum umgesetzt werden muss
+    public abstract void colorPoem();
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Color violet = Color.VIOLET;
+        violet.generalColorInfo(); // Output: Everyday color is a great color!
+        violet.colorPoem();        // Output: Violets are blue
+
+        Color red = Color.RED;
+        red.generalColorInfo(); // Output: Everyday color is a great color!
+        red.colorPoem();        // Output: Roses are red
+    }
+}
+```
