@@ -587,7 +587,7 @@ Jede Enum-Konstante ist implizit _**public static final**_.
 Weil es _static_ ist, kann über den Enum-Namen darauf zugegriffen werden.
 Weil es _final_ ist, kann es nicht erweitert werden.
 
-#### Definition ausserhalb einer Klasse
+#### Beispiel: Definition ausserhalb einer Klasse
 ```java
 enum Weekday {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
@@ -618,7 +618,7 @@ public class DailyPlanner {
 }
 ```
 
-#### Definition innerhalb einer Klasse
+#### Beispiel: Definition innerhalb einer Klasse
 ```java
 public class DailyPlanner {
     enum Weekday {
@@ -635,7 +635,7 @@ public class DailyPlanner {
 Ein Enum-Konstruktor wird für jeder Enum-Konstante während dem Klassenladen des Enums ausgeführt.
 Es ist unmöglich Enum-Objekte explizit zu erzeugen. Darum kann ein Enum-Konstruktor auch nicht direkt aufgerufen werden.
 
-**Beispiel**
+#### Beispiel: Enum mit einem Konstruktor
 ```java
 enum Weekday {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
@@ -664,7 +664,7 @@ public class TestDays {
 Ein Enum kann konkrete wie auch abstrakte Methoden beinhalten. Wenn ein Enum eine abstrakte Methode beinhaltet
 muss jede Instanz (also jede Konstante) dieses Enums diese Methode umsetzen (mehr Information über abstrakten Methoden findest du im Modul OOD).
 
-**Beispiel** 
+#### Beispiel: Enum mit konkreten und abstrakten Methoden
 ```java
 enum Color {
     RED {
