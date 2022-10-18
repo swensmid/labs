@@ -80,6 +80,13 @@ podman run --rm --rmi --interactive --publish 8080:8080 localhost/puzzle-bbt/tra
 To develop locally we don't want to rebuild the entire container image every time something changed, and it is also important to use the same hugo versions like in production.
 We simply mount the working directory into a running container, where hugo is started in the server mode.
 
+If you have docker-compose installed simply run:
+
+
+```bash
+docker-compose up
+```
+
 ```bash
 export HUGO_VERSION=$(grep "FROM klakegg/hugo" Dockerfile | sed 's/FROM klakegg\/hugo://g' | sed 's/ AS builder//g')
 docker run \
