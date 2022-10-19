@@ -651,7 +651,7 @@ public class TestDays {
         Weekday monday = Weekday.MONDAY; // Output:
                                          // Konstruktor für Tag MONDAY wird ausgeführt. Das ist der 1. Tag in der Woche
                                          // Konstruktor für Tag TUESDAY wird ausgeführt. Das ist der 2. Tag in der Woche
-                                         // Konstruktor für Tag WEDNESDAY wird ausgeführt
+                                         // Konstruktor für Tag WEDNESDAY wird ausgeführt. Das ist der 3. Tag in der Woche
                                          // Konstruktor für Tag THURSDAY wird ausgeführt
                                          // Konstruktor für Tag FRIDAY wird ausgeführt
                                          // Konstruktor für Tag SATURDAY wird ausgeführt
