@@ -569,7 +569,7 @@ In Java sind Aufzählungstypen als Klassen realisiert und die definierten Werte 
 Daraus ergeben sich folgenden nützlichen Eigenschaften:
 - Enums können Konstruktoren, Instanzvariablen und Instanz-Methoden beinhalten
 - Der Name der Enum-Werte kann mithilfe der toString-Methode (oder mit dem Keywort _this_) im Klartext ausgegeben werden.
-- Mithilfe der equals-Methode kann auf Gleichheit geprüft werden.
+- Mithilfe des "=="-Operators kann auf Gleichheit geprüft werden.
 - Enumerations können in switch-Anweisungen verwendet werden.
 - Mithilfe der values-Methode wird ein Array zurückgegeben, das alle Elemente der Enumeration enthält. In Verbindung mit der erweiterten for-Schleife (for-each) können die Elemente sehr einfach durchlaufen werden.
 
