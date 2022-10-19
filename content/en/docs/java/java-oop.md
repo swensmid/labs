@@ -640,6 +640,7 @@ Es ist unmöglich Enum-Objekte explizit zu erzeugen. Darum kann ein Enum-Konstru
 enum Weekday {
     MONDAY(1), TUESDAY(2), WEDNESDAY(3), THURSDAY(4), FRIDAY(5), SATURDAY(6), SUNDAY(7);
     
+    final int dayNumber;
     Weekday() {
         System.out.println("Konstruktor für Tag " + this.toString() + " wird ausgeführt. Das ist der " + this.dayNumber+ ". Tag in der Woche");
     }
