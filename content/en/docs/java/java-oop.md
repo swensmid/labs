@@ -662,7 +662,7 @@ public class TestDays {
 ```
 
 ### Enum mit Methoden
-Ein Enum kann konkrete wie auch abstrakte Methoden beinhalten. Wenn ein Enum eine abstrakte Methode beinhaltet
+Ein Enum kann konkrete wie auch abstrakte Methoden beinhalten. Wenn ein Enum eine abstrakte Methode beinhaltet,
 muss jede Instanz (also jede Konstante) dieses Enums diese Methode umsetzen (mehr Information über abstrakten Methoden findest du im Modul OOD).
 
 #### Beispiel: Enum mit konkreten und abstrakten Methoden
