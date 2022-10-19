@@ -654,7 +654,7 @@ public class TestDays {
                                          // Konstruktor für Tag WEDNESDAY wird ausgeführt. Das ist der 3. Tag in der Woche
                                          // Konstruktor für Tag THURSDAY wird ausgeführt. Das ist der 4. Tag in der Woche
                                          // Konstruktor für Tag FRIDAY wird ausgeführt. Das ist der 5. Tag in der Woche
-                                         // Konstruktor für Tag SATURDAY wird ausgeführt
+                                         // Konstruktor für Tag SATURDAY wird ausgeführt. Das ist der 6. Tag in der Woche
                                          // Konstruktor für Tag SUNDAY wird ausgeführt
         System.out.println(monday); // Output: MONDAY
     }
