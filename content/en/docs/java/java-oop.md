@@ -580,7 +580,7 @@ Im Gegensatz zu Klassen können Java-Enums weder erweitert werden noch von ander
 Enums können innerhalb oder ausserhalb einer Klasse definiert werden (nicht aber innerhalb einer Methode!).
 Um ein Enum zu definieren, wird das Java-Schlüsselwort _enum_ verwendet.
 
-Die erste Zeile(n) innerhalb der Enum-Definition soll eine kommagetrennte Liste von Konstanten beinhalten (per Konvention mit Grossbuchstaben geschrieben).
+Die erste Zeile(n) innerhalb der Enum-Definition soll eine kommagetrennte Liste von Konstanten beinhalten (in Java per Konvention mit Grossbuchstaben geschrieben).
 Danach werden allfällige Variablen, Methoden und Konstruktoren definiert.
 
 Jede Enum-Konstante ist implizit _**public static final**_.
