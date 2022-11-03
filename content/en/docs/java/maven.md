@@ -17,7 +17,8 @@ description: >
 * Ich kann den Begriff Continuous Integration erklären
 * Ich kenne die Komponenten der Deployment-Pipeline und deren Aufgaben
 
-## Allgemeine Informationen
+## Maven
+### Allgemeine Informationen
 Apache Maven ist ein Build-Management Tool. Von einer einzelnen Datei aus, kann Maven den Build eines Projektes steuern.
 Diese zentrale Datei ist das Project Object Model, kurz auch POM genannt. Der Build eines Projektes kann dabei von einfacher Kompilierung bis zur Auslieferung einer Anwendung auf eine bestimmte Plattform reichen.
 
@@ -30,13 +31,13 @@ Damit Maven funktionieren kann, benötigt ein Projekt die folgenden Dinge:
 
 ---
 
-## Installation
+### Installation
 Die Installation von Apache Maven wurde idealerweise bereits durchgeführt. Falls nicht, kann Maven hier heruntergeladen werden:
 [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi), beim Herunterladen das Binary auswählen (nicht die Source).
 
 ---
 
-## pom.xml
+### pom.xml
 Der Aufbau eines POM kann grob in folgende Abschnitte unterteilt werden, hier erklärt an einem umfangreichen Beispiel.
 Die einzelnen Teile werden gleich im Anschluss näher erläutert. Bitte beachte, dass dieses POM nicht alle Inhalte erklären kann, es dient nur als erstes Beispiel.
 
@@ -256,7 +257,7 @@ Die Entwickler-Informationen dienen dazu, an der Entwicklung beteiligte Personen
 
 ---
 
-## settings.xml
+### settings.xml
 Die folgenden Angaben sind nur für SBB-Mitarbeiter von Relevanz.
 
 Zur Konfiguration von Maven muss eine Einstellungsdatei angelegt werden. Diese Datei sollte immer settings.xml heissen und sich (auf einem SBB-Laptop) im Verzeichnis **C:\Users\\\<Personalnummer>\\.m2** befinden.
@@ -366,7 +367,7 @@ Der Verbindung zwischen Artifactory und einem Maven-Projekt im IntelliJ steht nu
 
 ---
 
-## IntelliJ IDEA einrichten
+### IntelliJ IDEA einrichten
 Im IntelliJ findet man in den allgemeinen Einstellungen auch die Einstellungen für Maven.
 ![](../maven/1657700434.png)
 
@@ -382,7 +383,7 @@ Bei diesen Einstellungen muss überprüft werden, dass die Pfad-Angaben für die
 
 ---
 
-## Umgebungsvariable aufsetzen
+### Umgebungsvariable aufsetzen
 Damit Maven auch auf der Command-Line funktioniert, muss eine Umgebungsvariable gesetzt werden.
 Im Windows muss also der Pfad zur Built-In Version des IntelliJ hinterlegt werden. Die folgenden Schritte sind dazu notwendig:
 
@@ -398,9 +399,9 @@ Im Windows muss also der Pfad zur Built-In Version des IntelliJ hinterlegt werde
 
 ---
 
-## Repository
+### Repository
 
-### Lokal
+#### Lokal
 Zwischen dem JFrog Artifactory und deinem lokalen Repository gibt es also nun eine Verbindung.
 Sobald dein Projekt (in der Datei pom.xml) bestimmte Abhängigkeiten definiert, werden diese über das Artifactory aufgelöst und die entsprechenden Artefakte werden in dein lokales Repository heruntergeladen.
 Dies gilt für Abhängigkeiten und Plugins gleichermassen.
@@ -440,14 +441,14 @@ Innerhalb dieses Verzeichnisses werden alle bisher angeforderten Versionen von L
 
 Die beiden Dateien mit der Endung ".lastUpdated" dienen Maven zur Kontrolle der letzten Synchronisierung zwischen dem lokalen und dem remote Repository.
 
-### Remote (JFrog / Artifactory)
+#### Remote (JFrog / Artifactory)
 Das Artifactory von JFrog ist das verwaltete Verzeichnis zur Speicherung und Beschreibung digitaler Objekte.
 Es ist also unser digitales Archiv bei der SBB. In diesem Archiv befinden sich Millionen von Fremdbibliotheken in unterschiedlichsten Versionen.
 Zudem werden alle Versionen von unseren ausgelieferten Bibliotheken, Artefakten, Komponenten und Applikationen dort archiviert.
 
 ---
 
-## Commands
+### Commands
 Maven lässt sich auf der Kommandozeile oder im IntelliJ-Terminal ausführen. Damit wir sehen, ob das wirklich klappt könnt ihr das Terminal öffnen und den folgenden Befehl eingeben:
 
 ```console
@@ -465,57 +466,57 @@ Bevor wir die einzelnen Befehle kurz anschauen werfen wir einen Blick auf die ei
 Jeder der in der Grafik genannten Befehle wird zusätzlich die vorangehenden Befehle ausführen.
 Die Ausführung von "mvn package" wird also die Phasen _validate_, _compile_, _test_ und _package_ ausführen.
 
-### help
+#### help
 ```console
 mvn -help
 ```
 Das Ergebnis dürfte klar sein. Maven listet alle möglichen Befehle auf.
 
-### dependency:tree
+#### dependency:tree
 ```console
 mvn dependency:tree
 ```
 Dieser Befehl listet alle Abhängigkeiten zu Fremdbibliotheken als Baum auf.
 Das ist grundsätzlich sehr praktisch wenn man doppelte Abhängigkeiten erkennen/vermeiden will.
 
-### clean
+#### clean
 ```console
 mvn clean
 ```
 Dieser Befehl löscht alle vorherigen lokale Maven-Build-Artefakte, indem er das Verzeichnis "target" löscht.
 
-### compile
+#### compile
 ```console
 mvn compile
 ```
 Kompiliert den Sourcecode je nach Abhängigkeit von Plugins.
 Wenn also beispielsweise ein Maven-Compiler-Plugin verwendet wird, so wird dieses als Regelwerk für die Kompilierung herangezogen.
 
-### test
+#### test
 ```console
 mvn test
 ```
 Führt alle Tests aus. In einem Java-Projekt sind dies beispielsweise alle Unit-Tests mit jUnit.
 
-### package
+#### package
 ```console
 mvn package
 ```
 Führt einen lokalen Maven-Build aus, startet alle Tests und paketiert die Anwendung (normalerweise als JAR) in das Verzeichnis "target".
 
-### verify
+#### verify
 ```console
 mvn verify
 ```
 Prüft die Testergebnisse aller ausgeführten Integrationstests, normalerweise wird das Maven-Failsafe-Plugin für diesen Maven-Befehl vorausgesetzt.
 
-### install
+#### install
 ```console
 mvn install
 ```
 "Installiert" den Artefakt im lokalen Maven-Repository.
 
-### deploy
+#### deploy
 ```console
 mvn deploy
 ```
@@ -530,8 +531,8 @@ Selbstverständlich gibt es sehr viele zusätzliche Optionen für die einzelnen 
 
 ---
 
-# Continuous Integration (CI) / Continuous Delivery (CD)
-Dieses Kapitel beschreibt CI/CD bei den SBB.
+## Continuous Integration (CI) / Continuous Delivery (CD)
+Dieses Kapitel beschreibt CI/CD bei den SBB.  
 **Hinweis**: Für nicht-produktive Projekte darf niemals eine Build-Pipeline aufgesetzt werden!!!
 
 Kontinuierliche Integration beschreibt den Prozess der fortlaufenden Zusammenfügung von Einzelkomponenten zu einer Anwendung.
@@ -542,7 +543,7 @@ Dort wird in bestimmten Zeitabständen, bei Erreichen einer bestimmten Qualität
 
 ---
 
-## Grundsätze
+### Grundsätze
 Die folgenden Grundsätze dienen als Basis für die gemeinsame Entwicklung innerhalb eines Projektes mit CI / CD.
 
 | Grundsatz                        | Beschreibung                                                                                                       |
@@ -560,7 +561,7 @@ Die folgenden Grundsätze dienen als Basis für die gemeinsame Entwicklung inner
 
 ---
 
-## Vorteile CI / CD
+### Vorteile CI / CD
 * Probleme bei der Auslieferung können früh erkannt und behoben werden
 * Test des Gesamtsystems als Verbund
 * Logik-Fehler können durch Unit-Testing rasch gefunden und behoben werden
@@ -569,12 +570,12 @@ Die folgenden Grundsätze dienen als Basis für die gemeinsame Entwicklung inner
 
 ---
 
-## Jenkins
+### Jenkins
 Die Software, welche von der SBB für CI/CD eingesetzt wird ist Jenkins. Die Anwendung ist [hier](https://ci.sbb.ch/) erreichbar.
 
 ---
 
-## Deployment-Pipeline
+### Deployment-Pipeline
 Zum Gesamtsystem von CI/CD (bei der SBB) und damit der Deployment-Pipeline gehören die folgenden Systeme/Anwendungen:
 
 | System                        | Zweck                         |
@@ -593,7 +594,7 @@ Für die Konfiguration einer solchen Deployment-Pipeline sind bei der SBB die fo
 * Jenkinsfile
 * Pipeline-Konfiguration als JSON
 
-### Jenkinsfile
+#### Jenkinsfile
 Diese Datei wird durch den Jenkins in jedem GIT-Repository gesucht. Wenn Sie gefunden wird, dann wird der Jenkins anhand der Konfiguration im GIT-Repository handeln.
 
 Der minimale Inhalt ist wie folgt:
@@ -608,7 +609,7 @@ Die erste Zeile markiert diese Datei als Groovy-Script. Die zweite Zeile lädt d
 Der Source-Code des Pipeline-Helpers ist bei Interesse [hier](https://code.sbb.ch/projects/KD_ESTA/repos/pipeline-helper/browse) zu finden.
 Die letzte Zeile gibt den Namen der zu verwendenden Konfiguration an. Die Datei für die Konfiguration muss also den Namen estaCloudPipeline.json haben.
 
-### Pipeline-Konfiguration als JSON
+#### Pipeline-Konfiguration als JSON
 Die Pipeline-Konfiguration dient dem Jenkins zur Konfiguration der gesamten Pipeline inklusive deren auswählbaren Möglichkeiten für manuelle Optionen.
 Wir betrachten eine etwas umfangreichere Konfiguration am folgenden Beispiel:
 ```json

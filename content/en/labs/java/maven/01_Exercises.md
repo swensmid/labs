@@ -22,14 +22,14 @@ Erstellen eines neuen Projektes, welches wir später für das Modul Unit-Testing
 2. Klonen des neuen Repositories mit IntelliJ IDEA
 3. Repository aufsetzen wie unter code.sbb.ch beschrieben (nachdem man das Repo erstellt hat)
 4. Im IntelliJ die für Maven erforderliche Ordnerstruktur erstellen
-   1. Ordner src erstellen
-   2. Im Ordner src zwei Ordner erstellen: main und test
-   3. In den beiden Ordnern main und test jeweils zwei weitere Ordner erstellen: java und resources
-   4. Die Ordner markieren (Rechtsklick -> Mark Directory as...)
-      1. src/main/java -> Sources Root
-      2. src/main/resources -> Resources Root
-      3. src/test/java -> Test Sources Root
-      4. src/test/resources -> Test Resources Root
+   * Ordner src erstellen
+   * Im Ordner src zwei Ordner erstellen: main und test
+   * In den beiden Ordnern main und test jeweils zwei weitere Ordner erstellen: java und resources
+   * Die Ordner markieren (Rechtsklick -> Mark Directory as...)
+      * src/main/java -> Sources Root
+      * src/main/resources -> Resources Root
+      * src/test/java -> Test Sources Root
+      * src/test/resources -> Test Resources Root
 5. Am Root des Projektes eine Datei mit dem Namen pom.xml anlegen und den folgenden Inhalt einfügen:
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
