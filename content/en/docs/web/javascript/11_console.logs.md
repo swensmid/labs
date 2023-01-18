@@ -14,7 +14,7 @@ description: >
 
 
 ## Basics
-Das `console.log(...)` ist das `System.out.println(...)`, das `Console.WriteLine(...)` oder das `print(...)` in JavaScript.
+Das `console.log(...)` in JavaScript ist das Äquivalent zu `System.out.println(...)` in Java, das `Console.WriteLine(...)` in C#, das `print(...)` in Python oder das `puts ...` in Ruby.
 
 Es gibt aber noch sehr viele Alternativen zu `console.log(...)`, die sehr nützlich sind.
 

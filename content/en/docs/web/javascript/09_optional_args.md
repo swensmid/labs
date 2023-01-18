@@ -35,8 +35,17 @@ class Person {
     }
 }
 
+// Hier wollen wir eine Person erstellen, kennen aber das Alter, Geschlecht und seine Beziehung zu JS nicht:
+new Person("Colonel Toad");
+>>> Person {name: 'Colonel Toad', age: undefined, gender: undefined, lovesJavaScript: true}
+
+// Hier wollen wir neben dem Namen nur das Alter setzen:
 new Person("Sweating Towel Guy", 44);
 >>> Person {name: 'Sweating Towel Guy', age: 44, gender: undefined, lovesJavaScript: true}
+
+/// Möchtest du das letzte Argument setzen, dann musst du die vorherigen Variablen auch setzen:
+new Person("Man Ray", null, null, false);
+>>> Person {name: 'Man Ray', age: null, gender: null, lovesJavaScript: false}
 ```
 
 Mit dieser Lösung hast du zwar eine Lösung, das die Präferenz einer Person bez. JavaScript speichert, auch wenn nur ein Name angebeben wird. Aber was wäre, wenn du Eine Person erstellen möchtest mit einem Geschlecht, aber das Alter nicht angeben möchtest?

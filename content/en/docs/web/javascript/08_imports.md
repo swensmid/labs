@@ -72,6 +72,7 @@ Möchtest du ohne die Angabe von `type="module"` Variablen importieren (z.B. in 
 const {a, b, Person } = await import('./file.js');
 ```
 
+Hier hast du `import(...)` wie eine Funktion verwendet. Weil diese "Funktion" ein `Promise` zurückgibt (da sie das Modul `async`hron lädt), sollte hier der Import `await`ed werden. So kann sichergestellt werden, dass der später folgende Code erst aufgerufen wird, nachdem das Modul komplett geladen wurde. Falls du dich nicht mit `async` und `await` auskennst, solltes du den Abschnitt "Asynchrone Anfragen" noch einmal anschauen.
 
 ## `default` Ex- und Importe
 Das ES6-Modul-System unterscheidet zwischen `default` und "named" Exporten:
