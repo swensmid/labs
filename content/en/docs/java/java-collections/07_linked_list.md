@@ -1,7 +1,7 @@
 ---
 title: "LinkedList"
 linkTitle: "LinkedList"
-weight: 5
+weight: 7
 description: >
   Eine verkettete Liste, die LinkedList.
 ---

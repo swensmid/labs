@@ -3,15 +3,18 @@ title: "Java Collections"
 linkTitle: "Java Collections"
 weight: 98
 description: >
-  Java Collections
+  Modul #J7
 ---
 
 #### Ziele
 
 * Ich kann erklären, was Collections sind.
 * Ich kenne grob den Aufbau des Collection Frameworks.
-* Ich kenne die wichtigsten Collection-Interfaces und ihre Merkmale: Lists, Sets, Queues, Maps.
-* Ich kenne die wichtigsten Collections und ihre Merkmale: ArrayLists, ...
+* Ich kenne die wichtigsten Interfaces und ihre Merkmale: Lists, Sets, Queues, Maps
+* Ich kenne die wichtigsten Implementationen und ihre Merkmale: ArrayList, HashSet, HashMap
+* Ich kenne die Klasse `ArrayList` gut und kann diese richtig anwenden.
+* Ich kenne die Klasse `HashSet` gut und kann diese richtig anwenden.
+* Ich kenne die Klasse `HashMap` gut und kann diese richtig anwenden.
 * Ich kenne die wichtigsten Algorithmen und Methoden zu den Collections.
 * Ich weiss, wann und wofür ich welche Collections benutzen kann.
 
@@ -27,7 +30,7 @@ Beim Programmieren müssen wir oft Daten speichern bzw. Informationen verwalten,
 In diesem Modul werden wir das Java Collection Framework anschauen, weil dieses Framework uns die Werkzeuge zum
 effizienten Verwalten von Informationen liefert.
 
-Eine *Collection* ist ein Objekt, dass eine Sammlung von Objekten darstellt, d.h. mehrere Elemente zu einer Einheit
+Eine **Collection** ist ein Objekt, dass eine Sammlung von Objekten darstellt, d.h. mehrere Elemente zu einer Einheit
 zusammenfasst. In der Regel enthält eine Collection Datenelemente, die zusammen eine natürliche Gruppe bilden, wie z.B.
 eine Fussballmannschaft, die eine "Sammlung" von Fussballspielern ist, d.h. Fussballspieler enthält. Collections bieten
 uns im Allgemeinen die Möglichkeit neue Elemente hinzuzufügen, Elemente zu löschen und sonst die Elemente zu verwalten.
@@ -56,19 +59,19 @@ farben.remove("blau");
 
 Wir werden die ArrayList Klasse später noch genauer anschauen.
 
-Das *Java Collection Framework*  ist eine Menge von Interfaces und Klassen, die allgemein wiederverwendbare
+Das **Java Collection Framework**  ist eine Menge von Interfaces und Klassen, die allgemein wiederverwendbare
 Collection-Datenstrukturen liefern. Es bietet uns also sowohl Interfaces, die Collection-Typen definieren, als auch
 Klassen, die diese implementieren an. Obwohl es als Framework bezeichnet wird, funktioniert es im Grunde wie eine
 Library.
 
-Das Java Collections Frameworks stellt für uns Hochleistungsimplementierungen von Datenstrukturen und Algorithmen
+Das Java Collections Frameworks stellt für uns **Hochleistungsimplementierungen** von Datenstrukturen und Algorithmen
 bereit, um Sammlungen von Objekten beliebiger Datentypen darzustellen. Da wir diese Funktionalität nicht immer selber 
 programmieren müssen, reduziert sich für uns der Programmieraufwand markant.
 
-Das Java Collection Framework befindet sich im Paket java.util.
+Das Java Collection Framework befindet sich im Paket `java.util`.
 
-Wir haben die ArrayList Klasse (java.util.ArrayList) als Beispiel für eine Collection gesehen. Die ArrayList Klasse
-repräsentiert eine Collection vom Typ *List* (implementiert also das Interface java.util.List) und wird mithilfe von
+Wir haben die **ArrayList** Klasse (java.util.ArrayList) als Beispiel für eine Collection gesehen. Die ArrayList Klasse
+repräsentiert eine **Collection vom Typ List** (implementiert also das Interface java.util.List) und wird mithilfe von
 zugrunde liegenden Arrays implementiert, deshalb auch der Name ArrayList. Es gibt aber auch andere Klassen, welche
 Collections vom Typ List darstellen: Wir werden später einige davon noch sehen.
 
@@ -81,16 +84,16 @@ Collections vom Typ List darstellen: Wir werden später einige davon noch sehen.
 Das Java Collection Framework ist eine einheitliche Architektur zur Darstellung und Bearbeitung von Collections, welche
 folgendes enthält:
 
-* Interfaces: Dies sind abstrakte Datentypen, welche verschiedene Collections darstellen. Mithilfe von Interfaces können
-  Collections unabhängig von den Details ihrer Darstellung bearbeitet werden. Die Interfaces bilden in Java die
-  Hierarchie aller Collections.
+* **Interfaces**: Dies sind abstrakte Datentypen, welche verschiedene Collections darstellen. 
+  Mithilfe von Interfaces können Collections unabhängig von den Details ihrer Darstellung bearbeitet werden.
+  Die Interfaces bilden in Java die Hierarchie aller Collections.
 
-* Implementierungen/Klassen: Dies sind die konkreten Implementierungen der Collection-Interfaces. Im Grunde handelt es
-  sich um wiederverwendbare Datenstrukturen, mit konkreten Implementierungen.
+* **Implementierungen/Klassen**: Dies sind die konkreten Implementierungen der Collection-Interfaces. 
+  Im Grunde handelt es sich um wiederverwendbare Datenstrukturen, mit konkreten Implementierungen.
 
-* Algorithmen/Methoden: Dies sind die Methoden, die nützliche Algorithmen, wie z. B. Hinzufügen, Löschen, Suchen und
-  Sortieren, von Objekten in Collections durchführen. Viele Methoden und Algorithmen sind für verschiedene Arten der
-  Collections wiederverwendbar.
+* **Algorithmen/Methoden**: Dies sind die Methoden, die nützliche Algorithmen, 
+  wie z. B. Hinzufügen, Löschen, Suchen und Sortieren, von Objekten in Collections durchführen.
+  Viele Methoden und Algorithmen sind für verschiedene Arten der Collections wiederverwendbar.
 
 Die Interfaces in der folgenden Abbildung (Collections, Set, List, Queue, Deque, Map ...)
 bilden die Grundlage des Collection Frameworks. Durch diese grundlegenden Interfaces bildet sich eine Hierarchie
@@ -103,77 +106,85 @@ Auf dieser Grafik ist sichtbar, dass zum Beispiel:
 * Sets spezielle Typen von Collections sind. SortedSets wiederum sind spezielle Typen von Sets.
 * Lists sind spezielle Typen von Collections. ArrayLists sind spezielle Typen von Lists.
 
-In der Abbildung sieht man zu dem, dass das Collection Framework aus zwei verschiedenen Teilen besteht:
-Zum einen die Collections und zum anderen die Maps. Maps stellen somit keine "echten" Collections dar. Maps sind
+In der Abbildung sieht man zu dem, dass das Collection Framework aus **zwei verschiedenen Teilen** besteht:
+Zum einen die **Collections** und zum anderen die **Maps**. Maps stellen somit keine "echten" Collections dar. Maps sind
 trotzdem Datenstrukturen zur Darstellung von Sammlungen von Objekten als eine Einheit.
-
-Im Folgenden werden wir die wichtigsten Collections, die Unterschiede und Gemeinsamkeiten zueinander diskutieren...
 
 ---
 
-## java.util.Collections
+## Collection
 
-Das Collection-Interface ist in der Hierarchie zu oberst. Collections liefern Methoden, um Elemente hinzuzufügen, um
-Elemente zu löschen und zur weiteren Verwaltung der Elemente.
+Eine `Collection` ist ein Objekt, dass eine Sammlung von Objekten darstellt, d.h. mehrere Elemente zu einer Einheit zusammenfasst. In der Regel enthält eine Collection Datenelemente, die zusammen eine natürliche Gruppe bilden, wie z.B. eine Fussballmannschaft, die eine “Sammlung” von Fussballspielern ist, d.h. Fussballspieler enthält. Collections bieten uns im Allgemeinen die Möglichkeit neue Elemente hinzuzufügen, Elemente zu löschen und sonst die Elemente zu verwalten.
 
-```java
-public interface Collection<E> extends Iterable<E>
-```
 
-Das `E` in `Collection<E>` bedeutet, dass die Elemente in der Collection den Typ *E* haben.
-*E* steht hierbei für *Element*, was ein generischer Typ repräsentiert. Dieser generische Typ der Collection wird
-beim Erstellen der Collection bestimmt.
+**Allgemeine Methoden:**  
+`size()`, `isEmpty()`, `contains(Object element)`, `add(E element)`, `remove(Object element)`, `clear()`, `iterator()`
 
-Beispiele generischer Typ:
+**Sammelmethoden:**  
+`containsAll(Collection<?> c)`, `addAll(Collection<? extends E> c)`, `removeAll(Collection<?> c)`, `retainAll(Collection<?> c)`
 
-```java
-ArrayList<String> strings = new ArrayList<String>();
-ArrayList<Integer> integers = new ArrayList<Integer>();
-```
+### List
 
-In diesem Beispiel haben wir zuerst eine Liste mit Strings als Elemente erstellt, dann eine Liste mit Integers.
+Eine [List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) ist eine geordnete Sequenz, welche duplizierte Elemente erlaubt.
+Zusätzlich zu den vererbten Methoden der `Collection` bietet die `List` folgende an:
 
-### Einige Methoden vom Interface java.util.Collections
+**Elemente auf Basis ihrer Position zugreifen:**    
+`get`, `set`, `addAll`
 
-Einige Methoden des Collection-Interfaces sind im Folgenden aufgelistet, wobei die Auflistung der Methoden nicht
-vollständig ist.
+**Suche nach einem bestimmten Element in der Liste:**  
+`indexOf`, `lastIndexOf`
 
-```java
-/**
- * Gibt die Anzahl der Elemente in dieser Collection zurück.
- */
-int size();
+**Iteriert durch die Liste:**  
+`listIterator`
 
-/**
- * Gibt true zurück, wenn diese Collection keine Elemente enthält.
- */
-boolean isEmpty();
+**Ein Teilbereich der Lite erstellen:**  
+`sublist`
 
-/**
- * Gibt true zurück, wenn diese Collection das angegebene Element enthält.
- */
-boolean contains(Object o);
+> Es existieren zwei allgemeine Set Implementierungen:
+> - **[ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)** welche in Normalfall die leistungsfähigere ist.
+> - **[LinkedList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)** welche bei bestimmten Anwendungsfällen die bessere Lösung ist.
 
-/**
- * Stellt sicher, dass diese Sammlung das angegebene Element enthält - 
- * Fügt das Element zur Collection hinzu.
- * Gibt true zurück, wenn sich diese Collection durch den Aufruf geändert hat.
- * (Gibt false zurück, wenn diese Collection keine Duplikate zulässt und das angegebene Element bereits enthält.)
- */
-boolean add(E e);
 
-/**
- * Entfernt das angegebene Element aus dieser Collection.
- * Gibt true zurück, wenn diese Sammlung das angegebene Element enthielt
- * (oder wenn sich die Sammlung infolge des Aufrufs geändert hat).
- */
-boolean remove(Object o);
+### Set
 
-/**
- * Entfernt alle Elemente aus dieser Collection.
- */
-void clear();
-```
+Ein [Set](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html)  ist eine Collection, in welche man ein Element nur einmal hinzufügen kann.
+Das Set enthält die Funktionen der Collection, stellt aber sicher, dass Kopien von Elementen verhindert werden.
+Die `equals` und `hashCode` Funktionen spielen dabei eine wichtige Rolle.
+Sie definieren, wann zwei Elemente gleich sind.  
 
-Jede konkrete Collection-Klasse implementiert diese Methoden auf unterschiedliche Art und Weisen, wobei diese
-Implementierungen den jeweiligen Datenstrukturen abgestimmt sind.
+**Elemente hinzufügen, löschen und Infos abfragen:**    
+`add()`, `contains()`, `remove()`, `clear()`, `size()`, `isEmpty()`
+
+**Sammelmethoden:**    
+`addAll()`, `removeAll()`, `containsAll()`
+
+**Zugriff wie auf eine Collection:**    
+`iterator()`
+
+> Es existieren drei allgemeine Set Implementierungen:
+> - **[HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)**: Speichert die Elemente in einer Hash-Table, welche die leistungsstärkste Implementierung darstellt. Nachteil: Die Implementierung garantiert keine Reihenfolge.
+> - **[TreeSet](https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html)**: Speichert die Elemente in einem Red-Black Tree und ordnet die Elemente anhand deren Werte ein. Die Implementierung ist wesentlich langsamer als das HashSet.
+> - **[LinkedHashSet](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html)**: Speichert die Elemente in einer Hash-Tabel ab, welche als verknüpfte Liste (Linked List) implementiert ist. Die Reihenfolge der Elemente entspricht der Reihenfolge, wie sie in das Set eingefügt wurden. Diese Implementierung hat einen geringfügigen höheren Preis als das HashSet.
+
+### Map
+
+Eine [Map](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html)  ist ein Objekt, dass **Schüssel (keys) auf Werte (values) zuordnet**.
+Eine Map kann nicht zwei gleiche Schlüssel enthalten.
+Jeder Schlüssel zeigt genau auf einen Wert.
+Das Interface Map definiert Grundfunktionen für das Einfügen, Lesen, Löschen, Abfragen von Schlüsseln usw.
+
+Zusätzlich zu den vererbten Methoden der `Collection` bietet die `List` folgende an:
+
+**Elemente auf Basis ihrer Position zugreifen:**    
+`put()`, `get()`, `containsKey()`, `containsValue()`
+
+**Sammelmethoden:**    
+`putAll()`
+
+**Zugriff wie auf eine Collection:**    
+`keySet()`, `entrySet()`, `values()`
+
+> Es existieren drei allgemeine Map Implementierungen, deren Verhalten analog den drei Set Implementierungen (HashSet, TreeSet, and LinkedHashSet) entspricht:
+> - **[HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)**: Speichert die Elemente in einer Hash-Table, welche die leistungsstärkste Implementierung darstellt. Nachteil: Die Implementierung garantiert keine Reihenfolge..
+> - **[TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html)**: Speichert die Elemente in einem Red-Black Tree und ordnet die Elemente anhand deren Werte ein. Die Implementierung ist wesentlich langsamer als das HashMap.
+> - **[LinkedHashMap](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)**: Speichert die Elemente in einer Hash-Tabel ab, welche als verknüpfte Liste (Linked List) implementiert ist. Die Reihenfolge der Elemente entspricht der Reihenfolge, wie sie in die Map eingefügt wurden. Diese Implementierung hat einen geringfügigen höheren Preis als das HashMap.
