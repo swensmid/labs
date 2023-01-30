@@ -89,15 +89,18 @@ Set<String> nameSet = Set.of("Peter", "Emil");
 // Abfrage der Elemente mit einem Iterator:
 Iterator<String> iterator = nameSet.iterator();
 while(iterator.hasNext()) {
-System.out.println(iterator.next());
+        System.out.println(iterator.next());
+}
+
+// Abfrage der Elemente mit einer for Schleife:
+for (String name : nameSet){
+        System.out.println(name);
 }
 
 // Abfrage der Elemente mit einem Stream:
-System.out.println("\nStream:");
 nameSet.stream().forEach(name -> System.out.println(name));
 
 // Abfrage der Elemente mit einem forEach:
-System.out.println("\nStream:");
 nameSet.forEach(name -> System.out.println(name));
 
 ```

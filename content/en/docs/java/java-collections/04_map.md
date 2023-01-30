@@ -70,14 +70,20 @@ Der Rückgabewert ist ein `Set`, welches wir bestens kennen:
 ```java
 // Abfrage der Schlüssel mit einem Iterator:
 Iterator<Integer> plzIterator = plzToCityMap.keySet().iterator();
-        while(plzIterator.hasNext()) {
+while(plzIterator.hasNext()) {
         System.out.println(plzIterator.next());
-        }
+}
 
-// Abfrage der Schlüssel mit einem Stream:
-        plzToCityMap.keySet().stream()
-        .forEach(plz -> System.out.println(plz));
+// Abfrage der Schlüssel mit einer FOR Schleife:
+for (Integer plz : plzToCityMap.keySet()) {
+        System.out.println(plz);
+}        
         
+// Abfrage der Schlüssel mit einem Stream:
+plzToCityMap.keySet().stream()
+        .forEach(plz -> System.out.println(plz));
+}
+
 ```
 
 Ebenso kann man die Werte der Zuweisungen mit der Methode `values()` abfragen.
@@ -86,14 +92,22 @@ Als Resultat erhält man eine `Collection`.
 ```java
 // Abfrage der Werte mit einem Iterator:
 Iterator<String> nameIterator = plzToCityMap.values().iterator();
-        while(nameIterator.hasNext()) {
+while(nameIterator.hasNext()) {
         System.out.println(nameIterator.next());
-        }
+}
+
+// Abfrage der Werte mit einer FOR Schleife:
+for (String name : plzToCityMap.values()){
+        System.out.println(name);
+}        
 
 // Abfrage der Werte mit einem Stream:
-        plzToCityMap.values().stream()
+plzToCityMap.values().stream()
         .forEach(name -> System.out.println(name));
+}
 
+// Abfrage der Werte mit einem forEach:
+plzToCityMap.values().forEach(name -> System.out.println(name))
 ```
 
 Es besteht auch die Möglichkeit mit der Methode `entrySet()` die Zuweisungen mit Schlüssel und Wert abzufragen.
@@ -102,13 +116,18 @@ Man erhält wieder ein `Set`.
 ```java
 // Abfrage der Zuweisungen mit einem Iterator:
 Iterator<Map.Entry<Integer, String>> plzCityIterator = plzToCityMap.entrySet().iterator();
-        while(plzCityIterator.hasNext()) {
+while(plzCityIterator.hasNext()) {
         Map.Entry<Integer, String> entry = plzCityIterator.next();
         System.out.println(entry.getKey() + " : " + entry.getValue());
-        }
+}
+
+// Abfrage der Zuweisungen mit einer FOR Schleife:
+for (Map.Entry entry : plzToCityMap.entrySet()) {
+        System.out.println(entry.getKey() + " : " + entry.getValue());
+}
 
 // Abfrage der Zuweisungen mit einem Stream:
-        plzToCityMap.entrySet().stream()
+plzToCityMap.entrySet().stream()
         .forEach(plzCity -> System.out.println(plzCity.getKey() + " : " + plzCity.getValue()));
 
 // Abfrage der Zuweisungen mit einem forEach:
