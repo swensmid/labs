@@ -231,17 +231,17 @@ Aufgaben
 Wir programmieren eine eigene ArrayList-Klasse `MyArrayList`:
 1. Die Elemente sollen in einem Array gespeichert werden.
 2. Es dürfen keine Klassen aus dem Collection-Framework verwendet werden.
-3. Die Klasse muss das Interface `MyArrayListInterfaceSimple` implementieren.
+3. Die Klasse muss das Interface `MyListInterfaceSimple` implementieren.
 4. Die Klasse weiss nicht, wie viele Element man speichert. Sie muss die Grösse der internen Datenstruktur dynamische anpassen.
 5. Die `toString()` der `java.lang.Object` Klasse soll von der `MyArrayList` so überschrieben werden, dass die Elemente kommasepariert ausgegeben werden: `[Cat, Hamster, Dog, Goldfish]`
 
 
-{{% details title="Inferface MyArrayListInterfaceSimple" %}}
+{{% details title="Inferface MyListInterfaceSimple" %}}
 
 ```java
 package com.examples.list;
 
-public interface MyArrayListInterfaceSimple<E> {
+public interface MyListInterfaceSimple<E> {
 
     /**
      * Appends the specified element to the end of this list .
@@ -293,7 +293,7 @@ public interface MyArrayListInterfaceSimple<E> {
 
 Nun erweitern wir unsere `MyArrayList` Klasse.
 1. Erstelle eine Kopie deiner Klasse und nenne diese `MyArrayListExtended`.
-2. Diese soll das Interface `MyArrayListInterfaceExtended` implementieren, welche folgende zusätzliche Methoden aufweist:
+2. Diese soll das Interface `MyListInterfaceExtended` implementieren, welche folgende zusätzliche Methoden aufweist:
    * `void add(int index, E element)`
    * `boolean contains(Object o)`
    * `int indexOf(Object o)`
@@ -302,12 +302,12 @@ Nun erweitern wir unsere `MyArrayList` Klasse.
    * `boolean remove(Object o)`
   
 
-{{% details title="Inferface MyArrayListInterfaceExtended" %}}
+{{% details title="Inferface MyListInterfaceExtended" %}}
 
 ```java
 package com.examples.list;
 
-public interface MyArrayListInterfaceExtended<E> {
+public interface MyListInterfaceExtended<E> {
 
     /**
      * Appends the specified element to the end of this list .
