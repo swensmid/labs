@@ -1,7 +1,7 @@
 ---
-title: "Queue"
-linkTitle: "Queue"
-weight: 4
+title: "Queue + Deque"
+linkTitle: "Queue + Deque"
+weight: 6
 description: >
   Die Datenstruktur für eine Warteschlange: die Queue.
 ---
