@@ -15,7 +15,7 @@ Die Klasse ArrayList enthält also ein normales Array. Wenn ein Element hinzugef
 Wenn das Array nicht groß genug ist, wird ein neues, größeres Array erstellt, um das alte zu ersetzen, d.h. die Kapazität
 des Arrays wird fortlaufend angepasst.
 
-### Einige Methoden der Klasse java.util.ArrayList
+### Methodenübersicht
 
 ```java
 /*
@@ -70,8 +70,46 @@ public boolean isEmpty()
 public boolean contains(Object o)
 ```
 
-### Beispiele
-#### Beispiel 1 - Verwendung einer ArrayList.
+{{% blocks/lead color="orange" %}}
+Beispiel
+{{% /blocks/lead %}}
+
+### IndexOutOfBoundsException
+
+Eine der häufigsten Exceptions, die im Zusammenhang mit Listen auftritt, ist folgende:
+Es wird versucht, auf ein Element mit einem Index zuzugreifen, wobei der Index grösser als (oder gleich wie) die Länge der Liste ist. Dann wird die `IndexOutOfBoundsException` geworfen:
+
+```java
+List<String> list = new ArrayList<>();
+list.add("uno");
+list.add("dos");
+list.add("tres");
+
+System.out.println(list.get(3));
+```
+
+Hier wird dann diese Meldung angezeigt:
+```
+"java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 3"
+```
+
+Der Fehler war hier, dass die Liste 3 Elemente enthielt, und versucht wird, auf das 4. Element (also Index 3) zuzugreifen. Weil das 4. Element in dieser Liste nicht existiert, wird eine Exception geworfen.
+
+Ganz generell wird die `IndexOutOfBoundException` geworfen, wenn versucht wird, auf einen ungültigen Index innerhalb einer Collection
+zuzugreifen. Hat eine Liste die Grösse x:
+* dann sind die gültigen Indizes, um auf Elemente zuzugreifen 0, 1, 2, ..., x-1
+* und die Indizes x, x+1, x+2, ... wären ungültig.
+
+Diese Exception kann bei den folgenden Methoden von oben geworfen werden:
+(Diese Liste hier ist genau so nicht vollständig, wie die oben.)
+
+* `public void add(int index, E element)` (beachte das Argument `index`.)
+* `public E remove(int index)`
+* `public E get(int index)`
+
+## Beispiel
+
+### Beispiel 1 - ArrayList
 
 Im folgenden Beispiel erstellen wir zunächst eine leere ArrayList mit Elementen vom Typ String und wenden einige
 einfache ArrayList Methoden an und sehen, wie diese funktionieren (Das Hinzufügen von Elementen, das Entfernen von
@@ -120,7 +158,7 @@ public class Pets {
 ```
 
 
-#### Beispiel 2 (Iteration `for`-Schleife)
+### Beispiel 2 - `for`-Schleife
 
 Dieses Beispiel zeigt auf wie mit einer `for`-Schleife über die Elemente einer Liste iteriert werden kann.
 
@@ -153,7 +191,7 @@ Die Summe der Elemente beträgt 7875
 
 
 
-#### Beispiel 3 (Iteration `while`-Schleife)
+### Beispiel 3 - `while`-Schleife
 
 Dieses Beispiel zeigt auf wie mit einer `while`-Schleife über die Elemente einer Liste iteriert werden kann.
 
@@ -187,245 +225,10 @@ Nicole
 
 ```
 
-
-### IndexOutOfBoundsException
-
-Eine der häufigsten Exceptions, die im Zusammenhang mit Listen auftritt, ist folgende: 
-Es wird versucht, auf ein Element mit einem Index zuzugreifen, wobei der Index grösser als (oder gleich wie) die Länge der Liste ist. Dann wird die `IndexOutOfBoundsException` geworfen:
-
-```java
-List<String> list = new ArrayList<>();
-list.add("uno");
-list.add("dos");
-list.add("tres");
-
-System.out.println(list.get(3));
-```
-
-Hier wird dann diese Meldung angezeigt:
-```
-"java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 3"
-```
-
-Der Fehler war hier, dass die Liste 3 Elemente enthielt, und versucht wird, auf das 4. Element (also Index 3) zuzugreifen. Weil das 4. Element in dieser Liste nicht existiert, wird eine Exception geworfen.
-
-Ganz generell wird die `IndexOutOfBoundException` geworfen, wenn versucht wird, auf einen ungültigen Index innerhalb einer Collection
-zuzugreifen. Hat eine Liste die Grösse x:
-* dann sind die gültigen Indizes, um auf Elemente zuzugreifen 0, 1, 2, ..., x-1
-* und die Indizes x, x+1, x+2, ... wären ungültig.
-
-Diese Exception kann bei den folgenden Methoden von oben geworfen werden:
-(Diese Liste hier ist genau so nicht vollständig, wie die oben.)
-
-* `public void add(int index, E element)` (beachte das Argument `index`.)
-* `public E remove(int index)`
-* `public E get(int index)`
-
 {{% blocks/lead color="orange" %}}
 Aufgaben
 {{% /blocks/lead %}}
 
+## Aufgaben
 
-### Aufgabe 1
-
-Wir programmieren eine eigene ArrayList-Klasse `MyArrayList`:
-1. Die Elemente sollen in einem Array gespeichert werden.
-2. Es dürfen keine Klassen aus dem Collection-Framework verwendet werden.
-3. Die Klasse muss das Interface `MyListInterfaceSimple` implementieren.
-4. Die Klasse weiss nicht, wie viele Element man speichert. Sie muss die Grösse der internen Datenstruktur dynamische anpassen.
-5. Die `toString()` der `java.lang.Object` Klasse soll von der `MyArrayList` so überschrieben werden, dass die Elemente kommasepariert ausgegeben werden: `[Cat, Hamster, Dog, Goldfish]`
-
-
-{{% details title="Inferface MyListInterfaceSimple" %}}
-
-```java
-package com.examples.list;
-
-public interface MyListInterfaceSimple<E> {
-
-    /**
-     * Appends the specified element to the end of this list .
-     * @param element element to be appended to this list
-     */
-    void add(E element);
-
-    /**
-     * Returns the element at the specified position in this list.
-     * @param index index of the element to return
-     * @return the element at the specified position in this list
-     * @throws IndexOutOfBoundsException if the index is out of range
-     */
-    E get(int index) throws IndexOutOfBoundsException;
-
-    /**
-     * Removes the element at the specified position in this list.
-     * Returns the element that was removed from the list.
-     * soll IndexOutOfBoundsException werfen
-     * @param index the index of the element to be removed
-     * @return the element previously at the specified position
-     */
-    E remove(int index) throws IndexOutOfBoundsException;
-
-    /**
-     * Returns the number of elements in this list.
-     * If this list contains more than Integer.MAX_VALUE elements, returns Integer.MAX_VALUE.
-     * @return the number of elements in this list
-     */
-    int size();
-
-    /**
-     * Returns true if this list contains no elements.
-     * @return true if this list contains no elements
-     */
-    boolean isEmpty();
-
-    /**
-     * Removes all the elements from this list. The list will be empty after this call returns.
-     */
-    void clear();
-}
-
-```
-
-{{% /details %}}
-
-### Aufgabe 2
-
-Nun erweitern wir unsere `MyArrayList` Klasse.
-1. Erstelle eine Kopie deiner Klasse und nenne diese `MyArrayListExtended`.
-2. Diese soll das Interface `MyListInterfaceExtended` implementieren, welche folgende zusätzliche Methoden aufweist:
-   * `void add(int index, E element)`
-   * `boolean contains(Object o)`
-   * `int indexOf(Object o)`
-   * `E set(int index, E element)`
-   * `boolean equals(Object o)`
-   * `boolean remove(Object o)`
-  
-
-{{% details title="Inferface MyListInterfaceExtended" %}}
-
-```java
-package com.examples.list;
-
-public interface MyListInterfaceExtended<E> {
-
-    /**
-     * Appends the specified element to the end of this list .
-     * @param element element to be appended to this list
-     */
-    void add(E element);
-
-    /**
-     * Returns the element at the specified position in this list.
-     * @param index index of the element to return
-     * @return the element at the specified position in this list
-     * @throws IndexOutOfBoundsException if the index is out of range
-     */
-    E get(int index) throws IndexOutOfBoundsException;
-
-    /**
-     * Removes the element at the specified position in this list.
-     * Returns the element that was removed from the list.
-     * soll IndexOutOfBoundsException werfen
-     * @param index the index of the element to be removed
-     * @return the element previously at the specified position
-     */
-    E remove(int index) throws IndexOutOfBoundsException;
-
-    /**
-     * Returns the number of elements in this list.
-     * If this list contains more than Integer.MAX_VALUE elements, returns Integer.MAX_VALUE.
-     * @return the number of elements in this list
-     */
-    int size();
-
-    /**
-     * Returns true if this list contains no elements.
-     * @return true if this list contains no elements
-     */
-    boolean isEmpty();
-
-    /**
-     * Removes all the elements from this list. The list will be empty after this call returns.
-     */
-    void clear();
-
-    /**
-     * Inserts the specified element at the specified position in this list.
-     * Shifts the element currently at that position (if any) and any subsequent elements to the right.
-     * @param index index at which the specified element is to be inserted
-     * @param element element to be inserted
-     * @throws IndexOutOfBoundsException if the add operation is not supported by this list
-     */
-    void add(int index, E element) throws IndexOutOfBoundsException;
-
-    /**
-     * Returns true if this list contains the specified element.
-     * @param o element whose presence in this list is to be tested
-     * @return true if this list contains the specified element
-     */
-    boolean contains(Object o);
-
-    /**
-     * Returns the index of the first occurrence of the specified element in this list,
-     * or -1 if this list does not contain the element.
-     * @param o element to search for
-     * @return the index of the first occurrence of the specified element in this list,
-     * or -1 if this list does not contain the element
-     */
-    int indexOf(Object o);
-
-    /**
-     * Replaces the element at the specified position in this list with the specified element.
-     * @param index index of the element to replace
-     * @param element element to be stored at the specified position
-     * @return the element previously at the specified position
-     * @throws IndexOutOfBoundsException if the index is out of range
-     */
-    E set(int index, E element) throws IndexOutOfBoundsException;
-
-    /**
-     * Compares the specified object with this list for equality.
-     * Returns true if and only if the specified object is also a list, both lists have the same size,
-     * and all corresponding pairs of elements in the two lists are equal.
-     * @param o the object to be compared for equality with this list
-     * @return true if the specified object is equal to this list
-     */
-    boolean equals(Object o);
-
-    /**
-     * Removes the first occurrence of the specified element from this list, if it is present.
-     * If this list does not contain the element, it is unchanged.
-     * @param o element to be removed from this list, if present
-     * @return true if this list contained the specified element
-     */
-    boolean remove(Object o);
-}
-
-```
-
-{{% /details %}}
-
-#### Aufgabe 3
-
-Erstelle ein Programm, welches ein Zeugnis bestehend aus Modulen und deren Schlussnoten generiert und in der Konsole
-ausgibt.
-
-Dazu sollen die Klassen `Modul` und `LBV` (Prüfung) erstellt werden. Zur weiteren Hilfe soll
-die `ModulNotGradeableException` dienen.
-
-Anforderungen an die `LBV`-Klasse:
-
-- Die Note der LBV ist als Float-Attribut gespeichert
-- Die Gewichtung der LBV ist ebenfalls als Float-Attribut gespeichert
-
-Anforderungen an die `Modul`-Klasse:
-
-- Ein Modul hat den Modulnamen als Attribut.
-- Alle LBVs des Moduls, werden in einer ArrayList gespeichert.
-- LBVs werden dem Modul über die `addLBV(LBV exam)` Methode hinzugefügt.
-- Der Moduldurchschnitt, soll von der Methode `getFinalModuleGrade()` als `float` zurückgegeben werden.
-- Das Modul kann nur bewertet werden, wenn die Gewichtung aller LBVs genau 1 ergib. Ansonsten soll
-  eine `ModulNotGradeableException` geworfen werden.
-- Die Methode `printReportEntry()` soll den Zeugnis-Eintrag des Moduls generieren und ausgeben. Dieser ist im Format *<
-  MODUL_NAME>* : *<MODUL_SCHLUSSNOTE>* auszugeben.
+[Aufgaben zu Modul #J7 - Java Collections - List](../../../../labs/java/java-collections/01_list)
