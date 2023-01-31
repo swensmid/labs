@@ -52,7 +52,7 @@ Text kann auf viele weitere Arten gestylt werden:
 | CSS-Property       | Beispiel             | Beschreibung
 | ------------       | -------------------- | ------------
 | `color`            | `color: blue`        | Schriftfarbe
-| `background-color` | `color: blue`        | Schriftfarbe
+| `background-color` | `color: blue`        | Hintergrundfarbe (~Anstreichen)
 | `font-size`        | `font-size: 16px`    | Schriftgrösse.
 | `text-align`       | `text-align: center` | Einen Text zentrieren. 
 

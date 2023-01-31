@@ -58,7 +58,7 @@ Verbindung zur Datenbank herstellen zu können. Anschliessend können Abfragen u
 SQL-Anweisungen ausgeführt werden.
 
 Die folgenden Abschnitte zeigen die nötigen Schritte anhand von Beispielen.
-Diesen Beispiele wurden in einem Maven-Projekt ohne das Spring-Framework erstellt.
+Diese Beispiele wurden in einem Maven-Projekt ohne das Spring-Framework erstellt.
 
 ### Maven-Dependency
 Sobald die gewünschte Datenbank festgelegt wurde, kann der dazugehörende JDBC-Treiber als 
