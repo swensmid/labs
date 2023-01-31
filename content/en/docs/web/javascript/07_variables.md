@@ -127,18 +127,7 @@ Das bedeutet, dass du z.B. eine `var`-Variable, die du ganz oben in der Funktion
 Einen solchen Function Scope haben nur Variablen, die mit `var` definiert wurden. Variablen, die mit `let` oder `const` definiert wurden, haben einen Block-Scope und sind daher innerhalb ihres Blocks (`for`/`while`-Schlaufe, `if`/`else`-Block, Funktion, Datei) definiert und sichtbar.
 In `Java` gilt der Block Scope immer.
 
-##### Aufgabe zu Global Scope, Function Scope und Block-Scope
-Im vorherigen Abschnitt hast du die Funktionsweise vom Global und Function Scope kennengelernt mit einem Beispiel-Code mit `console.log(...)`s.
-
-**Auftrag**: Ändere in diesem Code alle `var`s zu `let`s oder `const`s.
-
-Beantworte folgende Fragen und dokumentiere deine Antworten:
-* Was ist ein Scope?
-* Was sind Global Scope, Function Scope und Block-Scope? Was sind die Unterschiede?
-* Mit welchem Scope arbeitest du in Java? Begründe.
-* Wie werden Variablen im globalen Scope definiert?
-* Wie kannst du definieren, welche Variable welchen Scope haben soll?
-* Wann könnte die Verwendung von `var` sinnvoll sein?
+![asset](/images/hint.png) Hierzu findest du eine [Aufgabe im Lab (Aufgabe 4)](../../../../labs/web/html_css/03_javascript#aufgabe-4---global-scope-function-scope-und-block-scope).
 
 
 #### Wann `var` verwenden?

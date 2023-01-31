@@ -219,11 +219,5 @@ Hier sind von w3schools die wichtigsten Eigenschaften von Flex-Boxen beschrieben
 ### Display-Flex-Properties üben
 Auf [Flexbox Froggy](https://flexboxfroggy.com/#de) kannst du dein Flexbox-Wissen auf lustige Art und Weise trainieren. Nimm dir rasch Zeit dafür.
 
-
-### Autrag: Header-Navigation
-
-![task1](/images/task.png) Erstelle nachfolgende Seite.
-
-Der Schwerpunkt ist die Navigation im Header: Das Bild und die Links auf der rechten Seite.
-
-![exFlexNav](../ex_flexbox-navigation.jpeg "So soll deine Seite mit Navitation ungefähr aussehen.")
+### Aufgaben im Lab
+![asset](/images/hint.png) Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/02_css).
