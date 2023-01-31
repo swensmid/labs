@@ -99,8 +99,10 @@ Und anschliessend wird gefragt ob diese Aufgabe lehrreich für ihn war.
 
 Fülle in der Aufgabendatei den benötigten Code an den enstprechenden Stellen ein.
 
-![asset](/images/hint.png)    
-    Um readline benutzen zu können, musst du erst den entsprechenden npm-Befehl ausführen. Achte darauf, dass du den Befehl im selben Verzeichnis ausführst, indem sich die .ts-Datei befindet!
+![asset](/images/hint.png) - Info zu readline.
+
+    Um readline benutzen zu können, musst du erst den entsprechenden npm-Befehl ausführen.
+    Achte darauf, dass du den Befehl im selben Verzeichnis ausführst, indem sich die .ts-Datei befindet!
 
 # Zurück zur Theorie
 [Hier](../../../../docs/web/angular/03_1_intro_typescript) gelangst du zurück zur Theorie.
