@@ -38,7 +38,7 @@ Bootstrap wird in sehr vielen Projekten bereits benutzt. Und so einfach kannst d
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 ```
 
-Eine grosse Stärke von Bootstrap ist es, dass sich deine Seite 'responsive' verhält: Du kannst mit einer CSS-Klasse (`col-md-4` z.B.) definieren, dass ein Element im Normallfall 4/12 der Breite einnimmt (4 ist in der Klasse angegeben, Bootstrap arbeitet mit 12 Spalten). Ist dein Browser weniger breit als eine bestimmte Weite (`md` -> medium), so werden dann die Elemente automatisch untereinander angezeigt.
+Eine grosse Stärke von Bootstrap ist es, dass sich deine Seite 'responsive' verhält: Du kannst mit einer CSS-Klasse (`col-md-4` z.B.) definieren, dass ein Element im Normalfall 4/12 der Breite einnimmt (4 ist in der Klasse angegeben, Bootstrap arbeitet mit 12 Spalten). Ist dein Browser weniger breit als eine bestimmte Weite (`md` -> medium), so werden dann die Elemente automatisch untereinander angezeigt.
 
 Da wir vermehrt Bootstrap einsetzen möchten, empfehlen wir dir, Bootstrap anzuschauen. Hier findest du ein Tutorial zur aktuellen Version: https://www.w3schools.com/bootstrap5/index.php.
 
@@ -72,15 +72,4 @@ Bei den folgenden solltest du einfach wissen, dass Bootstrap hierfür auch eine 
 * Utilities
 * alles unter Forms
 
-### Auftrag
-Nachfolgend ist eine Beispiel-Seite. Setze diese mit Bootstrap um:
-
-![pricingPage](../bootstrap-pricing-page-example.jpg)
-
-Schaue dir [diese Seite](https://getbootstrap.com/docs/5.1/examples/pricing/) auf auf kleineren Bildschirmen an - also verändere die Fenster-Breite deines Browsers. Du wirst sehen, dass z.B. die einzelnen Abos untereinander erscheinen, wenn die Breite kleiner wird. Berücksichtige dies auch in deinem Code.
-
-{{% details title="Hinweis" %}}
-
-Solltest du nicht weiterkommen, dann schaue in den Entwickler-Tools ([F12]-Taste) im DOM nach. Da diese Seite auch mit Bootstrap umgesetzt wurde, kannst du nachschauen, welche Bootstrap-Klassen sie verwendet haben.
-
-{{% /details %}}
+![asset](/images/hint.png) Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/02_css).

@@ -113,13 +113,7 @@ Was genau haben wir hier gemacht?
 
 Wir haben `fetchJoke()` asynchron aufgerufen, ohne auf die Antwort zu warten. Deswegen erhalten wir ein Promise-Objekt. Promise-Objekte enthalten eine `then`-Methode. Bei dieser Methode kannst du eine Funktion übergeben. Die übergebene Funktion wird aufgerufen, sobald die Antwort erhalten wurde.
 
-### Auftrag: Seite mit Joke
-![task1](/images/task.png) Schreibe eine Website, die auf Knopfdruck einen solchen Witz anzeigt.
-
-Solltest du fertig mit dieser Aufgabe sein, dann melde dich bei einem Coach.
-
-### Zusatzauftrag: Eine andere API anbinden
-![task1](/images/task.png) Versuche eine anderes API/Backend anzubinden und etwas auf einer Website anzuzeigen.
+![asset](/images/hint.png) Hierzu findest du [zwei Aufgaben im Lab](../../../../labs/web/html_css/03_javascript).
 
 ### Früher war alles besser?
 Die `fetch`-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selbst: https://www.w3schools.com/xml/xml_http.asp 

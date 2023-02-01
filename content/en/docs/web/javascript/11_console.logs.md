@@ -22,7 +22,7 @@ Z.B. kannst du den Logs noch eine Kategorie zuordnen und werden in unterschiedli
 * `console.info(...)` (neutral)
 * `console.warn(...)` (gelb/orange/grün)
 * `console.error(...)` (rot)
-* `console.debug(...)` (blau, aber nur sichtbar, wenn "Alle [Log-]Ebenen" in der Konsole anzeigt)
+* `console.debug(...)` (blau, aber nur sichtbar, wenn "Alle [Log-]Ebenen" in der Konsole angezeigt werden)
 
 ### Nie mehr Counter-Variablen für Debugging-Zwecke!!
 Wenn du z.B. feststellen möchtest, wie oft etwas aufgerufen wird, hilft dir vielleicht `console.count("")` weiter:

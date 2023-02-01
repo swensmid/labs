@@ -168,8 +168,4 @@ in das vereinfachen:
 </html>
 ```
 
-### Auftrag 1
-Suche auf dieser Website mit Hilfe der Entwicklertools ([F12]-Taste) den `<header>`, eine `<nav>` und den `<footer>`.
-
-## Auftrag 2
-Suche einen spanneden Text (z.B. aus einer alten Word-Datei, Wikipedia-Artikel, Anleitung). Dieser Text sollte mehrere Überschriften und Bilder besitzen. Setze diesen Text mit HTML um und versuche bereits, viele Semantic Tags zu verwenden. Zeige dein Resultat einem Coach.
+![asset](/images/hint.png) - Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/01_html).

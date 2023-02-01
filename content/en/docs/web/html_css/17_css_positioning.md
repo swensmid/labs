@@ -37,10 +37,7 @@ img {
 
 Mit `position: relative` bewirken wir, dass CSS-Properties wie `top`, `bottom`, `left` und `right` beachtet werden. Dank der relativen Positionierung dürfen wir dann das Element verschieben, ohne dass es andere Elemente bzw. den Textfluss verändert. Wir haben hier `top` verwendet, um oben einen Abstand einzufügen. Würdest du `left` verwenden, so würde sich das Element entsprechend nach rechts verschieben.
 
-### Auftrag relative Positionierung
-Im Layouting-Kapitel hast du einen Auftrag gelöst, wo du eine Seite mit Header und Navigation erstellt hast.
-
-![task1](/images/task.png) Adjustiere dort das Bild oben links.
+![asset](/images/hint.png) Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/02_css).
 
 
 ## absolute Positionierung
@@ -65,9 +62,4 @@ Mache den Browser mal ein bisschen kleiner und schaue, wie sich die Positionieru
 
 Möchtest du, dass die Positionierung immer gleich - unabhängig vom Scrollen - ist? Dann versuche es einmal mit `position: fixed`.
 
-### Auftrag: Info-Box
-![task1](/images/task.png) Erstelle eine HTML-Seite (oder erweitere eine andere so, dass) die ganz unten eine Meldung anzeigt mit einem "OK"-Button. 
-
-Inspiriere dich an den nervigen Cookie-Meldungen von anderen Seiten.
-
-![exCookieBanner](../ex_pos_abs_cookie_banner.jpeg)
+![asset](/images/hint.png) Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/02_css).

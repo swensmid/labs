@@ -36,17 +36,4 @@ const intervalId = setInterval(function(){}, 1000);
 clearInterval(intervalId);
 ```
 
-### Aufgabe: Uhr
-![task1](/images/task.png) Schreibe ein HTML, das eine Uhrzeit visuell anzeigt.
-
-    Deine Website soll zentriert eine Uhrzeit anzeigen.
-    Es steht dir frei, ob du die Uhrzeit analog oder digital anzeigen möchtest.
-
-    Wenn du eine analoge Uhr rendern möchtest, dann könnten Vektorgrafiken (SVGs) oder Canvas weiterbringen.
-
-    Du kannst es aber auch mit gewöhnlichen HTML-Elementen versuchen.
-
-
-Hilfestellungen zu
-* [SVG](https://www.w3schools.com/graphics/svg_intro.asp)
-* [Canvas](https://www.w3schools.com/html/html5_canvas.asp)
+![asset](/images/hint.png) Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/03_javascript).

@@ -129,17 +129,4 @@ Um zu zeigen, wie einfach Input-Elemente verwendet werden könnten, kannst du fo
 
 ```
 
-### Aufgabe
-Nun bist du an der Reihe! Entwickle eine Registrierungsseite. Auf dieser Seite soll man mindestens folgendes angeben müssen:
-* Name
-* Email
-* Gewünschtes Passwort
-* Mögliche Interessen (mittels Checkboxen)
-* Geburtsdatum
-* Lieblingsfarbe
-* Geschlecht (mittels Radiobuttons)
-* Handynummer
-
-Als Backend kannst du "https://www.w3schools.com/action_page.php" (wie im vorherigen Beispiel) verwenden. Schaue nach dem Klick an, wie die Daten übermittelt worden sind. Wie sieht die URL im Browser aus? Variere die HTTP Request Method.
-
-Zeige deine Lösung dann einem Coach.
+![asset](/images/hint.png) - Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/01_html).

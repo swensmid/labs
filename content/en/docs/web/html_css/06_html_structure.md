@@ -39,14 +39,14 @@ In der Webentwicklung wird sehr oft vom "DOM" gesprochen. Visualisiert könnte d
 
 Was ist nun aber dieses "Document Object Model"? Ganz vereinfacht gesagt, beschreibt das DOM die Struktur der Website zur Laufzeit (also im Browser). Das DOM enthält also die Information, wie die Seite aufgebaut und verschachtelt ist mit ihren Elementen. Im Gegensatz zum HTML-Dokument kann sich das DOM während des Besuches der Seite verändern (z.B. durch JavaScript). Das DOM enthält also die Information, was aktuell auf der Seite ist.
 
-Weitere Informationen erhälst du hier: 
+Weitere Informationen erhältst du hier: 
 * https://www.w3schools.com/js/js_htmldom.asp
 * https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 
 Wie das DOM auf deiner aktuellen Seite aussieht, kannst du ganz einfach herausfinden:
 * Öffne die Entwickler-Tools von deinem Browser (z.B. mit der [F12]-taste)
 * Wechsle zum Reiter "Elemente"
-* Nun siehst du das aktuellen DOM:
+* Nun siehst du das aktuelle DOM:
 
 ![domBrowser](../browser_dom.jpg "(DOM im Browser einer einfachen HTML-Seite.)")
 
