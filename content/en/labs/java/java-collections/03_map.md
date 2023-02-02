@@ -112,11 +112,3 @@ Wir Kopieren unsere `MyMap` Klasse zu der Klasse `MyHashMap` und erweitern diese
 
 1. Beim Hinzufügen von Zuweisungen wird der Hash-Code vom Schlüssel berechnet und ebenfalls abgespeichert.
 2. Die Schlüsselsuche wird anschliessend über die gespeicherten Hash-Code der Schlüssel durchgeführt statt über die Schlüssel selbst.
-
-
-
-Test:
-
-<a href="/files/json/chat.json">download</a>
-
-{{< readfile file="static/files/json/chat.json" code="true" lang="text" >}}
