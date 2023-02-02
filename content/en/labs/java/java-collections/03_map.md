@@ -14,8 +14,8 @@ Postleitzahlen einlesen und verarbeiten:
 2. Nach dem Speichern schreibt das Programm verschiedene Informationen zu den Daten in die Konsole (siehe Ausgabe).
 
 ### Input
-- [PLZ (UTF8 Format)](../Postleitzahlen_UTF8.csv)
-- [PLZ (ISO-8859-1 Format)](../Postleitzahlen_ISO-8859-1.csv)
+- <a href="/files/csv/Postleitzahlen_UTF8.csv">PLZ (UTF8 Format)</a>
+- <a href="/files/csv/Postleitzahlen_ISO-8859-1.csv">PLZ (ISO-8859-1 Format)</a>
 
 ### Ausgabe  
 Die Ausgabe muss das folgende Format aufweisen:
