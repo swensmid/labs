@@ -188,3 +188,47 @@ Zusätzlich zu den vererbten Methoden der `Collection` bietet die `List` folgend
 > - **[HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)**: Speichert die Elemente in einer Hash-Table, welche die leistungsstärkste Implementierung darstellt. Nachteil: Die Implementierung garantiert keine Reihenfolge..
 > - **[TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html)**: Speichert die Elemente in einem Red-Black Tree und ordnet die Elemente anhand deren Werte ein. Die Implementierung ist wesentlich langsamer als das HashMap.
 > - **[LinkedHashMap](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)**: Speichert die Elemente in einer Hash-Tabel ab, welche als verknüpfte Liste (Linked List) implementiert ist. Die Reihenfolge der Elemente entspricht der Reihenfolge, wie sie in die Map eingefügt wurden. Diese Implementierung hat einen geringfügigen höheren Preis als das HashMap.
+
+## Performanz
+
+Das Collection-Framework macht regen Gebrauch von der Hash-Funktion.
+Klassen wie `HashSet` oder `HashMap` verwenden die Hash-Funktoin zur Steigerung der Performanz.
+
+### Hash-Funktion
+
+Alle Java Klassen erben von der Klasse `java.lang.Object` die Methode `public int hashCode()`.
+Diese liefert ein Hash Code von der eigenen Instanz zurück.
+Bei Java ist diese ein `Integer`.
+
+> Hashing bezeichnet die Umwandlung einer Zeichenfolge in einen normalerweise kürzeren, numerischen Wert oder Schlüssel mit fester Länge. 
+
+Der Java Hash Code ist nicht immer eindeutig.
+Es kann also vorkommen, dass unterschiedliche Instanzen von unterschiedlichen Klassen den gleichen Hash Code zurückreichen.
+In der Praxis ist das kein Problem, da der Hash Code nur für eine Vorselektierung verwendet wird.
+ 
+#### Verwendung
+
+Stellen wir uns den Einsatz bei einem `Set` vor:
+Bei einem Set können wir mit der Methode `contains(Object o)` abfragen, ob ein Objekt in einem Set vorhanden ist.
+Das Set muss somit jedes Objekt mit dem Objekt vergleichen, welches wir der Methode `contains` übergeben.
+Wenn wir uns vorstellen, dass ein Objekt viele Instanzvariablen enthalten kann, welche wiederum Objekte sein können, so kann jeder Vergleich eine aufwändige Arbeit sein.
+
+Bei einer Handvoll Objekte im Set ist das vernachlässigbar.
+Bei einigen tausend Objekte sieht es schon schlechter aus.
+
+Die Klasse `HashSet` wendet eine andere Strategie an:
+
+1. Beim Hinzufügen eines neuen Objekts, berechnet sie mit der `hashCode()` Methode deren Hash Code.
+   Dieser Hash Code wird für das neue Objekt gespeichert.
+2. Bei der Methode `contains(Object o)` berechnet sie den Hash Code des Vergleichsobjekts.
+   Anschliessen vergleicht sie diesen mit den gespeicherten Hash Code (Integer-Vergleich). 
+3. Da der Java Hash Code nicht eindeutig ist, vergleicht sie bei jedem Treffer zur Sicherheit beide Objekte mit der `equals(Object o)` Methode.
+
+> Mit dem Hash Code Strategie kann das `HashSet` die allermeisten Vergleiche auf ein Integer-Vergleich vereinfachen.
+
+#### Anforderung an die Hash Berechnung
+
+Was ist die Anforderung an die Java `hashCode()` Methode?
+
+> 1. Die Berechnung muss schnell sein.
+> 2. Der Hash Code sollte in der Praxis meistens eindeutig sein.
