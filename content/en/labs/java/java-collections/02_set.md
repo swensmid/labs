@@ -12,6 +12,7 @@ Schreibe ein Programm, welches die Personen von vier Vereine auswertet.
 
 1. Pro Verein existiert ein `Set` mit allen Vereinsmitlieder (siehe Input).
 2. Das Programm analysiert die Vereinsmitglieder und schreibt verschiedene Aussagen in die Konsole (siehe Ausgabe).
+3. Die Namen der Personen müssen in alphabetischer Reihenfolge angezeigt werden.
 
 ### Input
 
@@ -57,7 +58,7 @@ Am Schluss des Programmes kann man mit `OutputValidation.printControlHash()` den
 
 Ein Anwendungsbeispiel seht ihr unter [OutputValidationUsage](https://github.com/it-ninjas/code/blob/main/helper/src/main/java/ch/itninjas/validator/OutputValidationUsage.java).
 
-Der Hash für diese Aufgabe ist: `-634787072`  
+Der Hash für diese Aufgabe ist: **`-1421274666`**  
 Ich bin gespannt, wie gut die Überprüfung funktioniert.
 
 ## Aufgabe 2
