@@ -4,7 +4,7 @@ linkTitle: "List"
 type: docs
 weight: 1
 description: >
-  Aufgaben zu Modul #J7 - Java Collections - List
+  Aufgaben zu [Java Collections - List](../../../../docs/java/java-collections/02_array-list)
 ---
 
 

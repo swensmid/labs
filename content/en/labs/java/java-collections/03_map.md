@@ -4,7 +4,7 @@ linkTitle: "Map"
 type: docs
 weight: 3
 description: >
-  Aufgaben zu Modul #J7 - Java Collections - Map
+  Aufgaben zu [Java Collections - Map](../../../../docs/java/java-collections/04_map)
 ---
 
 ## Aufgabe 1

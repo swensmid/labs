@@ -4,7 +4,7 @@ linkTitle: "Set"
 type: docs
 weight: 2
 description: >
-  Aufgaben zu Modul #J7 - Java Collections - Set
+  Aufgaben zu [Java Collections - Set](../../../../docs/java/java-collections/03_set)  
 ---
 
 ## Aufgabe 1
