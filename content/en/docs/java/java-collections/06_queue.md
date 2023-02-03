@@ -194,4 +194,10 @@ stellen wiederum Queues dar.
 Deques, bei denen Elemente an einem Ende eingefügt und am gleichen Ende entnommen werden,
 stellen Stacks dar.
 
+{{% blocks/lead color="orange" %}}
+Aufgaben
+{{% /blocks/lead %}}
 
+## Aufgaben
+
+[Aufgaben zu Modul #J7 - Java Collections - Queue + Deque](../../../../labs/java/java-collections/05_queue)

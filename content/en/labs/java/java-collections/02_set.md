@@ -4,7 +4,7 @@ linkTitle: "Set"
 type: docs
 weight: 2
 description: >
-  Aufgaben zu Modul #J7 - Java Collections - Set
+  Aufgaben zu [Java Collections - Set](../../../../docs/java/java-collections/03_set)  
 ---
 
 ## Aufgabe 1
@@ -48,6 +48,18 @@ Die Ausgabe muss das folgende Format aufweisen:
 - Alle Personen, welche im Fussball sind und nicht im Tanz oder Schwimm Verein: 2: Maria,Xaver
 
 ```
+
+### Ausgabe überprüfen
+Wie können wir die Ausgabe überprüfen, ohne dass ihr die Lösung kennt? 
+Wir benützen dazu eine kleine Hilfsklasse [`OutputValidation`](https://github.com/it-ninjas/code/blob/main/helper/src/main/java/ch/itninjas/validator/OutputValidation.java).
+Die Klasse erlaubt es eure `System.out.println()` Anweisungen mit `OutputValidation.logAndPrint()` zu ersetzten.
+Am Schluss des Programmes kann man mit `OutputValidation.printControlHash()` den Hash-Wert der eigenen Ausgabe anzeigen, oder mit `OutputValidation.verifyControlHash()` einen Hash-Wert zur Überprüfung mit eurer Ausgabe überreichen.
+
+Ein Anwendungsbeispiel seht ihr unter [OutputValidationUsage](https://github.com/it-ninjas/code/blob/main/helper/src/main/java/ch/itninjas/validator/OutputValidationUsage.java).
+
+Der Hash für diese Aufgabe ist: `-634787072`  
+Ich bin gespannt, wie gut die Überprüfung funktioniert.
+
 ## Aufgabe 2
 Wir programmieren eine eigene Set-Klasse `MySet`, welche noch kein Hash-Code verwendet.
 
