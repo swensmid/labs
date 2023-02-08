@@ -58,8 +58,7 @@ Am Schluss des Programmes kann man mit `OutputValidation.printControlHash()` den
 
 Ein Anwendungsbeispiel seht ihr unter [OutputValidationUsage](https://github.com/it-ninjas/code/blob/main/helper/src/main/java/ch/itninjas/validator/OutputValidationUsage.java).
 
-Der Hash für diese Aufgabe ist: **`-1421274666`**  
-Ich bin gespannt, wie gut die Überprüfung funktioniert.
+Der Hash für diese Aufgabe ist: **`-1421274666`**
 
 ## Aufgabe 2
 Wir programmieren eine eigene Set-Klasse `MySet`, welche noch kein Hash-Code verwendet.

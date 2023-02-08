@@ -12,6 +12,7 @@ Postleitzahlen einlesen und verarbeiten:
 
 1. Schreibe ein Programm, welches Postleitzahlen aus einer CSV-Datei herausliest und in einer HashMap speichert.
 2. Nach dem Speichern schreibt das Programm verschiedene Informationen zu den Daten in die Konsole (siehe Ausgabe).
+3. Verwendet wieder die kleine Hilfsklasse [`OutputValidation`](https://github.com/it-ninjas/code/blob/main/helper/src/main/java/ch/itninjas/validator/OutputValidation.java) zum Verifizieren von eurem Konsole-Output. 
 
 ### Input
 - <a href="/files/csv/Postleitzahlen_UTF8.csv">PLZ (UTF8 Format)</a>
@@ -24,12 +25,16 @@ Die Ausgabe muss das folgende Format aufweisen:
 - kleinste PLZ mit Gemeinde: 4444 Bern
 - grösste PLZ mit Gemeinde: 4444 Bern
 - Anzahl Gemeinden mit mehr als 10 Buchstaben: 42
+- Anzahl Gemeinden mit 7 Buchstaben: 42
 - Anzahl Gemeinden mit der Buchstabenfolge 'ent': 42
+- Gemeinden mit 3 Buchstaben: Abc, Def, Xzz
 - Anzahl Buchstaben der kleinsten Gemeinden: 2
 - Kleinsten Gemeinden: di, ri, ru
 - Anzahl Buchstaben der grössten Gemeinden: 5
 - Grössten Gemeinden: diwil, riwil, ruwil
 ```
+> **Ausgabe überprüfen**  
+> Der Konsole-Output Hash für diese Aufgabe ist: **`196496747`**
 
 ## Aufgabe 2
 Wir programmieren eine eigene Map-Klasse `MyMap`, welche noch keinen Hash-Code verwendet:
