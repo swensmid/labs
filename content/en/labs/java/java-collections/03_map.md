@@ -19,7 +19,7 @@ Postleitzahlen einlesen und verarbeiten:
 - <a href="/files/csv/Postleitzahlen_ISO-8859-1.csv">PLZ (ISO-8859-1 Format)</a>
 
 ### Ausgabe  
-Die Ausgabe muss das folgende Format aufweisen:
+Die Ausgabe muss das folgende Format aufweisen. Beachte, dass die Aufzählungen der Ortschaften sortiert sind.
 ```text
 - Anzahl PLZ: 42
 - Kleinste PLZ der Gemeinde Bern: 4444 Bern
