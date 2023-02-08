@@ -22,8 +22,8 @@ Postleitzahlen einlesen und verarbeiten:
 Die Ausgabe muss das folgende Format aufweisen:
 ```text
 - Anzahl PLZ: 42
-- kleinste PLZ mit Gemeinde: 4444 Bern
-- grösste PLZ mit Gemeinde: 4444 Bern
+- Kleinste PLZ der Gemeinde Bern: 4444 Bern
+- Grösste PLZ der Gemeinde Bern: 4444 Bern
 - Anzahl Gemeinden mit mehr als 10 Buchstaben: 42
 - Anzahl Gemeinden mit 7 Buchstaben: 42
 - Anzahl Gemeinden mit der Buchstabenfolge 'ent': 42
@@ -34,7 +34,7 @@ Die Ausgabe muss das folgende Format aufweisen:
 - Grössten Gemeinden: diwil, riwil, ruwil
 ```
 > **Ausgabe überprüfen**  
-> Der Konsole-Output Hash für diese Aufgabe ist: **`196496747`**
+> Der Konsole-Output Hash für diese Aufgabe ist: **`1768988137`**
 
 ## Aufgabe 2
 Wir programmieren eine eigene Map-Klasse `MyMap`, welche noch keinen Hash-Code verwendet:
