@@ -112,7 +112,7 @@ Ihr müsst das Interface `ProcessingInterface` implementieren.
 
 ### Aufgabe 1.1
 
-1. Implementiert das `ProcessingInterface` mit einer Queue, damit die Jobs im **FIFO-Prinzip** (Last-In-First-Out) verarbeitet werden.
+1. Implementiert das `ProcessingInterface` mit einer Queue, damit die Jobs im **FIFO-Prinzip** (First-In-First-Out) verarbeitet werden.
 2. Kontrolliert die Konsole-Ausgabe:
    1. Ob alle Jobs verarbeitet wurden.
    2. Ob die Jobs in der gewünschten Reihenfolge verarbeitet wurden.
