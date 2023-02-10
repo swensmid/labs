@@ -9,4 +9,4 @@ description: >
 
 ## Aufgabe 1
 
-_Aktuell existiert keine Aufgaben zu der LinkedList._
+_Aktuell existieren keine Aufgaben zu der LinkedList._
