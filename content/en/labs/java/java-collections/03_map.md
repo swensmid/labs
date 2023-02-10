@@ -36,7 +36,7 @@ Die Ausgabe muss das folgende Format aufweisen. Beachte, dass die Aufzählungen 
 > **Ausgabe überprüfen**  
 > Der Konsole-Output Hash für diese Aufgabe ist: **`1768988137`**
 
-## Aufgabe 2
+## Aufgabe 2 (Optional)
 Wir programmieren eine eigene Map-Klasse `MyMap`, welche noch keinen Hash-Code verwendet:
 
 1. Es dürfen keine Klassen aus dem Collection-Framework verwendet werden.
