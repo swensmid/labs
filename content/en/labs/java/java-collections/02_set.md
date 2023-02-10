@@ -77,7 +77,7 @@ package com.examples.list;
 public interface MySetInterfaceSimple<E> {
 
     /**
-     * AAdds the specified element to this set if it is not already present.
+     * Adds the specified element to this set if it is not already present.
      * @param element element to be appended to this list
      * @return true if this set did not already contain the specified element
      */
