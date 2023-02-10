@@ -190,7 +190,7 @@ public interface MyListInterfaceExtended<E> {
 
 {{% /details %}}
 
-## Aufgabe 3
+## Aufgabe 3 (Optional)
 
 Erstelle ein Programm, welches ein Zeugnis bestehend aus Modulen und deren Schlussnoten generiert und in der Konsole
 ausgibt.
