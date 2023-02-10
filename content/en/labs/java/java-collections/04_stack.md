@@ -7,7 +7,7 @@ description: >
     Aufgaben zu [Java Collections - Stack](../../../../docs/java/java-collections/05_stack)
 ---
 
-## Aufgabe 1
+## Aufgabe 1 (Optional)
 
 Versuche eine eigene Stack-Klasse (`MyStack<E>`) zu implementieren mithilfe von Arrays und verwende dabei keine anderen
 Collections-Klassen.
