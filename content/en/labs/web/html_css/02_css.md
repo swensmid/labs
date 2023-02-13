@@ -16,7 +16,7 @@ Der Schwerpunkt ist die Navigation im Header: Das Bild und die Links auf der rec
 ![exFlexNav](../ex_flexbox-navigation.jpeg "So soll deine Seite mit Navigation ungefähr aussehen.")
 
 ### Aufgabe 2 - relative Positionierung
-In Aufgabe 1 hast du eine Seite mit Header und Navigation erstellt hast.
+In Aufgabe 1 hast du eine Seite mit Header und Navigation erstellt.
 
 ![task1](/images/task.png) Adjustiere dort das Bild oben links.
 
