@@ -16,6 +16,7 @@ Wir programmieren eine eigene ArrayList-Klasse `MyArrayList`:
 3. Die Klasse muss das Interface `MyListInterfaceSimple` implementieren.
 4. Die Klasse weiss nicht, wie viele Element man speichert. Sie muss die Grösse der internen Datenstruktur dynamische anpassen.
 5. Die `toString()` der `java.lang.Object` Klasse soll von der `MyArrayList` so überschrieben werden, dass die Elemente kommasepariert ausgegeben werden: `[Cat, Hamster, Dog, Goldfish]`
+6. Überprüfe deine Implemenation mit dem JUnitTest [MyArrayListSimpleTest](https://github.com/it-ninjas/work/blob/main/labs/src/test/java/ch/itninjas/labs/j7/list/lab1/MyArrayListSimpleTest.java)
 
 
 ### Input
@@ -83,6 +84,7 @@ Nun erweitern wir unsere `MyArrayList` Klasse.
   * `E set(int index, E element)`
   * `boolean equals(Object o)`
   * `boolean remove(Object o)`
+3. Überprüfe deine Implemenation mit dem JUnitTest [MyArrayListExtendedTest](https://github.com/it-ninjas/work/blob/main/labs/src/test/java/ch/itninjas/labs/j7/list/lab2/MyArrayListExtendedTest.java)
 
 
 ### Input
