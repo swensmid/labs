@@ -67,6 +67,7 @@ Wir programmieren eine eigene Set-Klasse `MySet`, welche noch kein Hash-Code ver
 2. Die Klasse muss das Interface `MySetInterfaceSimple` implementieren.
 3. Die Klasse weiss nicht, wie viele Elemente man speichern muss. Sie muss die Grösse des Arrays dynamische anpassen.
 4. Die `toString()` der `java.lang.Object` Klasse soll von der `MySet` so überschrieben werden, dass die Elemente kommasepariert ausgegeben werden.
+5. Überprüfe deine Implemenation mit dem JUnitTest [MySetTest](https://github.com/it-ninjas/work/blob/main/labs/src/test/java/ch/itninjas/labs/j7/set/lab2/MySetTest.java)
 
 ### Input
 {{% details title="Inferface MySetInterfaceSimple" %}}
@@ -126,3 +127,4 @@ Wir Kopieren unsere `MySet` Klasse zu der Klasse `MyHashSet` und erweitern diese
 
 1. Beim Hinzufügen von neuen Elementen wird deren Hash-Code berechnet und ebenfalls abgespeichert.
 2. Die Suche nach bestehenden Elementen wird anschliessend über den gespeicherten Hash-Code durchgeführt statt über die Elemente selbst.
+3. Du kannst deine Implemenation mit dem gleichen JUnitTest [MySetTest](https://github.com/it-ninjas/work/blob/main/labs/src/test/java/ch/itninjas/labs/j7/set/lab2/MySetTest.java) überprüfen, da sich die neue Klasse gleich verhalten soll. Erstelle vom Test eine Kopie `MyHashSetTest` und ändere `MySet` überall zu `MyHahsSet`.
