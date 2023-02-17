@@ -22,7 +22,7 @@ um eine Glühbirne auszuwechseln?</p>
 <p>Keinen, das ist ein Hardware-Problem!</p>
 ```
 
-Du hast gesehen, dass es das zwischen `<h1>` und `</h1>` wie ein Titel formatiert wurde. Der Text zwischen `<p>` und `</p>` in eigenen Abschnitten dargestellt.
+Du hast gesehen, dass das zwischen `<h1>` und `</h1>` wie ein Titel formatiert wurde, und dass der Text zwischen `<p>` und `</p>` in eigenen Abschnitten dargestellt wurde.
 
 ## HTML Tags
 
