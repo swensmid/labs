@@ -75,7 +75,7 @@ Wenn man auf "Über mich" klickt, erscheint eine ähnliche Seite wie hier darges
 
 Wenn man auf "Hobbies" klickt, erscheint eine ähnliche Seite wie hier dargestellt:  
 ![](../01_hobbies.png)
-Die Texte unterhalb der Fotos sind links auf entsprechende Webseiten, welche in einem neuen Browserfenster geöffnet werden.
+Die Texte unterhalb der Fotos sind Links auf entsprechende Webseiten, welche in einem neuen Browserfenster/-tab geöffnet werden.
 
 **Kontakt**  
 
@@ -85,4 +85,4 @@ Wenn man auf "Github" oder "Twitter" usw. klickt, wird ein neues Browserfenster 
 
 Hinweise:  
 * Verwende semantische Elemente wo nötig/sinnvoll.
-* Hier geht es um die Struktur der Seite, nicht um das Styling. Es ist wichtig, dass die Elemente am richtigen Ort platziert sind und gemäss der Anforderungen funktionieren 
+* Hier geht es um die Struktur der Seite, nicht um das Styling. Es ist wichtig, dass die Elemente gemäss der Anforderungen funktionieren und dass das HTML gut strukturiert ist.
