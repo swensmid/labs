@@ -7,8 +7,8 @@ description: >
 ---
 
 #### Ziele
-* Ich weiss wie ich eine HTML-Seite erstelle
-* Ich weiss wie ich meine erstellte HTML-Seite im Browser sehen kann
+* Ich weiss, wie ich eine HTML-Seite erstellen kann.
+* Ich weiss, wie ich meine erstellte HTML-Seite im Browser anschauen kann.
 
 ## Eine HTML-Seite mit formatiertem Text erstellen
 Wir beginnen ganz unkompliziert. Erstellen wir zuerst eine Text-Datei. Dafür erstellen wir zuerst ein Ordner, in dem wir später unsere Projekt-Dateien speichern. Anschliessend kannst du diesen Ordner mit der IDE (Entwicklungsumgebung) deiner Wahl öffnen (hier VS Code). Erstelle nun eine neue HTML-Datei im soeben erstellten Ordner. In VS Code kannst du das z.B. wie folgt machen:

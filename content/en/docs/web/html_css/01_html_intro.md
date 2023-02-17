@@ -7,8 +7,8 @@ description: >
 ---
 
 #### Ziele
-* Ich weiss, was HTML ist und warum es bei Webseiten angewendet wird
-* Ich weiss, welche Aufgaben ich mit HTML, CSS und Javascript erledigen kann
+* Ich weiss, was HTML ist und warum es bei Webseiten angewendet wird.
+* Ich kann zwischen HTML, CSS und JavaScript unterscheiden.
 
 ## Wie funktionieren Webseiten?
 Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.

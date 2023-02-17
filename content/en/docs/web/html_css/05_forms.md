@@ -7,10 +7,10 @@ description: >
 ---
 
 #### Ziele
-* Ich weiss, wozu HTML-Formulare benutzt werden
+* Ich weiss, wozu HTML-Formulare benutzt werden.
 * Ich kenne die folgenden HTML-Formular-Elemente und weiss wie ich sie benutzen kann:  
   input, label, button, checkbox, date, email, file, hidden, number, password und radio
-* Ich kann ein HTML-Formular erstellen und die Werte aus dem Formulare an einem Backend verschicken
+* Ich kann ein HTML-Formular erstellen und die Werte aus dem Formulare an einem Backend verschicken.
 
 ## Wieso HTML-Formulare?
 Die Benutzer deiner Webseite möchten oder sollen Daten eingeben können, z.B. für ein Kontakt-Formular oder eine Login-Seite. HTML-Formulare ermöglichen genau das, auch ohne JavaScript.

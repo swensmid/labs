@@ -7,9 +7,9 @@ description: >
 ---
 
 #### Ziele
-* Ich weiss, was nicht semantische Tags sind und wofür sie verwendet werden
-* Ich weiss, semantische Tags sind und wofür sie verwendet werden
-* Ich kann, HTML-5 semantische Elemente anwenden
+* Ich weiss, was nicht-semantische Tags sind und wofür sie verwendet werden.
+* Ich weiss, was semantische Tags sind und wofür sie verwendet werden.
+* Ich kann, HTML-5 semantische Elemente anwenden.
 
 ## Nicht-semantische Tags
 Oft kommst du in die Situation, wo du mehrere Elemente in einem anderen Element gruppieren willst. In den aller meisten Fällen verwendet man dafür `div`-Elemente.

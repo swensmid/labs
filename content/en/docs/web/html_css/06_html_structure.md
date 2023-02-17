@@ -7,11 +7,11 @@ description: >
 ---
 
 #### Ziele
-* Ich weiss, wie ich eine HTML-Seite strukturieren kann
-* Ich weiss, was das DOM ist
-* Ich weiss, wie ich das DOM einer Webseite inspizieren kann
-* Ich weiss, was sog. Meta-Tags sind und wozu sie verwendet werden
-* Ich weiss, wie ich meine Seite auf Syntax-Fehlern überprüfen kann
+* Ich weiss, wie ich eine HTML-Seite strukturieren kann.
+* Ich weiss, was das DOM ist.
+* Ich weiss, wie ich das DOM einer Webseite inspizieren kann.
+* Ich weiss, was sog. Meta-Tags sind und wozu sie verwendet werden.
+* Ich weiss, wie ich meine Seite auf Syntax-Fehlern überprüfen kann.
 
 ## Struktur einer HTML-Seite
 Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:

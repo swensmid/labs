@@ -7,12 +7,12 @@ description: >
 ---
 
 #### Ziele
-* Ich weiss, wie ich HTML-Dokumente strukturieren kann
-* Ich weiss, wie ich mit HTML Texte formatieren kann
-* Ich weiss, wie ich Links und Bilder in einer Webseite hinzufügen kann
-* Ich weiss, wie ich geordneten, sortierten Listen erstellen kann 
-* Ich weiss, wie ich ungeordneten, unsortierten Listen erstellen kann
-* Ich weiss, was Definitionslisten sind und wie und wozu ich sie einsetzen kann
+* Ich weiss, wie ich HTML-Dokumente strukturieren kann.
+* Ich weiss, wie ich mit HTML Texte formatieren kann.
+* Ich weiss, wie ich Links und Bilder in einer Webseite hinzufügen kann.
+* Ich weiss, wie ich geordnete/sortierte Listen erstellen kann.
+* Ich weiss, wie ich ungeordnete/unsortierte Listen erstellen kann.
+* Ich weiss, was Definitionslisten sind und wie und wozu ich sie einsetzen kann.
 
 ## Titel (Heading)
 Du hast bereits erfahren, dass du mit `<h1>` für Titel verwenden kannst. Oft hast du aber einen Titel für die Seite und dann Titel, die diesem Titel untergeordnet sind. Wie in einem Word-Dokument kannst du auch in HTML Titel hierarchisch verschachteln. Das geht so:
