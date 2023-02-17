@@ -52,3 +52,37 @@ Notiere dir deine Erkenntnisse. Versuche zudem folgende Fragen zu beantworten:
 
 ### Aufgabe 3 - Dokument als HTML
 Suche einen spanneden Text (z.B. aus einer alten Word-Datei, Wikipedia-Artikel, Anleitung). Dieser Text sollte mehrere Überschriften und Bilder besitzen. Setze diesen Text mit HTML um und versuche bereits, viele Semantic Tags zu verwenden. Zeige dein Resultat einem Coach.
+
+### Aufgabe 4 - persönliche Portfolio
+Erstelle eine reine HTML-Webseite, welche dein persönliches Portfolio darstellt.
+Die Seite soll folgende Struktur und Elemente beinhalten:
+
+**Navigation**  
+
+Die Navigation besteht auf drei Elemente:
+* Über mich
+* Hobbies
+* Kontakt
+
+Beim Klicken auf einem Navigationsitem wird die Anzeige entsprechend geändert. Dazu siehe folgende Abschnitte.
+
+**Über mich**  
+
+Wenn man auf "Über mich" klickt, erscheint eine ähnliche Seite wie hier dargestellt:  
+![](../01_about.png)
+
+**Hobbies**  
+
+Wenn man auf "Hobbies" klickt, erscheint eine ähnliche Seite wie hier dargestellt:  
+![](../01_hobbies.png)
+Die Texte unterhalb der Fotos sind links auf entsprechende Webseiten, welche in einem neuen Browserfenster geöffnet werden.
+
+**Kontakt**  
+
+Wenn man auf "Hobbies" klickt, erscheint eine ähnliche Seite wie hier dargestellt:  
+![](../01_kontakt.png)
+Wenn man auf "Github" oder "Twitter" usw. klickt, wird ein neues Browserfenster mit der richtigen Seite geöffnet
+
+Hinweise:  
+* Verwende semantische Elemente wo nötig/sinnvoll.
+* Hier geht es um die Struktur der Seite, nicht um das Styling. Es ist wichtig, dass die Elemente am richtigen Ort platziert sind und gemäss der Anforderungen funktionieren 
