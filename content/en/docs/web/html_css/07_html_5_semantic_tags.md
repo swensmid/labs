@@ -1,12 +1,15 @@
 ---
 title: "HTML5 Semantic Tags"
-type: docs
 linkTitle: "HTML5 Semantic Tags"
 weight: 7
-date: 2022-04-14
 description: >
-    Tags, die ihre Bedeutung dem Browser und dem Entwickler beschreiben.
+    Modul #F3 - HTML und CSS - Tags, die ihre Bedeutung dem Browser und dem Entwickler beschreiben.
 ---
+
+#### Ziele
+* Ich weiss, was nicht semantische Tags sind und wofür sie verwendet werden
+* Ich weiss, semantische Tags sind und wofür sie verwendet werden
+* Ich kann, HTML-5 semantische Elemente anwenden
 
 ## Nicht-semantische Tags
 Oft kommst du in die Situation, wo du mehrere Elemente in einem anderen Element gruppieren willst. In den aller meisten Fällen verwendet man dafür `div`-Elemente.
@@ -168,4 +171,4 @@ in das vereinfachen:
 </html>
 ```
 
-![asset](/images/hint.png) - Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/01_html).
+![asset](/images/hint.png) Jetzt bist du dran. Löse bitte die [Aufgabe 3](../../../../labs/web/html_css/01_html#aufgabe-3---dokument-als-html) in den Labs.

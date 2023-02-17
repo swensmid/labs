@@ -1,12 +1,14 @@
 ---
 title: "HTML"
-type: docs
 linkTitle: "HTML"
 weight: 1
-date: 2022-03-29
 description: >
-    Erstelle Deine erste Webseite mit HTML. Eine erste Einführung in HTML.
+    Modul #F3 - HTML und CSS - Einführung
 ---
+
+#### Ziele
+* Ich weiss, was HTML ist und warum es bei Webseiten angewendet wird
+* Ich weiss, welche Aufgaben ich mit HTML, CSS und Javascript erledigen kann
 
 ## Wie funktionieren Webseiten?
 Im Gegensatz zu Desktop-Programmen SOLLTEN Webseiten auf jedem Betriebssystem und Browser gleich laufen und aussehen. Damit das funktionieren kann, müssen die Webseiten so programmiert/geschrieben worden sein, dass sie von jedem Browser verstanden werden können.

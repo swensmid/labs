@@ -1,12 +1,18 @@
 ---
 title: "Weitere HTML-Tags"
-type: docs
 linkTitle: "Weitere HTML-Tags"
 weight: 4
-date: 2022-04-08
 description: >
-    HTML unterstützt sehr viele Tags. Auf dieser Seite wirst du die wichtigsten kennenlernen.
+    Modul #F3 - HTML und CSS - Nützliche HTML Tags
 ---
+
+#### Ziele
+* Ich weiss, wie ich HTML-Dokumente strukturieren kann
+* Ich weiss, wie ich mit HTML Texte formatieren kann
+* Ich weiss, wie ich Links und Bilder in einer Webseite hinzufügen kann
+* Ich weiss, wie ich geordneten, sortierten Listen erstellen kann 
+* Ich weiss, wie ich ungeordneten, unsortierten Listen erstellen kann
+* Ich weiss, was Definitionslisten sind und wie und wozu ich sie einsetzen kann
 
 ## Titel (Heading)
 Du hast bereits erfahren, dass du mit `<h1>` für Titel verwenden kannst. Oft hast du aber einen Titel für die Seite und dann Titel, die diesem Titel untergeordnet sind. Wie in einem Word-Dokument kannst du auch in HTML Titel hierarchisch verschachteln. Das geht so:
@@ -190,6 +196,3 @@ Eine 3. Art von Listen sind Definitionslisten. Diese Art von Liste wird zwar nic
     <dd>the period of greatest        prosperity or productivity</dd>
 </dl>
 </div>
-
-## Todo
-relative Links

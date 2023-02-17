@@ -1,12 +1,17 @@
 ---
 title: "HTML-Struktur"
-type: docs
 linkTitle: "HTML-Struktur"
 weight: 6
-date: 2022-04-14
 description: >
-    Wie sollte eine HTML-Seite strukturiert sein?
+    Modul #F3 - HTML und CSS - HTML-Seite strukturieren
 ---
+
+#### Ziele
+* Ich weiss, wie ich eine HTML-Seite strukturieren kann
+* Ich weiss, was das DOM ist
+* Ich weiss, wie ich das DOM einer Webseite inspizieren kann
+* Ich weiss, was sog. Meta-Tags sind und wozu sie verwendet werden
+* Ich weiss, wie ich meine Seite auf Syntax-Fehlern überprüfen kann
 
 ## Struktur einer HTML-Seite
 Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:
@@ -78,3 +83,5 @@ Wichtig für dich zum Wissen ist auch, dass deine HTML-Seite bestimmte Meta-Tags
 Um die Seite auf Syntax-Fehlern und gängige Fehler zu überprüfen, kann es Sinn machen, die Seite von einem Validator überprüfen zu lassen. Ein bekannter ist z.B. dieser: https://validator.w3.org/#validate_by_input
 
 Hier kannst du deinen HTML-Code eingeben und der Validator zeigt dir dann gängige Fehler an, die es in deinem Code entdeckt hat.
+
+![asset](/images/hint.png) Jetzt bist du dran. Löse bitte die [Aufgabe 2](../../../../labs/web/html_css/01_html#aufgabe-2---inspiziere-diese-seite) in den Labs.

@@ -1,12 +1,14 @@
 ---
 title: "Erste Seite erstellen"
-type: docs
 linkTitle: "Erste Seite erstellen"
 weight: 2
-date: 2022-03-30
 description: >
-    Beginne mit der Entwicklung mit HTML.
+    Modul #F3 - HTML und CSS - Erste HTML Seite erstellen
 ---
+
+#### Ziele
+* Ich weiss wie ich eine HTML-Seite erstelle
+* Ich weiss wie ich meine erstellte HTML-Seite im Browser sehen kann
 
 ## Eine HTML-Seite mit formatiertem Text erstellen
 Wir beginnen ganz unkompliziert. Erstellen wir zuerst eine Text-Datei. Dafür erstellen wir zuerst ein Ordner, in dem wir später unsere Projekt-Dateien speichern. Anschliessend kannst du diesen Ordner mit der IDE (Entwicklungsumgebung) deiner Wahl öffnen (hier VS Code). Erstelle nun eine neue HTML-Datei im soeben erstellten Ordner. In VS Code kannst du das z.B. wie folgt machen:
