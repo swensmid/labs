@@ -75,12 +75,14 @@ Wenn man auf "Über mich" klickt, erscheint eine ähnliche Seite wie hier darges
 
 Wenn man auf "Hobbies" klickt, erscheint eine ähnliche Seite wie hier dargestellt:  
 ![](../01_hobbies.png)
+
 Die Texte unterhalb der Fotos sind Links auf entsprechende Webseiten, welche in einem neuen Browserfenster/-tab geöffnet werden.
 
 **Kontakt**  
 
-Wenn man auf "Hobbies" klickt, erscheint eine ähnliche Seite wie hier dargestellt:  
+Wenn man auf "Kontakt" klickt, erscheint eine ähnliche Seite wie hier dargestellt:  
 ![](../01_kontakt.png)
+
 Wenn man auf "Github" oder "Twitter" usw. klickt, wird ein neues Browserfenster mit der richtigen Seite geöffnet
 
 Hinweise:  
