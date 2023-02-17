@@ -20,18 +20,18 @@ Beginnen wir mit einer einfachen TextBox:
 Was ist dein Vorname?
 <input type="text" name="firstname"/>
 ```
-Probiere alle Beispiele immer selbst aus. Du hast gesehen, wie einfach eine TextBox in HTML eingebunden werden kann.
+Probiere alle Beispiele immer selbst aus. Der obige Code reicht bereits aus, um eine einfache TextBox in HTML einzubinden.
 
 Das `type`-Attribut definiert, um was für eine Art von Input-Element es sich handelt. `text` steht für eine gewöhnliche TextBox. Das zweite Attribut kannst du im Moment noch ignorieren.
 
 ## Label für Input-Elemente
-Vor der TextBox haben wir einen Text ("Was ist dein Vorname"). Dieser Text wird auch "Label" genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf das Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:
+Vor einem Input-Element steht meistens ein Text, der beschreibt, was im `<input/>`-Element eingegeben werden soll ("Was ist dein Vorname"). Dieser Text wird auch "Label" genannt. Bei einer guten Webseite wird zudem die TextBox ausgewählt, wenn der User auf das Label klickt (nicht nur beim Klick auf die TextBox). Diese Funktionalität wollen wir hinzufügen:
 
 ```html
 <label>Was ist dein Vorname?<input type="text" name="firstname" /></label>
 ```
 
-Nun haben wir die gewünschte Funktionalität hinzufügen können. Aber was genau haben wir hier gemacht?
+Die gewünschte Funktionalität haben wir so hinzufügen können. Aber was genau haben wir hier gemacht?
 
 Wir haben das Label als Label definiert (da im `label`-Element). Wenn wir ein Input-Element in einem Label hinzufügen, dann wird bei einem Klick auf dieses Label automatisch dieses Input-Element fokussiert.
 
@@ -49,7 +49,7 @@ Abgesehen davon, dass das Input-Element nicht mehr im Label ist, ist der grosse 
 Fassen wir zusammen, weshalb wir das `label`-Element verwenden:
 * Beim Klick auf das Label wird das entsprechende Input-Element ausgewählt.
 * Beim Klick in das entsprechende Input-Element würde ein Screen-Reader den Namen des Labels laut vorlesen, (falls verwendet).
-* Und ausserdem kann man später die Labels so einfacher stylen mit CSS.
+* Und ausserdem können die Labels auf diese Weise einfacher gestylt werden.
 
 ## Weitere Input-Elemente
 In HTML gibt es sehr viele weitere Input-Elemente. Eine grössere Liste findest du hier: https://www.w3schools.com/html/html_form_input_types.asp
@@ -59,6 +59,7 @@ Kennen solltest du sicher die folgenden:
 * checkbox
 * date
 * email
+* tel
 * file
 * hidden
 * number

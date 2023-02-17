@@ -9,7 +9,10 @@ description: >
 ---
 
 ## Struktur einer HTML-Seite
-Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. Eine HTML hat ungefähr diese Struktur:
+Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt.
+
+Normalerweise folgt eine HTML-Datei dieser Struktur (ohne `h1` und `p`):
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +33,10 @@ Vorher haben wir wild und ohne erkennbare Struktur HTML-Elemente hinzugefügt. E
 
 Auf der ersten Zeile definieren wir, dass es sich um ein HTML-Dokument handelt. Diese Zeile ist erforderlich und seit HTML5 praktisch immer gleich.
 
-Alle weiteren Elemente befinden sich dann im einzigen `<html>`-Element. Auf der nächsten Stufe gibt es nur `<head>` und `<body>`. Im `<head>` befinden sich Meta-Informationen über die Website wie z.B. der Tab-Titel der Website. Der eigentliche Seiteninhalt befindet sich dann im `<body>`.
+Alle weiteren Elemente befinden sich dann im einzigen `<html>`-Element. Im `<html>`-Tag kann noch die Sprache der Seite mit dem `lang`uage-Attribut angegeben werden. Auf der nächsten Stufe sind nur `<head>` und `<body>` erlaubt. Im `<head>` befinden sich Meta-Informationen über die Website wie z.B. der Tab-Titel der Website. Der eigentliche Seiteninhalt befindet sich dann im `<body>`.
 
 ### DOM (Document Object Model)
-In der Webentwicklung wird sehr oft vom "DOM" gesprochen. Visualisiert könnte der DOM aus dem obigen Beispiel ungefähr so aussehen:
+In der Webentwicklung wird sehr oft vom "DOM" gesprochen. Visualisiert könnte das DOM aus dem obigen Beispiel ungefähr so aussehen:
 
 ![dom](../dom.png "(DOM einer einfachen HTML-Seite.)")
 
@@ -69,7 +72,7 @@ Wichtig für dich zum Wissen ist auch, dass deine HTML-Seite bestimmte Meta-Tags
 </head>
 ```
 
-* Der `title` ist der Tab-Text
+* Der `title` ist der Text, der im Tab angezeigt wird.
 * `charset` beschreibt, welche Zeichensatz im Dokument vorkommt. Damit du alle gängigen Zeichen brauchen kannst, wird "UTF-8" empfohlen. Das Fehlen dieser Zeile führt oft dazu, dass bestimmte Zeichen falsch dargestellt werden.
 * Die `description` wird zum Beispiel von Suchmaschinen verwendet. Wie z.B. Google solche Tags auswertet, erfährst du hier: https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=de. `keywords` geht in eine ähnliche Richtung.
 * Die Zeile für den `viewport` kann praktisch immer 1-zu-1 übernommen werden. Dieser Wert führt dazu, dass die Seite auf mobilen Endgeräten nicht wie eine Desktop-Seite aussieht. Mit diesem Element wird der Text auf Smartphones meistens grösser. Dieses Meta-Tag wird empfohlen, wenn die Seite auf Smartphones gut aussehen soll.

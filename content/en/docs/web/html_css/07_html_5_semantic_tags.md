@@ -11,7 +11,7 @@ description: >
 ## Nicht-semantische Tags
 Oft kommst du in die Situation, wo du mehrere Elemente in einem anderen Element gruppieren willst. In den aller meisten Fällen verwendet man dafür `div`-Elemente.
 
-`<div>`-Tags werden oft als Container für HTML-Elemente verwendet. Dieser Container kann dann mit CSS gestylt oder mit JavaScript manipuliert werden. Probiere das nächste Beispiel einmal aus, ohne das Styling zu verstehen:
+`<div>`-Tags werden oft als Container für HTML-Elemente verwendet. Dieser Container kann dann mit CSS gestylt oder mit JavaScript manipuliert werden. Probiere das nächste Beispiel einmal aus, ohne das Styling zu verstehen (ignoriere das, was im `<style>`-Element drinsteht):
 
 ```html
 Just a Text
@@ -75,7 +75,7 @@ Das Gegenteil des `<header>`s ist der `<footer>`. Der Footer befindet sich oft a
 
 Nicht auf diesem Bild, aber trotzdem relevant: Oft befindet sich der Hauptteil einer Website (also nicht der Header, Footer, Werbung) in einem `<main>`-Element. Wenn die Website einen Leseartikel beschreibt, dann wäre der Text inkl. Überschriften dort drin.
 
-Einzelne Abschnitte (z.B. Unterkapitel inkl. Überschriften) werden oft in `<section>`s gepackt und sind in diesem Beispiel eine gute Alternative zu `<div>`s.
+Einzelne Abschnitte (z.B. Unterkapitel inkl. Überschriften) werden oft in `<section>`s gepackt und sind im nachfolgenden Beispiel-Code eine gute Alternative zu `<div>`s.
 
 Was genau ein `<article>` ist, würde den Rahmen hier definitiv sprengen. Auf jeden Fall beschreibt ein `article` ein von der aktuellen Website unabhängiges und in sich abgeschlossenes Element. Ein `article`-Element könnte man also einfach von der aktuellen Seite ausschneiden und in eine andere kopieren.
 
@@ -98,11 +98,11 @@ Mit semantischen Tags könnte man z.B. das
     </div>
     <div id="content">
         <h1>The Article - BANANA TREE</h1>
-        <div id="section-1">
+        <div class="chapter">
             <h2>Section 1</h2>
             <p>A banana tree is a must if you wish to bring a sizeable touch of the tropics into your home.</p>
         </div>
-        <div id="section-2">
+        <div class="chapter">
             <h2>Section 2</h2>
             <p>There are some 400 species worldwide.</p>
             <div class="move-to-the-right">

@@ -70,9 +70,9 @@ Das kannst du mit HTML sehr einfach erreichen, denn dafür gibt es spezielle Tag
 
 ```
 
-Um also einen bestimmten Text fett darzustellen, kannst du es in ein `<strong>`- oder `<b>`-Element schmeissen. Beide Tags MACHEN im Prinzip genau das Gleiche, MEINEN aber nicht zwingend das Gleiche: `<b>`-Elemente sind einfach fett-gedruckt, während `<strong>`-Elemente betont sein sollen. `<strong>` soll dem fett-gedruckten Wort also mehr Ausdruck verleihen. Mit einem eigenen Styling (kommt im CSS-Teil) könntest du `<strong>`-Elemente z.B. auch grösser oder rot darstellen. Mit einem `<b>`-Element sagt man im Prinzip nur, dass der Text fett-gedruckt sein soll.
+Um also einen bestimmten Text fett darzustellen, kannst du es in ein `<strong>`- oder `<b>`-Element schmeissen. Beide Tags BEZWECKEN im Prinzip genau das Gleiche, MEINEN aber nicht zwingend das Gleiche: `<b>`-Elemente sind einfach fett-gedruckt, während `<strong>`-Elemente betont sein sollen. `<strong>` soll dem fett-gedruckten Wort also mehr Ausdruck verleihen. Mit einem eigenen Styling (kommt im CSS-Teil) könntest du `<strong>`-Elemente z.B. auch grösser oder rot darstellen. Mit einem `<b>`-Element sagt man im Prinzip nur, dass der Text fett-gedruckt sein soll.
 
-Einen Text kursiv darzustellen kannst du mit `<i>` bzw. `<em>`. Das Pendant zu `<b>` ist `<i>` (italic), und dasjenige zu `<strong>` das `<em>` (emphasis = Betonung).
+Einen Text kursiv darstellen kannst du mit `<i>` bzw. `<em>`. Das Pendant zu `<b>` ist `<i>` (italic), und dasjenige zu `<strong>` das `<em>` (emphasis = Betonung).
 
 Das obige Beispiel wird so gerendert:
 <div style="border: 2px solid black; padding: 2em">
@@ -86,19 +86,20 @@ Das obige Beispiel wird so gerendert:
     </p>
 </div>
 
-Text zu formatieren ist Styling, was besser mit CSS statt HTML gemacht wird. Verwende diese Tags also mit Bedacht.
+![asset](/images/hint.png) Bitte beachte:
+Text zu formatieren ist Styling. Styling wiederum ist normalerweise die Aufgabe von CSS und nicht von HTML.
 
 ## Links und Bilder
-Eines der wichtigsten Elemente in HTML sind Links auf andere Seiten. Links werden mit `a`-Elementen (anchor) realisiert. Einen Link kannn wie folgt erstellt werden:
+Eines der wichtigsten Elemente in HTML sind Links auf andere Seiten. Links werden mit `a`-Elementen (anchor) realisiert. Einen Link kann wie folgt erstellt werden:
 
 ```html
-<a href="https://www.sbb.ch/">Home</a>
+<a href="https://labs.it-ninjas.ch/">Home</a>
 ```
 
 Probiere das einmal aus.
 
 Du wirst einen blauen und unterstrichenen Text "Home" sehen. `<a>` ist der Tag, der generell für Hyperlinks verwendet wird. `href` ist ein Attribut des `a`-Tags,
-mit dem die URL des Links spezifiziert wird. In unserem Fall ist `https://www.sbb.ch/` die URL, die beim Klick aufgerufen wird. `Home` ist der Text, der dem User angezeigt wird.
+mit dem die URL des Links spezifiziert wird. In unserem Fall ist `https://labs.it-ninjas.ch/` die URL, die beim Klick aufgerufen wird. `Home` ist der Text, der dem User angezeigt wird.
 
 
 Ziemlich ähnlich kannst du auch ein Bild aus dem Internet einbinden:
@@ -111,7 +112,7 @@ Ziemlich ähnlich kannst du auch ein Bild aus dem Internet einbinden:
 
 Ganz offensichtlich wird das `<img/>`-Tag (Image) für Bilder verwendet. Das `<img/>`-Tag ist ein Tag, welches keinen Inhalt zwischen Opening- und Closing-Tag hat. Mit dem `/` im Opening-Tag kann man symbolisieren, dass das Tag ohne Closing-Tag geschlossen wird.
 
-Das wichtigste Attribut im `img`-Tag ist `src` (source = Quelle). Als `src` wird eine URL zu einem Bild erwartet. Vergiss bei absoluten Pfaden (wird später noch erklärt) nicht das Protokoll (also https://) anzugeben. Nicht zwingend aber erwartet ist auch das `alt`-Attribut (alternative). Dieser Text wird angezeigt, wenn das Bild nicht geladen werden konnte. Optional sind hingegen Attribute wie `width` oder `height`, welche die Breite und Höhe des Bildes festlegen. Diese Grössen werden aber besser mit CSS spezifiziert, da CSS genauere Spezifikationen zulässt (also nicht nur in 'Pixel' sondern auch anderen Einheiten).
+Das wichtigste Attribut im `img`-Tag ist `src` (source = Quelle). Als `src` wird eine URL zu einem Bild erwartet. Vergiss nicht, bei absoluten Pfaden das Protokoll (also https://) anzugeben. Nicht zwingend aber erwartet wird das `alt`-Attribut (alternative). Dieser Text wird angezeigt, wenn das Bild nicht geladen werden konnte. Völlig optional sind hingegen Attribute wie `width` oder `height`, welche die Breite und Höhe des Bildes festlegen. Diese Grössen werden aber besser mit CSS spezifiziert, da CSS genauere Spezifikationen zulässt (also nicht nur in 'Pixel' sondern auch anderen Einheiten).
 
 Wenn du willst, dass man beim Klick auf ein Bild weitergeleitet wird, kannst du dein Bild in ein `<a>`-Element schmeissen:
 
@@ -140,7 +141,7 @@ Möchtest du hingegen eine Nummerierung, dann verwende eine sortierte Liste (ord
 ```html
 <h4>Most Difficult Programming Languages</h4>
 <ol>
-    <li>Brainfuck</li>
+    <li>Brainf*ck</li>
     <li>Cow</li>
     <li>Intercal</li>
     <li>Malbolge</li>
@@ -158,14 +159,14 @@ Das Ganze sieht dann ungefähr so aus:
 * Leave the building
 
 #### Most Difficult Programming Languages
-1. Brainfuck
+1. Brainf*ck
 2. Cow
 3. Intercal
 4. Malbolge
 5. Whitespace
 </div>
 
-Eine 3. Art von Listen sind Definitionslisten. Diese Art von Liste wird zwar nicht oft verwendet, kann aber hilfreich für ein Glossar oder ähnliches sein. Schaue dir dieses Beispiel an:
+Eine 3. Art von Listen sind Definitionslisten. Diese Art von Liste wird zwar nicht oft verwendet, kann aber hilfreich für ein Glossar oder Ähnliches sein. Schaue dir hierfür folgendes Beispiel an:
 
 ```html
 <h2>Glossary</h4>
@@ -187,7 +188,7 @@ Eine 3. Art von Listen sind Definitionslisten. Diese Art von Liste wird zwar nic
     <dd>like a clown </dd>
     
     <dt>heyday</dt>
-    <dd>the period of greatest        prosperity or productivity</dd>
+    <dd>the period of greatest prosperity or productivity</dd>
 </dl>
 </div>
 
