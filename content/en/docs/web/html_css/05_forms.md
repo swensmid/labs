@@ -1,12 +1,16 @@
 ---
 title: "HTML Formulare"
-type: docs
 linkTitle: "HTML Formulare"
 weight: 5
-date: 2022-04-14
 description: >
-    Formular-Daten mit HTML verschicken.
+    Modul #F3 - HTML und CSS - Formular-Daten mit HTML verschicken.
 ---
+
+#### Ziele
+* Ich weiss, wozu HTML-Formulare benutzt werden.
+* Ich kenne die folgenden HTML-Formular-Elemente und weiss wie ich sie benutzen kann:  
+  input, label, button, checkbox, date, email, file, hidden, number, password und radio
+* Ich kann ein HTML-Formular erstellen und die Werte aus dem Formulare an einem Backend verschicken.
 
 ## Wieso HTML-Formulare?
 Die Benutzer deiner Webseite möchten oder sollen Daten eingeben können, z.B. für ein Kontakt-Formular oder eine Login-Seite. HTML-Formulare ermöglichen genau das, auch ohne JavaScript.
@@ -129,4 +133,4 @@ Um zu zeigen, wie einfach Input-Elemente verwendet werden könnten, kannst du fo
 
 ```
 
-![asset](/images/hint.png) - Hierzu findest du eine [Aufgabe im Lab](../../../../labs/web/html_css/01_html).
+![asset](/images/hint.png) Jetzt bist du dran. Löse bitte die [Aufgabe 1](../../../../labs/web/html_css/01_html#aufgabe-1---input-elemente) in den Labs.

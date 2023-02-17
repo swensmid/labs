@@ -17,7 +17,7 @@ Verwende die HTML5 konformen Tags.
 
 ## RTM
 Nachzubauen ist die neue Webseite vom RTM(login).<br>
-Nachfolgend werden die einzelnen Komponenten erklärt. Es werden nur diverse Stylings gegeben, denn Rest müsst ihr selber versuchen zu definieren. <br>
+Nachfolgend werden die einzelnen Komponenten erklärt. Es werden nur diverse Stylings gegeben, den Rest müsst ihr selber versuchen zu definieren. <br>
 Zu unterst im File findet ihr noch diverse Hints, welche euch helfen könnten.<br>
 Die Icons sind [hier](../icons/logos-rtm.zip) hinterlegt. <br>
 ![asset](../rtm_home_page.png)   
