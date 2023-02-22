@@ -11,13 +11,14 @@ description: >
 * Ich kann erklären, was Collections sind.
 * Ich kenne grob den Aufbau des Collection Frameworks.
 * Ich kenne die wichtigsten Interfaces und ihre Merkmale: Lists, Sets, Queues, Maps
+* Ich verstehe den Einsatz der Hash-Funktion für eine Performance-Verbesserung.
 * Ich kenne die wichtigsten Implementationen und ihre Einsatzmöglichkeiten: ArrayList, HashSet, HashMap
-* Ich verstehen wie die Klasse `ArrayList` funkioniert und kann diese anwenden.
-* Ich verstehen wie die Klasse `HashSet` funkioniert und kann diese anwenden.
-* Ich verstehen wie die Klasse `HashMap` funkioniert und kann diese anwenden.
-* Ich kenne die Funktionsweise der Klasse Stack und kann diese anwenden.
+* Ich verstehen die Funktionsweise und Anwendung der Klasse `ArrayList`.
+* Ich verstehen die Funktionsweise und Anwendung der Klasse `HashSet`.
+* Ich verstehen die Funktionsweise und Anwendung der Klasse `HashMap`.
+* Ich verstehen die Funktionsweise und Anwendung der Klasse `Stack`.
 * Ich kenne die Funktionsweise und der Unterschied der Klassen Queue + Deque und kann diese anwenden.
-* Ich kenne die Funktionsweise der Klasse LinkedList und kann diese anwenden.
+* Ich verstehen die Funktionsweise und Anwendung der Klasse `LinkedList`.
 
 #### Voraussetzungen
 
