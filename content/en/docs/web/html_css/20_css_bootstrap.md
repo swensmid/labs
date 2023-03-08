@@ -2,7 +2,7 @@
 title: "Bootstrap"
 type: docs
 linkTitle: "Bootstrap"
-weight: 19
+weight: 20
 date: 2022-04-19
 description: >
   Einmal CSS schreiben genügt! Brauch ein CSS-Framework, damit wir nicht
