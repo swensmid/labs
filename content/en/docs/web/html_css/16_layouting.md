@@ -5,7 +5,7 @@ linkTitle: "Layouting"
 weight: 16
 date: 2022-04-19
 description: >
-  Block-Elemente layouten.
+  Modul #F3 - HTML und CSS - Block-Elemente layouten.
 ---
 
 Du hast dich sicherlich schon gefragt, wie du mehrere Elemente nebeneinander haben kannst. Hierfür müssen wir ein paar Worte über Layouting verlieren.

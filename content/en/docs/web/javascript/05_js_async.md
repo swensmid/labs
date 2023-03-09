@@ -5,7 +5,7 @@ linkTitle: "Asynchrone Anfragen"
 weight: 5
 date: 2022-04-19
 description: >
-  Webrequest mit JavaScript.
+  Modul #F4 - JavaScript - Web-Request mit JavaScript.
 ---
 
 ## Webanfrage mit JavaScript

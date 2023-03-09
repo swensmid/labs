@@ -5,7 +5,7 @@ linkTitle: "Bootstrap"
 weight: 20
 date: 2022-04-19
 description: >
-  Einmal CSS schreiben genügt! Brauch ein CSS-Framework, damit wir nicht
+  Modul #F3 - HTML und CSS - Einmal CSS schreiben genügt! Brauch ein CSS-Framework, damit wir nicht
   immer wieder die gleichen CSS-Regeln schreiben.
 ---
 

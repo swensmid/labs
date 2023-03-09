@@ -5,7 +5,7 @@ linkTitle: "DOM-Manipulation"
 weight: 3
 date: 2022-04-19
 description: >
-  Die Website mit Hilfe von JavaScript verändern.
+  Modul #F4 - JavaScript - Website mit Hilfe von JavaScript verändern.
 ---
 
 ## Auf DOM-Elemente zugreifen

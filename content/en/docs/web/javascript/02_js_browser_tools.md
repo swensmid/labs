@@ -5,7 +5,7 @@ linkTitle: "Konsole"
 weight: 2
 date: 2022-04-19
 description: >
-  Konsole des Browsers benutzen.
+  Modul #F4 - JavaScript - Konsole des Browsers benutzen.
 ---
 
 ## Eine Nachricht loggen

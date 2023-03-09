@@ -5,7 +5,7 @@ linkTitle: "CSS-Selektoren"
 weight: 12
 date: 2022-04-14
 description: >
-  Die verschiedenen CSS-Selektoren.
+  Modul #F3 - HTML und CSS - Die verschiedenen CSS-Selektoren.
 ---
 
 ## Was gibt es für CSS-Selektoren?

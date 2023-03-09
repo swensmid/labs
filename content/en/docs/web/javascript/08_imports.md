@@ -5,9 +5,11 @@ linkTitle: "ES6: Importe"
 weight: 8
 date: 2023-01-09
 description: >
-  Seit ES2015 (ES6) gibt es in JavaScript die Möglichkeit, Exporte aus anderen JavaScript-Dateien zu importieren.
+  Modul #F4 - JavaScript - Von anderen JavaScript-Dateien importieren
 ---
 
+## Motivation
+Seit ES2015 (ES6) gibt es in JavaScript die Möglichkeit, Exporte aus anderen JavaScript-Dateien zu importieren.
 
 ## Ziele
 * Du weisst, wann du in JavaScript das Keyword `import` brauchen kannst.

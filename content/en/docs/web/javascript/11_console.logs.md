@@ -5,8 +5,12 @@ linkTitle: "Advanced console.log(...)'s"
 weight: 11
 date: 2023-01-09
 description: >
-  Die JavaScript-Konsole bietet viele hilfreiche Tools an, um Text zu loggen. Diese Möglichkeiten schauen wir uns hier an.
+  Modul #F4 - JavaScript - Die Browser-Konsole
 ---
+
+
+## Motivation
+Die JavaScript-Konsole bietet viele hilfreiche Tools an, um Text zu loggen. Diese Möglichkeiten schauen wir uns hier an.
 
 
 ## Ziele

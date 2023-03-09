@@ -5,7 +5,7 @@ linkTitle: "JavaScript trainieren"
 weight: 4
 date: 2022-04-19
 description: >
-  Trainiere nun deine Fähigkeiten mit JavaScript.
+  Modul #F4 - JavaScript - Trainiere deine Fähigkeiten mit JavaScript.
 ---
 
 ## Übung macht den Meiser

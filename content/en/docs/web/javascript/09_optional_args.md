@@ -5,9 +5,11 @@ linkTitle: "ES6: Optionale Argumente"
 weight: 9
 date: 2023-01-09
 description: >
-  Seit ES2015 (ES6) gibt es in JavaScript die Möglichkeit, den Parametern von Methoden einen Default-Wert zu geben.
+  Modul #F4 - JavaScript - Funktionen mit optionalen Argumenten
 ---
 
+## Motivation
+Seit ES2015 (ES6) gibt es in JavaScript die Möglichkeit, den Parametern von Methoden einen Default-Wert zu geben.
 
 ## Ziele
 * Du weisst, wie du in JavaScript optionale Argumente in einem Parameter einen Default-Wert zuweisen kannst.
