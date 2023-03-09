@@ -5,7 +5,7 @@ linkTitle: "Übergänge und Animationen"
 weight: 18
 date: 2023-03-07
 description: >
-  Erstelle professionelle Animationen - nur mit CSS und komplett ohne JavaScript.
+  Modul #F3 - HTML und CSS - Erstelle professionelle Animationen - nur mit CSS und komplett ohne JavaScript.
 ---
 
 ## Ziele
@@ -42,7 +42,7 @@ In CSS kannst du sehr einfach Übergänge erstellen. Zum Beispiel kannst du unge
 
 Probiere es zuerst einmal aus!
 
-Aber wie funktioniert das? Beschränken wir uns für bei diesem Beispiel einmal nur auf die Änderung der Breite. Da in der regulären CSS-Regel (also ohne `:hover`) die Regel `transition: width 1s` steht, reagiert dieses HTML-Element auf eine Änderung in der Breite mit einem Übergang (transition). In dieser CSS-Regel war `width` der Name des CSS-Properties, auf welche der Übergang angewandt wurde. Die Angabe `1s` spezifiziert, dass der Übergang 1 Sekunde lang dauert.
+Aber wie funktioniert das? Beschränken wir uns bei diesem Beispiel einmal nur auf die Änderung der Breite. Da in der regulären CSS-Regel (also ohne `:hover`) die Regel `transition: width 1s` steht, reagiert dieses HTML-Element auf eine Änderung in der Breite mit einem Übergang (transition). In dieser CSS-Regel war `width` der Name des CSS-Properties, auf welche der Übergang angewandt wurde. Die Angabe `1s` spezifiziert, dass der Übergang 1 Sekunde lang dauert.
 
 Oft siehst du die Angabe der Transition in diesem Format:
 
