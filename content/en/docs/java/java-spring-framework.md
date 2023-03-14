@@ -9,7 +9,7 @@ description: >
 #### Ziele
 
 * Ich weiss, was ein Java-Framework ist.
-* Ich kenne einige Vor- und Nachteile beim Anwenden eines Java-Frameworks.
+* Ich kenne einige Vor- und Nachteile beim Verwenden eines Java-Frameworks.
 * Ich kenne ein paar Module des Spring-Frameworks (z.B. Core, Data-Access, Web usw.) und weiss, welche Aufgaben sie erfüllen.
 * Ich kenne die wichtigste Spring-Projekte (z.B. Spring-Boot, Spring-Cloud, Spring-Security usw.) und weiss wofür ich diese einsetzen kann.
 * Ich weiss, was "Inversion of Control" (IoC) bedeutet und kenne dessen Vorteile.
