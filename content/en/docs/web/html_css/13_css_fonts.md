@@ -5,7 +5,7 @@ linkTitle: "Schriftarten"
 weight: 13
 date: 2022-04-19
 description: >
-  Arten von Schriftarten.
+  Modul #F3 - HTML und CSS - Arten von Schriftarten.
 ---
 
 ## Arten von Schriftarten

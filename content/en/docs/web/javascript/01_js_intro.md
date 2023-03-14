@@ -5,7 +5,7 @@ linkTitle: "Intro"
 weight: 1
 date: 2022-04-19
 description: >
-  Nun sagst du dem Browser, was er machen soll!
+  Modul #F4 - JavaScript - Code im Browser auführen
 ---
 
 Jetzt wird es Zeit, dass du auch Programm-Logik auf deiner Website einbauen kannst. Dafür lernst du gleich die Programmiersprache JavaScript kennen, die von praktisch allen bekannten Browsern unterstützt wird.

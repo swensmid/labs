@@ -5,7 +5,7 @@ linkTitle: "Sizing"
 weight: 15
 date: 2022-04-19
 description: >
-  Dimensionierung von (Inline-)Block-Elementen mit CSS.
+  Modul #F3 - HTML und CSS - Dimensionierung von (Inline-)Block-Elementen mit CSS.
   
   Auf dieser Seite erfährst du, wie du die Grössen von Elementen definierst.
 ---

@@ -5,7 +5,7 @@ linkTitle: "Farben"
 weight: 14
 date: 2022-04-19
 description: >
-  Arten, um Farben anzugeben.
+  Modul #F3 - HTML und CSS - Arten, um Farben anzugeben.
 ---
 
 ## Zuweisen von Farben

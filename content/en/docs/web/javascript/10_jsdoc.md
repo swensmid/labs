@@ -5,9 +5,11 @@ linkTitle: "JSDoc"
 weight: 10
 date: 2023-01-09
 description: >
-  Funktionen mit einer Beschreibung versehen, die bei Vorschlägen angezeigt wird.
+  Modul #F4 - JavaScript - Funktionen mit einer Beschreibung versehen.
 ---
 
+## Motivation
+Wenn du existierende Funktionen benutzen möchtest, dann wäre es praktisch, wenn deine IDE dir mitteilt, was die Funktion tut und welche Typen die Parameter haben. Dies kannst du mit JSDoc erreichen.
 
 ## Ziele
 * Du weisst, wie du in JavaScript bei Klassen und Funktionen eine Beschreibung hinzufügen kannst, die dir deine Entwicklungsumgebung anzeigt, wenn du mittels Auto-Completion diese Variable auswählst.

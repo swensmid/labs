@@ -5,7 +5,7 @@ linkTitle: "Timeouts und Intervalle"
 weight: 6
 date: 2022-04-19
 description: >
-  Code verzögert ausführen.
+  Modul #F4 - JavaScript - Code verzögert ausführen.
 ---
 
 ## Code verzögert ausführen: setTimeout(...)
