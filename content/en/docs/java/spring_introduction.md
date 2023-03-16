@@ -7,6 +7,7 @@ description: >
 sectionnumber: 6
 ---
 
+![](../general/outdated.png "Site is outdated")
 
 ## {{% param sectionnumber %}}.0: Meta
 
