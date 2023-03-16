@@ -6,6 +6,8 @@ description: >
   Modul #J11 - Spring Boot
 ---
 
+![](../general/under-construction.png "Under Construction")
+
 #### Ziele
 
 * Ich weiss, was Spring-Boot ist und wozu es verwendet wird.

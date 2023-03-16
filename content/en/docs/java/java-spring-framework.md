@@ -6,6 +6,8 @@ description: >
   Modul #J10 - Spring Basics IoC / DI
 ---
 
+![](../general/under-construction.png "Under Construction")
+
 #### Ziele
 
 * Ich weiss, was ein Java-Framework ist.
