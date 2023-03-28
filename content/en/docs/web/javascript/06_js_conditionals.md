@@ -5,15 +5,15 @@ linkTitle: "Conditionals"
 weight: 6
 date: 2023-03-24
 description: >
-Modul #F4 - JavaScript - Seit ES2015 (ES6) gibt es in JavaScript weitere neue Möglichkeiten, wie Variablen definiert werden können. Hier schauen wir uns einige davon an.
+    Modul #F4 - JavaScript - Es gibt in JavaScript verschiedene Basic oder nützliche Conditionals. Diese schauen wir hier an.
 ---
 
 ## Ziele
 * Du weisst, welche verschiedenen Conditionals es gibt.
+* Du kennst, die Vorteile von einem Switch-Statement und weisst wie man es anwendet.
 * Du weisst, den Unterschied zwischen Vergleiches und Logische Operatoren.
 * Du weisst, was truthy und falsy Werte sind.
-* Du kennst, den ternary Operator und kannst diesen anwenden.
-* Du kennst, die Vorteile von einem Switch-Statement und weisst wie man es anwendet.
+* Du kennst, die special Operators und kannst diesen anwenden.
 
 
 ### Conditionals
@@ -354,16 +354,80 @@ console.log([]) // []
 console.log(!![]) // true
 ```
 #### Logische OR Assignment Operator (`||=`)
+Der Operator `||=` prüft, ob die linke Seite des Operators falsy ist. Wenn die linke Seite falsy ist, wird der rechte Operand ausgewertet und der Wert diesem zugewiesen. Wenn die linke Seite truthy ist, wird der linke Wert beibehalten und kein weiterer Ausdruck ausgewertet.
 
+Beispiel:
+```javascript
+let falsyVariable = ''
+let truthyVariable = 'Welt!'
 
+falsyVariable ||= 'Hallo'
+truthyVariable ||= 'Mensch'
+
+console.log(falsyVariable) // 'Hallo'
+console.log(truthyVariable) // 'Welt'
+```
 #### Logische AND Assignment Operator (`&&=`)
+Der Operator `&&=` prüft, ob die linke Seite des Operators truthy ist. Wenn die linke Seite truthy ist, wird der rechte Operand ausgewertet und der Wert diesem zugewiesen. Wenn die linke Seite falsy ist, wird der linke Wert beibehalten und kein weiterer Ausdruck ausgewertet.
 
+Beispiel:
+```javascript
+let falsyVariable = ''
+let truthyVariable = 'Welt!'
 
+falsyVariable &&= 'Hallo'
+truthyVariable &&= 'Mensch'
+
+console.log(falsyVariable) // ''
+console.log(truthyVariable) // 'Mensch'
+```
 #### nullish coalescing Assignment Operator (`??=`)
+Der Operator `??=` prüft, ob die linke Seite des Operators `null` oder `undefined` ist. Wenn die linke Seite `null` oder `undefined` ist, wird der rechte Operand ausgewertet und der Wert diesem zugewiesen. Wenn die linke Seite einen anderen falsy Wert als `null` oder `undefined` hat, wird der linke Wert beibehalten und kein weiterer Ausdruck ausgewertet.
 
+Beispiel:
+```javascript
+let nullVariable = null
+let falsyVariable = ''
 
+nullVariable ??= 'hello'
+falsyVariable ??= 'world'
+
+console.log(nullVariable) // 'hello'
+console.log(falsyVariable) // ''
+```
 #### nullish coalescing Operator (`??`)
+Der Operator `??` gibt den linken Ausdruck zurück, wenn er `null` oder `undefined` ergibt, andernfalls gibt er den rechten Ausdruck zurück. Im Gegensatz zum logischen OR-Operator (`||`) behandelt der Nullish Coalescing-Operator nur `null` und `undefined` als falsy Werte, und alle anderen Werte werden als truthy behandelt.
 
+Beispiel:
+```javascript
+const nullCheck = null ?? 'left is null'
+console.log(nullCheck) // 'left is null'
 
-### ternary Operator
+const zeroCheck = 0 ?? 42
+console.log(zeroCheck) // 0 
 
+const undefinedCheck = undefined ?? 'left is undefined'
+console.log(undefinedCheck) // 'left is undefined'
+
+const emptyStringCheck = '' ?? 'empty string'
+console.log(emptyStringCheck) // '' weil eon leerer String zwar falsy aber nicht null oder undefined ist
+```
+### ternary Operator (`?:`)
+Der Ternary Operator (`?:`) ist ein Operator, der die Verwendung von if/else-Statements reduziert und es ermöglicht, eine Bedingung in einer einzigen Anweisung auszudrücken.
+
+Syntax:
+```javascript
+condition ? expression1 : expression2
+```
+Die Bedingung (condition) wird zuerst ausgewertet. Wenn diese `true` ist, wird expression1 ausgeführt, andernfalls wird expression2 ausgeführt.
+
+Beispiel:
+```javascript
+const age = 18;
+const canVote = age >= 18 ? 'yes' : 'no';
+console.log(canVote); // 'yes'
+
+const oddNumber = 5;
+const result = oddNumber % 2 === 0 ? 'even' : 'odd';
+console.log(result); // 'odd' 
+```
