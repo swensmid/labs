@@ -67,10 +67,10 @@ if (variable == 1) {
 }
 ```
 ```javascript
-const variable = "js"
+const variable = 'js'
 
-if (variable == "js") {
-    // condition ist true, da die variable den Wert "js" hat.
+if (variable == 'js') {
+    // condition ist true, da die variable den Wert 'js' hat.
 } else {
     // condition ist false
 }
@@ -82,14 +82,14 @@ switch-Statements in JavaScript ermöglichen es, verschiedene Codeblöcke basier
 Ein switch-Statement besitzt auch immer ein default Case, in diesen Codeblock wir der Code festgehalten der ausgeführt werden soll, wenn keine der Bedingungen zutrifft. 
 
 ```javascript
-const expression = "Auto"
+const expression = 'Auto'
 
 switch (expression) {
-    case "Bus":
-        // Code, der ausgeführt wird, wenn Ausdruck gleich "Bus" ist
+    case 'Bus':
+        // Code, der ausgeführt wird, wenn Ausdruck gleich 'Bus' ist
         break;
-    case "Auto":
-        // Code, der ausgeführt wird, wenn Ausdruck gleich "Auto" ist
+    case 'Auto':
+        // Code, der ausgeführt wird, wenn Ausdruck gleich 'Auto' ist
         break;
     default:
         // Code, der ausgeführt wird, wenn keine der Bedingungen zutrifft
@@ -99,14 +99,14 @@ switch (expression) {
 
 Die break in den Cases sind dazu da, das switch-Statement abzubrechen, wenn der Case zutraf und der Codeblock ausgeführt wurde.
 ```javascript
-const expression = "Auto"
+const expression = 'Auto'
 
 switch (expression) {
-    case "Bus":
-        // Code, der ausgeführt wird, wenn Ausdruck gleich "Bus" ist
+    case 'Bus':
+        // Code, der ausgeführt wird, wenn Ausdruck gleich 'Bus' ist
         break;
-    case "Auto":
-        // Code, der ausgeführt wird, wenn Ausdruck gleich "Auto" ist
+    case 'Auto':
+        // Code, der ausgeführt wird, wenn Ausdruck gleich 'Auto' ist
         // break; das break wurde nicht gesetzt oder auskomentiert
     default:
         // Code, der ausgeführt wird, wenn keine der Bedingungen zutrifft 
@@ -130,7 +130,7 @@ Vergleichsoperatoren werden verwendet, um den Wert zweier Variablen oder Ausdrü
 ```javascript
 const a = 5
 const b = 10
-const c = "5"
+const c = '5'
 const d = 10
 
 // Gleichheit
@@ -168,8 +168,8 @@ console.log(b <= d) // true
 
 Hier sind einige Beispiele, die den Unterschied zwischen `==` und `=== veranschaulichen:
 ```javascript
-console.log(5 == "5") // true
-console.log(5 === "5") // false
+console.log(5 == '5') // true
+console.log(5 === '5') // false
 
 console.log(true == 1) // true, weil Binär 0 für false ist und alles über 0 als true
 console.log(true === 1) // false
@@ -208,15 +208,15 @@ const b = 10
 
 if (a > 0 && b == 15) {
     // Wenn beide Bedingungen true sind, wird der folgende Codeblock ausgeführt
-    console.log("1")
+    console.log('1')
 } else if (a > 0 && b == 10) {
     // Wenn beide Bedingungen true sind, wird der folgende Codeblock ausgeführt
-    console.log("2")
+    console.log('2')
 } else {
     // Wenn beide Bedingungen nicht true sind, wird der folgende Codeblock ausgeführt
-    console.log("3")
+    console.log('3')
 }
-// Expected output: "2"
+// Expected output: '2'
 
 ```
 
@@ -242,15 +242,15 @@ const b = 10
 
 if (a < 0 || b == 15) {
     // Wenn eine der Bedingungen true ist, wird der folgende Codeblock ausgeführt
-    console.log("1")
+    console.log('1')
 } else if (a > 0 || b == 15) {
     // Wenn eine der Bedingungen true ist, wird der folgende Codeblock ausgeführt
-    console.log("2")
+    console.log('2')
 } else {
     // Wenn beide Bedingungen nicht true sind, wird der folgende Codeblock ausgeführt
-    console.log("3")
+    console.log('3')
 }
-// Expected output: "2"
+// Expected output: '2'
 ```
 
 NOT (logisches NOT):
@@ -262,13 +262,13 @@ const a = 5
 const b = 10
 
 if (!(a > 0 && b == 10)) {
-    console.log("1")
+    console.log('1')
 } else if (!(a > 0 && b == 15)) {
-    console.log("2")
+    console.log('2')
 } else {
-    console.log("3")
+    console.log('3')
 }
-// Expected output: "2"
+// Expected output: '2'
 ```
 
 ### truthy und falsy

@@ -137,6 +137,29 @@ Folgender Grundsatz gilt:
 
 Wenn du wissen willst, wieso `var` nicht mehr verwendet werden sollte, dann kannst du dein Wissen hier vertiefen: https://medium.com/@codingsam/awesome-javascript-no-more-var-working-title-999428999994.
 
+### typeof Operator
+`typeof` ist ein Operator, der den Datentyp eines Ausdrucks oder einer Variablen zurückgibt. Er kann verwendet werden, um zu überprüfen, ob eine Variable einen bestimmten Datentyp hat, bevor eine Operation durchgeführt wird, die nur für diesen Datentyp geeignet ist.
+
+`typeof` gibt einen String zurück, der den Datentyp des Operanden darstellt. Die möglichen Rückgabewerte sind:
+* `undefined` für undefined-Werte
+* `boolean` für boolesche Werte
+* `number` für Zahlen
+* `string` für Zeichenketten
+* `object` für Objekte (einschließlich Arrays und null-Werten)
+* `function` für Funktionen
+
+```javascript
+typeof 42           // 'number'
+typeof 'hello'      // 'string'
+typeof true         // 'boolean'
+typeof undefined    // 'undefined'
+typeof null         // 'object'
+typeof []           // 'object'
+typeof {}           // 'object'
+typeof function(){} // 'function'
+```
+
+Es ist wichtig zu beachten, dass typeof nicht immer genau den Datentyp zurückgibt, den man erwartet. Insbesondere gibt typeof null "object" zurück, obwohl null eigentlich kein Objekt ist. Es ist daher oft besser, zusätzlich zu typeof andere Überprüfungen durchzuführen, um sicherzustellen, dass eine Variable den erwarteten Datentyp hat.
 
 ### Destructuring Assignment
 In JavaScript siehst du sehr oft, dass mehrere Variablen auf einmal definiert werden.

@@ -25,23 +25,23 @@ function sum(number1, number2) {
 }
 ```
 
-Um die Funktion aufzurufen, können wir den Funktionsnamen gefolgt von Rundenklammern verwenden und die Argumente innerhalb der Rundenklammern übergeben:
+Um die Funktion aufzurufen, können wir den Funktionsnamen gefolgt von Runden klammern verwenden und die Argumente innerhalb dieser übergeben:
 ```javascript
 let total = sum(3, 5)
 console.log(total) // 8
 ```
 
-Man kann auch Funktionen ohne Argumente aufrufen, indem man einfach den Funktionsnamen gefolgt von Klammern verwendet:
+Man kann auch Funktionen ohne Argumente aufrufen, indem man einfach die Klammern leer lässt:
 ```javascript
 function sayHello() {
-    console.log("Hello!");
+    console.log('Hello!');
 }
 
 sayHello(); // 'Hello!'
 ```
 
 ### Default-Parameter
-In JavaScript können Default-Parameter in Funktionen verwendet werden, um automatisch einen Standardwert für einen Funktionsparameter zu setzen, wenn kein Wert oder `undefined an diesen Parameter übergeben wird. Dies erleichtert die Handhabung von Funktionen mit variablen Argumenten und ermöglicht es Entwicklern, Funktionen mit weniger Code zu schreiben. Default-Parameter sind nützlich, um die Lesbarkeit von Code zu erhöhen, Fehler zu vermeiden und den Codeumfang zu reduzieren.
+In JavaScript können Default-Parameter in Funktionen verwendet werden, um automatisch einen Standardwert für einen Funktionsparameter zu setzen, wenn kein Wert oder `undefined` an diesen Parameter übergeben wird. Dies erleichtert die Handhabung von Funktionen mit variablen Argumenten und ermöglicht es Entwicklern, Funktionen mit weniger Code zu schreiben. Default-Parameter sind nützlich, um die Lesbarkeit von Code zu erhöhen, Fehler zu vermeiden und den Codeumfang zu reduzieren.
 
 Der Default-Parameter von `number2` ist `10`, wenn also `number2` im Funktionsaufruf nicht explizit angegeben wird oder `undefined` ist, wird automatisch der Standardwert von `10` verwendet.
 ```javascript
@@ -91,39 +91,4 @@ const sum = function(number1, number2) {
 
 let total = sum(3, 5)
 console.log(total) // 8
-```
-
-### Globaler und Block-Scope
-In JavaScript gibt es zwei Arten von Scopes, nämlich den globalen Scope und den Block-Scope. Der Scope definiert den Bereich, in dem eine Variable oder eine Funktion sichtbar ist und verwendet werden kann.
-
-#### Globaler Scope:
-Der globale Scope bezieht sich auf den Scope, der im gesamten Code verfügbar ist. Variablen und Funktionen, die außerhalb einer Funktion definiert werden, gehören zum globalen Scope. Diese Variablen und Funktionen können von überall im Code aufgerufen und verwendet werden.
-
-In diesem Beispiel wird die Variable name und die Funktion `helloWorld` im globalen Scope definiert. Die Funktion hat Zugriff auf die Variable `world`, die ebenfalls im globalen Scope definiert ist.
-```javascript
-const world = "World"
-
-function helloWorld() {
-  console.log(`Hello ${world}!`)
-}
-
-helloWorld() // 'Hello World!'
-```
-
-#### Block-Scope:
-Block-Scope ist der Scope, der innerhalb eines Block-Statements wie z.B. `if`, `for`oder `while` definiert ist. Variablen, die innerhalb eines Block-Statements mit `let` oder `const definiert werden, gehören zum Block-Scope und sind nur innerhalb des Block-Statements sichtbar.
-
-Funktionen können auch in Block-Statements definiert werden, aber der Scope einer Funktion hängt nicht davon ab, wo sie definiert wird, sondern wo sie aufgerufen wird. Wenn eine Funktion innerhalb eines Block-Statements definiert wird, kann sie nur innerhalb des Blocks aufgerufen werden, aber ihre Variablen und Parameter gehören zum Funktions-Scope und sind nicht Teil des Block-Scope.
-
-Im Beispiel wird die Variable `name im globalen Scope definiert und innerhalb des if-Statements mit dem gleichen Namen neu definiert. Innerhalb des if-Statements hat die Variable name den Wert "Anna" und wird nur innerhalb des Blocks sichtbar sein. Außerhalb des Blocks wird die Variable name ihren ursprünglichen Wert "Max" behalten.
-```javascript
-const name = "Max"
-const isBlockScope = true
-
-if (isBlockScope) {
-    const name = "Anna"
-    console.log(`Hallo ${name}!`) // 'Hallo Anna!'
-}
-
-console.log(`Hallo ${name}!`) // 'Hallo Max!'
 ```
