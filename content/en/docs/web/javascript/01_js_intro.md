@@ -39,6 +39,46 @@ Weiter unten siehts du ein `<script>`-Element. Dort drin ist eine Funktion namen
 Wie du siehst, wird die selbst definierte Funktion beim Klick auf den Button aufgerufen. Dies passiert, weil du diesen Aufruf im `onclick`-Attribut des `<button>`s definiert hast. Beachte in diesem Beispiel, dass nicht die Funktion sondern deren Aufruf drin steht. Im Prinzip wird beim Button-Klick der Wert des `onclick`-Attributs ausgeführt. Theoretisch könntest du auch direkt `onclick="alert('Klick mich nicht an!!')"` schreiben.
 </details>
 
+## JavaScript ist Prototyp-basierende Programmiersprache
+JavaScript ist eine prototype-basierte Programmiersprache, was bedeutet, dass die Vererbung und die Erstellung von Objekten auf Prototypen basieren.
+
+Ein Prototyp ist ein vordefiniertes Objekt, das als Vorlage für die Erstellung neuer Objekte dient. Wenn ein neues Objekt erstellt wird, erbt es automatisch Eigenschaften und Methoden von seinem Prototypen.
+
+```javascript
+// create Object-Prototyp
+var personProto = {
+  name: '',
+  age: 0,
+
+  speak: function() {
+    console.log('Hello World!');
+  }
+}
+
+// create new object based on prototyp
+let person1 = Object.create(personProto)
+person1.name = 'John'
+person1.age = 30
+
+// Erstellen eines weiteren Objekts basierend auf dem Prototypen
+let person2 = Object.create(personProto)
+person2.name = 'Jane'
+person2.age = 25
+
+console.log(person1) // { name: "John", age: 30 }
+console.log(person2) // { name: "Jane", age: 25 }
+person1.speak() //'Hello World!'
+```
+
+## JavaScript besitzt keine Typisierung
+JavaScript ist eine dynamisch typisierte Sprache, was bedeutet, dass die Typen der Variablen und Ausdrücke erst zur Laufzeit und nicht zur Kompilierungszeit festgelegt werden. Im Gegensatz dazu haben andere Sprachen wie Java, C++ und Python eine statische Typisierung, bei der der Typ einer Variablen oder eines Ausdrucks zur Kompilierungszeit festgelegt wird.
+
+In JS können Variablen während der Laufzeit ohne Einschränkungen ihren Typ ändern. Beispielsweise kann eine Variable zunächst als String initialisiert werden und später im Code auf einen numerischen Wert aktualisiert werden. Dies liegt daran, dass JS die Datentypen von Variablen dynamisch zuweist und ihnen erlaubt, sich während der Laufzeit zu ändern.
+
+Obwohl diese Flexibilität ein Vorteil von JS ist, kann sie auch zu unerwarteten Verhaltensweisen führen, wenn der Entwickler nicht aufpasst. In der Tat kann die mangelnde Typsicherheit in JS ein Nachteil sein, da sie dazu führen kann, dass sich Fehler erst zur Laufzeit manifestieren, anstatt dass sie bereits beim Kompilieren erkannt werden.
+
+Allerdings gibt es in modernen Versionen von JS (z.B. ab ES6) die Möglichkeit, Optionale Typisierung durch das Verwenden von Typ-Annotationen oder TypeScript zu implementieren, welche eine statische Typisierung einführen. Dies kann helfen, die Lesbarkeit und die Sicherheit von Code zu erhöhen.
+
 ## JavaScript einbinden
 
 Wie du im oberen Beispiel gesehen hast, wird Javascript via `<script>`-Tag eingebunden. Dein Code kann direkt im `<script>`-Tag geschrieben werden:

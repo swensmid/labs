@@ -167,7 +167,7 @@ array.forEach((element) => {
 // 5
 ```
 
-Im Gegensatz zum for Loop bietet der forEach Loop jedoch weniger Kontrolle über die Schleife. Zum Beispiel kann man den Loop nicht mit `break` oder `continue` unterbrechen oder überspringen. Außerdem gibt es keine Möglichkeit, auf den Index jedes Elements im Array zuzugreifen. Wenn man den Index benötigen, müsste man einen Zähler verwenden.
+Im Gegensatz zum for Loop bietet der forEach Loop jedoch weniger Kontrolle über den Loop. Zum Beispiel kann man den Loop nicht mit `break` oder `continue` unterbrechen oder überspringen. Außerdem gibt es keine Möglichkeit, auf den Index jedes Elements im Array zuzugreifen. Wenn man den Index benötigen, müsste man einen Zähler verwenden.
 
 ### for...of-Loop
 Der for...of Loop ist eine Loop, die speziell dafür ausgelegt ist, Arrays oder andere iterierbare Objekte wie Maps, Sets, Strings usw. zu durchlaufen. Der for...of Loop ist in der Regel einfacher zu lesen und zu schreiben als ein traditioneller for Loop.
@@ -186,7 +186,7 @@ for (let element of array) {
 
 Der for...of Loop hat die gleichen Einschränkungen wie der Foreach. 
 
-### Array wichtige Funktionen
+### Array wichtige Funktionen (Higher Order Functions)
 
 #### push()
 Mit der `push()`Methode kann man ein Element am Ende des Arrays hinzufügen.
@@ -357,6 +357,62 @@ const numbers = [1, 2, 3, 4, 5]
 const evenNumbers = numbers.filter(num => num % 2 === 0)
 
 console.log(evenNumbers) // [2, 4] 
+```
+
+#### sort()
+Die Methode `sort()` wird angewendet, um die Elemente in einem Array zu sortieren. Die Standard-Sortierreihenfolge ist alphanumerisch, was bedeutet, dass die Elemente nach ihrem Unicode-Codepunkt sortiert werden.
+
+```javascript
+const fruits = ['Banana', 'Mango', 'Apple', 'Orange']
+const sortedFruits = fruits.sort()
+
+console.log(sortedFruits) // ["Apple", "Banana", "Mango", "Orange"]
+```
+
+`sort()` kann auch mit einer Vergleichsfunktion verwendet werden, um die Elemente auf andere Weise zu sortieren. Die Vergleichsfunktion sollte zwei Argumente haben und einen negativen Wert zurückgeben, wenn das erste Argument vor dem zweiten Argument in der Sortierreihenfolge stehen soll, einen positiven Wert, wenn das erste Argument nach dem zweiten Argument stehen soll, und Null, wenn sie gleich sind.
+```javascript
+const numbers = [10, 5, 20, 3]
+numbers.sort((a, b) => a - b)
+
+console.log(numbers) // [3, 5, 10, 20]
+```
+
+#### includes()
+Die `includes()` Methode wird verwendet, um zu prüfen, ob ein bestimmtes Element in einem Array vorhanden ist oder nicht. Die Funktion gibt "true" zurück, wenn das Element gefunden wird, andernfalls gibt sie "false" zurück.
+
+```javascript
+const fruits = ['Banana', 'Mango', 'Apple', 'Orange']
+const isAppleInFruits = fruits.includes('Apple')
+
+console.log(isAppleInFruits) // true
+```
+
+`includes()` kann auch mit einem optionalen zweiten Parameter verwendet werden, der den Index angibt, ab dem die Suche beginnen soll. Wenn dieser Parameter nicht angegeben wird, beginnt die Suche am Anfang des Arrays.
+```javascript
+const fruits = ['Banana', 'Mango', 'Apple', 'Orange']
+const isAppleInFruits = fruits.includes('Banana', 2)
+
+console.log(isAppleInFruits) // false
+```
+
+#### some()
+Die Methode `some()` prüft, ob zumindest ein Element in einem Array den angegebenen Test bestehen würde. Die Funktion gibt "true" zurück, wenn mindestens ein Element den Test besteht, andernfalls gibt sie "false" zurück.
+
+```javascript
+const fruits = ['Banana', 'Mango', 'Apple', 'Orange']
+const isAppleInFruits = fruits.some(fruit => fruit === 'Apple')
+
+console.log(isAppleInFruits) // true
+```
+
+#### find()
+Die `find()` Methode wird verwendet, um das erste Element in einem Array zu finden, das den angegebenen Test bestehen würde. Die Funktion gibt das gefundene Element zurück, falls eines gefunden wird, andernfalls gibt sie "undefined" zurück.
+
+```javascript
+const fruits = ['Banana', 'Mango', 'Apple', 'Orange']
+const apple = fruits.find(fruit => fruit === 'Apple')
+
+console.log(apple) // 'Apple'
 ```
 
 #### reduce()

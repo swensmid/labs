@@ -2,11 +2,14 @@
 title: "Asynchrone Anfragen"
 type: docs
 linkTitle: "Asynchrone Anfragen"
-weight: 5
+weight: 12
 date: 2022-04-19
 description: >
   Modul #F4 - JavaScript - Web-Request mit JavaScript.
 ---
+
+## Promises
+// TODO
 
 ## Webanfrage mit JavaScript
 Wenn du eine Webanwendung schreibst, dann muss deine Website (=Frontend) wahrscheinlich Daten von (d)einem Backend abfragen.
