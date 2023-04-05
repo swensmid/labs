@@ -5,11 +5,13 @@ linkTitle: "Maps und Sets"
 weight: 10
 date: 2023-03-31
 description: >
-    Modul #F4 - JavaScript - In JavaScript 
+    Modul #F4 - JavaScript - In JavaScript gibt es auch Maps and Sets, hier wird angeschaut was es ist.
 ---
 
 ## Ziele
-*
+* Du weisst, den Unterschied zwischen Maps und Sets.
+* Du kannst, Maps und Sets erstellen, bearbeiten und Daten abrufen.
+* Du kannst, Map und Set Iteratoren erklären und weisst was dies ist.
 
 
 ### Map

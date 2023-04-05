@@ -5,11 +5,169 @@ linkTitle: "Asynchrone Anfragen"
 weight: 12
 date: 2022-04-19
 description: >
-  Modul #F4 - JavaScript - Web-Request mit JavaScript.
+  Modul #F4 - JavaScript - Promises und Web-Request mit JavaScript.
 ---
 
+## Ziele
+* Du weisst, was Promises sind und wozu sie verwendet werden.
+* Du kannst, Promises korrekt anwenden in Funktionen.
+* Du weisst die man Web-Request machen kann und die Antworten weiterverwendet.
+
 ## Promises
-// TODO
+Ein Promise repräsentiert einen Wert (oder ein Versprechen), der möglicherweise in der Zukunft verfügbar sein wird.
+
+Promises werden oft verwendet, um asynchrone Operationen wie das Laden von Daten von einem Server oder das Ausführen eines HTTP-Requests zu verwalten. Ein Promise kann sich in einem von drei Zuständen befinden:
+* Pending (ausstehend): Der Promise ist noch nicht erfüllt (`resolve`) oder abgelehnt (`reject) worden.
+* Fulfilled (erfüllt): Die asynchrone Operation wurde erfolgreich abgeschlossen und der Promise enthält den zurückgegebenen Wert.
+* Rejected (abgelehnt): Die asynchrone Operation ist fehlgeschlagen und der Promise enthält den Fehler.
+
+Ein Promise kann mit der Funktion `new Promise()` erstellt werden. Diese Funktion nimmt eine Funktion als Argument, die zwei Parameter enthält: `resolve` und `reject`. `resolve` wird aufgerufen, wenn die Operation erfolgreich abgeschlossen wurde, und `reject`, wenn ein Fehler aufgetreten ist.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+    if (success) {
+        resolve('success')
+    } else {
+        reject('error')
+    }
+})
+```
+
+Promises verwenden zwei Methoden, `then()` und `catch()`, um mit dem Ergebnis oder dem Fehler der asynchronen Operation umzugehen.
+
+Die `then()` Methode wird verwendet, um eine Funktion zu registrieren, die ausgeführt wird, wenn das Promise erfolgreich erfüllt wird. Diese Funktion erhält das Ergebnis des erfüllten Promise als Parameter.
+```javascript
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('success')
+    }, 1000)
+})
+
+promise.then((result) => {
+    console.log(result) // 'success'
+})
+```
+
+`then()` kann jedoch mehrmals hintereinander verwendet werden, um eine Kette von Funktionen zu erstellen, die nacheinander ausgeführt werden, wenn das Promise erfüllt wird.
+
+Durch die Verwendung von `then()` in Kombination `return` in jeder Funktion kann eine Kette von Funktionen erstellt werden, die nacheinander ausgeführt werden, wobei jedes Ergebnis das Argument für die nächste Funktion in der Kette ist.
+```javascript
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(2)
+    }, 1000)
+});
+
+promise
+    .then((result) => {
+        console.log(result) // 2
+        return result * 2
+    })
+    .then((result) => {
+        console.log(result) // 4
+        return result * 2
+    })
+    .then((result) => {
+        console.log(result) // 8
+    })
+```
+
+Die `catch()` Methode wird verwendet, um eine Funktion zu registrieren, die ausgeführt wird, wenn das Promise fehlschlägt. Diese Funktion erhält den Fehler als Parameter.
+```javascript
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject('error')
+    }, 1000)
+})
+
+promise.catch((result) => {
+    console.log(result) // 'error'
+})
+```
+
+`then()` und `catch()` werden fast immer zusammen verwendet, dies würde wie folgt aussehen:
+```javascript
+const number = 10
+const promise = new Promise((resolve, reject) => {
+    if (number > 0) {
+        resolve('success')
+    } else {
+        reject('error')
+    }
+})
+
+promise.then((result) => {
+    console.log(result) // 'success'
+}).catch((error) => {
+    console.error(error) // 'error'
+})
+```
+
+### Promises als Function
+Man kann Promises auch einfach eine function packen indem man das gesamte Promise in der function returned:
+```javascript
+function promiseFunction(number) {
+    return new Promise((resolve, reject) => {
+        if (number > 0) {
+            resolve('success')
+        } else {
+            reject('error')
+        }
+    })
+}
+```
+
+Nun kann man diese Funktion innerhalb von anderen Funktionen verwenden. Wichtig ist das diese mit `await` verwendet werden, um auf das Ergebnis des Promises zu warten, bevor der Rest der Funktion fortgesetzt wird. So kann man sicher gehen das man das Resultat aus dem Promise zur Verfügung hat und es danach in der Funktion verwenden kann. Wenn man jedoch ein `await` in einer Funktion verwendet muss die gesamte Funktion asynchron sein, dazu muss man vor die Funktion das Schlüsselwort `async`schreiben.
+```javascript
+function promiseFunction(number) {
+    return new Promise((resolve, reject) => {
+        if (number > 0) {
+            resolve('success')
+        } else {
+            reject('error')
+        }
+    })
+}
+
+async function callPromiseFunction() {
+    const successResult = await promiseFunction(10)
+    console.log(successResult)
+
+    const errorResult = await promiseFunction(-5)
+    console.log(errorResult)
+}
+
+callPromiseFunction()
+// 'success'
+// Promise {<rejected>: 'error'}
+```
+
+Wenn man es nicht verwenden würde, würde der Code in der Funktion weiterfahren ohne das er evtl. das Resultat aus der Promise hat (das Promise hat noch den Zustand Pending).
+```javascript
+function promiseFunction(number) {
+    return new Promise((resolve, reject) => {
+        if (number > 0) {
+            resolve('success')
+        } else {
+            reject('error')
+        }
+    })
+}
+
+function callPromiseFunction() {
+    const promise = promiseFunction(10).then((result) => {
+        console.log(result)
+    }).catch((error) => {
+        console.error(error)
+    })
+    
+    console.log(promise)
+}
+
+callPromiseFunction()
+// Promise {<pending>}
+// 'success'
+```
 
 ## Webanfrage mit JavaScript
 Wenn du eine Webanwendung schreibst, dann muss deine Website (=Frontend) wahrscheinlich Daten von (d)einem Backend abfragen.
@@ -40,7 +198,7 @@ Die Abfrage kannst du wie folgt durchführen:
 ```javascript
 fetch('https://api.chucknorris.io/jokes/random', {method: 'get'})
 ```
-Du wirst sehen, dass dieser Funktionsaufruf ein `Promise {<pending>}` zurückgibt. Wir sehen, dass die Anfrage noch nicht vorbei ist (pending = anstehend). Dieses `Promise`-Objekt wird die Antwort enthalten, sobald die Antwort verfügbar ist. Da wir sowieso erst weiterfahren möchten, wenn die Antwort bereit ist, interessieren wir uns  nicht für das `Promise`. Daher können wir einfach mit der Fortsetzung des Scriptes solange warten, bis wir die Antwort hätten. Das können wir wie folgt machen:
+Du wirst sehen, dass dieser Funktionsaufruf ein `Promise {<pending>}` zurückgibt. Wir sehen, dass die Anfrage noch nicht vorbei ist (pending = anstehend). Dieses `Promise`-Objekt wird die Antwort enthalten, sobald die Antwort verfügbar ist. Da wir sowieso erst weiterfahren möchten, wenn die Antwort bereit ist, interessieren wir uns nicht für das `Promise`. Daher können wir einfach mit der Fortsetzung des Scriptes solange warten, bis wir die Antwort hätten. Das können wir wie folgt machen:
 
 ```javascript
 await fetch('https://api.chucknorris.io/jokes/random', {method: 'get'})
