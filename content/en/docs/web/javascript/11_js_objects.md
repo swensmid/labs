@@ -215,7 +215,7 @@ const combinedArray = [...array1, ...array2]
 console.log(combinedArray) // [1, 2, 3, 4, 5, 6]
 ```
 
-Das gleiche gilt auch für Objekte.
+Das Gleiche gilt auch für Objekte.
 ```javascript
 const person = { name: 'Max', age: 20 }
 const address = { city: 'New York', country: 'USA' }

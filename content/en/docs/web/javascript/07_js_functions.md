@@ -40,22 +40,6 @@ function sayHello() {
 sayHello(); // 'Hello!'
 ```
 
-### Default-Parameter
-In JavaScript können Default-Parameter in Funktionen verwendet werden, um automatisch einen Standardwert für einen Funktionsparameter zu setzen, wenn kein Wert oder `undefined` an diesen Parameter übergeben wird. Dies erleichtert die Handhabung von Funktionen mit variablen Argumenten und ermöglicht es Entwicklern, Funktionen mit weniger Code zu schreiben. Default-Parameter sind nützlich, um die Lesbarkeit von Code zu erhöhen, Fehler zu vermeiden und den Codeumfang zu reduzieren.
-
-Der Default-Parameter von `number2` ist `10`, wenn also `number2` im Funktionsaufruf nicht explizit angegeben wird oder `undefined` ist, wird automatisch der Standardwert von `10` verwendet.
-```javascript
-function sum(number1, number2 = 10) {
-    return number1 + number2
-}
-
-let total = sum(3, 5)
-let totalWithDefault = sum(3)
-
-console.log(total) // 8
-console.log(totalWithDefault) // 13
-```
-
 ### Arrow Functions
 Arrow-Funktionen sind eine kompakte und prägnante Möglichkeit, Funktionen in JavaScript zu definieren. Im Gegensatz zu herkömmlichen Funktionsdefinitionen haben Arrow-Funktionen einen kürzeren und einfacheren Syntax. Dies ist besonders nützlich, um den Code zu vereinfachen und die Lesbarkeit zu erhöhen. Arrow-Funktionen haben auch eine andere `this`-Binding-Regel im Vergleich zu herkömmlichen Funktionen. In Arrow-Funktionen wird `this` an das `this`-Objekt des äußeren Kontexts gebunden, während bei herkömmlichen Funktionen this an das Objekt des Aufrufers gebunden wird.
 

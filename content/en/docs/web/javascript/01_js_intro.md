@@ -46,7 +46,7 @@ Ein Prototyp ist ein vordefiniertes Objekt, das als Vorlage für die Erstellung 
 
 ```javascript
 // create Object-Prototyp
-var personProto = {
+const personProto = {
   name: '',
   age: 0,
 
@@ -56,18 +56,140 @@ var personProto = {
 }
 
 // create new object based on prototyp
-let person1 = Object.create(personProto)
+const person1 = Object.create(personProto)
 person1.name = 'John'
 person1.age = 30
 
 // Erstellen eines weiteren Objekts basierend auf dem Prototypen
-let person2 = Object.create(personProto)
+const person2 = Object.create(personProto)
 person2.name = 'Jane'
 person2.age = 25
 
 console.log(person1) // { name: "John", age: 30 }
 console.log(person2) // { name: "Jane", age: 25 }
 person1.speak() //'Hello World!'
+```
+
+## Klassen in JavaScript
+Es gibt in JavaScript das Konzept von Klassen, das in der objektorientierten Programmierung verwendet wird.
+```javascript
+// Klasse
+class Person {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+
+    sayHello() {
+        console.log('Hello, my name is ' + this.name)
+    }
+}
+
+// Eine Instanz der Klasse erstellen
+const person = new Person('Max', 30)
+
+// Eine Methode der Klasse aufrufen
+person1.sayHello() // Hello, my name is Max
+```
+
+### static Methods
+Es gibt auch hier statische Methoden, welche in Klassen definiert werden, um Methoden aufzurufen, die nicht an eine bestimmte Instanz der Klasse gebunden sind, sondern direkt auf der Klasse selbst aufgerufen werden können.
+
+Statische Methoden sind oft nützlich, um Hilfsfunktionen in einer Klasse zu definieren, die nicht auf eine bestimmte Instanz der Klasse angewiesen sind. Sie können auch verwendet werden, um Konstruktoren in einer Klasse zu definieren, die nur einmal ausgeführt werden müssen, unabhängig davon, wie viele Instanzen der Klasse erstellt werden.
+
+Statische Methoden werden mit `static` vor der Methodendefinition gekennzeichnet.
+```javascript
+class Person {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+
+    sayHello() {
+        console.log('Hello, my name is ' + this.name)
+    }
+    
+    static sayBye() {
+        console.log('Bye Bye')
+    }
+}
+
+const person = new Person('Max', 30)
+
+console.log(person.name) // Max
+console.log(person.age) // 30
+
+person.sayHello() // Hello, my name is Max
+Person.sayBye() // Bye Bye
+```
+
+Natürlich kann eine Klasse auch von einer anderen Erben (extends):
+```javascript
+class Person {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+}
+
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age)
+        this.major = major
+    }
+}
+
+const person = new Person('Max', 30)
+const student = new Student('John', 20, 'Computer Science')
+
+console.log(person.name) // Max
+console.log(person.age) // 30
+
+console.log(student.name) // John
+console.log(student.age) // 20
+console.log(student.major) // Computer Science
+```
+
+### typeof vs instanceof bei Klassen
+Es gibt zwei Möglichkeiten, den Typ von Objekten zu überprüfen: der `typeof` Operator und der `instanceof` Operator. Wenn es um Klassen geht, haben beide ihre eigenen Anwendungen und Unterschiede:
+
+`typeof` wird verwendet, um den Typ eines Werts zu überprüfen. Wenn eine Klasse definiert wird, wird ihr Typ als "function" zurückgegeben. Für eine Instanz wird "object" zurückgegeben.
+```javascript
+class Person {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+}
+
+const person = new Person('Max', 30);
+
+console.log(typeof Person); // "function"
+console.log(typeof person); // "object"
+```
+
+`instanceof wird verwendet, um zu überprüfen, ob eine Instanz einer bestimmten Klasse angehört.
+```javascript
+class Person {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
+}
+
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age)
+        this.major = major
+    }
+}
+
+const person = new Person('Max', 30)
+const student = new Student('John', 20, 'Computer Science')
+
+console.log(student instanceof Person) // true
+console.log(student instanceof Student) // true
+console.log(person instanceof Student) // false
 ```
 
 ## JavaScript besitzt keine Typisierung
@@ -78,6 +200,24 @@ In JS können Variablen während der Laufzeit ohne Einschränkungen ihren Typ ä
 Obwohl diese Flexibilität ein Vorteil von JS ist, kann sie auch zu unerwarteten Verhaltensweisen führen, wenn der Entwickler nicht aufpasst. In der Tat kann die mangelnde Typsicherheit in JS ein Nachteil sein, da sie dazu führen kann, dass sich Fehler erst zur Laufzeit manifestieren, anstatt dass sie bereits beim Kompilieren erkannt werden.
 
 Allerdings gibt es in modernen Versionen von JS (z.B. ab ES6) die Möglichkeit, Optionale Typisierung durch das Verwenden von Typ-Annotationen oder TypeScript zu implementieren, welche eine statische Typisierung einführen. Dies kann helfen, die Lesbarkeit und die Sicherheit von Code zu erhöhen.
+
+```javascript
+let x = 5 // x = number
+x = 'Hello World' // x = string
+
+const object = { name: 'Max', age: 30 } // object = Object
+object.hobbies = ["Lesen", "Sport treiben"] // object kann ohne Probleme erweitert werden
+
+function addNumbers(a, b) {
+    return a + b
+}
+
+// addNumbers kann mit number-Parametern aufgerufen werden
+console.log(addNumbers(5, 10)) // 15
+
+// addNumbers kann auch mit string-Parametern aufgerufen werden
+console.log(addNumbers("5", "10")) // '510'
+```
 
 ## JavaScript einbinden
 
