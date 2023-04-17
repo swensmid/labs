@@ -2,7 +2,7 @@
 title: "Maps und Sets"
 type: docs
 linkTitle: "Maps und Sets"
-weight: 10
+weight: 12
 date: 2023-03-31
 description: >
     Modul #F4 - JavaScript - In JavaScript gibt es auch Maps and Sets, hier wird angeschaut was es ist.

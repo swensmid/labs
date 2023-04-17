@@ -2,7 +2,7 @@
 title: "Loops"
 type: docs
 linkTitle: "Loops"
-weight: 9
+weight: 11
 date: 2023-03-30
 description: >
     Modul #F4 - JavaScript - In JavaScript sind Loops tägliche Bestandteile, somit werden diese hier angeschaut.
@@ -20,7 +20,7 @@ Es ist möglich, Loops zu verschachteln, um komplexe Iterationsprozesse durchzuf
 Wichtig bei der Verwendung von Loops ist es, darauf zu achten, dass die Bedingung, die man verwenden, letztendlich erfüllt wird, um eine Endlosschleife zu vermeiden. Eine Endlosschleife führt dazu, dass der Code in einem Loop stecken bleibt und den Rest des Programms nicht ausführt.
 
 ### for, forEach, for...of
-Im Kapitel [Arrays](../../../../en/docs/web/javascript/08_js_arrays.md#iterieren) werden die Loops for, forEach und for...of erklärt und können dort nachgelesen werden.
+Im Kapitel [Arrays](../../../../en/docs/web/javascript/10_js_arrays.md#iterieren) werden die Loops for, forEach und for...of erklärt und können dort nachgelesen werden.
 
 
 ### for...in-Loop

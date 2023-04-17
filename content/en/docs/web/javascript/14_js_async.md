@@ -2,7 +2,7 @@
 title: "Asynchrone Anfragen"
 type: docs
 linkTitle: "Asynchrone Anfragen"
-weight: 12
+weight: 14
 date: 2022-04-19
 description: >
   Modul #F4 - JavaScript - Promises und Web-Request mit JavaScript.

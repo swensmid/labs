@@ -2,7 +2,7 @@
 title: "Arrays"
 type: docs
 linkTitle: "Arrays"
-weight: 8
+weight: 10
 date: 2023-03-28
 description: >
     Modul #F4 - JavaScript - In JavaScript sind Array mit deren Methoden sehr wichtig, diese werden hier angeschaut.
@@ -153,7 +153,7 @@ array.forEach(function(element) {
 // 5
 ```
 
-Wie in Kapitel [Functions](../../../../en/docs/web/javascript/07_js_functions.md#arrow-functions) beschrieben kann man ein ForEach-Loop auch Arrow-Functions verwenden.
+Wie in Kapitel [Functions](../../../../en/docs/web/javascript/09_js_functions.md#arrow-functions) beschrieben kann man ein ForEach-Loop auch Arrow-Functions verwenden.
 ```javascript
 const array = [1, 2, 3, 4, 5]
 

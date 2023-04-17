@@ -2,7 +2,7 @@
 title: "Conditionals"
 type: docs
 linkTitle: "Conditionals"
-weight: 6
+weight: 8
 date: 2023-03-24
 description: >
     Modul #F4 - JavaScript - Es gibt in JavaScript verschiedene Basic oder nützliche Conditionals. Diese schauen wir hier an.

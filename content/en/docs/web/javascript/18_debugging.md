@@ -26,6 +26,7 @@ Somit ist es besser mit Tools von VSCode oder IntelliJ zu debuggen.
 
 ## Debuggen in VSCode
 Damit man in VSCode debuggen kann, muss man zuerst ein `launch.json` erstellen. Dies geht am besten in dem man rechts in der Menüleiste auf das vierte Icon klickt:
+
 ![VS Code zeigt nun, wo man das launch.json erstellt](../images/debugging-create-launch-json-vscode.png "launch.json erstellen in VS Code")
 
 Man muss natürlich auch den Debugger aussuchen, den man verwenden möchte:
@@ -73,6 +74,7 @@ Wenn man im Debug-Modus ist kann man links ein Panel sehen mit drei Unterteilung
 
 ### Die Debugging Actions
 Die Debugging Actions sind wichtig zum während des Debuggen zu navigieren. Die Icons auf dem folgenden Bild werden darunter von links nach rechts erklärt:
+
 ![VS Code zeigt nun, die Debugging Actions](../images/debugging-actions-vscode.png "Debugging Actions VS Code")
 
 Fortsetzen/Pause (F5):
