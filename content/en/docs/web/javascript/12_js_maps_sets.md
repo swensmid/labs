@@ -9,283 +9,282 @@ description: >
 ---
 
 ## Ziele
-* Du weisst, den Unterschied zwischen Maps und Sets.
-* Du kannst, Maps und Sets erstellen, bearbeiten und Daten abrufen.
-* Du kannst, Map und Set Iteratoren erklären und weisst was dies ist.
+* Du kennst den Unterschied zwischen Maps und Sets.
+* Du kannst Maps und Sets erstellen, bearbeiten und Daten abrufen.
+* Du kannst Map- und Set-Iteratoren erklären.
 
 
-### Map
+## Map
 Maps sind spezielle Objekte, die eine Zuordnung von Key zu Value ermöglichen. Der Key kann ein beliebiges Objekt sein, während der Value beliebig sein kann. Eine Map speichert keine Duplikate von Keys.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 ```
 
-#### set(key, value)
-Mit der `set()` Methode wird ein neues Key-Value-Paar zur Map hinzugefügt. Der erste Parameter der Methode ist der Keyy und der zweite Parameter ist der Value, der mit dem Key assoziiert werden soll. Wenn die Map bereits einen Eintrag mit dem angegebenen Key enthält, wird der neue Value anstelle des alten Values gespeichert.
+### Eintrag hinzufügen
+Mit der `set()` Methode wird ein neues Key-Value-Paar zur Map hinzugefügt. Der erste Parameter der Methode ist der Key und der zweite Parameter ist der Value, der mit dem Key assoziiert werden soll. Wenn die Map bereits einen Eintrag mit dem angegebenen Key enthält, wird der neue Value anstelle des alten Values gespeichert.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-console.log(map) // Map {'key1' => 'value1', 'key2' => 'value2', 'key3' => 'value3'}
+console.log(map); // Map {'key1' => 'value1', 'key2' => 'value2', 'key3' => 'value3'}
 
-map.set('key1', 'value4')
+map.set('key1', 'value4');
 
-console.log(map) // Map {'key1' => 'value4', 'key2' => 'value2', 'key3' => 'value3'}
+console.log(map); // Map {'key1' => 'value4', 'key2' => 'value2', 'key3' => 'value3'}
 ```
 
-#### get(key)
-Die `get()` Methode gibt den Value zurück, der mit einem bestimmten Key in der Map assoziiert ist. Wenn der Key nicht vorhanden ist, gibt die Methode `undefined` zurück.
+### Wert (value) für Key ermitteln
+Die `get(key)` Methode gibt den Value zurück, der mit einem bestimmten Key in der Map assoziiert ist. Wenn der Key nicht vorhanden ist, gibt die Methode `undefined` zurück.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-console.log(map.get('key1')) // 'value1' 
-console.log(map.get('key4')) // undefined
+console.log(map.get('key1')); // 'value1' 
+console.log(map.get('key4')); // undefined
 ```
 
-#### has(key)
-Die `has()` Methode ist dazu da, um zu überprüfen, ob ein Key in der Map vorhanden ist. Die Methode gibt einen booleschen Wert zurück je nachdem ob der Key gefunden wurde oder nicht.
+### Prüfen, ob Key vorhanden ist
+Die `has(key)` Methode ist dazu da, um zu überprüfen, ob ein Key in der Map vorhanden ist. Die Methode gibt einen booleschen Wert zurück je nachdem ob der Key gefunden wurde oder nicht.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-console.log(map.has('key1')) // true 
-console.log(map.has('key4')) // false
+console.log(map.has('key1')); // true 
+console.log(map.has('key4')); // false
 ```
 
-#### delete(key)
-Die Methode `delete()` löscht den Key und den zugehörigen Value aus der Map. Wenn der Key in der Map vorhanden ist, wird er zusammen mit dem Value entfernt, und die Methode gibt "true" zurück. Wenn der Key nicht vorhanden ist, wird die Map unverändert belassen, und die Methode gibt "false" zurück.
+### Eintrag löschen
+Die Methode `delete(key)` löscht den Key und den zugehörigen Value aus der Map. Wenn der Key in der Map vorhanden ist, wird er zusammen mit dem Value entfernt, und die Methode gibt "true" zurück. Wenn der Key nicht vorhanden ist, wird die Map unverändert belassen, und die Methode gibt "false" zurück.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-console.log(map.delete('key1')) // true 
-console.log(map.delete('key4')) // false
-console.log(map.get('key1')) // undefined
+console.log(map.delete('key1')); // true 
+console.log(map.delete('key4')); // false
+console.log(map.get('key1')); // undefined
 ```
 
-#### clear()
+### Map zurücksetzen
 Die `clear()` Methode kann verwendet werden, um alle Key-Value-Paare aus einer Map zu entfernen und somit diese auf eine leere Map zurückzusetzen.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-console.log(map.get('key1')) // 'value1'
-console.log(map.get('key2')) // 'value2'
-console.log(map.get('key3')) // 'value2'
+console.log(map.get('key1')); // 'value1'
+console.log(map.get('key2')); // 'value2'
+console.log(map.get('key3')); // 'value2'
 
 map.clear()
 
-console.log(map.get('key1')) // undefined
-console.log(map.get('key2')) // undefined
-console.log(map.get('key3')) // undefined
+console.log(map.get('key1')); // undefined
+console.log(map.get('key2')); // undefined
+console.log(map.get('key3')); // undefined
 ```
 
-#### size
+### Anzahl Elemente
 Die `size` Methode einer Map gibt die Anzahl der Key-Value-Paare in der Map zurück.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-console.log(map.size) // 3
+console.log(map.size); // 3
 
-map.delete('key1')
+map.delete('key1');
 
-console.log(map.size) // 2
+console.log(map.size); // 2
 
 
-map.clear()
+map.clear();
 
-console.log(map.size) // 0
+console.log(map.size); // 0
 ```
 
-### Map Iteratoren
+## Map Iteratoren
 Iteratoren sind Objekte, die eine Möglichkeit bereitstellen, auf die Elemente einer Sammlung nacheinander zuzugreifen. Ein Iterator bietet also eine sequenzielle Schnittstelle, die es einem ermöglicht, die Elemente einer Sammlung in einer bestimmten Reihenfolge abzurufen.
 
-Iteratoren verwenden das Iterator-Protokoll, das aus zwei Methoden besteht:
-* Die `next()`-Methode gibt das nächste Element in der Sequenz zurück.
-* Die `return()`-Methode wird aufgerufen, um die Sequenz zu beenden.
-
-Die `next()`-Methode gibt ein Objekt zurück, das zwei Eigenschaften hat:
-* `value`: Das nächste Element in der Sequenz.
-* `done`: Ein Boolean, der angibt, ob das Ende der Sequenz erreicht wurde.
-
-#### entries()
+### entries()
 Die `entries()` Methode gibt einen Iterator zurück, der alle Key-Value-Paare der Map in der Reihenfolge ihrer Hinzufügung enthält. Jedes Element des Iterators ist ein Array mit zwei Elementen, dem Key und dem zugehörigen Value.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-const entriesIterator = map.entries()
+for (const [key, value] of map.entries()){
+    console.log([key, value]);
+} 
 
-console.log(entriesIterator.next().value) // ['key1', 'value1']
-console.log(entriesIterator.next().value) // ['key2', 'value2']
-console.log(entriesIterator.next().value) // ['key3', 'value3']
-console.log(entriesIterator.next().value) // undefined (da alle Elemente durchlaufen wurden)
+// Array [ "key1", "value1" ]
+// Array [ "key2", "value2" ]
+// Array [ "key3", "value3" ]
 ```
 
-#### keys()
+### keys()
 Die Methode `keys()` gibt einen Iterator zurück, der nur die Keys der Map enthält.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-const entriesIterator = map.keys()
+for (const key of map.keys()){
+    console.log(key);
+}
 
-console.log(entriesIterator.next().value) // 'key1'
-console.log(entriesIterator.next().value) // 'key2'
-console.log(entriesIterator.next().value) // 'key3'
-console.log(entriesIterator.next().value) // undefined (da alle Elemente durchlaufen wurden)
+// key1
+// key2
+// key3
 ```
 
-#### values()
+### values()
 Die Methode `values()` gibt einen Iterator zurück, der im Gegensatz zu der Methode `keys()`nur die Values der Map enthält.
 
 ```javascript
-const map = new Map()
+const map = new Map();
 
-map.set('key1', 'value1')
-map.set('key2', 'value2')
-map.set('key3', 'value3')
+map.set('key1', 'value1');
+map.set('key2', 'value2');
+map.set('key3', 'value3');
 
-const entriesIterator = map.values()
+for (const value of map.values()){
+    console.log(value);
+}
 
-console.log(entriesIterator.next().value) // 'value1'
-console.log(entriesIterator.next().value) // 'value2'
-console.log(entriesIterator.next().value) // 'value3'
-console.log(entriesIterator.next().value) // undefined (da alle Elemente durchlaufen wurden)
+// value1
+// value2
+// value3
 ```
 
 
-### Set
-Ein Set ist eine Datenstruktur, die eine Sammlung von eindeutigen Values speichert. Das bedeutet, dass ein Set keine Duplikate von Values enthält, egal welchen Datentyps sie haben. Somit unterscheidet sich das Set vom Map daher das im Map keine Duplikaten Keys besitzen kann dafür aber Values.
+## Set
+Oft möchte man eine Liste haben, in der klar ist, dass jedes Element nur 1x vorkommen kann.
+
+Genau diesen Zweck erfüllt die `Set`.
 
 ```javascript
 const set = new Set();
 ```
 
-#### add(value)
-Die `add()` Methode fügt einen neuen Value zum Set hinzu. Wenn der Value bereits im Set vorhanden ist, wird er nicht hinzugefügt.
+### Wert hinzufügen
+Die `add(value)` Methode fügt einen Wert zur Set hinzu.
+
+Wenn der Wert bereits in der Set vorkommt, wird der Wert kein weiteres Mal hinzugefügt, siehe:
 
 ```javascript
-const set = new Set()
+const set = new Set();
 
-set.add('value1')
-set.add('value2')
-set.add('value3')
+set.add('value1');
+set.add('value2');
+set.add('value3');
 
-console.log(set) // Set {'value1', 'value2', 'value3'} 
+console.log(set); // Set {'value1', 'value2', 'value3'} 
 
-set.add('value2')
-set.add('value4')
+set.add('value2');
+set.add('value4');
 
-console.log(set) // Set {'value1', 'value2', 'value3', 'value4'} 
+console.log(set); // Set {'value1', 'value2', 'value3', 'value4'} 
 ```
 
-#### delete(value)
-Die Methode `delete()` löscht den angegebenen Value aus dem Set, wenn dieser enthalten ist und gibt "true" zurück, wenn der Value aus dem Set gelöscht wurde. Wenn der Value nicht im Set enthalten war, gibt es "false" zurück.
+### Wert löschen
+Die Methode `delete()` löscht den angegebenen Wert aus der Set, wenn dieser enthalten ist und gibt `true` zurück. Ansonsten `false`.
 
 ```javascript
-const set = new Set()
+const set = new Set();
 
-set.add('value1')
-set.add('value2')
-set.add('value3')
+set.add('value1');
+set.add('value2');
+set.add('value3');
 
-console.log(set.delete('value1')) // true
-console.log(set.delete('value1')) // false
+console.log(set.delete('value1')); // true
+console.log(set.delete('value1')); // false
 ```
 
-#### has(value)
+### Prüfen, ob Wert vorhanden ist
 Die `has()` Methode gibt zurück, ob der angegebene Value im Set enthalten ist oder nicht. Die Methode gibt "true" zurück, wenn der Value im Set vorhanden ist, andernfalls gibt sie "false" zurück.
 
 ```javascript
-const set = new Set()
+const set = new Set();
 
-set.add('value1')
-set.add('value2')
-set.add('value3')
+set.add('value1');
+set.add('value2');
+set.add('value3');
 
-console.log(set.has('value1')) // true
-console.log(set.has('value4')) // false
+console.log(set.has('value1')); // true
+console.log(set.has('value4')); // false
 ```
 
-#### clear()
-ie `clear()`Methode löscht alle Elemente aus dem Set.
+### Set zurücksetzen
+Die `clear()`-Methode löscht alle Elemente aus der Set.
 
 ```javascript
-const set = new Set()
+const set = new Set();
 
-set.add('value1')
-set.add('value2')
-set.add('value3')
+set.add('value1');
+set.add('value2');
+set.add('value3');
 
-console.log(set.has('value1')) // true
-console.log(set.has('value2')) // true
-console.log(set.has('value2')) // true
+console.log(set.has('value1')); // true
+console.log(set.has('value2')); // true
+console.log(set.has('value2')); // true
 
-set.clear()
+set.clear();
 
-console.log(set.has('value1')) // false
-console.log(set.has('value2')) // false
-console.log(set.has('value3')) // false
+console.log(set.has('value1')); // false
+console.log(set.has('value2')); // false
+console.log(set.has('value3')); // false
 ```
 
-#### size
-Die Methode `size` gibt die Anzahl der Elemente im Set zurück.
+### Anzahl Elemente
+Die Methode `size()` gibt die Anzahl der Elemente im Set zurück.
 
 ```javascript
-const set = new Set()
+const set = new Set();
 
-set.add('value1')
-set.add('value2')
-set.add('value3')
+set.add('value1');
+set.add('value2');
+set.add('value3');
 
-console.log(set.size) // 3
+console.log(set.size); // 3
 
-set.clear()
+set.clear();
 
-console.log(set.size) // 0
+console.log(set.size); // 0
 ```
 
-### Set Iteratoren
+## Set Iteratoren
 Im Set existieren im Grunde fast die gleichen Iteratoren wie bei einer Map. Jedoch gibt es bei `keys()` und `entries()` Unterschiede, diese sind nachfolgend nachzulesen.
 
-#### values()
-`values()` gibt einen Iterator zurück, der die Values des Sets in der Reihenfolge ihres Einfügens zurückgibt.
+### values()
+`values()` gibt einen Iterator zurück, der die Werte des Sets in der Reihenfolge des Einfügens zurück gibt:
 
 ```javascript
 const set = new Set()
@@ -294,46 +293,16 @@ set.add('value1')
 set.add('value2')
 set.add('value3')
 
-const valuesIterator = set.values();
+for (const value of set.values()){
+    console.log(value);
+}
 
-console.log(valuesIterator.next().value) // 'value1'
-console.log(valuesIterator.next().value) // 'value2'
-console.log(valuesIterator.next().value) // 'value3'
-console.log(valuesIterator.next().value) // undefined (da alle Elemente durchlaufen wurden)
+// value1
+// value2
+// value3
 ```
 
-#### keys()
-`keys()` gibt einen Iterator zurück, der dieselben Value wie der `values()`Iterator zurückgibt. Der `keys()`Iterator ist jedoch nur aus Gründen der Kompatibilität mit der Map-Datenstruktur verfügbar und existiert für Sets nur, weil Sets auf der gleichen Grundlage wie Maps implementiert sind.
+### keys() und entries()
+`keys()` gibt einen Iterator zurück, der dieselben Value wie der `values()`-Iterator zurück gibt. Der `keys()`-Iterator ist jedoch nur aus Gründen der Kompatibilität mit der Map-Datenstruktur verfügbar und existiert für Sets nur, weil Sets auf der gleichen Grundlage wie Maps implementiert sind.
 
-```javascript
-const set = new Set()
-
-set.add('value1')
-set.add('value2')
-set.add('value3')
-
-const keysIterator = set.keys();
-
-console.log(keysIterator.next().value) // 'value1'
-console.log(keysIterator.next().value) // 'value2'
-console.log(keysIterator.next().value) // 'value3'
-console.log(keysIterator.next().value) // undefined (da alle Elemente durchlaufen wurden)
-```
-
-#### entries()
-`entries()` gibt einen Iterator zurück, der für jedes Element im Set ein Array mit zwei Elementen zurückgibt. Das erste Element ist der Value des Elements, und das zweite Element ist der gleiche Value.
-
-```javascript
-const set = new Set()
-
-set.add('value1')
-set.add('value2')
-set.add('value3')
-
-const entriesIterator = set.entries();
-
-console.log(entriesIterator.next().value) // ['value1', 'value1']
-console.log(entriesIterator.next().value) // ['value2', 'value2']
-console.log(entriesIterator.next().value) // ['value3', 'value3']
-console.log(entriesIterator.next().value) // undefined (da alle Elemente durchlaufen wurden)
-```
+Dasselbe gilt auch für die `entries()`-Methode.
