@@ -5,7 +5,7 @@ linkTitle: "Objekte"
 weight: 13
 date: 2023-04-04
 description: >
-    Modul #F4 - JavaScript - Objekte in JavaScript sind sehr wichtig und werden daher nun erklärt.
+    Modul #F4 - JavaScript - Objekte in JavaScript.
 ---
 
 ## Ziele

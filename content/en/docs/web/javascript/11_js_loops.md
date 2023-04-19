@@ -5,7 +5,7 @@ linkTitle: "Loops"
 weight: 11
 date: 2023-03-30
 description: >
-    Modul #F4 - JavaScript - In JavaScript sind Loops tägliche Bestandteile, somit werden diese hier angeschaut.
+    Modul #F4 - JavaScript - Loops.
 ---
 
 ## Ziele

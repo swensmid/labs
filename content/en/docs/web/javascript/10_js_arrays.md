@@ -5,7 +5,7 @@ linkTitle: "Arrays"
 weight: 10
 date: 2023-03-28
 description: >
-    Modul #F4 - JavaScript - In JavaScript sind Array mit deren Methoden sehr wichtig, diese werden hier angeschaut.
+    Modul #F4 - JavaScript - Arrays und ihre Methoden.
 ---
 
 ## Ziele
