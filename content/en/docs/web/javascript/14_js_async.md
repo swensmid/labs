@@ -260,7 +260,43 @@ Was genau haben wir hier gemacht?
 
 Wir haben `fetchJoke()` asynchron aufgerufen, ohne auf die Antwort zu warten. Deswegen erhalten wir ein Promise-Objekt. Promise-Objekte enthalten eine `then`-Methode. Bei dieser Methode kannst du eine Funktion übergeben. Die übergebene Funktion wird aufgerufen, sobald die Antwort erhalten wurde.
 
+
+### Exception-Handling bei HTTP-Anfragen
+Während einer HTTP-Anfrage passieren oft folgendes typische Fehler:
+* Der angefragte Server kann nicht erreicht werden bzw. der Browser erhält keine Antwort (`Response`).
+* Die Anfrage wurde durch den Browser blockiert (z.B. durch die CORS Policy).
+* Der Server gibt eine Antwort mit einem Status-Code zurück, der einen Fehler beschreibt.
+
+In den ersten beiden Fällen würde die `fetch()`-Funktion eine `Error` asynchron werfen. Diesen Fall könntest du mit einem `try` und `catch` abfangen.
+
+Hingegen wird kein Fehler geworfen, wenn eine Antwort erhalten wird. Aber trotzdem könnte die Response auf einen Fehler hindeuten, z.B. wenn der Status-Code `404` wäre. In diesem Fall hätten wir eine Antwort vom Server erhalten, die darauf hindeutet, dass die Seite hinter der URL nicht gefunden werden konnte.
+
+Daher macht es Sinn, die `response` auf den Status Code zu überprüfen. Hierfür bietet das `response`-Objekt ein praktisches Property an: `ok`. Wenn `ok` true ist, dann war der Status-Code zwischen 200 und 299 (erfolgreiche Status-Codes).
+
+Beide Fälle kombiniert resultieren in einem Error-Handling, das ungefähr so aussehen könnte:
+
+```javascript
+async function fetchJoke() {
+  try {
+    const response = await fetch('https://api.chucknorris.io/jokes/random', { method: 'get' });
+    
+    if (!response.ok) {
+      throw new Error(`Fehlerhafte Antwort. Status: ${response.status}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    // Hier müsste noch der Fehler behandelt werden und evtl. eine Nachricht dem User angezeigt werden.
+    return null; // etwas zurückgebe, das auf einen Fehler hindeutet.
+  }
+}
+```
+
+Möchte man eine genauere Prüfung des Status-Codes vornehmen, dann könnte man statt `response.ok` das Property `response.status` überprüfen.
+
 ![asset](/images/hint.png) Hierzu findest du [zwei Aufgaben im Lab](../../../../labs/web/html_css/03_javascript).
+
 
 ### Früher war alles besser?
 Die `fetch`-Funktion hat Webrequest stark vereinfacht. Früher durftest du dich mit XML HTTP Requests herumschlagen. Aber siehe selbst: https://www.w3schools.com/xml/xml_http.asp 
