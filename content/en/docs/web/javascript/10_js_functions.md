@@ -60,20 +60,26 @@ const sum = (number1, number2) => number1 + number2;
 ```
 
 ### Function Expressions
-Eine Funktionsexpression ist ein anderer Ansatz, um eine Funktion in JavaScript zu definieren. Im Gegensatz zur Funktionsdeklaration wird bei der Funktionsexpression eine Funktion in einer Variablen gespeichert.
-
-Eine der Hauptunterschiede zwischen einer Funktionsdeklaration und einer Funktionsexpression besteht darin, das Funktionsexpression nur im Scope der Variabel aufgerufen werden kann und somit nicht global verwendet werden kann. Ein andere ist der Hoisting-Prozess, deer Hoisting-Prozess ist ein Konzept bei dem Variablen- und Funktionsdeklarationen an den Anfang ihres Gültigkeitsbereichs verschoben werden. Mit anderen Worten, bevor der Code ausgeführt wird, werden Variablen und Funktionen in den Speicher geladen und sind somit bereits verfügbar, bevor sie im Code aufgerufen werden. Im Falle von Funktionsdeklarationen bedeutet das, dass die gesamte Funktionsdefinition im Speicher geladen wird, einschließlich der Funktionsparameter und des Funktionskörpers. Dadurch kann eine Funktion in einem Programm an jeder beliebigen Stelle aufgerufen werden, auch wenn sie erst später im Code definiert wurde. Es ist jedoch wichtig zu beachten, dass das Hoisting nur für Funktionsdeklarationen gilt, nicht für Funktionsexpressionen. Wenn man eine Funktion als Funktionsexpressionen definieren, wird sie nicht hoisted, was bedeutet, dass man sie erst nach der Definition aufrufen kann.
-
-In der Praxis werden Funktionsexpressionen oft mit Arrow-Funktionen kombiniert, um den Code zu verkürzen und zu vereinfachen.
+Eine Funktionsexpression ist ein anderer Ansatz, um eine Funktion in JavaScript zu definieren. Im Gegensatz zur Funktionsdeklaration wird bei der Funktionsexpression eine Funktion in einer Variablen gespeichert:
 
 ```javascript
+// Function-Expression:
 const sum = function(number1, number2) {
      return number1 + number2;
 }
 
-let total = sum(3, 5);
-console.log(total); // 8
+// Das Gleiche mit der Arrow-Function-Schreibweise:
+const sum2 = (a, b) => a + b;
+
+console.log(sum(3, 5)); // 8
+console.log(sum2(3, 5)); // 8
 ```
+
+Der Hauptunterschied zwischen einer Funktionsdeklaration und einer Funktionsexpression besteht darin, dass Funktionsexpression nur im Scope der Variabel aufgerufen werden können, sprich erst nach der Zuweisung der Variable.
+
+Dieser Unterschied wird durch den **Hoisting-Prozess** verursacht:
+Der Hoisting-Prozess ist ein Konzept, bei dem Variablen- und Funktions**deklarationen** an den Anfang ihres Gültigkeitsbereichs verschoben werden. Mit anderen Worten, bevor der Code ausgeführt wird, werden Variablen und Funktionen in den Speicher geladen und sind somit bereits verfügbar, bevor sie im Code definiert wurden. Im Falle von Funktionsdeklarationen bedeutet das, dass die gesamte Funktionsdefinition im Speicher geladen wird, einschließlich der Funktionsparameter und des Funktionskörpers. Dadurch kann eine Funktion in einem Programm an jeder beliebigen Stelle aufgerufen werden, auch wenn sie erst später im Code definiert wird. Es ist jedoch wichtig zu beachten, dass das Hoisting für Funktionsdeklarationen gilt, nicht aber für Funktionsexpressionen. Wenn man eine Funktion als Funktionsexpressionen definieren, wird sie nicht gehoisted. Das bedeutet, dass man sie erst nach der Definition aufrufen kann.
+
 
 Beispiel mit Hoisting-Prozess:
 ```javascript
