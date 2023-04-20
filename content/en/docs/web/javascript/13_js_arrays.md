@@ -131,8 +131,8 @@ array.forEach(function(element) {
 // 3
 // 4 
 // 5
+
 ```
-// TODO Link prüfen
 Wie in Kapitel [Functions](../../../../en/docs/web/javascript/10_js_functions.md#arrow-functions) beschrieben, kann auch eine Arrow-Function verwendet werden:
 ```javascript
 const array = [1, 2, 3, 4, 5];
