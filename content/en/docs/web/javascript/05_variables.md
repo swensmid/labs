@@ -138,7 +138,7 @@ Folgender Grundsatz gilt:
 Wenn du wissen willst, wieso `var` nicht mehr verwendet werden sollte, dann kannst du dein Wissen hier vertiefen: https://medium.com/@codingsam/awesome-javascript-no-more-var-working-title-999428999994.
 
 ### typeof Operator
-`typeof` ist ein Operator, der den Datentyp eines Ausdrucks oder einer Variablen zurückgibt. Er kann verwendet werden, um zu überprüfen, ob eine Variable einen bestimmten Datentyp hat, bevor eine Operation durchgeführt wird, die nur für diesen Datentyp geeignet ist.
+`typeof` ist ein Operator, der den Datentyp eines Ausdrucks oder einer Variablen zurückgibt. Er kann verwendet werden, um zu überprüfen, ob eine Variable einen primitiven Datentyp (inkl. string) hat, bevor eine Operation durchgeführt wird, die nur für diesen Datentyp geeignet ist.
 
 `typeof` gibt einen String zurück, der den Datentyp des Operanden darstellt. Die möglichen Rückgabewerte sind:
 * `undefined` für undefined-Werte
@@ -160,6 +160,40 @@ typeof function(){} // 'function'
 ```
 
 Es ist wichtig zu beachten, dass typeof nicht immer genau den Datentyp zurückgibt, den man erwartet. Insbesondere gibt typeof null "object" zurück, obwohl null eigentlich kein Objekt ist. Es ist daher oft besser, zusätzlich zu typeof andere Überprüfungen durchzuführen, um sicherzustellen, dass eine Variable den erwarteten Datentyp hat.
+
+### instanceof Operator
+Auch der `instanceof` Operator wird verwendet, um festzustellen, ob ein Objekt von einem bestimmten Typ ist. Er gibt ein boolesches Ergebnis zurück, das angibt, ob das übergebene Objekt eine Instanz des angegebenen Typs ist.
+
+Zu beachten ist das `instanceof` bei primitive Datentypen nicht geeignet, da sie keine Objekte sind, ist um festzustellen, ob die Variable von diesem Datentyp ist, dazu würde sich `typeof` besser eignen. 
+```javascript
+const numberVar = 1
+const stringVar = 'abc'
+const arrayVar = [1,2,3]
+const objectVar = {name: 'Max', age: 20}
+
+console.log(numberVar instanceof Number) // false
+console.log(stringVar instanceof String) // false
+console.log(arrayVar instanceof Array) // true
+console.log(objectVar instanceof Object) // true
+```
+
+Man kann jedoch `instanceof` und `typeof` kombinieren um sicherstellen, dass die Variable sowohl den erwarteten Datentyp als auch den Wertebereich entspricht.
+```javascript
+const numberVar = 1
+const stringVar = 'abc'
+const arrayVar = [1,2,3]
+const objectVar = {name: 'Max', age: 20}
+
+console.log(numberVar instanceof Number || typeof numberVar === 'number') // true
+console.log(stringVar instanceof String || typeof stringVar === 'string') // true
+console.log(arrayVar instanceof Array) // true
+console.log(objectVar instanceof Object) // true
+```
+
+### typeof vs. instanceof
+`typeof` ist besser geeignet, um primitive Datentypen wie Strings, Numbers und Booleans zu überprüfen.
+
+`instanceof` ist hingegen besser geeignet, um den Datentyp von Objekten zu überprüfen, einschließlich Arrays, Funktionen und benutzerdefinierten Objekten. Oder auch zum Prüfen ein Objekt von einer bestimmten Klasse erstellt wurde.
 
 ### Destructuring Assignment
 In JavaScript siehst du sehr oft, dass mehrere Variablen auf einmal definiert werden.

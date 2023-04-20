@@ -2,7 +2,7 @@
 title: "Debugging"
 type: docs
 linkTitle: "Debugging"
-weight: 18
+weight: 23
 date: 2023-03-31
 description: >
     Modul #F4 - JavaScript - Debuggen ist in jeder Programmiersprache wichtig und die IDE hat dazu viele nützliche Tools, welche hier angeschaut werden.
@@ -88,7 +88,7 @@ Schritt in (F11):
 Betritt die nächste Methode, um ihre Ausführung Zeile für Zeile zu verfolgen.
 
 Schritt zurück (⇧F11):
-Wenn Sie sich innerhalb einer Methode oder Unterprozedur befinden, kehren Sie zum früheren Ausführungskontext zurück, indem Sie die verbleibenden Zeilen der aktuellen Methode als einzelnen Befehl ausführen.
+Wenn man sich innerhalb einer Methode oder Unterprozedur befinden, kehrt man zum früheren Ausführungskontext zurück, indem man die verbleibenden Zeilen der aktuellen Methode als einzelnen Befehl ausführt.
 
 Neu starten (⇧⌘F5):
 Beendet die aktuelle Programmausführung und startet das Debuggen erneut mit der aktuellen Ausführungskonfiguration.

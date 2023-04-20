@@ -2,7 +2,7 @@
 title: "Objekte"
 type: docs
 linkTitle: "Objekte"
-weight: 13
+weight: 12
 date: 2023-04-04
 description: >
     Modul #F4 - JavaScript - Objekte in JavaScript.

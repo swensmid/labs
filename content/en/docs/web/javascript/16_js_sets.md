@@ -2,7 +2,7 @@
 title: "Maps und Sets"
 type: docs
 linkTitle: "Maps und Sets"
-weight: 12
+weight: 16
 date: 2023-03-31
 description: >
     Modul #F4 - JavaScript - Sets.

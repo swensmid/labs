@@ -2,7 +2,7 @@
 title: "JSDoc"
 type: docs
 linkTitle: "JSDoc"
-weight: 16
+weight: 21
 date: 2023-01-09
 description: >
   Modul #F4 - JavaScript - Funktionen mit einer Beschreibung versehen.

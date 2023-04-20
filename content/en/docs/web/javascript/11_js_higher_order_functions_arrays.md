@@ -2,7 +2,7 @@
 title: "Arrays - Higher Order Functions"
 type: docs
 linkTitle: "Arrays - Higher Order Functions"
-weight: 10
+weight: 11
 date: 2023-04-19
 description: >
     Modul #F4 - JavaScript - Higher Order Functions von Arrays.

@@ -2,7 +2,7 @@
 title: "Arrays"
 type: docs
 linkTitle: "Arrays"
-weight: 10
+weight: 13
 date: 2023-03-28
 description: >
     Modul #F4 - JavaScript - Arrays/Listen und ihre Methoden.
@@ -132,8 +132,8 @@ array.forEach(function(element) {
 // 4 
 // 5
 ```
-
-Wie in Kapitel [Functions](../../../../en/docs/web/javascript/09_js_functions.md#arrow-functions) beschrieben, kann auch eine Arrow-Function verwendet werden:
+// TODO Link prüfen
+Wie in Kapitel [Functions](../../../../en/docs/web/javascript/10_js_functions.md#arrow-functions) beschrieben, kann auch eine Arrow-Function verwendet werden:
 ```javascript
 const array = [1, 2, 3, 4, 5];
 

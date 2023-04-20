@@ -2,7 +2,7 @@
 title: "Loops"
 type: docs
 linkTitle: "Loops"
-weight: 11
+weight: 14
 date: 2023-03-30
 description: >
     Modul #F4 - JavaScript - Loops.
@@ -21,7 +21,7 @@ Wichtig bei der Verwendung von Loops ist es, darauf zu achten, dass die Bedingun
 
 ## for-Loops
 ### for, forEach, for...of
-Im Kapitel [Arrays](../../../../en/docs/web/javascript/10_js_arrays.md#iterieren) werden die Loops for, forEach und for...of erklärt und können dort nachgelesen werden.
+Im Kapitel [Arrays](../../../../en/docs/web/javascript/13_js_arrays.md#iterieren) werden die Loops for, forEach und for...of erklärt und können dort nachgelesen werden.
 
 
 ### for...in-Loop

@@ -2,7 +2,7 @@
 title: "Maps"
 type: docs
 linkTitle: "Maps"
-weight: 12
+weight: 15
 date: 2023-03-31
 description: >
     Modul #F4 - JavaScript - Maps.
