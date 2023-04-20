@@ -13,19 +13,89 @@ description: >
 * Du weisst, wie du in IntelliJ JavaScript Code debuggen kannst
 
 ## Wieso ist debuggen wichtig?
-zu erkennen und zu korrigieren sind. Es gibt eine Vielzahl von Gründen, warum JavaScript-Anwendungen Fehler enthalten können, wie zum Beispiel unerwartete Nutzereingaben, Netzwerkprobleme, inkonsistente Daten oder eine fehlerhafte Logik innerhalb des Codes. Das Debuggen kann dazu beitragen, diese Fehler zu identifizieren und zu beseitigen.
+Es gibt eine Vielzahl von Gründen, warum JavaScript-Anwendungen Fehler enthalten können. Typische Fehler sind zum Beispiel unerwartete Nutzereingaben, Netzwerkprobleme, inkonsistente Daten oder eine fehlerhafte Logik innerhalb des Codes. Debugging kann dazu beitragen, diese Fehler zu identifizieren und zu beseitigen.
 
 Ein weiterer wichtiger Grund, warum Debuggen in JavaScript wichtig ist, ist, dass JavaScript eine dynamisch typisierte Sprache ist. Das bedeutet, dass Typfehler während der Laufzeit auftreten können, wenn eine Variable unbeabsichtigt einen anderen Datentyp zugewiesen bekommt, als erwartet. Typfehler können schwer zu finden sein, da sie nicht immer sofort zu offensichtlichen Fehlern führen und zu unerwartetem Verhalten führen können.
 
 ### Ist es nun schlau zum debuggen `console.log()` zu verwenden?
  Die Antwort ist Ja und Nein.
 
-Es ist zwar eine der gängigsten Methoden die verwendet wird, da es sehr schnell und einfach ist. Jedoch beeinträchtigen zu viele davon die Leistung des Codes, was dann zum Problem wird wenn man sie beim Git push, vergisst herauszunehmen und sie auf Umgebungen landen könnten. Falls solche auf eine Umgebung gelangen können sie auch zu Sicherheitsproblemen führen.
+Es ist zwar eine der gängigsten Methoden, die verwendet wird, da es sehr schnell und einfach ist. Jedoch beeinträchtigen zu viele davon die Leistung des Codes, was dann zum Problem wird wenn man sie beim Git push, vergisst herauszunehmen und sie auf Umgebungen landen könnten. Falls solche auf eine Umgebung gelangen können sie auch zu Sicherheitsproblemen führen.
 
 Somit ist es besser mit Tools von VSCode oder IntelliJ zu debuggen.
 
 ## Debuggen in VSCode
-Damit man in VSCode debuggen kann, muss man zuerst ein `launch.json` erstellen. Dies geht am besten in dem man rechts in der Menüleiste auf das vierte Icon klickt:
+
+### HTML-Datei mit JavaScript debuggen (Client-seitig)
+Möchtest du JavaScript-Code in einer lokalen HTML-Datei debuggen, dann kannst du das wie folgt tun:
+
+Klicke auf "Run and Debug" im Debugging-Tab:
+
+![Klick auf "Run and Debug"](../images/debugging-vscode-run-and-debug.png "Debugging direkt starten in VS Code")
+
+Dann solltest du gefragt werden, auf welche Art du debuggen möchtest:
+
+![Klick auf "Web App"](../images/debugging-vscode-launch-web-html.png "Verbinde dich mit dem Browser")
+
+Dort wählst du den Browser aus, mit dem du Debuggen möchtest.
+
+Nun ist Debugging in HTML- und JavaScript-Dateien möglich, indem du Breakpoints setzt:
+
+![Breakpoints sollten nun getriggert werden](../images/debugging-vscode-first-breakpoint-in-hmtl.png "Nun sollten Breakpoints den Browser stoppen können")
+
+Möchtest du das Debugging auf Knopfdruck starten?
+* Dann Klicke im "Run and Debug"-Tag auf "create a launch.json file" statt auf "Run and Debug".
+* Wähle wieder den richtigen Browser aus.
+* In der Datei ".vscode/launch.json" wurde eine Konfiguration erstellt. Du kannst sie wie folgt generalisieren:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "msedge", // bzw. chrome.
+            "request": "launch",
+            "name": "Open current html",
+            "file": "${file}"
+        }
+    ]
+}
+```
+
+Wenn du nun deine Datei ausgewählt hast und [F5] klickst, wird automatisch ein Browser geöffnet, der die aktuelle Seite im Browser anzeigt. Ausserdem sollten alle Breakpoints direkt funktionieren.
+
+### Debuggen in VSCode mit LiveServer (Client-seitig)
+Wenn du die Extension [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) verwendest, dann muss das Debugging ein bisschen anders konfiguriert werden.
+
+Als Erstes muss man das `launch.json` erweitern, denn es muss einen neue Configuration hinzugefügt werden (innerhalb des Arrays `configurations`).
+```json
+{
+  "name": "Live Server: Chrome",
+  "type": "chrome",
+  "request": "launch",
+  "url": "http://localhost:5501/${relativeFile}",
+  "webRoot": "${workspaceFolder}",
+  "sourceMapPathOverrides": {
+    "webpack:///./src/*": "${webRoot}/*"
+  }
+}
+```
+* Für Microsoft Edge gibst du natürlich `"type": "edge"` an.
+* Achte darauf, dass du den gleichen Port verwendest wie der Live Server. Normalerweise ist der `5500`. Es kann aber auch vorkommen, dass sich der Port ändert. Den Port siehst du unten rechts im VS Code (in meinem Fall `5501`), wenn der Live Server läuft:
+
+![Port vom LiveServer](../images/debugging-vscode-live-server-port.png "Port vom LiveServer")
+
+Nun sollte man die gewünschten Breakpoints setzen bevor man dann startet.
+
+Um zu Debuggen
+* musst du zuerst den Live Server starten (z.B. einen Rechtsklick auf die entsprechende HTML-Datei, dann "Open with Live Server")
+* Danach beim Debuggen den Eintrag "Live Server: Chrome" im Dropdown wählen und mit dem daneben befindenden grünen Startbutton das gesamte starten. Man kann jedoch auch nur im Dropdown das Gewollte auswählen und mit F5 starten:
+![VS Code zeigt Debugging Dropdown](../images/debugging-live-server-vscode.png "Debugging Dropdown VS Code")
+
+Es öffnet sich ein Chrome Fenster mit den Ordnern, dort kann man dann in das gewollte File navigieren. Wird nun eine Aktion ausgeführt die ein Breakpoint beinhaltet, kann man wie gewohnt Debuggen.
+
+### JavaScript-Dateien mit NodeJS (Server-seitig) debuggen
+Damit man in VSCode Server-seitigen JavaScript-Code mit NodeJS debuggen kann, muss man zuerst ein `launch.json` erstellen. Dies geht am besten in dem man rechts in der Menüleiste auf das vierte Icon klickt:
 
 ![VS Code zeigt nun, wo man das launch.json erstellt](../images/debugging-create-launch-json-vscode.png "launch.json erstellen in VS Code")
 
@@ -96,27 +166,6 @@ Beendet die aktuelle Programmausführung und startet das Debuggen erneut mit der
 Stoppen (⇧F5):
 Beendet die aktuelle Programmausführung.
 
-## Debuggen in VSCode mit LiveServer (Chrome)
-Als Erstes muss man das `launch.json` erweitern, denn es muss einen neue Configuration hinzugefügt werden.
-```json
-{
-  "name": "Live Server: Chrome",
-  "type": "chrome",
-  "request": "launch",
-  "url": "http://localhost:5500",
-  "webRoot": "${workspaceFolder}",
-  "sourceMapPathOverrides": {
-    "webpack:///./src/*": "${webRoot}/*"
-  }
-}
-```
-
-Nun sollte man die gewünschten Breakpoints setzen bevor man dann startet.
-
-Damit man nun das ganze verwenden kann, muss man den Live Server starten. Danach beim Debuggen die "Live Server: Chrome" im Dropdown wählen und mit dem daneben befindenden grünen Startbutton das gesamte starten. Man kann jedoch auch nur im Dropdown das gewollte auswählen und mit F5 starten:
-![VS Code zeigt Debugging Dropdown](../images/debugging-live-server-vscode.png "Debugging Dropdown VS Code")
-
-Es öffnet sich ein Chrome Fenster mit den Ordnern, dort kann man dann in das gewollte File navigieren. Wird nun eine Aktion ausgeführt die ein Breakpoint beinhaltet, kann man wie gewohnt Debuggen.
 
 ## Debuggen in IntelliJ
 Um in IntelliJ zu debuggen muss man nicht zuerst ein File erstellen oder eine Extension haben. Es reicht bereits wenn man die Breakpoints setzt. Dafür kann man, wie bei VSCode, links neben der Zeilenzahl mittels Links-Klick einen normalen Breakpoint setzen oder mit Rechts-Klick die Optionen ansehen:
