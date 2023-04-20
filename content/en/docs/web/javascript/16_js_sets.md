@@ -1,7 +1,7 @@
 ---
-title: "Maps und Sets"
+title: "Sets"
 type: docs
-linkTitle: "Maps und Sets"
+linkTitle: "Sets"
 weight: 16
 date: 2023-03-31
 description: >

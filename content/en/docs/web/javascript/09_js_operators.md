@@ -1,7 +1,7 @@
 ---
-title: "Conditionals"
+title: "Operatoren"
 type: docs
-linkTitle: "Conditionals"
+linkTitle: "Operatoren"
 weight: 9
 date: 2023-04-19
 description: >

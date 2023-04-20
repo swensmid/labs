@@ -1,11 +1,11 @@
 ---
-title: "Asynchrone Anfragen"
+title: "Promises"
 type: docs
-linkTitle: "Asynchrone Anfragen"
+linkTitle: "Promises"
 weight: 18
 date: 2022-04-19
 description: >
-  Modul #F4 - JavaScript - Promises mit JavaScript.
+  Modul #F4 - JavaScript - Promises.
 ---
 
 ## Ziele

@@ -21,7 +21,7 @@ Wichtig bei der Verwendung von Loops ist es, darauf zu achten, dass die Bedingun
 
 ## for-Loops
 ### for, forEach, for...of
-Im Kapitel [Arrays](../../../../en/docs/web/javascript/13_js_arrays.md#iterieren) werden die Loops for, forEach und for...of erklärt und können dort nachgelesen werden.
+Im Kapitel [Arrays](../../../../docs/web/javascript/11_js_arrays#iterieren) werden die Loops for, forEach und for...of erklärt und können dort nachgelesen werden.
 
 
 ### for...in-Loop
