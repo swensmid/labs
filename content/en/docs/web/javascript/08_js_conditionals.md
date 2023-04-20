@@ -140,7 +140,7 @@ const variable = {
 }[expression];
 ```
 
-und wenn wir den `default`-Wert berücksichtigen möchten, können wir diesen mit dem `??`-Operator den ergänzen. Das ist keine offizielle Syntax, funktioniert aber:
+und wenn wir den `default`-Wert berücksichtigen möchten, können wir diesen mit dem `??`-Operator ergänzen. Das ist keine offizielle Syntax, funktioniert aber:
 
 ```javascript
 const variable = {
