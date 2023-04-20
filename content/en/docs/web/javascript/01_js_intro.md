@@ -39,34 +39,6 @@ Weiter unten siehts du ein `<script>`-Element. Dort drin ist eine Funktion namen
 Wie du siehst, wird die selbst definierte Funktion beim Klick auf den Button aufgerufen. Dies passiert, weil du diesen Aufruf im `onclick`-Attribut des `<button>`s definiert hast. Beachte in diesem Beispiel, dass nicht die Funktion sondern deren Aufruf drin steht. Im Prinzip wird beim Button-Klick der Wert des `onclick`-Attributs ausgeführt. Theoretisch könntest du auch direkt `onclick="alert('Klick mich nicht an!!')"` schreiben.
 </details>
 
-## JavaScript besitzt keine Typisierung
-JavaScript ist eine dynamisch typisierte Sprache, was bedeutet, dass die Typen der Variablen und Ausdrücke erst zur Laufzeit und nicht zur Kompilierungszeit festgelegt werden. Im Gegensatz dazu haben andere Sprachen wie Java, C++ und Python eine statische Typisierung, bei der der Typ einer Variablen oder eines Ausdrucks zur Kompilierungszeit festgelegt wird.
-
-In JS können Variablen während der Laufzeit ohne Einschränkungen ihren Typ ändern. Beispielsweise kann eine Variable zunächst als String initialisiert werden und später im Code auf einen numerischen Wert aktualisiert werden. Dies liegt daran, dass JS die Datentypen von Variablen dynamisch zuweist und ihnen erlaubt, sich während der Laufzeit zu ändern.
-
-Obwohl diese Flexibilität ein Vorteil von JS ist, kann sie auch zu unerwarteten Verhaltensweisen führen, wenn der/die Entwickler:in nicht aufpasst. In der Tat kann die mangelnde Typsicherheit in JS ein Nachteil sein, da sie dazu führen kann, dass sich Fehler erst zur Laufzeit manifestieren, anstatt dass sie bereits beim Kompilieren erkannt werden.
-
-Hier siehst du, dass sich die Typen von Variablen während der Laufzeit verändern lassen:
-
-```javascript
-let x = 5; // x = number
-x = 'Hello World;' // x = string
-
-const object = { name: 'Max', age: 30 }; // object = Object
-object.hobbies = ["Lesen", "Sport treiben"]; // object kann ohne Probleme erweitert werden
-
-function addNumbers(a, b) {
-    return a + b;
-}
-
-// addNumbers kann mit number-Parametern aufgerufen werden:
-console.log(addNumbers(5, 10)); // 15
-
-// addNumbers kann auch mit string-Parametern aufgerufen werden:
-console.log(addNumbers("5", "10")); // '510'
-```
-
-Allerdings gibt es in modernen Versionen von JS (z.B. ab ES6) die Möglichkeit, (optionale) Typisierung durch das Verwenden von Typ-Annotationen oder TypeScript hinzuzufügen, welche einer statische Typisierung ähneln können. Dies kann helfen, die Lesbarkeit und die Sicherheit von Code zu erhöhen.
 
 
 ## JavaScript einbinden
