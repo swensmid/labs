@@ -103,3 +103,24 @@ for (const island of islands) {
   );
 }
 ```
+
+### Aufgabe 7
+
+Schreibe eine Funktion, die ein Array von Objekten erwartet. Jedes Objekt im Array repräsentiert einen Schüler mit den folgenden Eigenschaften:
+* name: Der Name des Schülers
+* grades: Ein Array von Noten des Schülers (in Dezimalzahlen)
+
+Jeder Schüler darf nur einmal vorkommen, also keine Duplikate.
+
+Die Funktion soll ein Promise zurückgeben, das den Durchschnitt der Noten aller Schüler berechnet und als Ergebnis ein Objekt zurückgibt, das den Durchschnitt als eine Dezimalzahl und eine Beschreibung des Durchschnitts enthält. Die Beschreibung sollte basierend auf folgendem generiert werden:
+* Wenn der Durchschnitt 4,0 ist, soll die Beschreibung "Sehr gut" sein.
+* Wenn der Durchschnitt größer oder gleich 3,0 und kleiner als 4,0 ist, soll die Beschreibung "Gut" sein.
+* Wenn der Durchschnitt größer oder gleich 2,0 und kleiner als 3,0 ist, soll die Beschreibung "Befriedigend" sein.
+* Wenn der Durchschnitt größer oder gleich 1,0 und kleiner als 2,0 ist, soll die Beschreibung "Ausreichend" sein.
+* Wenn der Durchschnitt kleiner als 1,0 ist, soll die Beschreibung "Mangelhaft" sein.
+
+Schreibe zusätzlich eine Funktion, um neue Schüler zu erfassen. Der zu erfassende Schüler darf jedoch noch nicht existieren ansonsten soll eine Exception geworfen werden. Auch die Noten sollen validiert werden so, dass nur Dezimalzahlen als Noten akzeptiert werden und die Dezimalzahl muss zwischen 1.0 und 6.0 liegen.
+
+Noch zu ergänzen sind je eine Funktion, welche beide auch ein Array von Schülern erwarten. Die eine Funktion soll den Schüler mit der besten und die andere Funktion mit dem schlechtesten Durchschnitt herausfinden. Die Funktionen sollen den Namen des Schülers und dessen Durchschnitt zurückgegeben. Versuche diese beiden Funktionen mit so wenig Redundanzen wie möglich zu schreiben (evtl. kann man eine Funktion draus machen).
+
+Die letzte Funktion sollte ein Array von Schüler entgegennehmen und sie anhand des Durchschnitts ordnen. Der mit dem schlechtesten Durchschnitt kommt zuerst. Die Funktion soll ein Promise mit nur den Namen aller Schüler zurückgeben, nachdem diese sortiert wurden.
