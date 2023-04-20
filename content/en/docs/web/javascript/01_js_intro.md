@@ -44,27 +44,30 @@ JavaScript ist eine dynamisch typisierte Sprache, was bedeutet, dass die Typen d
 
 In JS können Variablen während der Laufzeit ohne Einschränkungen ihren Typ ändern. Beispielsweise kann eine Variable zunächst als String initialisiert werden und später im Code auf einen numerischen Wert aktualisiert werden. Dies liegt daran, dass JS die Datentypen von Variablen dynamisch zuweist und ihnen erlaubt, sich während der Laufzeit zu ändern.
 
-Obwohl diese Flexibilität ein Vorteil von JS ist, kann sie auch zu unerwarteten Verhaltensweisen führen, wenn der Entwickler nicht aufpasst. In der Tat kann die mangelnde Typsicherheit in JS ein Nachteil sein, da sie dazu führen kann, dass sich Fehler erst zur Laufzeit manifestieren, anstatt dass sie bereits beim Kompilieren erkannt werden.
+Obwohl diese Flexibilität ein Vorteil von JS ist, kann sie auch zu unerwarteten Verhaltensweisen führen, wenn der/die Entwickler:in nicht aufpasst. In der Tat kann die mangelnde Typsicherheit in JS ein Nachteil sein, da sie dazu führen kann, dass sich Fehler erst zur Laufzeit manifestieren, anstatt dass sie bereits beim Kompilieren erkannt werden.
 
-Allerdings gibt es in modernen Versionen von JS (z.B. ab ES6) die Möglichkeit, Optionale Typisierung durch das Verwenden von Typ-Annotationen oder TypeScript zu implementieren, welche eine statische Typisierung einführen. Dies kann helfen, die Lesbarkeit und die Sicherheit von Code zu erhöhen.
+Hier siehst du, dass sich die Typen von Variablen während der Laufzeit verändern lassen:
 
 ```javascript
-let x = 5 // x = number
-x = 'Hello World' // x = string
+let x = 5; // x = number
+x = 'Hello World;' // x = string
 
-const object = { name: 'Max', age: 30 } // object = Object
-object.hobbies = ["Lesen", "Sport treiben"] // object kann ohne Probleme erweitert werden
+const object = { name: 'Max', age: 30 }; // object = Object
+object.hobbies = ["Lesen", "Sport treiben"]; // object kann ohne Probleme erweitert werden
 
 function addNumbers(a, b) {
-    return a + b
+    return a + b;
 }
 
-// addNumbers kann mit number-Parametern aufgerufen werden
-console.log(addNumbers(5, 10)) // 15
+// addNumbers kann mit number-Parametern aufgerufen werden:
+console.log(addNumbers(5, 10)); // 15
 
-// addNumbers kann auch mit string-Parametern aufgerufen werden
-console.log(addNumbers("5", "10")) // '510'
+// addNumbers kann auch mit string-Parametern aufgerufen werden:
+console.log(addNumbers("5", "10")); // '510'
 ```
+
+Allerdings gibt es in modernen Versionen von JS (z.B. ab ES6) die Möglichkeit, (optionale) Typisierung durch das Verwenden von Typ-Annotationen oder TypeScript hinzuzufügen, welche einer statische Typisierung ähneln können. Dies kann helfen, die Lesbarkeit und die Sicherheit von Code zu erhöhen.
+
 
 ## JavaScript einbinden
 
