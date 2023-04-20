@@ -2,7 +2,7 @@
 title: "Loops"
 type: docs
 linkTitle: "Loops"
-weight: 14
+weight: 11
 date: 2023-03-30
 description: >
     Modul #F4 - JavaScript - Loops.

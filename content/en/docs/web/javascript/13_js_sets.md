@@ -2,7 +2,7 @@
 title: "Sets"
 type: docs
 linkTitle: "Sets"
-weight: 16
+weight: 13
 date: 2023-03-31
 description: >
     Modul #F4 - JavaScript - Sets.

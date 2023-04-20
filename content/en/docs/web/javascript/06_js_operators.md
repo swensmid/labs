@@ -2,7 +2,7 @@
 title: "Operatoren"
 type: docs
 linkTitle: "Operatoren"
-weight: 9
+weight: 6
 date: 2023-04-19
 description: >
     Modul #F4 - JavaScript - Operatoren.

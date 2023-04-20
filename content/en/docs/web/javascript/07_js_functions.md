@@ -2,7 +2,7 @@
 title: "Functions"
 type: docs
 linkTitle: "Functions"
-weight: 10
+weight: 7
 date: 2023-03-28
 description: >
     Modul #F4 - JavaScript - Verschiedene Arten von Funktionen.

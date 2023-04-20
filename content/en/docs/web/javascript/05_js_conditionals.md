@@ -2,7 +2,7 @@
 title: "Conditionals"
 type: docs
 linkTitle: "Conditionals"
-weight: 8
+weight: 5
 date: 2023-03-24
 description: >
     Modul #F4 - JavaScript - Basics und nützliche Eigenschaften von Bedingungen.

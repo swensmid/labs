@@ -2,7 +2,7 @@
 title: "Arrays"
 type: docs
 linkTitle: "Arrays"
-weight: 11
+weight: 8
 date: 2023-03-28
 description: >
     Modul #F4 - JavaScript - Arrays/Listen und ihre Methoden.

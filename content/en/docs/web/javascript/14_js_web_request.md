@@ -2,7 +2,7 @@
 title: "Web Request"
 type: docs
 linkTitle: "Web Request"
-weight: 17
+weight: 14
 date: 2022-04-20
 description: >
   Modul #F4 - JavaScript - Web Requests in JavaScript.
