@@ -2,7 +2,7 @@
 title: "ES6: Variablen deklarieren"
 type: docs
 linkTitle: "ES6: Variablen deklarieren"
-weight: 7
+weight: 18
 date: 2023-01-09
 description: >
   Modul #F4 - JavaScript - Seit ES2015 (ES6) gibt es in JavaScript weitere neue Möglichkeiten, wie Variablen definiert werden können. Hier schauen wir uns einige davon an.
@@ -44,6 +44,35 @@ Wie du siehst, kannst du eine mit `let` deklarierte Variable verändern. Veränd
 
 Die Verwendung von `const` per Default hat die Vorteile, dass so Side-Effects vermieden werden können, welche auf Grund des Neu-Zuweisens von Variablen geschehen können.
 Wenn du z.B. sehr viele Variablen in einer Funktion hast, müsstest du überprüfen, dass du zuerst sicherstellen, dass deine neue Variable keine bestehende Variable im gleichen Scope überschreibst. Verwendest du standardmässig `const`, wird dir ein Fehler geworfen, der dir dann direkt ins Auge sticht.
+
+### JavaScript besitzt keine Typisierung
+JavaScript ist eine dynamisch typisierte Sprache, was bedeutet, dass die Typen der Variablen und Ausdrücke erst zur Laufzeit und nicht zur Kompilierungszeit festgelegt werden. Im Gegensatz dazu haben andere Sprachen wie Java, C++ und Python eine statische Typisierung, bei der der Typ einer Variablen oder eines Ausdrucks zur Kompilierungszeit festgelegt wird.
+
+In JS können Variablen während der Laufzeit ohne Einschränkungen ihren Typ ändern. Beispielsweise kann eine Variable zunächst als String initialisiert werden und später im Code auf einen numerischen Wert aktualisiert werden. Dies liegt daran, dass JS die Datentypen von Variablen dynamisch zuweist und ihnen erlaubt, sich während der Laufzeit zu ändern.
+
+Obwohl diese Flexibilität ein Vorteil von JS ist, kann sie auch zu unerwarteten Verhaltensweisen führen, wenn der/die Entwickler:in nicht aufpasst. In der Tat kann die mangelnde Typsicherheit in JS ein Nachteil sein, da sie dazu führen kann, dass sich Fehler erst zur Laufzeit manifestieren, anstatt dass sie bereits beim Kompilieren erkannt werden.
+
+Hier siehst du, dass sich die Typen von Variablen während der Laufzeit verändern lassen:
+
+```javascript
+let x = 5; // x = number
+x = 'Hello World;' // x = string
+
+const object = { name: 'Max', age: 30 }; // object = Object
+object.hobbies = ["Lesen", "Sport treiben"]; // object kann ohne Probleme erweitert werden
+
+function addNumbers(a, b) {
+    return a + b;
+}
+
+// addNumbers kann mit number-Parametern aufgerufen werden:
+console.log(addNumbers(5, 10)); // 15
+
+// addNumbers kann auch mit string-Parametern aufgerufen werden:
+console.log(addNumbers("5", "10")); // '510'
+```
+
+Allerdings gibt es in modernen Versionen von JS (z.B. ab ES6) die Möglichkeit, (optionale) Typisierung durch das Verwenden von Typ-Annotationen oder TypeScript hinzuzufügen, welche einer statische Typisierung ähneln können. Dies kann helfen, die Lesbarkeit und die Sicherheit von Code zu erhöhen.
 
 ### Scope
 
@@ -137,6 +166,63 @@ Folgender Grundsatz gilt:
 
 Wenn du wissen willst, wieso `var` nicht mehr verwendet werden sollte, dann kannst du dein Wissen hier vertiefen: https://medium.com/@codingsam/awesome-javascript-no-more-var-working-title-999428999994.
 
+### typeof Operator
+`typeof` ist ein Operator, der den Datentyp eines Ausdrucks oder einer Variablen zurückgibt. Er kann verwendet werden, um zu überprüfen, ob eine Variable einen primitiven Datentyp (inkl. string) hat, bevor eine Operation durchgeführt wird, die nur für diesen Datentyp geeignet ist.
+
+`typeof` gibt einen String zurück, der den Datentyp des Operanden darstellt. Die möglichen Rückgabewerte sind:
+* `undefined` für undefined-Werte
+* `boolean` für boolesche Werte
+* `number` für Zahlen
+* `string` für Zeichenketten
+* `object` für Objekte (einschließlich Arrays und null-Werten)
+* `function` für Funktionen
+
+```javascript
+typeof 42           // 'number'
+typeof 'hello'      // 'string'
+typeof true         // 'boolean'
+typeof undefined    // 'undefined'
+typeof null         // 'object'
+typeof []           // 'object'
+typeof {}           // 'object'
+typeof function(){} // 'function'
+```
+
+Es ist wichtig zu beachten, dass typeof nicht immer genau den Datentyp zurückgibt, den man erwartet. Insbesondere gibt typeof null "object" zurück, obwohl null eigentlich kein Objekt ist. Es ist daher oft besser, zusätzlich zu typeof andere Überprüfungen durchzuführen, um sicherzustellen, dass eine Variable den erwarteten Datentyp hat.
+
+### instanceof Operator
+Auch der `instanceof` Operator wird verwendet, um festzustellen, ob ein Objekt von einem bestimmten Typ ist. Er gibt ein boolesches Ergebnis zurück, das angibt, ob das übergebene Objekt eine Instanz des angegebenen Typs ist.
+
+Zu beachten ist das `instanceof` bei primitive Datentypen nicht geeignet, da sie keine Objekte sind, ist um festzustellen, ob die Variable von diesem Datentyp ist, dazu würde sich `typeof` besser eignen. 
+```javascript
+const numberVar = 1
+const stringVar = 'abc'
+const arrayVar = [1,2,3]
+const objectVar = {name: 'Max', age: 20}
+
+console.log(numberVar instanceof Number) // false
+console.log(stringVar instanceof String) // false
+console.log(arrayVar instanceof Array) // true
+console.log(objectVar instanceof Object) // true
+```
+
+Man kann jedoch `instanceof` und `typeof` kombinieren um sicherstellen, dass die Variable sowohl den erwarteten Datentyp als auch den Wertebereich entspricht.
+```javascript
+const numberVar = 1
+const stringVar = 'abc'
+const arrayVar = [1,2,3]
+const objectVar = {name: 'Max', age: 20}
+
+console.log(numberVar instanceof Number || typeof numberVar === 'number') // true
+console.log(stringVar instanceof String || typeof stringVar === 'string') // true
+console.log(arrayVar instanceof Array) // true
+console.log(objectVar instanceof Object) // true
+```
+
+### typeof vs. instanceof
+`typeof` ist besser geeignet, um primitive Datentypen wie Strings, Numbers und Booleans zu überprüfen.
+
+`instanceof` ist hingegen besser geeignet, um den Datentyp von Objekten zu überprüfen, einschließlich Arrays, Funktionen und benutzerdefinierten Objekten. Oder auch zum Prüfen ein Objekt von einer bestimmten Klasse erstellt wurde.
 
 ### Destructuring Assignment
 In JavaScript siehst du sehr oft, dass mehrere Variablen auf einmal definiert werden.

@@ -42,6 +42,7 @@ Git ist dir bereits bekannt ein Codeversionierungssystem, welches bei diesem Mod
 ### Node.js
 Node.js ist eine plattformübergreifende Opensource-JavaScript-Runtime, damit du den nötigen Webserver betreiben kannst, die für die Webentwicklung notwendig ist.
 Mit Node können wir später diverse Packages installieren und in unserer Webapplikation brauchen.
+Node.js ermöglicht den Entwicklern, JavaScript-Code außerhalb des Browsers auszuführen.
 
 ![task3](/images/task.png) 5' - Einzelarbeit
     
