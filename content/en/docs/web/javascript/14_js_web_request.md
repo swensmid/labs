@@ -165,7 +165,7 @@ function fetchJoke() {
       return data.value;
     })
     .catch((error) => {
-      console.error("Error in fetchJoke:", error.message);
+      console.error("Error in fetchJoke:", error);
       return null; // etwas zurückgebe, das auf einen Fehler hindeutet.
     });
 }
