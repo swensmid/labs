@@ -155,18 +155,18 @@ Möchte man eine genauere Prüfung des Status-Codes vornehmen, dann könnte man 
 Hier noch ein Beispiel, wie es mit `.then()` und `.catch()` aussehen könnte:
 
 ```javascript
-const jokeText = document.getElementById("joke-text");
 function fetchJoke() {
-  fetch("https://api.chucknorris.io/jokes/random", { method: "get" })
+  return fetch("https://api.chucknorris.io/jokes/random", { method: "get" })
     .then((response) => {
       if (!response.ok) throw Error("API not reachable");
       return response.json();
     })
     .then((data) => {
-      jokeText.textContent = data.value;
+      return data.value;
     })
     .catch((error) => {
-      jokeText.textContent = "Error: " + error.message;
+      console.error("Error in fetchJoke:", error.message);
+      return null; // etwas zurückgebe, das auf einen Fehler hindeutet.
     });
 }
 ```
