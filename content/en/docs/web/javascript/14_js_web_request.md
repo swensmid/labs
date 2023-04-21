@@ -152,6 +152,27 @@ async function fetchJoke() {
 
 Möchte man eine genauere Prüfung des Status-Codes vornehmen, dann könnte man statt `response.ok` das Property `response.status` überprüfen.
 
+Hier noch ein Beispiel, wie es mit `.then()` und `.catch()` aussehen könnte:
+
+```javascript
+const jokeText = document.getElementById("joke-text");
+function fetchJoke() {
+  fetch("https://api.chucknorris.io/jokes/random", { method: "get" })
+    .then((response) => {
+      if (!response.ok) throw Error("API not reachable");
+      return response.json();
+    })
+    .then((data) => {
+      jokeText.textContent = data.value;
+    })
+    .catch((error) => {
+      jokeText.textContent = "Error: " + error.message;
+    });
+}
+```
+
+Ganz generell: Bei der Verwendung von `fetch()` kann man darüber philosophieren, ob man `fetch()` überhaupt in einen `try`-`catch`-Block schmeissen soll. In den meisten Fällen reicht es vollkommen aus, die `response` auf den Status-Code zu überprüfen. In Frameworks wie Angular wird oft auf einen `try`-`catch`-Block verzichtet, da das Framework einen "globalen Exception-Handler" besitzt, der den User dann über den Fehler informieren würde.
+
 
 ![asset](/images/hint.png) Hierzu findest du [zwei Aufgaben im Lab](../../../../labs/web/html_css/03_javascript).
 
