@@ -92,19 +92,18 @@ Kompiliere die Annotation und den Annotations-Prozessor auf der Kommandozeile (T
 Befehl javac.
 
 ```shell
-javac <package>.<annotation>.java
-javac <package>.<annotationprocessor>.java
+cd ./src/main/java  # Befehle funktionieren ab diesem Verzeichnis.
+javac ./<path/to/my>/<Annotation>.java <path/to/my>/<AnnotationProcessor>.java
 ```
 
-Ersetze das Package und die Namen der Annotation/des Annotations-Prozessors mit deinen Angaben.
+Ersetze die Pfade und die Namen der Annotation/des Annotations-Prozessors mit deinen Angaben.
 
 ### Schritt 5
 
 Kompiliere die implementierte Modell-Klasse mit dem folgenden Befehl:
 
 ```shell
-javac -processor <package>.<annotationsprocessor> <model-klasse>.java
+javac -processor <package>.<AnnotationsProcessor> <path/to/my><ModelKlasse>.java
 ```
 
-Die Ausgabe auf die Kommandozeile durch den Annotations-Prozessor sollte anschliessend angezeigt
-werden.
+Die Ausgabe auf die Kommandozeile durch den Annotations-Prozessor sollte anschliessend angezeigt werden.
