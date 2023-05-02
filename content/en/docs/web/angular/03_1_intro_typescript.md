@@ -327,7 +327,7 @@ Im Wesentlichen ist ein `Promise` in JavaScript einem Versprechen im wirklichen 
 Als Beispiel schauen wir, wie ein kleines Kind, das seinen Eltern verspricht, sein Zimmer zu reinigen, in JavaScript aussieht.
 ```typescript
 let promiseToCleanTheRoom = new Promise(function(resolve, reject){
-    let isClean = trueM
+    let isClean = true;
     if(isClean){
         resolve("Clean");
     }
