@@ -1,7 +1,7 @@
 ---
 title: "Components"
 type: docs
-weight: 3
+weight: 5
 date: 2023-05-04
 description: >
   Components sind wie Grundbausteine in einer Angular-Applikation
@@ -19,10 +19,10 @@ Angular bietet sogenannte Lifecycle-Hooks an, mit denen wir handeln können, sob
 
 
 Ein Angular Component setzt sich aus 4 Dateien zusammen:
-- [Template](/03_4_ts_templates)
-- Unit Test File
-- Stylesheet
-- Component (Class)
+* [Template](/03_4_ts_templates)
+* Unit Test File
+* Stylesheet
+* Component (Class)
 
 ![Components Description](../images/component-desc.png)
 

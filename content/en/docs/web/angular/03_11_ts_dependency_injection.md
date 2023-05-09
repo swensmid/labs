@@ -1,23 +1,23 @@
 ---
 title: "Dependency Injection"
 type: docs
-weight: 3
+weight: 13
 date: 2023-05-04
 description: >
 
 ---
 
-### Was is eine Dependency Injection
+### Was ist eine Dependency Injection
 Dependency Injection ist ein Coding pattern, bei welchem Klassen alle Abhängigkeiten von externen Quellen erhalten, anstatt sie selbst zu erstellen.
 
 ### Dependency Injection in Angular
 Der Angular Dependency Injector liefert uns Vorteile wie Skalierbarkeit, Testbarkeit und eine klare Trennung von Aufgaben.
 
-Um den Dependency Injector in Angular zu nutzen müssen wir 3 Schritte erledigen
+Um den Dependency Injector in Angular zu nutzen, müssen wir 3 Schritte erledigen
 
-Den `@Injectable()` Decorator der Klasse/ dem Service hinzufügen.
-Den Injector davon erzählen, indem wir es als Provider aufzählen.
-Die Dependency injecten
+* Den `@Injectable()` Decorator der Klasse/ dem Service hinzufügen.
+* Den Injector davon erzählen, indem wir es als Provider aufzählen.
+* Die Dependency injecten
 
 1. @Injectable importieren und nutzen:
   ```typescript

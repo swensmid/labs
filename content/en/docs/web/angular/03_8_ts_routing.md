@@ -1,10 +1,19 @@
+---
+title: "Routing"
+type: docs
+weight: 10
+date: 2023-05-09
+description: >
+
+---
+
 # Routing
 ## Routing
-Angular Router ist ein leistungsstarker JavaScript-Router, der vom Angular Core Team erstellt und gewartet wird. Der Router wird über das Paket "@angular/router" installiert.
+Angular Router ist ein leistungsstarker JavaScript-Router, der vom Angular Core Team erstellt und gewartet wird. Der Router wird über das Paket `@angular/router` installiert.
 Das Paket bietet eine vollständige Routing-Library:
-- Mehrere Router-Outlets
-- Verschiedene Strategien für Path-Matching
-- Einfachen Zugriff auf Route-Parameter und Route-Guards zu haben, um Components vor unbefugtem Zugriff zu schützen.
+* Mehrere Router-Outlets
+* Verschiedene Strategien für Path-Matching
+* Einfachen Zugriff auf Route-Parameter und Route-Guards zu haben, um Components vor unbefugtem Zugriff zu schützen.
 
 Der Angular-Router ist ein zentraler Bestandteil der Angular-Plattform. Entwickler können damit Single Page Applications mit mehreren Views erstellen und zwischen diesen navigieren.
 
@@ -33,7 +42,7 @@ Wenn keine Übereinstimmung gefunden wird, kann man dies zum Anzeigen einer "Nic
 
 Schauen wir uns ein Beispiel einer Route an:
 ```typescript
-{ path: "contacts", component: ContactListComponent}
+{ path: "contacts", component: ContactListComponent }
 ```
 Falls diese Route so in der Router Konfiguration festgelegt wird, wird der Router den Component `ContactListComponent` rendern, sobald der URL des Browsers `/contacts` beinhaltet.
 
@@ -48,14 +57,14 @@ Die `canActivate()` Methode des Interfaces enthält die Logik, um den Zugriff au
 Beispielsweise ermöglicht folgender `Guard` immer den Zugriff auf eine Route:
 ```typescript
 class MyGuard implements CanActivate {
-    canActivate(){
+    canActivate() {
         return true;
     }
 }
 ```
 Eine Route können wir nun anhand dieses Guards schützen, indem wir das "canActivate"-Attribut des Pfades benutzen:
 ```typescript
-{ path: "contacts/:id", canActivate: [MyGuard], component: ContactListComponent}
+{ path: "contacts/:id", canActivate: [MyGuard], component: ContactListComponent }
 ```
 
 ## Navigation Directive

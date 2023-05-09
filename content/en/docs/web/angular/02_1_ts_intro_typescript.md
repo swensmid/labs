@@ -19,11 +19,11 @@ Da Quellcode geschrieben in TypeScript zu JavaScript transpiliert wird, ist der 
 
 
 ## Vorteile von TypeScript
-- TypeScript hebt Fehler während der Kompilierung hervor, während JavaScript - zur Laufzeit.
-- TypeScript unterstützt statische Typisierung.
-- Ermöglicht bessere Code-Strukturierung und Objekt-Orientierte Programmiertechniken.
-- TypeScript ist in jedem Browser oder JS Engine lauffähig.
-- Hervorragendes "Tooling" mit IntelliSense, das beim Hinzufügen des Codes aktive Hinweise liefert.
+* TypeScript hebt Fehler während der Kompilierung hervor, während JavaScript - zur Laufzeit.
+* TypeScript unterstützt statische Typisierung.
+* Ermöglicht bessere Code-Strukturierung und Objekt-Orientierte Programmiertechniken.
+* TypeScript ist in jedem Browser oder JS Engine lauffähig.
+* Hervorragendes "Tooling" mit IntelliSense, das beim Hinzufügen des Codes aktive Hinweise liefert.
 
 
 ## Grundlegende Syntax
@@ -105,9 +105,9 @@ let greeter = new Greeter("world");
 
 In diesem Beispiel wird eine neue Klasse "Greeter" deklariert. Die Klasse enthält 3 Member:
 
-- Das Property "greeting"
-- Den Konstruktor
-- Die Methode "greet"
+* Das Property "greeting"
+* Den Konstruktor
+* Die Methode "greet"
 
 Wenn wir in einer Klasse auf ein Member innerhalb der Klasse referenzieren, verwenden wir `this.`. 
 
@@ -267,16 +267,16 @@ In anderen Sprachen auch bekannt als Lambda-Function.
 
 
 Wieso werden Arrow-Functions benutzt?
-- Man muss nicht ständig "function" schreiben
-- Es erfasst die Bedeutung des Schlüsselworts "this"
-- Es erfasst die Bedeutung von Argumenten
+* Man muss nicht ständig "function" schreiben
+* Es erfasst die Bedeutung des Schlüsselworts "this"
+* Es erfasst die Bedeutung von Argumenten
 
 
 Eine Arrow Function können wir in 3 Teile aufteilen:
 
-- Parameter
-- Die arrow-notation `=>`
-- Statements
+* Parameter
+* Die arrow-notation `=>`
+* Statements
 
 
 Schauen wir uns ein Beispiel an:

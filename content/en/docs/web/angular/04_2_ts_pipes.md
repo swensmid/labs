@@ -2,7 +2,7 @@
 title: "Pipes"
 type: docs
 linkTitle: "Pipes"
-weight: 6
+weight: 16
 date: 2022-03-14
 description: >
     Jede Anwendung beginnt mit einer scheinbar einfachen Aufgabe: Daten abrufen, transformieren und Benutzern zeigen.
@@ -42,7 +42,7 @@ Unser Beispiel von vorher könnten wir z.B. so ausgeben:
 
 ## Chaining Pipes
 Wir können Pipes in nützlichen Kombinationen miteinander verketten. Im folgenden Beispiel wird der Geburtstag an die DatePipe und an die UpperCasePipe
-ngekettet, um den Geburtstag in Grossbuchstaben anzuzeigen.
+angekettet, um den Geburtstag in Grossbuchstaben anzuzeigen.
 
 ```html
 <p>The chained birthday of Martin Luther King Jr is {{ birthday | date | uppercase }} </p>
@@ -69,8 +69,8 @@ export class FileSizePipe implements PipeTransform{
     }
 }
 ```
-- Um Angular mitzuteilen, dass dies eine Pipe ist, wenden wir den `@Pipe` Decorator an, welchen wir aus `@angular/core` importieren.
-- Die Pipe-Klasse implementiert die Methode `transform` des PipeTransform Interface, die einen Eingabewert gefolgt von optionalen Parametern akzeptiert und den transformierten Wert zurückgibt.
-- Für jeden an die Pipe übergebenen Parameter gibt es ein zusätzliches Argument für die Methode `transform`. Unsere Pipe hat einen solchen Parameter: die `extension`.
-- Mit dem `@Pipe` Decorator können wir den Pipe-Namen definieren, welchen wir im Template verwenden.
+* Um Angular mitzuteilen, dass dies eine Pipe ist, wenden wir den `@Pipe` Decorator an, welchen wir aus `@angular/core` importieren.
+* Die Pipe-Klasse implementiert die Methode `transform` des PipeTransform Interface, die einen Eingabewert gefolgt von optionalen Parametern akzeptiert und den transformierten Wert zurückgibt.
+* Für jeden an die Pipe übergebenen Parameter gibt es ein zusätzliches Argument für die Methode `transform`. Unsere Pipe hat einen solchen Parameter: die `extension`.
+* Mit dem `@Pipe` Decorator können wir den Pipe-Namen definieren, welchen wir im Template verwenden.
 

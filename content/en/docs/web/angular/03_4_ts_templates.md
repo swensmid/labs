@@ -1,7 +1,7 @@
 ---
 title: "Templates"
 type: docs
-weight: 3
+weight: 6
 date: 2023-05-04
 description: >
 

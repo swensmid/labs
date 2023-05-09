@@ -2,17 +2,17 @@
 title: "Interceptors"
 type: docs
 linkTitle: "Interceptors"
-weight: 7
+weight: 12
 date: 2022-03-14
 description: >
     Interceptors in Angular sind eine einfache Möglichkeit des Frameworks, die http-Requests global abzufangen und zu verändern, bevor sie an den Server gesendet werden. 
 ---
 
-Dies ist sehr praktisch wenn wir Authentifizierungs Token konfigurieren, Protokolle der Requests erstellen und benutzerdefinierte Header hinzufügen wollen.
+Dies ist sehr praktisch, wenn wir Authentifizierungs-Token konfigurieren, Protokolle der Requests erstellen und benutzerdefinierte Header hinzufügen wollen.
 
 ![Interceptor](../images/interceptor.png)
 
-Um einen Interceptor zu implementieren, müssen wir eine Klasse erstellen, die die "Intercept"-Methode des "HttpInterceptor"-Interface implementiert.
+Um einen Interceptor zu implementieren, müssen wir eine Klasse erstellen, die die `Intercept` Methode des `HttpInterceptor` Interface implementiert.
 
 Der folgende Interceptor ist sehr simpel gehalten. Er gibt einfach jeden Request in der Konsole aus:
 
@@ -28,12 +28,12 @@ export class RequestLogInterceptor implements HttpInterceptor {
     }
 }
 ```
-Die Intercept-Methode wandelt jeden Request in Observables um, die später durch Aufrufen von next.handle() aufgelöst werden.
-Für unsere Implementierung ist es also ganz einfach: Wir nehmen den Request entgegen, protokollieren den URL und rufen next.handle() auf, um den Request an den Server zu senden, ohne Änderungen daran vorzunehmen.
+Die `Intercept` Methode wandelt jeden Request in Observables um, die später durch Aufrufen von `next.handle()` aufgelöst werden.
+Für unsere Implementierung ist es also ganz einfach: Wir nehmen den Request entgegen, protokollieren die URL und rufen `next.handle()` auf, um den Request an den Server zu senden, ohne Änderungen daran vorzunehmen.
 
 ## Interceptors Providen
 Da Interceptors Dependencies des HttpClient sind, müssen wir sie den Providern im selben Injektor hinzufügen, der den HttpClient bereitstellt.
-Angenommen, wir haben unser HttpClientModule in das AppModule importiert, müssen wir die Interceptors auch dort zu den Providern hinzufügen.
+Angenommen, wir haben unser `HttpClientModule` in das AppModule importiert, müssen wir die Interceptors auch dort zu den Providern hinzufügen.
 
 ```typescript
 //...
@@ -44,7 +44,7 @@ import { RequestLogInterceptor} from '...';
     //...
     imports: [
         HttpClientModule,
-        ...
+        // ...
     ],
     providers: [
         {
@@ -52,9 +52,9 @@ import { RequestLogInterceptor} from '...';
             useClass: RequestLogInterceptor,
             multi: true
         },
-        ...
+        // ...
     ],
-    ...
+    // ...
 })
 export class AppModule{ }
 ```

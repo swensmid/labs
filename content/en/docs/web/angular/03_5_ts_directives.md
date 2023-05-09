@@ -1,7 +1,7 @@
 ---
 title: "Directives"
 type: docs
-weight: 3
+weight: 7
 date: 2023-05-05
 description: >
 
