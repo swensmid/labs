@@ -20,7 +20,7 @@ Es gibt neue Anforderungen für die Tour of Heroes-App:
 
 Wenn du fertig bist, können die Benutzer wie folgt durch die Anwendung navigieren:
 
-![Navigation](/images/angular/nav-diagram.png)
+![Navigation](../images/nav-diagram.png)
 
 ## Hinzufügen des `AppRoutingModule`
 

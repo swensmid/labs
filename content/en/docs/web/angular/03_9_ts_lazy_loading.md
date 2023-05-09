@@ -10,7 +10,7 @@ description: >
     Dadurch wird die Ladezeit von Websites reduziert.
 ---
 
-![Lazy loading](/images/angular/lazy_loading.png)
+![Lazy loading](./images/lazy_loading.png)
 
 ## Lazy Loading in Angular
 Standardmässig lädt der Browser alle Angular-Module, bevor der Benutzer mit ihnen arbeiten kann.\
@@ -32,7 +32,7 @@ Einige Components von Angular Material unterstützen Lazy Loading.
 
 Ein Beispiel hierzu ist das Expansion-Panel.
 
-![Expansion Panel](/images/angular/expansion_panel.png)
+![Expansion Panel](./images/expansion_panel.png)
 
 Die Inhalte des Expansion Panels werden geladen, auch wenn das Expansion-Panel geschlossen ist.
 Wenn man auf einer Ansicht beispielsweise 30 dieser Expansion-Panels anzeigt und den jeweiligen Inhalt lädt, kann dies zu Performance-Problemen führen.

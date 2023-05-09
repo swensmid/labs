@@ -398,7 +398,7 @@ Für die Registrierung verwendet man den decorator ```@Injectable```. Normalerwe
 })
 ```
 
-Wenn ein Service vom injector ```root``` bereitgestellt wird, erstellt Angular ein Singleton des Service. Das heisst, es gibt nur eine Instanz des Service. Alle clients verwenden dieselbe Instanz des Service.
+Wenn ein Service vom injector `root` bereitgestellt wird, erstellt Angular ein Singleton des Service. Das heisst, es gibt nur eine Instanz des Service. Alle clients verwenden dieselbe Instanz des Service.
 
 Ein Service kann selber injected dependencies haben.
 

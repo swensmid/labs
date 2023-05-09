@@ -1,19 +1,12 @@
 ---
-title: "Services und Dependency Injection"
+title: "Dependency Injection"
 type: docs
-linkTitle: "Services und Dependency Injection"
-weight: 5
-date: 2022-03-14
+weight: 3
+date: 2023-05-04
 description: >
+
 ---
 
-## Services
-Services implementieren Daten oder Logik, die in den verschiedenen Components verwendet werden, z.B.:
-- Domain-Spezifische Berechnungen
-- Applikationsweiter Datencache
-- Kommunikation mit der Backendapplikation
-
-## Dependency Injection
 ### Was is eine Dependency Injection
 Dependency Injection ist ein Coding pattern, bei welchem Klassen alle Abhängigkeiten von externen Quellen erhalten, anstatt sie selbst zu erstellen.
 
@@ -68,14 +61,5 @@ export class AutoNutzer{
 ```
 Das Minibeispiel soll lediglich die 3 wichtigen Schritte etwas besser darstellen.
 
-In Euren Projekten werdet ihr dieses Verfahren für die Services anwenden.
+In Euren Projekten werdet ihr dieses Verfahren für die [Services](/03_6_ts_services) anwenden.
 
-## Aufgabe 2
-Folgende Datenbankstruktur ist gegeben:
-
-<img src="../04_03_Class_Diagram.png" alt="ERD" style="width:50%"/>
-
-- Erstelle für jede Entität ein geeignetes Model
-- Erstelle für jede Entität einen Service 
-- Erstelle bei jedem Service Musterdaten die du in einer geeigneten Component anzeigst. Design ist noch nicht wichig, es geht nur um das Verständnis
-- Behalte die Ordnerstruktur korrekt (Ordner für die Componenten, Ordner für die Services, etc.)

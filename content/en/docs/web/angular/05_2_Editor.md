@@ -86,6 +86,8 @@ ersetze ihn durch eine Datenbindung an die neue `hero` Eigenschaft.
 
 Um die `HeroesComponent` anzuzeigen, müsst du sie zum Template der Shell `AppComponent` hinzufügen.
 
+TODO führt nirgends hin
+
 Denke daran, dass `app-heroes` der [Element-Selektor](#selector) für die `HeroesComponent` ist.
 Füge also ein `<app-heroes>`-Element in die `AppComponent`-Templatdatei ein, direkt unter dem Titel.
 

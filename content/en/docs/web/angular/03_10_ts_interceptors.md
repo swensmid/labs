@@ -10,7 +10,7 @@ description: >
 
 Dies ist sehr praktisch wenn wir Authentifizierungs Token konfigurieren, Protokolle der Requests erstellen und benutzerdefinierte Header hinzufügen wollen.
 
-![Interceptor](/images/angular/interceptor.PNG)
+![Interceptor](../images/interceptor.png)
 
 Um einen Interceptor zu implementieren, müssen wir eine Klasse erstellen, die die "Intercept"-Methode des "HttpInterceptor"-Interface implementiert.
 

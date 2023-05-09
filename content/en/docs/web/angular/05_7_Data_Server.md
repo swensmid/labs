@@ -84,7 +84,7 @@ HttpClientInMemoryWebApiModule.forRoot(
 ```
 
 Die Konfigurationsmethode "forRoot()" nimmt eine "InMemoryDataService"-Klasse
-die die In-Memory-Datenbank vorbereiten.
+welche die In-Memory-Datenbank vorbereiten.
 
 Erzeuge die Klasse `src/app/in-memory-data.service.ts` mit dem folgenden Befehl:
 
@@ -819,7 +819,7 @@ Das ist die Aufgabe der `AsyncPipe` in der Vorlage.
 Starte die Anwendung erneut. Gib im *Dashboard* einen Text in das Suchfeld ein.
 Wenn du Zeichen eingibst, die mit einem vorhandenen Heldennamen übereinstimmen, siehst du etwas wie das hier.
 
-![Helden-Suchfeld mit den Buchstaben 'm' und 'a' sowie vier Suchergebnissen, die mit der Anfrage übereinstimmen und in einer Liste unterhalb der Sucheingabe angezeigt werden](/images/angular/toh-hero-search.png)
+![Helden-Suchfeld mit den Buchstaben 'm' und 'a' sowie vier Suchergebnissen, die mit der Anfrage übereinstimmen und in einer Liste unterhalb der Sucheingabe angezeigt werden](../images/toh-hero-search.png)
 
 ## Abschließende Überprüfung des Codes
 
