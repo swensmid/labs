@@ -97,10 +97,10 @@ myObservable.subscribe((value) => {
 ```
 
 ## Subscription
-Eine Subscription kann durch die `subscribe` Methode auf einem Observable erstellt werden. Wenn eine Subscription erstellt wird, wird eine Verbindung zwischen dem Observable und dem Observer hergestellt und der Datenfluss wird gestartet. Die Subscription gibt ein Objekt zurück, das eine Methode `unsubscribe enthält. Diese Methode kann aufgerufen werden, um die Subscription zu beenden und den Datenfluss zu stoppen.
+Eine Subscription kann durch die `subscribe` Methode auf einem Observable erstellt werden. Wenn eine Subscription erstellt wird, wird eine Verbindung zwischen dem Observable und dem Observer hergestellt und der Datenfluss wird gestartet. Die Subscription gibt ein Objekt zurück, das eine Methode `unsubscribe` enthält. Diese Methode kann aufgerufen werden, um die Subscription zu beenden und den Datenfluss zu stoppen.
 Sie wird verwendet um den Datenfluss kontrollieren und den Speicherbedarf reduzieren, indem man ungenutzte Datenströme stoppt.
 
-In dem folgenden Beispiel ist `mySubscription ist die Subscription, diese wird erstellt durch `myObservable.subscribe`.
+In dem folgenden Beispiel ist `mySubscription` die Subscription, diese wird erstellt durch `myObservable.subscribe`.
 
 ```typescript
 import { Observable } from 'rxjs';
