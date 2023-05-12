@@ -14,7 +14,7 @@ Es gibt vier Arten von Subjects:
 * `Subject`: Ein einfacher Subject, das die neuesten Werte an seine Abonnenten weiterleitet.
 * `BehaviorSubject`: Ein Subject, das den letzten Wert beibehält, der an ihn gesendet wurde, und ihn an jeden neuen Abonnenten sofort weitergibt.
 * `ReplaySubject`: Ein Subject, das alle Werte an seine neuen Abonnenten weiterleitet, unabhängig davon, wann sie das Abonnement starten.
-* `AsyncSubject: Ein Subject, das nur den letzten Wert weiterleitet, wenn es vollständig abgeschlossen ist.
+* `AsyncSubject`: Ein Subject, das nur den letzten Wert weiterleitet, wenn es vollständig abgeschlossen ist.
 
 Subjects sind besonders nützlich, wenn du eine zentrale Stelle benötigst, um Daten innerhalb deiner Anwendung zu verwalten und zu teilen. Zum Beispiel könntest du ein Subject verwenden, um Benutzerinteraktionen zu verfolgen und diese Daten an verschiedene Komponenten deiner Anwendung weiterzuleiten, um sie zu aktualisieren oder anzuzeigen.
 
