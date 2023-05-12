@@ -68,7 +68,7 @@ source.subscribe((value) => console.log(value));
 Info: In RxJS bezieht sich "Emission" auf den Wert, der von einem Observable emittiert oder ausgegeben wird.
 
 ### forkJoin
-`forkJoin` ist ein Kombinationsoperator, der ein Array von Observables akzeptiert und wartet, bis alle Observables ihre Emissionen abgeschlossen haben, bevor er ein neues Observable zurückgibt. Das zurückgegebene Observable gibt ein Array von Werten zurück, das den letzten Wert jedes Observables enthält, das dem forkJoin` Operator übergeben wurde.
+`forkJoin` ist ein Kombinationsoperator, der ein Array von Observables akzeptiert und wartet, bis alle Observables ihre Emissionen abgeschlossen haben, bevor er ein neues Observable zurückgibt. Das zurückgegebene Observable gibt ein Array von Werten zurück, das den letzten Wert jedes Observables enthält, das dem `forkJoin` Operator übergeben wurde.
 
 Dieser Operator ist besonders nützlich, wenn man mehrere Quellen von Daten hat, die parallel verarbeitet werden können, und man auf alle Ergebnisse warten muss, bevor man mit der nächsten Phase der Verarbeitung fortfahren kann.
 
