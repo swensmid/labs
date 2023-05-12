@@ -108,7 +108,7 @@ myReplaySubject.subscribe((value) => {
 ```
 
 ## AsyncSubject
-Im Gegensatz zu anderen Typen von Subjects speichert das `AsyncSubject` nur den letzten Wert, der von einem Observable gesendet wird, wenn das Observable vollständig abgeschlossen (`complete()`) ist, selbst wenn die `next()`Methode aufgerufen wurde. Wurde das Observable vollständig abgeschlossen, wird der letzte Wert an alle Observer weitergegeben, die auf das `AsyncSubject` subscriben. Ansonsten wird der letzte Wert nicht weitergegeben.
+Im Gegensatz zu anderen Typen von Subjects speichert das `AsyncSubject` nur den letzten Wert, der von einem Observable gesendet wird, wenn das Observable vollständig abgeschlossen (`complete()`) ist, selbst wenn die `next()` Methode aufgerufen wurde. Wurde das Observable vollständig abgeschlossen, wird der letzte Wert an alle Observer weitergegeben, die auf das `AsyncSubject` subscriben. Ansonsten wird der letzte Wert nicht weitergegeben.
 
 ```typescript
 import { AsyncSubject } from 'rxjs';
