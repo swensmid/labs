@@ -402,7 +402,7 @@ source.pipe(last((x) => x > 3, null)).subscribe((value) => console.log(value)); 
 ```
 
 ### skip
-Der `skip Operator gibt an, wie viele Ereignisse in einem Observable übersprungen werden sollen, bevor sie an einen Subscriber weitergegeben werden. Es wird verwendet, um den Startpunkt eines Observables zu verschieben.
+Der `skip` Operator gibt an, wie viele Ereignisse in einem Observable übersprungen werden sollen, bevor sie an einen Subscriber weitergegeben werden. Es wird verwendet, um den Startpunkt eines Observables zu verschieben.
 
 ```typescript
 import { of } from 'rxjs';
@@ -615,7 +615,7 @@ delayedSource.subscribe((value) => console.log(value));
 ## Conditional and Boolean Operators
 
 ### every
-Der `every` Operator prüft, ob alle Werte, die von einem Observable emittiert werden, eine bestimmte Bedingung erfüllen. Wenn die Bedingung für alle Werte `true` zurückgibt, gibt der Operator `true` zurück. Wenn die Bedingung für mindestens einen Wert `false` zurückgibt, gibt auch der Operator `false zurück.
+Der `every` Operator prüft, ob alle Werte, die von einem Observable emittiert werden, eine bestimmte Bedingung erfüllen. Wenn die Bedingung für alle Werte `true` zurückgibt, gibt der Operator `true` zurück. Wenn die Bedingung für mindestens einen Wert `false` zurückgibt, gibt auch der Operator `false` zurück.
 
 ```typescript
 import { from } from 'rxjs';
@@ -649,7 +649,7 @@ numbers.pipe(find((x) => x > 10)).subscribe(
 ```
 
 ### findIndex
-Der `findIndex `Operator gibt den Index des ersten Elements in eines Observables zurück, das die angegebene Bedingung erfüllt. Sie funktioniert ähnlich wie [find](../../../../en/docs/web/angular/07_3_Operators#find), aber gibt den Index des Elements statt des Elements selbst zurück.
+Der `findIndex` Operator gibt den Index des ersten Elements in eines Observables zurück, das die angegebene Bedingung erfüllt. Sie funktioniert ähnlich wie [find](../../../../en/docs/web/angular/07_3_Operators#find), aber gibt den Index des Elements statt des Elements selbst zurück.
 
 ```typescript
 import { findIndex, from } from 'rxjs';
@@ -666,7 +666,7 @@ numbers.pipe(findIndex((x) => x > 10)).subscribe(
 ```
 
 ### isEmpty
-`isEmpty` ist ein Operator, welcher prüft, ob eine Observable leer ist oder nicht. Wenn das Observable leer ist, gibt der Operator `true` zurück, andernfalls `false.
+`isEmpty` ist ein Operator, welcher prüft, ob eine Observable leer ist oder nicht. Wenn das Observable leer ist, gibt der Operator `true` zurück, andernfalls `false`.
 
 ```typescript
 import { of } from 'rxjs';
