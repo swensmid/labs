@@ -127,7 +127,7 @@ merge(source1, source2).subscribe((value) => {
 ```
 
 ### zip
-Der zip` Operator kombiniert die Emissionen mehrerer Observables zu einer einzelnen Emission. Dabei werden die Emissionen jedes Observables zu einer Gruppe kombiniert, und sobald alle Observables eine Emission abgegeben haben, wird diese Gruppe als Emission des resultierenden Observables ausgegeben.
+Der `zip` Operator kombiniert die Emissionen mehrerer Observables zu einer einzelnen Emission. Dabei werden die Emissionen jedes Observables zu einer Gruppe kombiniert, und sobald alle Observables eine Emission abgegeben haben, wird diese Gruppe als Emission des resultierenden Observables ausgegeben.
 
 Dieser Operator ist besonders nützlich, wenn man mehrere Datenströme kombiniert und sicherstellen muss, dass alle Daten synchronisiert sind. Man muss jedoch beachten, dass der Operator die Emissionen jedes Observables zu einer Gruppe kombiniert, was bedeutet, dass die Grösse jeder Emission vom Observable mit der geringsten Anzahl an Emissionen begrenzt wird.
 
@@ -235,7 +235,7 @@ from([1, 2, 3, 4])
 ```
 
 ### switchAll/switchMap
-`switchMap` ist ähnlich wie das `mergeMap`, es subscribed auch das innere Observable. Auch hier ist `switchMap` eine Kombination, und zwar von `switchAll` und `map`. `switchAll canceled die vorherige Subscription und subscribed auf die neue, wenn ein neues Observable reinkommt.
+`switchMap` ist ähnlich wie das `mergeMap`, es subscribed auch das innere Observable. Auch hier ist `switchMap` eine Kombination, und zwar von `switchAll` und `map`. `switchAll` canceled die vorherige Subscription und subscribed auf die neue, wenn ein neues Observable reinkommt.
 
 Wie [delay](../../../../en/docs/web/angular/07_3_Operators#delay) funktioniert kann man hier nachlesen.
 
