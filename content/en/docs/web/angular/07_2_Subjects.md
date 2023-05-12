@@ -48,7 +48,7 @@ mySubject.next('Another value');
 ## BehaviorSubject
 Im Gegensatz zum normalen `Subject` speichert das `BehaviorSubject` den letzten gesendeten Wert, sodass er ihn an neue Observer weitergeben kann. Wenn keine Werte zuvor gesendet wurden, gibt das `BehaviorSubject` den initialen Wert zurück, der ihm während der Initialisierung zugewiesen wurde.
 
-Ein `BehaviorSubject` kann nützlich sein, wenn man einen Wert benötigen, auf den man jederzeit zugreifen kann, auch wenn es keine neuen Ereignisse gibt.
+Ein `BehaviorSubject` kann nützlich sein, wenn man einen Wert benötigt, auf den man jederzeit zugreifen kann, auch wenn es keine neuen Ereignisse gibt.
 
 ```typescript
 import { BehaviorSubject } from 'rxjs';
