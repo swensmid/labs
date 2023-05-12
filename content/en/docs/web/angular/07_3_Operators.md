@@ -108,7 +108,7 @@ forkJoin([source1, source2]).subscribe(([value1, value2]) => {
 ```
 
 ### merge
-Der `merge` Operator kombiniert auch mehrere Observables, indem er die Emissionen aller Observables in einem einzigen Observable zusammenführt. Im Gegensatz zum `concat` Operator führt `merge die Emissionen parallel aus, unabhängig davon, welches Observable die Emissionen zuerst ausgibt.
+Der `merge` Operator kombiniert auch mehrere Observables, indem er die Emissionen aller Observables in einem einzigen Observable zusammenführt. Im Gegensatz zum `concat` Operator führt `merge` die Emissionen parallel aus, unabhängig davon, welches Observable die Emissionen zuerst ausgibt.
 
 Beachten muss man jedoch, dass dieser Operator keine Garantie für die Reihenfolge der Emissionen gibt und dass es möglich ist, dass die Emissionen der Observables sich gegenseitig überschneiden.
 
