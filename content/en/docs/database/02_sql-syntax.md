@@ -126,7 +126,8 @@ Das Resultat dieses Statements würde schliesslich so aussehen:
 
 ### WHERE
 Das WHERE ist im Vergleich zu den anderen kein echtes Statement, sondern eine Ergänzung dazu. Mit dem Where kann
-spezifiziert werden, welche Daten für das Statement verwendet werden sollen. Hier ein Beispiel dazu:
+spezifiziert werden, welche Daten für das Statement verwendet werden sollen. Mehrere Bedingungen können mit den Keywords
+`AND` und `OR` aneinandergereiht werden. Hier ein Beispiel dazu:
 
 Ausgangstabelle:
 
@@ -148,6 +149,7 @@ Das Statement gibt schliesslich alle Werte zurück, die die Bedingung erfüllen:
 | Fritz   | Fischer    | 26    | Pilot/in           |
 | Max     | Mustermann | 16    | Maurer/in          |
 
+[//]: # (TODO: Like ergänzen)
 
 ### UPDATE
 Das Update Statement wird verwendet, um Inhalte (Tabelle, Datenbank, Constraints, etc.) zu ändern. Ein UPDATE 
@@ -238,7 +240,7 @@ Der Inner Join oder auch nur Join (je nach Datenbank) ist der wichtigste und am 
 verbindet die Tabellen und gibt nur die Schnittmenge zurück. Also alle Werte, die auch ein Gegenstück haben. Grafisch 
 dargestellt würde dieser Join so aus sehen:
 
-![](./images/inner-join.png)
+![Inner Join](../images/inner-join.png)
 
 *Quelle: https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/*
 
@@ -253,12 +255,12 @@ Im Vergleich zum Inner Join wird beim Right und Left Join nicht nur die Schnittm
 Menge zurückgegeben. Grafisch würde das so aussehen:
 
 #### Right Join
-![](./images/right-join.png)
+![Right Join](../images/right-join.png)
 
 *Quelle: https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/*
 
 #### Left Join
-![](./images/left-join.png)
+![Left Join](../images/left-join.png)
 
 *Quelle: https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/*
 
@@ -332,7 +334,7 @@ Der Full Join ist sehr eng mit dem Left und Right Join verwandt. Jetzt werden je
 Gegenstück zu einem Wert vorhanden ist, werden diese gleich wie beim Left und Right Join mit `null` angegeben. Grafisch
 sieht das ganze so aus:
 
-![](./images/full-join.png)
+![Full Join](../images/full-join.png)
 
 *Quelle: https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/*
 

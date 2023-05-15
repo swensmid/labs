@@ -11,7 +11,6 @@ weight: 3
 * [Unique](#unique)
 * [Primary Key](#primary-key)
 * [Foreign Key](#foreign-key)
-* [Index](#index)
 
 
 
@@ -24,10 +23,10 @@ kann entweder beim Erstellen der Tabelle oder mit einem `Alter` hinzugefügt wer
 ## Not Null
 Das `Not Null` Constraint legt fest, dass ein Attribut nicht Null, spricht **nicht leer** sein darf. Das kann
 beispielsweise bei einer Id, die zum Verbinden von Tabellen verwendet wird, eingesetzt werden, damit es immer einen Wert
-gibt. Hier ein Beispiel wie ein Not Null Constraint erstellt wird:
+gibt. Hier ein Beispiel wie ein `Not Null` Constraint erstellt wird:
 
 ```sql
-CREATE TABLE person(personen_id: number NOT NULL, vorname: varchar(255), nachname: varchar(255));
+CREATE TABLE person(personen_id number NOT NULL, vorname varchar(255), nachname varchar(255));
 ```
 
 ```sql
@@ -46,7 +45,7 @@ Das `Unique` Constraint bedingt, dass jeder eingefügte Wert einzigartig, also n
 beispielsweise duplikationen von Ids verhindert werden. Hier ein Beispiel zum `Unique` Constraint:
 
 ```sql
-CREATE TABLE person(personen_id: number UNIQUE, vorname: varchar(255), nachname: varchar(255));
+CREATE TABLE person(personen_id number UNIQUE, vorname varchar(255), nachname varchar(255));
 ```
 
 Beispieldaten Person:
@@ -72,7 +71,7 @@ dieses Constraint praktisch, da in eigentlich jedem Fall eine Id bestehen sollte
 Hier ein beispiel zum `Primary Key`:
 
 ```sql
-CREATE TABLE person(personen_id: number UNIQUE, vorname: varchar(255), nachname: varchar(255));
+CREATE TABLE person(personen_id number UNIQUE, vorname varchar(255), nachname varchar(255));
 ```
 
 Beispieldaten Person:
@@ -96,7 +95,46 @@ INSERT INTO person VALUES (4, "Karl", "Karlsen");
 ```
 
 ## Foreign Key
+Das `Foreign Key` Constraint stellt sicher, dass der Wert in einer Spalte einer Tabelle auf einen existierenden Wert in 
+einer anderen Tabelle verweist. Das bedeutet, dass die Beziehungen zwischen den Tabellen beibehalten werden und 
+Datenkonsistenz gewährleistet wird. Ein Fremdschlüssel wird durch das Verknüpfen von Spalten in verschiedenen Tabellen 
+erstellt. Hier ein Beispiel dazu:
 
-## Index
+```sql
+CREATE TABLE adresse(id number PRIMARY KEY, strasse varchar(255), hausnummer number, plz number, ort varchar(255));
+
+CREATE TABLE person(id number PRIMARY KEY, vorname varchar(255), nachname varchar(255), alter number, adresse_id number 
+FOREIGN KEY REFERENCES adresse(id));
+```
+> **Info:** Die Benennung des Fremdschlüssels wurde in diesem Beispiel der einfachheit halber nicht korrekt gemacht.
+> Je nach Naming Convention im Projekt muss der Fremdschüssel anders benannt werden. Hier ein Link mit weiteren Infos:
+> [Naming Conventions SQL Server](https://www.dotnettricks.com/learn/sqlserver/sql-server-naming-conventions-and-standards)
+
+Beispiel Daten Person:
+
+| id | vorname   | nachname  | alter | adresse_id |
+|----|-----------|-----------|-------|------------|
+| 1  | Christoph | Spycher   | 45    | 1          |
+| 2  | Sepp      | Blatter   | 87    | 2          |
+| 3  | Gianni    | Infantion | 53    | 2          |
+| 4  | Nilo      | Nashorn   | 2     | 3          |
 
 
+Beispiel Daten Adresse:
+
+| id | strasse              | hausnummer | plz  | ort     |
+|----|----------------------|------------|------|---------|
+| 1  | Papeiermuehlestrasse | 71         | 3014 | Bern    |
+| 2  | Seestrasse           | 27         | 8002 | Zuerich |
+| 3  | Binningerstrasse     | 30         | 3054 | Basel   |
+
+```sql
+-- Funktioniert nicht, da in der Tabelle Adresse keine Adresse mit der Id 27 besteht.
+INSERT INTO person VALUES (5, "Boris", "Biberratte", 4, 27);
+
+-- Funktioniert, da die Id 3 in der Tabelle Adresse vergeben ist.
+INSERT INTO person VALUES (5, "Hans", "Hecht", 4, 3);
+
+-- Funktioniert, da der Foreign Key auch null sein darf.
+INSERT INTO person VALUES (5, "Silvia", "Stachelschwein", 4, null);
+```

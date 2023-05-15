@@ -45,7 +45,7 @@ ausschliesslich Zahlen in dieser Spalte eingegeben werden. Die Spalte heisst auc
 Eine Reihe *(Row)* beinhaltet jeweils einen ganzen Datensatz, wie beispielsweise alle Benutzerdaten. Die Reihe wird auch
 **Tupel** genannt.
 
-![](./images/Begriffe_relationaler_Datenbanken.png)
+![](../images/Begriffe_relationaler_Datenbanken.png)
 
 *Quelle: https://de.wikipedia.org/wiki/Datenbanktabelle*
 
@@ -59,7 +59,7 @@ Wie erklärt gibt es viele verschiedene Ansätze bei NO-SQL, deshalb gibt es auc
 SQL gibt. Bei den verschiedenen Anbietern kann also die Verwendung sehr unterscheiden. Auch wegen der verschiedenen 
 Speicherarten ist keine NO-SQL Datenbank wie die andere,
 
-![](./images/NoSQLDatabases.jpg)
+![](../images/NoSQLDatabases.jpg)
 
 *Quelle: https://www.geeksforgeeks.org/types-of-nosql-databases/*
 
