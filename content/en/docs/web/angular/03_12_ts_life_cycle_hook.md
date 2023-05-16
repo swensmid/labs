@@ -25,3 +25,4 @@ Lifecycle-Hooks ermöglichen es Entwicklern, Code zu spezifischen Zeitpunkten im
 
 * **ngOnDestroy:** Wird aufgerufen, bevor ein Component zerstört wird. Hier kann man bereinigende Aktionen durchführen, Subscriptions beenden oder Ressourcen freigeben.
 
+![Lifecycle-Hooks ](../images/angular-lifecycle-hook.png)
