@@ -10,7 +10,7 @@ description: >
 ## Grundlegende Struktur einer Angular-Anwendung
 In Angular gibt es eine definierte Struktur, die von Entwicklern empfohlen wird, um eine konsistente und leicht verständliche Anwendungsentwicklung sicherzustellen.
 
-Die grundlegende Struktur einer Angular-Anwendung besteht aus folgenden:
+Die grundlegende Struktur einer Angular-Anwendung besteht aus folgenden Files:
 
 * [Module](./03_7_ts_modules): Ein Angular-Modul ist eine Sammlung von Components, Services, Directives und anderen Funktionen, die für eine bestimmte Funktionalität oder einen bestimmten Zweck zusammengefasst werden. Ein Modul wird in der Regel in einer separaten File deklariert und exportiert.
 
