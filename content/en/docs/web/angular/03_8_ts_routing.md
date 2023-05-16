@@ -44,7 +44,7 @@ Schauen wir uns ein Beispiel einer Route an:
 ```typescript
 { path: "contacts", component: ContactListComponent }
 ```
-Falls diese Route so in der Router Konfiguration festgelegt wird, wird der Router den Component `ContactListComponent` rendern, sobald der URL des Browsers `/contacts` beinhaltet.
+Falls diese Route so in der Router Konfiguration festgelegt wird, wird der Router den Component `ContactListComponent` rendern, sobald die URL des Browsers `/contacts` beinhaltet.
 
 ## Route Guards
 Ein Route Guard ist ein Feature des Angular Routers, mit der wir Logik ausführen können, wenn eine Route angefordert wird.

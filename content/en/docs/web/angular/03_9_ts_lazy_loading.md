@@ -6,8 +6,8 @@ weight: 11
 date: 2022-03-14
 description: >
     Lazy Loading bezeichnet ganz allgemein eine Technik in der Software-Entwicklung um Daten erst bei Bedarf nachzuladen.
-    Im Zusammenhang mit Websites geht es darum, beispielsweise Bilder erst dann zu vom Server zu laden, wenn diese im sichtbaren Bereich sind.
-    Dadurch wird die Ladezeit von Websites reduziert.
+    Im Zusammenhang mit Websites geht es darum, beispielsweise Bilder erst dann vom Server zu laden, wenn diese im sichtbaren Bereich sind.
+    Dadurch wird die Ladezeit reduziert.
 ---
 
 ![Lazy loading](../images/lazy_loading.png)

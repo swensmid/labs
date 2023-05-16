@@ -7,7 +7,7 @@ description: >
   Components sind wie Grundbausteine in einer Angular-Applikation
 ---
 ## Components
-Components sind wie Grundbausteine in einer Angular-Applikation. Components werden mit dem "@Component" Decorator definiert.
+Components sind wie Grundbausteine in einer Angular-Applikation. Components werden mit dem `@Component` Decorator definiert.
 
 Components sind TypeScript Klassen, die die Daten und Kontrollstrukturen zum Verhalten der Templates beinhalten.
 Metadaten teilen Angular mit, wie die Components verarbeitet werden sollen (selector, template, style).

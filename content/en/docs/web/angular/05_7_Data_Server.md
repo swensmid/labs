@@ -83,7 +83,7 @@ HttpClientInMemoryWebApiModule.forRoot(
 )
 ```
 
-Die Konfigurationsmethode "forRoot()" nimmt eine "InMemoryDataService"-Klasse
+Die Konfigurationsmethode "forRoot()" nimmt eine "InMemoryDataService"-Klasse entgegen,
 welche die In-Memory-Datenbank vorbereiten.
 
 Erzeuge die Klasse `src/app/in-memory-data.service.ts` mit dem folgenden Befehl:

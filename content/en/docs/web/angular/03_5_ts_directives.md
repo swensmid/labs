@@ -7,7 +7,7 @@ description: >
 
 ---
 ## Directives
-Directives sind ein Mechanismus, um die Darstellung von HTML-Elementen und das Verhalten von Components zu manipulieren. Direktiven ermöglichen es, benutzerdefinierte HTML-Attribute oder -Elemente zu definieren, die spezielle Funktionalitäten bereitstellen, die nicht in HTML standardmässig verfügbar sind.
+Directives sind ein Mechanismus, um die Darstellung von HTML-Elementen und das Verhalten von Components zu manipulieren. Direktiven ermöglichen es, benutzerdefinierte HTML-Attribute oder -Elemente zu definieren, die spezielle Funktionalitäten bereitstellen, die standardmässig nicht in HTML verfügbar sind.
 
 Es gibt drei Arten von Directives in Angular
 
@@ -34,7 +34,7 @@ export class HighlightComponent {
 ```
 
 ### Struktur-Directives
-Struktur-Directives sind Directives, die das DOM manipulieren und Elemente hinzufügen oder entfernen. Ein Beispiel für eine Struktur-Direktive ist `*ngIf`, die ein Element ausblendet, wenn eine Bedingung nicht erfüllt ist.
+Struktur-Directives sind Directives, die das DOM manipulieren und Elemente hinzufügen oder entfernen. Ein Beispiel für eine Struktur-Directive ist `*ngIf`, das ein Element ausblendet, wenn eine Bedingung nicht erfüllt ist.
 ```html
 <div>
   <h1 *ngIf="showTitle">Hello, World!</h1>

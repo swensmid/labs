@@ -10,7 +10,7 @@ description: >
 ### Was ist ein Template?
 In Angular ist das Template der Teil eines Components, der die Benutzeroberfläche definiert. Es ist im Wesentlichen das HTML, das vom Component angezeigt wird und mit der Benutzer interagieren kann.
 
-Das Template kann jedoch mehr als nur HTML enthalten. Es kann auch Angularspezifische Syntax wie Directives, Pipes, Interpolationen, Bindings enthalten, die die Funktionalität und das Verhalten des Components bestimmen.
+Das Template kann jedoch mehr als nur HTML enthalten. Es kann auch Angularspezifische Syntax wie Directives, Pipes, Interpolationen und Bindings enthalten, die die Funktionalität und das Verhalten des Components bestimmen.
 
 Beispielsweise können wir im Template eine if-Kontrollstruktur wie folgt anwenden:
 ```html

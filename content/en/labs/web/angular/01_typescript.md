@@ -35,7 +35,7 @@ Diese kannst du nun anhand von Node ausführen: <br>
 Falls alles funktioniert hat, gibt die Konsole `Hello World` aus.
 
 ### Übung 2
-![task1](/images/task.png) - Einzelarbeit [Übung 2](/files/exams/angular/uebung2.ts)
+![task2](/images/task.png) - Einzelarbeit [Übung 2](/files/exams/angular/uebung2.ts)
 
     Lade die Datei im Titel herunter und fülle wo nötig Quellcode ein.
     Die Person soll sich folgendermassen vorstellen: "Hallo, mein Name ist  [Name]"

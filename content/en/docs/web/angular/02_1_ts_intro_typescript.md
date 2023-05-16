@@ -29,7 +29,7 @@ Da Quellcode geschrieben in TypeScript zu JavaScript transpiliert wird, ist der 
 ## Grundlegende Syntax
 Da es sich bei TypeScript um ein Superset von JavaScript handelt, ist JavaScript-Code auch gültiger TypeScript-Code. Jedoch fügt TypeScript darüber hinaus viele neue Funktionen hinzu.
 
-Mit TypeScript wird JavaScript mehr wie eine stark typisierte, objektorientierte Sprache, die C# und Java ähnelt. Dies bedeutet, dass TypeScript-Code für grosse Projekte leichter zu verwenden ist und dass Code leichter zu verstehen und zu verwalten ist. Die starke Typisierung bedeutet auch, dass die Sprache vorkompiliert werden kann und dass Variablen keine Werte zugewiesen werden können, die ausserhalb ihres angegebenen Bereichs liegen. Wenn zum Beispiel eine TypeScript-Variable als Zahl deklariert ist, kann man dieser Variable keinen Textwert zuweisen.
+Mit TypeScript wird JavaScript zu einer stark typisierten, objektorientierten Sprache, die C# und Java ähnelt. Dies bedeutet, dass TypeScript-Code für grosse Projekte leichter zu verwenden und leichter zu verstehen und verwalten ist. Die starke Typisierung bedeutet auch, dass die Sprache vorkompiliert werden kann und dass Variablen keine Werte zugewiesen werden können, die ausserhalb ihres angegebenen Bereichs liegen. Wenn zum Beispiel eine TypeScript-Variable als Zahl deklariert ist, kann man dieser Variable keinen Textwert zuweisen.
 
 
 ## Typanmeldungen
@@ -43,7 +43,7 @@ Der Compiler überprüft dann die Typen während des Kompilierens und meldet all
 Die verschiedenen Grundtypen von TypeScript sind [hier](https://www.typescriptlang.org/docs/handbook/basic-types.html) ersichtlich.
 
 ### Type Any
-Der Typ `any` ein spezieller Typ, der es ermöglicht, Variablen, Funktionen und andere Objekte ohne explizite Typisierung zu deklarieren. Wenn eine Variable oder ein Objekt mit `any` deklariert wird, bedeutet dies, dass der Typ nicht eingeschränkt ist und dass alle Arten von Werten diesem Typ zugewiesen werden können, ohne dass eine Typüberprüfung durchgeführt wird. Bedeutet das man so die gesamte Typisierung umgehen kann und dann wie bei JavaScript Typfehler erst während der Laufzeit sehen würde.
+Der Typ `any` ein spezieller Typ, der es ermöglicht, Variablen, Funktionen und andere Objekte ohne explizite Typisierung zu deklarieren. Wenn eine Variable oder ein Objekt mit `any` deklariert wird, bedeutet dies, dass der Typ nicht eingeschränkt ist und dass alle Arten von Werten diesem Typ zugewiesen werden können, ohne dass eine Typenüberprüfung durchgeführt wird. Bedeutet das man so die gesamte Typisierung umgehen kann und dann wie bei JavaScript Typfehler erst während der Laufzeit sehen würde.
 
 Beispiel mit `any`, welches zu Laufzeitfehler führt:
 ```typescript

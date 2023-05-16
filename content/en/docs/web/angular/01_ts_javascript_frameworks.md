@@ -17,7 +17,7 @@ Ein Framework ist eine Art "Grundgerüst" für die Entwicklung von Software, wel
 ![Framework](../images/frontend.png)    
 
 ## JS Frameworks
-JavaScript-Frameworks sind also da, die Arbeit mit JavaScript einfacher und reibungsloser zu machen.
+JavaScript-Frameworks sind also da, um die Arbeit mit JavaScript einfacher und reibungsloser zu machen.
 
 Durch verschiedenste Web-Frameworks wird die Gestaltung von Websites sehr flexibel, daher bevorzugen es die meisten Entwickler.
 
