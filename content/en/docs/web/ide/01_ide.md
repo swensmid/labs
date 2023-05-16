@@ -21,6 +21,8 @@ IntelliJ kann man am besten über die JetBrains Toolbox herunterladen. https://w
 ### Vim
 Vim steht für "**V**i **IM**proved" und ist ein erweiterter Texteditor, der auf dem älteren vi-Editor basiert. Es ist ein beliebter Texteditor unter Entwicklern und Systemadministratoren, der auf verschiedenen Betriebssystemen wie Linux, macOS und Windows verwendet werden kann. Vim zeichnet sich durch seine Effizienz, Flexibilität und Erweiterbarkeit aus.
 
+Für VS-Code muss man das Plugin `Vim` und für IntelliJ das Plugin `IdeaVim` installieren, damit man diesen Editor verwenden kann.
+
 ### Extensions
 Folgende Extensions sind praktisch für die Entwicklung von Webapps:
 
@@ -31,10 +33,16 @@ Folgende Extensions sind praktisch für die Entwicklung von Webapps:
     - Material Icon Theme
     - Path Intellisense
     - Prettier – Code formatter
+    - Auto Rename Tag
+    - Auto Close Tag
+    - Better Comments
+    - Template String Converter
 
     IntelliJ:
     - Prettier
-    -
+    - Rainbow Bracket
+    - Key Promoter X
+    - ESLint (mit dem Command npm install --g eslint)
 
 ### Live-Server
 #### Wozu braucht man den Live-Server?

@@ -4,17 +4,12 @@ linkTitle: "Linter"
 weight: 1
 date: 2023-05-12
 description: >
-    In diesem Kapitel werden die IDE und genutzte Tools in der Theorie beschrieben, Anleitungen platziert oder auch vereinzelte Aufgaben gestellt.
+    Hier wird erklärt was Linter sind und wie man diese benutzt.
 ---
 
 ## Linter
 Ein Linter analysiert den Quellcode auf der Grundlage vordefinierter Regeln, Konventionen und Best Practices. Er prüft den Code auf häufige Fehler wie fehlende Semikolons, undefinierte Variablen, nicht verwendete Importe, ungültige Syntax und andere potenzielle Probleme. Darüber hinaus kann ein Linter auch den Code-Stil überprüfen, um sicherzustellen, dass er den vereinbarten Standards im Projekt entspricht.
 Der Hauptzweck eines Linters besteht darin, Entwicklern dabei zu helfen, qualitativ hochwertigen Code zu schreiben, der gut strukturiert, fehlerfrei und leicht wartbar ist.
-
-TODO: Muss rein:
-* auto-formatieren und Lint-Fixes beim Speichern einer Datei (z.B. .vscode/settings.json)
-* eigene Lint-Regeln hinzufügen
-* Linting durchführen mit der Konsole
 
 ### ESLint
 ESLint ist ein äusserst beliebtes und leistungsstarkes statisches Code-Analysetool für JavaScript- und TypeScript-Projekte.
@@ -66,6 +61,29 @@ eslint --fix src/index.js
 
 Vielfach ist ESLint bereits als Script im `packages.json` hinterlegt und kann dann so mit dem Befehl `npm run <scriptname>` aufgerufen werden.
 
+#### ESLint als beim Speichern
+**Im VS-Code**:
+
+Man öffnet die VS Code-Einstellungen, indem man "Datei" (File) in der Menüleiste wählen und dann "Einstellungen" (Preferences) auswählen. Oder man verwendet den Shortcut "Strg + ," für Windows/Linux oder "Cmd + ," für macOS.
+
+Man sucht nach `Save Actions` in den Einstellungen und wählt "In settings.json bearbeiten" (Edit in settings.json).
+
+In der `settings.json`-Datei fügt man den folgenden Code hinzu:
+```json
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+```
+
+Nun noch die Datei speichern und VS-Code wird automatisch den Code formatieren und Lint-Fixes anwenden, wenn man eine Datei speichert.
+
+
+**Im IntelliJ**:
+
+Man öffnet die VS Code-Einstellungen, indem man den Shortcut "Strg + Alt + S" für Windows/Linux oder "Cmd + ," für macOS verwendet.
+
+Man navigiert zu `Languages & Frameworks` -> `[Code-Language z.B. JavaScript]` -> `Code Quality Tools` -> `ESLint` nun wählt man die `Automatic ESLint configuration` und `Run eslint --fix on save` Option an.
 
 ### Prettier
 Prettier ist ein beliebtes Codeformatierungstool, das dazu dient, den Code in einem einheitlichen und konsistenten Stil zu formatieren. Im Gegensatz zu einem Linter wie ESLint, der sich auf Code-Stilregeln konzentriert, konzentriert sich Prettier ausschliesslich auf die Formatierung des Codes.
