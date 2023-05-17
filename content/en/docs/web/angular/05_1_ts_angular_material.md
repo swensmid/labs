@@ -2,7 +2,7 @@
 title: "Angular Material, Responsive Web Design und Accessibility"
 type: docs
 linkTitle: "Angular Material"
-weight: 17
+weight: 19
 date: 2022-03-14
 description: >
     Material Design ist eine Designsprache, die für das neue Betriebssystem von Google Android entwickelt wurde, das im Sommer 2014 angekündigt wurde.

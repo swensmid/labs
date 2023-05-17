@@ -24,38 +24,38 @@ Um den Dependency Injector in Angular zu nutzen, müssen wir 3 Schritte erledige
   import {Injectable} from './@angular/core';
 
   @Injectable()
-  export class Auto{
+  export class Car{
       //....
   }
   ```
 2. Das Auto als Provider registrieren (in `module.ts`):
 ```typescript
 //...
-import {Auto} from './auto';
+import {Car} from './car';
 @NgModule({
     declatations: [],
     //...
     bootstrap: [AppComponent],
-    providers: [Auto]
+    providers: [Car]
 })
 export class AppModule{ }
 ```
 3. Dependency injecten wo (in unserem Beispiel) das Auto genutzt wird:
 ```typescript
-import {Auto} from './auto';
+import {Car} from './car';
 
 @Component({
     //...
 })
-export class AutoNutzer{
+export class CarUser{
     //...
-    menschen: Menschen[];
+    human: Human[];
     
-    constructor(private auto: Auto){ }
+    constructor(private car: Car){ }
 
     ngOnInit(){
         // Jetzt kann man das Auto hier einfach benutzen
-        this.menschen = this.auto.getInsassen():
+        this.human = this.car.getInsassen():
     }
 }
 ```

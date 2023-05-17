@@ -15,22 +15,23 @@ Es gibt drei Arten von Directives in Angular
 Components-Directives sind die am häufigsten verwendeten Directives in Angular. Sie erweitern das HTML durch die Definition von benutzerdefinierten HTML-Elementen und enthalten zugehörige Templates und Logik. Components-Direktiven sind im Wesentlichen Angular-Components.
 
 ```html
-<app-highlight [text]="'Dieser Text wird hervorgehoben!'" [color]="'yellow'"></app-highlight>
+<app-highlight [text]="'This text is highlighted!'" [color]="'yellow'"></app-highlight>
 ```
 
 ```typescript
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-highlight',
-  template: `
-    <span [style.background-color]="color">{{ text }}</span>
-  `
+    // ..
 })
 export class HighlightComponent {
-  @Input() text: string;
-  @Input() color: string;
+    @Input() text: string;
+    @Input() color: string;
 }
+```
+```html
+<!--app-highlight.html-->
+<span [style.background-color]="color">{{ text }}</span>
 ```
 
 ### Struktur-Directives
@@ -46,12 +47,11 @@ Struktur-Directives sind Directives, die das DOM manipulieren und Elemente hinzu
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html'
+    // ..
 })
 export class ExampleComponent {
-  showTitle: boolean = true;
-  showContent: boolean = false;
+    showTitle: boolean = true;
+    showContent: boolean = false;
 }
 ```
 
@@ -66,15 +66,14 @@ Attribut-Directives sind Directives, die das Verhalten von HTML-Elementen änder
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[highlight]'
+    selector: '[highlight]'
 })
 export class HighlightDirective {
     
-  constructor(private el: ElementRef) { }
+    constructor(private el: ElementRef) { }
 
-  ngOnInit() {
-    this.el.nativeElement.style.backgroundColor = 'yellow';
-  }
-
+    ngOnInit() {
+        this.el.nativeElement.style.backgroundColor = 'yellow';
+    }
 }
 ```

@@ -29,7 +29,7 @@ const routes = [
 ```
 
 ## Lazy Loading mit Angular Material
-Einige Components von [Angular Material](/04_3_ts_angular_material) unterstützen Lazy Loading. 
+Einige Components von [Angular Material](/05_1_ts_angular_material) unterstützen Lazy Loading. 
 
 Ein Beispiel hierzu ist das Expansion-Panel.
 

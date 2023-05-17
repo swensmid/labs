@@ -50,6 +50,14 @@ angekettet, um den Geburtstag in Grossbuchstaben anzuzeigen.
 
 Der Geburtstag wird nun so angezeigt: APR 15, 1988
 
+## AsyncPipe
+Die AsyncPipe wird verwendet, um Observables oder Promises imTemplate zu subscriben und automatisch zu aktualisieren, sobald neue Werte verfügbar sind.
+```html
+<p>{{ myObservableData$ | async }}</p>
+<p>{{ myPromiseData | async }}</p>
+<p>{{ myObservableData$ | async | uppercase }}</p>
+```
+
 ## Custom Pipes
 Für spezielle Anwendungsfälle können wir auch unsere eigenen Pipes schreiben. 
 

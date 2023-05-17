@@ -36,18 +36,23 @@ Als erstes muss man den Component erstellen:
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-greeting',
-  template: '<h1>Hello, {{ name }}!</h1>'
+    selector: 'app-greeting',
+    templateUrl: './app-greeting.html',
+    styleUrls: ['./app-greeting.scss']
 })
 export class GreetingComponent {
   name: string = 'John';
 }
 ```
+```html
+<!--app-greeting.html-->
+<h1>Hello, {{ name }}!</h1>
+```
 
 Nachdem man den Component erstellt hat, kann man ihn im Template eines anderen Components aufrufen, dazu kann man den Selektor verwenden.
 ```html
 <div>
-  <app-greeting></app-greeting>
+    <app-greeting></app-greeting>
 </div>
 ```
 

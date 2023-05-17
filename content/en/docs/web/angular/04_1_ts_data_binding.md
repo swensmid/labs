@@ -16,13 +16,16 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-greeting',
-    template: `
-    <p>Willkommen, {{ name }}!</p>
-  `
+    templateUrl: './app-greeting.component.html',
+    styleUrls: ['./app-greeting.component.scss']
 })
 export class GreetingComponent {
     name = 'Max Mustermann';
 }
+```
+```html
+<!--app-greeting.component.html-->
+<p>Welcome, {{ name }}!</p>
 ```
 
 ### Event Binding
@@ -33,11 +36,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-counter',
-    template: `
-    <p>Der aktuelle Zählerstand ist: {{ count }}</p>
-    <button (click)="increment()">+1</button>
-    <button (click)="decrement()">-1</button>
-  `
+    templateUrl: './app-counter.component.html',
+    styleUrls: ['./app-counter.component.scss']
 })
 export class CounterComponent {
     count = 0;
@@ -51,6 +51,12 @@ export class CounterComponent {
     }
 }
 ```
+```html
+<!--app-counter.component.html-->
+<p>actual count:: {{ count }}</p>
+<button (click)="increment()">+1</button>
+<button (click)="decrement()">-1</button>
+```
 
 ### Property Binding
 - Anhand von Property Bindings können wir einen Wert unseres Components auf eine Eigenschaft eines Elements binden.
@@ -60,19 +66,22 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-button',
-    template: `
-    <button [disabled]="isDisabled">{{ buttonText }}</button>
-    <button (click)="changeDisabledState()">change the disbale state first button</button>
-  `
+    templateUrl: './app-button.component.html',
+    styleUrls: ['./app-button.component.scss']
 })
 export class ButtonComponent {
     isDisabled = false;
-    buttonText = 'Klick mich!'
+    buttonText = 'Click me!'
 
     changeDisabledState() {
         this.isDisabled = !this.isDisabled;
     }
 }
+```
+```html
+<!--app-button.component.html-->
+<button [disabled]="isDisabled">{{ buttonText }}</button>
+<button (click)="changeDisabledState()">change the disbale state first button</button>
 ```
 
 ### Two-Way-Binding
@@ -84,7 +93,19 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-ng-model',
-    template: `
+    templateUrl: './app-ng-model.component.html',
+    styleUrls: ['./app-ng-model.component.scss']
+})
+export class NgModelComponent {
+    currentItem: string = 'test';
+
+    getValue(event: Event): string {
+        return (event.target as HTMLInputElement).value;
+    }
+}
+```
+```html
+<!--app-ng-model.component.html-->
   <div>
   <h4>NgModel examples</h4>
   <p>Current item name: {{ currentItem }}</p>
@@ -103,15 +124,6 @@ import { Component } from '@angular/core';
     <input [ngModel]="currentItem" (ngModelChange)="currentItem = $event" />
   </p>
 </div>
-  `,
-})
-export class NgModelComponent {
-    currentItem: string = 'test';
-
-    getValue(event: Event): string {
-        return (event.target as HTMLInputElement).value;
-    }
-}
 ```
 
 Wichtig im `app.module.ts` muss man das `FormsModule` bei den imports hinzufügen damit man `ngModel`verwenden kann
