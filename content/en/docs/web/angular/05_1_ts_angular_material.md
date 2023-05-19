@@ -2,7 +2,7 @@
 title: "Angular Material, Responsive Web Design und Accessibility"
 type: docs
 linkTitle: "Angular Material"
-weight: 8
+weight: 30
 date: 2022-03-14
 description: >
     Material Design ist eine Designsprache, die für das neue Betriebssystem von Google Android entwickelt wurde, das im Sommer 2014 angekündigt wurde.
@@ -17,9 +17,9 @@ Auf der offiziellen Website von Angular Material sehen wir welche Components uns
 Wenn wir zum Beispiel den "Slider" in unsere Applikation implementieren möchten, gibt es einige Schritte welche wir beachten müssen.
 Jeder Component wird auf der Website wie folgt beschrieben:
 
-- **Overview**: Auf der Übersicht wird beschrieben, wie und wozu man den Component anwenden kann.
+* **Overview**: Auf der Übersicht wird beschrieben, wie und wozu man den Component anwenden kann.
 Oftmals werden hier auch erweiterte Funktionen eines Components aufgelistet. Daher gilt: **Immer aufmerksam durchlesen!**
-- **API**: In diesem Abschnitt ist für uns vor allem der Import wichtig. Für jeden Component muss erst das dazugehörige Modul importiert werden:
+*  **API**: In diesem Abschnitt ist für uns vor allem der Import wichtig. Für jeden Component muss erst das dazugehörige Modul importiert werden:
 
 ```typescript
 import { MatSliderModule } from '@angular/material/slider';
@@ -34,7 +34,7 @@ import { MatSliderModule } from '@angular/material/slider';
 })
 ```
 
-- **Examples**: Hier werden Anwendungsbeispiele aufgezeigt, von welchen wir unseren Code ableiten können.
+* **Examples**: Hier werden Anwendungsbeispiele aufgezeigt, von welchen wir unseren Code ableiten können.
 ```html
 <mat-slider
     class="example-margin"
@@ -57,17 +57,17 @@ Wie Ihr Material in Eurer Angular-Applikation installiert, wird auf der [offizie
 Material Design unterstützt Theming. Ein Theme ist eine Farbpalette, welche für jeden Angular Material Component angewendet wird. 
 
 Ein Theme besteht aus:
-- Primärfarbe
-- Akzentfarbe
-- Warnung
-- Vordergrund
-- Hintergrund
+* Primärfarbe
+* Akzentfarbe
+* Warnung
+* Vordergrund
+* Hintergrund
 
 Es gibt verschiedene pre-built Themes in Material Design, sodass man sich das Erstellen eines Themes von Hand ersparen kann:
-- deeppurple-amber.css
-- indigo-pink.css
-- pink-bluegrey.css
-- purple-green.css
+* deeppurple-amber.css
+* indigo-pink.css
+* pink-bluegrey.css
+* purple-green.css
 
 Um ein solches Theme zu verwenden, müssen wir dies in unserem globalen Stylesheet importieren:
 
@@ -76,15 +76,4 @@ Um ein solches Theme zu verwenden, müssen wir dies in unserem globalen Styleshe
 ```
 
 Natürlich kann man auch sein eigene Theme für Angular Material erstellen.
-Wie ihr dies machen könnt wird [hier](https://material.angular.io/guide/theming#defining-a-custom-theme) ausführlich beschrieben (Für diejenigen, die mit den Übungen frühzeitig fertig sind).
-
-## Aufgabe 5
-Um die Fahrrad-Seite nun ein bisschen schöner darzustellen, brauchen wir nun Angular Material
-- Folgende Material-Komponenten sollen die Seite verschönern (es ist dir überlassen, welches Material du welcher Komponente(n) zuordnest): 
-    - Card
-    - Sidenav
-    - Snackbar
-    - Toolbar
-    - Table
-    - Input
-    - Tabs
+Wie ihr dies machen könnt, wird [hier](https://material.angular.io/guide/theming#defining-a-custom-theme) ausführlich beschrieben (Für diejenigen, die mit den Übungen frühzeitig fertig sind).

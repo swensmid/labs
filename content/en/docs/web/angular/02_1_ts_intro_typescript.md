@@ -19,29 +19,41 @@ Da Quellcode geschrieben in TypeScript zu JavaScript transpiliert wird, ist der 
 
 
 ## Vorteile von TypeScript
-- TypeScript hebt Fehler während der Kompilierung hervor, während JavaScript - zur Laufzeit.
-- TypeScript unterstützt statische Typisierung.
-- Ermöglicht bessere Code-Strukturierung und Objekt-Orientierte Programmiertechniken.
-- TypeScript ist in jedem Browser oder JS Engine lauffähig.
-- Hervorragendes "Tooling" mit IntelliSense, das beim Hinzufügen des Codes aktive Hinweise liefert.
+* TypeScript hebt Fehler während der Kompilierung hervor, während JavaScript - zur Laufzeit.
+* TypeScript unterstützt statische Typisierung.
+* Ermöglicht bessere Code-Strukturierung und Objekt-Orientierte Programmiertechniken.
+* TypeScript ist in jedem Browser oder JS Engine lauffähig.
+* Hervorragendes "Tooling" mit IntelliSense, das beim Hinzufügen des Codes aktive Hinweise liefert.
 
 
 ## Grundlegende Syntax
 Da es sich bei TypeScript um ein Superset von JavaScript handelt, ist JavaScript-Code auch gültiger TypeScript-Code. Jedoch fügt TypeScript darüber hinaus viele neue Funktionen hinzu.
 
-Mit TypeScript wird JavaScript mehr wie eine stark typisierte, objektorientierte Sprache, die C # und Java ähnelt. Dies bedeutet, dass TypeScript-Code für grosse Projekte leichter zu verwenden ist und dass Code leichter zu verstehen und zu verwalten ist. Die starke Typisierung bedeutet auch, dass die Sprache vorkompiliert werden kann und dass Variablen keine Werte zugewiesen werden können, die ausserhalb ihres angegebenen Bereichs liegen. Wenn zum Beispiel eine TypeScript-Variable als Zahl deklariert ist, kann man dieser Variable keinen Textwert zuweisen.
+Mit TypeScript wird JavaScript zu einer stark typisierten, objektorientierten Sprache, die C# und Java ähnelt. Dies bedeutet, dass TypeScript-Code für grosse Projekte leichter zu verwenden und leichter zu verstehen und verwalten ist. Die starke Typisierung bedeutet auch, dass die Sprache vorkompiliert werden kann und dass Variablen keine Werte zugewiesen werden können, die ausserhalb ihres angegebenen Bereichs liegen. Wenn zum Beispiel eine TypeScript-Variable als Zahl deklariert ist, kann man dieser Variable keinen Textwert zuweisen.
 
 
 ## Typanmeldungen
 Typdeklarationen können zu Variablen, Funktionsparametern und Funktionsrückgabetypen hinzugefügt werden.
 Der Typ folgt jeweils nach einem Doppelpunkt hinter dem Variablennamen:
 ```typescript
-    var num: number = 1;
+    const num: number = 1;
 ```
 Der Compiler überprüft dann die Typen während des Kompilierens und meldet allfällige Typfehler.
 
 Die verschiedenen Grundtypen von TypeScript sind [hier](https://www.typescriptlang.org/docs/handbook/basic-types.html) ersichtlich.
 
+### Type Any
+Der Typ `any` ein spezieller Typ, der es ermöglicht, Variablen, Funktionen und andere Objekte ohne explizite Typisierung zu deklarieren. Wenn eine Variable oder ein Objekt mit `any` deklariert wird, bedeutet dies, dass der Typ nicht eingeschränkt ist und dass alle Arten von Werten diesem Typ zugewiesen werden können, ohne dass eine Typenüberprüfung durchgeführt wird. Bedeutet das man so die gesamte Typisierung umgehen kann und dann wie bei JavaScript Typfehler erst während der Laufzeit sehen würde.
+
+Beispiel mit `any`, welches zu Laufzeitfehler führt:
+```typescript
+function add(a: any, b: any) {
+  return a + b;
+}
+
+const result = add("3", 5);
+console.log(result);
+```
 
 ## Der Objektorientierte Ansatz
 Bei der objektorientierten Programmierung handelt es sich um einen Programmierstil / eine Denkweise.
@@ -72,7 +84,7 @@ und durch ihre eigenen Eigenschaften erweitern.
 Da sich beide Tiere fortbewegen, könnte man also der Klasse "Animal" die Funktion "move()" geben, welche dann von den beiden anderen Klassen geerbt werden würde.
 Dadurch hat man verhindert, dass sich die Funktion zum bewegen mehrmals im Quellcode befindet.
 
-![Vererbung](../Vererbung.png "Vererbung")
+![Vererbung](../images/Vererbung.png "Vererbung")
 
 
 ## Klassen
@@ -93,9 +105,9 @@ let greeter = new Greeter("world");
 
 In diesem Beispiel wird eine neue Klasse "Greeter" deklariert. Die Klasse enthält 3 Member:
 
-- Das Property "greeting"
-- Den Konstruktor
-- Die Methode "greet"
+* Das Property "greeting"
+* Den Konstruktor
+* Die Methode "greet"
 
 Wenn wir in einer Klasse auf ein Member innerhalb der Klasse referenzieren, verwenden wir `this.`. 
 
@@ -246,22 +258,25 @@ let dad = new Octopus("Man with the 8 strong legs");
 dad.name = "Man with the 3-piece suit"; // Error: name is readonly
 ```
 
-## Arrow Functions
+## Async / Await
+Diese Themen wurden schon bei JavaScript angeschaut und können [hier](../../../docs/web/javascript) nachgelesen werden. Jedoch sind folgend ein paar Auffrischer:
+
+### Arrow Functions
 Die ES6-Version von TypeScript bietet eine arrow-function, die die Kurzform für die Definition der anonymen Funktion darstellt.
 In anderen Sprachen auch bekannt als Lambda-Function.
 
 
 Wieso werden Arrow-Functions benutzt?
-- Man muss nicht ständig "function" schreiben
-- Es erfasst die Bedeutung des Schlüsselworts "this"
-- Es erfasst die Bedeutung von Argumenten
+* Man muss nicht ständig "function" schreiben
+* Es erfasst die Bedeutung des Schlüsselworts "this"
+* Es erfasst die Bedeutung von Argumenten
 
 
 Eine Arrow Function können wir in 3 Teile aufteilen:
 
-- Parameter
-- Die arrow-notation `=>`
-- Statements
+* Parameter
+* Die arrow-notation `=>`
+* Statements
 
 
 Schauen wir uns ein Beispiel an:
@@ -279,7 +294,7 @@ var getResult = (unsername: string, points: number): string => {
 Arrow-functions benötigen natürlich nicht unbedingt Parameter.
 Ein Beispiel mit Parameter würde so aussehen:
 ```typescript
-let sum = (a:number, b: number): number =>{
+let sum = (a:number, b: number): number => {
     return a + b;
 }
 console.log(sum(20,30)); // returns 50
@@ -290,7 +305,7 @@ let Print = () => console.log("Hello TypeScript");
 Print() // returns "Hello TypeScript"
 ```
 
-## Async / Await
+
 ### Async Requests
 'Asynchronität' in der Computerwelt bedeutet, dass der Programmfluss unabhängig erfolgt. Es wird nicht darauf gewartet, dass eine Aufgabe erledigt wird, sondern der nächste Task wird ausgeführt.
 
@@ -326,8 +341,8 @@ Im Wesentlichen ist ein `Promise` in JavaScript einem Versprechen im wirklichen 
 
 Als Beispiel schauen wir, wie ein kleines Kind, das seinen Eltern verspricht, sein Zimmer zu reinigen, in JavaScript aussieht.
 ```typescript
-let promiseToCleanTheRoom = new Promise(function(resolve, reject){
-    let isClean = true;
+let promiseToCleanTheRoom = new Promise((resolve, reject) => {
+    let isClean = true
     if(isClean){
         resolve("Clean");
     }
@@ -341,7 +356,7 @@ putzen, erfüllt hat. Daher wird unser Promise-Objekt hier - sobald es aufgerufe
 
 Wir können jetzt unsere Funktion `promiseToCleanTheRoom` ausführen, indem wir Folgendes schreiben:
 ```typescript
-promiseToCleanTheRoom.then(function(result){
+promiseToCleanTheRoom.then((result) => {
     console.log("the room is " + result);
 }).catch(function(result){
     console.log("the room is " + result);
@@ -349,44 +364,3 @@ promiseToCleanTheRoom.then(function(result){
 ```
 Sobald  `promiseToCleanTheRoom` ausgeführt wird, wird unsere then-Funktion nur dann ausgelöst, wenn das Promise resolved wird.
 Ebenso wird unsere catch-Funktion nur ausgelöst, wenn das Promise rejected wird.
-
-## Observables
-Ein Observable ermöglicht die Übergabe von null oder mehr Ereignissen, bei denen der Rückruf für jedes Ereignis aufgerufen wird.
-
-Bei Observables spielt es keine Rolle, ob man 0, 1 oder mehrere Ereignisse behandeln möchte. Sie können jeweils die gleiche API verwenden. 
-
-Observable hat gegenüber Promise den Vorteil, stornierbar zu sein. Wenn das Ergebnis einer HTTP-Anforderung an einen Server oder eines anderen kostspieligen asynchronen Vorgangs nicht mehr benötigt wird, 
-kann man mit der Subscription einer Observable das Abonnement abbrechen.
-
-Codebeispiel:
-```typescript
-import { Observable } from 'rxjs/Obvervable';
-
-// Create a new Obvervable, providing the subscribe function.
-const observable: Observable<string> = new Obvervable(observer => {
-    const interval = setInterval(() => {
-        observer.next("Hello from Obvervableland!");
-    }, 1000);
-    
-    // teardown
-    return () => {
-        clearInterval(interval);
-    }
-});
-
-// Subscribe to Notifications.
-observable.subscribe(value => console.log(value));
-```
-Zunächst müssen wir die Observable-Klasse aus dem RxJS-Modul importieren, da Observables noch nicht Teil von ECMAScript (JavaScript) sind.
-Anschliessend erstellen wir ein neues Observable und stellen die Abonnementfunktion bereit, die aufgerufen wird, wenn ein Observer das Observable abonniert.
-
-Wir verwenden die `next()`-Methode für ein Observer-Objekt, um Werte an den Observer zu senden. Das Observer-Interface enthält 3 Methoden: `next()`, `catch()` and `complete()`.
-Um asynchrone Ereignisse zu faken, verwenden wir in diesem Beispiel die Funktion `setInterval()`, die im Laufe der Zeit Werte ausgibt. Jede Sekunde geben wir den String `Hello from Observableland!` aus.
-Wir geben dann eine Funktion zurück, die aufgerufen wird, wenn sich alle Observer vom Observable abgemeldet haben.
-
-Schliesslich rufen wir die Methode `subscribe()` auf, die eine Funktion bereitstellt, die jedes Mal aufgerufen wird, wenn der Wert `next()` an alle Observer gesendet wird.
-
-
-
-## Teste dein Wissen
-Du hast nun viel Neues über TypeScript gelernt. Teste [hier](../../../../exams/web/angular/03_2_intro_typescript_exam), ob du das Wichtigste verstanden hast.
