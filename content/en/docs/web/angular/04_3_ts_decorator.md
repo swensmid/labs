@@ -2,7 +2,7 @@
 title: "Decorators"
 type: docs
 linkTitle: "Decorators"
-weight: 17
+weight: 19
 date: 2023-05-17
 description: >
 
@@ -13,9 +13,9 @@ Decorators sind spezielle Funktionen, die verwendet werden, um zusätzliche Info
 Folgende sieben Decorators sind in Angular die meistverwendeten:
 * `@Component`: Der @Component-Decorator wird verwendet, um den Component  zu definieren.
 
-* `@Directive`: Der @Directive-Decorator wird verwendet, um eine [Directives](/03_5_ts_directives) zu definieren. 
+* `@Directive`: Der @Directive-Decorator wird verwendet, um eine [Directives](/03_7_ts_directives) zu definieren. 
 
-* `@Injectable`: Der @Injectable-Decorator wird verwendet, um einen [Service](/03_6_ts_services) zu definieren, er wird aber auch bei [Dependency Injection](/03_11_ts_dependency_injection) verwendet. 
+* `@Injectable`: Der @Injectable-Decorator wird verwendet, um einen [Service](/03_8_ts_services) zu definieren, er wird aber auch bei [Dependency Injection](/03_13_ts_dependency_injection) verwendet. 
 
 * `@Input`: Der @Input-Decorator wird verwendet, um eine Eingabeeigenschaft in eines Components oder Directive zu definieren.
 
@@ -97,9 +97,53 @@ Um das Ereignis im Parent zu empfangen und darauf zu reagieren, wird das Event-B
 ```
 
 ## @ViewChild
+@ViewChild wird verwendet, um auf ein Element oder ein Directive in der View eines Components zuzugreifen. Der @ViewChild-Dekorator wird normalerweise zusammen mit einer Template-Referenzvariable verwendet, um das gewünschte Element oder das gewünschte Directive zu identifizieren.
 
+```typescript
+import { Component, ViewChild, ElementRef } from '@angular/core';
+
+@Component({
+    // ..
+})
+export class MeinComponent {
+    @ViewChild('myElement')
+    myElement!: ElementRef;
+
+    ngAfterViewInit() {
+        console.log(this.myElement.nativeElement.textContent);
+    }
+}
+```
+```html
+<div #myElement>My Element</div>
+```
+
+Auf das Element sollte dann erst in der ngAfterViewInit-Lifecycle-Hook-Methode zugegriffen werden, da dieser Hook erst ausgelöst wird wenn die View initialisiert wurde.
 
 ## @ViewChildren
+Es gibt auch den @ViewChildren-Dekorator, der ähnlich wie der @ViewChild-Dekorator funktioniert, jedoch verwendet wird, um auf mehrere Elemente oder Directives in der View eines Components zuzugreifen.
 
+Der @ViewChildren-Dekorator wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.
 
+```typescript
+import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
+@Component({
+    // ...
+})
+export class MeinComponent {
+    @ViewChildren('element')
+    elemente: QueryList<ElementRef>;
+
+    elements: number[] = [1, 2, 3, 4, 5];
+
+    ngAfterViewInit() {
+        this.elemente.forEach(elementRef => {
+        console.log(elementRef.nativeElement.textContent);
+        });
+    }
+}
+```
+```html
+<div *ngFor="let element of elements" #element>{{ element }}</div>
+```

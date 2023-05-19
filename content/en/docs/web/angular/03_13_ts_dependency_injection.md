@@ -1,7 +1,7 @@
 ---
 title: "Dependency Injection"
 type: docs
-weight: 13
+weight: 15
 date: 2023-05-04
 description: >
 
@@ -61,5 +61,5 @@ export class CarUser{
 ```
 Das Minibeispiel soll lediglich die 3 wichtigen Schritte etwas besser darstellen.
 
-In Euren Projekten werdet ihr dieses Verfahren für die [Services](/03_6_ts_services) anwenden.
+In Euren Projekten werdet ihr dieses Verfahren für die [Services](/03_8_ts_services) anwenden.
 

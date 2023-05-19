@@ -2,7 +2,7 @@
 title: "Lazy Loading"
 type: docs
 linkTitle: "Lazy Loading"
-weight: 11
+weight: 13
 date: 2022-03-14
 description: >
     Lazy Loading bezeichnet ganz allgemein eine Technik in der Software-Entwicklung um Daten erst bei Bedarf nachzuladen.

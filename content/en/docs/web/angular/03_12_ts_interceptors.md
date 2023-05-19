@@ -2,7 +2,7 @@
 title: "Interceptors"
 type: docs
 linkTitle: "Interceptors"
-weight: 12
+weight: 14
 date: 2022-03-14
 description: >
     Interceptors in Angular sind eine einfache Möglichkeit des Frameworks, die http-Requests global abzufangen und zu verändern, bevor sie an den Server gesendet werden. 

@@ -6,25 +6,24 @@ date: 2023-05-04
 description: >
   Components sind wie Grundbausteine in einer Angular-Applikation
 ---
+Ein Angular Component setzt sich aus 4 Dateien zusammen:
+* [Template](/03_4_ts_templates)
+* [Unit Test File](/03_6_ts_unit_test)
+* [Stylesheet](/03_5_ts_stylesheet)
+* Component (Class)
+
+![Components Description](../images/component-desc.png)
+
 ## Components
 Components sind wie Grundbausteine in einer Angular-Applikation. Components werden mit dem `@Component` Decorator definiert.
 
 Components sind TypeScript Klassen, die die Daten und Kontrollstrukturen zum Verhalten der Templates beinhalten.
-Metadaten teilen Angular mit, wie die Components verarbeitet werden sollen (selector, template, style).
+Metadaten teilen Angular mit, wie die Components verarbeitet werden sollen (selector, template, style), dies kann bei dem [Component Decorator](./04_3_ts_decorator#component) genauer nachgelesen werden.
 Ein Component hat einen von Angular verwalteten Lifecycle. Angular erstellt und rendert Components zusammen mit ihren Children,
 überprüft, wann sich ihre Properties ändern, und zerstört sie, bevor sie aus dem DOM entfernt werden.
-Angular bietet sogenannte [Lifecycle-Hooks](./03_12_ts_life_cycle_hook) an, mit denen wir handeln können, sobald sie auftreten.
+Angular bietet sogenannte [Lifecycle-Hooks](./03_14_ts_life_cycle_hook) an, mit denen wir handeln können, sobald sie auftreten.
 
 ![Components](../images/angular_components_description.png)
-
-
-Ein Angular Component setzt sich aus 4 Dateien zusammen:
-* [Template](/03_4_ts_templates)
-* Unit Test File
-* Stylesheet
-* Component (Class)
-
-![Components Description](../images/component-desc.png)
 
 ### Components im Template aufrufen
 In Angular kann man Components im Template aufrufen, indem man ihren Selektor verwenden.

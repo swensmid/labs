@@ -2,7 +2,7 @@
 title: "Pipes"
 type: docs
 linkTitle: "Pipes"
-weight: 16
+weight: 18
 date: 2022-03-14
 description: >
     Jede Anwendung beginnt mit einer scheinbar einfachen Aufgabe: Daten abrufen, transformieren und Benutzern zeigen.

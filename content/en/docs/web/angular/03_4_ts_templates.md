@@ -4,7 +4,7 @@ type: docs
 weight: 6
 date: 2023-05-04
 description: >
-
+    In diesem Kapitel wird beschrieben wa genau das Template in Angular ist.
 ---
 
 ### Was ist ein Template?

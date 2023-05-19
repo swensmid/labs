@@ -1,7 +1,7 @@
 ---
 title: "Angular Life Cycle Hook"
 type: docs
-weight: 14
+weight: 16
 date: 2023-05-05
 description: >
 
