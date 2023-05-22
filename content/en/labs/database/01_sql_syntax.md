@@ -22,7 +22,7 @@ Hier sind einige grundlegende Informationen, die dir helfen sollen, ein ERD für
     - Eine Bestellung kann mehrere Positionen enthalten, und jede Position ist einem bestimmten Produkt zugeordnet. 
     Eine Position enthält Informationen wie die Produktmenge.
 
-Schau das fertige ERD mit einem Coach an um Feedback dazu zu erhalten.
+Erstelle das ERD mithilfe von Draw.io und schaue das fertige ERD mit einem Coach an, um Feedback dazu zu erhalten.
 
 ## Übung 2
 Erstelle anhand dieses ERDs eine Datenbank. Verwende hierbei die deiner Meinung nach richtigen Datentypen. Schau deine

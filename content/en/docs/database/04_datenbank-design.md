@@ -26,6 +26,8 @@ Beispiel: Eine Tabelle mit einer Spalte namens "Telefonnummern", die mehrere Tel
 getrennt enthält, ist nicht in erster Normalform. Stattdessen sollte jede Telefonnummer in einer separaten Zeile
 aufgeführt werden.
 
+![](../images/1.Normalform.png)
+
 ### Zweite Normalform (2NF)
 Eine Tabelle ist in zweiter Normalform, wenn alle Nicht-Schlüssel-Spalten voll funktional vom
 Primärschlüssel abhängen, d.h. dass es keine Teilschlüsselabhängigkeiten gibt.
@@ -33,6 +35,8 @@ Primärschlüssel abhängen, d.h. dass es keine Teilschlüsselabhängigkeiten gi
 Beispiel: Eine Tabelle mit Bestellungen und Produkten, bei der jede Bestellung mehrere Produkte enthält und jede
 Produktzeile die Bestellungs-ID enthält, ist nicht in zweiter Normalform. Stattdessen sollte eine separate Tabelle
 für Bestellungen und eine separate Tabelle für Produkte erstellt werden, die über die Bestellungs-ID verknüpft sind.
+
+![](../images/2.Normalform.png)
 
 ### Dritte Normalform (3NF)
 Eine Tabelle ist in dritter Normalform, wenn alle Nicht-Schlüssel-Spalten nicht-transitiv vom
@@ -45,13 +49,26 @@ Abteilungen erstellt werden, die über die Abteilungs-ID mit der Mitarbeiter-Tab
 Es gibt auch höhere Normalformen wie die Boyce-Codd-Normalform (BCNF) und die Vierte Normalform (4NF), aber diese sind
 für den Anfang weniger relevant und komplexer zu erklären.
 
+![](../images/3.Normalform.png)
+
 ## Datenbankdesign
 In diesem Teil schauen wird uns hauptsächlich die beiden Begriffe ERM (Entity-Relationship-Modell) und ERD
 (Entity-Relationship-Diagramm) an. Wichtig ist den Unterschied der beiden zu kennen.
 Ein ERM ist eine Modellierungstechnik, die zur Abbildung der Beziehungen zwischen verschiedenen Entitäten in
-einem System verwendet wird. Es besteht aus Rechtecken (Entitäten), Diamanten (Beziehungen) und Linien (Beziehungen zwischen Entitäten und
-Attributen) und ermöglicht eine visuelle und intuitive Darstellung der Datenstruktur und -beziehungen in einer
-Datenbank. 
+einem System verwendet wird. Mit Text wird versucht die Datenbank so einfach und klar wie möglich zu beschreiben, um 
+später ein ERD dazu erstellen zu können. Es werden jeweils die Entitäten (Tabellen) und Beziehungen aufgefasst.
+Hier ein Beispiel eines einfachen ERMs:
+
+Entitäten:
+
+Student: Jeder Student hat eine eindeutige ID, einen Namen, ein Geburtsdatum und Kontaktdaten.
+
+Kurs: Jeder Kurs hat eine eindeutige ID, einen Titel, eine Anzahl von Kreditpunkten und einen zugeordneten Dozenten.
+
+Beziehungen:
+
+Einschreibung: Diese Beziehung zeigt die Verbindung zwischen Studenten und Kursen an. Jede Einschreibung hat eine 
+eindeutige ID und ist mit einem bestimmten Studenten und einem bestimmten Kurs verknüpft.
 
 Ein ERD ist eine grafische Darstellung eines ERM, die verwendet wird, um die Beziehungen
 zwischen Entitäten und Attributen darzustellen. Es besteht aus Entitäten, Attributen und Beziehungen und bietet eine 

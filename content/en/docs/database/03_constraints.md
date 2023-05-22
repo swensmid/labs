@@ -71,7 +71,7 @@ dieses Constraint praktisch, da in eigentlich jedem Fall eine Id bestehen sollte
 Hier ein beispiel zum `Primary Key`:
 
 ```sql
-CREATE TABLE person(personen_id number UNIQUE, vorname varchar(255), nachname varchar(255));
+CREATE TABLE person(personen_id number PRIMARY KEY, vorname varchar(255), nachname varchar(255));
 ```
 
 Beispieldaten Person:
@@ -98,7 +98,8 @@ INSERT INTO person VALUES (4, "Karl", "Karlsen");
 Das `Foreign Key` Constraint stellt sicher, dass der Wert in einer Spalte einer Tabelle auf einen existierenden Wert in 
 einer anderen Tabelle verweist. Das bedeutet, dass die Beziehungen zwischen den Tabellen beibehalten werden und 
 Datenkonsistenz gewährleistet wird. Ein Fremdschlüssel wird durch das Verknüpfen von Spalten in verschiedenen Tabellen 
-erstellt. Hier ein Beispiel dazu:
+erstellt. Dazu wird im CREATE das Keyword `REFERENCES` verwendet. Dort wird angegeben, auf welche Spalte der 
+Fremdschlüssel verweist. Hier ein Beispiel dazu:
 
 ```sql
 CREATE TABLE adresse(id number PRIMARY KEY, strasse varchar(255), hausnummer number, plz number, ort varchar(255));
@@ -106,7 +107,7 @@ CREATE TABLE adresse(id number PRIMARY KEY, strasse varchar(255), hausnummer num
 CREATE TABLE person(id number PRIMARY KEY, vorname varchar(255), nachname varchar(255), alter number, adresse_id number 
 FOREIGN KEY REFERENCES adresse(id));
 ```
-> **Info:** Die Benennung des Fremdschlüssels wurde in diesem Beispiel der einfachheit halber nicht korrekt gemacht.
+> **Info:** Die Benennung des Fremdschlüssels wurde in diesem Beispiel der Einfachheit halber nicht korrekt gemacht.
 > Je nach Naming Convention im Projekt muss der Fremdschüssel anders benannt werden. Hier ein Link mit weiteren Infos:
 > [Naming Conventions SQL Server](https://www.dotnettricks.com/learn/sqlserver/sql-server-naming-conventions-and-standards)
 

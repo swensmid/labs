@@ -149,7 +149,31 @@ Das Statement gibt schliesslich alle Werte zurück, die die Bedingung erfüllen:
 | Fritz   | Fischer    | 26    | Pilot/in           |
 | Max     | Mustermann | 16    | Maurer/in          |
 
-[//]: # (TODO: Like ergänzen)
+Zusätzlich gibt es bei Texten die Möglichkeit eine Teilüberprüfung mit `Like` zu machen. Damit können beispielsweise
+Alle Adressen gesucht werden, die mit "Strasse" enden. Dazu muss beim `Like` angegeben werden, wo sich der Rest des 
+Textes befinden. Das funktioniert mit dem % Zeichen. Wenn der restliche Text vor dem Suchtext ist, wird das % vor diesem
+platziert. Dasselbe funktioniert natürlich auch umgekehrt. Weiter kann auch auf beiden Seiten ein % verwendet werden, so
+ist es egal wo sich der Suchtext befinden. Hier ein Beispiel-Query dazu:
+
+Ausgangstabelle:
+
+| vorname | nachname   | alter | beruf              |
+|---------|------------|-------|--------------------|
+| Anja    | Ackermann  | 13    | Schüler/in         |
+| Fritz   | Fischer    | 26    | Pilot/in           |
+| Hans    | Hansen     | 52    | Hochbauzeichner/in |
+| Max     | Mustermann | 16    | Maurer/in          |
+
+```sql
+SELECT * FROM person WHERE nachname like '%mann'
+```
+
+Resultat:
+
+| vorname | nachname   | alter | beruf              |
+|---------|------------|-------|--------------------|
+| Anja    | Ackermann  | 13    | Schüler/in         |
+| Max     | Mustermann | 16    | Maurer/in          |
 
 ### UPDATE
 Das Update Statement wird verwendet, um Inhalte (Tabelle, Datenbank, Constraints, etc.) zu ändern. Ein UPDATE 
