@@ -1,6 +1,7 @@
 ---
 title: "Einführung in TypeScript"
 type: docs
+linkTitle: "Einführung in TypeScript"
 weight: 2
 date: 2022-02-16
 description: >

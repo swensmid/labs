@@ -1,10 +1,11 @@
 ---
 title: "Services"
 type: docs
+linkTitle: "Services"
 weight: 10
 date: 2023-05-04
 description: >
-
+    Wie Services in Angular genau aussehen und für was sie sind wird in diesem Kapitel erläutert.
 ---
 
 ## Services

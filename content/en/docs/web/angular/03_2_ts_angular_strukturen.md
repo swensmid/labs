@@ -1,6 +1,7 @@
 ---
 title: "Angular Strukturen"
 type: docs
+linkTitle: "Angular Strukturen"
 weight: 4
 date: 2023-05-04
 description: >

@@ -1,10 +1,11 @@
 ---
 title: "Angular Life Cycle Hook"
 type: docs
+linkTitle: "Angular Life Cycle Hook"
 weight: 16
 date: 2023-05-05
 description: >
-
+    Wie der Angular Life Cycle Hook genau aussieht findet man hier.
 ---
 
 Lifecycle-Hooks ermöglichen es Entwicklern, Code zu spezifischen Zeitpunkten im Lebenszyklus eines Components auszuführen und somit den Component zu initialisieren, auf Änderungen zu reagieren und Aufräumarbeiten durchzuführen.

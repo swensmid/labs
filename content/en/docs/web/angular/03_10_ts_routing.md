@@ -1,10 +1,11 @@
 ---
 title: "Routing"
 type: docs
+linkTitle: "Routing"
 weight: 12
 date: 2023-05-09
 description: >
-
+    Wie Routing in Angular funktioniert findet man hier.
 ---
 
 # Routing

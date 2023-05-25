@@ -13,7 +13,7 @@ RxJS bietet eine Vielzahl von Operatoren, die auf Observables angewendet werden 
 
 ## Piping
 Piping ist ein wichtiger Operator, der es ermöglicht, eine Observable-Kette zu erstellen, indem verschiedene Operatoren nacheinander angewendet werden. Der Piping-Operator wird verwendet, um die Lesbarkeit und Wartbarkeit von Observable-Ketten zu verbessern, indem man sie in kleinere und leichter zu verstehende Abschnitte unterteilt.
-Wie [map](../../../../en/docs/web/angular/07_3_Operators#map) funktioniert kann man hier nachlesen.
+Wie [map](../../../../en/docs/web/angular/07_3_ts_operators#map) funktioniert kann man hier nachlesen.
 
 ```typescript
 import { of, map } from 'rxjs';
@@ -237,7 +237,7 @@ from([1, 2, 3, 4])
 ### switchAll/switchMap
 `switchMap` ist ähnlich wie das `mergeMap`, es subscribed auch das innere Observable. Auch hier ist `switchMap` eine Kombination, und zwar von `switchAll` und `map`. `switchAll` canceled die vorherige Subscription und subscribed auf die neue, wenn ein neues Observable reinkommt.
 
-Wie [delay](../../../../en/docs/web/angular/07_3_Operators#delay) funktioniert kann man hier nachlesen.
+Wie [delay](../../../../en/docs/web/angular/07_3_ts_operators#delay) funktioniert kann man hier nachlesen.
 
 Beispiel mit `switchAll`:
 ```typescript
@@ -386,7 +386,7 @@ source.pipe(first((x) => x > 3, null)).subscribe((value) => console.log(value));
  ```
 
 ### last
-Der `last` Operator funktioniert genau gleich wie der [first](../../../../en/docs/web/angular/07_3_Operators#first) Operator. Nur das hier immer das letzte Element zurückgegeben wird.
+Der `last` Operator funktioniert genau gleich wie der [first](../../../../en/docs/web/angular/07_3_ts_operators#first) Operator. Nur das hier immer das letzte Element zurückgegeben wird.
 
 ```typescript
 import { of } from 'rxjs';
@@ -649,7 +649,7 @@ numbers.pipe(find((x) => x > 10)).subscribe(
 ```
 
 ### findIndex
-Der `findIndex` Operator gibt den Index des ersten Elements in eines Observables zurück, das die angegebene Bedingung erfüllt. Sie funktioniert ähnlich wie [find](../../../../en/docs/web/angular/07_3_Operators#find), aber gibt den Index des Elements statt des Elements selbst zurück.
+Der `findIndex` Operator gibt den Index des ersten Elements in eines Observables zurück, das die angegebene Bedingung erfüllt. Sie funktioniert ähnlich wie [find](../../../../en/docs/web/angular/07_3_ts_operators#find), aber gibt den Index des Elements statt des Elements selbst zurück.
 
 ```typescript
 import { findIndex, from } from 'rxjs';

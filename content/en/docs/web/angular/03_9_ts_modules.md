@@ -1,10 +1,11 @@
 ---
 title: "Modules"
 type: docs
+linkTitle: "Modules"
 weight: 11
 date: 2023-05-04
 description: >
-
+    In diesem Kapitel werden die Angular Modul besser erklärt.
 ---
 
 In Angular ist ein Modul ein Mechanismus, um Components, Directives und Pipes und Services zu gruppieren, die miteinander zusammenhängen. Auf diese Weise können sie mit anderen Modulen kombiniert werden, um eine Anwendung zu erstellen.

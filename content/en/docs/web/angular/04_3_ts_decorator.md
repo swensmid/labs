@@ -5,7 +5,7 @@ linkTitle: "Decorators"
 weight: 19
 date: 2023-05-17
 description: >
-
+    In disem Kapitel findet man die wichtigsten Informationen u Angular Decorators.
 ---
 
 Decorators sind spezielle Funktionen, die verwendet werden, um zusätzliche Informationen zu einer Klasse, Methode oder Eigenschaft hinzuzufügen oder das Verhalten davon zu ändern. Sie helfen dabei, den Code besser zu organisieren und bestimmte Aufgaben automatisch auszuführen.
@@ -97,7 +97,7 @@ Um das Ereignis im Parent zu empfangen und darauf zu reagieren, wird das Event-B
 ```
 
 ## @ViewChild
-@ViewChild wird verwendet, um auf ein Element oder ein Directive in der View eines Components zuzugreifen. Der @ViewChild-Dekorator wird normalerweise zusammen mit einer Template-Referenzvariable verwendet, um das gewünschte Element oder das gewünschte Directive zu identifizieren.
+@ViewChild wird verwendet, um auf ein Element oder ein Directive in der View eines Components zuzugreifen. Der @ViewChild-Decorator wird normalerweise zusammen mit einer Template-Referenzvariable verwendet, um das gewünschte Element oder das gewünschte Directive zu identifizieren.
 
 ```typescript
 import { Component, ViewChild, ElementRef } from '@angular/core';
@@ -121,9 +121,9 @@ export class MeinComponent {
 Auf das Element sollte dann erst in der ngAfterViewInit-Lifecycle-Hook-Methode zugegriffen werden, da dieser Hook erst ausgelöst wird wenn die View initialisiert wurde.
 
 ## @ViewChildren
-Es gibt auch den @ViewChildren-Dekorator, der ähnlich wie der @ViewChild-Dekorator funktioniert, jedoch verwendet wird, um auf mehrere Elemente oder Directives in der View eines Components zuzugreifen.
+Es gibt auch den @ViewChildren-Decorator, der ähnlich wie der @ViewChild-Decorator funktioniert, jedoch verwendet wird, um auf mehrere Elemente oder Directives in der View eines Components zuzugreifen.
 
-Der @ViewChildren-Dekorator wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.
+Der @ViewChildren-Decorator wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.
 
 ```typescript
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';

@@ -1,6 +1,7 @@
 ---
 title: "Javascript Frameworks"
 type: docs
+linkTitle: "Javascript Frameworks"
 weight: 1
 date: 2022-02-16
 description: >

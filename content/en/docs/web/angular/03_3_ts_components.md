@@ -1,6 +1,7 @@
 ---
 title: "Components"
 type: docs
+linkTitle: "Components"
 weight: 5
 date: 2023-05-04
 description: >

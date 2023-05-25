@@ -1,6 +1,7 @@
 ---
 title: "Directives"
 type: docs
+linkTitle: "Directives"
 weight: 9
 date: 2023-05-05
 description: >
@@ -129,3 +130,19 @@ export class MyComponent {
 </ul>
 ```
 
+### *ngSwitch
+Das `ngSwitch`-Directive ermöglicht das bedingte Rendern von Inhalten auf der Grundlage eines Ausdrucks mit mehreren möglichen Werten. Es funktioniert ähnlich wie ein `switch` in anderen Programmiersprachen.
+
+```html
+<div [ngSwitch]="selectedOption">
+  <ng-container *ngSwitchCase="'option1'">
+    <p>Option 1 ausgewählt</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'option2'">
+    <p>Option 2 ausgewählt</p>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <p>Keine Option ausgewählt</p>
+  </ng-container>
+</div>
+```
