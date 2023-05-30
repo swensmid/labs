@@ -14,14 +14,14 @@ Eine Tabelle ist in erster Normalform, wenn alle Spalten atomare Werte enthalten
 wiederholten oder gruppierten Werte aufweisen.
 
 Beispiel: Eine Tabelle mit einer Spalte namens "Telefonnummern", die mehrere Telefonnummern durch Kommas oder Semikolons
-getrennt enthält, ist nicht in erster Normalform. Stattdessen sollte jede Telefonnummer in einer separaten Zeile
+getrennt enthält, ist nicht in erster Normalform. Stattdessen sollte jede Telefonnummer in einer separaten Spalte
 aufgeführt werden.
 
 ![](../images/1.Normalform.png)
 
 ### Zweite Normalform (2NF)
-Eine Tabelle ist in zweiter Normalform, wenn alle Nicht-Schlüssel-Spalten voll funktional vom
-Primärschlüssel abhängen, d.h. dass es keine Teilschlüsselabhängigkeiten gibt.
+Eine Tabelle ist in zweiter Normalform, wenn sie in der ersten Normalform ist und jedes Nichtschlüsselattribut vom ganzen Schlüssel voll funktional abhängig ist.
+Dies bedeutet, dass Teilschlüsselabhängigkeiten in der zweiten Normalform nicht erlaubt sind.
 
 Beispiel: Eine Tabelle mit Bestellungen und Produkten, bei der jede Bestellung mehrere Produkte enthält und jede
 Produktzeile die Bestellungs-ID enthält, ist nicht in zweiter Normalform. Stattdessen sollte eine separate Tabelle
@@ -30,8 +30,7 @@ für Bestellungen und eine separate Tabelle für Produkte erstellt werden, die �
 ![](../images/2.Normalform.png)
 
 ### Dritte Normalform (3NF)
-Eine Tabelle ist in dritter Normalform, wenn alle Nicht-Schlüssel-Spalten nicht-transitiv vom
-Primärschlüssel abhängen, d.h. dass es keine transitiven Abhängigkeiten zwischen Nicht-Schlüssel-Spalten gibt.
+Eine Tabelle ist in dritter Normalform, wenn sie in der zweiten Normalform ist und keine funktionalen Abhängigkeiten der Nichtschlüssel-Attribute untereinander bestehen. Solche Abhängigkeiten heissen auch "transitive Abhängigkeiten".
 
 Beispiel: Eine Tabelle mit Mitarbeitern und Abteilungen, bei der jede Zeile sowohl den Namen des Mitarbeiters als auch
 den Namen der Abteilung enthält, ist nicht in dritter Normalform. Stattdessen sollte eine separate Tabelle für
