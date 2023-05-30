@@ -5,7 +5,8 @@ weight: 1
 ---
 
 ## Was ist eine Datenbank?
-Grundsätzlich sagt der Name "Datenbank" bereits was sie ist. In einer Datenbank werden Daten gespeichert.
+Eine Datenbank ist ein System zur elektronischen Verwaltung von Daten.
+Grundsätzlich sagt der Name "Datenbank" bereits was sie ist: In einer Datenbank werden Daten in einer bestimmten Ordnung abgelegt.
 Ähnlich wie bei einer normalen Bank werden die Daten an einem klar definierten Ort abgespeichert.
 Fast so wie bei deinem Bankkonto, wo jeweils der Lohn eingezahlt wird.
 
@@ -32,13 +33,12 @@ Relationale *(SQL)* Datenbanken werden klar am häufigsten eingesetzt und sind a
 > Bei den Übungen, sowie Exams werden ausschliesslich Relationale *(SQL)* Datenbanken verwendet.
 
 ### Relational *(SQL)*
-Relationale Datenbanken sind ähnlich wie Excel Tabellen aufgebaut. Sie verwenden Tabellen, die jeweils eine Zeile und
-eine Spalte haben *(auch Row und Column genannt)*. Pro Spalte *(Column)* kann ein Datentyp festgelegt werden, der in
-dieser Spalte gespeichert werden kann. Beispiel: Eine Spalte mit dem Titel Alter hat einen Datentyp Nummer. Also können
-ausschliesslich Zahlen in dieser Spalte eingegeben werden. Die Spalte heisst auch **Attribut**. 
+Relationale Datenbanken sind ähnlich wie Excel Tabellen aufgebaut. Sie verwenden Tabellen, die jeweils Zeilen und
+Spalten beinhalten *(auch Rows und Columns genannt)*. Pro Spalte *(Column)*, auch **Attribut** genannt, muss ein Datentyp festgelegt werden. Dieser Datentyp definiert, welche Art von Daten in dieser Spalte gespeichert werden kann.
+ Beispiel: Eine Spalte mit dem Namen "Alter" hat einen nummerischen Datentyp. Also können
+ausschliesslich Zahlen in dieser Spalte eingegeben werden. 
 
-Eine Reihe *(Row)* beinhaltet jeweils einen ganzen Datensatz, wie beispielsweise alle Benutzerdaten. Die Reihe wird auch
-**Tupel** genannt.
+Eine Zeile *(Row)*, auch **Tupel** genannt, beinhaltet jeweils einen ganzen Datensatz, wie beispielsweise alle Benutzerdaten.
 
 ![](../images/Begriffe_relationaler_Datenbanken.png)
 
@@ -52,7 +52,7 @@ werden können, um die Leistung zu verbessern und die Belastung auf mehrere Masc
 
 Wie erklärt gibt es viele verschiedene Ansätze bei NO-SQL, deshalb gibt es auch keine gemeinsame Syntax wie es sie bei
 SQL gibt. Bei den verschiedenen Anbietern kann also die Verwendung sehr unterscheiden. Auch wegen der verschiedenen 
-Speicherarten ist keine NO-SQL Datenbank wie die andere,
+Speicherarten ist keine NO-SQL Datenbank wie die andere.
 
 ![](../images/NoSQLDatabases.jpg)
 
