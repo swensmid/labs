@@ -7,7 +7,7 @@ weight: 3
 ## Was ist ein Constraint?
 Ein Constaint in SQL ist dazu da den Inhalt eines Attributs weiter zu beschränken. Theoretisch ist die Angabe des 
 Datentyps bereits eine Art Constraint, da bestimmt wird was für ein Wertebereich eingefügt werden darf. Ein Constraint
-kann entweder beim Erstellen der Tabelle oder mit einem `Alter` hinzugefügt werden.
+kann entweder beim Erstellen der Tabelle oder mit einem `ALTER`-Statement hinzugefügt werden.
 
 ## Not Null
 Das `Not Null` Constraint legt fest, dass ein Attribut nicht Null, spricht **nicht leer** sein darf. Das kann
@@ -30,7 +30,7 @@ INSERT INTO person VALUES (1, null, null);
 ```
 
 ## Unique
-Das `Unique` Constraint bedingt, dass jeder eingefügte Wert einzigartig, also noch nicht in der Tabelle, ist. So können
+Das `Unique` Constraint bedingt, dass jeder eingefügte Wert einzigartig, also noch nicht in der Spalte oder in der Tabelle, vorhanden. So können
 beispielsweise duplikationen von Ids verhindert werden. Hier ein Beispiel zum `Unique` Constraint:
 
 ```sql
