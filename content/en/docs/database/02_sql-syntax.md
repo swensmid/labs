@@ -15,7 +15,10 @@ Das Select Statement wird verwendet, um Daten aus bestimmten Tabellen auszuwähl
  folgt aufgebaut:
 
 ``` sql
-SELECT * FROM benutzer;
+SELECT * FROM table_name;
+
+-- Beispiel mit der Tabelle "benutzer"
+SELECT * from benutzer;
 ```
 
 Als Erstes kommt immer das "SELECT" gefolgt von den gewünschten Attribute. In diesem Statement wird ein Stern verwendet,
@@ -35,10 +38,10 @@ Das Insert Statement wird verwendet, um Daten in eine bestimmte Tabelle einzufü
 folgt aufgebaut:
 
 ````sql
-INSERT INTO table VALUES (..., ...), (..., ...);
+INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);
 ````
-Als Erstes kommt immer das "INSERT" gefolgt von der betroffenen Tabelle. Schlussendlich wird mit VALUES angegeben, dass
-ein oder mehrere Tupel eingefügt werden. In den Klammern können jeweils die Inhalte angegeben werden.
+Als Erstes kommt immer das "INSERT INTO" gefolgt von der betroffenen Tabelle. Schlussendlich wird mit VALUES angegeben, dass
+ein oder mehrere Tupel eingefügt werden. In den Klammern können respektiv die Spaltennamen (optional) und die Inhalte angegeben werden.
 
 Ein konkretes Beispiel würde mit dieser Tabelle beginnen:
 
@@ -88,13 +91,25 @@ Das Create Statement wird verwendet, um Tabellen, Datenbanken, usw. zu erstellen
 wie folgt aufgebaut:
 
 ``` sql
+-- Datenbank erstellen
+CREATE DATABASE databasename;
+
+--Tabelle erstellen
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+
+-- Beispiel: die Tabelle "benutzer" erstellen
 CREATE TABLE benutzer (vorname varchar(255),
        nachname varchar(255),
        alter number, 
        beruf varchar(255));
 ```
 Als Erstes kommt immer das "CREATE" gefolgt dem zu erstellenden Objekt, in diesem Fall eine Tabelle. Schlussendlich wird
-noch ein Name (benutzer) festgelegt, gefolgt von den gewünschten Attributen der Tabelle und dem entsprechenden Datentyp.
+noch ein Name festgelegt (die neue Tabelle heisst "benutzer"), gefolgt von den gewünschten Attributen der Tabelle und dem entsprechenden Datentyp.
 
 Das Resultat dieses Statements würde schliesslich so aussehen:
 
@@ -103,7 +118,7 @@ Das Resultat dieses Statements würde schliesslich so aussehen:
 |         |          |       |       |
 
 ### WHERE
-Das WHERE ist im Vergleich zu den anderen kein echtes Statement, sondern eine Ergänzung dazu. Mit dem Where kann
+Die WHERE-Klausel ist im Vergleich zu den anderen kein Statement, sondern eine Ergänzung dazu. Mit WHERE kann
 spezifiziert werden, welche Daten für das Statement verwendet werden sollen. Mehrere Bedingungen können mit den Keywords
 `AND` und `OR` aneinandergereiht werden. Hier ein Beispiel dazu:
 
@@ -158,9 +173,9 @@ Das Update Statement wird verwendet, um Inhalte (Tabelle, Datenbank, Constraints
 Statement ist grundsätzlich wie folgt aufgebaut:
 
 ``` sql
-UPDATE tabelle
-SET attribut = wert
-WHERE attribut2 = wert2; 
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition; 
 ```
 Als Erstes kommt immer das "UPDATE" gefolgt von dem zu aktualisierenden Objekt, in diesem Fall eine Tabelle. 
 Anschliessend wird ein SET durchgeführt, wo die gewünschte Änderung gemacht wird. Dabei können auch mehrere Attribute 
@@ -181,7 +196,7 @@ Dieses Statement setzt das Alter aller Benutzer mit dem Vornamen "Max" auf 18 un
 ``` sql
 UPDATE benutzer
 SET alter = 18, beruf = "Lehrer/in"
-WHERE name = "Max";
+WHERE vorname = "Max";
 ```
 
 Resultat:
@@ -198,7 +213,7 @@ Wie es der Name schon sagt, wird das Delete Statement zum Löschen von Daten ver
 grundsätzlich wie folgt aufgebaut:
 
 ```sql
-DELETE FROM table WHERE attribut = wert;
+DELETE FROM table_name WHERE condition;
 ```
 
 Als Erstes kommt immer das "DELETE" gefolgt von FROM und der betroffenen Tabelle. Ein Delete sollte immer mit einem
@@ -229,7 +244,7 @@ Resultat:
 
 ## Join
 Ähnlich wie Where ist Join kein eigenes Statement, sondern eine Erweiterung. Mit dem Join Keyword werden in einem
-Select mehrere Tabellen miteinander verbunden. Das wird zum Beispiel benötigt, wenn die Personalien und die Adresse
+Select mehrere Tabellen miteinander verbunden. Das wird benötigt wenn die gewünschten Daten sich nicht in einer sondern in mehreren Tabellen befinden. Zum Beispiel, wenn die Personalien und die Adresse
 einer Person in verschiedenen Tabellen gespeichert wird. Ein Join funktioniert eigentlich immer gleich, es gibt jeweils
 eine Tabelle A die mit der Tabelle B verbunden wird. Dazu wird jeweils eine Id oder zumindest ein Attribut verwendet, 
 welches in beiden Tabellen vertreten ist. So wird dann die Verbindung hergestellt.
@@ -239,7 +254,7 @@ komplexe Varianten, welche auch dementsprechend selten benutzt werden. Wir schau
 
 ### Inner Join (*join*)
 Der Inner Join oder auch nur Join (je nach Datenbank) ist der wichtigste und am meisten benötigte Join. Der Inner Join
-verbindet die Tabellen und gibt nur die Schnittmenge zurück. Also alle Werte, die auch ein Gegenstück haben. Grafisch 
+verbindet die Tabellen und gibt nur die Schnittmenge zurück. Also alle Werte aus der Tabelle A, die auch ein Gegenstück in der Tabelle B haben. Grafisch 
 dargestellt würde dieser Join so aus sehen:
 
 ![Inner Join](../images/inner-join.png)
@@ -267,7 +282,7 @@ Menge zurückgegeben. Grafisch würde das so aussehen:
 *Quelle: https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/*
 
 Die äussere Menge ist jeweils eine der beiden angegebenen Tabellen. Welche Tabelle das verwendet wird, ist dabei
-abhängig vom Statement und welches Keyword verwendet wird. Schauen wir und das in einem Beispiel an.
+abhängig vom Statement und welches Keyword verwendet wird. Schauen wir uns das in einem Beispiel an.
 
 ``` sql
 SELECT * FROM tabelle_a RIGHT JOIN tabelle_b ON tabelle_a.id = tabelle_b.id;
@@ -377,7 +392,7 @@ Funktionen, die verwendet werden, um zusammengefasste Informationen aus großen 
 Dadurch wird es einfacher, die Daten zu analysieren und Muster oder Trends zu erkennen.
 
 ### Count
-Die Aggregation Count zählt die wie viele Resultate das beim Query zurückgegeben werden. Count funktioniert bei allen
+Die Aggregation Count zählt wie viele Resultate das beim Query zurückgegeben werden. Count funktioniert bei allen
 Datentypen gleich und muss nicht angepasst werden. Hier ein Beispiel zu Count:
 
 Ausgangstabelle Person:
@@ -400,7 +415,7 @@ Resultat:
 |----------|--------------|
 | 5        | 4            |
 
-Aus dem Resultat lässt sich schliessen, dass nur nicht null Werte im Count beachtet werden. 
+Aus dem Resultat lässt sich schliessen, dass NULL-Werte im Count nicht beachtet werden. 
 
 ### Max/Min
 Die Aggregationen Max und Min sind logischerweise zum Finden des grössten und kleinsten Wertes. Beide funktionieren
