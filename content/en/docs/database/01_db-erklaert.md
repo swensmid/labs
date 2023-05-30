@@ -1,7 +1,7 @@
 ---
 title: "Datenbank 101"
 linkTitle: "Datenbank 101"
-weight: 3
+weight: 1
 ---
 
 ## Inhalt
