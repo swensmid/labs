@@ -1,17 +1,8 @@
 ---
 title: "Datenbank Design"
 linkTitle: "Datenbank Design"
-weight: 3
+weight: 4
 ---
-
-## Inhalt
-* [Normalisierung](#normalisierung)
-  * [Erste Normalform (1NF)](#erste-normalform-1nf)
-  * [Zweite Normalform (2NF)](#zweite-normalform-2nf)
-  * [Dritte Normalform (3NF)](#dritte-normalform-3nf)
-* [Datenbankdesign](#datenbankdesign)
-  * [Kardinalität](#kardinalität)
-
 
 ## Normalisierung
 Die Normalisierung in SQL ist ein Prozess, bei dem Datenbanktabellen in bestimmte Normalformen gebracht werden, um die

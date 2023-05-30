@@ -1,30 +1,8 @@
 ---
 title: "SQL Syntax"
 linkTitle: "SQL Syntax"
-weight: 3
+weight: 2
 ---
-
-## Inhalt
-
-* [Statements](#statements)
-  * [Was ist ein SQL Statement?](#was-ist-ein-sql-statement)
-  * [SELECT](#select)
-  * [INSERT](#insert)
-  * [CREATE](#create)
-  * [WHERE](#where)
-  * [UPDATE](#update)
-  * [DELETE](#delete)
-* [Join](#join)
-  * [Inner Join (*join*)](#inner-join-join)
-  * [Right und Left Join](#right-und-left-join)
-    * [Right Join](#right-join)
-    * [Left Join](#left-join)
-  * [Full Join](#full-join)
-* [Aggregationen & Keywords](#aggregationen--weiteres)
-  * [Count](#count)
-  * [Max/Min](#maxmin)
-  * [Sum](#sum)
-  * [Avg](#avg)
 
 ## Statements
 ### Was ist ein SQL Statement?

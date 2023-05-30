@@ -4,11 +4,6 @@ linkTitle: "Datenbank 101"
 weight: 1
 ---
 
-## Inhalt
-* [Was ist eine Datenbank?](#was-ist-eine-datenbank)
-* [Arten von Datenbanken](#arten-von-datenbanken)
-* [Datentypen](#datentypen)
-
 ## Was ist eine Datenbank?
 Grundsätzlich sagt der Name "Datenbank" bereits was sie ist. In einer Datenbank werden Daten gespeichert.
 Ähnlich wie bei einer normalen Bank werden die Daten an einem klar definierten Ort abgespeichert.

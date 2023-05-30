@@ -1,6 +1,6 @@
 ---
 title: "Datenbanken"
-weight: 2
+weight: 3
 description: >
   Grundlagen für die Verwendung von Datenbanken   
 ---

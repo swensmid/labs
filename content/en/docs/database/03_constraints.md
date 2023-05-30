@@ -4,17 +4,6 @@ linkTitle: "Constraints"
 weight: 3
 ---
 
-## Inhalt
-* [Inhalt](#inhalt)
-* [Was ist ein Constraint?](#was-ist-ein-constraint)
-* [Not Null](#not-null)
-* [Unique](#unique)
-* [Primary Key](#primary-key)
-* [Foreign Key](#foreign-key)
-
-
-
-
 ## Was ist ein Constraint?
 Ein Constaint in SQL ist dazu da den Inhalt eines Attributs weiter zu beschränken. Theoretisch ist die Angabe des 
 Datentyps bereits eine Art Constraint, da bestimmt wird was für ein Wertebereich eingefügt werden darf. Ein Constraint
