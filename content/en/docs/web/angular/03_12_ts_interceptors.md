@@ -5,9 +5,10 @@ linkTitle: "Interceptors"
 weight: 14
 date: 2022-03-14
 description: >
-    Interceptors in Angular sind eine einfache Möglichkeit des Frameworks, die http-Requests global abzufangen und zu verändern, bevor sie an den Server gesendet werden. 
+    Was Interceptors genau sind kann in diesem Kapitel nachgelesen werden.
 ---
-
+## Interceptor
+Interceptors in Angular sind eine einfache Möglichkeit des Frameworks, die http-Requests global abzufangen und zu verändern, bevor sie an den Server gesendet werden.
 Dies ist sehr praktisch, wenn wir Authentifizierungs-Token konfigurieren, Protokolle der Requests erstellen und benutzerdefinierte Header hinzufügen wollen.
 
 ![Interceptor](../images/interceptor.png)

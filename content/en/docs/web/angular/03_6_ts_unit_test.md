@@ -7,7 +7,7 @@ date: 2023-05-04
 description: >
   In diesem Kapitel wird beschrieben wa genau das Unit Test File in Angular ist.
 ---
-
+## Unit Testing
 Testdateien (.spec.ts Files) sind Teil des Test-Frameworks, das in Angular integriert ist. Sie dienen dazu, verschiedene Components, Services, Directives, Pipes etc in einer Angular-Anwendung zu testen. Das Testen ist ein wichtiger Bestandteil der Entwicklung, da es hilft, die Funktionalität einer Anwendung zu überprüfen, Fehler zu identifizieren und sicherzustellen, dass Änderungen keine unerwünschten Nebenwirkungen haben.
 
 Als Beispiel sieht man einen minimalen Test, welcher für den AppComponent erstellt wurde:

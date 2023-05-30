@@ -7,7 +7,7 @@ date: 2023-05-05
 description: >
     Wie der Angular Life Cycle Hook genau aussieht findet man hier.
 ---
-
+## Angular Life Cycle Hook
 Lifecycle-Hooks ermöglichen es Entwicklern, Code zu spezifischen Zeitpunkten im Lebenszyklus eines Components auszuführen und somit den Component zu initialisieren, auf Änderungen zu reagieren und Aufräumarbeiten durchzuführen.
 
 * **ngOnChanges**: Wird aufgerufen, wenn einer oder mehrere Input-Properties eines Components sich ändern. Hier kann man auf die Änderungen reagieren und entsprechende Aktionen ausführen.
@@ -26,4 +26,4 @@ Lifecycle-Hooks ermöglichen es Entwicklern, Code zu spezifischen Zeitpunkten im
 
 * **ngOnDestroy:** Wird aufgerufen, bevor ein Component zerstört wird. Hier kann man bereinigende Aktionen durchführen, Subscriptions beenden oder Ressourcen freigeben.
 
-![Lifecycle-Hooks ](../images/angular-lifecycle-hook.png)
+![Lifecycle-Hooks ](../images/angular-lifecycle.png)

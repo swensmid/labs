@@ -1,0 +1,161 @@
+---
+title: "NgRx Beispiel"
+type: docs
+linkTitle: "NgRx Beispiel"
+weight: 31
+date: 2023-05-26
+description: >
+  Ein kleines NgRx Beispiel.
+---
+## Beispiel
+Als kleines Beispiel, wie man NgRx verwendet, setze man eine kleines neues Angular-projekt auf und schreibt eine Anwendung mit einem Counter welchen man Inkrementieren, Dekrementieren und Resetten kann.
+
+## Einrichten
+Als Erstes muss man ein neues Angular Projekt [aufsetzen](./03_1_ts_einführung_angular#angular-projekt-aufsetzen).
+
+Danach NgRx [installieren](./08_1_ts_ngrx#installation) 
+
+Nun erstellt man der Übersicht halber noch zwei Ordner, einer names actions und der ander names reducers. Darin werden dann alle Actions und reducer erstellt.
+
+## Actions erstellen
+Als Erstes werden die Actions definiert, welche man alle für dieses Projekt benötigt. Wie bei der Einleitung erwähnt sind das Inkrementieren, Dekrementieren und Resetten. Dazu erstellt man nun ein neues Typescript File namens `counetr.actions.ts`.
+Lagere die Action Types in ein Enum aus.
+
+Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+
+<details>
+<summary>Lösung (click to expand)</summary>
+
+```typescript
+export enum ActionTypes {
+    INCREMENT = '[Counter Component] Increment',
+    DECREMENT = '[Counter Component] Decrement', 
+    RESET= '[Counter Component] Reset'
+}
+```
+```typescript
+import { createAction } from '@ngrx/store';
+
+export const increment = createAction(ActionTypes.INCREMENT);
+export const decrement = createAction(ActionTypes.DECREMENT);
+export const reset = createAction(ActionTypes.RESET);
+```
+</details>
+
+## Reducer erstellen
+Nun muss man eine Reducer-Funktion definieren, um Änderungen im Zählerwert basierend auf den bereitgestellten Aktionen zu verarbeiten.
+
+Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+
+<details>
+<summary>Lösung (click to expand)</summary>
+
+```typescript
+import { createReducer, on } from '@ngrx/store';
+import { increment, decrement, reset } from './counter.actions';
+
+export const initialState = 0;
+
+export const counterReducer = createReducer(
+    initialState,
+    on(increment, (state) => state + 1),
+    on(decrement, (state) => state - 1),
+    on(reset, (state) => 0)
+);
+```
+</details>
+
+## Component erstellen
+Erstelle mittels der ng-Befehle einen neuen Component namens `my-counter` innerhalb des app-Ordners. Das HTML soll einen Titel besitzen, drei Buttons für jede Actions und eine Anzeige für den aktuellen Counter.
+Im Typescript soll für jeden Button eine Methode erstellt werden, zudem ein Observable welches den aktuellen Count besitzt. Das Observable soll mit dem Wert des Stores verbunden sein.
+
+Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+
+<details>
+<summary>Lösung (click to expand)</summary>
+
+```typescript
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { increment, decrement, reset } from '../counter.actions';
+
+@Component({
+    selector: 'app-my-counter',
+    templateUrl: './my-counter.component.html',
+})
+export class MyCounterComponent {
+    count$: Observable<number>;
+
+    constructor(private store: Store<{ count: number }>) {
+        this.count$ = store.select('count');
+    }
+
+    increment() {
+        this.store.dispatch(increment());
+    }
+
+    decrement() {
+        this.store.dispatch(decrement());
+    }
+
+    reset() {
+        this.store.dispatch(reset());
+    }
+}
+```
+```html
+<button (click)="increment()">Increment</button>
+
+<div>Current Count: {{ count$ | async }}</div>
+
+<button (click)="decrement()">Decrement</button>
+
+<button (click)="reset()">Reset Counter</button>
+
+```
+</details>
+
+## AppModule anpassen
+Das `app.module.ts` muss nun noch angepasst werden mit dem Store und dem Reducer.
+
+Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+
+<details>
+<summary>Lösung (click to expand)</summary>
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
+import { MyCounterComponent } from './my-counter/my-counter.component';
+
+@NgModule({
+    declarations: [AppComponent, MyCounterComponent],
+    imports: [BrowserModule, StoreModule.forRoot({ count: counterReducer })],
+    providers: [],
+    bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+</details>
+
+## im AppComponent anzeigen 
+Der neue Component soll nun noch mit dem `app.component.html` verknüpft werden so das man den Inhalt des Components sehen kann.
+
+Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+
+<details>
+<summary>Lösung (click to expand)</summary>
+
+```html
+<h1>NgRx Tutorial</h1>
+
+<app-my-counter></app-my-counter>
+```
+</details>
+

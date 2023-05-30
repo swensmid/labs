@@ -8,17 +8,17 @@ description: >
     In diesem Kapitel wird beschrieben wa genau das Template in Angular ist.
 ---
 
-### Was ist ein Template?
+## Was ist ein Template?
 In Angular ist das Template der Teil eines Components, der die Benutzeroberfläche definiert. Es ist im Wesentlichen das HTML, das vom Component angezeigt wird und mit der Benutzer interagieren kann.
 
-Das Template kann jedoch mehr als nur HTML enthalten. Es kann auch Angularspezifische Syntax wie [Directives](./03_7_ts_directives), [Pipes](/04_2_ts_pipes), [Interpolationen](/04_1_ts_data_binding#interpolation) und [Bindings](/04_1_ts_data_binding) enthalten, die die Funktionalität und das Verhalten des Components bestimmen.
+Das Template kann jedoch mehr als nur HTML enthalten. Es kann auch Angularspezifische Syntax wie [Template Styling](../03_5_ts_stylesheet#template-styling), [Directives](../03_7_ts_directives), [Pipes](../04_2_ts_pipes), [Interpolationen](../04_1_ts_data_binding#interpolation) und [Bindings](../04_1_ts_data_binding) enthalten, die die Funktionalität und das Verhalten des Components bestimmen.
 
 ```html
 <div *ngIf="condition; else elseBlock">Content to render when condition is true.</div>
 <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 ```
 
-### ng-container &  ng-template
+## ng-container &  ng-template
 Durch die Verwendung von `ng-container` und `ng-template` kann der HTML-Code in Components besser strukturiert, lesbarer und wiederverwendbarer gemacht werden. Sie bieten eine flexible Möglichkeit, Inhalte bedingt anzuzeigen, dynamische Templates zu erstellen und den Code effizienter zu gestalten.
 
 `ng-container` und `ng-template` erzeugen kein zusätzliches HTML-Element im DOM, das bedeutet das man nur den HTML-Code innerhalb der beiden im DOM sieht und nur von diesen welche aktiv sind.
@@ -55,7 +55,6 @@ export class AppComponent {
         </ng-template>
     </body>
 ```
-
 Wenn der obenstehende Code gerendert wurde, sieht man das im DOM nun nur der body-tag und die beiden p-tags zusehen sind, das `ng-container` und `ng-template` nicht.
 ![DOM](./images/template-dom.png) 
 

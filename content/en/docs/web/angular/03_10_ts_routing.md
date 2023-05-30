@@ -8,7 +8,6 @@ description: >
     Wie Routing in Angular funktioniert findet man hier.
 ---
 
-# Routing
 ## Routing
 Angular Router ist ein leistungsstarker JavaScript-Router, der vom Angular Core Team erstellt und gewartet wird. Der Router wird über das Paket `@angular/router` installiert.
 Das Paket bietet eine vollständige Routing-Library:

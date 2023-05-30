@@ -2,11 +2,15 @@
 title: "Json Web Token Authorisation (JWT)"
 type: docs
 linkTitle: "Json Web Token Authorisation (JWT)"
-weight: 100
+weight: 32
 date: 2022-05-09
 description: >
-    JSON Web Token (JWT) ist ein offener Standard (RFC 7519) zur sicheren Kommunikation eines JSON-Objekts. In der Regel muss sich der Benutzer erfolgreich anmelden und erhält dann einen Token für API-Calls. Der Token besteht aus drei Teilen: Header, Payload und Signatur. Da die Payload alle erforderlichen Informationen enthält, ist für die Authentifizierung keine Datenbankabfrage erforderlich. Das ist besonders für die Skalierung zustandsloser Backend-Architekturen super!
+    In diesem Exkurs ist zu sehen was ein JSON Web Token (JWT) und wie es funktioniert.
 ---
+## Exkurs JWT 
+JWT ist ein offener Standard (RFC 7519) zur sicheren Kommunikation eines JSON-Objekts. In der Regel muss sich der Benutzer erfolgreich anmelden und erhält dann einen Token für API-Calls. Der Token besteht aus drei Teilen: Header, Payload und Signatur. Da die Payload alle erforderlichen Informationen enthält, ist für die Authentifizierung keine Datenbankabfrage erforderlich. Das ist besonders für die Skalierung zustandsloser Backend-Architekturen super!
+
+Es ist jedoch wichtig, JWT mit Vorsicht zu verwenden und Sicherheitsvorkehrungen zu treffen, um Angriffe wie Token-Entführung oder Token-Manipulation zu verhindern. Dazu gehören Massnahmen wie die sichere Speicherung von geheimen Schlüsseln, die Verwendung von HTTPS für die Token-Übertragung und die Implementierung von Ablaufzeiten und erneuerbaren Tokens.
 
 ## Sichere Kommunikation mit JSON Web Token
 Ein JWT kann von jedem dekodiert und gelesen werden. Tatsächlich ist das für den Client und das Debuggen nützlich. Die Payload wird nicht verschlüsselt (für Verschlüsselung s. JWE), aber gültige Signaturen können nur erstellt werden, wenn man ein Geheimnis kennt. Jedes Mal, wenn ein Token empfangen wird, muss eine Integritätsprüfung die Signatur bestätigen. So wird sichergestellt, dass der Token nicht manipuliert wurde. Danach wird sein Inhalt als vertrauenswürdig eingestuft.
@@ -56,15 +60,52 @@ HMACSHA256(
 Die Signatur wird verwendet, um zu überprüfen, ob die Nachricht unterwegs nicht geändert wurde. Bei Token, die mit einem privaten Schlüssel signiert wurden, kann auch überprüft werden, ob der Absender des JWT derjenige ist, für den er sich ausgibt.
 
 ## Alles zusammenführen
-Die Ausgabe besteht aus drei durch Punkte getrennten Base64-URL-Zeichenfolgen, die in HTML- und HTTP-Umgebungen problemlos übergeben werden können und im Vergleich zu XML-basierten Standards wie SAML kompakter sind.
+Wie man nun ein solches JWT erstellt und im Frontend verwendet wird folgend erklärt.
 
-Das Folgende zeigt eine JWT, bei der der vorherige Header und die Nutzdaten codiert sind und die mit einem Geheimnis signiert ist. 
+Dazu muss man als Erstes das JWT zusammenstellen, wie es oben erklärt wurde. Und dieses dann in den `SessionStorage` speichern. Beseitz man nun sein JWT so kann man es bei den HTTP-Anfragen verwenden und an das Backend mitsenden, wo man es dann verifizieren muss.
 
-```javascript
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
-eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
-SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+Token erstellen und speichern:
+```typescript
+const header = {
+    "alg": "HS256",
+    "typ": "JWT"
+};
+
+const payload = {
+    "sub": "1234567890",
+    "name": "John Doe",
+    "admin": true
+};
+
+const secret = "mysecretkey";
+
+// Header und Payload zu JSON-Strings konvertieren
+const encodedHeader = btoa(JSON.stringify(header));
+const encodedPayload = btoa(JSON.stringify(payload));
+
+// Signatur erstellen
+const signature = btoa(encodedHeader + "." + encodedPayload + secret);
+
+// JWT-Token erstellen
+const token = encodedHeader + "." + encodedPayload + "." + signature;
+
+// Token im Local Storage speichern
+sessionStorage.setItem('token', token);
 ```
 
-## Auftrag
-Du hast nun alle Theorie die du für das nächste Projekt brauchst. Teste nun [hier](../../../../exams/web/angular/07_2_exam_angular), ob du alles verstanden hast.
+Token bei HTTP-Anfragen mitsenden:
+```typescript
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+// Token aus dem Local Storage abrufen
+const token = sessionStorage.getItem('token');
+
+// HTTP-Header mit dem Token erstellen
+const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+// HTTP-Anfrage mit dem Header senden
+this.http.get('/api/data', { headers }).subscribe((response) => {
+    // Verarbeitung der Serverantwort
+});
+```
+

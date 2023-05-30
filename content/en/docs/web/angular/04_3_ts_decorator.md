@@ -7,7 +7,7 @@ date: 2023-05-17
 description: >
     In disem Kapitel findet man die wichtigsten Informationen u Angular Decorators.
 ---
-
+## Decorators
 Decorators sind spezielle Funktionen, die verwendet werden, um zusätzliche Informationen zu einer Klasse, Methode oder Eigenschaft hinzuzufügen oder das Verhalten davon zu ändern. Sie helfen dabei, den Code besser zu organisieren und bestimmte Aufgaben automatisch auszuführen.
 
 Folgende sieben Decorators sind in Angular die meistverwendeten:
@@ -26,7 +26,7 @@ Folgende sieben Decorators sind in Angular die meistverwendeten:
 * `@ViewChildren`: Der @ViewChildren-Decorator wird verwendet, um auf eine Liste von Child-Elementen in einen Component zuzugreifen.
 
 
-## @Component
+### @Component
 Der @Component-Decorator wird verwendet, um einen Component zu definieren. Er ist einer der wichtigsten Decorators und enthält Metadaten, die Angular dabei helfen, den Component zu verstehen und zu rendern.
 
 Er wird über der Klassen-Deklaration platziert und enthält ein Objekt mit verschiedenen Eigenschaften:
@@ -50,7 +50,7 @@ export class MyComponent {
 }
 ```
 
-## @Input
+### @Input
 Der @Input-Decorator ermöglicht es, Daten von einem übergeordneten Component (Parent) an einen untergeordnete Component (Child) zu übergeben.
 Somit wird die Kommunikation zwischen den Components erleichtern
 
@@ -70,7 +70,7 @@ Um die Eingabeeigenschaft zu verwenden und Daten vom Parent zu erhalten, verwend
 <app-child [childData]="parentData"></app-child>
 ```
 
-## @Output
+### @Output
 Mit dem @Output-Decorator kann ein Component Ereignisse an den übergeordneten Component (Parent) senden und mitteilen, dass etwas im Component (Child) geschehen ist.
 
 ```typescript
@@ -96,7 +96,7 @@ Um das Ereignis im Parent zu empfangen und darauf zu reagieren, wird das Event-B
 <app-child (dataEvent)="receiveData($event)"></app-child>
 ```
 
-## @ViewChild
+### @ViewChild
 @ViewChild wird verwendet, um auf ein Element oder ein Directive in der View eines Components zuzugreifen. Der @ViewChild-Decorator wird normalerweise zusammen mit einer Template-Referenzvariable verwendet, um das gewünschte Element oder das gewünschte Directive zu identifizieren.
 
 ```typescript
@@ -120,7 +120,7 @@ export class MeinComponent {
 
 Auf das Element sollte dann erst in der ngAfterViewInit-Lifecycle-Hook-Methode zugegriffen werden, da dieser Hook erst ausgelöst wird wenn die View initialisiert wurde.
 
-## @ViewChildren
+### @ViewChildren
 Es gibt auch den @ViewChildren-Decorator, der ähnlich wie der @ViewChild-Decorator funktioniert, jedoch verwendet wird, um auf mehrere Elemente oder Directives in der View eines Components zuzugreifen.
 
 Der @ViewChildren-Decorator wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.

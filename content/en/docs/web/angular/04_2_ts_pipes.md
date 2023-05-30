@@ -5,10 +5,11 @@ linkTitle: "Pipes"
 weight: 18
 date: 2022-03-14
 description: >
-    Jede Anwendung beginnt mit einer scheinbar einfachen Aufgabe: Daten abrufen, transformieren und Benutzern zeigen.
-    Das Abrufen von Daten kann so einfach wie das Erstellen einer lokalen Variablen oder so komplex wie das Streamen von Daten über ein WebSocket sein.
+    In diesem Kapitel findet man relevante Informationen zu Pipes.
 ---
-
+## Pipes
+Jede Anwendung beginnt mit einer scheinbar einfachen Aufgabe: Daten abrufen, transformieren und Benutzern zeigen.
+Das Abrufen von Daten kann so einfach wie das Erstellen einer lokalen Variablen oder so komplex wie das Streamen von Daten über ein WebSocket sein.
 Sobald Daten eingehen, könnte man ihre rohen toString-Werte direkt in die View übertragen. Dies führt jedoch selten zu einer guten user experience. In den meisten Anwendungsfällen
 bevorzugen Benutzer beispielsweise die Anzeige eines Datums in einem einfachen Format wie `15. January 1929` anstelle des rohen Stringformats `Tu 15. January 1929 00:00:00 GMT-0700 (Pacific Daylight Time)`.
 

@@ -2,17 +2,23 @@
 title: "Angular Reactive Forms"
 type: docs
 linkTitle: "Angular Reactive Forms"
-weight: 101
+weight: 21
 date: 2023-04-20
 description: >
   In diesem Kapitel wird erklärt wozu das Angular Reactive Forms sind.
 ---
+## Angular Reactive Forms
 Angular Reactive Forms sind ein leistungsstarkes Feature von Angular, mit dem Entwickler Formulare erstellen, validieren und mit ihnen interagieren können. Im Gegensatz zu Template-driven Forms, bei denen die Formularlogik hauptsächlich im HTML-Template liegt, wird bei Reactive Forms die Formularlogik in den Components selbst geschrieben.
 
-### Doch wieso sollte man Forms verwenden? 
+## Doch wieso sollte man Forms verwenden? 
+Dies hört sich nun sehr ähnlich an wie `ngModel`, doch wieso sollte man besser Reactive Forms verwenden? Dazu gibt es folgende Gründe:
+1. Reactive Forms ermöglichen eine klare Trennung zwischen Datenmodell und View. Man erstellt ein separates FormGroup-Objekt, das die Struktur und Validierung der Formulardaten definiert. Dieses Datenmodell kann unabhängig von dem View-Components existieren und ermöglicht eine bessere Organisation und Wiederverwendbarkeit des Codes.
+2. Mit Reactive Forms hat man volle Kontrolle über die Formulare, da man FormControls und FormGroups programmatisch erstellen und manipulieren kann. Man kann dynamisch Formularfelder hinzufügen, entfernen oder ändern, Validierungsregeln anpassen und auf Ereignisse reagieren.
+3. Reactive Forms bieten eine umfangreichere Unterstützung für komplexe Validierungsszenarien. Man kann benutzerdefinierte Validatoren erstellen oder viele bereits existierende verwenden.
 
+Insgesamt bietet die Verwendung von Reactive Forms eine flexiblere, leistungsfähigere und besser strukturierte Möglichkeit, Formulare in Angular zu verwalten. Es ermöglicht eine bessere Kontrolle, erweiterte Validierungsoptionen und eine klarere Trennung zwischen Datenmodell und View-Komponente.
 
-### Importieren in Module
+## Importieren in Module
 Bevor man Reactive Forms verwenden kann muss man die `ReactiveFormsModule` in das Modul, in dem man Reactive Forms verwenden möchte importieren.
 ```typescript
 import { ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class AppModule { }
 ```
 
-### Forms Control
+## Forms Control
 Ein `FormControl` ein Objekt, das ein einzelnes Formularelement repräsentiert und steuert. Es ermöglicht die Verwaltung des Werts, der Validierung und des Zustands des Formularelements.
 
 Wenn man ein `FormControl` verwenden möchte kann man dieses mittels `new FormControl('')` einer Variable zuweisen. Dadurch ist die Variabel nun das FormControl. Damit man es nun im HTML verwenden kann um es zu Binden muss man bei einem `input`-tag `[formControl]=""` verwenden in die "" kommt dann der Variabelname des FormControls.
@@ -99,7 +105,7 @@ export class AppComponent {
 </div>
 ```
 
-### Froms Group
+## Froms Group
 Da eine Form normalerweise aus mehr als einem Controls besteht, kann all die FormControls zu einer gruppieren.
 
 Für die FormGroup erstellt man auch eine neue Instanz des `FormGroup` in welcher sich die `FormControl`'s befinden. Die FormGroup wird in einer Variabel gespeichert, die FormControls werden mit eindeutigem Key-Value Prinzip definiert.
@@ -257,8 +263,15 @@ export class AppComponent {
 <button type="button" (click)="updateProfile()">Update Profile</button>
 ```
 
-### Form Array
-`FormArray` ist eine alternative zu `FormGroup` 
+## Form Array
+`FormArray` ist eine Alternative zu `FormGroup`, wird jedoch verwendet, wenn man eine unbestimmte Anzahl von FormControls, FormGroups oder weiteren FormArrays haben möchte. Durch das hat man die Möglichkeit dynamisch Formularelement während der Laufzeit hinzuzufügen oder löschen.
+Praktisch ist das man keinen Key für die Formularelemente definieren muss und man nicht weiss wie viele Elemente es am Schluss sein werden.
+
+Um auf das FormArray zugreifen zu können muss man eine `get`-Methode schreiben, diese findet man im folgenden Code.
+
+Wie man Elemente in das FormArray hinzufügt und löscht ist auch im untenstehenden Code zu finden.
+
+Im HTML muss man das FormArray mittels `formArrayName=""` angeben, auch hier kommt innerhalb der "" der Key des FormArrays. Um an die einzelnen Elemente zu gelangen, muss man mittels einem `*ngFor` darüber iterieren. Im folgenden Beispiel wird die ID des Inputs dynamisch mittels des Index des Elements erstellt.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -295,6 +308,10 @@ export class AppComponent {
     addAlias() {
         this.aliases.push(new FormControl(''));
     }
+
+    removeAlias(index: number): void {
+        this.aliases.removeAt(index);
+    }
 }
 ```
 ```html
@@ -329,13 +346,14 @@ export class AppComponent {
             <!-- The repeated alias template -->
             <label for="alias-{{ i }}">Alias:</label>
             <input id="alias-{{ i }}" type="text" [formControlName]="i">
+            <button type="button" (click)="removeAlias(i)">- Remove alias</button>
         </div>
     </div>
 </form>
 ```
 
 
-### Form Builder
+## Form Builder
 Wie man bei der verschachtelten FormGroup gesehen hat, ist zum Teil der Code sehr duplikat. Um dies zu vermeiden, kann man beim Erstellen einer Form einen Hilfsservice namens `FormBuilder` benutzen. Diesen muss man auch importieren und dann im constructor injecten.
 Anstelle von `new FormGroup()` schreibt man nun `this.formBuilder.group()`,bei `FormArray` schreibt man mittels FormBuilder noch `this.formBuilder.array()` und bei den Controls kann man jedoch einfach nur das Key-Value Paar angeben.
 
@@ -369,5 +387,93 @@ export class AppComponent {
 }
 ```
 
-### Validators
+## Validators
+Es gibt eine Vielzahl von Validators, die man verwenden kann, um die Eingaben der Benutzer zu überprüfen und sicherzustellen, dass sie den gewünschten Anforderungen entsprechen. Die häufigst verwendeten Validators sind:
+* `Validators.required`: Dieser Validator stellt sicher, dass das Formularelement einen Wert enthält und nicht leer ist.
 
+* `Validators.minLength(minLength)`: Dieser Validator überprüft, ob der Value des Formularelements eine Mindestlänge hat, die durch den Parameter `minLength` festgelegt wird.
+
+* `Validators.maxLength(maxLength)`: Dieser Validator überprüft, ob der Value des Formularelements eine Maximallänge hat, die durch den Parameter `maxLength` festgelegt wird.
+
+* `Validators.pattern(pattern)`: Dieser Validator überprüft den Value des Formularelements anhand eines regulären Ausdrucks, der durch den Parameter `pattern` definiert wird. Man kann damit bestimmte Muster wie z.B. eine gültige E-Mail-Adresse, Telefonnummer etc. überprüfen. Das `pattern` ist wie ein Regex und kann in diesem Format angegeben werden z:B. `[a-zA-Z0-9]`
+
+* `Validators.email`: Dieser Validator überprüft, ob der Value des Formularelements eine gültige E-Mail-Adresse ist.
+
+* `Validators.min(min)`: Dieser Validator überprüft, ob der Value des Formularelements grösser oder gleich dem angegebenen Minimum `(min)` ist. Dies wird oft für numerische Eingabefelder verwendet.
+
+* `Validators.max(max)`: Dieser Validator überprüft, ob der Value des Formularelements kleiner oder gleich dem angegebenen Maximum `(max)` ist. Auch dies wird häufig für numerische Eingabefelder verwendet.
+
+Es können auch mehrere Validators eingesetzt werden, dazu muss man diese einfach in einem Array angeben.
+```typescript
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+
+@Component({
+    // ..
+})
+export class AppComponent {
+    profileForm = this.formBuilder.group({
+        firstName: [''],
+        lastName: ['', Validators.required],
+        address: this.formBuilder.group({
+            street: ['',Validators.required],
+            city: ['', Validators.required],
+            state: ['', Validators.required],
+            zip: ['', [Validators.required, Validators.minLength(4)]]
+        }),
+        aliases: this.formBuilder.array([
+            this.formBuilder.control('', Validators.required)
+        ])
+    });
+
+    constructor(private formBuilder: FormBuilder) {
+        this.profileForm.valueChanges.subscribe((value) => {
+            console.log(value) // {firstName: '', lastName: '', address: {...}}
+        })
+    }
+}
+```
+
+
+### Custom Validators
+Man hat zudem die Möglichkeit, benutzerdefinierte Validators zu erstellen, um spezifische Validierungslogik für Formularelements zu implementieren.
+
+Der Ausdruck `/bob/i` wird verwendet, um nach dem Namen "Bob" im Eingabewert zu suchen, und das "i" am Ende steht für "case insensitive" (Gross- und Kleinschreibung wird ignoriert).
+
+```typescript
+export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const forbidden = nameRe.test(control.value);
+    return forbidden ? {forbiddenName: {value: control.value}} : null;
+  };
+}
+```
+```typescript
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+
+@Component({
+    // ..
+})
+export class AppComponent {
+    profileForm = this.formBuilder.group({
+        firstName: ['', [Validators.required, forbiddenNameValidator(/bob/i)]],
+        lastName: ['', Validators.required],
+        address: this.formBuilder.group({
+            street: ['',Validators.required],
+            city: ['', Validators.required],
+            state: ['', Validators.required],
+            zip: ['', [Validators.required, Validators.minLength(4)]]
+        }),
+        aliases: this.formBuilder.array([
+            this.formBuilder.control('', Validators.required)
+        ])
+    });
+
+    constructor(private formBuilder: FormBuilder) {
+        this.profileForm.valueChanges.subscribe((value) => {
+            console.log(value) // {firstName: '', lastName: '', address: {...}}
+        })
+    }
+}
+```

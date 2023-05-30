@@ -7,6 +7,7 @@ date: 2023-05-04
 description: >
   In diesem Kapitel wird beschrieben wa genau das Stylesheet in Angular ist.
 ---
+## Stylesheet
 Zu jedem Angular Component gehört ein Stylesheet, diese ist jedoch nur für diesen Component zuständig, das heisst das HTML-File dieses Components. Erstellt man einen neuen Component über die CLI so wird das Stylesheet automatisch erzeugt.
 Somit wir schon vorgegeben das die Styles ausgelagert werden sollten und nicht inline erfolgen. Man kann jedoch auch ein oder mehrere globale Stylesheets erstellen, diese gellten dann wie der name es schon sagt für das gesamte Projekt. Somit werden dort Styles definiert wie zum Beispiel das alle p-tags eine bestimmte Schriftgrösse, Schriftart, Schriftfarbe etc. haben.
 
@@ -91,5 +92,41 @@ $secondary-color: #ff9800;
 .header {
   background-color: $primary-color;
   color: $secondary-color;
+}
+```
+
+
+## Template Styling
+Es gibt zum einen den [ngClass Directive](../03_7_ts_directives#ngclass), welcher verwendet werden kann um CSS/(SCSS)-Klassen dynamisch ins Template einzubinden. 
+Alternative dazu gibt es noch die `[class.]` Syntax. Man kann diese Syntax verwenden, um eine einzelne CSS/(SCSS)-Klasse basierend auf einer Bedingung hinzuzufügen oder zu entfernen.
+Ob eine Klasse hinzugefügt oder entfernt werden soll, wird meistens anhand eines Boolean aus dem Typescript geprüft. Ist das Boolean `true`` so wird die Klasse hinzugefügt ansonsten ist sie nicht vorhanden.
+
+```html
+<div [class.red]="isRed">Text</div>
+```
+```scss
+.red {
+  color: red;
+}
+```
+
+Alternativ zur prüfung auf ein Boolean kann auch mit Operatoren gearbeitet werden, wie zum Beispiel:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    // ..
+})
+export class AppComponent {
+  color: string = 'red';
+  colorCode: number = 10;
+}
+```
+```html
+<div [class.red]="color === 'red' && colorCode === 10">Text</div>
+```
+```scss
+.red {
+  color: red;
 }
 ```

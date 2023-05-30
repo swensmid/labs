@@ -130,6 +130,29 @@ export class MyComponent {
 </ul>
 ```
 
+Wenn man den Index bei einem `*ngFor` benötigt kann dieser sehr einfach angegeben werden. Dazu muss man nach dem `*ngFor` den Code `; let i = index` hinzufügen. Nun kann man in den Elementen innerhalb des `*ngFor` auf den Index der Elemente zu greifen.
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    // ..
+})
+export class MyComponent {
+    users = [
+        { name: 'John Doe', email: 'john@example.com' },
+        { name: 'Jane Smith', email: 'jane@example.com' },
+        { name: 'Bob Johnson', email: 'bob@example.com' },
+    ];
+}
+```
+```html
+<ul>
+  <li *ngFor="let user of users; let i = index">
+    {{ user.name }} ({{ user.email }}) ('index': {{ i }})
+  </li>
+</ul>
+```
+
 ### *ngSwitch
 Das `ngSwitch`-Directive ermöglicht das bedingte Rendern von Inhalten auf der Grundlage eines Ausdrucks mit mehreren möglichen Werten. Es funktioniert ähnlich wie ein `switch` in anderen Programmiersprachen.
 
@@ -145,4 +168,81 @@ Das `ngSwitch`-Directive ermöglicht das bedingte Rendern von Inhalten auf der G
     <p>Keine Option ausgewählt</p>
   </ng-container>
 </div>
+```
+
+### ngClass
+Die Direktive `ngClass` verwendet, um dynamisch CSS/(SCSS)-Klassen auf ein HTML-Element anzuwenden. Sie ermöglicht es, CSS/(SCSS)-Klassen basierend auf Bedingungen oder Ausdrücken hinzuzufügen oder zu entfernen.
+
+Es gibt zwei verschiedene Arten wie `ngClass` meistens verwendet wird.
+
+#### **Variante 1**:
+Bei der ersten Variante gibt man zuerst die Klasse an und nach einem Doppelpunkt dann die Bedingung. Bei der Bedingung kann wieder mit Booleans oder Operatoren gearbeitet werden.
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    // ..
+})
+export class AppComponent {
+  color: string = 'red';
+  colorCode: number = 10;
+}
+```
+```html
+<div [ngClass]="{'red': color === 'red'}">Text</div>
+```
+```scss
+.red {
+  color: red;
+}
+```
+
+Man kann jedoch diese Variante auch für mehrere Klassen machen indem man diese aneinander reiht und mit einem Komma trennt.
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    // ..
+})
+export class AppComponent {
+  color: string = 'red';
+  colorCode: number = 10;
+}
+```
+```html
+<div [ngClass]="{'red': color === 'red', 'blue' : colorCode === 10 }">Text</div>
+```
+```scss
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+```
+
+#### **Variante 2**:
+Bei der zweiten Variante arbeitet man mit dem [ternary Operator](../../javascript/06_js_operators#ternary-operator-), um zu prüfen ist eine Bedingung `true`, wenn ja verwende die erste angegebene Klasse. Ist die Bedingung jedoch `false` so verwende die zweite Klasse.
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    // ..
+})
+export class AppComponent {
+  colorCode: number = 10;
+}
+```
+```html
+<div [ngClass]="colorCode === 10 ? 'red' : 'blue'">Text</div>
+```
+```scss
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
 ```
