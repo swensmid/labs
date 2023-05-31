@@ -4,11 +4,23 @@ linkTitle: "SQL Syntax"
 weight: 2
 ---
 
+
+## Ziele
+* Du weisst wofür SQL verwendet wird
+* Du kennst die verschiedenen Statements in SQL
+* Du kannst einfache SQL Queries/Statements schreiben
+
+## Was ist SQL?
+SQL oder „Structured Query Language“ ist eine Programmiersprache für die Bearbeitung von Daten und relationalen
+Datenbanksystemen. Diese Sprache wird hauptsächlich für die Kommunikation mit Datenbanken verwendet, um die darin
+enthaltenen Daten zu verwalten.
+
 ## Statements
 ### Was ist ein SQL Statement?
-Ganz einfach gesagt ist ein Statement ein Befehl, der an die Datenbank geschickt und dort ausgeführt wird. Es gibt 
+Ganz einfach gesagt ist ein Statement ein Befehl, der an die Datenbank geschickt und dort ausgeführt wird. Es gibt
 viele verschiedene Statements, die teilweise kombiniert werden können, um den gewünschten Effekt auf der Datenbank zu
-erzielen. 
+erzielen. Grundsätzlich werden Teile der Syntax (Select, Insert, usw.) gross geschrieben, um eine Unterscheidung
+zwischen der Syntax und anderen Elementen wie tabellennamen usw. zu erhalten. Jedoch ist diese Regel nicht erzwungen.
 
 ### SELECT
 Das Select Statement wird verwendet, um Daten aus bestimmten Tabellen auszuwählen. Ein SELECT ist grundsätzlich wie
@@ -24,13 +36,31 @@ SELECT * from benutzer;
 Als Erstes kommt immer das "SELECT" gefolgt von den gewünschten Attribute. In diesem Statement wird ein Stern verwendet,
 dieser steht für alle Attribute. Dementsprechend werden alle Attribute, die in der Tabelle vorhanden sind, zurückgegeben.
 Auf die Attribute folgt das FROM, auf dieses folgt jeweils eine Tabelle, von welcher die Werte gewünscht sind.
-Im Beispiel ist es die Tabelle "benutzer". Das Resultat dieses Statements würde schlussendlich ungefähr so aussehen:
+Im Beispiel ist es die Tabelle "benutzer". Das Resultat dieses Statements würde schlussendlich so aussehen:
 
 | vorname | nachname  | alter | beruf              |
 |---------|-----------|-------|--------------------|
 | Anja    | Ackermann | 13    | Schüler/in         |
 | Fritz   | Fischer   | 26    | Pilot/in           |
 | Hans    | Hansen    | 52    | Hochbauzeichner/in |
+
+Wenn wir nur eine Spalte auswählen möchten, können wir das Statement wie folgt anpassen:
+
+```sql
+SELECT column_name FROM table_name;
+
+--Beispiel mit der Tabelle "benutzer"
+SELECT vorname FROM benutzer;
+```
+
+Das Resultat würde dementsprechend so aussehen:
+
+| vorname |
+|---------|
+| Anja    |
+| Fritz   |
+| Hans    |
+
 
 ### INSERT
 
@@ -253,8 +283,8 @@ Bei Joins gibt es viele verschiedene und teilweise sehr
 komplexe Varianten, welche auch dementsprechend selten benutzt werden. Wir schauen uns hier die vier wichtigsten an. 
 
 ### Inner Join (*join*)
-Der Inner Join oder auch nur Join (je nach Datenbank) ist der wichtigste und am meisten benötigte Join. Der Inner Join
-verbindet die Tabellen und gibt nur die Schnittmenge zurück. Also alle Werte aus der Tabelle A, die auch ein Gegenstück in der Tabelle B haben. Grafisch 
+Der Inner Join ist der wichtigste und am meisten benötigte Join. Der Inner Join verbindet die Tabellen und gibt nur 
+die Schnittmenge zurück. Also alle Werte aus der Tabelle A, die auch ein Gegenstück in der Tabelle B haben. Grafisch 
 dargestellt würde dieser Join so aus sehen:
 
 ![Inner Join](../images/inner-join.png)
@@ -312,6 +342,12 @@ Beruf:
 | 1        | Lehrer/in         |
 | 2        | Informatiker/in   |
 
+Statement:
+
+```sql
+SELECT * FROM person LEFT JOIN beruf ON person.beruf_id = beruf.beruf_id;
+```
+
 Resultat:
 
 | vorname | nachname | alter | beruf_id | beruf_id | berufsbezeichnung |
@@ -322,13 +358,14 @@ Resultat:
 > beruf_id ist doppelt, da es in beiden Tabellen ein Attribut mit diesem Namen gibt. Könnte mit der Auswahl im Select
 > auch ausgeblendet werden.
 
-Hier noch das Statement dazu:
-
-```sql
-SELECT * FROM person LEFT JOIN beruf ON person.beruf_id = beruf.beruf_id;
-```
 
 Umgekehrt würde das ganze so aussehen:
+
+Statement:
+
+```sql
+SELECT * FROM person RIGHT JOIN beruf ON person.beruf_id = beruf.beruf_id;
+```
 
 Resultat:
 
@@ -338,12 +375,6 @@ Resultat:
 | `null`  | `null`   | `null` | `null`   | 2        | Informatiker/in   |
 > beruf_id ist doppelt, da es in beiden Tabellen ein Attribut mit diesem Namen gibt. Könnte mit der Auswahl im Select
 > auch ausgeblendet werden.
-
-Statement:
-
-```sql
-SELECT * FROM person RIGHT JOIN beruf ON person.beruf_id = beruf.beruf_id;
-```
 
 
 ### Full Join
@@ -421,7 +452,7 @@ Aus dem Resultat lässt sich schliessen, dass NULL-Werte im Count nicht beachtet
 Die Aggregationen Max und Min sind logischerweise zum Finden des grössten und kleinsten Wertes. Beide funktionieren
 bei allen Datentypen, jedoch haben sie beispielsweise bei einem String einen anderen Weg das Maximum und Minimum zu 
 finden. Dort wird anhand einer Collation (Sortierungsregel) das Maximum und Minimum bestimmt. Bei normalen Zahlen sieht
-es ungefähr so aus:
+es so aus:
 
 Ausgangstabelle Person:
 

@@ -4,6 +4,12 @@ linkTitle: "Datenbank 101"
 weight: 1
 ---
 
+## Ziele
+* Du kennst den allgemeinen Aufbau einer Datenbank und kannst ihn erklären
+* Du kennst den Unterschied zwischen raltionalen und No-SQL Datenbanken
+* Du weisst wann welcher Datenbank-typ sinn macht
+* Du kennst die wichtigsten Datentypen und ihren Nutzen
+
 ## Was ist eine Datenbank?
 Eine Datenbank ist ein System zur elektronischen Verwaltung von Daten.
 Grundsätzlich sagt der Name "Datenbank" bereits was sie ist: In einer Datenbank werden Daten in einer bestimmten Ordnung abgelegt.
@@ -21,8 +27,17 @@ Aktenschränke beinhaltet.
 Diese Aktenschränke wären in einer Datenbank die Tabellen. Die Tabellen beinhalten schlussendlich
 die verschiedenen Daten, wie zum Beispiel dein erwähntes Bankkonto mit deinem Kontostand.
 
-Schlussendlich sieht der Aufbau also so aus: *Datenbank* -> *Schema* -> *Tabelle*
+Schlussendlich sieht der Aufbau also so aus: 
 
+![](../images/Beispiel_Bank.png)
+
+### Schema und Tabelle
+Ein Schema ist eine strukturierte Art und Weise, wie Daten organisiert werden. Es legt fest, wie die Datenbank aufgebaut
+ist und wie die Daten gespeichert und abgerufen werden können. Eine Tabelle ist ein Tabellenblatt mit Spalten und
+Zeilen, in dem die eigentlichen Daten gespeichert werden. Schemata und Tabellen helfen dabei, Daten organisiert und
+leicht zugänglich zu halten. Sie ermöglichen es uns, Daten effizient abzufragen, zu aktualisieren und zu verwalten.
+Schemata und Tabellen sind auch wichtig, um die Sicherheit und Integrität der Daten zu gewährleisten, indem sie
+Zugriffsrechte und Einschränkungen festlegen.
 
 ## Arten von Datenbanken
 In diesem Kapitel soll ein kleiner Überblick der verschiedenen Arten von Datenbanken und deren 
@@ -33,12 +48,15 @@ Relationale *(SQL)* Datenbanken werden klar am häufigsten eingesetzt und sind a
 > Bei den Übungen, sowie Exams werden ausschliesslich Relationale *(SQL)* Datenbanken verwendet.
 
 ### Relational *(SQL)*
-Relationale Datenbanken sind ähnlich wie Excel Tabellen aufgebaut. Sie verwenden Tabellen, die jeweils Zeilen und
-Spalten beinhalten *(auch Rows und Columns genannt)*. Pro Spalte *(Column)*, auch **Attribut** genannt, muss ein Datentyp festgelegt werden. Dieser Datentyp definiert, welche Art von Daten in dieser Spalte gespeichert werden kann.
- Beispiel: Eine Spalte mit dem Namen "Alter" hat einen nummerischen Datentyp. Also können
+Relationale Datenbanken sind ähnlich wie Excel Tabellen aufgebaut. Der Name kommt vom Konzept der Relationen (Tabellen)
+, die es ermöglichen, Daten logisch und strukturiert zu speichern und abzurufen. Sie verwenden Tabellen, die jeweils 
+Zeilen und Spalten beinhalten *(auch Rows und Columns genannt)*. Pro Spalte *(Column)*, auch **Attribut** genannt, 
+muss ein Datentyp festgelegt werden. Dieser Datentyp definiert, welche Art von Daten in dieser Spalte gespeichert 
+werden kann. Beispiel: Eine Spalte mit dem Namen "Alter" hat einen nummerischen Datentyp. Also können
 ausschliesslich Zahlen in dieser Spalte eingegeben werden. 
 
-Eine Zeile *(Row)*, auch **Tupel** genannt, beinhaltet jeweils einen ganzen Datensatz, wie beispielsweise alle Benutzerdaten.
+Eine Zeile *(Row)*, auch **Tupel** genannt, beinhaltet jeweils einen ganzen Datensatz, wie beispielsweise alle 
+Benutzerdaten.
 
 ![](../images/Begriffe_relationaler_Datenbanken.png)
 
@@ -58,27 +76,31 @@ Speicherarten ist keine NO-SQL Datenbank wie die andere.
 
 *Quelle: https://www.geeksforgeeks.org/types-of-nosql-databases/*
 
+### Wann verwende ich welche Datenbank?
+Eine relationale Datenbank eignet sich gut für Anwendungsfälle, bei denen eine komplexe Datenstruktur mit starken
+Beziehungen zwischen den Daten besteht, z. B. in Unternehmenssystemen oder Finanzanwendungen, da sie eine konsistente
+und sichere Datenhaltung gewährleistet.
+
+NoSQL-Datenbanken sind nützlich, wenn Flexibilität und Skalierbarkeit Priorität haben und wenn die Datenstruktur häufig
+geändert werden muss oder es viele unstrukturierte oder semistrukturierte Daten gibt, wie beispielsweise in Big
+Data-Anwendungen, sozialen Netzwerken oder Echtzeit-Analysen.
+
 ## Datentypen
-In diesem Teil werden kurz die wichtigsten Datentypen aufgelistet. Je nach Datenbank können die Namen der Datentypen 
-abweichen, sollten jedoch von der Funktionalität gleich sein. In dieser Auflistung wurden die PostgreSQL Datentypen 
+In diesem Teil werden kurz die wichtigsten Datentypen aufgelistet. Je nach Datenbank können die Namen der Datentypen
+abweichen, sollten jedoch von der Funktionalität gleich sein. In dieser Auflistung wurden die PostgreSQL Datentypen
 verwendet:
 
-* INTEGER: speichert ganze Zahlen ohne Nachkommastellen, die in der Regel im Bereich von 
--2.147.483.648 bis 2.147.483.647 liegen.
-* NUMERIC: speichert genaue Dezimalzahlen mit einer beliebigen Anzahl von Dezimalstellen. Dieser Datentyp wird häufig 
-in der Finanz- und Buchhaltungsbranche verwendet.
-* CHAR(n): speichert eine Zeichenkette mit fester Länge von n Zeichen. Wenn der Wert kürzer als n ist, wird er mit 
-Leerzeichen aufgefüllt, um die feste Länge zu erreichen.
-* VARCHAR(n): speichert eine Zeichenkette mit variabler Länge bis maximal n Zeichen. Dieser Datentyp wird häufig für 
-Textfelder verwendet, die eine unterschiedliche Anzahl von Zeichen enthalten können.
-* DATE: speichert Datumsangaben wie beispielsweise Geburt- oder Anstellungsdaten. Die unterstützten Datumsbereiche 
-liegen zwischen 4713 v. Chr. und 5874897 n. Chr.
-* TIME: speichert Zeitwerte wie beispielsweise Uhrzeiten. Dieser Datentyp unterstützt Zeiten zwischen 
-00:00:00 und 24:00:00.
-* TIMESTAMP: speichert sowohl Datum als auch Uhrzeit als ein einziges Datum/Zeit-Feld. Dieser Datentyp wird häufig in 
-Anwendungen verwendet, die mit Zeitstempeln arbeiten, z.B. in der Logistik.
-* BOOLEAN: speichert Wahrheitswerte, also entweder TRUE oder FALSE. Dieser Datentyp wird oft verwendet, 
-um eine Ja/Nein-Entscheidung abzubilden.
+| Typ-Name   | Beschreibung                                                                                                            | Beispiel              |
+|------------|-------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| INTEGER    | Ganze Zahlen ohne Nachkommastellen im Bereich von -2.147.483.648 bis 2.147.483.647.                                     | 123                   |
+| NUMERIC    | Genaue Dezimalzahlen mit beliebiger Anzahl von Dezimalstellen, häufig in der Finanz- und Buchhaltungsbranche verwendet. | 1234.567              |
+| CHAR(n)    | Zeichenkette mit fester Länge von n Zeichen, aufgefüllt mit Leerzeichen, falls kürzer.                                  | 'ABC'                 |
+| VARCHAR(n) | Zeichenkette mit variabler Länge bis maximal n Zeichen.                                                                 | 'OpenAI'              |
+| DATE       | Datumsangaben im Bereich zwischen 4713 v. Chr. und 5874897 n. Chr.                                                      | '2023-05-31'          |
+| TIME       | Zeitwerte im Bereich zwischen 00:00:00 und 24:00:00.                                                                    | '14:30:00'            |
+| TIMESTAMP  | Datum und Uhrzeit kombiniert, häufig für Zeitstempel in Anwendungen verwendet.                                          | '2023-05-31 14:30:00' |
+| BOOLEAN    | Wahrheitswerte (TRUE oder FALSE), oft für Ja/Nein-Entscheidungen verwendet.                                             | TRUE                  |
+
 
 Wenn du noch mehr über die einzelnen Datentypen erfahren möchtest, findest du unter diesem Link alle verfügbaren
 Datentypen in PostgreSQL: [Liste aller Datentypen (PostgreSQL)](https://www.postgresql.org/docs/current/datatype.html#:~:text=The%20following%20types%20(or%20spellings,without%20time%20zone)%2C%20xml%20.)

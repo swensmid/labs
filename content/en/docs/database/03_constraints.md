@@ -4,10 +4,17 @@ linkTitle: "Constraints"
 weight: 3
 ---
 
+## Ziele
+* Du weisst wofür Constraints verwendet werden
+* Du kennst die wichtigsten Constraints
+* Du kannst ein Constraint erstellen
+
 ## Was ist ein Constraint?
-Ein Constaint in SQL ist dazu da den Inhalt eines Attributs weiter zu beschränken. Theoretisch ist die Angabe des 
+Ein Constraint in SQL ist dazu da den Inhalt eines Attributs weiter zu beschränken. Theoretisch ist die Angabe des 
 Datentyps bereits eine Art Constraint, da bestimmt wird was für ein Wertebereich eingefügt werden darf. Ein Constraint
-kann entweder beim Erstellen der Tabelle oder mit einem `ALTER`-Statement hinzugefügt werden.
+kann entweder beim Erstellen der Tabelle oder mit einem `ALTER`-Statement hinzugefügt werden. Constraints können sich 
+auf eine Tabelle oder eine einzelne Spalte beziehen. Ebenso können mehrere Constraints, sowohl bei Tabellen als auch
+bei Spalten, gleichzeitig angewendet werden.
 
 ## Not Null
 Das `Not Null` Constraint legt fest, dass ein Attribut nicht Null, spricht **nicht leer** sein darf. Das kann
