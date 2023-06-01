@@ -8,10 +8,10 @@ description: >
   In diesem Kapitel wird beschrieben wa genau das Stylesheet in Angular ist.
 ---
 ## Stylesheet
-Zu jedem Angular Component gehört ein Stylesheet, diese ist jedoch nur für diesen Component zuständig, das heisst das HTML-File dieses Components. Erstellt man einen neuen Component über die CLI so wird das Stylesheet automatisch erzeugt.
-Somit wir schon vorgegeben das die Styles ausgelagert werden sollten und nicht inline erfolgen. Man kann jedoch auch ein oder mehrere globale Stylesheets erstellen, diese gellten dann wie der name es schon sagt für das gesamte Projekt. Somit werden dort Styles definiert wie zum Beispiel das alle p-tags eine bestimmte Schriftgrösse, Schriftart, Schriftfarbe etc. haben.
+Zu jedem Angular Component gehört ein Stylesheet, dieses ist jedoch nur für diesen Component zuständig, sprich für das HTML-File dieses Components. Erstellt man einen neuen Component über die CLI so wird das Stylesheet automatisch erzeugt.
+Somit wird schon vorgegeben das die Styles ausgelagert werden sollten und nicht inline erfolgen. Man kann jedoch auch ein oder mehrere globale Stylesheets erstellen, diese gelten dann wie der Name schon sagt für das gesamte Projekt. Somit werden dort Styles definiert wie zum Beispiel das alle p-tags eine bestimmte Schriftgrösse, Schriftart, Schriftfarbe etc. haben.
 
-Beim Erstellen eines Angular Projekts kann man sagen ob man CSS, SCSS, SASS oder LESS haben möchte, was SCSS genau ist, wird folgend noch erläutert.
+Beim Erstellen eines Angular Projekts kann man sagen, ob CSS, SCSS, SASS oder LESS verwenden möchte. SCSS schauen wir zu einem späteren Zeitpunkt noch an.
 
 ![Angular Stylesheet](../images/angular-stylesheet.png)
 
@@ -33,7 +33,7 @@ $primary-color: #007bff;
 ```
 
 ### Verschachtelte Regeln
-Mit Sass kann man verschachtelte Regeln schreiben, um die Lesbarkeit und Struktur des Stylesheets zu verbessern. Statt jedes Element separat zu selektieren, kann man die Struktur des HTML-Codes reflektieren.
+Mit Sass kann man verschachtelte Regeln schreiben, um die Lesbarkeit und Struktur des Stylesheets zu verbessern. Statt jedes Element separat zu selektieren, kann die Struktur des HTML-Codes reflektiert werden.
 
 ```scss
 .container {
@@ -97,9 +97,9 @@ $secondary-color: #ff9800;
 
 
 ## Template Styling
-Es gibt zum einen den [ngClass Directive](../03_7_ts_directives#ngclass), welcher verwendet werden kann um CSS/(SCSS)-Klassen dynamisch ins Template einzubinden. 
+Es gibt zum einen das [ngClass Directive](../03_7_ts_directives#ngclass), welches verwendet werden kann um CSS/(SCSS)-Klassen dynamisch ins Template einzubinden. 
 Alternative dazu gibt es noch die `[class.]` Syntax. Man kann diese Syntax verwenden, um eine einzelne CSS/(SCSS)-Klasse basierend auf einer Bedingung hinzuzufügen oder zu entfernen.
-Ob eine Klasse hinzugefügt oder entfernt werden soll, wird meistens anhand eines Boolean aus dem Typescript geprüft. Ist das Boolean `true`` so wird die Klasse hinzugefügt ansonsten ist sie nicht vorhanden.
+Ob eine Klasse hinzugefügt oder entfernt werden soll, wird meistens anhand eines Boolean aus dem Typescript geprüft. Ist das Boolean `true` so wird die Klasse hinzugefügt, ansonsten wird sie ignoriert.
 
 ```html
 <div [class.red]="isRed">Text</div>

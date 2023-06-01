@@ -14,8 +14,8 @@ Meistens wird die Internationalisierung mit JSON und einer Translate-Pipe umgese
 
 
 ## Internationalisierung mit JSON und einer Translate-Pipe einrichten
-1. Zuerst muss man JSON-Dateien erstellen für die Übersetzungen: Für jede Sprache, die man unterstützen möchte, sollte man ein eigenes JSON erstellen. Diese werden sollten in einen neuen Ordner names `i18n` in den `assets`. Die JSON-Dateien werden meistens [kürzel].json benannt z.B. für Deutsch `de.json`.
-2. Inhalt einfügen: Nun kann man die Wörter und Texte, die man dynamisch übersetzen, lassen möchte in die JSON-Dateien eintragen. Diese werden nach dem Key-Value Prinzip eingetragen, wobei der Key in Capslock ist. Zudem müssen die Keys in alles JSONs immer gleich sein für den gleichen Text, ansonsten funktionierts nicht. Man kann einem Key auch mehrere weitere Key-Value Paare geben, dies wird getan, wenn sie zueinander gehören. 
+1. Zuerst muss man JSON-Dateien erstellen für die Übersetzungen: Für jede Sprache, die man unterstützen möchte, sollte man ein eigenes JSON erstellen. Diese sollten in einen neuen Ordner names `i18n` in den `assets` abgelegt werden. Die JSON-Dateien werden meistens [kürzel].json benannt. Also zum Beispiel für Deutsch `de.json`.
+2. Inhalt einfügen: Nun kann man die Wörter und Texte, die man dynamisch übersetzen, lassen möchte in die JSON-Dateien eintragen. Diese werden nach dem Key-Value Prinzip eingetragen, wobei der Key in Capslock ist. Zudem müssen die Keys in allen JSONs immer gleich sein für den gleichen Text, ansonsten funktionierts nicht. Man kann einem Key auch mehrere weitere Key-Value Paare geben, dies wird getan, wenn sie zueinander gehören. 
 ```json
 // de.json
 "TITEL": "Hallo Welt!",

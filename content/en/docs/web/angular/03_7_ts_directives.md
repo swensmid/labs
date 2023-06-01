@@ -171,7 +171,7 @@ Das `ngSwitch`-Directive ermöglicht das bedingte Rendern von Inhalten auf der G
 ```
 
 ### ngClass
-Die Direktive `ngClass` verwendet, um dynamisch CSS/(SCSS)-Klassen auf ein HTML-Element anzuwenden. Sie ermöglicht es, CSS/(SCSS)-Klassen basierend auf Bedingungen oder Ausdrücken hinzuzufügen oder zu entfernen.
+Die Direktive `ngClass` wird verwendet, um dynamisch CSS/(SCSS)-Klassen auf ein HTML-Element anzuwenden. Sie ermöglicht es, CSS/(SCSS)-Klassen basierend auf Bedingungen oder Ausdrücken hinzuzufügen oder zu entfernen.
 
 Es gibt zwei verschiedene Arten wie `ngClass` meistens verwendet wird.
 

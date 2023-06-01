@@ -8,14 +8,14 @@ description: >
   Ein kleines NgRx Beispiel.
 ---
 ## Beispiel
-Als kleines Beispiel, wie man NgRx verwendet, setze man eine kleines neues Angular-projekt auf und schreibt eine Anwendung mit einem Counter welchen man Inkrementieren, Dekrementieren und Resetten kann.
+Als kleines Beispiel, wie man NgRx verwendet, setze man ein kleines neues Angular-projekt auf und schreibt eine Anwendung mit einem Counter welchen man Inkrementieren, Dekrementieren und Resetten kann.
 
 ## Einrichten
 Als Erstes muss man ein neues Angular Projekt [aufsetzen](./03_1_ts_einführung_angular#angular-projekt-aufsetzen).
 
-Danach NgRx [installieren](./08_1_ts_ngrx#installation) 
+Danach NgRx [installieren](./08_1_ts_ngrx#installation).
 
-Nun erstellt man der Übersicht halber noch zwei Ordner, einer names actions und der ander names reducers. Darin werden dann alle Actions und reducer erstellt.
+Nun erstellt man der Übersicht halber noch zwei Ordner names actions und reducers. Darin werden dann alle Actions und Reducer erstellt.
 
 ## Actions erstellen
 Als Erstes werden die Actions definiert, welche man alle für dieses Projekt benötigt. Wie bei der Einleitung erwähnt sind das Inkrementieren, Dekrementieren und Resetten. Dazu erstellt man nun ein neues Typescript File namens `counetr.actions.ts`.
@@ -144,7 +144,7 @@ export class AppModule {}
 ```
 </details>
 
-## im AppComponent anzeigen 
+## Im AppComponent anzeigen 
 Der neue Component soll nun noch mit dem `app.component.html` verknüpft werden so das man den Inhalt des Components sehen kann.
 
 Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.

@@ -35,7 +35,7 @@ Angular wird für Frontend-Applikationen verwendet. Oft wird ein Backend via HTT
 
 
 ## Angular Projekt aufsetzen
-Um ein neues Angular-Projekt zu erstellen, kann man die Angular CLI (Command Line Interface) verwenden. Dazu muss sie aber zuerst installiert werden.
+Um ein neues Angular-Projekt zu erstellen, kann man das Angular CLI (Command Line Interface) verwenden. Dazu muss es aber zuerst installiert werden.
 
 ### Angular CLI installieren
 Man muss als Vorarbeit sicherstellen, dass Node.js auf dem Computer installiert ist (`npm -v` im Terminal eingeben). Im Terminal muss man danach den folgenden Befehl ausführen, um die Angular CLI global zu installieren:
@@ -64,7 +64,7 @@ Der Entwicklungsserver wird gestartet und die Anwendung wird auf http://localhos
 
 
 ## Angular CLI
-Die Angular CLI (Command Line Interface) ist ein Befehlszeilenwerkzeug, das von Angular bereitgestellt wird. Es ermöglicht Entwicklern, effizienter mit Angular zu arbeiten, indem es verschiedene Funktionen und Befehle zur Verfügung stellt, um die Erstellung, Entwicklung, Bereitstellung und Wartung von Angular-Projekten zu unterstützen.
+Das Angular CLI (Command Line Interface) ist ein Befehlszeilenwerkzeug, das von Angular bereitgestellt wird. Es ermöglicht Entwicklern, effizienter mit Angular zu arbeiten, indem es verschiedene Funktionen und Befehle zur Verfügung stellt, um die Erstellung, Entwicklung, Bereitstellung und Wartung von Angular-Projekten zu unterstützen.
 
 ### Commands
 * ng new <projektname>: Erstellt ein neues Angular-Projekt mit der angegebenen Projektstruktur und Konfiguration.
