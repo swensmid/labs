@@ -7,17 +7,18 @@ date: 2023-05-26
 description: >
   Ein kleines NgRx Beispiel.
 ---
-## Beispiel
+
+## Aufgabe 1
 Als kleines Beispiel, wie man NgRx verwendet, setze man ein kleines neues Angular-projekt auf und schreibt eine Anwendung mit einem Counter welchen man Inkrementieren, Dekrementieren und Resetten kann.
 
-## Einrichten
+### Einrichten
 Als Erstes muss man ein neues Angular Projekt [aufsetzen](../../../../docs/web/angular/03_1_ts_einführung_angular#angular-projekt-aufsetzen).
 
 Danach NgRx [installieren](../../../../docs/web/angular/08_1_ts_ngrx#installation).
 
 Nun erstellt man der Übersicht halber noch zwei Ordner names actions und reducers. Darin werden dann alle Actions und Reducer erstellt.
 
-## Actions erstellen
+### Actions erstellen
 Als Erstes werden die Actions definiert, welche man alle für dieses Projekt benötigt. Wie bei der Einleitung erwähnt sind das Inkrementieren, Dekrementieren und Resetten. Dazu erstellt man nun ein neues Typescript File namens `counter.actions.ts`.
 Lagere die Action Types in ein Enum aus.
 
@@ -42,7 +43,7 @@ export const reset = createAction(ActionTypes.RESET);
 ```
 </details>
 
-## Reducer erstellen
+### Reducer erstellen
 Nun muss man eine Reducer-Funktion definieren, um Änderungen im Zählerwert basierend auf den bereitgestellten Aktionen zu verarbeiten.
 
 Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
@@ -65,7 +66,7 @@ export const counterReducer = createReducer(
 ```
 </details>
 
-## Component erstellen
+### Component erstellen
 Erstelle mittels der ng-Befehle einen neuen Component namens `my-counter` innerhalb des app-Ordners. Das HTML soll einen Titel besitzen, drei Buttons für jede Actions und eine Anzeige für den aktuellen Counter.
 Im Typescript soll für jeden Button eine Methode erstellt werden, zudem ein Observable welches den aktuellen Count besitzt. Das Observable soll mit dem Wert des Stores verbunden sein.
 
@@ -116,7 +117,7 @@ export class MyCounterComponent {
 ```
 </details>
 
-## AppModule anpassen
+### AppModule anpassen
 Das `app.module.ts` muss nun noch angepasst werden mit dem Store und dem Reducer.
 
 Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
@@ -144,7 +145,7 @@ export class AppModule {}
 ```
 </details>
 
-## Im AppComponent anzeigen 
+### Im AppComponent anzeigen 
 Der neue Component soll nun noch mit dem `app.component.html` verknüpft werden so das man den Inhalt des Components sehen kann.
 
 Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
@@ -158,4 +159,44 @@ Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
 <app-my-counter></app-my-counter>
 ```
 </details>
+
+## Aufgabe 2
+Entwickle eine Angular-Anwendung für einen Online-Shop mit den folgenden Funktionen und Components: Produktübersicht und Warenkorb. Die Produktdaten sollen als Mockdaten in einem Service gespeichert werden. Implementiere Routing, um zwischen den verschiedenen Ansichten zu navigieren.
+
+### Produkt Attribute
+* Name
+* Preis
+
+### Produktübersicht
+* Erstelle eine Seite für die Produktübersicht, auf der alle Produkte angezeigt werden.
+* Rufe die Produktdaten aus einem Mock-Datenservice ab und zeige sie an.
+* Implementiere zu jedem Produkt einen Button für das Hinzufügen von Produkten im Warenkorb.
+* Füge Filteroptionen hinzu, um die Produkte nach verschiedenen Kriterien zu filtern und zu sortieren.
+
+### Warenkorb:
+* Erstelle eine Seite, auf der die im Warenkorb befindlichen Produkte angezeigt werden.
+* Verwende NgRx, um den Warenkorbzustand zu verwalten. Definiere Aktionen zum Hinzufügen und Entfernen von Produkten im Warenkorb.
+* Zeige eine Liste der ausgewählten Produkte im Warenkorb an, inklusive Name und Preis.
+* Implementiere einen Button für das Löschen von Produkten im Warenkorb.
+* Füge eine Bestellfunktion hinzu, um den Kaufprozess abzuschliessen (kann eine einfache Bestätigungsnachricht sein).
+
+## Aufgabe 3
+Erstelle eine Angular-Anwendung für eine TODO-Liste, die das NgRx-Modul verwendet, um den Zustand der Aufgaben zu verwalten. Die Anwendung sollte die folgenden Funktionen enthalten:
+
+### Task Attribute
+* ID
+* Name
+* Completed
+
+### Übersicht
+* Erstelle eine Seite, auf der die offene (Completed = false) Task (einfach der Name) angezeigt werden. (Verwende Selektoren, um den Zugriff auf die Tasks im NgRx-Store zu erleichtern.)
+* Verwende NgRx, um den Taskzustand zu verwalten. Definiere Aktionen zum Hinzufügen, Entfernen und Complete von Tasks.
+* Implementiere zu jedem Task einen Button für das Complete und Entfernen von Produkten im Warenkorb.
+
+### Taskerstellungs-Seite
+* Erstelle eine Seite, auf der neue Task erfasst werden können.
+
+
+
+
 
