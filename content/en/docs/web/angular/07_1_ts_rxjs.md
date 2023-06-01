@@ -7,6 +7,9 @@ date: 2023-04-20
 description: >
   RxJS Übersicht
 ---
+## Ziele
+* Du weisst, was RxJS ist und welches Konzept es besitzt.
+* Du kennst, Observable, Observer und Subscription und kannst diese anwenden.
 
 ## RxJS
 RxJS (Reactive Extensions for JavaScript) ist eine Library für funktionale, reaktive Programmierung in JavaScript. Das Konzept von RxJS basiert auf der Idee, dass alles in der Welt um uns herum ständig Veränderungen unterworfen ist und dass wir diese Veränderungen durch die Verarbeitung von Ereignissen und Strömen von Daten verwalten können.

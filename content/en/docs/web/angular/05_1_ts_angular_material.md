@@ -8,6 +8,8 @@ description: >
     Material Design ist eine Designsprache, die für das neue Betriebssystem von Google Android entwickelt wurde, das im Sommer 2014 angekündigt wurde.
     Obwohl sich die Material Design hauptsächlich auf das Touch-Based-Design mobiler Apps konzentriert, ist es möglich, dieselben Ideen in das Webdesign zu übertragen.
 ---
+## Ziele
+* Du weisst, das es Material in Angular gibt und wie du es verwendest.
 
 ## Material in Angular
 Für Angular gibt es eine spezifische Version von Material Design.

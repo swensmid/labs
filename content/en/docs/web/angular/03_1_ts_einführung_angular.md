@@ -44,7 +44,7 @@ npm install -g @angular/cli
 ```
 
 ### Projekt erstellen
-Nun muss man in das Verzeichnis wechseln, in dem man das Angular-Projekt erstellen möchten, und nun muss man den folgenden Befehl ausführen:
+Nun muss in das Verzeichnis wechseln, in dem das Angular-Projekt erstellen werden möchten, und nun muss man den folgenden Befehl ausführen:
 ```shell
 ng new new-angular-project
 ```

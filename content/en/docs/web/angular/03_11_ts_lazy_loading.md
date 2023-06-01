@@ -7,6 +7,10 @@ date: 2022-03-14
 description: >
     Hier wird das Lazy Loading angeschaut.
 ---
+## Zeile
+* Du weisst, was Lazy Loading ist und kannst es erklären.
+* Du kannst, Lazy Loading anwenden.
+
 ## Was ist Lazy Loading
 Lazy Loading bezeichnet ganz allgemein eine Technik in der Software-Entwicklung um Daten erst bei Bedarf nachzuladen.
 Im Zusammenhang mit Websites geht es darum, beispielsweise Bilder erst dann vom Server zu laden, wenn diese im sichtbaren Bereich sind.
@@ -30,7 +34,7 @@ const routes = [
 ```
 
 ## Lazy Loading mit Angular Material
-Einige Components von [Angular Material](/05_1_ts_angular_material) unterstützen Lazy Loading. 
+Einige Components von [Angular Material](../05_1_ts_angular_material) unterstützen Lazy Loading. 
 
 Ein Beispiel hierzu ist das Expansion-Panel.
 

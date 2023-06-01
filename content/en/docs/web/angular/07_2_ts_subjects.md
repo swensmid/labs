@@ -7,6 +7,9 @@ date: 2023-04-21
 description: >
   RxJS Subjects
 ---
+## Ziele
+* Du weisst, was RxJS-Subjects sind.
+* Du kennst, die vier Arten von Subjects und kannst diese erläutern und anwenden.
 
 RxJS-Subjects sind spezielle Arten von Observables, die sowohl als Observables als auch als Observer fungieren können. Mit anderen Worten, sie ermöglichen das Senden und Empfangen von Werten und Ereignissen und das Weiterleiten dieser Werte und Ereignisse an andere Observable-Subscriber.
 

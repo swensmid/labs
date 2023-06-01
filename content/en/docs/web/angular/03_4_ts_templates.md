@@ -7,6 +7,9 @@ date: 2023-05-04
 description: >
     In diesem Kapitel wird beschrieben wa genau das Template in Angular ist.
 ---
+## Ziele
+* Du weisst, was ein Template ist.
+* Du weisst, für was ng-container und ng-template sind und kannst diese anwenden.
 
 ## Was ist ein Template?
 In Angular ist das Template der Teil eines Components, der die Benutzeroberfläche definiert. Es ist im Wesentlichen das HTML, das vom Component angezeigt wird und mit der Benutzer interagieren kann.
@@ -26,7 +29,7 @@ Dies eignet sich gut, wenn man andere Directives wie `*ngIf`, `*ngFor` oder `*ng
 
 Um das `else`-Statement in Kombination mit `ngIf` zu verwenden, definiert man einen Template-Verweis (Referenz) mit einem #-Präfix und verwendet ihn in einem `ng-template`. Somit kann man sagen das wenn die Condition nicht zutrifft man ein anderes Template anzeigen möchte.
 
-Wenn man `ng-container` und `ng-template` verwendet ist vielfach auch ein `*ngTemplateOutlet` im Spiel. `*ngTemplateOutlet` ist auch ein Directive, welche verwendet wird, um ein Template an einer bestimmten Stelle in einem Template eines Components einzusetzen. Es wird verwendet, wenn man nicht mit einer Condition arbeiten muss.
+Wenn man `ng-container` und `ng-template` verwendet ist vielfach auch ein `*ngTemplateOutlet` im Spiel. `*ngTemplateOutlet` ist auch ein Directive, welche verwendet wird, um ein Template an einer bestimmten Stelle in einem Template eines Components einzusetzen. Es wird verwendet, wenn man nicht mit `*ngif` arbeiten muss (oder will, weil die Bedingung immer true sein sollte). Es ist wie im `else` eine Template-Verweis.
 
 
 ```typescript
@@ -56,5 +59,5 @@ export class AppComponent {
     </body>
 ```
 Wenn der obenstehende Code gerendert wurde, sieht man das im DOM nun nur der body-tag und die beiden p-tags zusehen sind, das `ng-container` und `ng-template` nicht.
-![DOM](./images/template-dom.png) 
+![DOM](../images/template-dom.png) 
 

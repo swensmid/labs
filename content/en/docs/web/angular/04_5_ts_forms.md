@@ -7,6 +7,12 @@ date: 2023-04-20
 description: >
   In diesem Kapitel wird erklärt wozu das Angular Reactive Forms sind.
 ---
+## Ziele
+* Du weisst was Angular Reactive Forms sind.
+* Du weisst, wozu FormsControl, -Group und -Array sind und kannst sie anwenden.
+* Du weisst, was der FormBuilder ist und kannst ihn anwenden.
+* Du kennst, die Validators und kannst sie verwenden und eigenen schrieben.
+
 ## Angular Reactive Forms
 Angular Reactive Forms sind ein leistungsstarkes Feature von Angular, mit dem Entwickler Formulare erstellen, validieren und mit ihnen interagieren können. Im Gegensatz zu Template-driven Forms, bei denen die Formularlogik hauptsächlich im HTML-Template liegt, wird bei Reactive Forms die Formularlogik in den Components selbst geschrieben.
 

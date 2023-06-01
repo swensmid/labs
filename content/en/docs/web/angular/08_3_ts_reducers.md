@@ -7,6 +7,10 @@ date: 2023-05-26
 description: >
   Hier findet man was NgRx Reducers sind.
 ---
+## Ziele
+* Du weisst, was NgRx Reducers sind und kannst diese anwenden.
+* Du weisst, wie und warum die Reducers beim Root registrieren musst.
+
 ## NgRx Reducers
 Reducers sind Funktionen in NgRx, die den aktuellen Zustand des Stores und eine Action als Parameter entgegennehmen und den neuen Zustand des Stores zurückgeben. Sie sind dafür verantwortlich, den Zustand basierend auf den eingehenden Aktionen zu aktualisieren.
 

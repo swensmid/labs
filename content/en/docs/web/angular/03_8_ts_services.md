@@ -7,6 +7,8 @@ date: 2023-05-04
 description: >
     Wie Services in Angular genau aussehen und für was sie sind wird in diesem Kapitel erläutert.
 ---
+## Ziele
+* Du weisst, wozu Services in Angular sind und kannst dies erläutern.
 
 ## Services
 Angular-Services sind in Angular eine wichtige Art, Code zu organisieren und wiederzuverwenden. Sie bieten eine Möglichkeit, Funktionen und Daten zu teilen, die von mehreren Components innerhalb einer Anwendung benötigt werden. Ein Service ist eine Klasse, die von anderen Components injiziert werden kann, um auf seine Funktionen und Daten zuzugreifen.

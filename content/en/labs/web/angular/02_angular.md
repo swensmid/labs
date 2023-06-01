@@ -57,7 +57,7 @@ export class FahrradComponent implements OnInit {
 ```
 Folgendes muss angezeigt werden, wenn die Seite geladen wurde:
 
-![Components Description](../../../docs/web/angular/images/first-page.png)
+![Components Description](./../../../docs/web/angular/images/first-page.png)
 
 
 - "Wie heisst mein Fahrrad?" ist mit der Funktion "nameDesFahrrads()" verknüpft.

@@ -91,8 +91,3 @@ Fülle in der Aufgabendatei den benötigten Code an den enstprechenden Stellen e
     Um readline benutzen zu können, musst du erst den entsprechenden npm-Befehl ausführen.
     Achte darauf, dass du den Befehl im selben Verzeichnis ausführst, indem sich die .ts-Datei befindet!
 
-
-# Zurück zur Theorie
-[Hier](../../../../docs/web/angular/03_1_intro_typescript) gelangst du zurück zur Theorie.
-
-

@@ -7,6 +7,9 @@ date: 2022-03-14
 description: >
   Data Bindings in Angular.
 ---
+## Ziele
+* Du kennst, die verschiedenen Angular Data Bindings und kannst diese umsetzen.
+
 ## Angular Data Bindings
 ### Interpolation
 - Anhand von diesem One-Way Binding kann man Properties des Components im Template anzeigen.

@@ -7,6 +7,9 @@ date: 2023-05-19
 description: >
     Welche speziellen Operatoren es noch in Typescript gibt kann man hier nachlesen.
 ---
+## Ziele
+* Du kennst, die wichtigen special Operators in Angular und kannst diese anwenden.
+
 ## Special Operators
 Viele der wichtigen Operatoren wurden bereits beim JavaScript behandelt, diese können auch in TypeScript verwendet werden. Die Operatoren können [hier](../../../docs/web/javascript/06_js_operators) nachgelesen werden.
 

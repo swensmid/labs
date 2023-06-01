@@ -7,6 +7,9 @@ date: 2023-05-26
 description: >
   Hier findet man was NgRx Actions sind.
 ---
+## Ziele
+* Du weisst, was NgRx Actions sind und kannst diese anwenden.
+
 ## NgRx Actions
 Actions sind einfache JS-Objekte, die eine bestimmte Aktion beschreiben, die in einer Anwendung ausgeführt werden soll. Jede Action hat einen Typ und optional zusätzliche Daten.
 

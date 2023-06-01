@@ -7,6 +7,11 @@ date: 2023-05-05
 description: >
     Was Directives genau sind findet man in diesem Kapitel.
 ---
+## Ziele
+* Du weisst, was ein Directive ist und wozu es verwendet wird.
+* Du kennst, die drei Arten von Directives und kannst diese beschrieben
+* Du kannst, ngIf, ngFor, ngSwitch und ngClass anwenden und erklären.
+
 ## Directives
 Directives sind ein Mechanismus, um die Darstellung von HTML-Elementen und das Verhalten von Components zu manipulieren. Direktiven ermöglichen es, benutzerdefinierte HTML-Attribute oder -Elemente zu definieren, die spezielle Funktionalitäten bereitstellen, die standardmässig nicht in HTML verfügbar sind.
 
@@ -173,7 +178,7 @@ Das `ngSwitch`-Directive ermöglicht das bedingte Rendern von Inhalten auf der G
 ### ngClass
 Die Direktive `ngClass` wird verwendet, um dynamisch CSS/(SCSS)-Klassen auf ein HTML-Element anzuwenden. Sie ermöglicht es, CSS/(SCSS)-Klassen basierend auf Bedingungen oder Ausdrücken hinzuzufügen oder zu entfernen.
 
-Es gibt zwei verschiedene Arten wie `ngClass` meistens verwendet wird.
+Es gibt zwei verschiedene Arten wie `ngClass` verwendet wird.
 
 #### **Variante 1**:
 Bei der ersten Variante gibt man zuerst die Klasse an und nach einem Doppelpunkt dann die Bedingung. Bei der Bedingung kann wieder mit Booleans oder Operatoren gearbeitet werden.
@@ -197,7 +202,7 @@ export class AppComponent {
 }
 ```
 
-Man kann jedoch diese Variante auch für mehrere Klassen machen indem man diese aneinander reiht und mit einem Komma trennt.
+Man kann jedoch diese Variante auch für mehrere Klassen machen, indem man diese aneinander reiht und mit einem Komma trennt.
 ```typescript
 import { Component } from '@angular/core';
 

@@ -7,6 +7,10 @@ date: 2023-05-26
 description: >
   Hier findet man was NgRx Selectors sind.
 ---
+## Ziele
+* Du weisst, was NgRx Selectors sind und kannst diese anwenden.
+* Du weisst, was das AppState ist.
+
 ## AppState
 In einer typischen NgRx-Anwendung kann die AppState-Datei verwendet werden, um den gesamten Anwendungsstatus zu definieren und zu typisieren. Sie enthält normalerweise eine Schnittstelle oder ein Interface, das alle Teilzustände oder Slices des Anwendungsstatus definiert und zu einem Gesamtzustand kombiniert.
 ```typescript

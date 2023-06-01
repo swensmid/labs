@@ -7,6 +7,12 @@ date: 2023-05-09
 description: >
     Wie Routing in Angular funktioniert findet man hier.
 ---
+## Ziele
+* Du weisst, was Routing in Angular ist.
+* Du kannst, Routing anwenden und weisst wie man es einsetzen muss.
+* Du kennst, die verschiedenen Arten von Routen.
+* Du weisst, was RoutGuards sind und kannst diese anwenden.
+* Du kennst, die Navigation Directive und kannst sie anwenden.
 
 ## Routing
 Angular Router ist ein leistungsstarker JavaScript-Router, der vom Angular Core Team erstellt und gewartet wird. Der Router wird über das Paket `@angular/router` installiert.

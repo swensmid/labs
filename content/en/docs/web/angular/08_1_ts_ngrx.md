@@ -7,6 +7,10 @@ date: 2023-04-20
 description: >
   NgRx Übersicht
 ---
+## Ziele
+* Du weisst, was und wozu NgRx ist, und kennst das Kernkonzept davon.
+* Du kannst, es bei dir installieren.
+
 ## NgRx
 NgRx ist ein beliebtes State-Management-Framework für Angular-Anwendungen, das auf der Redux-Architektur basiert. Es bietet eine zentrale Datenquelle, den sogenannten Store, um den Anwendungsstatus zu verwalten. Mit NgRx kann man den Zustand einer Anwendung zentralisieren, die Datenflüsse vereinfachen und eine bessere Skalierbarkeit und Testbarkeit erreichen.
 

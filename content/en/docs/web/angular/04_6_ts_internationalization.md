@@ -7,6 +7,10 @@ date: 2023-04-20
 description: >
   In diesem Kapitel wird erläutert was Internationalization ist.
 ---
+## Ziele
+* Du weisst, wofür ist Internationalisierung ist.
+* Du kannst diese in deinen Projekten anwenden.
+
 ## Wofür ist Internationalisierung 
 Internationalisierung (i18n) bezieht sich auf die Anpassung einer Anwendung, um sie für verschiedene Sprachen und Regionen weltweit zugänglich und benutzbar zu machen. Durch Internationalisierung wird die Anwendung so gestaltet, dass sie leicht in verschiedene Sprachen übersetzt werden kann, um eine breitere Benutzerbasis anzusprechen.
 

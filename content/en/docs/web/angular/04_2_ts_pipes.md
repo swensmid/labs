@@ -7,6 +7,11 @@ date: 2022-03-14
 description: >
     In diesem Kapitel findet man relevante Informationen zu Pipes.
 ---
+## Ziele
+* Du weisst, was Pipes sind und wozu man sie benötigt.
+* Du kennst, die verschiedenen Arten von Pipes und wie man sie anwendet.
+* Du kannst, selbst Custom Pipes erstellen.
+
 ## Pipes
 Jede Anwendung beginnt mit einer scheinbar einfachen Aufgabe: Daten abrufen, transformieren und Benutzern zeigen.
 Das Abrufen von Daten kann so einfach wie das Erstellen einer lokalen Variablen oder so komplex wie das Streamen von Daten über ein WebSocket sein.

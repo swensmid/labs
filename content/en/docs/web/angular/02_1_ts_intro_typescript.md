@@ -260,7 +260,7 @@ dad.name = "Man with the 3-piece suit"; // Error: name is readonly
 ```
 
 ## Async / Await
-Diese Themen wurden schon bei JavaScript angeschaut und können [hier](../../../docs/web/javascript) nachgelesen werden. Jedoch sind folgend ein paar Auffrischer:
+Diese Themen wurden schon bei JavaScript angeschaut und können [hier](../../javascript) nachgelesen werden. Jedoch sind folgend ein paar Auffrischer:
 
 ### Arrow Functions
 Die ES6-Version von TypeScript bietet eine arrow-function, die die Kurzform für die Definition der anonymen Funktion darstellt.

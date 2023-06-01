@@ -7,6 +7,10 @@ date: 2023-05-04
 description: >
   In diesem Kapitel wird beschrieben wa genau das Stylesheet in Angular ist.
 ---
+## Ziele
+* Du weisst, was SCSS ist und kennst dessen Vorteile gegenüber CSS.
+* Du kannst, ein Template anhand von Bedingungen stylen.
+
 ## Stylesheet
 Zu jedem Angular Component gehört ein Stylesheet, dieses ist jedoch nur für diesen Component zuständig, sprich für das HTML-File dieses Components. Erstellt man einen neuen Component über die CLI so wird das Stylesheet automatisch erzeugt.
 Somit wird schon vorgegeben das die Styles ausgelagert werden sollten und nicht inline erfolgen. Man kann jedoch auch ein oder mehrere globale Stylesheets erstellen, diese gelten dann wie der Name schon sagt für das gesamte Projekt. Somit werden dort Styles definiert wie zum Beispiel das alle p-tags eine bestimmte Schriftgrösse, Schriftart, Schriftfarbe etc. haben.
@@ -21,7 +25,7 @@ SCSS (Sassy CSS) ist eine Erweiterung der CSS-Sprache, die zusätzliche Funktion
 Die wichtigsten Hauptfunktionen von SCSS sind:
 
 ### Variablen
-Mit Sass kann man Variablen definieren und verwenden, um Werte wie Farben, Schriftarten etc. zu speichern und später im Stylesheet wiederverwenden zu können.
+Mit SCSS kann man Variablen definieren und verwenden, um Werte wie Farben, Schriftarten etc. zu speichern und später im Stylesheet wiederverwenden zu können.
 
 ```scss
 $primary-color: #007bff;
@@ -33,7 +37,7 @@ $primary-color: #007bff;
 ```
 
 ### Verschachtelte Regeln
-Mit Sass kann man verschachtelte Regeln schreiben, um die Lesbarkeit und Struktur des Stylesheets zu verbessern. Statt jedes Element separat zu selektieren, kann die Struktur des HTML-Codes reflektiert werden.
+Mit SCSS kann man verschachtelte Regeln schreiben, um die Lesbarkeit und Struktur des Stylesheets zu verbessern. Statt jedes Element separat zu selektieren, kann die Struktur des HTML-Codes reflektiert werden.
 
 ```scss
 .container {
@@ -65,7 +69,7 @@ Mixins ermöglichen es, Gruppen von CSS-Deklarationen zu definieren und sie an v
 ```
 
 ### Vererbung
-Sass ermöglicht es, Styles von einer Klasse zu einer anderen zu vererben, ähnlich wie bei der Vererbung in der objektorientierten Programmierung. Dies kann dazu beitragen, den Stylesheet-Code zu reduzieren und die Wartbarkeit zu verbessern.
+SCSS ermöglicht es, Styles von einer Klasse zu einer anderen zu vererben, ähnlich wie bei der Vererbung in der objektorientierten Programmierung. Dies kann dazu beitragen, den Stylesheet-Code zu reduzieren und die Wartbarkeit zu verbessern.
 
 ```scss
 .error {
@@ -79,7 +83,7 @@ Sass ermöglicht es, Styles von einer Klasse zu einer anderen zu vererben, ähnl
 ```
 
 ### Partials & Importieren von Dateien
-Mit Partials kann man Stylesheet-Dateien in kleinere Teile aufteilen und sie bei Bedarf in andere Stylesheets importieren. Partials werden in der Regel mit einem führenden Unterstrich `_` in ihrem Dateinamen gekennzeichnet, z.B. `_variables.scss`, `_mixins.scss` etc. Dies hilft, den Code besser zu organisieren denn man kann ihn in logische Module aufzuteilen. Dadurch wird der Code wiederverwendbar. Es ermöglicht, nur somit dann nur die benötigten Partials zu importieren.
+Mit Partials kann man Stylesheet-Dateien in kleinere Teile aufteilen und sie bei Bedarf in andere Stylesheets importieren. Partials werden in der Regel mit einem führenden Unterstrich `_` in ihrem Dateinamen gekennzeichnet, z.B. `_variables.scss`, `_mixins.scss` etc. Dies hilft, den Code besser zu organisieren denn man kann ihn in logische Module aufzuteilen. Dadurch wird der Code wiederverwendbar. Es ermöglicht, somit nur die benötigten Partials zu importieren.
 
 ```scss
 // _variables.scss
