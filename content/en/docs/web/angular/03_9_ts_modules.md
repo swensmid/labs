@@ -5,7 +5,7 @@ linkTitle: "Modules"
 weight: 11
 date: 2023-05-04
 description: >
-    In diesem Kapitel werden die Angular Modul besser erklärt.
+    In diesem Kapitel werden die Angular-Module besser erklärt.
 ---
 ## Ziele
 * Du weisst, was Modules in Angular sind.

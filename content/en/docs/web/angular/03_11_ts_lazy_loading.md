@@ -8,13 +8,13 @@ description: >
     Hier wird das Lazy Loading angeschaut.
 ---
 ## Zeile
-* Du weisst, was Lazy Loading ist und kannst es erklären.
+* Du weisst, was Lazy-Loading ist und kannst es erklären.
 * Du kannst, Lazy Loading anwenden.
 
 ## Was ist Lazy Loading
-Lazy Loading bezeichnet ganz allgemein eine Technik in der Software-Entwicklung um Daten erst bei Bedarf nachzuladen.
+Lazy Loading bezeichnet ganz allgemein eine Technik in der Software-Entwicklung, um Daten erst ab diesem Zeitpunkt zu laden, wenn sie benötigt werden..
 Im Zusammenhang mit Websites geht es darum, beispielsweise Bilder erst dann vom Server zu laden, wenn diese im sichtbaren Bereich sind.
-Dadurch wird die Ladezeit reduziert.
+Dadurch wird die Ladezeit der Seite zu Beginn reduziert. So wird dem User z.B. schon eine Seite angezeigt, obwohl andere Dinge noch geladen werden.
 ![Lazy loading](../images/lazy_loading.png)
 
 ## Lazy Loading in Angular
