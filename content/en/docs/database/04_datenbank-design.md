@@ -20,45 +20,150 @@ kann. Diese unterschiedliche Ausmasse werden in diesem Zusammenhang Normalformen
 wirst du die erste, zweite und dritte Normalformen kennenlernen.
 
 ### Erste Normalform (1NF)
-Eine Tabelle ist in erster Normalform, wenn alle Spalten atomare Werte enthalten, d.h. keine
-wiederholten oder gruppierten Werte aufweisen.
+Die Erste Normalform (1NF) ist das grundlegende Konzept in der Datenbankentwicklung, das sicherstellt, dass eine Tabelle
+atomare Werte enthält und keine wiederholten Gruppen von Attributen zulässt. Das Ziel der 1NF ist es, die Daten in ihre 
+einfachsten, nicht weiter unterteilbaren Bestandteile zu zerlegen.
 
-Beispiel: Eine Tabelle mit einer Spalte namens "Bankverbindung", die mehrere Informationen durch Kommas oder Semikolons
-getrennt enthält, ist nicht in erster Normalform. Stattdessen sollte jede Information in einer separaten Spalte
-aufgeführt werden.
+In der ersten Normalform sollte jede Zelle in einer Tabelle nur einen einzigen Wert enthalten. Mehrwertige Attribute 
+oder Attribute, die wiederholte Gruppen von Werten enthalten, sind nicht erlaubt. Wenn mehrere Werte zu einem Attribut 
+gehören, müssen sie in separate Tabellen ausgelagert werden.
 
-![](../images/1.Normalform.png)
+Nun können wir ein Beispiel betrachten:
+
+Angenommen, wir haben eine Tabelle mit Kundendaten, die den Namen, die Adresse und die Telefonnummer enthält. 
+Diese Tabelle könnte folgendermassen aussehen:
+
+| Kunde     | Adresse           | Telefonnummer   |
+|-----------|-------------------|-----------------|
+| Max       | Hauptstr. 1, 123  | 123456789       |
+| Lisa      | Nebenstr. 5, 987  | 987654321       |
+
+Nach der Normalisierung in der 1NF würde die Tabelle dann so aussehen:
+
+| Kunde | Strasse   | Hausnummer | PLZ | Ort         | Telefonnummer |
+|-------|-----------|------------|-----|-------------|---------------|
+| Max   | Hauptstr. | 1          | 123 | Musterort   | 123456789     |
+| Lisa  | Nebenstr. | 5          | 987 | Beispielort | 987654321     |
+
+Zusammenfassend kann man sagen, dass die erste Normalform (1NF) darauf abzielt, Daten in ihre einfachsten atomaren Werte
+zu zerlegen und keine wiederholten Gruppen von Attributen zuzulassen. Dadurch werden die Daten besser strukturiert, die 
+Redundanz minimiert und die Datenintegrität verbessert.
 
 ### Zweite Normalform (2NF)
-Die Zweite Normalform hilft dabei, Daten besser zu organisieren und Redundanzen zu vermeiden. Sie stellt sicher, 
-dass jedes Nichtschlüsselattribut in einer Tabelle vom gesamten Primärschlüssel abhängt und keine Abhängigkeiten 
-zwischen Nichtschlüsselattributen bestehen.
+Die Zweite Normalform (2NF) zielt darauf ab, Daten so zu strukturieren, dass keine wiederholten Informationen in einer 
+Tabelle vorhanden sind. Stattdessen werden die Daten aufgeteilt und in separate Tabellen organisiert, die über einen 
+gemeinsamen Schlüssel verknüpft sind. Dadurch werden Daten effizienter gespeichert und logische Konsistenz 
+gewährleistet.
 
-Die Anwendung der 2NF ist wichtig, um Datenkonsistenz und -integrität sicherzustellen, Daten effizient zu verwalten und 
-Aktualisierungsprobleme zu vermeiden. Durch die Vermeidung von Redundanzen werden Daten logisch und effizient 
-organisiert, was zu einer besseren Datenbankleistung führt.
+Angenommen, wir haben eine Tabelle mit Kundendaten, die Name und Telefonnummer enthält. Zusätzlich speichern 
+wir für jeden Kunden die bestellten Produkte und die jeweilige Menge in derselben Tabelle. Die Tabelle könnte also 
+folgendermassen aussehen:
 
-Beispiel: Eine Tabelle mit Bestellungen und Produkten, bei der jede Bestellung mehrere Produkte enthält und jede
-Produktzeile die Bestellungs-ID enthält, ist nicht in zweiter Normalform. Stattdessen sollte eine separate Tabelle
-für Bestellungen und eine separate Tabelle für Produkte erstellt werden, die über die Bestellungs-ID verknüpft sind.
+| Kunde | Telefonnummer | Produkt | Menge |
+|-------|---------------|---------|-------|
+| Max   | 123456789     | Schuhe  | 2     |
+| Max   | 123456789     | Hemd    | 1     |
+| Lisa  | 987654321     | Hose    | 3     |
+| Lisa  | 987654321     | Jacke   | 2     |
 
-![](../images/2.Normalform.png)
+In diesem Fall haben wir eine Mischung aus Kundendaten und Bestelldaten in einer einzigen Tabelle. Das Problem dabei 
+ist, dass die Kundendaten für jedes Produkt und jede Menge wiederholt werden müssen. Wenn Max zum Beispiel 3 
+verschiedene Produkte bestellt, würden seine Kundendaten dreimal wiederholt werden.
+
+Um dieses Problem zu lösen und die Zweite Normalform (2NF) zu erreichen, müssen wir die Daten aufteilen und in separate 
+Tabellen organisieren. Eine Tabelle enthält die Kundendaten und eine andere Tabelle enthält die Bestelldaten. 
+Beide Tabellen werden durch einen gemeinsamen Schlüssel (Kunde) verknüpft.
+
+**Kundentabelle:**
+
+| Kunde | Telefonnummer |
+|-------|---------------|
+| Max   | 123456789     |
+| Lisa  | 987654321     |
+
+**Bestellungstabelle:**
+
+| Kunde | Produkt | Menge |
+|-------|---------|-------|
+| Max   | Schuhe  | 2     |
+| Max   | Hemd    | 1     |
+| Lisa  | Hose    | 3     |
+| Lisa  | Jacke   | 2     |
+
+Dadurch erreichen wir eine klare Trennung der Daten. Die Kundendaten müssen nur einmal gespeichert werden und werden 
+über den Schlüssel (Kunde) mit den entsprechenden Bestellungen verknüpft. Das reduziert die Redundanz und sorgt für 
+eine bessere Organisation der Daten.
 
 ### Dritte Normalform (3NF)
-Die Dritte Normalform (3NF) in der Datenbanknormalisierung hilft dabei, Daten weiter zu strukturieren und Redundanzen zu
-minimieren. Sie stellt sicher, dass keine Abhängigkeiten zwischen Nichtschlüsselattributen bestehen und keine 
-transitiven Abhängigkeiten vorhanden sind. Transitive Abhängigkeiten treten auf, wenn ein Nichtschlüsselattribut von 
-einem anderen Nichtschlüsselattribut abhängig ist, anstatt direkt vom Primärschlüssel.
+Die 3NF baut auf der zweiten Normalform (2NF) auf, indem sie weitergehende Anforderungen an 
+die Strukturierung der Daten stellt.
 
-Die Anwendung der 3NF ist wichtig, um Datenkonsistenz und -integrität sicherzustellen, Daten effizient zu verwalten und 
-Anomalien zu vermeiden. Durch die Beseitigung von transitive Abhängigkeiten werden Daten logisch und effizient 
-organisiert, was zu einer besseren Datenbankleistung führt.
+Das Ziel der Dritten Normalform ist es, sicherzustellen, dass es in einer Datenbanktabelle keine Abhängigkeiten zwischen
+Nicht-Schlüsselattributen gibt, die nicht durch den Primärschlüssel erklärt werden können. Mit anderen Worten sollen 
+alle Nicht-Schlüsselattribute funktional von einem vollständigen Teil des Primärschlüssels abhängig sein und keine 
+funktionalen Abhängigkeiten untereinander aufweisen.
 
-Beispiel: Eine Tabelle mit Mitarbeitern und Abteilungen, bei der jede Zeile sowohl den Namen des Mitarbeiters als auch
-den Namen der Abteilung enthält, ist nicht in dritter Normalform. Stattdessen sollte eine separate Tabelle für
-Abteilungen erstellt werden, die über die Abteilungs-ID mit der Mitarbeiter-Tabelle verknüpft ist.
+Um die 3NF zu erreichen, müssen die Daten in mehrere Tabellen aufgeteilt werden, wobei jede Tabelle einen spezifischen 
+Informationsaspekt repräsentiert. Diese Tabellen werden dann über gemeinsame Schlüssel verknüpft, um Beziehungen 
+zwischen den Daten herzustellen.
 
-![](../images/3.Normalform.png)
+Nun können wir ein Beispiel betrachten:
+
+Angenommen, wir haben eine Tabelle mit Kundendaten, die Name und Telefonnummer enthält. Zusätzlich speichern 
+wir für jedes Produkt, das ein Kunde bestellt, den Produkttyp und die zugehörige Produktkategorie in derselben Tabelle. 
+Eine Zeile in dieser Tabelle könnte folgendermassen aussehen:
+
+| Kunde | Telefonnummer | Produkt | Produkttyp     | Kategorie |
+|-------|---------------|---------|----------------|-----------|
+| Max   | 123456789     | Schuhe  | Sportschuhe    | Kleidung  |
+| Max   | 123456789     | Hemd    | Oberbekleidung | Kleidung  |
+| Lisa  | 987654321     | Hose    | Unterkleidung  | Kleidung  |
+| Lisa  | 987654321     | Jacke   | Oberbekleidung | Kleidung  |
+
+In diesem Fall haben wir eine Mischung aus Kundendaten, Produktinformationen und Produktkategorien in einer einzigen 
+Tabelle. Das Problem dabei ist, dass die Produkttypen und Kategorien für jedes Produkt wiederholt werden müssen. 
+Wenn Max zum Beispiel 3 verschiedene Produkte bestellt, würden die Produkttypen und Kategorien für seine Kundendaten 
+dreimal wiederholt werden.
+
+Um dieses Problem zu lösen und die Dritte Normalform (3NF) zu erreichen, müssen wir die Daten weiter aufteilen und in 
+separate Tabellen organisieren. Eine Tabelle enthält die Kundendaten, eine andere Tabelle enthält die 
+Produktinformationen, und eine weitere Tabelle enthält die Produktkategorien. Die Tabellen werden durch gemeinsame 
+Schlüssel verknüpft.
+
+**Kundentabelle:**
+
+| Kunde | Telefonnummer |
+|-------|---------------|
+| Max   | 123456789     |
+| Lisa  | 987654321     |
+
+**Produkttabelle:**
+
+| Produkt | Produkttyp     |
+|---------|----------------|
+| Schuhe  | Sportschuhe    |
+| Hemd    | Oberbekleidung |
+| Hose    | Unterkleidung  |
+| Jacke   | Oberbekleidung |
+
+**Kategorientabelle:**
+
+| Produkt | Kategorie |
+|---------|-----------|
+| Schuhe  | Kleidung  |
+| Hemd    | Kleidung  |
+| Hose    | Kleidung  |
+| Jacke   | Kleidung  |
+
+Dadurch erreichen wir eine noch klarere Trennung der Daten. Die Kundendaten werden nur einmal gespeichert und über den 
+gemeinsamen Schlüssel (Kunde) mit den entsprechenden Produkten verknüpft. Ebenso werden die Produktinformationen und 
+Kategorien nur einmal gespeichert und über die jeweiligen Schlüssel (Produkt) verknüpft. Dadurch wird die Redundanz 
+weiter reduziert und die Daten sind besser organisiert.
+
+Zusammenfassend kann man sagen, dass die Dritte Normalform (3NF) darauf abzielt, Daten so zu strukturieren, dass keine 
+wiederholten Informationen in einer Tabelle vorhanden sind und dass abhängige Informationen in separaten Tabellen 
+gespeichert werden. Dadurch werden Daten effizienter gespeichert, Redundanz minimiert und logische Konsistenz 
+gewährleistet.
 
 Es gibt auch höhere Normalformen wie die Boyce-Codd-Normalform (BCNF) und die Vierte Normalform (4NF), aber diese sind
 für den Anfang weniger relevant und komplexer zu erklären.
