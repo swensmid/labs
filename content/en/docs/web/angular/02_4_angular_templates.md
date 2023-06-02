@@ -21,6 +21,12 @@ Das Template kann jedoch mehr als nur HTML enthalten. Es kann auch Angularspezif
 <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 ```
 
+## Was ist das DOM
+Das Document Object Model (DOM) ist eine Programmierschnittstelle, die eine strukturierte Darstellung des HTML zur Verfügung stellt. Es stellt eine Baumstruktur dar, in der jedes Element im HTML als Knoten (Node) repräsentiert wird.
+
+Durch die Verwendung des DOMs können Entwickler dynamische Webseiten erstellen, auf Benutzerinteraktionen reagieren, Inhalte ändern und vieles mehr. Es ermöglicht die Trennung von Inhalt (HTML), Präsentation (CSS) und Verhalten (JavaScript), was eine flexible und interaktive Webentwicklung ermöglicht.
+
+
 ## ng-container &  ng-template
 Durch die Verwendung von `ng-container` und `ng-template` kann der HTML-Code in Components besser strukturiert, lesbarer und wiederverwendbarer gemacht werden. Sie bieten eine flexible Möglichkeit, Inhalte bedingt anzuzeigen, dynamische Templates zu erstellen und den Code effizienter zu gestalten.
 

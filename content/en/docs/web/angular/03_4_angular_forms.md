@@ -2,7 +2,7 @@
 title: "Angular Reactive Forms"
 type: docs
 linkTitle: "Angular Reactive Forms"
-weight: 21
+weight: 20
 date: 2023-04-20
 description: >
   In diesem Kapitel wird erklärt wozu das Angular Reactive Forms sind.

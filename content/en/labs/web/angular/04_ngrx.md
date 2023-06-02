@@ -44,7 +44,7 @@ export const reset = createAction(ActionTypes.RESET);
 </details>
 
 ### Reducer erstellen
-Nun muss man eine Reducer-Funktion definieren, um Änderungen im Zählerwert basierend auf den bereitgestellten Aktionen zu verarbeiten.
+Nun muss man eine Reducer-Funktion definieren, um Änderungen im Zählerwert basierend auf den bereitgestellten Aktionen zu verarbeiten. Dazu auch ein neues Typescript File namens `counter.reducer.ts` erstellen und darin es umsetzen.
 
 Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
 

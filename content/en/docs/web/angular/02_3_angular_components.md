@@ -24,7 +24,7 @@ Ein Angular Component setzt sich aus 4 Dateien zusammen:
 Components sind wie Grundbausteine in einer Angular-Applikation. Components werden mit dem `@Component` Decorator definiert.
 
 Components sind TypeScript Klassen, die die Daten und Kontrollstrukturen zum Verhalten der Templates beinhalten.
-Metadaten teilen Angular mit, wie die Components verarbeitet werden sollen (selector, template, style), dies kann bei dem [Component Decorator](./04_3_ts_decorator#component) genauer nachgelesen werden.
+Metadaten teilen Angular mit, wie die Components verarbeitet werden sollen (selector, template, style), dies kann bei dem [Component Decorator](./03_3_angular_decorator#component) genauer nachgelesen werden.
 Ein Component hat einen von Angular verwalteten Lifecycle. Angular erstellt und rendert Components zusammen mit ihren Children,
 überprüft, wann sich ihre Properties ändern, und zerstört sie, bevor sie aus dem DOM entfernt werden.
 Angular bietet sogenannte [Lifecycle-Hooks](../03_14_ts_life_cycle_hook) an, mit denen wir handeln können, sobald sie auftreten.

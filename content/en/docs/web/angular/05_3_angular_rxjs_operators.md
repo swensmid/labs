@@ -2,7 +2,7 @@
 title: "RxJS Operators"
 type: docs
 linkTitle: "RxJS Operators"
-weight: 26
+weight: 25
 date: 2023-04-21
 description: >
   RxJS Operators
@@ -15,7 +15,7 @@ RxJS bietet eine Vielzahl von Operatoren, die auf Observables angewendet werden 
 
 ## Piping
 Piping ist ein wichtiger Operator, der es ermöglicht, eine Observable-Kette zu erstellen, indem verschiedene Operatoren nacheinander angewendet werden. Der Piping-Operator wird verwendet, um die Lesbarkeit und Wartbarkeit von Observable-Ketten zu verbessern, indem man sie in kleinere und leichter zu verstehende Abschnitte unterteilt.
-Wie [map](../angular/07_3_ts_operators#map) funktioniert kann man hier nachlesen.
+Wie [map](../angular/05_3_angular_rxjs_operators#map) funktioniert kann man hier nachlesen.
 
 ```typescript
 import { of, map } from 'rxjs';
@@ -239,7 +239,7 @@ from([1, 2, 3, 4])
 ### switchAll/switchMap
 `switchMap` ist ähnlich wie das `mergeMap`, es subscribed auch das innere Observable. Auch hier ist `switchMap` eine Kombination, und zwar von `switchAll` und `map`. `switchAll` canceled die vorherige Subscription und subscribed auf die neue, wenn ein neues Observable reinkommt.
 
-Wie [delay](../angular/07_3_ts_operators#delay) funktioniert kann man hier nachlesen.
+Wie [delay](../angular/05_3_angular_rxjs_operators#delay) funktioniert kann man hier nachlesen.
 
 Beispiel mit `switchAll`:
 ```typescript

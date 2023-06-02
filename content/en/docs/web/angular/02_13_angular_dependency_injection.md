@@ -11,6 +11,12 @@ description: >
 * Du weisst, was eine Dependency Injection ist und was es in Angular ist.
 * Du kannst, eine Dependency Injection anwenden.
 
+## Was sind Dependencies (Abhängigkeiten)
+Um eine loose Kopplung zu erreichen, werden verschiedene Aufgaben wie das Laden von Server-Daten in verschiedene Dateien ausgelagert. Die einzelnen Klassen haben Abhängigkeiten zu einander. In Angular gibt man die Abhängigkeiten zu anderen Klassen oft z.B. im Konstruktor an.
+
+Angular erstellt und übergibt dann automatisch Instanzen dieser Klassen beim Laden der entsprechenden Klasse.
+Auf diese Weise werden die Klassen wiederverwendbarer und einfacher testbar.
+
 ## Was ist eine Dependency Injection
 Dependency Injection ist ein Coding pattern, bei welchem Klassen alle Abhängigkeiten von externen Quellen erhalten, anstatt sie selbst zu erstellen.
 

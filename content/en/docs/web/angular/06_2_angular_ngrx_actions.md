@@ -2,7 +2,7 @@
 title: "NgRx Actions"
 type: docs
 linkTitle: "NgRx Actions"
-weight: 28
+weight: 27
 date: 2023-05-26
 description: >
   Hier findet man was NgRx Actions sind.

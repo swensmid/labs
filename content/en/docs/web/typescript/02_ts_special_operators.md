@@ -2,7 +2,7 @@
 title: "Special Typescript Operators"
 type: docs
 linkTitle: "Special Typescript Operators"
-weight: 20
+weight: 2
 date: 2023-05-19
 description: >
     Welche speziellen Operatoren es noch in Typescript gibt kann man hier nachlesen.

@@ -2,7 +2,7 @@
 title: "NgRx Reducers"
 type: docs
 linkTitle: "NgRx Reducers"
-weight: 29
+weight: 28
 date: 2023-05-26
 description: >
   Hier findet man was NgRx Reducers sind.

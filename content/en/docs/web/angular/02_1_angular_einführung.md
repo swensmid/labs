@@ -104,3 +104,60 @@ Das Angular CLI (Command Line Interface) ist ein Befehlszeilenwerkzeug, das von 
 * ng help: Zeigt eine Liste der verfügbaren Befehle und Optionen der Angular CLI an.
 
 
+## Konfigurationsdatei für eine Angular-Anwendung
+Die `angular.json`-Datei ist die Konfigurationsdatei für ein Angular-Projekt. Sie enthält verschiedene Einstellungen und Konfigurationen für das Build-System, die Erstellung des Projekts, den Asset-Manager und vieles mehr. Die Datei wird automatisch generiert, wenn ein neues Angular-Projekt mit der Angular CLI erstellt wird.
+
+
+## Einstiegspunkt einer Angular-Anwendung
+### Typescript
+Der Einstiegspunkt einer Angular-Anwendung ist die Datei main.ts. Diese Datei ist das Hauptmodul der Anwendung, in dem der Bootstrap-Prozess gestartet wird.
+
+```typescript
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+
+platformBrowserDynamic().bootstrapModule(AppModule)$
+        .catch(err => console.error(err));
+```
+
+Das AppModule selbst ist das Root-Modul der Angular-Anwendung. Es wird in der Regel in einer separaten Datei (`app.module.ts`) definiert und enthält die erforderlichen Importe und Konfigurationen für die Anwendung, einschliesslich der Components, Services, Modules und anderer Funktionen, welche d Anwendung benötigt.
+
+Die `main.ts`-Datei wird beim Starten der Angular-Anwendung vom Build-System oder von der Angular CLI aufgerufen. Sie ist der erste Punkt, an dem der Angular-Bootstrap-Prozess beginnt und die erforderlichen Ressourcen und Module geladen werden.
+
+Es ist wichtig zu beachten, dass die `main.ts`-Datei normalerweise nicht manuell bearbeitet werden muss, es sei denn, man hat spezifische Anpassungen oder Erweiterungen für den Bootstrap-Prozess vorzunehmen. Die meisten Änderungen und Konfigurationen sollten im AppModule und den anderen Modulen der Anwendung vorgenommen werden.
+
+### HTML
+Das Einstiegs-HTML-Dokument einer Angular-Anwendung ist die `index.html`-Datei. Diese Datei wird automatisch generiert, wenn die Anwendung kompiliert.
+
+In der `index.html`-Datei befindet sich das grundlegende HTML-Markup für die Anwendung. Hier werden die erforderlichen Skripte und Stylesheets eingebunden und der Ort definiert, an dem die Angular-Anwendung in das DOM eingefügt wird.
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angular App</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+```
+Im `<head>`-tag befindet sich der `<title>`-tag, dieser definiert den Titel der Webseite, der normalerweise im Browser-Tab angezeigt wird.
+Das `<link rel="icon" type="image/x-icon" href="...">` bindet das Favicon (Favoriten-Symbol) der Webseite ein, das normalerweise im Browser-Tab und in Lesezeichen angezeigt wird.
+Diese zwei kann man auch nach Belieben ändern.
+
+Beim Starten der Angular-Anwendung wird der Inhalt der `index.html`-Datei vom Webbrowser geladen. Der Angular-Bootstrap-Prozess findet das `<app-root>`-Element und ersetzt es durch den gerenderten Inhalt der Angular-Komponenten.
+
+
+## Angular Best(Good)-Practices
+Angular bietet eine Reihe von Best Practices, die helfen können, die Angular-Anwendungen effizienter, wartbarer und skalierbarer zu gestalten. Hier sind einige wichtige Angular Best Practices:
+* **Verwendung der Angular CLI**: Die Angular CLI erstellt automatisch eine standardisierte Projektstruktur, die bewährte Praktiken und Konventionen folgt. Dies erleichtert die Organisation und Wartung des Codes, da Entwickler eine einheitliche Struktur erwarten können. Daher sollte zum Erstellen von neuen Dateien sollte auch immer die CLI verwendet werden. 
+* **Eine Aufgabe pro Component**: Den Code sollte in kleine, wiederverwendbare Komponenten aufgeteilt werden. Jeder Component sollte eine klare Verantwortung haben und nur für eine spezifische Aufgabe zuständig sein. Um im Typescript Code Konventionen und Best Practices zu befolgen sollte man zudem einen Linter verwenden, um dies zu prüfen.
+* **Nutzung der Angular Template-Syntax**: Es sollte die Angular-spezifische Template-Syntax verwendet werden, um Data-Bindung, Ereignisbehandlung und Strukturierung des DOMs im Templates zu erleichtern. Komplexe Logik in den Templates sollte vermieden werden, es sollte möglichst lesbar sein. Dazu kann man den Formatter wie Prettier am besten verwenden, um das gesamte zu vereinfachen.
+* **Nutzung von Lazy Loading für Module**: Das Lazy Loading-Feature von Angular sollte verwendet werden, um die Ladezeit der Anwendung zu verbessern. Man sollte Module nur dann laden, wenn sie benötigt werden, anstatt die gesamte Anwendung auf einmal zu laden.
+
