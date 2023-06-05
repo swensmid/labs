@@ -33,17 +33,17 @@ Nun können wir ein Beispiel betrachten:
 Angenommen, wir haben eine Tabelle mit Kundendaten, die den Namen, die Adresse und die Telefonnummer enthält. 
 Diese Tabelle könnte folgendermassen aussehen:
 
-| Kunde     | Adresse           | Telefonnummer   |
-|-----------|-------------------|-----------------|
-| Max       | Hauptstr. 1, 123  | 123456789       |
-| Lisa      | Nebenstr. 5, 987  | 987654321       |
+| Kundennummer | Kundename | Adresse           | Telefonnummer   |
+|--------------|-----------|-------------------|-----------------|
+| 1            | Max       | Hauptstr. 1, 123  | 123456789       |
+| 2            | Lisa      | Nebenstr. 5, 987  | 987654321       |
 
 Nach der Normalisierung in der 1NF würde die Tabelle dann so aussehen:
 
-| Kunde | Strasse   | Hausnummer | PLZ | Ort         | Telefonnummer |
-|-------|-----------|------------|-----|-------------|---------------|
-| Max   | Hauptstr. | 1          | 123 | Musterort   | 123456789     |
-| Lisa  | Nebenstr. | 5          | 987 | Beispielort | 987654321     |
+| Kundennummer | Kundenname | Strasse   | Hausnummer | PLZ | Ort         | Telefonnummer |
+|--------------|------------|-----------|------------|-----|-------------|---------------|
+| 1            | Max        | Hauptstr. | 1          | 123 | Musterort   | 123456789     |
+| 2            | Lisa       | Nebenstr. | 5          | 987 | Beispielort | 987654321     |
 
 Zusammenfassend kann man sagen, dass die erste Normalform (1NF) darauf abzielt, Daten in ihre einfachsten atomaren Werte
 zu zerlegen und keine wiederholten Gruppen von Attributen zuzulassen. Dadurch werden die Daten besser strukturiert, die 
@@ -59,12 +59,12 @@ Angenommen, wir haben eine Tabelle mit Kundendaten, die Name und Telefonnummer e
 wir für jeden Kunden die bestellten Produkte und die jeweilige Menge in derselben Tabelle. Die Tabelle könnte also 
 folgendermassen aussehen:
 
-| Kunde | Telefonnummer | Produkt | Menge |
-|-------|---------------|---------|-------|
-| Max   | 123456789     | Schuhe  | 2     |
-| Max   | 123456789     | Hemd    | 1     |
-| Lisa  | 987654321     | Hose    | 3     |
-| Lisa  | 987654321     | Jacke   | 2     |
+| Kundennummer | Kundenname | Telefonnummer | Produkt | Menge |
+|--------------|------------|---------------|---------|-------|
+| 1            | Max        | 123456789     | Schuhe  | 2     |
+| 1            | Max        | 123456789     | Hemd    | 1     |
+| 2            | Lisa       | 987654321     | Hose    | 3     |
+| 2            | Lisa       | 987654321     | Jacke   | 2     |
 
 In diesem Fall haben wir eine Mischung aus Kundendaten und Bestelldaten in einer einzigen Tabelle. Das Problem dabei 
 ist, dass die Kundendaten für jedes Produkt und jede Menge wiederholt werden müssen. Wenn Max zum Beispiel 3 
@@ -76,19 +76,19 @@ Beide Tabellen werden durch einen gemeinsamen Schlüssel (Kunde) verknüpft.
 
 **Kundentabelle:**
 
-| Kunde | Telefonnummer |
-|-------|---------------|
-| Max   | 123456789     |
-| Lisa  | 987654321     |
+| Kundennummer | Kundenname | Telefonnummer |
+|--------------|------------|---------------|
+| 1            | Max        | 123456789     |
+| 2            | Lisa       | 987654321     |
 
 **Bestellungstabelle:**
 
-| Kunde | Produkt | Menge |
-|-------|---------|-------|
-| Max   | Schuhe  | 2     |
-| Max   | Hemd    | 1     |
-| Lisa  | Hose    | 3     |
-| Lisa  | Jacke   | 2     |
+| Kundennummer | Produkt | Menge |
+|--------------|---------|-------|
+| 1            | Schuhe  | 2     |
+| 1            | Hemd    | 1     |
+| 2            | Hose    | 3     |
+| 2            | Jacke   | 2     |
 
 Dadurch erreichen wir eine klare Trennung der Daten. Die Kundendaten müssen nur einmal gespeichert werden und werden 
 über den Schlüssel (Kunde) mit den entsprechenden Bestellungen verknüpft. Das reduziert die Redundanz und sorgt für 
@@ -109,63 +109,67 @@ zwischen den Daten herzustellen.
 
 Nun können wir ein Beispiel betrachten:
 
-Angenommen, wir haben eine Tabelle mit Kundendaten, die Name und Telefonnummer enthält. Zusätzlich speichern 
-wir für jedes Produkt, das ein Kunde bestellt, den Produkttyp und die zugehörige Produktkategorie in derselben Tabelle. 
-Eine Zeile in dieser Tabelle könnte folgendermassen aussehen:
+Wir haben eine Ausgangstabelle, die alle Informationen eines Online-Shops beinhaltet. Aktuell ist diese Tabelle noch
+nicht normalisiert:
 
-| Kunde | Telefonnummer | Produkt | Produkttyp     | Kategorie |
-|-------|---------------|---------|----------------|-----------|
-| Max   | 123456789     | Schuhe  | Sportschuhe    | Kleidung  |
-| Max   | 123456789     | Hemd    | Oberbekleidung | Kleidung  |
-| Lisa  | 987654321     | Hose    | Unterkleidung  | Kleidung  |
-| Lisa  | 987654321     | Jacke   | Oberbekleidung | Kleidung  |
+**Ausgangstabelle:**
 
-In diesem Fall haben wir eine Mischung aus Kundendaten, Produktinformationen und Produktkategorien in einer einzigen 
-Tabelle. Das Problem dabei ist, dass die Produkttypen und Kategorien für jedes Produkt wiederholt werden müssen. 
-Wenn Max zum Beispiel 3 verschiedene Produkte bestellt, würden die Produkttypen und Kategorien für seine Kundendaten 
-dreimal wiederholt werden.
+| Kundenummer | Name | Telefonnummer | ProduktId | Produktname | Bestellmenge | Gesamtpreis |
+|-------------|------|---------------|-----------|-------------|--------------|-------------|
+| 1           | Max  | 123456789     | 101       | Schuhe      | 2            | 50.00       |
+| 1           | Max  | 123456789     | 102       | Hemd        | 1            | 30.00       |
+| 2           | Lisa | 987654321     | 103       | Hose        | 4            | 80.00       |
+| 2           | Lisa | 987654321     | 104       | Jacke       | 3            | 75.00       |
 
-Um dieses Problem zu lösen und die Dritte Normalform (3NF) zu erreichen, müssen wir die Daten weiter aufteilen und in 
-separate Tabellen organisieren. Eine Tabelle enthält die Kundendaten, eine andere Tabelle enthält die 
-Produktinformationen, und eine weitere Tabelle enthält die Produktkategorien. Die Tabellen werden durch gemeinsame 
-Schlüssel verknüpft.
+Um die 3NF zu erreichen, müssen wir die Daten weiter aufteilen und in separate Tabellen organisieren.
+
+Die Aufteilung erfolgt in drei Tabellen: "Kundentabelle", "Produkttabelle" und "Bestellungstabelle". 
+Die Spalten der Tabellen könnten wie folgt aussehen:
 
 **Kundentabelle:**
 
-| Kunde | Telefonnummer |
-|-------|---------------|
-| Max   | 123456789     |
-| Lisa  | 987654321     |
+| Kundenummer | Name | Telefonnummer |
+|-------------|------|---------------|
+| 1           | Max  | 123456789     |
+| 2           | Lisa | 987654321     |
 
 **Produkttabelle:**
 
-| Produkt | Produkttyp     |
-|---------|----------------|
-| Schuhe  | Sportschuhe    |
-| Hemd    | Oberbekleidung |
-| Hose    | Unterkleidung  |
-| Jacke   | Oberbekleidung |
+| ProduktId | Produktname | Produktpreis |
+|-----------|-------------|--------------|
+| 101       | Schuhe      | 25.00        |
+| 102       | Hemd        | 30.00        |
+| 103       | Hose        | 20.00        |
+| 104       | Jacke       | 25.00        |
 
-**Kategorientabelle:**
+**Bestellungstabelle:**
 
-| Produkt | Kategorie |
-|---------|-----------|
-| Schuhe  | Kleidung  |
-| Hemd    | Kleidung  |
-| Hose    | Kleidung  |
-| Jacke   | Kleidung  |
+| Kundenummer | ProduktId | Bestellmenge | Gesamtpreis |
+|-------------|-----------|--------------|-------------|
+| 1           | 101       | 2            | 50.00       |
+| 1           | 102       | 1            | 30.00       |
+| 2           | 103       | 4            | 80.00       |
+| 2           | 104       | 3            | 75.00       |
 
-Dadurch erreichen wir eine noch klarere Trennung der Daten. Die Kundendaten werden nur einmal gespeichert und über den 
-gemeinsamen Schlüssel (Kunde) mit den entsprechenden Produkten verknüpft. Ebenso werden die Produktinformationen und 
-Kategorien nur einmal gespeichert und über die jeweiligen Schlüssel (Produkt) verknüpft. Dadurch wird die Redundanz 
-weiter reduziert und die Daten sind besser organisiert.
+Nach dieser Aufteilung ist bereits die zweite Normalform erreicht. Um die dritte Normalform also zu erreichen müssen wir
+alle Spalten entfernen, die abhängig von Nichtschlüssel-Attributen sind. In unserem Beispiel wäre dies der Gesamtpreis 
+i der Bestellungstabelle. Dieser Preis kann anhand der Bestellmenge und dem Produktpreis berechnet werden und ist 
+deshalb nicht nötig. Je nach Schema kann die dritte Normalform auch negative Auswirkungen auf die Performance haben, 
+da keine berechneten Werte gespeichert werden dürfen. Wenn wir die Änderung in unserem Beispiel vornehmen würde die 
+Tabelle schlussendlich so aussehen:
 
-Zusammenfassend kann man sagen, dass die Dritte Normalform (3NF) darauf abzielt, Daten so zu strukturieren, dass keine 
-wiederholten Informationen in einer Tabelle vorhanden sind und dass abhängige Informationen in separaten Tabellen 
-gespeichert werden. Dadurch werden Daten effizienter gespeichert, Redundanz minimiert und logische Konsistenz 
-gewährleistet.
+**Bestellungstabelle:**
 
-Es gibt auch höhere Normalformen wie die Boyce-Codd-Normalform (BCNF) und die Vierte Normalform (4NF), aber diese sind
+| Kundenummer | ProduktId | Bestellmenge |
+|-------------|-----------|--------------|
+| 1           | 101       | 2            |
+| 1           | 102       | 1            |
+| 2           | 103       | 4            |
+| 2           | 104       | 3            |
+
+Durch diese Änderung erfüllt unsere Beispiel-Datenbank die ersten drei Normalformen.
+
+Weiter gibt es auch höhere Normalformen wie die Boyce-Codd-Normalform (BCNF) und die Vierte Normalform (4NF), aber diese sind
 für den Anfang weniger relevant und komplexer zu erklären.
 
 ## Datenbankdesign
