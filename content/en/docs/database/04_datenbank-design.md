@@ -153,7 +153,7 @@ Die Spalten der Tabellen könnten wie folgt aussehen:
 
 Nach dieser Aufteilung ist bereits die zweite Normalform erreicht. Um die dritte Normalform also zu erreichen müssen wir
 alle Spalten entfernen, die abhängig von Nichtschlüssel-Attributen sind. In unserem Beispiel wäre dies der Gesamtpreis 
-i der Bestellungstabelle. Dieser Preis kann anhand der Bestellmenge und dem Produktpreis berechnet werden und ist 
+in der Bestellungstabelle. Dieser Preis kann anhand der Bestellmenge und dem Produktpreis berechnet werden und ist 
 deshalb nicht nötig. Je nach Schema kann die dritte Normalform auch negative Auswirkungen auf die Performance haben, 
 da keine berechneten Werte gespeichert werden dürfen. Wenn wir die Änderung in unserem Beispiel vornehmen würde die 
 Tabelle schlussendlich so aussehen:
