@@ -2,7 +2,7 @@
 title: "RxJS Subjects"
 type: docs
 linkTitle: "RxJS Subjects"
-weight: 24
+weight: 25
 date: 2023-04-21
 description: >
   RxJS Subjects

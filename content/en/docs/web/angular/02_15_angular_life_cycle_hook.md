@@ -2,7 +2,7 @@
 title: "Angular Life Cycle Hook"
 type: docs
 linkTitle: "Angular Life Cycle Hook"
-weight: 16
+weight: 17
 date: 2023-05-05
 description: >
     Wie der Angular Life Cycle Hook genau aussieht findet man hier.

@@ -2,7 +2,7 @@
 title: "Angular Data Bindings"
 type: docs
 linkTitle: "Data Bindings in Angular"
-weight: 17
+weight: 18
 date: 2022-03-14
 description: >
   Data Bindings in Angular.

@@ -2,7 +2,7 @@
 title: "RxJS"
 type: docs
 linkTitle: "RxJS"
-weight: 23
+weight: 24
 date: 2023-04-20
 description: >
   RxJS Übersicht

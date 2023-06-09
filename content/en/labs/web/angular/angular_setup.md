@@ -2,7 +2,7 @@
 title: "Angular Setup"
 type: docs
 linkTitle: "Angular Setup"
-weight: 2
+weight: 1
 date: 2021-11-01
 description: >
     Angular Setup

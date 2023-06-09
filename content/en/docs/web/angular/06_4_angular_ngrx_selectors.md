@@ -2,7 +2,7 @@
 title: "NgRx Selectors"
 type: docs
 linkTitle: "NgRx Selectors"
-weight: 29
+weight: 30
 date: 2023-05-26
 description: >
   Hier findet man was NgRx Selectors sind.

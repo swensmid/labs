@@ -107,7 +107,10 @@ Die `canActivate()` Methode des Interfaces enthält die Logik, um den Zugriff au
 
 Beispielsweise ermöglicht folgender `Guard` immer den Zugriff auf eine Route:
 ```typescript
-class MyGuard implements CanActivate {
+@Injectable({
+    providedIn: 'root'
+})
+export class MyGuard implements CanActivate {
     canActivate() {
         return true;
     }

@@ -2,7 +2,7 @@
 title: "Dependency Injection"
 type: docs
 linkTitle: "Dependency Injection"
-weight: 15
+weight: 16
 date: 2023-05-04
 description: >
  Was eine Dependency Injection genau ist und wozu man diese verwendet kann man hier nachlesen.

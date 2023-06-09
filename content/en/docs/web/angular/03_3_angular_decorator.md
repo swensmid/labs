@@ -2,7 +2,7 @@
 title: "Decorators"
 type: docs
 linkTitle: "Decorators"
-weight: 19
+weight: 20
 date: 2023-05-17
 description: >
     In disem Kapitel findet man die wichtigsten Informationen u Angular Decorators.

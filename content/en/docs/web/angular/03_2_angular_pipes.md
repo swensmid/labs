@@ -2,7 +2,7 @@
 title: "Pipes"
 type: docs
 linkTitle: "Pipes"
-weight: 18
+weight: 19
 date: 2022-03-14
 description: >
     In diesem Kapitel findet man relevante Informationen zu Pipes.

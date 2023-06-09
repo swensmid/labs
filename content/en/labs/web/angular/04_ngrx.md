@@ -2,12 +2,12 @@
 title: "NgRx Beispiel"
 type: docs
 linkTitle: "NgRx Beispiel"
-weight: 31
+weight: 5
 date: 2023-05-26
 description: >
   Ein kleines NgRx Beispiel.
 ---
-
+# Aufgaben
 ## Aufgabe 1
 Als kleines Beispiel, wie man NgRx verwendet, setze man ein kleines neues Angular-projekt auf und schreibt eine Anwendung mit einem Counter welchen man Inkrementieren, Dekrementieren und Resetten kann.
 
@@ -171,11 +171,10 @@ Entwickle eine Angular-Anwendung für einen Online-Shop mit den folgenden Funkti
 * Erstelle eine Seite für die Produktübersicht, auf der alle Produkte angezeigt werden.
 * Rufe die Produktdaten aus einem Mock-Datenservice ab und zeige sie an.
 * Implementiere zu jedem Produkt einen Button für das Hinzufügen von Produkten im Warenkorb.
-* Füge Filteroptionen hinzu, um die Produkte nach verschiedenen Kriterien zu filtern und zu sortieren.
 
 ### Warenkorb:
 * Erstelle eine Seite, auf der die im Warenkorb befindlichen Produkte angezeigt werden.
-* Verwende NgRx, um den Warenkorbzustand zu verwalten. Definiere Aktionen zum Hinzufügen und Entfernen von Produkten im Warenkorb.
+* Verwende NgRx, um den Warenkorbzustand zu verwalten. Definiere Aktionen zum Hinzufügen und Entfernen von Produkten im Warenkorb. (Verwende Selektoren, um den Zugriff auf den NgRx-Store zu erleichtern.))
 * Zeige eine Liste der ausgewählten Produkte im Warenkorb an, inklusive Name und Preis.
 * Implementiere einen Button für das Löschen von Produkten im Warenkorb.
 * Füge eine Bestellfunktion hinzu, um den Kaufprozess abzuschliessen (kann eine einfache Bestätigungsnachricht sein).
@@ -191,12 +190,10 @@ Erstelle eine Angular-Anwendung für eine TODO-Liste, die das NgRx-Modul verwend
 ### Übersicht
 * Erstelle eine Seite, auf der die offene (Completed = false) Task (einfach der Name) angezeigt werden. (Verwende Selektoren, um den Zugriff auf die Tasks im NgRx-Store zu erleichtern.)
 * Verwende NgRx, um den Taskzustand zu verwalten. Definiere Aktionen zum Hinzufügen, Entfernen und Complete von Tasks.
-* Implementiere zu jedem Task einen Button für das Complete und Entfernen von Produkten im Warenkorb.
+* Implementiere zu jedem Task einen Button für das Complete und Entfernen von Tasks.
 
 ### Taskerstellungs-Seite
-* Erstelle eine Seite, auf der neue Task erfasst werden können.
-
-
-
-
+* Erstelle auf der Seite eine Unterseite, auf der neue Task erfasst werden können. (Für die Id zu erstellen am einfachsten `new Date().getTime()` nehmen)
+* Der Name des Tasks soll mittels Reactive Forms eingetragen werden.
+* completed ist immer auf `false` bei 2einem neuen Task.
 

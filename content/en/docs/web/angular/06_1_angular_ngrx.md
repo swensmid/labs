@@ -2,7 +2,7 @@
 title: "NgRx"
 type: docs
 linkTitle: "NgRx"
-weight: 26
+weight: 27
 date: 2023-04-20
 description: >
   NgRx Übersicht

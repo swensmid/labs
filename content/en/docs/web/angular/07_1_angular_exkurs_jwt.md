@@ -2,7 +2,7 @@
 title: "Json Web Token Authorisation (JWT)"
 type: docs
 linkTitle: "Json Web Token Authorisation (JWT)"
-weight: 30
+weight: 31
 date: 2022-05-09
 description: >
     In diesem Exkurs ist zu sehen was ein JSON Web Token (JWT) und wie es funktioniert.
