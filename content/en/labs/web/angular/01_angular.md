@@ -2,7 +2,7 @@
 title: "Labs zu Angular"
 type: docs
 linkTitle: "Angular Labs"
-weight: 3
+weight: 2
 date: 2021-11-01
 description: >
      Aufgaben zu Angular.

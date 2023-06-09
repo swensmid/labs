@@ -2,7 +2,7 @@
 title: "NgRx Beispiel"
 type: docs
 linkTitle: "NgRx Beispiel"
-weight: 5
+weight: 4
 date: 2023-05-26
 description: >
   Ein kleines NgRx Beispiel.

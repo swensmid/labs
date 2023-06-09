@@ -2,7 +2,7 @@
 title: "Labs zu RxJS"
 type: docs
 linkTitle: "RxJS Labs"
-weight: 4
+weight: 3
 date: 2023-05-04
 description: >
     Aufgaben zu Observales und RxJS.
