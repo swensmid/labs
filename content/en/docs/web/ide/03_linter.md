@@ -1,7 +1,7 @@
 ---
 title: "Linter"
 linkTitle: "Linter"
-weight: 1
+weight: 3
 date: 2023-05-12
 description: >
     Hier wird erklärt was Linter sind und wie man diese benutzt.
@@ -71,6 +71,7 @@ Man sucht nach `Save Actions` in den Einstellungen und wählt "In settings.json 
 In der `settings.json`-Datei fügt man den folgenden Code hinzu:
 ```json
 "editor.formatOnSave": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
 "editor.codeActionsOnSave": {
   "source.fixAll.eslint": true
 }
@@ -100,7 +101,12 @@ Hier ist ein Beispiel wie man dies tun kann:
 Wenn man die Anzahl der Leerzeichen festlegen will, die für einen Tab verwendet werden sollen kann dies wie folgt getan werden.
 ```json
 {
-  "tabWidth": 2
+  "printWidth": 120,
+  "singleQuote": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSpacing": true
 }
 ```
 

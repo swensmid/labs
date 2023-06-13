@@ -6,6 +6,6 @@
     "strict": true
   },
   "include": [
-    "solution 1/src/**/*.ts"
+    "./src/**/*.ts"
   ]
 }

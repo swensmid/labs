@@ -46,7 +46,9 @@ Folgende Extensions sind praktisch für die Entwicklung von Webapps:
 
 ### Live-Server
 #### Wozu braucht man den Live-Server?
-Standardmässig blockiert der Webbrowser das Laden von JavaScript-Modulen vom lokalen Dateisystem aus Sicherheitsgründen. Dies wird als "Same-Origin Policy" bezeichnet und dient dazu, das Ausführen potenziell unsicherer Skripte von nicht vertrauenswürdigen Quellen zu verhindern. Aus diesem Grund benötigt man einen Live-Server, um dies zu umgehen.
+Normalerweise verwendet der Browser HTTP, um Websites und andere Ressourcen von einem Server zu laden. Beim lokalen Entwickeln greifen Entwickler jedoch häufig direkt über den Browser auf das Dateisystem zu. Es gibt jedoch bestimmte Techniken, wie z. B. JavaScript-Module, die Ressourcen nur über HTTP laden können. Aus diesem Grund müssen wir für bestimmte Funktionen auch lokal einen Webserver verwenden, der die Ressourcen über HTTP bereitstellt.
+
+Die Live-Server-Erweiterung erfüllt genau diese Anforderungen: Sie ermöglicht es, Dateien in einem bestimmten Ordner (dem Projektverzeichnis) auf deiner Festplatte über HTTP verfügbar zu machen. Ein zusätzliches Feature besteht darin, dass deine Seite automatisch aktualisiert wird, sobald du Änderungen vornimmst.
 
 #### Was ist der Live-Server
 Die Live-Server Extension ist eine beliebte Erweiterung für Visual Studio Code, die Entwicklern dabei hilft, Webanwendungen während der Entwicklung automatisch neu zu laden. Sie ermöglicht es, eine lokale Entwicklungsumgebung einzurichten und den Code in Echtzeit zu aktualisieren, ohne die Seite manuell neu zu laden.
