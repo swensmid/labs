@@ -1,11 +1,11 @@
 ---
-title: "NgRx Beispiel"
+title: "(Zusatz) NgRx Labs"
 type: docs
-linkTitle: "NgRx Beispiel"
-weight: 4
+linkTitle: "(Zusatz) NgRx Labs"
+weight: 3
 date: 2023-05-26
 description: >
-  Ein kleines NgRx Beispiel.
+  Ein paar zusätzliche/optionale Aufgaben zu NgRx.
 ---
 # Aufgaben
 ## Aufgabe 1

@@ -8,6 +8,8 @@ description: >
 ---
 
 # IDE
+In den folgenden Kapitel ist alles aufgeführt was man für das Programmieren mit HTML und CSS benötigt
+
 ## VS Code
 Die Beispiele in diesem Modul werden mit Visual Studio Code erklärt. Visual Studio Code ist ein kostenloser Codierungseditor, mit welchem du schnell mit dem Coden beginnen kannst. Du kannst Visual Studio Code verwenden, um in jeder Programmiersprache zu programmieren, ohne den Editor zu wechseln. Es unterstützt viele Sprachen, darunter sind JavaScript, Angular, Vue und viele mehr.
 https://code.visualstudio.com/
@@ -61,6 +63,10 @@ Die Live-Server Extension ist eine beliebte Erweiterung für Visual Studio Code,
 Live-Server erstellt einen einfachen Entwicklungsserver auf dem lokalen Rechner, der die Webanwendung unter einer lokalen Adresse (z.B. "http://localhost:5500") bereitstellt. Dadurch kann man die Anwendung in einer isolierten Umgebung testen und auf sie zugreifen.
 
 Neben der Bereitstellung von HTML-, CSS- und JavaScript-Dateien unterstützt Live-Server auch das Laden von statischen Dateien wie Bildern, Schriftarten und anderen Ressourcen. Dadurch kann man die gesamte Webanwendung über den Entwicklungsserver verfügbar machen.
+
+Um eine Datei (z.B. eine HTML-Datei) via Live Server im Browser zu öffnen, tätige einen Rechtsklick auf die gewünschte Datei und klicke auf "Open with Live Server". Nun geht die gewünschte Seite im Browser auf und ist erreichbar via die URL "http://localhost:5500".
+
+Ganz unten in VS Code siehst du nun einen versteckten Button mit der Aufschrift "Port 5500". Wenn du darauf klickst, beendest du den Live Server wieder. [Besser noch ein Bild hinzufügen]
 
 
 ![task1](/images/task.png) 15' - Einzelarbeit

@@ -2,7 +2,7 @@
 title: "Labs zu Angular"
 type: docs
 linkTitle: "Angular Labs"
-weight: 2
+weight: 1
 date: 2021-11-01
 description: >
      Aufgaben zu Angular.
@@ -151,8 +151,12 @@ Passe den bestehenden Code aus Aufgabe 1 so an, dass das Inputfeld ein `FormCont
 So soll dann immer die Bilder zum Wert angezeigt werden und auch der Text "Mein Lieblingsfahrrad: " sollte immer den Wert es Inputs anzeigen.
 
 ## Aufgabe 2
-Erstelle ein neues Angular Projekt, dafür ist folgende Datenbankstruktur gegeben:
+Diese Aufgabe wird ein nun grösseres Projekt, der Sinn hinter diesem ist das Verwalten der Fahrräder mit einem objekt-orientierten Ansatz. Zusätzlich soll die Trennung von Modell-Klassen, Services und Components detaillierter betrachtet werden.
+Zudem besitzt man nach Abschluss der Aufgabe ein richtiges und praxisorientiertem Beispiel für ein Frontend.
 
+Erstelle ein neues Angular Projekt. 
+
+Im neu erstellten Projekt wollen wir Daten für folgende (Datenbank-)Entitäten mit einem objekt-orientierten Ansatz abbilden:
 ![ERD](../../../../docs/web/angular/images/bicycle-erd-diagram.png)
 
 Folgende Anforderungen sind gegeben:

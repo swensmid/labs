@@ -36,7 +36,7 @@ In Angular kann man Components im Template aufrufen, indem man ihren Selektor ve
 
 Durch das Aufrufen von Components im Template kann man wiederverwendbare Teile der Benutzeroberfläche erstellen und sie in verschiedenen Teilen der Anwendung verwenden, um Code-Duplikation zu vermeiden aber auch die Lesbarkeit und Wartbarkeit des Codes zu verbessern.
 
-Als erstes muss man den Component erstellen:
+Als erstes muss man den Component erstellen, die sollte mit dem [CLI Command](../02_1_angular_einführung#commands) `ng generate component greeting` oder kürzer ` ng g c greeting`:
 ```typescript
 import { Component } from '@angular/core';
 

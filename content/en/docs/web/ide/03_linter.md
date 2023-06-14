@@ -6,13 +6,62 @@ date: 2023-05-12
 description: >
     Hier wird erklärt was Linter sind und wie man diese benutzt.
 ---
-
 ## Linter
 Ein Linter analysiert den Quellcode auf der Grundlage vordefinierter Regeln, Konventionen und Best Practices. Er prüft den Code auf häufige Fehler wie fehlende Semikolons, undefinierte Variablen, nicht verwendete Importe, ungültige Syntax und andere potenzielle Probleme. Darüber hinaus kann ein Linter auch den Code-Stil überprüfen, um sicherzustellen, dass er den vereinbarten Standards im Projekt entspricht.
 Der Hauptzweck eines Linters besteht darin, Entwicklern dabei zu helfen, qualitativ hochwertigen Code zu schreiben, der gut strukturiert und leicht wartbar ist.
 
+
+### Prettier
+Prettier ist ein beliebtes Codeformatierungstool, das dazu dient, den Code in einem einheitlichen und konsistenten Stil zu formatieren. Im Gegensatz zu einem Linter wie ESLint, der sich auf Code-Stilregeln konzentriert, konzentriert sich Prettier ausschliesslich auf die Formatierung des Codes.
+
+Prettier unterstützt eine Vielzahl von Programmiersprachen, einschliesslich JavaScript, TypeScript, HTML, CSS, JSON etc.
+Es bietet eine Reihe von Formatierungsregeln, die auf bewährten Praktiken basieren, um den Code lesbarer und einheitlicher zu gestalten.
+Prettier kann den gesamten Code automatisch formatieren, einschliesslich Einrückungen, Zeilenumbrüchen, Leerzeichen, Klammern und anderen Formatierungsaspekten.
+
+#### Prettier konfigurieren
+Prettier benötigt normalerweise keine umfangreiche Konfiguration, da es über standardmässige Formatierungsregeln verfügt. Man kann jedoch bestimmte Einstellungen in einer .`prettierrc`-Datei festlegen, um das Verhalten anzupassen.
+
+Hier ist ein Beispiel wie man dies tun kann:
+
+Wenn man z.B.
+* die Anzahl der Leerzeichen (2) festlegen will, die für einen Tab verwendet werden sollen,
+* doppelte Anführungszeichen `"` mit einfachen `'` ersetzen will,
+* Tabs durch Leerzeichen ersetzen will,
+* fehlende Semikolons (im JavaScript) automatisch hinzufügen will,
+* automatisch Space bei Klammern hinzufügen will,
+  dann kann dies wie folgt getan werden.
+```json
+{
+  "printWidth": 120,
+  "singleQuote": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSpacing": true
+}
+```
+
+Weitere Informationen zu den verfügbaren Optionen und deren Werten finden man in der Prettier-Dokumentation unter https://prettier.io/docs/en/configuration.html.
+
+#### Prettier ausführen
+Das Prettier Plugin kann man wie folgt ausführe.
+* **IntelliJ**: Alt-Shift-Cmd-P auf macOS oder Alt-Shift-Ctrl-P auf Windows und Linux.
+
+* **VSCode**: [Shift] + [Option] + [F] auf macOS und [Shift] + [Alt] + [F] unter Windows und Linux. Alternativ kannst du durch Klick auf [F1] den Task "Format Document (With...)" auswählen. Auf diese Weise kannst du auch gleich den Default-Formatter festlegen (wenn du es noch nicht in der Datei `settings.json` wie oben beschrieben getan hast).
+
+
 ### ESLint
 ESLint ist ein äusserst beliebtes und leistungsstarkes statisches Code-Analysetool für JavaScript- und TypeScript-Projekte.
+
+### ESLinkt installieren
+Bevor ESLint verwendet werden kann, muss es installiert werden (und bei Windows am besten noch den PC neustarten).
+Mit den folgenden drei Befehlen kann man es installiren:
+
+```shell
+npm install eslint --save-dev
+npx eslint --init
+npx eslint src/index.js
+```
 
 #### ESLint konfigurieren
 Man kann eigene Regeln erstellen oder bereits vorhandene Regeln anpassen, um den Anforderungen Ihres Projekts gerecht zu werden.
@@ -71,11 +120,17 @@ Man sucht nach `Save Actions` in den Einstellungen und wählt "In settings.json 
 In der `settings.json`-Datei fügt man den folgenden Code hinzu:
 ```json
 "editor.formatOnSave": true,
-"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.defaultFormatter": "esbenp.prettier-vscode", 
 "editor.codeActionsOnSave": {
   "source.fixAll.eslint": true
 }
 ```
+
+* `"editor.formatOnSave": true`: Diese Einstellung bewirkt, dass der Code automatisch entsprechend den in den Editor-Einstellungen konfigurierten Regeln formatiert wird, wenn das Dokument gespeichert wird.
+
+* `"editor.defaultFormatter": "esbenp.prettier-vscode"`: Diese Einstellung gibt den Standard-Codeformatter an, der verwendet wird, wenn `"editor.formatOnSave"` aktiviert ist. In diesem Fall wird das Prettier verwendet. 
+
+* `"editor.codeActionsOnSave": { "source.fixAll.eslint": true }` : Diese Einstellung aktiviert Code-Aktionen beim Speichern des Dokuments. Konkret wird hier die ESLint-Erweiterung verwendet. Durch das Aktivieren von `"source.fixAll.eslint": true` werden automatisch Vorschläge zur Fehlerbehebung und Verbesserung des Codes angezeigt, wenn das Dokument gespeichert wird.
 
 Nun noch die Datei speichern und VS-Code wird automatisch den Code formatieren und Lint-Fixes anwenden, wenn man eine Datei speichert.
 
@@ -85,42 +140,4 @@ Nun noch die Datei speichern und VS-Code wird automatisch den Code formatieren u
 Man öffnet die VS Code-Einstellungen, indem man den Shortcut "Strg + Alt + S" für Windows/Linux oder "Cmd + ," für macOS verwendet.
 
 Man navigiert zu `Languages & Frameworks` -> `[Code-Language z.B. JavaScript]` -> `Code Quality Tools` -> `ESLint` nun wählt man die `Automatic ESLint configuration` und `Run eslint --fix on save` Option an.
-
-### Prettier
-Prettier ist ein beliebtes Codeformatierungstool, das dazu dient, den Code in einem einheitlichen und konsistenten Stil zu formatieren. Im Gegensatz zu einem Linter wie ESLint, der sich auf Code-Stilregeln konzentriert, konzentriert sich Prettier ausschliesslich auf die Formatierung des Codes.
-
-Prettier unterstützt eine Vielzahl von Programmiersprachen, einschliesslich JavaScript, TypeScript, HTML, CSS, JSON etc.
-Es bietet eine Reihe von Formatierungsregeln, die auf bewährten Praktiken basieren, um den Code lesbarer und einheitlicher zu gestalten.
-Prettier kann den gesamten Code automatisch formatieren, einschliesslich Einrückungen, Zeilenumbrüchen, Leerzeichen, Klammern und anderen Formatierungsaspekten.
-
-#### Prettier konfigurieren
-Prettier benötigt normalerweise keine umfangreiche Konfiguration, da es über standardmässige Formatierungsregeln verfügt. Man kann jedoch bestimmte Einstellungen in einer .`prettierrc`-Datei festlegen, um das Verhalten anzupassen.
-
-Hier ist ein Beispiel wie man dies tun kann:
-
-Wenn man z.B. 
-* die Anzahl der Leerzeichen (2) festlegen will, die für einen Tab verwendet werden sollen,
-* doppelte Anführungszeichen `"` mit einfachen `'` ersetzen will,
-* Tabs durch Leerzeichen ersetzen will,
-* fehlende Semikolons (im JavaScript) automatisch hinzufügen will,
-* automatisch Space bei Klammern hinzufügen will,
-dann kann dies wie folgt getan werden.
-```json
-{
-  "printWidth": 120,
-  "singleQuote": true,
-  "useTabs": false,
-  "tabWidth": 2,
-  "semi": true,
-  "bracketSpacing": true
-}
-```
-
-Weitere Informationen zu den verfügbaren Optionen und deren Werten finden man in der Prettier-Dokumentation unter https://prettier.io/docs/en/configuration.html.
-
-#### Prettier ausführen
-Das Prettier Plugin kann man wie folgt ausführe.
-* **IntelliJ**: Alt-Shift-Cmd-P auf macOS oder Alt-Shift-Ctrl-P auf Windows und Linux.
-
-* **VSCode**: [Shift] + [Option] + [F] auf macOS und [Shift] + [Alt] + [F] unter Windows und Linux. Alternativ kannst du durch Klick auf [F1] den Task "Format Document (With...)" auswählen. Auf diese Weise kannst du auch gleich den Default-Formatter festlegen (wenn du es noch nicht in der Datei `settings.json` wie oben beschrieben getan hast).
 

@@ -1,11 +1,11 @@
 ---
-title: "NgRx"
+title: "(Zusatz) NgRx"
 type: docs
-linkTitle: "NgRx"
+linkTitle: "(Zusatz) NgRx"
 weight: 27
 date: 2023-04-20
 description: >
-  NgRx Übersicht
+  NgRx Übersicht, welcher jedoch ein Zusatz ist.
 ---
 ## Ziele
 * Du weisst, was und wozu NgRx ist, und kennst das Kernkonzept davon.

@@ -2,7 +2,7 @@
 title: "Labs zu den TypeScript-Basics"
 type: docs
 linkTitle: "TypeScript-Basics"
-weight: 2
+weight: 1
 date: 2021-11-01
 description: >
     Einfache Aufgaben zu den Basics von TypeScript.
