@@ -26,6 +26,7 @@ Folgende Extensions sind praktisch für die Entwicklung von Webapps mit VS Code:
     - Auto Close Tag
     - Better Comments
     - Template String Converter
+    - Live Server
 
 ## IntelliJ
 IntelliJ IDEA ist eine IDE für Softwareentwicklung, die von JetBrains entwickelt wurde. Es ist eine der beliebtesten IDEs für die Entwicklung von Java-Anwendungen, bietet jedoch auch Unterstützung für viele andere Programmiersprachen und Technologien wie Kotlin, Scala, Groovy, JavaScript, TypeScript, HTML, CSS, SQL etc.
@@ -64,7 +65,7 @@ Neben der Bereitstellung von HTML-, CSS- und JavaScript-Dateien unterstützt Liv
 
 ![task1](/images/task.png) 15' - Einzelarbeit
 
-    Installiere die IDE und richte sie entsprechend deiner Präferenz ein.
+    Installiere die IDE, die genannten Extensions, und richte sie entsprechend deiner Präferenz ein.
 
 ### Live-Server in IntelliJ
 Wenn man jedoch IntelliJ als seine IDE wählt, kann man ähnlich wie bei VS Code einen Liv Server mittels Extension erhalten. Dazu muss mah jedoch die Extension LiveEdit installieren. Nach dem man es installiert hat muss man es noch ein wenig konfigurieren, dafür einfach in den Einstellungen auf "Build, Execution, Deployment" -> Debugger -> Live Edit.

@@ -15,6 +15,8 @@ Bei einer Webapplikation ist es das, was dem Besucher im Browser angezeigt wird:
 
 ## Was ist ein Framework?
 Ein Framework ist eine Art "Grundgerüst" für die Entwicklung von Software, welche es dem Entwickler ermöglicht, schnell und effizient Applikationen zu entwickeln, ohne von Grund auf beginnen zu müssen.
+
+
 ![Framework](../images/frontend.png)    
 
 ## JS Frameworks

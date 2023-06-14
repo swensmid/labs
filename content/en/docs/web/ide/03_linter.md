@@ -9,7 +9,7 @@ description: >
 
 ## Linter
 Ein Linter analysiert den Quellcode auf der Grundlage vordefinierter Regeln, Konventionen und Best Practices. Er prüft den Code auf häufige Fehler wie fehlende Semikolons, undefinierte Variablen, nicht verwendete Importe, ungültige Syntax und andere potenzielle Probleme. Darüber hinaus kann ein Linter auch den Code-Stil überprüfen, um sicherzustellen, dass er den vereinbarten Standards im Projekt entspricht.
-Der Hauptzweck eines Linters besteht darin, Entwicklern dabei zu helfen, qualitativ hochwertigen Code zu schreiben, der gut strukturiert, fehlerfrei und leicht wartbar ist.
+Der Hauptzweck eines Linters besteht darin, Entwicklern dabei zu helfen, qualitativ hochwertigen Code zu schreiben, der gut strukturiert und leicht wartbar ist.
 
 ### ESLint
 ESLint ist ein äusserst beliebtes und leistungsstarkes statisches Code-Analysetool für JavaScript- und TypeScript-Projekte.
@@ -59,12 +59,12 @@ ESLint kann man mit zusätzlichen Optionen und Flags verwenden, die wichtigste F
 eslint --fix src/index.js
 ```
 
-Vielfach ist ESLint bereits als Script im `packages.json` hinterlegt und kann dann so mit dem Befehl `npm run <scriptname>` aufgerufen werden.
+Vielfach ist ESLint bereits als Script im `packages.json` hinterlegt und kann dann so mit dem Befehl `npm run <scriptname>` (beispielsweise `npm run lint`) aufgerufen werden.
 
 #### ESLint als beim Speichern
 **Im VS-Code**:
 
-Man öffnet die VS Code-Einstellungen, indem man "Datei" (File) in der Menüleiste wählen und dann "Einstellungen" (Preferences) auswählen. Oder man verwendet den Shortcut "Strg + ," für Windows/Linux oder "Cmd + ," für macOS.
+Man öffnet die VS Code-Einstellungen, indem man "Datei" (File) in der Menüleiste wählen und dann "Einstellungen" (Preferences) auswählen. Oder man verwendet den Shortcut "[Ctrl] + [,]" für Windows/Linux oder "[Cmd] + [,]" für macOS.
 
 Man sucht nach `Save Actions` in den Einstellungen und wählt "In settings.json bearbeiten" (Edit in settings.json).
 
@@ -98,7 +98,13 @@ Prettier benötigt normalerweise keine umfangreiche Konfiguration, da es über s
 
 Hier ist ein Beispiel wie man dies tun kann:
 
-Wenn man die Anzahl der Leerzeichen festlegen will, die für einen Tab verwendet werden sollen kann dies wie folgt getan werden.
+Wenn man z.B. 
+* die Anzahl der Leerzeichen (2) festlegen will, die für einen Tab verwendet werden sollen,
+* doppelte Anführungszeichen `"` mit einfachen `'` ersetzen will,
+* Tabs durch Leerzeichen ersetzen will,
+* fehlende Semikolons (im JavaScript) automatisch hinzufügen will,
+* automatisch Space bei Klammern hinzufügen will,
+dann kann dies wie folgt getan werden.
 ```json
 {
   "printWidth": 120,
@@ -116,5 +122,5 @@ Weitere Informationen zu den verfügbaren Optionen und deren Werten finden man i
 Das Prettier Plugin kann man wie folgt ausführe.
 * **IntelliJ**: Alt-Shift-Cmd-P auf macOS oder Alt-Shift-Ctrl-P auf Windows und Linux.
 
-* **VSCode**: CMD + Shift + P auf macOS und CTRL + Shift + P auf Windows und Linux.
+* **VSCode**: [Shift] + [Option] + [F] auf macOS und [Shift] + [Alt] + [F] unter Windows und Linux. Alternativ kannst du durch Klick auf [F1] den Task "Format Document (With...)" auswählen. Auf diese Weise kannst du auch gleich den Default-Formatter festlegen (wenn du es noch nicht in der Datei `settings.json` wie oben beschrieben getan hast).
 

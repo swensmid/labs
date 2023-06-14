@@ -10,10 +10,12 @@ description: >
 ## Node.js
 Node.js ist eine plattformübergreifende Opensource-JavaScript-Runtime, damit du den nötigen Webserver betreiben kannst, die für die Webentwicklung notwendig ist.
 Mit Node können wir später diverse Packages installieren und in unserer Webapplikation brauchen.
-Node.js ermöglicht den Entwicklern, JavaScript-Code außerhalb des Browsers auszuführen.
+Node.js ermöglicht es, JavaScript-Code ausserhalb des Browsers (z.B. direkt via Kommandozeile) auszuführen.
+
+NodeJS ermöglicht es also, JavaScript als Programmiersprache im Backend zu verwenden. Zusätzlich verwenden viele Frontends wie Angular und React NodeJS als Grundgerüst für das Projekt.
 
 ### npm
-Node.js enthält einem integrierten Package manager namens npm (Node Package Manager). npm ermöglicht es Entwicklern, Libraries und Module von anderen Entwicklern zu installieren und in ihren eigenen Projekten zu verwenden. Es bietet Zugriff auf eine riesige Sammlung von Open-Source-Packages, die Funktionalität und Effizienz bei der Entwicklung von Anwendungen bieten.
+Node.js enthält einem integrierten Package-Manager namens "_npm_" (Node Package Manager). _npm_ ermöglicht es, Libraries und Module von anderen Entwicklern herunterzuladen, zu installieren und in ihren eigenen Projekten zu verwenden. Es bietet Zugriff auf eine riesige Sammlung von Open-Source-Packages.
 
 npm ermöglicht es auch, die eigenen Packages zu erstellen und zu veröffentlichen, sodass andere Entwickler sie verwenden können. Durch das Veröffentlichen der Packages auf npm kann man es für die gesamte Community zugänglich machen und Updates und Verbesserungen bereitstellen.
 

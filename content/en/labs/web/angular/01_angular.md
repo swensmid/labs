@@ -10,6 +10,7 @@ description: >
 # Aufgaben
 ## Aufgabe 1
 Folgender Code ist gegeben:
+Datei `../interfaces.ts`:
 ```typescript
 export interface Bicycle {
     name: string;
@@ -82,6 +83,7 @@ export interface Bicycle {
   }
 ```
 
+Datei `bicycle.component.ts`:
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -127,7 +129,7 @@ export class BicycleComponent implements OnInit {
 ```
 Folgendes muss angezeigt werden, wenn die Seite geladen wurde:
 
-![Components Description](./../../../docs/web/angular/images/first-page.png)
+![Components Description](./../../../../docs/web/angular/images/first-page.png)
 
 
 - "Wie heisst mein Fahrrad?" ist mit der Funktion "displayBicycleName()" verknüpft.
@@ -136,12 +138,13 @@ Folgendes muss angezeigt werden, wenn die Seite geladen wurde:
 - Tipp: Die Weite und Höhe der Bilder kann direkt mit einem Propertybinding gemacht werden.
 
 Folgendes wird nach dem Klick auf "Wie heisst mein Fahrrad?" angezeigt:
-![Bicycle Notification](../../../docs/web/angular/images/bicycle-name-notification.png)
+
+![Bicycle Notification](../../../../docs/web/angular/images/bicycle-name-notification.png)
 
 
 Folgende Seite wird nach dem Klick auf "Mein Lieblingsfahrrad suchen" angezeigt:
 
-![Components Description](../../../docs/web/angular/images/second-page.png)
+![Components Description](../../../../docs/web/angular/images/second-page.png)
 
 ## Aufgabe 1.1
 Passe den bestehenden Code aus Aufgabe 1 so an, dass das Inputfeld ein `FormControl` ist. Zudem soll neu dieses Inputfeld als Suche funktionieren, das bedeutet das man der Funktion der Wert des Inputs übergeben kann.
@@ -149,12 +152,13 @@ So soll dann immer die Bilder zum Wert angezeigt werden und auch der Text "Mein 
 
 ## Aufgabe 2
 Erstelle ein neues Angular Projekt, dafür ist folgende Datenbankstruktur gegeben:
-![ERD](../../../docs/web/angular/images/bicycle-erd-diagram.png)
+
+![ERD](../../../../docs/web/angular/images/bicycle-erd-diagram.png)
 
 Folgende Anforderungen sind gegeben:
-- Erstelle für jede Entität des Models ein geeignetes Model.
-- Erstelle für jede Entität des Models einen Service.
-- Erstelle bei jedem Service Mockdaten.
+- Erstelle für jede Entität (ohne die Zwischentabelle `Bicycle_Type`) des Models eine geeignete Modell-Klasse.
+- Erstelle für jede Modell-Klasse einen Service.
+- Erstelle bei jedem Service Beispieldaten.
 - Behalte die Ordnerstruktur korrekt (Ordner für die Components, Ordner für die Services, etc.).
 - Der BicycleService enthält folgende Funktionen: `getBicycle(id: number)`, `getAllBicycle()` und `getFullBicycle(id: number)`. (Der Unterschied zwischen Bicycle und FullBicycle sollte sein das beim Full die Typen und Marke als String angegeben werden und bim Bicycle kann es nur die ID sein.)
 - Der BrandService enthält folgende Funktionen: `getBrand(id: number)` und `getBrandName(id: number)`.
