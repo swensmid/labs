@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Analoge Uhr</title>
+    <style>
+      #clock {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 auto;
+      }
+      #hour-hand, #minute-hand, #second-hand {
+        position: absolute;
+        background-color: black;
+        transform-origin: bottom center;
+      }
+      #hour-hand {
+        width: 8px;
+        height: 60px;
+        border-radius: 8px 8px 0 0;
+        margin-top: 18%;
+        margin-left: 50%;
+      }
+      #minute-hand {
+        width: 6px;
+        height: 80px;
+        border-radius: 6px 6px 0 0;
+        margin-top: 10%;
+        margin-left: 50%;
+      }
+      #second-hand {
+        background-color: red;
+        width: 2px;
+        height: 100px;
+        margin-left: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">
+      <div id="hour-hand"></div>
+      <div id="minute-hand"></div>
+      <div id="second-hand"></div>
+    </div>
+    
+    <script>
+      function updateClock() {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+        
+        const hourAngle = (hours % 12) * 30 + minutes / 2;
+        const minuteAngle = minutes * 6;
+        const secondAngle = seconds * 6;
+        
+        const hourHand = document.getElementById("hour-hand");
+        hourHand.style.transform = `rotate(${hourAngle}deg)`;
+        
+        const minuteHand = document.getElementById("minute-hand");
+        minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+        
+        const secondHand = document.getElementById("second-hand");
+        secondHand.style.transform = `rotate(${secondAngle}deg)`;
+      }
+      
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>
