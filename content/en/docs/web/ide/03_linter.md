@@ -55,7 +55,7 @@ ESLint ist ein äusserst beliebtes und leistungsstarkes statisches Code-Analyset
 
 ### ESLinkt installieren
 Bevor ESLint verwendet werden kann, muss es installiert werden (und bei Windows am besten noch den PC neustarten).
-Mit den folgenden drei Befehlen kann man es installiren:
+Mit den folgenden drei Befehlen kann man es installere:
 
 ```shell
 npm install eslint --save-dev

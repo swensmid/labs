@@ -7,6 +7,7 @@ date: 2022-04-19
 description: >
   Modul #F4 - JavaScript - Code im Browser auführen
 ---
+Bevor man mit dem neuen Kapitel JavaScript beginnen kann, sollte man nochmals das Kapitel [Node JS](../../ide/02_nodejs) durcharbeiten und sicherstellen das alles installiert ist.
 
 Jetzt wird es Zeit, dass du auch Programm-Logik auf deiner Website einbauen kannst. Dafür lernst du gleich die Programmiersprache JavaScript kennen, die von praktisch allen bekannten Browsern unterstützt wird.
 

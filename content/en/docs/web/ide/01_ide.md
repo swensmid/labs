@@ -42,7 +42,7 @@ Folgende Extensions sind praktisch für die Entwicklung von Webapps mit IntelliJ
     - Prettier
     - Rainbow Bracket
     - Key Promoter X
-    - ESLint (mit dem Command npm install --g eslint)
+    - ESLint (muss mittels npm instlliert werden, Anleitung befindet sich im Kapitel zu den Linter.)
     - LiveEdit 
 
 ## Vim
