@@ -1,7 +1,7 @@
 ---
 title: "Linter"
 linkTitle: "Linter"
-weight: 3
+weight: 2
 date: 2023-05-12
 description: >
     Hier wird erklärt was Linter sind und wie man diese benutzt.

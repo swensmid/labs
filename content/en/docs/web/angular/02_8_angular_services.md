@@ -17,18 +17,22 @@ Services können beispielsweise Daten von einem Backend-Server abrufen, eine ben
 
 ```typescript
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
-export class DataService {
+export class WeaponService {
+    private weapons: string[] = [
+        'Sword',
+        'Bow',
+        'Axe',
+        'Staff',
+        'Dagger'
+    ];
 
-    constructor(private http: HttpClient) { }
-
-    getData() {
-        return this.http.get('/api/data');
+    getWeapons(): string[] {
+        return this.weapons;
     }
-
 }
 ```
+

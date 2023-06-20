@@ -63,7 +63,7 @@ Die Ergebnisse der Operationen sollen dem Benutzer im HTML angezeigt werden.
 
 * Hierfür musst du eine Klasse `Island` in der Datei `island.js` mit genau EINEM Konstruktor erstellen.
 * Auf der HTML-Seite zeigst du alle Inseln an. Wenn eine Insel einen bestimmten Wert besitzt, wird dieser Wert angezeigt, ansonsten nicht. Wenn die Insel ein Bild besitzt, blendest du dieses ein.
-* Das nachfolgende  `const islands` darfst du **NICHT** abändern (auch keine geschweiften Klammern beim Import hinzufügen). Im For kommt der Code für das Anzeigen im HTML.
+* Das nachfolgende Script darfst du NICHT abändern (auch keine geschweiften Klammern beim Import hinzufügen).
 
 ```javascript
 import Island from "./island.js";

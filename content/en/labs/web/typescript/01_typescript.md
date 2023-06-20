@@ -12,7 +12,7 @@ description: >
 Erstellen Sie eine neue TypeScript-Projektstruktur und richten eine tsconfig.json-Datei ein, um den TypeScript-Compiler für das Projekt zu konfigurieren.
 
 1. Erstellen Sie ein neues Verzeichnis für Ihr TypeScript-Projekt. 
-2. Navigieren Sie in das Verzeichnis und Initialisieren Sie das Projekt mit den Node Befehlen. Diese können [hier](../../../docs/web/ide/02_nodejs#npm-commands) nachgelesen werden. 
+2. Navigieren Sie in das Verzeichnis und Initialisieren Sie das Projekt mit den Node Befehlen. Diese können [hier](../../../docs/web/ide_advanced/01_nodejs.md#npm-commands) nachgelesen werden. 
 4. Installieren Sie TypeScript. 
 5. Erstellen Sie eine `tsconfig.json`-Datei im Stammverzeichnis des Projekts. Und richten Sie diese anhand von folgenden Informationen korrekt ein:
    * ECMAScript-Version = es6

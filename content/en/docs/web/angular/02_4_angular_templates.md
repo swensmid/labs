@@ -17,8 +17,23 @@ In Angular ist das Template der Teil eines Components, der die Benutzeroberfläc
 Das Template kann jedoch mehr als nur HTML enthalten. Es kann auch Angularspezifische Syntax wie [Template Styling](../03_5_ts_stylesheet#template-styling), [Directives](../03_7_ts_directives), [Pipes](../04_2_ts_pipes), [Interpolationen](../04_1_ts_data_binding#interpolation) und [Bindings](../04_1_ts_data_binding) enthalten, die die Funktionalität und das Verhalten des Components bestimmen.
 
 ```html
-<div *ngIf="condition; else elseBlock">Content to render when condition is true.</div>
-<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+<div>
+    <h1>Hello, {{ name }}!</h1>
+
+    <div *ngIf="name === 'Dragon Warrior'; else otherName">
+        <p>Welcome to the battle against the enemy Angular!</p>
+
+        <p>May your path be filled with glory and triumph!</p>
+    </div>
+
+    <div #otherName>
+        <p>You are not the true Dragon Warrior. You are not worthy of this battle.</p>
+    </div>
+
+
+    <p>Additional content specific to all warriors...</p>
+    <p>Face your fears and embrace the challenges!</p>
+</div>
 ```
 
 ## Was ist das DOM
@@ -44,26 +59,32 @@ import { Component } from '@angular/core';
 @Component({
     // ..
 })
-export class AppComponent {
-  condition = true;
+export class GreetingComponent {
+    name: string = 'Dragon Warrior';
 }
 ```
 ```html
-    <body>
-        <ng-container *ngIf="condition; else elseTemplate">
-            <p>container</p>
-            <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
-        </ng-container>
+<div>
+    <h1>Hello, {{ name }}!</h1>
 
-        <ng-template #contentTemplate>
-            <p>contentTemplate</p>
-        </ng-template>
+    <ng-container *ngIf="name === 'Dragon Warrior'; else otherName">
+        <ng-container *ngTemplateOutlet="dragonWarrior"></ng-container>
+    </ng-container>
+    
+    <ng-template #dragonWarrior>
+        <p>Welcome to the battle against the enemy Angular!</p>
 
-        <ng-template #elseTemplate>
-            <p>elseTemplate</p>
-        </ng-template>
-    </body>
+        <p>May your path be filled with glory and triumph!</p>
+    </ng-template>
+
+    <ng-template #otherName>
+        <p>You are not the true Dragon Warrior. You are not worthy of this battle.</p>
+    </ng-template>
+
+
+    <p>Additional content specific to all warriors...</p>
+    <p>Face your fears and embrace the challenges!</p>
+</div>
 ```
-Wenn der obenstehende Code gerendert wurde, sieht man das im DOM nun nur der body-tag und die beiden p-tags zusehen sind, das `ng-container` und `ng-template` nicht.
+Wenn der obenstehende Code gerendert wurde, sieht man das im DOM nun nur der div-tag, den h1-tag und die beiden p-tags zusehen sind, das `ng-container` und `ng-template` nicht.
 ![DOM](../images/template-dom.png) 
-

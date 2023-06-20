@@ -154,6 +154,12 @@ Diese zwei kann man auch nach Belieben ändern.
 Beim Starten der Angular-Anwendung wird der Inhalt der `index.html`-Datei vom Webbrowser geladen. Der Angular-Bootstrap-Prozess findet das `<app-root>`-Element und ersetzt es durch den gerenderten Inhalt der Angular-Komponenten.
 
 
+## App Component
+Der "AppComponent" ist der Hauptcomponent einer Angular-Anwendung. Es handelt sich um die Wurzelcomponent, von der aus alle anderen Components und Elemente der Anwendung hierarchisch aufgebaut sind.
+
+Er wird automatisch während der Initialisierung der Anwendung erstellt und gerendert. Er dient als Container für das gesamte Anwendungslayout und ist der erste Component, die in der `index.html`-Datei der Anwendung geladen wird mittels dem `<app-root>`-Tag.
+
+
 ## Angular Best(Good)-Practices
 Angular bietet eine Reihe von Best Practices, die helfen können, die Angular-Anwendungen effizienter, wartbarer und skalierbarer zu gestalten. Hier sind einige wichtige Angular Best Practices:
 * **Verwendung der Angular CLI**: Die Angular CLI erstellt automatisch eine standardisierte Projektstruktur, die bewährte Praktiken und Konventionen folgt. Dies erleichtert die Organisation und Wartung des Codes, da Entwickler eine einheitliche Struktur erwarten können. Daher sollte zum Erstellen von neuen Dateien sollte auch immer die CLI verwendet werden. 

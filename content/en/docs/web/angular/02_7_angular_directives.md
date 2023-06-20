@@ -21,7 +21,8 @@ Es gibt drei Arten von Directives in Angular
 Components-Directives sind die am häufigsten verwendeten Directives in Angular. Sie erweitern das HTML durch die Definition von benutzerdefinierten HTML-Elementen und enthalten zugehörige Templates und Logik. Components-Direktiven sind im Wesentlichen Angular-Components.
 
 ```html
-<app-highlight [text]="'This text is highlighted!'" [color]="'yellow'"></app-highlight>
+<!--app-greeting.html-->
+<app-triumphs [Title]="'Triumphs'"></app-triumphs>
 ```
 
 ```typescript
@@ -30,23 +31,20 @@ import { Component, Input } from '@angular/core';
 @Component({
     // ..
 })
-export class HighlightComponent {
-    @Input() text: string;
-    @Input() color: string;
+export class TriumphsComponent {
+    @Input() title: string = "";
 }
 ```
 ```html
-<!--app-highlight.html-->
-<span [style.background-color]="color">{{ text }}</span>
+<!--app-triumphs.html-->
+<h1>{{ title }}</h1>
 ```
 
 ### Struktur-Directives
 Struktur-Directives sind Directives, die das DOM manipulieren und Elemente hinzufügen oder entfernen. Ein Beispiel für eine Struktur-Directive ist `*ngIf`, das ein Element ausblendet, wenn eine Bedingung nicht erfüllt ist.
 ```html
-<div>
-  <h1 *ngIf="showTitle">Hello, World!</h1>
-  <p *ngIf="showContent">This is some content.</p>
-</div>
+<!--app-greeting.html-->
+<app-triumphs *ngif="hasTriumphs" [title]="'Triumphs'"></app-triumphs>
 ```
 
 ```typescript
@@ -55,9 +53,11 @@ import { Component } from '@angular/core';
 @Component({
     // ..
 })
-export class ExampleComponent {
-    showTitle: boolean = true;
-    showContent: boolean = false;
+export class GreetingComponent {
+    // ..
+    triumphs: string[] = ['HTML', 'CSS', 'JavaScript', 'TypeScript'];
+    hasTriumphs: boolean = this.triumphs.length > 0;
+
 }
 ```
 
@@ -65,21 +65,20 @@ export class ExampleComponent {
 Attribut-Directives sind Directives, die das Verhalten von HTML-Elementen ändern, ohne sie zu ersetzen. Ein Beispiel für eine Attribut-Direktive ist ngClass, die es ermöglicht, CSS-Klassen basierend auf Bedingungen hinzuzufügen oder zu entfernen.
 
 ```html
-<p highlight>Yellow Text</p>
+<h1 appTriumphs>{{ title }}</h1>
 ```
 
 ```typescript
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
-    selector: '[highlight]'
+    selector: '[appTriumphs]'
 })
-export class HighlightDirective {
-    
-    constructor(private el: ElementRef) { }
-
-    ngOnInit() {
-        this.el.nativeElement.style.backgroundColor = 'yellow';
+export class TriumphsDirective {
+    constructor(private elementRef: ElementRef, private renderer: Renderer2) {
+        this.renderer.setStyle(this.elementRef.nativeElement, 'padding', '10px');
+        this.renderer.setStyle(this.elementRef.nativeElement, 'font-style', 'italic');
+        this.renderer.setStyle(this.elementRef.nativeElement, 'text-decoration', 'underline');
     }
 }
 ```
@@ -91,88 +90,103 @@ Die `*ngIf`-Direktive wird verwendet, um im Template eines Components Bedingunge
 
 Die Verwendung von `*ngIf` ermöglicht es, dynamisch Elemente in der View zu steuern.
 
+```html
+<!--app-greeting.html-->
+<app-triumphs *ngif="hasTriumphs" [title]="'Triumphs'"></app-triumphs>
+```
+
 ```typescript
 import { Component } from '@angular/core';
 
 @Component({
     // ..
 })
-export class BaseComponent {
-    showContent = true;
+export class GreetingComponent {
+    // ..
+    triumphs: string[] = ['HTML', 'CSS', 'JavaScript', 'TypeScript'];
+    hasTriumphs: boolean = this.triumphs.length > 0;
 
-    toggleContent() {
-        this.showContent = !this.showContent;
-    }
 }
-```
-```html
-<div *ngIf="showContent">This content will be displayed if showContent is true.</div>
-<button (click)="toggleContent()">Toggle Content</button>
 ```
 
 ### *ngFor
 Die `*ngFor`-Direktive wird verwendet, um eine Liste von Elementen im Template eines Components zu rendern. Mit `*ngFor` kann man über eine Datenquelle iterieren und für jedes Element den entsprechenden Code im Template generieren. Es ist besonders nützlich wenn man Kachel anzeigen möchte oder eine eine Liste mit User Objekten anzeigen möchte.
 
+```html
+<!--app-greeting.html-->
+<app-triumphs *ngIf="hasTriumphs" [title]="'Triumphs'" [triumphs]="triumphs"></app-triumphs>
+```
 ```typescript
 import { Component } from '@angular/core';
 
 @Component({
     // ..
 })
-export class MyComponent {
-    users = [
-        { name: 'John Doe', email: 'john@example.com' },
-        { name: 'Jane Smith', email: 'jane@example.com' },
-        { name: 'Bob Johnson', email: 'bob@example.com' },
-    ];
+export class GreetingComponent {
+    // ..
+    triumphs: string[] = ['HTML', 'CSS', 'JavaScript', 'TypeScript'];
+    hasTriumphs: boolean = this.triumphs.length > 0;
+
 }
 ```
 ```html
-<ul>
-  <li *ngFor="let user of users">
-    {{ user.name }} ({{ user.email }})
-  </li>
-</ul>
+<!--app-triumphs.html-->
+<div *ngFor="let triumph of triumphs">
+    <p>{{ triumph }}</p>
+</div>
+```
+```typescript
+import { Component, Input } from '@angular/core';
+
+@Component({
+  // ..
+})
+export class TriumphsComponent {
+  @Input() title: string = "";
+  @Input() triumphs: string[] = [];
+}
 ```
 
 Wenn man den Index bei einem `*ngFor` benötigt kann dieser sehr einfach angegeben werden. Dazu muss man nach dem `*ngFor` den Code `; let i = index` hinzufügen. Nun kann man in den Elementen innerhalb des `*ngFor` auf den Index der Elemente zu greifen.
-```typescript
-import { Component } from '@angular/core';
 
-@Component({
-    // ..
-})
-export class MyComponent {
-    users = [
-        { name: 'John Doe', email: 'john@example.com' },
-        { name: 'Jane Smith', email: 'jane@example.com' },
-        { name: 'Bob Johnson', email: 'bob@example.com' },
-    ];
-}
-```
 ```html
-<ul>
-  <li *ngFor="let user of users; let i = index">
-    {{ user.name }} ({{ user.email }}) ('index': {{ i }})
-  </li>
-</ul>
+<div *ngFor="let triumph of triumphs; let i = index">
+    <p>{{ triumph }}, {{ i }}</p>
+</div>
 ```
 
 ### *ngSwitch
 Das `ngSwitch`-Directive ermöglicht das bedingte Rendern von Inhalten auf der Grundlage eines Ausdrucks mit mehreren möglichen Werten. Es funktioniert ähnlich wie ein `switch` in anderen Programmiersprachen.
 
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    // ..
+})
+export class WeaponComponent {
+    weapons: string[] = ['sword'];
+}
+```
 ```html
-<div [ngSwitch]="selectedOption">
-  <ng-container *ngSwitchCase="'option1'">
-    <p>Option 1 ausgewählt</p>
-  </ng-container>
-  <ng-container *ngSwitchCase="'option2'">
-    <p>Option 2 ausgewählt</p>
-  </ng-container>
-  <ng-container *ngSwitchDefault>
-    <p>Keine Option ausgewählt</p>
-  </ng-container>
-</div>
+<div [ngSwitch]="weapons">
+    <div *ngSwitchCase="'sword'">
+      <p>You are wielding a mighty sword!</p>
+      <p>Defeat your enemies with precision and power.</p>
+    </div>
+    <div *ngSwitchCase="'bow'">
+      <p>You have a deadly bow and arrows!</p>
+      <p>Strike your foes from a distance with accuracy.</p>
+    </div>
+    <div *ngSwitchCase="'staff'">
+      <p>Your staff is a conduit of mystical energy!</p>
+      <p>Harness the power of magic to overcome your adversaries.</p>
+    </div>
+    <div *ngSwitchDefault>
+      <p>You have not chosen a weapon yet.</p>
+      <p>Find your destined weapon and embark on your epic journey.</p>
+    </div>
+  </div>
 ```
 
 ### ngClass
@@ -188,17 +202,19 @@ import { Component } from '@angular/core';
 @Component({
     // ..
 })
-export class AppComponent {
-  color: string = 'red';
-  colorCode: number = 10;
+export class GreetingComponent {
+    type: string = 'text';
 }
 ```
 ```html
-<div [ngClass]="{'red': color === 'red'}">Text</div>
+<div [ngClass]="{'text': type === 'text'}">Text</div>
 ```
 ```scss
-.red {
-  color: red;
+@import '_variables';
+
+.text {
+  color: $black;
+  font-family: Helvetica, sans-serif;
 }
 ```
 
@@ -209,21 +225,27 @@ import { Component } from '@angular/core';
 @Component({
     // ..
 })
-export class AppComponent {
-  color: string = 'red';
-  colorCode: number = 10;
+export class GreetingComponent {
+    type: string = 'text';
+    textLength: number = 10;
 }
 ```
 ```html
-<div [ngClass]="{'red': color === 'red', 'blue' : colorCode === 10 }">Text</div>
+<div [ngClass]="{'text': type === 'text', 'title' : textLength === 10 }">Text</div>
 ```
 ```scss
-.red {
-  color: red;
+@import '_variables';
+
+.text {
+  color: $black;
+  font-family: Helvetica, sans-serif;
 }
 
-.blue {
-  color: blue;
+.title {
+  color: $black;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
 }
 ```
 
@@ -235,19 +257,25 @@ import { Component } from '@angular/core';
 @Component({
     // ..
 })
-export class AppComponent {
-  colorCode: number = 10;
+export class GreetingComponent {
+    textLength: number = 10;
 }
 ```
 ```html
-<div [ngClass]="colorCode === 10 ? 'red' : 'blue'">Text</div>
+<div [ngClass]="textLength === 10 ? 'title' : 'text'">Text</div>
 ```
 ```scss
-.red {
-  color: red;
+@import '_variables';
+
+.text {
+  color: $black;
+  font-family: Helvetica, sans-serif;
 }
 
-.blue {
-  color: blue;
+.title {
+  color: $black;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
 }
 ```

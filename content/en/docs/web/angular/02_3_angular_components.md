@@ -46,7 +46,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./app-greeting.scss']
 })
 export class GreetingComponent {
-  name: string = 'John';
+  name: string = 'Dragon Warrior';
 }
 ```
 ```html

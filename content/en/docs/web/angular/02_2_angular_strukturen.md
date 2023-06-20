@@ -27,3 +27,106 @@ Die grundlegende Struktur einer Angular-Anwendung besteht aus folgenden Files:
 
 ![Angular](../images/architektur.png)  
 
+
+## Ordnerstruktur
+Die Ordnerstruktur in Angular kann nach persönlichen Präferenzen gewählt werden. Jedoch ist die unten folgenden Struktur die gängigste Best-Practices Variante und sollte daher auch immer so angewendet werden.
+Die Struktur bietet eine klare Trennung der verschiedenen Artefakte einer Angular-Anwendung und fördert die Modularität, Wiederverwendbarkeit und Testbarkeit des Codes.
+```text
+├── e2e
+│   └── ...
+├── src
+│   ├── app
+│   │   ├── components
+│   │   │   ├── component1
+│   │   │   │   ├── component1.component.ts
+│   │   │   │   ├── component1.component.html
+│   │   │   │   ├── component1.component.scss
+│   │   │   │   └── component1.component.spec.ts
+│   │   │   ├── component2
+│   │   │   │   ├── component2.component.ts
+│   │   │   │   ├── component2.component.html
+│   │   │   │   ├── component2.component.scss
+│   │   │   │   └── component2.component.spec.ts
+│   │   │   └── ...
+│   │   ├── services
+│   │   │   ├── service1
+│   │   │   │   ├── service1.service.ts
+│   │   │   │   └── service1.service.spec.ts
+│   │   │   ├── service2
+│   │   │   │   ├── service2.service.ts
+│   │   │   │   └── service2.service.spec.ts
+│   │   │   └── ...
+│   │   ├── directives
+│   │   │   ├── directive1
+│   │   │   │   ├── directive1.directive.ts
+│   │   │   │   └── directive1.directive.spec.ts
+│   │   │   ├── directive2
+│   │   │   │   ├── directive2.directive.ts
+│   │   │   │   └── directive2.directive.spec.ts
+│   │   │   └── ...
+│   │   ├── shared
+│   │   │   ├── shared1
+│   │   │   ├── shared2
+│   │   │   └── ...
+│   │   ├── models
+│   │   │   ├── model1.ts
+│   │   │   ├── model2.ts
+│   │   │   └── ...
+│   │   ├── pipes
+│   │   │   ├── pipe1
+│   │   │   │   ├── pipe1.pipe.ts
+│   │   │   │   └── pipe1.pipe.spec.ts
+│   │   │   ├── pipe2
+│   │   │   │   ├── pipe2.pipe.ts
+│   │   │   │   └── pipe2.pipe.spec.ts
+│   │   │   └── ...
+│   │   ├── guards
+│   │   │   ├── guard1
+│   │   │   │   ├── guard1.guard.ts
+│   │   │   │   └── guard1.guard.spec.ts
+│   │   │   ├── guard2
+│   │   │   │   ├── guard2.guard.ts
+│   │   │   │   └── guard2.guard.spec.ts
+│   │   │   └── ...
+│   │   ├── modules
+│   │   │   ├── module1
+│   │   │   │   ├── module1.module.ts
+│   │   │   │   └── module1.module.spec.ts
+│   │   │   ├── module2
+│   │   │   │   ├── module2.module.ts
+│   │   │   │   └── module2.module.spec.ts
+│   │   │   └── ...
+│   │   ├── utilities
+│   │   │   ├── utility1.ts
+│   │   │   ├── utility2.ts
+│   │   │   └── ...
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.spec.ts
+│   │   ├── app.module.ts
+│   │   └── app.routing.module.ts
+│   ├── assets
+│   │   ├── images
+│   │   ├── fonts
+│   │   └── ...
+│   ├── styles
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   ├── main.scss
+│   │   └── ...
+│   ├── environments
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.scss
+│   └── ...
+├── angular.json
+├── package.json
+├── tsconfig.json
+├── tslint.json
+└── ...
+
+```

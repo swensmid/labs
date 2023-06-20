@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Islands</title>
-    <style></style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Islands</title>
+  <style></style>
+</head>
 
-  <body>
-    <div id="islandsContainer"></div>
-    <script src="solution 6.js" type="module"></script>
-  </body>
+<body>
+<div id="islandsContainer"></div>
+<script src="./solution 6.js" type="module"></script>
+<script type="module">
+  import {islands} from "./solution 6.js";
+
+  const islandsContainer = document.getElementById("islandsContainer");
+
+  for (const island of islands) {
+    console.log(island);
+    const islandElement = document.createElement("div");
+    islandElement.classList.add("island");
+
+    const nameElement = document.createElement("h3");
+    nameElement.textContent = island.name;
+    islandElement.appendChild(nameElement);
+
+    if (island.country) {
+      const countryElement = document.createElement("p");
+      countryElement.textContent = `Country: ${island.country}`;
+      islandElement.appendChild(countryElement);
+    }
+
+    if (island.imageUrl) {
+      const imageElement = document.createElement("img");
+      imageElement.src = island.imageUrl;
+      islandElement.appendChild(imageElement);
+    }
+
+    islandsContainer.appendChild(islandElement);
+  }
+</script>
+</body>
 </html>

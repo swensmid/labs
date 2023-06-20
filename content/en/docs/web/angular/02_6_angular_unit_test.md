@@ -25,7 +25,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'test-project';
+    title = 'docs-project';
 }
 ```
 
@@ -47,13 +47,18 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     });
 
-    it(`should have as title 'test-project'`, () => {
+    it(`should have as title 'docs-project'`, () => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.componentInstance;
-        expect(app.title).toEqual('test-project');
+        expect(app.title).toEqual('docs-project');
     });
 
-    // ...
+    it('should render title', () => {
+        const fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        const compiled = fixture.nativeElement as HTMLElement;
+        expect(compiled.querySelector('.content span')?.textContent).toContain('docs-project app is running!');
+    });
 });
 ```
 

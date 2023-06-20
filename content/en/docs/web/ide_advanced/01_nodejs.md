@@ -1,7 +1,7 @@
 ---
 title: "Node.js"
 linkTitle: "Node.js"
-weight: 2
+weight: 1
 date: 2023-05-12
 description: >
     In diesem Kapitel wird Node.js genauer erläutert.
