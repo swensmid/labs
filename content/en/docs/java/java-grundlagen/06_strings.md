@@ -9,7 +9,7 @@ description: >
 ## Ziele
 * Ich kenne die Klasse `String`.
 
-#### String
+## String
 Eine Variable, die eine Zeichenkette enthält, hat den Typ String.
 ```java
 String hello = "Hello, Java";
@@ -17,7 +17,7 @@ String hello = "Hello, Java";
 
 Diese Zeichenkette besteht aus 11 Zeichen, einschließlich eines Leerzeichens. Wie wir hier ebenfalls sehen, müssen String-Literale von doppelten Anführungszeichen umgeben sein. Ein Objekt des Typs String ist unveränderlich, die Werte innerhalb eines Strings können also nach dessen Erstellung nicht mehr verändert werden.
 
-##### Methoden
+### Methoden
 Der folgende Code zeigt die Verwendung einiger Methoden der Klasse String. Alle Methoden sind in der API unter [java.lang.String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) zu finden.
 ```java
 public class StringMethoden {

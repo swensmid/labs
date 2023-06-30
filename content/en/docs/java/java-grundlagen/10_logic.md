@@ -15,7 +15,7 @@ description: >
 
 Mathe in Java ist sehr einfach. Beachte, dass mathematische Java-Operationen einer bestimmten Reihenfolge folgen (Punkt-Operationen vor Strich-Operationen)
 
-#### Arithmetische Operatoren
+### Arithmetische Operatoren
 | Symbol | Arithmetische Operation                 | Beispiel                              |
 |--------|-----------------------------------------|---------------------------------------|
 | +      | Addition                                | ```int sum = 2 + 3;```                |
@@ -26,7 +26,7 @@ Mathe in Java ist sehr einfach. Beachte, dass mathematische Java-Operationen ein
 | ++     | Post und Prä-Inkrement (1 addieren)     | ```count++; // (count = count + 1)``` |
 | - -    | Post und Prä-Dekrement (1 subtrahieren) | ```count--; // (count = count – 1)``` |
 
-#### Post- und Prä-Inkrement
+### Post- und Prä-Inkrement
 Das Inkrementieren und Dekrementieren von Variablen ist eine sehr häufige Operation.
 Von diesem Operator gibt es zwei Varianten:
 * Er kann vor der Variable stehen, wie in ```++i``` (Präfix-Schreibweise) oder
@@ -34,27 +34,27 @@ Von diesem Operator gibt es zwei Varianten:
 
 Der Präfix-Operator verändert die Variable vor der Auswertung der Programmzeile, und der Postfix-Operator ändert sie nach der Auswertung der Programmzeile. Mit anderen Worten: Nutzen wir einen Präfix-Operator, so wird die Variable erst herauf- bzw. heruntergesetzt und dann der Wert geliefert. Und beim Post-Operator ist es genau umgekehrt.
 
-#### Postinkrement
+### Postinkrement
 ```java
 int i = 5;
 int c = i++; // c = 5
 // ab hier ist i = 6
 ```
 
-#### Präinkrement
+### Präinkrement
 ```java
 int i = 5;
 int d = ++i; // d = 6
 ```
 
-#### Postdekrement
+### Postdekrement
 ```java
 int i = 5;
 int e = i--; // e = 5
 // ab hier ist i = 4
 ```
 
-#### Prädekrement
+### Prädekrement
 ```java
 int i = 5;
 int f = --i; // f = 4
@@ -62,7 +62,7 @@ int f = --i; // f = 4
 
 ---
 
-#### Vegleichsoperatoren
+### Vegleichsoperatoren
 Die Ergebnisse dieser Operationen sind stets Boolean-Werte.
 | Symbol | Vergleich | Beispiel |
 | --- | --- | --- |
@@ -73,7 +73,7 @@ Die Ergebnisse dieser Operationen sind stets Boolean-Werte.
 | == | gleich | 2 == 2 |
 | != | ungleich | 2 != 4 |
 
-#### Boolsche Operatoren
+### Boolsche Operatoren
 Diese Operatoren basieren auf der boolschen Algebra. Daher arbeiten boolsche Operatoren direkt mit boolschen Werten. Es gibt vier Arten von boolschen Operatoren. Schauen wir uns zunächst ihre Symbole und deren Inhalt in der folgenden Tabelle an, bevor wir erläutern, welche Funktionen sie ausführen.
 | Symbol | Boolsche Operation | Erklärung |
 | --- | --- | --- |

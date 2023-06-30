@@ -13,7 +13,7 @@ description: >
 * Ich kenne die Methode `System.out.println` und kann sie anwenden.
 
 
-#### Cheatsheet zum Herunterladen
+### Cheatsheet zum Herunterladen
 [Core Java Cheatsheet](../../java-grundlagen/cheatsheet.pdf)
 
 ---

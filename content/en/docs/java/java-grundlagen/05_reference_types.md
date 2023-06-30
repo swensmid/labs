@@ -7,7 +7,7 @@ description: >
 ---
 
 
-### Referenztypen
+## Referenztypen
 Nebst primitiven Datentypen gibt es Referenzdatentypen. Eine Variable diesen Typs enthält nicht die Werte selbst wie eine Variable primitiven Typs, sondern nur einen Verweis (Referenz) auf den  
 Speicherort der Daten. Der Standardwert von Referenzvariablen ist null, welcher besagt, dass die Variable auf kein Objekt verweist.
 

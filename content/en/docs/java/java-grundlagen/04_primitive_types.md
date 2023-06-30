@@ -6,13 +6,13 @@ description: >
   Modul #J1
 ---
 
-## Ziele
+## Ziele
 * Ich kenne die primitiven Datentypen in Java: `boolean`, `byte`, `short`, `int`, `long`, `double`, `float`, `char`.
 
 
-### Primitive Datentypen
+## Primitive Datentypen
 
-#### Integraler Datentyp
+### Integraler Datentyp
 Integrale Datentypen sind immer ganze Zahlen, sie besitzen also keine Nachkommastellen.
 Die folgenden Datentypen speichern ganzzahlige Werte, sie unterscheiden sich nur in ihrer Grösse:
 | Datentyp | Speicherbedarf | Bereich |
@@ -30,7 +30,7 @@ int count = 0;
 int million = 1_000_000;
 ```
 
-#### Gleitkomma-Datentyp
+### Gleitkomma-Datentyp
 Gleitkomma-Datentypen speichern wie der Name bereits sagt, Zahlen mit Nachkommastellen. Diese Zahlen besitzen nur eine bestimmte Genauigkeit, sie dürfen also nicht als unendlich genau betrachtet werden.
 Die folgenden Datentypen speichern Zahlen mit Nachkommastellen, sie unterscheiden sich in ihrer Grösse und der Art und Weise wie sie innerhalb von Java abgelegt werden:
 | Datentyp | Speicherbedarf | Bereich | Interne Ablage |
@@ -46,7 +46,7 @@ double area = 16.48739d;
 
 Trotz Nachkommastellen dürfen Fliesskommzahlen des Typs float niemals zur Berechnung von Währungen verwendet werden. Innerhalb von Java wird ein float stets als Dezimalbruch geführt und die Ungenauigkeit verunmöglicht es diesen Datentyp für Währungsrechnungen zu verwenden.
 
-#### Zeichen-Datentyp
+### Zeichen-Datentyp
 
 Ein **char** ist ein (vorzeichenloser) 16-Bit-Integer-Datentyp, der ein einzelnes Zeichen darstellt. Dieser Datentyp erlaubt die Repräsentation von Zeichen im so genannten Unicode-Zeichensatz.
 
@@ -72,12 +72,12 @@ char point = '.';
 letter++; // 'b'
 ```
 
-##### _Don’t get confused:_
+#### _Don’t get confused:_
 * 123 ist ein Integer, "123" ist ein String;
 * 'A' ein Zeichen (char), "A" ist ein String;
 * '1' ist ein Zeichen (char), 1 ist ein Integer;
 
-#### Logischer Datentyp
+### Logischer Datentyp
 Dieser Datentyp bezieht sich nur auf die zwei Werte _true_ und _false_.
 ```java
 boolean done = false;

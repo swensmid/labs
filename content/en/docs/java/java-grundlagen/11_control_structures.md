@@ -15,10 +15,10 @@ description: >
 Kontrollstrukturen dienen dazu, den Ablauf eines Programms zu steuern.
 Damit bietet eine Kontrollstruktur die Möglichkeit, Programmteile nur unter gewissen Bedingungen ( → bedingte Anweisungen) auszuführen oder Programmteile zu wiederholen ( → Schleifen).
 
-#### Bedingte Anweisungen
+### Bedingte Anweisungen
 Eine bedingte Anweisung ist eine Konstruktion, mit der ein Programm abhängig vom Wert eines boolschen Ausdrucks (true oder false) unterschiedliche Wege geht.
 
-##### If-Statement
+#### If-Statement
 Die einfachste Form der bedingten Anweisung besteht aus dem Schlüsselwort if, einem boolschen Ausdruck und einem Block.
 ```java
 if (expression) {
@@ -27,7 +27,7 @@ if (expression) {
 ```
 Wenn der Ausdruck true ist, werden die Anweisungen im Codeblock ausgeführt. Andernfalls werden sie übersprungen.
 
-##### If-Else Statement
+#### If-Else Statement
 Der obige if-Fall kann mit dem Schlüsselwort else erweitert werden, um alternative Aktionen auszuführen, wenn der Ausdruck false ist.
 ```java
 if (expression) {
@@ -48,7 +48,7 @@ if (num % 2 == 0) {
 ```
 Da eine Zahl nur gerade oder ungerade sein kann, wird nur eine der beiden Ausgaben gemacht.
 
-##### Else-If-Statements
+#### Else-If-Statements
 Ein Else-Statement kann durch ein If-Statement erweitert werden.
 ```java
 if (expression0) {
@@ -77,7 +77,7 @@ if (dollars < 1000) {
 }
 ```
 
-##### Switch-Statement
+#### Switch-Statement
 Die Switch-Anweisung bietet eine Möglichkeit, basierend auf dem Wert einer einzelnen Variablen (kein Ausdruck!) zwischen mehreren Fällen zu wählen. Die Variable kann eine Ganzzahl, ein Zeichen, eine Zeichenfolge oder eine Aufzählung sein.
 
 ```java
@@ -100,10 +100,10 @@ switch (variable) {
 Die Schlüsselwörter switch und case werden hier immer benötigt. Die Schlüsselwörter break und default sind optional. Das Schlüsselwort break verlässt die Switch-Anweisung.
 Wenn ein Fall nicht über das Keyword _break_ verfügt, wird auch der darauffolgende Fall ausgewertet. Dies ist spannend, um die einzelnen Auswertungen verketten zu können. Der Default-Fall wird ausgewertet, wenn kein Fall mit dem Variablenwert übereinstimmt.
 
-#### Schleifen (Loops)
+### Schleifen (Loops)
 Manchmal müssen wir einen Codeblock für eine bestimmte Anzahl wiederholen. Zu diesem Zweck stellt Java die Schleife bereit. Diese Schleife wird häufig verwendet, um über einen Wertebereich oder durch ein Array zu iterieren. For-Loops arbeiten mit einem Schleifenzähler, welcher sehr gut für Indizes von Arrays verwendet werden kann. Bei allen Schleifen ist Vorsicht geboten, da es rasch zu einer unendlichen Anzahl von Ausführungen kommen kann.
 
-##### For-Loop
+#### For-Loop
 ```java
 for (initialization; condition; modification) {
     // do something
@@ -138,7 +138,7 @@ for (int i = startIncl; i < endExcl; i++) {
 System.out.println(sum); // Output: 55
 ```
 
-##### For-Each Loop
+#### For-Each Loop
 Der For-Each-Loop durchläuft alle Elemente eines Arrays oder einer Collection. Die Angaben aus dem For-Loop werden durch eine Schleifenvariable und ein Doppelpunkt ersetzt.
 ```java
 int[] numbers = { 125, 381, 98, 12, 235 };
@@ -149,7 +149,7 @@ for (int number: numbers) {
 ```
 Der gezeigte Loop wird also fünfmal ausgeführt und der Wert der Variable _number_ nimmt bei jedem Durchlauf den jeweils nächsten Wert aus dem Array an.
 
-##### While-Loop
+#### While-Loop
 Die while- Schleife besteht aus einem Codeblock und einer Bedingung (einem booleschen Ausdruck). Wenn die Bedingung erfüllt ist, wird der Code innerhalb des Blocks ausgeführt. Dieser Code wird solange wiederholt, bis die Bedingung nicht mehr erfüllt ist.
 ```java
 while (condition) {
@@ -169,7 +169,7 @@ while (i < 5) {
 // Output: 0 1 2 3 4
 ```
 
-##### Do-While Loop
+#### Do-While Loop
 Die Do-While-Schleife besteht aus einem Codeblock und einer Bedingung (einem boolschen Ausdruck) am Ende. Im Gegensatz zur While-Schleife wird die Do-While-Schleife mindestens einmal ausgeführt, da die Bedingung am Ende steht.
 ```java
 do {
