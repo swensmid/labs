@@ -6,6 +6,9 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich weiss, was Datentypen sind.
+
 
 ## Datentypen
 In Java sind Variablen stark typisiert. Das heisst, dass alle Variablen bei ihrer Erstellung mit einem Datentyp versehen werden müssen.

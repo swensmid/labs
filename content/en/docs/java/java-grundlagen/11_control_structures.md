@@ -6,6 +6,11 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich weiss, was eine bedingte Anweisung ist und kann sie korrekt anwenden.
+* Ich kann eine Schleife programmieren: `for`, `foreach`, `while` und `do-while`.
+* Ich kenne die `switch`-Anweisung.
+
 ## Kontrollstrukturen
 Kontrollstrukturen dienen dazu, den Ablauf eines Programms zu steuern.
 Damit bietet eine Kontrollstruktur die Möglichkeit, Programmteile nur unter gewissen Bedingungen ( → bedingte Anweisungen) auszuführen oder Programmteile zu wiederholen ( → Schleifen).

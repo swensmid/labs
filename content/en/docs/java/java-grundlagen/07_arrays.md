@@ -6,6 +6,10 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich kenne Arrays und kann diese instantiieren, ihnen Werte von Indexen entnehmen und Werte an Indexe zuweisen.
+
+
 #### Arrays
 
 ##### Definition
@@ -53,7 +57,7 @@ Dieser Code deklariert die Variable _words_, erstellt das Array-Objekt jedoch no
 ```java
 String[] words = new String[5];
 ```
-Damit wird ein Array-Objekt der Länge 5 instanziiert. Die fünf Elemente dieses Arrays wurden mit Standardwerten initialisiert. Bei einem Array des Datentyps String ist der Default-Wert null. Alle Werte im Array werden also mit null aufgefüllt.
+Damit wird ein Array-Objekt der Länge 5 instantiiert. Die fünf Elemente dieses Arrays wurden mit Standardwerten initialisiert. Bei einem Array des Datentyps String ist der Default-Wert null. Alle Werte im Array werden also mit null aufgefüllt.
 
 Wir können auch direkt die Werte der Array-Elemente angeben:
 ```java

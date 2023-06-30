@@ -6,6 +6,9 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich kann eine Eingabe von der Konsole lesen und in einer Variablen speichern.
+
 
 ## Scanner
 

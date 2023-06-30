@@ -6,6 +6,9 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich kenne die Klasse `String`.
+
 #### String
 Eine Variable, die eine Zeichenkette enthält, hat den Typ String.
 ```java

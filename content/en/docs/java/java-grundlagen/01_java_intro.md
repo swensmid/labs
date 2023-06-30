@@ -6,6 +6,12 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich weiss, dass jede Anweisung mit einem Strichpunkt abgeschlossen werden muss.
+* Ich weiss, dass geschweifte Klammern einen Block definieren und ich verwende sie in jeder Kontrollstruktur, um die Code-Blocks voneinander abzugrenzen (lieber zu viel klammern als zu wenig).
+* Ich kenne die `main`-Methode und weiß, warum eine Applikation nur EINE Main-Methode haben sollte.
+* Ich kenne die Methode `System.out.println` und kann sie anwenden.
+
 
 #### Cheatsheet zum Herunterladen
 [Core Java Cheatsheet](../../java-grundlagen/cheatsheet.pdf)

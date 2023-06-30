@@ -7,6 +7,16 @@ description: >
 ---
 
 
+## Ziele
+* Ich kenne den Unterschied zwischen statischen und nicht statischen Elementen.
+* Ich weiss, wann ich das Schlüsselwort static verwenden sollte und wann nicht.
+* Ich kenne den Zugriff auf statische und nicht statische Elemente.
+* Ich weiss, was eine statische Methode ist und kann sie aufrufen.
+* Ich weiss, was eine Utility-Klasse ist und kenne deren wichtigste Bestandteile.
+* Ich verstehe den Unterschied zwischen Methoden mit und ohne Rückgabewert.
+* Ich kann eine Methodensignatur für Methoden mit und ohne Rückgabewert richtig schreiben.
+* Ich kann Methoden schreiben, die Parameter entgegennehmen.
+
 ## Static / Non-Static
 Statische Elemente (Variablen und Methoden) existieren innerhalb des Java-Ökosystems pro Klasse nur einmal.
 Es spielt also keine Rolle wie viele Objekte einer Klasse erzeugt werden, eine statische Variable bleibt über alle Instanzen stets gleich.

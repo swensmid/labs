@@ -6,6 +6,10 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich weiss, was Variablen sind.
+* Ich kann eine Variable deklarieren und initialisieren.
+
 
 ## Variablen
 

@@ -6,6 +6,11 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich kann arithmetische Ausdrücke schreiben: Addition, Subtraktion, Multiplikation, Division, Modulo (Rest einer Division).
+* Ich kenne die relationalen Operatoren: `==`, `>=`, `<=`, `>`, `<`, `!=`.
+* Ich kenne die booleschen Operatoren: `&&` (AND), `||` (OR), `!` (NOT), `^`(XOR).
+
 ## Mathematik & Logik
 
 Mathe in Java ist sehr einfach. Beachte, dass mathematische Java-Operationen einer bestimmten Reihenfolge folgen (Punkt-Operationen vor Strich-Operationen)

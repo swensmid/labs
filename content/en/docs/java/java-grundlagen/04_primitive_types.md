@@ -6,6 +6,9 @@ description: >
   Modul #J1
 ---
 
+## Ziele
+* Ich kenne die primitiven Datentypen in Java: `boolean`, `byte`, `short`, `int`, `long`, `double`, `float`, `char`.
+
 
 ### Primitive Datentypen
 
