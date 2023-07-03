@@ -26,7 +26,7 @@ einfachsten, nicht weiter unterteilbaren Bestandteile zu zerlegen.
 
 In der ersten Normalform sollte jede Zelle in einer Tabelle nur einen einzigen Wert enthalten. Mehrwertige Attribute 
 oder Attribute, die wiederholte Gruppen von Werten enthalten, sind nicht erlaubt. Wenn mehrere Werte zu einem Attribut 
-gehören, müssen sie in separate Tabellen ausgelagert werden.
+gehören, müssen sie in separate Spalten oder sogar in separate Tabellen ausgelagert werden.
 
 Nun können wir ein Beispiel betrachten:
 
@@ -104,7 +104,7 @@ alle Nicht-Schlüsselattribute funktional von einem vollständigen Teil des Prim
 funktionalen Abhängigkeiten untereinander aufweisen.
 
 Um die 3NF zu erreichen, müssen die Daten in mehrere Tabellen aufgeteilt werden, wobei jede Tabelle einen spezifischen 
-Informationsaspekt repräsentiert. Diese Tabellen werden dann über gemeinsame Schlüssel verknüpft, um Beziehungen 
+Informationsaspekt repräsentiert. Diese Tabellen werden dann über gemeinsame Schlüssel (also über sog. Fremdschlüssel) verknüpft, um Beziehungen 
 zwischen den Daten herzustellen.
 
 Nun können wir ein Beispiel betrachten:
@@ -153,7 +153,7 @@ Die Spalten der Tabellen könnten wie folgt aussehen:
 
 Nach dieser Aufteilung ist bereits die zweite Normalform erreicht. Um die dritte Normalform also zu erreichen müssen wir
 alle Spalten entfernen, die abhängig von Nichtschlüssel-Attributen sind. In unserem Beispiel wäre dies der Gesamtpreis 
-i der Bestellungstabelle. Dieser Preis kann anhand der Bestellmenge und dem Produktpreis berechnet werden und ist 
+in der Bestellungstabelle. Dieser Preis kann anhand der Bestellmenge und dem Produktpreis berechnet werden und ist 
 deshalb nicht nötig. Je nach Schema kann die dritte Normalform auch negative Auswirkungen auf die Performance haben, 
 da keine berechneten Werte gespeichert werden dürfen. Wenn wir die Änderung in unserem Beispiel vornehmen würde die 
 Tabelle schlussendlich so aussehen:
