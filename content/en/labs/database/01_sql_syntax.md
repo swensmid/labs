@@ -1,7 +1,8 @@
 ---
 title: "SQL Syntax"
 linkTitle: "SQL Syntax"
-weight: 3
+type: docs
+weight: 2
 ---
 
 ## Übung 1
@@ -22,11 +23,12 @@ Hier sind einige grundlegende Informationen, die dir helfen sollen, ein ERD für
     - Eine Bestellung kann mehrere Positionen enthalten, und jede Position ist einem bestimmten Produkt zugeordnet. 
     Eine Position enthält Informationen wie die Produktmenge.
 
-Erstelle das ERD mithilfe von Draw.io und schaue das fertige ERD mit einem Coach an, um Feedback dazu zu erhalten.
+Erstelle das ERD mithilfe von Draw.io so, dass die 3NF erreicht wird. Schaue anschliessend das fertige ERD mit einem 
+Coach an, um Feedback dazu zu erhalten.
 
 ## Übung 2
-Erstelle anhand dieses ERDs eine Datenbank. Verwende hierbei die deiner Meinung nach richtigen Datentypen. Schau deine
-fertige Datenbank mit einem Coach an.
+Erstelle anhand dieses ERDs eine Datenbank. Verwende hierbei die deiner Meinung nach richtigen Datentypen. Die Datenbank
+soll die 3NF erreichen. **Achtung!** das ERD ist nicht in der 3NF. Schau deine fertige Datenbank mit einem Coach an.
 
 ![ERD Zoo](../images/Zoo-ERD.png)
 
