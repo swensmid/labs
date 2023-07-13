@@ -29,7 +29,7 @@ NgRx besteht aus verschiedenen Kernkonzepten:
 
 ## Installation
 Um NgRx in ein Angular-Projekt zu installieren, kann man die folgenden Schritte ausführen:
-1. Sicherstelle, dass Node.js und npm (Node Package Manager) auf dem Computer installiert ist. 
+1. Sicherstelle, dass Node.js und npm (Node Package Manager) auf dem Computer installiert ist. (Kann mit `npm -v`erledigt werden.)
 2. Nun ein Terminal öffnen oder eine andere Shell und navigiere zum Hauptverzeichnis des Projekts. 
 3. Folgenden Befehl ausführen, um NgRx zu installieren:
 ```shell

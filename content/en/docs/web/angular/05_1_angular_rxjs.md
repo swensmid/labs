@@ -23,6 +23,14 @@ Das zentrale Konzept von RxJS ist das Observable-Pattern. Ein Observable ist ein
 
 Mit RxJS kannst du Observable-Ströme transformieren, filtern, kombinieren und verwalten, indem du eine Kette von Operatoren auf die Observable anwendest. Das Ergebnis dieser Verarbeitung ist ein neuer Observable-Strom, der die transformierten Daten oder Ereignisse ausgibt.
 
+## Installation
+Um RxJS in ein Angular-Projekt zu installieren, kann man die folgenden Schritte ausführen:
+1. Sicherstelle, dass Node.js und npm (Node Package Manager) auf dem Computer installiert ist. (Kann mit `npm -v`erledigt werden.)
+2. Nun ein Terminal öffnen oder eine andere Shell und navigiere zum Hauptverzeichnis des Projekts.
+3. Folgenden Befehl ausführen, um NgRx zu installieren:
+```shell
+npm install rxjs
+```
 
 ## Observables
 Wie schon ein wenig erwähnt ist ein Observable eine Art von Datenstrom, der Werte oder Ereignisse asynchron und über einen bestimmten Zeitraum hinweg ausgibt. Ein Observable kann auf Ereignisse wie Benutzerinteraktionen, Datenbankabfragen, API-Aufrufe und mehr reagieren und diese verarbeiten.

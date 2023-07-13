@@ -47,15 +47,19 @@ import { FormControl } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    name: FormControl = new FormControl('');
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm: FormControl = new FormControl('');
+    
+    // ..
 }
 ```
 ```html
 <div>
-    <label for="name">Name: </label>
-    <input id=name type="text" [formControl]="name">
-    <p>Value: {{ name.value }}</p>
+    <label for="triumph">Titel: </label>
+    <input id=triumph type="text" [formControl]="triumphForm">
+    <p>Value: {{ triumphForm.value }}</p>
 </div>
 ```
 
@@ -68,20 +72,24 @@ import { FormControl } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    name: FormControl = new FormControl('default name');
+export class TriumphsComponent implements AfterViewInit {
+    // ..
 
-    updateName() {
-        this.name.setValue('Peter');
+    triumphForm: FormControl = new FormControl('default Title');
+
+    // ..
+    
+    updateTitle() {
+        this.triumphForm.setValue('Triumphs');
     }
 }
 ```
 ```html
 <div>
-    <label for="name">Name: </label>
-    <input id=name type="text" [formControl]="name">
-    <p>Value: {{ name.value }}</p>
-    <button type="button" (click)="updateName()">Update Name</button>
+    <label for="triumph">Titel: </label>
+    <input id=triumph type="text" [formControl]="triumphForm">
+    <p>Value: {{ triumphForm.value }}</p>
+    <button type="button" (click)="updateTitle()">Update Title</button>
 </div>
 ```
 
@@ -93,21 +101,25 @@ import { FormControl } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    name: FormControl = new FormControl('default name');
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm: FormControl = new FormControl('default Title');
 
     constructor() {
-        this.name.valueChanges.subscribe((value) => {
+        this.triumphForm.valueChanges.subscribe((value) => {
             console.log(value);
         })
     }
+    
+    // ..
 }
 ```
 ```html
 <div>
-    <label for="name">Name: </label>
-    <input id=name type="text" [formControl]="name">
-    <p>Value: {{ name.value }}</p>
+    <label for="triumph">Titel: </label>
+    <input id=triumph type="text" [formControl]="triumphForm">
+    <p>Value: {{ triumphForm.value }}</p>
 </div>
 ```
 
@@ -124,27 +136,33 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    profileForm: FormGroup = new FormGroup({
-        firstName: new FormControl(''),
-        lastName: new FormControl(''),
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm: FormGroup = new FormGroup({
+        name: new FormControl(''),
+        yearOfAchieving: new FormControl('')
     });
 
     constructor() {
-        this.profileForm.valueChanges.subscribe((value) => {
-            console.log(value) // {firstName: '', lastName: ''}
+        this.triumphForm.valueChanges.subscribe((value) => {
+            console.log(value); // {name: '', yearOfAchieving: ''}
         })
     }
+    
+    // ..
 }
 ```
 ```html
-<form [formGroup]="profileForm">
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
+<form [formGroup]="triumphForm">
+    <label for="name">Title Name: </label>
+    <input id="name" type="text" formControlName="name">
 
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
+    <label for="yearOfAchieving">Year of Achieving: </label>
+    <input id="yearOfAchieving" type="number" formControlName="yearOfAchieving">
 </form>
+<p>Value Title Name: {{ triumphForm.value.name }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.yearOfAchieving }}</p>
 ```
 
 Es ist auch möglich FormGroup innerhalb einer FormGroup zu verwenden und so das gesamte verschachteln, um komplexe Forms mit hierarchischer Struktur zu erstellen. Dies funktioniert genau gleich hier muss dann einfach die zweite FormGroup auch als Key-Value angegeben werden. 
@@ -157,11 +175,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    profileForm: FormGroup = new FormGroup({
-        firstName: new FormControl(''),
-        lastName: new FormControl(''),
-        address: new FormGroup({
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm: FormGroup = new FormGroup({
+        name: new FormControl(''),
+        yearOfAchieving: new FormControl(''),
+        placeOfAchieving: new FormGroup({
             street: new FormControl(''),
             city: new FormControl(''),
             state: new FormControl(''),
@@ -170,23 +190,24 @@ export class AppComponent {
     });
 
     constructor() {
-        this.profileForm.valueChanges.subscribe((value) => {
-            console.log(value) // {firstName: '', lastName: '', address: {...}}
+        this.triumphForm.valueChanges.subscribe((value) => {
+            console.log(value); // {name: '', yearOfAchieving: '', placeOfAchieving: {...}}
         })
     }
+    
+    // ..
 }
 ```
 ```html
-<form [formGroup]="profileForm">
+<form [formGroup]="triumphForm">
+    <label for="name">Title Name: </label>
+    <input id="name" type="text" formControlName="name">
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
+    <label for="yearOfAchieving">Year of Achieving: </label>
+    <input id="yearOfAchieving" type="number" formControlName="yearOfAchieving">
 
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-
-    <div formGroupName="address">
-        <h2>Address</h2>
+    <div formGroupName="placeOfAchieving">
+        <h2>Place of Achieving</h2>
 
         <label for="street">Street: </label>
         <input id="street" type="text" formControlName="street">
@@ -198,9 +219,15 @@ export class AppComponent {
         <input id="state" type="text" formControlName="state">
 
         <label for="zip">Zip Code: </label>
-        <input id="zip" type="text" formControlName="zip">
+        <input id="zip" type="number" formControlName="zip">
     </div>
 </form>
+<p>Value Title Name: {{ triumphForm.value.name }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.yearOfAchieving }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.street }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.city }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.state }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.zip }}</p>
 ```
 
 Wenn man eine so grosse FormGroup hat und nun ein Wert ändern möchte über das Typescript, kann man dies auch mittels `setValue()` tun. Das kann jedoch mühsam sein da man bei dieser Methode alle Values der FormGroup angeben muss. Wenn man aber nur einzelne anpassen möchte, kann man die Methode `patchValue()` verwenden.
@@ -213,11 +240,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    profileForm: FormGroup = new FormGroup({
-        firstName: new FormControl(''),
-        lastName: new FormControl(''),
-        address: new FormGroup({
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm: FormGroup = new FormGroup({
+        name: new FormControl(''),
+        yearOfAchieving: new FormControl(''),
+        placeOfAchieving: new FormGroup({
             street: new FormControl(''),
             city: new FormControl(''),
             state: new FormControl(''),
@@ -226,15 +255,17 @@ export class AppComponent {
     });
 
     constructor() {
-        this.profileForm.valueChanges.subscribe((value) => {
-            console.log(value) // {firstName: '', lastName: '', address: {...}}
+        this.triumphForm.valueChanges.subscribe((value) => {
+            console.log(value); // {name: '', yearOfAchieving: '', placeOfAchieving: {...}}
         })
     }
 
-    updateProfile() {
-        this.profileForm.patchValue({
-            firstName: 'Peter',
-            address: {
+    // ..
+
+    updateTriumph() {
+        this.triumphForm.patchValue({
+            name: 'Assably',
+            placeOfAchieving: {
                 street: '123 Down Street'
             }
         });
@@ -242,16 +273,15 @@ export class AppComponent {
 }
 ```
 ```html
-<form [formGroup]="profileForm">
+<form [formGroup]="triumphForm">
+    <label for="name">Title Name: </label>
+    <input id="name" type="text" formControlName="name">
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
+    <label for="yearOfAchieving">Year of Achieving: </label>
+    <input id="yearOfAchieving" type="number" formControlName="yearOfAchieving">
 
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-
-    <div formGroupName="address">
-        <h2>Address</h2>
+    <div formGroupName="placeOfAchieving">
+        <h2>Place of Achieving</h2>
 
         <label for="street">Street: </label>
         <input id="street" type="text" formControlName="street">
@@ -263,10 +293,16 @@ export class AppComponent {
         <input id="state" type="text" formControlName="state">
 
         <label for="zip">Zip Code: </label>
-        <input id="zip" type="text" formControlName="zip">
+        <input id="zip" type="number" formControlName="zip">
     </div>
 </form>
-<button type="button" (click)="updateProfile()">Update Profile</button>
+<button type="button" (click)="updateTriumph()">Update Triumph</button>
+<p>Value Title Name: {{ triumphForm.value.name }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.yearOfAchieving }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.street }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.city }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.state }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.zip }}</p>
 ```
 
 ## Form Array
@@ -286,11 +322,13 @@ import { FormGroup, FormControl, FormArray } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    profileForm: FormGroup = new FormGroup({
-        firstName: new FormControl(''),
-        lastName: new FormControl(''),
-        address: new FormGroup({
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm: FormGroup = new FormGroup({
+        name: new FormControl(''),
+        yearOfAchieving: new FormControl(''),
+        placeOfAchieving: new FormGroup({
             street: new FormControl(''),
             city: new FormControl(''),
             state: new FormControl(''),
@@ -302,13 +340,13 @@ export class AppComponent {
     });
 
     constructor() {
-        this.profileForm.valueChanges.subscribe((value) => {
-            console.log(value) // {firstName: '', lastName: '', address: {...}, aliases: Array[]}
+        this.triumphForm.valueChanges.subscribe((value) => {
+            console.log(value); // {name: '', yearOfAchieving: '', placeOfAchieving: {...}, aliases: Array[]}
         })
     }
 
     get aliases() {
-        return this.profileForm.get('aliases') as FormArray;
+        return this.triumphForm.get('aliases') as FormArray;
     }
 
     addAlias() {
@@ -318,19 +356,20 @@ export class AppComponent {
     removeAlias(index: number): void {
         this.aliases.removeAt(index);
     }
+    
+    // ..
 }
 ```
 ```html
-<form [formGroup]="profileForm">
+<form [formGroup]="triumphForm">
+    <label for="name">Title Name: </label>
+    <input id="name" type="text" formControlName="name">
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
+    <label for="yearOfAchieving">Year of Achieving: </label>
+    <input id="yearOfAchieving" type="number" formControlName="yearOfAchieving">
 
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-
-    <div formGroupName="address">
-        <h2>Address</h2>
+    <div formGroupName="placeOfAchieving">
+        <h2>Place of Achieving</h2>
 
         <label for="street">Street: </label>
         <input id="street" type="text" formControlName="street">
@@ -342,20 +381,25 @@ export class AppComponent {
         <input id="state" type="text" formControlName="state">
 
         <label for="zip">Zip Code: </label>
-        <input id="zip" type="text" formControlName="zip">
+        <input id="zip" type="number" formControlName="zip">
     </div>
     <div formArrayName="aliases">
         <h2>Aliases</h2>
-        <button type="button" (click)="addAlias()">+ Add another alias</button>
-
         <div *ngFor="let alias of aliases.controls; let i=index">
             <!-- The repeated alias template -->
             <label for="alias-{{ i }}">Alias:</label>
             <input id="alias-{{ i }}" type="text" [formControlName]="i">
             <button type="button" (click)="removeAlias(i)">- Remove alias</button>
         </div>
+        <button type="button" (click)="addAlias()">+ Add another alias</button>
     </div>
 </form>
+<p>Value Title Name: {{ triumphForm.value.name }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.yearOfAchieving }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.street }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.city }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.state }}</p>
+<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.zip }}</p>
 ```
 
 
@@ -370,11 +414,13 @@ import { FormBuilder } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    profileForm = this.formBuilder.group({
-        firstName: [''],
-        lastName: [''],
-        address: this.formBuilder.group({
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+    
+    triumphForm = this.formBuilder.group({
+        name: [''],
+        yearOfAchieving: [''],
+        placeOfAchieving: this.formBuilder.group({
             street: [''],
             city: [''],
             state: [''],
@@ -386,10 +432,12 @@ export class AppComponent {
     });
 
     constructor(private formBuilder: FormBuilder) {
-        this.profileForm.valueChanges.subscribe((value) => {
-            console.log(value) // {firstName: '', lastName: '', address: {...}}
+        this.triumphForm.valueChanges.subscribe((value) => {
+            console.log(value); // {name: '', yearOfAchieving: '', placeOfAchieving: {...}, aliases: Array[]}
         })
     }
+    
+    // ..
 }
 ```
 
@@ -417,12 +465,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    profileForm = this.formBuilder.group({
-        firstName: [''],
-        lastName: ['', Validators.required],
-        address: this.formBuilder.group({
-            street: ['',Validators.required],
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm = this.formBuilder.group({
+        name: [''],
+        yearOfAchieving: ['', Validators.required],
+        placeOfAchieving: this.formBuilder.group({
+            street: ['', Validators.required],
             city: ['', Validators.required],
             state: ['', Validators.required],
             zip: ['', [Validators.required, Validators.minLength(4)]]
@@ -433,10 +483,12 @@ export class AppComponent {
     });
 
     constructor(private formBuilder: FormBuilder) {
-        this.profileForm.valueChanges.subscribe((value) => {
-            console.log(value) // {firstName: '', lastName: '', address: {...}}
+        this.triumphForm.valueChanges.subscribe((value) => {
+            console.log(value); // {name: '', yearOfAchieving: '', placeOfAchieving: {...}, aliases: Array[]}
         })
     }
+
+    // ..
 }
 ```
 
@@ -461,12 +513,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
     // ..
 })
-export class AppComponent {
-    profileForm = this.formBuilder.group({
-        firstName: ['', [Validators.required, forbiddenNameValidator(/bob/i)]],
-        lastName: ['', Validators.required],
-        address: this.formBuilder.group({
-            street: ['',Validators.required],
+export class TriumphsComponent implements AfterViewInit {
+    // ..
+
+    triumphForm = this.formBuilder.group({
+        name: ['', [Validators.required, forbiddenNameValidator(/bob/i)]],
+        yearOfAchieving: ['', Validators.required],
+        placeOfAchieving: this.formBuilder.group({
+            street: ['', Validators.required],
             city: ['', Validators.required],
             state: ['', Validators.required],
             zip: ['', [Validators.required, Validators.minLength(4)]]
@@ -477,9 +531,11 @@ export class AppComponent {
     });
 
     constructor(private formBuilder: FormBuilder) {
-        this.profileForm.valueChanges.subscribe((value) => {
-            console.log(value) // {firstName: '', lastName: '', address: {...}}
+        this.triumphForm.valueChanges.subscribe((value) => {
+            console.log(value); // {name: '', yearOfAchieving: '', placeOfAchieving: {...}, aliases: Array[]}
         })
     }
+
+    // ..
 }
 ```

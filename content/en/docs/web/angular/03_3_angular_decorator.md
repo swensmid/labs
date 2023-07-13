@@ -45,11 +45,11 @@ Er wird über der Klassen-Deklaration platziert und enthält ein Objekt mit vers
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-my-component',
-    templateUrl: './my-component.component.html',
-    styleUrls: ['./my-component.component.scss']
+    selector: 'app-greeting',
+    templateUrl: './greeting.component.html',
+    styleUrls: ['./greeting.component.scss']
 })
-export class MyComponent {
+export class GreetingComponent {
   // gesamte Compoenentlogik 
 }
 ```
@@ -64,14 +64,15 @@ import { Component, Input } from '@angular/core';
 @Component({
     // ..
 })
-export class ChildComponent {
-    @Input() childData: string;
+export class TriumphsComponent {
+    @Input() title: string = "";
+    @Input() triumphs: string[] = [];
 }
 ```
 
 Um die Eingabeeigenschaft zu verwenden und Daten vom Parent zu erhalten, verwendet man die Property-Bindingsyntax im Parent.
 ```html
-<app-child [childData]="parentData"></app-child>
+<app-triumphs *ngIf="hasTriumphs" [title]="'Triumphs'" [triumphs]="triumphs"></app-triumphs>
 ```
 
 ### @Output
@@ -83,25 +84,29 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
     // ..
 })
-export class ChildComponent {
-    @Output() dataEvent: EventEmitter<string> = new EventEmitter<string>();
+export class TriumphsComponent {
+    // ..
+    @Output() titleChange: EventEmitter<string> = new EventEmitter<string>();
 
-    sendData() {
-        this.dataEvent.emit('Data from Child Component');
+    // ..
+    onTitleChange(value: string) {
+        this.title = value;
+        this.titleChange.emit(value);
     }
 }
 ```
 ```html
-<button (click)="sendData()">Send Data</button>
+<input [ngModel]="title" (ngModelChange)="onTitleChange($event)" />
 ```
 
 Um das Ereignis im Parent zu empfangen und darauf zu reagieren, wird das Event-Binding verwendet.
 ```html
-<app-child (dataEvent)="receiveData($event)"></app-child>
+<p> Triumphpage Titel: {{ triumphTitel }}</p>
+<app-triumphs *ngIf="hasTriumphs" [title]="'Triumphs'" [triumphs]="triumphs" (titleChange)="handleTitleChange($event)"></app-triumphs>
 ```
 
 ### @ViewChild
-@ViewChild wird verwendet, um auf ein Element oder ein Directive in der View eines Components zuzugreifen. Der @ViewChild-Decorator wird normalerweise zusammen mit einer Template-Referenzvariable verwendet, um das gewünschte Element oder das gewünschte Directive zu identifizieren.
+`@ViewChild` wird verwendet, um auf ein Element oder ein Directive in der View eines Components zuzugreifen. Der @ViewChild-Decorator wird normalerweise zusammen mit einer Template-Referenzvariable verwendet, um das gewünschte Element oder das gewünschte Directive zu identifizieren.
 
 ```typescript
 import { Component, ViewChild, ElementRef } from '@angular/core';
@@ -109,25 +114,27 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 @Component({
     // ..
 })
-export class MeinComponent {
-    @ViewChild('myElement')
-    myElement!: ElementRef;
+export class GreetingComponent implements AfterViewInit {
+    @ViewChild('triumphsComponent') triumphsComponent!: TriumphsComponent;
+
 
     ngAfterViewInit() {
-        console.log(this.myElement.nativeElement.textContent);
+        this.triumphsComponent.datesOfTriumph.forEach((date) => {
+            console.log(date);
+        })
     }
 }
 ```
 ```html
-<div #myElement>My Element</div>
+    <app-triumphs #triumphsComponent *ngIf="hasTriumphs" [title]="'Triumphs'" [triumphs]="triumphs" (titleChange)="handleTitleChange($event)"></app-triumphs>
 ```
 
-Auf das Element sollte dann erst in der ngAfterViewInit-Lifecycle-Hook-Methode zugegriffen werden, da dieser Hook erst ausgelöst wird wenn die View initialisiert wurde.
+Auf das Element sollte dann erst in der `ngAfterViewInit`-Lifecycle-Hook-Methode zugegriffen werden, da dieser Hook erst ausgelöst wird wenn die View initialisiert wurde.
 
 ### @ViewChildren
-Es gibt auch den @ViewChildren-Decorator, der ähnlich wie der @ViewChild-Decorator funktioniert, jedoch verwendet wird, um auf mehrere Elemente oder Directives in der View eines Components zuzugreifen.
+Es gibt auch den `@ViewChildren`-Decorator, der ähnlich wie der `@ViewChild`-Decorator funktioniert, jedoch verwendet wird, um auf mehrere Elemente oder Directives in der View eines Components zuzugreifen.
 
-Der @ViewChildren-Decorator wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.
+Der `@ViewChildren-Decorator wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.
 
 ```typescript
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
@@ -135,17 +142,27 @@ import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
 @Component({
     // ...
 })
-export class MeinComponent {
-    @ViewChildren('element')
-    elemente: QueryList<ElementRef>;
+export class TriumphsComponent implements AfterViewInit {
+    @ViewChildren('triumphElements') triumphElements!: QueryList<ElementRef>;
 
-    elements: number[] = [1, 2, 3, 4, 5];
+    // ..
+    
+    datesOfTriumph: Date[] = [
+        new Date(1412, 0, 23),
+        new Date(1823, 2, 12),
+        new Date(1945, 3, 20),
+        new Date(2023, 10, 20),
+    ];
+    
+    // ..
 
-    ngAfterViewInit() {
-        this.elemente.forEach(elementRef => {
-        console.log(elementRef.nativeElement.textContent);
+    ngAfterViewInit(): void {
+        this.triumphElements.forEach((triumph) => {
+            console.log(triumph.nativeElement);
         });
     }
+    
+    // ..
 }
 ```
 ```html

@@ -90,12 +90,12 @@ Achte darauf, dass du den Befehl im selben Verzeichnis ausführst, indem sich di
 
 ## Aufgabe 4
 Implementiere eine Funktion, welche den Durchschnitt eines Numberarrays berechnet.
-Die Funktion sollte nur Numberarrays akzeptieren und eine einzelne Zahl zurückgeben. Wenn das Array jedoch leer ist sollte `NaN` zurückgegeben werden.
+Die Funktion sollte nur Numberarrays akzeptieren und eine einzelne Zahl zurückgeben. Wenn das Array jedoch leer ist sollte `NaN` (Not a Number) zurückgegeben werden.
 
 
 ## Aufgabe 5
-Implementiere eine `User` Klasse mit den Properties `name`, `age` und `email`.
-Die Klasse besitzt zwei Funktionen, eine um die email zu validieren (mit dem Format "example@example.com") und die andere um einen Begrüssungsnachricht zu erhalten.
+Implementiere eine `User` Klasse mit den Properties `name` und `email`.
+Die Klasse besitzt zwei Funktionen, eine um die email zu validieren (mit dem Format "example@example.com") und die andere um einen Begrüssungsnachricht zu erhalten in welcher der Name und die Email genannt wird.
 
 
 ## Aufgabe 6

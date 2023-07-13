@@ -22,28 +22,43 @@ Es ist klar, dass einige Werte von etwas Bearbeitung profitieren. Viele der Tran
 Dazu sind Pipes sehr praktisch. Man kann sie sich fast als Stile vorstellen.
 
 Eine Pipe nimmt Daten als Eingabe auf und wandelt sie in eine gewünschte Ausgabe um.
-In diesem Beispiel verwenden wir Pipes, um das Geburtstags-Property eines Components in ein leserfreundliches Datum umzuwandeln.
+In diesem Beispiel verwenden wir Pipes, um das datum der Triumphe eines Components in ein leserfreundliches Datum umzuwandeln.
 
 ```typescript
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'app-birthday',
-    template: `<p>The birthday is {{birthday | date}}</p>`
+    // ..
 })
-export class BirthdayComponent{
-    birthday = new Date(1929,0,15) // Month start by 0 => January 15, 1929
+export class TriumphsComponent {
+    // ..
+
+    datesOfTriumph: Date[] = [
+        new Date(1412, 0, 23),
+        new Date(1823, 2, 12),
+        new Date(1945, 3, 20),
+        new Date(2023, 10, 20),
+    ];
+    
+    // ..
 }
+```
+```html
+<div *ngFor="let triumph of triumphs; let i = index">
+    <p>{{ triumph }}, {{ datesOfTriumph[i] | date }}</p>
+</div>
 ```
 
 ## Parametrisierte Pipes
 Eine Pipe kann eine beliebige Anzahl optionaler Parameter akzeptieren, um ihre Ausgabe zu optimieren. Um einer Pipe Parameter hinzuzufügen,
-fügen wir nach dem Pipe-Namen einen Doppelpunkt (:) und danach den Parameterwert (z. B. currency: `EUR`) hinzu.
+fügen wir nach dem Pipe-Namen einen Doppelpunkt (:) und danach den Parameterwert (z. B. date: `MMM/dd/yy`) hinzu.
 Wenn die Pipe mehrere Parameter akzeptiert, trennen wir die Werte durch Doppelpunkte (z. B. Slice: 1: 5).
 
 Unser Beispiel von vorher könnten wir z.B. so ausgeben:
 ```html
-<p>The birthday of Martin Luther King Jr is {{ birthday | date:"mm/dd/yy" }} </p>
+<div *ngFor="let triumph of triumphs; let i = index">
+    <p>{{ triumph }}, {{ datesOfTriumph[i] | date:"MMM/dd/yy" }}</p>
+</div>
 ```
 
 ## Chaining Pipes
@@ -51,10 +66,12 @@ Wir können Pipes in nützlichen Kombinationen miteinander verketten. Im folgend
 angekettet, um den Geburtstag in Grossbuchstaben anzuzeigen.
 
 ```html
-<p>The chained birthday of Martin Luther King Jr is {{ birthday | date | uppercase }} </p>
+<div *ngFor="let triumph of triumphs; let i = index">
+    <p>{{ triumph }}, {{ datesOfTriumph[i] | date: "MMM/dd/yy" | uppercase }}</p>
+</div>
 ```
 
-Der Geburtstag wird nun so angezeigt: APR 15, 1988
+Das Datum wird nun so angezeigt: APR/20/45
 
 ## AsyncPipe
 Die AsyncPipe wird verwendet, um Observables oder Promises imTemplate zu subscriben und automatisch zu aktualisieren, sobald neue Werte verfügbar sind.
@@ -68,18 +85,23 @@ Die AsyncPipe wird verwendet, um Observables oder Promises imTemplate zu subscri
 Für spezielle Anwendungsfälle können wir auch unsere eigenen Pipes schreiben. 
 
 Wir können Beispielsweise das size eines Files anhand einer custom Pipe im Template darstellen.
-```
-{{ file.size | filesize: "megabyte" }}
+``` html
+ <li *ngFor="let triumph of triumphs">{{ triumph | capitalize }}</li>
 ```
 
 Der Code für die custom Pipe dieses Beispiels würde so aussehen:
 ```typescript
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'filesize' })
-export class FileSizePipe implements PipeTransform{
-    transform(size: number, extensions: string = "MB"){
-        return (size / (1024 * 1024)).toFixed(2) + extension;
+@Pipe({
+    name: 'capitalize'
+})
+export class CapitalizePipe implements PipeTransform {
+    transform(value: string): string {
+        if (value) {
+            return value.charAt(0).toUpperCase() + value.slice(1);
+        }
+        return '';
     }
 }
 ```

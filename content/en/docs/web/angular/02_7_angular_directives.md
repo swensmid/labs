@@ -165,28 +165,28 @@ import { Component } from '@angular/core';
     // ..
 })
 export class WeaponComponent {
-    weapons: string[] = ['sword'];
+    weapons: string[] = ['Sword'];
 }
 ```
 ```html
-<div [ngSwitch]="weapons">
-    <div *ngSwitchCase="'sword'">
-      <p>You are wielding a mighty sword!</p>
-      <p>Defeat your enemies with precision and power.</p>
+<div [ngSwitch]="chosenWeapon">
+    <div *ngSwitchCase="'Sword'">
+        <p>You are wielding a mighty sword!</p>
+        <p>Defeat your enemies with precision and power.</p>
     </div>
-    <div *ngSwitchCase="'bow'">
-      <p>You have a deadly bow and arrows!</p>
-      <p>Strike your foes from a distance with accuracy.</p>
+    <div *ngSwitchCase="'Bow'">
+        <p>You have a deadly bow and arrows!</p>
+        <p>Strike your foes from a distance with accuracy.</p>
     </div>
-    <div *ngSwitchCase="'staff'">
-      <p>Your staff is a conduit of mystical energy!</p>
-      <p>Harness the power of magic to overcome your adversaries.</p>
+    <div *ngSwitchCase="'Staff'">
+        <p>Your staff is a conduit of mystical energy!</p>
+        <p>Harness the power of magic to overcome your adversaries.</p>
     </div>
     <div *ngSwitchDefault>
-      <p>You have not chosen a weapon yet.</p>
-      <p>Find your destined weapon and embark on your epic journey.</p>
+        <p>You have not chosen a weapon yet.</p>
+        <p>Find your destined weapon and embark on your epic journey.</p>
     </div>
-  </div>
+</div>
 ```
 
 ### ngClass

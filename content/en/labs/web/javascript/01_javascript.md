@@ -114,9 +114,9 @@ Jeder Schüler darf nur einmal vorkommen, also keine Duplikate.
 
 Die Funktion soll ein Promise zurückgeben, das den Durchschnitt der Noten aller Schüler berechnet und als Ergebnis ein Objekt zurückgibt, das den Durchschnitt als eine Dezimalzahl und eine Beschreibung des Durchschnitts enthält. Die Beschreibung sollte basierend auf folgendem generiert werden:
 * Wenn der Durchschnitt 6,0 ist, soll die Beschreibung "Sehr gut" sein.
-* Wenn der Durchschnitt größer oder gleich 5,0 und kleiner als 6,0 ist, soll die Beschreibung "Gut" sein.
-* Wenn der Durchschnitt größer oder gleich 4,0 und kleiner als 5,0 ist, soll die Beschreibung "Befriedigend" sein.
-* Wenn der Durchschnitt größer oder gleich 3,0 und kleiner als 4,0 ist, soll die Beschreibung "Ausreichend" sein.
+* Wenn der Durchschnitt grösser oder gleich 5,0 und kleiner als 6,0 ist, soll die Beschreibung "Gut" sein.
+* Wenn der Durchschnitt grösser oder gleich 4,0 und kleiner als 5,0 ist, soll die Beschreibung "Befriedigend" sein.
+* Wenn der Durchschnitt grösser oder gleich 3,0 und kleiner als 4,0 ist, soll die Beschreibung "Ausreichend" sein.
 * Wenn der Durchschnitt kleiner als 3,0 ist, soll die Beschreibung "Mangelhaft" sein.
 
 Schreibe zusätzlich eine Funktion, um neue Schüler zu erfassen. Der zu erfassende Schüler darf jedoch noch nicht existieren ansonsten soll eine Exception geworfen werden. Auch die Noten sollen validiert werden so, dass nur Dezimalzahlen als Noten akzeptiert werden und die Dezimalzahl muss zwischen 1.0 und 6.0 liegen.

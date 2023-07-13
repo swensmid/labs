@@ -23,12 +23,12 @@ import { Component } from '@angular/core';
     styleUrls: ['./app-greeting.component.scss']
 })
 export class GreetingComponent {
-    name = 'Max Mustermann';
+    name: string = 'Dragon Warrior';
 }
 ```
 ```html
 <!--app-greeting.component.html-->
-<p>Welcome, {{ name }}!</p>
+<h1>Hello, {{ name }}!</h1>
 ```
 
 ### Event Binding
@@ -36,29 +36,33 @@ export class GreetingComponent {
   Zum Beispiel das Klicken eines Buttons.
 ```typescript
 import { Component } from '@angular/core';
+import { WeaponService } from 'src/app/services/weapon.service';
 
 @Component({
-    selector: 'app-counter',
-    templateUrl: './app-counter.component.html',
-    styleUrls: ['./app-counter.component.scss']
+  // ..
 })
-export class CounterComponent {
-    count = 0;
-
-    increment() {
-        this.count++;
+export class WeaponComponent {
+    chosenWeapon: string = '';
+    weapons: string[] = [];
+    
+    constructor(private weaponService: WeaponService) {}
+    
+    ngOnInit() {
+        this.weapons = this.weaponService.getWeapons();
+        const index = Math.floor(Math.random() * this.weapons.length);
+        this.chosenWeapon = this.weapons[index];
     }
 
-    decrement() {
-        this.count--;
+    choseNewWeapon() {
+        const index = Math.floor(Math.random() * this.weapons.length);
+        this.chosenWeapon = this.weapons[index];
     }
 }
 ```
 ```html
-<!--app-counter.component.html-->
-<p>actual count:: {{ count }}</p>
-<button (click)="increment()">+1</button>
-<button (click)="decrement()">-1</button>
+<!--app-weapon.component.html-->
+<button (click)="choseNewWeapon()">Choose New Weapon</button>
+
 ```
 
 ### Property Binding
@@ -66,25 +70,26 @@ export class CounterComponent {
   Wenn sich also der bestimmte Wert im Component verändern sollte, wird dies im Template aktualisiert.
 ```typescript
 import { Component } from '@angular/core';
+import { WeaponService } from 'src/app/services/weapon.service';
 
 @Component({
-    selector: 'app-button',
-    templateUrl: './app-button.component.html',
-    styleUrls: ['./app-button.component.scss']
+  // ..
 })
-export class ButtonComponent {
-    isDisabled = false;
-    buttonText = 'Click me!'
+export class WeaponComponent {
+    // ..
+    isButtonDisabled: boolean = false;
 
-    changeDisabledState() {
-        this.isDisabled = !this.isDisabled;
+  // ..
+
+    toggleButtonDisabled() {
+        this.isButtonDisabled = !this.isButtonDisabled;
     }
 }
 ```
 ```html
-<!--app-button.component.html-->
-<button [disabled]="isDisabled">{{ buttonText }}</button>
-<button (click)="changeDisabledState()">change the disbale state first button</button>
+<!--app-weapon.component.html-->
+<button (click)="chooseNewWeapon()" [disabled]="isButtonDisabled">Choose New Weapon</button>
+<button (click)="toggleButtonDisabled()">Toggle Button Disabled</button>
 ```
 
 ### Two-Way-Binding
@@ -99,8 +104,9 @@ import { Component } from '@angular/core';
     templateUrl: './app-ng-model.component.html',
     styleUrls: ['./app-ng-model.component.scss']
 })
-export class NgModelComponent {
-    currentItem: string = 'test';
+export class TriumphsComponent {
+    @Input() title: string = "";
+    // ..
 
     getValue(event: Event): string {
         return (event.target as HTMLInputElement).value;
@@ -108,23 +114,18 @@ export class NgModelComponent {
 }
 ```
 ```html
-<!--app-ng-model.component.html-->
-  <div>
-  <h4>NgModel examples</h4>
-  <p>Current item name: {{ currentItem }}</p>
+<!--app-triumphs.component.html-->
+<div>
   <p>
-    <label>without NgModel:</label>
-    <input [value]="currentItem" (input)="currentItem = getValue($event)" />
+    <input [value]="title" (input)="title = getValue($event)" />
   </p>
 
   <p>
-    <label>[(ngModel)]:</label>
-    <input [(ngModel)]="currentItem" />
+    <input [(ngModel)]="title" />
   </p>
 
   <p>
-    <label>(ngModelChange)="currentItem=$event":</label>
-    <input [ngModel]="currentItem" (ngModelChange)="currentItem = $event" />
+    <input [ngModel]="title" (ngModelChange)="title = $event" />
   </p>
 </div>
 ```
