@@ -23,34 +23,23 @@ Da man mehrere Actions hat, was meistens der Fall ist, muss man diese auch unter
 
 ```typescript
 import { createReducer, on } from '@ngrx/store';
-import { login, registration } from './auth.actions';
+import { addAbility, deleteAbility, getAbilities } from '../actions/ability.actions';
 
-export interface AuthState {
-    loggedIn: boolean;
-    username: string | null;
-    email: string | null;
+export interface AbilityState {
+    abilities: string[]
 }
 
-export const initialState: AuthState = {
-    loggedIn: false, 
-    username: null, 
-    email: null,
+export const initialState: AbilityState = {
+    abilities: [],
 };
 
-export const authReducer = createReducer(
+export const abilityReducer = createReducer(
     initialState,
-    on(login, (state, { username, password }) => ({
-        ...state, 
-        loggedIn: true, 
-        username, 
-        password
-    })), 
-    on(registration, (state, { username, password, email }) => ({
-        ...state, 
-        loggedIn: true, 
-        username, 
-        password, 
-        email
+    on(getAbilities, (state) => state),
+    on(addAbility, (state, { ability }) => ({ ...state, abilities: [...state.abilities, ability] })),
+    on(deleteAbility, (state, { ability }) => ({
+        ...state,
+        abilities: state.abilities.filter((existingAbility) => existingAbility !== ability),
     }))
 );
 ```
@@ -60,18 +49,19 @@ Der State muss registriert werden, damit er im NgRx Store verwaltet und von den 
 
 Besitzt man nur einen Reducer in der Anwendung so kann man diesen einfach im `app.module.ts` angeben.
 
-**Wichtig** ist das der `key` im `forRoot()` gleich ist wie der key vom Reducername (z.B. auth: authReducer oder userProfile: userProfileReducer).9
+**Wichtig** ist das der key im `forRoot()` gleich ist wie der key vom Reducername (z.B. auth: authReducer oder userProfile: userProfileReducer).
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
 @NgModule({
+    // ..
     imports: [
-        StoreModule.forRoot({ key: keyReducer })
-        // ...
+        StoreModule.forRoot({ ability: abilityReducer })
+        // ..
     ],
-    // ...
+    // ..
 })
 export class AppModule {}
 ```
@@ -99,9 +89,9 @@ import { rootReducer } from './reducers'; // Hier muss man den Root-Reducer impo
 @NgModule({
     imports: [
         StoreModule.forRoot({ root: rootReducer })
-        // ...
+        // ..
     ],
-    // ...
+    // ..
 })
 export class AppModule {}
 ```

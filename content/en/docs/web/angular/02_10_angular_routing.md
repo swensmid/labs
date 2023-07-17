@@ -179,10 +179,11 @@ Es ist wichtig anzumerken, dass man das `RouterModule` im Angular-Modul importie
 import { RouterModule } from '@angular/router';
 
 @NgModule({
+    // ..
     imports: [
         RouterModule.forRoot(routes)
     ],
-  // ...
+  // ..
 })
 export class AppModule { }
 ```

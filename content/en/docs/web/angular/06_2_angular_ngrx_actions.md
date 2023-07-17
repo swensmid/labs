@@ -20,8 +20,9 @@ Die Action Typen werden meistens in einem Enum definiert, so hat man eine besser
 Hier ein Beispiel
 ```typescript
 export enum ActionTypes {
-    LOGIN = '[Login Page] Login',
-    REGISTRATION = '[Registration Page] Registration'
+    GETABILITIES = '[Dragon Warrior] Get Abilities',
+    ADDABILITY ='[Dragon Warrior] Add Ability',
+    DELETEABILITY= '[Dragon Warrior] Delete Ability'
 }
 ```
 
@@ -29,31 +30,54 @@ Als Nächstes muss man die Typen in einer Action-Creator-Funktion verwenden. Daz
 ```typescript
 import { createAction, props } from '@ngrx/store';
 
-export const login = createAction(
-    ActionTypes.LOGIN, 
-    props<{ username: string; password: string }>()
+export const getAbilities = createAction(
+    ActionTypes.GETABILITIES
 );
 
-export const registration = createAction(
-    ActionTypes.REGISTRATION,
-    props<{ username: string; password: string; email: string }>()
+export const addAbility = createAction(
+    ActionTypes.ADDABILITY, 
+    props<{ ability: string }>()
+);
+
+export const deleteAbility = createAction(
+    ActionTypes.DELETEABILITY, 
+    props<{ ability: string }>()
 );
 ```
 
 Diese Action-Creator-Funktionen kann man nun in den Components verwenden und sie auslösen.
 ```typescript
-import { Store } from '@ngrx/store';
-import { login } from './auth.actions';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { addAbility, deleteAbility } from 'src/app/actions/ability.actions';
 
 @Component({
     // ..
 })
-export class AppComponent {
-    
-    constructor(private store: Store) { }
+export class AbilityComponent implements OnInit {
+    ability$: Observable<{ abilities: string[]; }> = new Observable<{ abilities: string[]; }>();
+    abilities$: Observable<string[]> = new Observable<string[]>();
 
-    onSubmit(username: string, password: string) {
-        store.dispatch(login({ username: username, password: password }));
+    abilityForm: FormControl = new FormControl('');
+
+    constructor(private store: Store<{ ability: {abilities: string[]} }>) {}
+
+    ngOnInit(): void {
+        this.ability$ = this.store.select('ability');
+
+        this.abilities$ = this.ability$.pipe(map(x => {
+            return x.abilities
+        }))
+    }
+
+    addAbility() {
+        this.store.dispatch(addAbility({ ability: this.abilityForm.value ?? '' }));
+    }
+
+    deleteAbility(ability: string) {
+        this.store.dispatch(deleteAbility({ ability: ability }));
     }
 }
 ```

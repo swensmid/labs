@@ -31,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [ReactiveFormsModule],
-  // ...
+  // ..
 })
 export class AppModule { }
 ```
@@ -224,10 +224,10 @@ export class TriumphsComponent implements AfterViewInit {
 </form>
 <p>Value Title Name: {{ triumphForm.value.name }}</p>
 <p>Value Year of Achieving: {{ triumphForm.value.yearOfAchieving }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.street }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.city }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.state }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.zip }}</p>
+<p>Value Street: {{ triumphForm.value.placeOfAchieving.street }}</p>
+<p>Value City: {{ triumphForm.value.placeOfAchieving.city }}</p>
+<p>Value State: {{ triumphForm.value.placeOfAchieving.state }}</p>
+<p>Value Zip: {{ triumphForm.value.placeOfAchieving.zip }}</p>
 ```
 
 Wenn man eine so grosse FormGroup hat und nun ein Wert ändern möchte über das Typescript, kann man dies auch mittels `setValue()` tun. Das kann jedoch mühsam sein da man bei dieser Methode alle Values der FormGroup angeben muss. Wenn man aber nur einzelne anpassen möchte, kann man die Methode `patchValue()` verwenden.
@@ -299,10 +299,10 @@ export class TriumphsComponent implements AfterViewInit {
 <button type="button" (click)="updateTriumph()">Update Triumph</button>
 <p>Value Title Name: {{ triumphForm.value.name }}</p>
 <p>Value Year of Achieving: {{ triumphForm.value.yearOfAchieving }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.street }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.city }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.state }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.zip }}</p>
+<p>Value Street: {{ triumphForm.value.placeOfAchieving.street }}</p>
+<p>Value City: {{ triumphForm.value.placeOfAchieving.city }}</p>
+<p>Value State: {{ triumphForm.value.placeOfAchieving.state }}</p>
+<p>Value Zip: {{ triumphForm.value.placeOfAchieving.zip }}</p>
 ```
 
 ## Form Array
@@ -396,10 +396,10 @@ export class TriumphsComponent implements AfterViewInit {
 </form>
 <p>Value Title Name: {{ triumphForm.value.name }}</p>
 <p>Value Year of Achieving: {{ triumphForm.value.yearOfAchieving }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.street }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.city }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.state }}</p>
-<p>Value Year of Achieving: {{ triumphForm.value.placeOfAchieving.zip }}</p>
+<p>Value Street: {{ triumphForm.value.placeOfAchieving.street }}</p>
+<p>Value City: {{ triumphForm.value.placeOfAchieving.city }}</p>
+<p>Value State: {{ triumphForm.value.placeOfAchieving.state }}</p>
+<p>Value Zip: {{ triumphForm.value.placeOfAchieving.zip }}</p>
 ```
 
 

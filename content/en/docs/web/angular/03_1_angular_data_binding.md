@@ -79,7 +79,7 @@ export class WeaponComponent {
     // ..
     isButtonDisabled: boolean = false;
 
-  // ..
+    // ..
 
     toggleButtonDisabled() {
         this.isButtonDisabled = !this.isButtonDisabled;
@@ -146,7 +146,6 @@ import { NgModelComponent } from './ng-model.component';
     AppComponent,
     NgModelComponent
   ],
-
   imports: [
     BrowserModule,
     FormsModule // <--- import into the NgModule

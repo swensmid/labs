@@ -69,7 +69,7 @@ import { WeaponComponent } from './weapon.component';
 
 const routes: Routes = [
     { path: '', component: WeaponComponent }, // Standart-Route wenn man vom AppModule auf das WeaponModul wechselt
-    // ...
+    // ..
 ];
 
 @NgModule({

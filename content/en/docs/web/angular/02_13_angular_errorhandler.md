@@ -32,7 +32,7 @@ export class GlobalErrorHandler extends ErrorHandler {
 Indem du den `GlobalErrorHandler` in der `providers`-Eigenschaft der AppModule-Klasse registrierst, wird dieser als globaler `ErrorHandler` für die Anwendung verwendet. Jeder Fehler, der in der Anwendung auftritt, wird automatisch durch den `GlobalErrorHandler` abgefangen und entsprechend behandelt.
 ```typescript
 @NgModule({
-    //...
+    // ..
     providers: [
         { provide: ErrorHandler, useClass: GlobalErrorHandler }
     ], 

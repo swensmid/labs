@@ -41,10 +41,10 @@ Beispiel für ein Observable zu erstellen:
 ```typescript
 import { Observable } from 'rxjs';
 
-const myObservable = new Observable((observer) => {
+const myObservable$ = new Observable((observer) => {
     // einiger Wert des Observable
     // mit next() wird der Wert an die Subscriber gesendet
-    observer.next('Hello World!');
+    observer.next('Hello Dragon Warrior!');
     
     // schliesst das Observable ab
     observer.complete();
@@ -64,8 +64,8 @@ Ein Observer wird normalerweise durch eine `subscribe` Methode an das Observable
 ```typescript
 import { Observable } from 'rxjs';
 
-const myObservable = new Observable((observer) => {
-    observer.next('Hello World!');
+const myObservable$ = new Observable((observer) => {
+    observer.next('Hello Dragon Warrior!');
     observer.complete();
 });
 
@@ -75,19 +75,19 @@ const myObserver = {
     complete: () => console.log('Observable completed'),
 };
 
-myObservable.subscribe(myObserver);
+myObservable$.subscribe(myObserver);
 ```
 
 Es ist möglich, einen Observer als Callback (Subscription) zu verwenden. Dies ist die gängigste Verwendungsmöglichkeit von Observers.
 ```typescript
 import { Observable } from 'rxjs';
 
-const myObservable = new Observable((observer) => {
-    observer.next('Hello World!');
+const myObservable$ = new Observable((observer) => {
+    observer.next('Hello Dragon Warrior!');
     observer.complete();
 });
 
-myObservable.subscribe(
+myObservable$.subscribe(
     (value) => console.log('Received value:', value),
     (error) => console.error('Error:', error),
     () => console.log('Completed')
@@ -98,11 +98,11 @@ Es ist wichtig zu beachten, dass jede dieser Funktionen optional ist und weggela
 ```typescript
 import { Observable } from 'rxjs';
 
-const myObservable = new Observable((observer) => {
-    observer.next('Hello World!');
+const myObservable$ = new Observable((observer) => {
+    observer.next('Hello Dragon Warrior!');
 });
 
-myObservable.subscribe((value) => {
+myObservable$.subscribe((value) => {
     console.log(value);
 });
 ```
@@ -116,12 +116,12 @@ In dem folgenden Beispiel ist `mySubscription` die Subscription, diese wird erst
 ```typescript
 import { Observable } from 'rxjs';
 
-const myObservable = new Observable((observer) => {
-    observer.next('Hello World!');
+const myObservable$ = new Observable((observer) => {
+    observer.next('Hello Dragon Warrior!');
     observer.complete();
 });
 
-const mySubscription = myObservable.subscribe(
+const mySubscription = myObservable$.subscribe(
     (value) => {
         console.log('Received value:', value);
     },

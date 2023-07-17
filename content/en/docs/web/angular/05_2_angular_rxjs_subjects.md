@@ -35,7 +35,7 @@ mySubject.subscribe((value) => {
   console.log('Observer 1 received value:', value);
 });
 
-mySubject.next('Hello World!');
+mySubject.next('Hello Dragon Warrior!');
 
 mySubject.subscribe((value) => {
   console.log('Observer 2 received value:', value);
@@ -43,7 +43,7 @@ mySubject.subscribe((value) => {
 
 mySubject.next('Another value');
 
-// Observer 1 received value: Hello World!
+// Observer 1 received value: Hello Dragon Warrior!
 // Observer 1 received value: Another value
 // Observer 2 received value: Another value
 ```
@@ -62,7 +62,7 @@ myBehaviorSubject.subscribe((value) => {
   console.log('Observer 1 received value:', value);
 });
 
-myBehaviorSubject.next('Hello World!');
+mySubject.next('Hello Dragon Warrior!');
 
 myBehaviorSubject.subscribe((value) => {
   console.log('Observer 2 received value:', value);
@@ -71,8 +71,8 @@ myBehaviorSubject.subscribe((value) => {
 myBehaviorSubject.next('Another value');
 
 // Observer 1 received value: initial value
-// Observer 1 received value: Hello World!
-// Observer 2 received value: Hello World!
+// Observer 1 received value: Hello Dragon Warrior!
+// Observer 2 received value: Hello Dragon Warrior!
 // Observer 1 received value: Another value
 // Observer 2 received value: Another value
 ```

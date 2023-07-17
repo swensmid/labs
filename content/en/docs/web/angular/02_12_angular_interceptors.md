@@ -45,10 +45,10 @@ import { HTTP_INTERCEPTORS} from '@angular/common/http';
 import { RequestLogInterceptor} from '...';
 
 @NgModule({
-    //...
+    //..
     imports: [
         HttpClientModule,
-        // ...
+        // ..
     ],
     providers: [
         {
@@ -56,9 +56,9 @@ import { RequestLogInterceptor} from '...';
             useClass: RequestLogInterceptor,
             multi: true
         },
-        // ...
+        // ..
     ],
-    // ...
+    // ..
 })
 export class AppModule{ }
 ```

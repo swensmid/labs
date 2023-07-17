@@ -100,13 +100,13 @@ Zu beachten gilt jedoch, dass der Operator blockierend ist und erst dann zur nä
 import { forkJoin, of } from 'rxjs';
 
 const source1 = of('Hello');
-const source2 = of('World!');
+const source2 = of('Dragon Warrior!');
 
 forkJoin([source1, source2]).subscribe(([value1, value2]) => {
   console.log(value1 + ' ' + value2);
 });
 
-// "Hello World!"
+// "Hello Dragon Warrior!"
 ```
 
 ### merge
@@ -118,14 +118,14 @@ Beachten muss man jedoch, dass dieser Operator keine Garantie für die Reihenfol
 import { merge, of } from 'rxjs';
 
 const source1 = of('Hello');
-const source2 = of('World!');
+const source2 = of('Dragon Warrior!');
 
 merge(source1, source2).subscribe((value) => {
   console.log(value);
 });
 
 // "Hello"
-// "World!"
+// "Dragon Warrior!"
 ```
 
 ### zip
@@ -139,14 +139,14 @@ Auch zu beachten ist, dass der Operator darauf wartet, dass alle Observables ein
 import { zip, of } from 'rxjs';
 
 const source1 = of('Hello');
-const source2 = of('World!');
-const source3 = of('RxJS');
+const source2 = of('Dragon');
+const source3 = of('Warrior');
 
 zip(source1, source2, source3).subscribe((value) => {
   console.log(value);
 });
 
-// ["Hello", "World!", "RxJS"]
+// ["Hello", "Dragon", "Warrior"]
 
 ```
 
@@ -475,11 +475,9 @@ import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-my-component',
-    templateUrl: './my-component.component.html',
-    styleUrls: ['./my-component.component.css']
+    // ..
 })
-export class MyComponent implements OnInit, OnDestroy {
+export class WeaponComponent implements OnInit, OnDestroy {
 
     private destroy$: Subject<void> = new Subject<void>(); // Ein Subject erstellen, das das Zerstören des Observable signalisiert
 

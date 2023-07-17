@@ -140,7 +140,7 @@ Der `@ViewChildren-Decorator wird normalerweise zusammen mit einem Selektor oder
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
 @Component({
-    // ...
+    // ..
 })
 export class TriumphsComponent implements AfterViewInit {
     @ViewChildren('triumphElements') triumphElements!: QueryList<ElementRef>;

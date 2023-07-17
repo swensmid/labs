@@ -40,12 +40,12 @@ export class WeaponService {}
   ```
 2. Den WeaponService als Provider registrieren (in `module.ts`):
 ```typescript
-//...
+// ..
 import { WeaponService } from './services/weapon.service';
 
 @NgModule({
     declatations: [],
-    //...
+    // ..
     bootstrap: [AppComponent],
     providers: [WeaponService]
 })
@@ -56,7 +56,7 @@ export class AppModule{ }
 import { WeaponService } from './services/weapon.service';
 
 @Component({
-    //...
+    // ..
 })
 
 export class WeaponComponent {

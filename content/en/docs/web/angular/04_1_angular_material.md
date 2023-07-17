@@ -28,7 +28,7 @@ import { MatSliderModule } from '@angular/material/slider';
 ...
 @NgModule({
     imports: [
-        // ..,
+        // ..
         MatSliderModule,
         // ..
     ],
