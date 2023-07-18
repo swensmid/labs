@@ -595,7 +595,7 @@ public static void methodName(type identifier) {
     
 }
 ```
-Ein Parameter besteht immer aus dem Datentyp und einem Bezeichner. Wir können beliebig viele Parameter an eine Methode übergeben. Gemäss den SBB Code Conventions (Regeln für den Programmcode) sollte eine Methode nicht mehr als acht Parameter haben.
+Ein Parameter besteht immer aus dem Datentyp und einem Bezeichner. Wir können beliebig viele Parameter an eine Methode übergeben. 
 
 #### Regeln
 * Die Reihenfolge der Schlüsselwörter im Methodenkopf darf nicht verändert werden
