@@ -15,7 +15,7 @@ Erstelle eine Website, welche anhand von Observables eine Browsernotification au
 Dazu soll sich auf der Website ein Button befinden, welcher das Event auslöst, um die Notification im Browser anzuzeigen.
 
 Vorgehen:
-Lade die [Datei](/files/exams/angular/uebung1.html) herunter und öffne sie in VS Code. 
+Lade die [Datei](/files/exams/angular/uebung1.html) herunter und öffne sie in VS Code. (Wenn sie im Browser geöffnet ist, mittels rechtsklick und dann "Speichern unter".) 
 Die Datei enthält lediglich das Grundgerüst der Übung, füge an den auskommentierten Stellen den entsprechenden Code ein.
 Am Grundgerüst der Datei soll nichts verändert werden.
 
