@@ -21,6 +21,7 @@ Um das einmal auszuprobieren, wollen wir eine API anfragen, die als Antwort zuf�
 
 `GET https://api.chucknorris.io/jokes/random`
 
+
 ```json
 {
     "categories": [],
@@ -48,6 +49,22 @@ await fetch('https://api.chucknorris.io/jokes/random', {method: 'get'})
 ```
 
 Das `await` führt dazu, dass das Script erst weitergeht, wenn die Antwort da ist. Zusätzlich wird die Antwort automatisch aus dem `Promise`-Objekt entpackt und wir erhalten so direkt ein Objekt vom Typ `Response`.
+In diesem sind mehrere wichtige Informationen wie zum Beispiel, ob es überhaupt erfolgreich war `ok: true`, wie der http statuscode ist etc.
+Zu beachten ist, dass `body` im unteren Beispiel als `ReadableStream` dargestellt ist, da es sich um einen Stream handelt und der tatsächliche Inhalt des Antwort-Body nicht direkt im JSON-Format angezeigt wird. Um den Inhalt des Antwort-Body zu lesen, muss die entsprechenden Methoden wie json(), text() oder blob() verwendet werden, je nachdem welches Format der Inhalt hat.
+
+```json
+{
+  "body": "ReadableStream",
+  "bodyUsed": true,
+  "headers": {},
+  "ok": true,
+  "redirected": false,
+  "status": 200,
+  "statusText": "",
+  "type": "cors",
+  "url": "https://api.chucknorris.io/jokes/random"
+}
+```
 
 Theoretisch haben wir nun die Daten, die wir wollen. Da wir als Antwort ein JSON-Objekt als Antwort erwarten, können wir direkt die Antwort als JavaScript-Objekt anfordern:
 
