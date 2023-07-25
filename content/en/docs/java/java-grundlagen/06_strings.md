@@ -7,141 +7,256 @@ description: >
 ---
 
 ## Ziele
-* Ich kenne die Klasse `String`.
+
+- Ich kenne die Klasse `String`.
 
 ## String
-Eine Variable, die eine Zeichenkette enthält, hat den Typ String.
+
+Eine Variable, die eine Zeichenkette repräsentiert, hat den Typ `String` und kann wie folgt initialisiert werden:
+
 ```java
 String hello = "Hello, Java";
 ```
 
-Diese Zeichenkette besteht aus 11 Zeichen, einschließlich eines Leerzeichens. Wie wir hier ebenfalls sehen, müssen String-Literale von doppelten Anführungszeichen umgeben sein. Ein Objekt des Typs String ist unveränderlich, die Werte innerhalb eines Strings können also nach dessen Erstellung nicht mehr verändert werden.
+Diese Zeichenkette besteht aus 11 Zeichen, einschliesslich eines Leerzeichens. Wie wir hier ebenfalls sehen, müssen String-Literale von doppelten Anführungszeichen umgeben sein.
+
+Ein Objekt des Typs `String` ist unveränderlich, die Werte innerhalb eines Strings können also nach dessen Erstellung nicht mehr verändert werden - der Variable kann aber ein neuer `String`-Wert zugewiesen werden:
+
+```java
+String hello = "Hello, Java";
+hello = "Hello, how are you?";
+```
+
+### Strings verknüpfen (String Concatenation)
+
+Oft generierst du aus verschiedenen Variablen EIN neuer `String`. Angenommen du hast eine Variable für "name" und "age" (Alter), dann kannst du wie folgt den String "Hallo {name}, du bist {age} Jahre alt." generieren:
+
+```java
+String name = "Kermit the Frog";
+int age = 68;
+
+String greeting = "Hallo " + name +", du bist " + age + " Jahre alt.";
+```
+
+Alternativ kannst du statt die vielen `+` auch von der `String.format()`-Methode Gebrauch machen:
+
+```java
+String greeting = String.format( "Hallo %s, du bist %d Jahre alt.", name, age);
+```
+
+Bei der `String.format()`-Methode übergeben wir dann die einzelnen Werte als Argumente. Beachte hierbei, dass `%s` für String- und `%d` für Integer-Werte verwendet werden.
+
+Wenn Performance (also wie schnell, dass ein Programm läuft) eine übergeordnete Rolle einnimmt, dann wird die Methode mit einem `StringBuilder` bevorzugt:
+
+```java
+StringBuilder sb = new StringBuilder();
+sb.append("Hallo ")
+   .append(name)
+   .append(", du bist ")
+   .append(age)
+   .append(" Jahre alt.");
+
+String greeting = sb.toString();
+```
+
+Hierbei musst du aber zuerst ein neues `StringBuilder`-Objekt erstellen. (Im Modul #J1 musst du solche Objekte noch nicht verstehen.) Anschliessend fügst du alle einzelnen Strings via `.append(...)` hinzu. Den gewünschten String kannst du dann mit `.toString()` generieren lassen.
 
 ### Methoden
-Der folgende Code zeigt die Verwendung einiger Methoden der Klasse String. Alle Methoden sind in der API unter [java.lang.String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) zu finden.
+
+Nachfolgend sind einige der wichtigsten Methoden der Klasse `String` beschrieben. Alle Methoden sind detailliertet beschrieben unter [java.lang.String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) zu finden.
+
+#### Anzahl Zeichen (`String.length()`)
+
+Bei Strings sind dessen Länge (also Anzahl Zeichen) oft von Interesse.
+
+Im folgenden Beispiel wird eine Nachricht ausgegeben, wenn eine Dummy-Usereingabe nicht mindestens 6 Zeichen enthält:
+
 ```java
-public class StringMethoden {
-    public static void main(String[] args) {
-        String house = "house";
+String nickname = "peter";
 
-        /**
-         * Returns the char value at the specified index (indexing starts from 0)
-         */
-        char o = house.charAt(1);
-
-        /**
-         * Returns the length of this string.
-         */
-        int length = house.length();
-
-        /**
-         * Returns true if and only if this string contains the specified sequence of char values
-         */
-        boolean isContaining = house.contains("us");
-
-        /**
-         * Returns the index within this string of the first occurrence of the specified character
-         */
-        int indexChar = house.indexOf('s');
-
-        /**
-         * Returns the index within this string of the first occurrence of the specified substring
-         */
-        int indexSubstring = house.indexOf("us");
-
-        /**
-         * Tests if this string starts with the specified prefix
-         */
-        boolean startsWithPrefix = house.startsWith("Ho"); // false
-        boolean startsWithPrefix2 = house.startsWith("ho"); // true
-
-        /**
-         * Tests if this string ends with the specified suffix
-         */
-        boolean endsWithSuffix = house.endsWith("se"); // true
-
-        /**
-         * Returns a new string resulting from replacing all occurrences of oldChar in this string with newChar
-         */
-        String mouse = house.replace('h', 'm');
-        String houseHouse = "House, House";
-        String mouseMouse = houseHouse.replace('H', 'M');
-
-        /**
-         * Returns a new string that is a substring of this string, starting from the specified index
-         */
-        String applePearLemon = "Apple, pear, lemon";
-        String pearLemon = applePearLemon.substring(7);
-
-        /**
-         * Returns a new string that is a substring of this string
-         */
-        String pear = applePearLemon.substring(7, 11);
-
-        /**
-         * Converts all of the characters in this String to upper case
-         */
-        String apple = "Apple";
-        String appleUpperCase = apple.toUpperCase(); // APPLE
-
-        /**
-         * Converts all of the characters in this String to lower case.
-         */
-        String appleLowerCase = apple.toLowerCase(); // apple
-
-        /**
-         * Splits this string around matches of the given regular expression, puts them in a String array
-         */
-        String applePear = "Apple, pear";
-        String[] fruits = applePear.split(",\\s"); // \\s means whitespace
-
-        /**
-         * Converts this string to a new character array
-         */
-        char[] charArray = applePearLemon.toCharArray();
-
-        /**
-         * Compares this string to the specified object
-         */
-        String appleOne = "Apple";
-        String appleTwo = "Apple";
-        boolean isEqual = appleOne.equals(appleTwo);
-
-        /**
-         * Compares two strings lexicographically.
-         * The comparison is based on the Unicode value of each character in the strings. 
-		 * The result is a negative integer if this String object lexicographically precedes the argument string.
-		 * The result is a positive integer if this String object lexicographically follows the argument string.
-		 * The result is zero if the strings are equal
-         */
-        String abcd = "abcd";
-        String cdef = "cdef";
-
-        if (abcd.compareTo(cdef) < 0) {
-            System.out.println(abcd + " precedes " + cdef);
-        }
-
-        if (house.compareTo(house) == 0) {
-            System.out.println(house + " is equal to " + house);
-        }
-
-        if (cdef.compareTo(abcd) > 0) {
-            System.out.println(cdef + " follows " + abcd);
-        }
-
-        /**
-         * Capital letters precede lower case letters
-         */
-        String houseLowerCase = "house";
-        String houseUpperCase = "HOUSE";
-        if (houseLowerCase.compareTo(houseUpperCase) > 0) {
-            System.out.println(houseUpperCase + " precedes + " houseLowerCase);
-        }
-
-        /**
-         * Compares two strings lexicographically, ignoring case differences
-         */
-        System.out.println(houseLowerCase.compareToIgnoreCase(houseUpperCase));
-    }
-}
+if (nickname.length() < 6)
+    System.out.println("Der Nickname muss mindestens 6 Zeichen enthalten!");
 ```
+
+#### Strings miteinander vergleichen (`String.equals(String)`)
+
+Sehr oft wirst du überprüfen, ob ein String einem anderen entspricht. Dies kannst du mit der `equals()`-Methode tun:
+
+```java
+String a = "hello";
+String b = "hello";
+
+if (a.equals(b))
+    System.out.println("A ist gleich B.");
+```
+
+Beachte hierbei, dass du zum Vergleichen von Strings **in Java** immer `equals()` nun nie `==` verwenden solltest, weil `String` kein primitiver Datentyp ist. `==` funktioniert in einfacheren Beispielen, führt aber in vielen Fällen trotzdem nicht zum gewünschten Resultat.
+
+#### In Gross-/Kleinbuchstaben umwandeln
+
+In bestimmten Fällen soll die Gross- und Klein-Schreibung keine Rolle spielen. Nehmen wir hierfür noch einmal das Beispiel von der `equals`-Methode:
+
+```java
+String input = "hello";
+
+if (input.toUpperCase().equals("HELLO"))
+    System.out.println("Der Input entspricht 'hello'.");
+```
+
+Die relevanten String-Methoden bezüglich Gross- und Klein-Schreibung sind hierbei:
+
+- `toUpperCase()`: Gibt die Zeichenkette in Grossbuchstaben zurück.
+- `toLowerCase()`: Gibt die Zeichenkette in Kleinbuchstaben zurück.
+
+Eine häufige Fehlerquelle ist es zu denken, dass eine dieser beiden Methoden den String verändert. Strings können sich aber nicht verändern. Deswegen geben diese beide Funktionen einen **neuen** String zurück, der Wert in der Variable bleibt also unverändert:
+
+```java
+String myString = "Hello";
+
+myString.toUpperCase();
+
+System.out.println(myString);
+```
+
+Damit dieses Beispiel wie gewollt funktioniert, müsste es so geschrieben werden:
+
+```java
+String myString = "Hello";
+
+myString = myString.toUpperCase();
+
+System.out.println(myString);
+```
+
+#### Buchstaben an bestimmter Position ermitteln (`String.charAt(int)`)
+
+Wenn du z.B. alle Buchstaben in einem String durchgehen willst, dann musst du irgendwie den Buchstaben (`char`) an einer bestimmten Position des Strings ermitteln können. Dies kannst du mit `charAt(int)`.
+
+Das folgende Beispiel liest den ersten Buchstaben aus einem String aus und gibt in aus:
+
+```java
+String word = "Hello";
+
+char firstLetter = word.charAt(0);
+
+System.out.println("Erster Buchstabe: '" + firstLetter + "'");
+```
+
+Beachte, dass die Nummerierung in Java generell bei 0 beginnt. Für das erste Element übergibst du 0, für das zweite 1, für das vierte 3, für `n` das `(n-1)`-te, usw. Für `charAt(...)` bedeutet das, dass du wie folgt Buchstaben an bestimmten Positionen ermittelst:
+
+```java
+// erstes Zeichen:
+word.charAt(0);
+
+// zweites Zeichen:
+word.charAt(1);
+
+// viertes Zeichen:
+word.charAt(3);
+
+// letztes Zeichen:
+word.charAt(word.length() - 1);
+```
+
+#### Nach Strings in Strings suchen (`String.indexOf()` und `String.contains()`)
+
+In seltenen Fällen möchtest du wissen, an welcher Position ein kleinerer String (oder `char`) in einem grösseren String vorkommt. Diese Information erhältst du mit `indexOf(String/char)`.
+
+Möchtest du z.B. herausfinden, an welcher Stelle in einer Email-Adresse das "@" steht, dann könnte das wie folgt aussehen:
+
+```java
+String email = "wallace@gmail.com";
+
+int indexOfAt = email.indexOf("@gmail");
+
+System.out.println("Der Teil vor dem @ ist " + indexOfAt + " Zeichen lang.");
+```
+
+In diesem Fall gibt die Methode `7` zurück, weil das `@` an der 8. Stelle sich befindet.
+
+Allgemein gibt `indexOf(...)` folgendes zurück:
+
+- Wenn der Suchbegriff vorkommt, dann die Position, wo der Suchbegriff zum ersten Mal beginnt.
+- Wenn der Suchbegriff nie vorkommt: `-1`.
+
+Weil `-1` zurückgeben wird, wenn der Suchbegriff nicht vorkommt, könnte diese Methode auch dafür verwendet werden, um herauszufinden, ob ein bestimmter Text in einem String vorkommt. Java bietet aber für diesen Fall bereits eine praktischere Methode:
+
+```java
+String email = "wallace@gmail.com";
+
+if (email.contains("@gmail."))
+    System.out.println("Diese Email-Adresse ist ein Gmail-Adresse.");
+```
+
+Der Vorteil von der `contains()`-Methode ist, dass sie bereits einen `boolean` zurückgibt, was die `if`-Anweisung einfacher macht als das Überprüfen nach `-1`.
+
+#### Text aus einem String ausschneiden
+
+Die `substring()`-Methode ist nützlich, wenn ein Text aus einem String ausgeschnitten werden soll.
+
+In diesem Beispiel interessiert und die Information nach dem ":", welches sich immer an 6. Stelle befindet:
+
+```java
+String systemInfo = "power: on";
+
+String status = systemInfo.substring(7);
+
+System.out.println("The system is " + status + ".");
+```
+
+In diesem Beispiel haben wir mit dem Schneiden an 7. Stelle begonnen. Wir können aber auch angeben, wie viele Zeichen, das ausgeschnitten werden sollen:
+
+```java
+String sentence = "Today is Wed, 9th August 2023";
+
+String dayOfWeek = sentence.substring(9, 12);
+
+System.out.println("Day of Week: " + dayOfWeek);
+```
+
+In diesem Beispiel beginnt das Ausschneiden bei Index 9 und hört 1 Zeichen **VOR** Index 12 auf.
+
+In all diesen Beispielen sind wir davon ausgegangen, dass wir wissen, ab welcher Stelle das Ausschneiden beginnt. Oft ist diese Stelle aber dynamisch. Hier kann daher eine Kombination mit `indexOf()` weiterhelfen:
+
+```java
+String dadJoke = "Warum dürfen Geister keine Lügen erzählen? Weil man durch sie hindurchsieht!";
+
+String punchline = dadJoke.substring(dadJoke.indexOf("Weil "));
+System.out.println("Pointe: " + punchline);
+```
+
+#### Teile eines Strings ersetzen (`String.replace()`)
+Ein bestimmter Teil eines Strings kannst du mit `replace` ersetzen:
+
+```java
+String classicPhrase = "To be or not to be, that's the question.";
+System.out.println(classicPhrase.replace("o be", "o beer"));
+```
+
+Beachte auch hier, dass `replace` den ursprünglichen String nicht verändert, sondern einen neuen zurückgibt.
+
+
+#### Bausteine aus einem String herauslösen (`String.split()`)
+
+Mit der `split(String)`-Methode kannst du einen String anhand eines Suchbegriffes aufteilen und erhältst dann eine Auflistung von Strings, die sich zwischen dem Suchbegriff befinden:
+
+```java
+String ingredients = "Käse, Brot, Speck, Eier, Surströmming";
+
+var items = ingredients.split(", ");
+
+System.out.println("This receipt has " + items.length + ". Ingredients: ");
+for (String item : items)
+    System.out.println(item);
+```
+
+Die `for`-Schlaufe musst du zu diesem Zeitpunkt noch nicht verstehen. Wichtig ist, dass die Variable `items` eine Auflistung (nicht ein String) ist von folgenden Werten:
+* Käse
+* Brot
+* Speck
+* Eier
+* Surströmming
+
+Auf diese Art und Weise können wir z.B. alle Wörter aus einem String ermitteln.
+
+Anzufügen ist noch, dass es sich beim Suchbegriff um eine sogenannten "Regulären Ausdruck" (RegEx) handelt. Eine RegEx ist eine Folge von Zeichen, die ein Suchmuster bilden. Eine Regex wird dafür verwendet, um einen Text anhand eines Musters (einer Regel) abzugleichen. RegEx ist im Moment kein Thema im Modul #J1. Wichtig ist für dich im Moment nur, dass du weisst, dass sich bei diesem Suchbegriff von `split(...)` nicht um einen gewöhnlichen String handelt, sondern um eine RegEx. Möglicherweise können dir RegEx' viel Arbeit abnehmen. Bitte melde dich bei Interesse für RegEx.
