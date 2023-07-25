@@ -9,7 +9,7 @@ description: >
 ## Ziele
 * Ich weiss, dass jede Anweisung mit einem Strichpunkt abgeschlossen werden muss.
 * Ich weiss, dass geschweifte Klammern einen Block definieren und ich verwende sie in jeder Kontrollstruktur, um die Code-Blocks voneinander abzugrenzen (lieber zu viel klammern als zu wenig).
-* Ich kenne die `main`-Methode und weiß, warum eine Applikation nur EINE Main-Methode haben sollte.
+* Ich kenne die `main`-Methode und weiss, warum eine Applikation nur EINE Main-Methode haben sollte.
 * Ich kenne die Methode `System.out.println` und kann sie anwenden.
 
 
@@ -21,7 +21,7 @@ description: >
 ## Einführung
 
 ### Was ist Java?
-Java ist eine objektorientierte Programmiersprache, die schon seit ca. zwei Jahrzehnten große Popularität genießt.
+Java ist eine objektorientierte Programmiersprache, die schon seit ca. zwei Jahrzehnten grosse Popularität geniesst.
 Die Entwicklung von Java begann Anfang der 1990er-Jahre beim US-amerikanischen Hard- und Softwarehersteller Sun Microsystems.
 1995 wurde die erste Version veröffentlicht. 2010 wurde Sun Microsystems von Oracle übernommen.
 Gegenwärtig erscheinen im Halbjahrestakt neue Java-Versionen; die neuste Version, Java 17, wurde im September 2022 veröffentlicht.
