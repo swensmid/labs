@@ -44,7 +44,7 @@ In Java müssen wir zum Zeitpunkt der Deklaration eines Arrays folgendes angeben
 * den Namen
 
 und zum Zeitpunkt der Initialisierung:
-* die Größe
+* die Grösse
 
 Syntaktisch können wir ein Array eines ganzzahligen Datentyps auf folgende Weise deklarieren:
 ```java
@@ -66,12 +66,12 @@ String[] words = { "Hai", "Oktopus", "Rochen", "Wal", "Fisch" };
 Es wird also ein Array mit der Grösse 5 und den angegebenen Werten erstellt.
 
 ### Zugriff auf Elemente
-Wenn wir den Wert eines Elements in unserem Array verändern möchten, geschieht dies folgendermaßen:
+Wenn wir den Wert eines Elements in unserem Array verändern möchten, geschieht dies folgendermassen:
 ```java
 words[index] = value;
 ```
 
-Wenn wir den Wert eines Array-Elements in einer Variablen außerhalb des Arrays speichern wollen:
+Wenn wir den Wert eines Array-Elements in einer Variablen ausserhalb des Arrays speichern wollen:
 ```java
 String value = words[index];
 ```
