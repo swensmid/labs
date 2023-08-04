@@ -8,7 +8,7 @@ description: >
 
 ## Ziele
 * Ich weiss, dass jede Anweisung mit einem Strichpunkt abgeschlossen werden muss.
-* Ich weiss, dass geschweifte Klammern einen Block definieren und ich verwende sie in jeder Kontrollstruktur, um die Code-Blocks voneinander abzugrenzen (lieber zu viel klammern als zu wenig).
+* Ich weiss, dass geschweifte Klammern einen Block definieren und ich verwende sie in jeder Kontrollstruktur, um die Code-Blocks voneinander abzugrenzen.
 * Ich kenne die `main`-Methode und weiss, warum eine Applikation nur EINE Main-Methode haben sollte.
 * Ich kenne die Methode `System.out.println` und kann sie anwenden.
 
@@ -24,14 +24,14 @@ description: >
 Java ist eine objektorientierte Programmiersprache, die schon seit ca. zwei Jahrzehnten grosse Popularität geniesst.
 Die Entwicklung von Java begann Anfang der 1990er-Jahre beim US-amerikanischen Hard- und Softwarehersteller Sun Microsystems.
 1995 wurde die erste Version veröffentlicht. 2010 wurde Sun Microsystems von Oracle übernommen.
-Gegenwärtig erscheinen im Halbjahrestakt neue Java-Versionen; die neuste Version, Java 17, wurde im September 2022 veröffentlicht.
+Gegenwärtig erscheinen im Halbjahrestakt neue Java-Versionen; die nächste Version, Java 21, wird im September 2023 veröffentlicht.
 
 ---
 
 ### Wichtigste Merkmale von Java
 
 #### Plattformunabhängigkeit: «Write once, Run anywhere»
-Der Compiler wandelt den Quellcode in Bytecode um (Kompilat) und anschliessend führt die Java Virtual Machine (JVM) den Bytecode aus.
+Der Compiler wandelt den Quellcode in Bytecode (Kompilat) um, und anschliessend führt die Java Virtual Machine (JVM) den Bytecode aus.
 Jedes Betriebssystem hat eine andere JVM, aber jede JVM kann den Bytecode ausführen, daher kann ein- und dieselbe Java-Anwendung auf Windows, Linux, Mac OS und anderen Plattformen lauffähig sein.
 
 #### Mehrfach-Paradigma
@@ -82,5 +82,3 @@ An den Namen der Methode schliesst sich ein paar runde Klammern an. Innerhalb di
 
 Innerhalb der Main-Methode sehen wir ein einzelnes Statement. Es besteht aus einer einfachen Anweisung, welche den Text "Hello, world!" auf die Kommandozeile ausgibt.
 Die statische Methode _println()_ auf dem öffentlich zugänglichen _Feld_ der Klasse _System_ dient dazu Text auf der Konsole auszugeben. Das Statement wird mit einem Semikolon abgeschlossen.
-
----

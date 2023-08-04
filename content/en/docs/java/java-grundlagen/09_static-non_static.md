@@ -52,7 +52,7 @@ public class Main {
 }
 ```
 
-Will man hingegen den Namen eines der Studenten holen, so erfolgt der Zugriff über die Instanz des entsprechenden Objektes.
+Will man hingegen den Namen von einem Studenten holen, so erfolgt der Zugriff über die Instanz des entsprechenden Objektes:
 ```java
 public class Main {
     public static void main(String[] args) {

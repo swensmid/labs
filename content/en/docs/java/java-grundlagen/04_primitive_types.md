@@ -63,7 +63,7 @@ double pi = 3.141592653589793;
 
 Beachte, dass bei `float`-Zahlen ein `f` folgt, weil es sonst als `double` betrachtet wird.
 
-Trotz Nachkommastellen dürfen Fliesskommzahlen des Typs `float` niemals zur Berechnung von Währungen verwendet werden. Innerhalb von Java wird ein float stets als Dezimalbruch geführt und die Ungenauigkeit verunmöglicht es diesen Datentyp für Währungsrechnungen zu verwenden.
+Trotz Nachkommastellen dürfen Fliesskommzahlen des Typs `float` niemals zur Berechnung von Währungen verwendet werden. Innerhalb von Java wird ein `float` stets als Dezimalbruch geführt und die Ungenauigkeit ist der Grund, warum der Datentyp `float` NICHT für Währungsrechnungen verwendet werden soll.
 
 ### Zeichen-Datentyp
 
@@ -81,7 +81,7 @@ Wir können Zeichen auf verschiedene Arten initialisieren:
 | Beschreibung | Code |
 | --- | --- |
 | Einfache Anführungszeichen | ```char A = 'A';``` |
-| Wir können ein Char-Literal als Integral-Literal angeben, das den Unicode-Wert des Zeichens darstellt, und Integral-Literale können entweder in Dezimal-, Oktal- oder Hexadezimalform angegeben werden.Der zulässige Bereich liegt zwischen 0 und 65535. | ```char A = 65;``` |
+| Wir können ein Char-Literal als Integral-Literal angeben, das den Unicode-Wert des Zeichens darstellt, und Integral-Literale können entweder in Dezimal-, Oktal- oder Hexadezimalform angegeben werden. Der zulässige Bereich liegt zwischen 0 und 65535. | ```char A = 65;``` |
 | In der Unicode-Darstellung ```'\\uxxxx'``` können Zeichenliterale angegeben werden. Hier steht xxxx für 4 Hexadezimalzahlen. | ```char A = '\u0041';``` |
 
 Beispiele:

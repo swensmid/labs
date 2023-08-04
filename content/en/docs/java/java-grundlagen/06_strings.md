@@ -29,10 +29,10 @@ hello = "Hello, how are you?";
 
 ### Strings verknüpfen (String Concatenation)
 
-Oft generierst du aus verschiedenen Variablen EIN neuer `String`. Angenommen du hast eine Variable für "name" und "age" (Alter), dann kannst du wie folgt den String "Hallo {name}, du bist {age} Jahre alt." generieren:
+Oft generierst du aus verschiedenen Variablen EINEN neuen `String`. Angenommen du hast eine Variable für "name" und "age" (Alter), dann kannst du wie folgt den String "Hallo {name}, du bist {age} Jahre alt." generieren:
 
 ```java
-String name = "Kermit the Frog";
+String name = "Leonardo";
 int age = 68;
 
 String greeting = "Hallo " + name +", du bist " + age + " Jahre alt.";
@@ -172,7 +172,7 @@ int indexOfAt = email.indexOf("@gmail");
 System.out.println("Der Teil vor dem @ ist " + indexOfAt + " Zeichen lang.");
 ```
 
-In diesem Fall gibt die Methode `7` zurück, weil das `@` an der 8. Stelle sich befindet.
+In diesem Fall gibt die Methode `7` zurück, weil sich das `@` an der 8. Stelle befindet.
 
 Allgemein gibt `indexOf(...)` folgendes zurück:
 
@@ -194,7 +194,7 @@ Der Vorteil von der `contains()`-Methode ist, dass sie bereits einen `boolean` z
 
 Die `substring()`-Methode ist nützlich, wenn ein Text aus einem String ausgeschnitten werden soll.
 
-In diesem Beispiel interessiert und die Information nach dem ":", welches sich immer an 6. Stelle befindet:
+In diesem Beispiel interessiert uns die Information nach dem ":", welches sich immer an 6. Stelle befindet:
 
 ```java
 String systemInfo = "power: on";
