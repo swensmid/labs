@@ -82,3 +82,6 @@ An den Namen der Methode schliesst sich ein paar runde Klammern an. Innerhalb di
 
 Innerhalb der Main-Methode sehen wir ein einzelnes Statement. Es besteht aus einer einfachen Anweisung, welche den Text "Hello, world!" auf die Kommandozeile ausgibt.
 Die statische Methode _println()_ auf dem öffentlich zugänglichen _Feld_ der Klasse _System_ dient dazu Text auf der Konsole auszugeben. Das Statement wird mit einem Semikolon abgeschlossen.
+
+
+![asset](/images/hint.png) Jetzt bist du dran. Löse bitte die [Aufgabe 1](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-1---ausgaben-auf-die-kommandozeile) in den Labs.
