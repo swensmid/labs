@@ -8,7 +8,12 @@ description: >
 
 ## Ziele
 
-- Ich kenne die Klasse `String`.
+- Ich kann `String`-Variablen deklarieren und initialisieren.
+- Ich kann mehrere `String`s miteinander in eine `String`-Variable verknüpfen (String Concatenation).
+- Ich weiss, wann man einen `StringBuilder` verwenden sollte.
+- Ich weiss, wie ich herausfinde, wie viele Zeichen eine `String`-Variable enthält.
+- Ich weiss, dass `String`-Variablen nicht mit `==` sondern `equals` verglichen werden sollten.
+- Ich kann von der Klasse `String` folgende Methode anwenden: `toUpperCase()`, `toLowerCase()`, `charAt(...)`, `indexOf(...)`, `contains(...)`, `substring(...)`, `replace(...)`, `split(...)`.
 
 ## String
 
