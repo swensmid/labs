@@ -5,13 +5,13 @@ linkTitle: "Json Web Token Authorisation (JWT)"
 weight: 31
 date: 2022-05-09
 description: >
-    In diesem Exkurs ist zu sehen was ein JSON Web Token (JWT) und wie es funktioniert.
+    In diesem Exkurs ist zu sehen was ein JSON Web Token (JWT) ist und wie dieser funktioniert.
 ---
 ## Ziele
-* Du weisst, was ein JWT ist und wie es zusammengesetzt ist.
+* Du weisst, was ein JWT ist und wie dieser zusammengesetzt ist.
 
 ## Exkurs JWT 
-JWT ist ein offener Standard (RFC 7519) zur sicheren Kommunikation eines JSON-Objekts. In der Regel muss sich der Benutzer erfolgreich anmelden und erhält dann einen Token für API-Calls. Der Token besteht aus drei Teilen: Header, Payload und Signatur. Da die Payload alle erforderlichen Informationen enthält, ist für die Authentifizierung keine Datenbankabfrage erforderlich. Das ist besonders für die Skalierung zustandsloser Backend-Architekturen super!
+JWT ist ein offener Standard (RFC 7519) zur sicheren Übermittlung eines JSON-Objekts. In der Regel muss sich der Benutzer anmelden und erhält dann einen Token für API-Calls. Der Token besteht aus drei Teilen: Header, Payload und Signatur. Da der Payload alle erforderlichen Informationen enthält, ist für die Authentifizierung keine Datenbankabfrage erforderlich. Das ist besonders für die Skalierung zustandsloser Backend-Architekturen super!
 
 Es ist jedoch wichtig, JWT mit Vorsicht zu verwenden und Sicherheitsvorkehrungen zu treffen, um Angriffe wie Token-Entführung oder Token-Manipulation zu verhindern. Dazu gehören Massnahmen wie die sichere Speicherung von geheimen Schlüsseln, die Verwendung von HTTPS für die Token-Übertragung und die Implementierung von Ablaufzeiten und erneuerbaren Tokens.
 

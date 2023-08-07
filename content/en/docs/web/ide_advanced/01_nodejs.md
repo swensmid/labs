@@ -10,7 +10,7 @@ description: >
 ## Node.js
 Traditionell wurde JavaScript hauptsächlich im Browser verwendet, um interaktive Webseiten zu erstellen.
 Node.js ermöglicht es jedoch, JavaScript-Code ausserhalb des Browsers (z.B. direkt via Kommandozeile) auszuführen und bietet auch die Möglichkeiten, um serverseitige Anwendungen (Backends) mittles JavaScript zu entwickeln.
-Mit Node können wir später diverse Packages installieren und in unserer Webapplikation brauchen.
+Mit Node können wir später diverse Packages installieren und in unserer Webapplikation einsetzen.
 
 NodeJS ermöglicht es also, JavaScript als Programmiersprache im Backend zu verwenden. Zusätzlich verwenden viele Frontends wie Angular und React NodeJS als Grundgerüst für das Projekt.
 
@@ -18,13 +18,13 @@ NodeJS ermöglicht es also, JavaScript als Programmiersprache im Backend zu verw
 ## Installation von Node.js
 In diesem Kapitel wir nun Node.js installiert, falls Node.js noch nicht installiert ist.
 
-Zuerst dazu prüfen, ob Node.js bereits auf dem System installiert ist:
+Zuerst prüfen, ob Node.js bereits auf dem System installiert ist:
 
 ```shell
 node --version
 ```
 
-Falls Node.js noch nicht auf de  System installiert ist, kann Node.js über nvm (Node Version Manager) installiert werden.
+Falls Node.js noch nicht auf dem System installiert ist, kann Node.js über nvm (Node Version Manager) installiert werden.
 
 Um nvm zu installieren, verwende das Skript```install.sh```, das sich innerhalb des repository <a href="https://github.com/nvm-sh/nvm" target="_blank">github.com/nvm-sh/nvm</a> befindet:
 
@@ -84,9 +84,9 @@ um eine mit Angular kompatible Version \<version\> (Beispiele ```system```, ```1
 
 
 ### npm
-Node.js enthält einem integrierten Package-Manager namens "_npm_" (Node Package Manager). _npm_ ermöglicht es, Libraries und Module von anderen Entwicklern herunterzuladen, zu installieren und in ihren eigenen Projekten zu verwenden. Es bietet Zugriff auf eine riesige Sammlung von Open-Source-Packages.
+Node.js enthält einem integrierten Package-Manager namens "_npm_" (Node Package Manager). _npm_ ermöglicht es, Libraries und Module von anderen Entwicklern herunterzuladen, zu installieren und in ihren eigenen Projekten zu verwenden. Er bietet Zugriff auf eine riesige Sammlung von Open-Source-Packages.
 
-npm ermöglicht es auch, die eigenen Packages zu erstellen und zu veröffentlichen, sodass andere Entwickler sie verwenden können. Durch das Veröffentlichen der Packages auf npm kann man es für die gesamte Community zugänglich machen und Updates und Verbesserungen bereitstellen.
+npm ermöglicht es auch eigene Packages zu erstellen und veröffentlichen, sodass andere Entwickler sie verwenden können. Durch das Veröffentlichen der Packages auf npm kann man es für die gesamte Community zugänglich machen und Updates und Verbesserungen bereitstellen.
 
 
 ### npm Commands
@@ -99,7 +99,7 @@ Hier sind einige wichtige npm-Befehle, die beim Arbeiten mit Node.js Projekten u
 * `npm run <scriptname>`: Führt ein in der scripts-Sektion der package.json-Datei definiertes Skript aus. Zum Beispiel: `npm run build` oder `npm run start`.
 
 ### packages.json
-npm verwendet eine Datei namens `package.json`, um Informationen über das Projekt und seine Dependencies zu speichern. Diese Datei enthält Metadaten wie den Namen des Projekts, die Version, die Autorinformationen und die Liste der Dependencies. Man kann das `package.json` manuell erstellen oder den Befehl `npm init` verwenden, um einen interaktiven Assistenten zu starten, der einem hilft, die Informationen einzugeben.
+npm verwendet eine Datei namens `package.json`, um Informationen über das Projekt und seine Dependencies zu speichern. Diese Datei enthält Metadaten wie den Namen des Projekts, die Version, die Autorinformationen und die Liste der Dependencies. Man kann das `package.json` manuell erstellen oder den Befehl `npm init` verwenden, um einen interaktiven Assistenten zu starten, der hilft, die Informationen einzugeben.
 
 In der `package.json` Datei werden die Dependencies des Projekts aufgelistet. Es gibt zwei Arten von Dependencies: "dependencies" und "devDependencies". "dependencies" sind Packages, die für die Ausführung der Anwendung erforderlich sind, während "devDependencies" Packages sind, die nur für die Entwicklung, Tests und den Build-Prozess verwendet werden. Wenn man ein Packages mit `npm install` installieren, wird es automatisch zur richtigen Kategorie hinzugefügt.
 
