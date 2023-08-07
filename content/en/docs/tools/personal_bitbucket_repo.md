@@ -12,7 +12,7 @@ description: >
 * Ich verwalte meine Code-Aufgaben im persönlichen Git-Repository unter Einhaltung der firmeninternen Richtlinien korrekt
 
 ### Voraussetzungen
-* Du hast Zugriff auf dem Git-Tool Bitbucket
+* Du hast Zugriff auf das Git-Tool Bitbucket
 * Git (inkl. Git-Bash) ist auf deinem Computer installiert
 * Du hast die Grundeinstellungen für Git im Terminal nach der Installation gemacht
 {{% details title="Folgende Einstellungen sind hier gemeint und können im Git-Bash Terminal ausgeführt werden:" %}}
@@ -30,7 +30,7 @@ Stell dir folgendes Szenario vor:
 Du arbeitest mit deinem Computer seit mehreren Stunden um deine Hausaufgaben, welche morgen fällig werden, zu erledigen.
 Du speicherst deine Anpassungen immer wieder, damit diese nicht verloren gehen.
 Plötzlich stürzt dein Computer ab und startet nicht wieder.
-Zum Glück, hast du noch ein altes Laptop, welche funktionstüchtig ist und womit du morgen in die Schule gehen kannst.
+Zum Glück, hast du noch ein altes Laptop, welcher funktionstüchtig ist und womit du morgen in die Schule gehen kannst.
 Nur, was ist mit deinen Hausaufgaben? Die ganze Arbeit ist verloren und du musst wieder von Anfang an beginnen. Grrr....
 
 Wenn du deine Arbeit nicht nur auf deinem Computer, sondern auch irgendwo anders gespeichert hättest (z.B. Dropbox, Google-Drive usw.), 
@@ -42,15 +42,15 @@ Du arbeitest ein paar Stunden dran und am Schluss merkst du, dass was bisher ein
 Du willst die Änderungen rückgängig machen, weisst aber nicht wie der Code vor der Änderungen ausgesehen hat. Grrr....
 
 Wenn du deine ursprüngliche Arbeit als eine Art "Snapshot" irgendwo abgelegt hättest bevor du mit den Änderungen begonnen hast, 
-so hättest du ganz einfach auf diesem "Snapshot" zurückgreifen können und den alten, funktionierenden Zustand wiederherstellen können.
+so hättest du ganz einfach auf diesen "Snapshot" zurückgreifen können und den alten, funktionierenden Zustand wiederherstellen können.
 
-Diese zwei, in der Realität nicht ganz seltene, Szenarien sind nur zwei Gründe, warum du ab heute mit Git und mit dem Git-Tool "Bitbucket" arbeiten wirst.
-Git ist ein Versionsverwaltungssystem, welche es ermöglicht "Snapshots" der Arbeitszustand in einem sog. **lokalen Repository** aufzubewahren und diese bei Bedarf (wie z.B. im zweiten Szenario) auch wiederherzustellen.
-Bitbucket ist ein Git-Cloud-Tool, welche sog. **Remote-Repositories** in der Cloud zur Verfügung stellt. 
+Diese zwei, in der Realität nicht ganz seltenen, Szenarien sind nur zwei Gründe, warum du ab heute mit Git und mit dem Git-Tool "Bitbucket" arbeiten wirst.
+Git ist ein Software-System, das es ermöglicht, den Arbeitszustand in einem sog. **lokalen Repository** aufzubewahren und diesen bei Bedarf (z.B. im zweiten Szenario) wiederherzustellen.
+Bitbucket ist ein Git-Cloud-Tool, welches sog. **Remote-Repositories** in der Cloud zur Verfügung stellt. 
 Diese Remote-Repositories sind im Wesentlichen eine Kopie der lokalen Repositories und dienen unter anderem auch als Backup der Arbeit ausserhalb der eigenen Maschine.
 
 Später im Ausbildungsprogramm wirst du mehr über Git und seine weitere Anwendungszwecke erfahren.
-Hier geht es aber in erster Linie um das Backup deiner Arbeit, damit du bei einem Computer-Sturz nicht alles von Vorne machen musstest.
+Hier geht es aber in erster Linie um das Backup deiner Arbeit, damit du bei einem Computerabsturz nicht alles von vorne machen musstest.
 
 ### Persönliches Bitbucket Repository einrichten
 Um deine Arbeit ausserhalb deines Computers zu sichern, wirst du in den nächsten Abschnitten ein 
@@ -59,15 +59,15 @@ Anschliessend, wirst du dieses Repository bei dir (lokal) "klonen", sodass du au
 Repository hast, womit du auch ohne Internetverbindung arbeiten kannst.
 
 #### Remote Repository erstellen
-1. Klicke auf dem folgenden Link und Bitbucket in deinem Browser zu öffnen: [Bitbucket](https://code.sbb.ch/)
-2. Wenn du noch nicht eingeloggt bist, folge die Anweisungen auf der Login-Seite
-3. Nach dem Login wirst du oben rechts ein, vermutlich, noch leeres Profil-Bild sehen. Klicke darauf und wähle **View Profile** aus  
+1. Klicke auf den folgenden Link, um Bitbucket in deinem Browser zu öffnen: [Bitbucket](https://code.sbb.ch/)
+2. Wenn du noch nicht eingeloggt bist, folge den Anweisungen auf der Login-Seite
+3. Nach dem Login wirst du oben rechts ein, vermutlich, noch leeres Profil-Bild sehen. Klicke darauf und wähle **View Profile** (Profil anzeigen) aus  
    ![View Profile](../bitbucket/bitbucket_view_profile.png)
 4. Auf deiner Profilseite, klickst du nun den **Create repository** (Neues Repository erstellen) Schaltfläche
-5. Im geöffneten Formular gib deinem Repository einen Namen (z.B. "ausbildungsprogramm") und lasse die andere Felder leer. Anschliessend klicke auf **Create Repository** (Repository erstellen).
+5. Gib im geöffneten Formular deinem Repository einen Namen (z.B. "ausbildungsprogramm") und lasse die andere Felder leer. Anschliessend klicke auf **Create Repository** (Repository erstellen).
 
 Bitbucket erstellt nun das Repository für dich und du wirst automatisch zu deinem, noch leeren, Repository geführt.
-Herzliche Gratulation! du hast eben dein erstes Git-Repository erstellt.
+Herzliche Gratulation! Du hast soeben dein erstes Git-Repository erstellt.
 
 #### SSH-Schlüssel für dein Repository erstellen
 Ein SSH-Schlüssel ist ein Zugriffsberechtigungsnachweis für das SSH-Netzwerkprotokoll (Secure Shell). 
@@ -78,23 +78,23 @@ Das Schlüsselpaar enthält einen öffentlichen und einen privaten Schlüssel.
 Den öffentlichen Schlüssel kannst du dir als **Schloss** und den privaten Schlüssel als **Schlüssel** für dieses Schloss vorstellen.
 
 ##### SSH Schlüssel-Paar erstellen:
-Öffne ein Git-Bash Terminal und gib folgendes Befehl ein. Verwende hierfür deine EMailadresse:
+Öffne ein Git-Bash Terminal und gib folgenden Befehl ein. Verwende hierfür deine E-Mail-Adresse:
 ```bash
 ssh-keygen -t rsa -b 4096 -C "u123456@sbb.ch"
 ```
 Danach wirst du aufgefordert, eine Datei anzugeben, in der der Schlüssel gespeichert werden soll.
 Drücke hier die Eingabetaste (Enter), um den Standardspeicherort zu übernehmen.
 Bei der nächsten Eingabeaufforderung wirst du nach einer sicheren Passphrase gefragt.
-Auch hier kannst du die Eingabetaste verwenden, um keine Passphrase zu definieren (oder du wählst dir eine Passphrase auf).
+Auch hier kannst du die Eingabetaste verwenden, um keine Passphrase zu definieren (oder du wählst dir eine Passphrase aus).
 
-Dein SSH-Schlüsselpaar Dateien sind nun in deinem Standardverzeichnis (auf Windows: C:\Users\<deine-uNummer>\.ssh) vorhanden:
+Deine SSH-Schlüsselpaar-Dateien sind nun in deinem Standardverzeichnis (auf Windows: C:\Users\<deine-uNummer>\.ssh) vorhanden:
 Der private Schlüssel ist in der Datei **id_rsa** abgelegt.
 Der öffentliche Schlüssel ist in der Datei **id_rsa.pub** abgelegt.
 
 ##### Öffentlicher Schlüssel in Bitbucket ablegen
 Als letzter Schritt legst du deinen öffentlichen SSH-Schlüssel wie folgt in Bitbucket ab:
 1. Öffne ein Git-Bash Terminal und navigiere zum Speicherort deines SSH-Schlüsselpaars
-2. Gib folgendes Befehl, um deinen Schlüssel im Terminal auszugeben:
+2. Gib folgenden Befehl ein, um deinen Schlüssel im Terminal auszugeben:
 ```bash
 C:\Users\u123456\.ssh> cat id_rsa.pub
 ```
@@ -107,8 +107,8 @@ Somit hast du die SSH-Konfiguration abgeschlossen und du kannst dieses Protokoll
 
 ### Repository lokal klonen
 Dein erstelltes Repository befindet sich nun auf dem Bitbucket-Server.  
-Damit du diesen Repository aus deinem Computer benutzen kannst, musst du jetzt diesen lokal "klonen".  
-Klonen bedeutet hier einerseits lokal kopieren und andererseits eine Verbindung zwischen Remote- und Lokal-Repository herzustellen und die Arbeit zwischen den beiden synchronisieren zu können.
+Damit du diesen Repository aus deinem Computer benutzen kannst, musst du jetzt dieses lokal "klonen".  
+Klonen bedeutet hier einerseits lokal kopieren und andererseits eine Verbindung zwischen Remote- und Lokal-Repository herzustellen, um die Arbeit zwischen den beiden synchronisieren zu können.
 
 Da du jetzt einen Ort hast, an dem du deine Arbeitsdateien hinzufügen und sichern kannst, muss es auch eine Möglichkeit geben,  
 von deinem lokalen System (also direkt von deinem Computer und nicht nur über Browser) darauf zuzugreifen.  
@@ -119,7 +119,7 @@ Wenn du ein Repository klonst, erstellst du eine Verbindung zwischen dem Bitbuck
 ![Git Clone](../bitbucket/git_clone.png)
 
 #### Ordner für deine Repositories anlegen
-Bevor du dein Repository klonen wirst, erstellst du nun ein Ordner, welche dieses Repository (und später auch weitere Repositories) beinhalten wird.
+Bevor du dein Repository klonen wirst, erstellst du nun ein Ordner, welcher dieses Repository (und später auch weitere Repositories) beinhalten wird.
 
 **Aufgabe**  
 Erstelle den Ordner "local_repos" unter deinem Startverzeichnis (bei Windows unter *"C:\\Users\\\<dein Benutzername\>"*)
@@ -135,30 +135,30 @@ C:\Users\e123456\local_repos> # fertig...
 
 #### Repository klonen
 1. Auf deiner Bitbucket-Repository Seite, klicke die **Clone** (klonen) Schaltfläche.
-2. Im geöffneten Popup-Fenster, wähle **SSH** als Protokoll und kopiere (CTRL+C) die URL zu deinem Repository (direkt neben dem Protokoll) in deinem Clipboard  
+2. Im geöffneten Popup-Fenster, wähle **SSH** als Protokoll und kopiere (CTRL+C) die URL zu deinem Repository (direkt neben dem Protokoll) in dein Clipboard  
    ![Bitbucket Clone](../bitbucket/bitbucket_clone.png)
 3. Öffne nun dein Git-Bash Terminal und navigiere zu deinem, im vorherigen Schritt erstellten, "local_repos" Ordner
-4. Verwende folgendes Befehl um dein Repository zu klonen:  
+4. Verwende folgenden Befehl, um dein Repository zu klonen:  
 ```bash
 C:\Users\e123456\local_repos> git clone ssh://git@codessh.sbb.ch:7999/~e123456/ausbildungsprogramm.git
 ```
 
-Nun findest du unter deinem "local_repos" Ordner ein neuer Ordner mit dem Namen deines Repositorys.
-Dieser neuen Ordner ist deinen lokalen Git-Repository und hier wirst du deine Arbeit ab jetzt speichern und verwalten.
+Nun findest du unter deinem "local_repos" Ordner einen neuen Ordner mit dem Namen deines Repositorys.
+Dieser neue Ordner ist dein lokales Git-Repository und hier wirst du deine Arbeit ab jetzt speichern und verwalten.
 
-Gratuliere! nun hast du dein lokales Repository worin du deine Arbeit verwalten kannst.
+Gratuliere! Nun hast du dein lokales Repository, worin du deine Arbeit verwalten kannst.
 
 #### Ordnerstruktur im lokalen Repository anlegen
-Jetzt erstellst du eine Ordnerstruktur, welche dich dazu dient, deine Arbeit im Ausbildungsprogramm strukturiert zu speichern und zu verwalten.
+Jetzt erstellst du eine Ordnerstruktur, welche dazu dient, deine Arbeit im Ausbildungsprogramm strukturiert zu speichern und zu verwalten.
 
 **Aufgabe:**  
 Erstelle folgende Ordnerstruktur in deinem lokalen Repository Ordner:
 
 ![Ordnerstruktur](../bitbucket/ordner_struktur.png)
 
-Im Ordner **J1** wirst du die Arbeit, welche zum ersten Java-Modul gehört speichern und verwalten (J1 entspricht die ID des ersten Moduls).
-Für jedes weitere Modul, welche du bearbeitest, wirst du einen Ordner unter deinem Repository-Ordner erstellen mit der ID des Moduls als Ordnername.
-Der **src** Ordner wirst du mit deinem Code befüllen. Darin wird später eine Java-Package-Struktur geben, welche du dann anlegen wirst.  
+Im Ordner **J1** wirst du die Arbeit, welche zum ersten Java-Modul gehört speichern und verwalten (J1 entspricht der ID des ersten Moduls).
+Für jedes weitere Modul, welches du bearbeitest, wirst du einen Ordner unter deinem Repository-Ordner erstellen mit der ID des Moduls als Ordnername.
+Der **src** Ordner wirst du mit deinem Code befüllen. Darin wird später eine Java-Package-Struktur sein, die du dann anlegen wirst.  
 
 ### "Snapshots" erstellen und ins Repository commiten
 In diesem Schritt wirst du eine neue Datei erstellen, diese in deinem lokalen Repository hinzufügen und Änderungen als "Snapshots" im Repository speichern.
@@ -168,8 +168,8 @@ Erstelle eine Datei mit dem Namen "README.md" in deinem **src** Folder.
 
 #### "git add" und "git status"
 Die Datei, welche du eben erstellt hast, befindet sich in deinem Arbeitsverzeichnis.
-Damit du diese nun in deinem Repository speichern kannst, musst du die Datei zuerst in einer sog. **Staging-Umgebung** verschieben.
-Dies wird mit dem Befehl **git add** gemacht. Gib folgendes Befehl in deinem Git-Bash Terminal ein:  
+Damit du diese nun in deinem Repository speichern kannst, musst du die Datei zuerst in eine sog. **Staging-Umgebung** verschieben.
+Dies wird mit dem Befehl **git add** gemacht. Gib folgenden Befehl in deinem Git-Bash Terminal ein:  
 ```bash
 C:\Users\e123456\local_repos\ausbildungsprogramm\J1> git add README.md
 ```
@@ -179,16 +179,16 @@ Die Ausgabe zeigt dir, dass es eine neue Datei in der **Staging-Umgebung** gibt,
 
 #### "git commit"
 Wenn du den Befehl **git commit** eingibst, speicherst du die "gestagete" Arbeit in deinem lokalen Repository.
-Bei Bedarf, kannst du dieses Snapshot aus dem Repository wiederherstellen.
+Bei Bedarf, kannst du diesen Snapshot aus dem Repository wiederherstellen.
 
-Führe folgender Befehl aus, um das erste Snapshot deiner Datei im Repository zu speichern:
+Führe folgender Befehl aus, um den ersten Snapshot deiner Datei im Repository zu speichern:
 
 ```bash
-C:\Users\e123456\local_repos\ausbildungsprogramm\J1> git commit -m 'Eine leere README.md file'
+C:\Users\e123456\local_repos\ausbildungsprogramm\J1> git commit -m 'Eine leere README.md Datei'
 ```
 
-Das "-m" gibt an, dass eine Commit-Nachricht folgt. Diese ist dann im Repository auch ersichtlich und hilft die später herauszufinden was du in diesem Snapshot gemacht hast.
-Nun ist das erste Snapshot deiner Datei im lokalen Repository gespeichert.  
+Das "-m" gibt an, dass eine Commit-Nachricht folgt. Diese ist dann im Repository auch ersichtlich und hilft dir später herauszufinden was du in diesem Snapshot gemacht hast.
+Nun ist der erste Snapshot deiner Datei im lokalen Repository gespeichert.  
 Wenn du wieder **git status** ausführst, wirst du sehen, dass es jetzt nichts zu commiten gibt.
 
 Wenn du beim Ausführen von **git status** die folgende Meldung siehst:
@@ -210,10 +210,10 @@ Wenn du **git status** oder auch andere Git-Befehle nun eingibst, siehst du dies
 Nützliche Git-Befehle:
 git add: verschiebt Änderungen aus dem Arbeitsverzeichnis in die Staging-Umgebung von Git.  
 git status: gibt den Status des Arbeitsverzeichnisses und den Status des Snapshots in der Staging-Umgebung zurück.  
-git commit: committet den Snapshot aus der Staging-Umgebung in den Projektverlauf. Das bedeutet, dass du dieses Snapshot nun in deinem lokalen Repository gespeichert wurde.  
+git commit: committet den Snapshot aus der Staging-Umgebung in den Projektverlauf. Das bedeutet, dass dieser Snapshot nun in deinem lokalen Repository gespeichert wurde.  
 ```
 
-Erstelle ein neues Snapshot deiner Datei und commite sie in deinem lokalen Repository.
+Erstelle einen neuen Snapshot deiner Datei und commite sie in deinem lokalen Repository.
 
 ### Dateien ins Remote-Repository laden
 Bis jetzt hast du deine Arbeit im lokalen Repository, sprich nur auf der Festplatte deines Computers, gespeichert.
@@ -223,13 +223,13 @@ Damit du diese Arbeit immer noch hast, auch wenn dein Computer oder die Festplat
 Der Befehl **git push**, schickt die committeten Änderungen von deinem lokalen Repository an das Remote-Repository.
 Das Remote-Repository wird als **origin** bezeichnet.
 
-In deinem Git-Bash Terminal gib also folgender Befehl:
+Gib also folgenden Befehl in deinem Git-Bash Terminal ein:
 
 ```bash
 C:\Users\e123456\local_repos\ausbildungsprogramm\J1\src>git push origin master
 ```
 
-Wenn du dein Bitbucket-Repository im Browser öffnest, wirst du deine Arbeit dort wiedererkennen.  
+Wenn du dein Bitbucket-Repository im Browser öffnest, wirst du deine Arbeit jetzt auch dort sehen.  
 Nun ist deine Arbeit auch ausserhalb deines Computers abgesichert.
 
 **Aufgabe**  
@@ -239,7 +239,7 @@ Nun ist deine Arbeit auch ausserhalb deines Computers abgesichert.
 git push origin master: pusht die Änderungen aus dem lokalen Repository in den Haupt-Branch **master** (Bitbucket-Branch) auf "origin" (Bitbucket-Server). 
 ```
 
-Erstelle ein neues Snapshot deiner Datei, commite sie in deinem lokalen Repository und pushe sie auf dem Bitbucket-Server.
+Erstelle einen neuen Snapshot deiner Datei, commite sie in deinem lokalen Repository und pushe sie auf den Bitbucket-Server.
 
 ### Den Ernstfall üben
 Deine Arbeit ist nun auf dem Bitbucket-Server gesichert.  
@@ -249,8 +249,8 @@ Dieses Szenario wirst du jetzt üben.
 **Aufgabe**  
 1. Lösche dein lokale Repository (das Verzeichnis unter **local_repos** und alles darunter löschen).
 2. Stelle deine Arbeit aus dem Bitbucket-Server wieder her.
-3. Füge folgender Text in deinem README.md File hinzu: "git clone: klont ein Remote-Repository auf dem lokalen System in einem lokalen Repository."
-4. Erstelle ein Snapshot für die Änderung, commite sie und pushe sie auf dem Bitbucket-Server
+3. Füge folgenden Text deinem README.md File hinzu: "git clone: klont ein Remote-Repository auf das lokale System in einem lokalen Repository."
+4. Erstelle ein Snapshot für die Änderung, commite sie und pushe sie auf den Bitbucket-Server
 
 {{% details title="Falls du etwas Hilfe brauchst..." %}}
 ```bash
