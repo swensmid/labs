@@ -134,7 +134,7 @@ Auf das Element sollte dann erst in der `ngAfterViewInit`-Lifecycle-Hook-Methode
 ### @ViewChildren
 Es gibt auch den `@ViewChildren`-Decorator, der ähnlich wie der `@ViewChild`-Decorator funktioniert, jedoch verwendet wird, um auf mehrere Elemente oder Directives in der View eines Components zuzugreifen.
 
-Der `@ViewChildren-Decorator wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.
+Der `@ViewChildren-Decorator` wird normalerweise zusammen mit einem Selektor oder einer Klasse verwendet, um die gewünschten Elemente oder Directives zu identifizieren. Das Ergebnis ist eine `QueryList`, die eine Sammlung der gefundenen Elemente oder Directives darstellt.
 
 ```typescript
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';

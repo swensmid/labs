@@ -11,7 +11,7 @@ description: >
 * Du weisst was Angular Reactive Forms sind.
 * Du weisst, wozu FormsControl, -Group und -Array sind und kannst sie anwenden.
 * Du weisst, was der FormBuilder ist und kannst ihn anwenden.
-* Du kennst, die Validators und kannst sie verwenden und eigenen schrieben.
+* Du kennst, die Validators und kannst sie verwenden und eigene schrieben.
 
 ## Angular Reactive Forms
 Angular Reactive Forms sind ein leistungsstarkes Feature von Angular, mit dem Entwickler Formulare erstellen, validieren und mit ihnen interagieren können. Im Gegensatz zu Template-driven Forms, bei denen die Formularlogik hauptsächlich im HTML-Template liegt, wird bei Reactive Forms die Formularlogik in den Components selbst geschrieben.
@@ -405,7 +405,7 @@ export class TriumphsComponent implements AfterViewInit {
 
 ## Form Builder
 Wie man bei der verschachtelten FormGroup gesehen hat, ist zum Teil der Code sehr duplikat. Um dies zu vermeiden, kann man beim Erstellen einer Form einen Hilfsservice namens `FormBuilder` benutzen. Diesen muss man auch importieren und dann im constructor injecten.
-Anstelle von `new FormGroup()` schreibt man nun `this.formBuilder.group()`,bei `FormArray` schreibt man mittels FormBuilder noch `this.formBuilder.array()` und bei den Controls kann man jedoch einfach nur das Key-Value Paar angeben.
+Anstelle von `new FormGroup()` schreibt man nun `this.formBuilder.group()`, bei `FormArray` schreibt man mittels FormBuilder noch `this.formBuilder.array()` und bei den Controls kann man jedoch einfach nur das Key-Value Paar angeben.
 
 ```typescript
 import { Component } from '@angular/core';

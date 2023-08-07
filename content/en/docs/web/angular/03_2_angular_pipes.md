@@ -22,7 +22,7 @@ Es ist klar, dass einige Werte von etwas Bearbeitung profitieren. Viele der Tran
 Dazu sind Pipes sehr praktisch. Man kann sie sich fast als Stile vorstellen.
 
 Eine Pipe nimmt Daten als Eingabe auf und wandelt sie in eine gewünschte Ausgabe um.
-In diesem Beispiel verwenden wir Pipes, um das datum der Triumphe eines Components in ein leserfreundliches Datum umzuwandeln.
+In diesem Beispiel verwenden wir Pipes, um das Datum der Triumphe eines Components in ein leserliches Datum umzuwandeln.
 
 ```typescript
 import {Component} from '@angular/core';
@@ -74,7 +74,7 @@ angekettet, um den Geburtstag in Grossbuchstaben anzuzeigen.
 Das Datum wird nun so angezeigt: APR/20/45
 
 ## AsyncPipe
-Die AsyncPipe wird verwendet, um Observables oder Promises imTemplate zu subscriben und automatisch zu aktualisieren, sobald neue Werte verfügbar sind.
+Die AsyncPipe wird verwendet, um Observables oder Promises im Template zu subscriben und automatisch zu aktualisieren, sobald neue Werte verfügbar sind.
 ```html
 <p>{{ myObservableData$ | async }}</p>
 <p>{{ myPromiseData | async }}</p>
