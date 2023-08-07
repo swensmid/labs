@@ -13,11 +13,11 @@ description: >
 ## NgRx Actions
 Actions sind einfache JS-Objekte, die eine bestimmte Aktion beschreiben, die in einer Anwendung ausgeführt werden soll. Jede Action hat einen Typ und optional zusätzliche Daten.
 
-Actions spielen eine zentrale Rolle in der Redux-Architektur und dienen als Auslöser für Zustandsänderungen im Store. Indem man Actions verwendet, kann man den Zustand der Anwendung eindeutig beschreiben und die Auswirkungen dieser Aktionen auf den Zustand zentral verwalten.
+Actions spielen eine zentrale Rolle in der Redux-Architektur und dienen als Auslöser für Zustandsänderungen im Store. Durch die Verwendung von Actions, kann man den Zustand der Anwendung eindeutig beschreiben und die Auswirkungen dieser Aktionen auf den Zustand zentral verwalten.
 
 Die Action Typen werden meistens in einem Enum definiert, so hat man eine bessere Übersicht welche Actions die Anwendung besitzt. Die Typen werden in eckigen Klammern mit einem präfix, der den Kontext der Aktion angibt, geschrieben.
 
-Hier ein Beispiel
+Hier ein Beispiel:
 ```typescript
 export enum ActionTypes {
     GETABILITIES = '[Dragon Warrior] Get Abilities',
@@ -26,7 +26,7 @@ export enum ActionTypes {
 }
 ```
 
-Als Nächstes muss man die Typen in einer Action-Creator-Funktion verwenden. Dazu muss diese Funktion zuerst erstellt werden. Mithilfe der `createAction`-Funktion aus dem `@ngrx/store`-Packages kann man Action-Creator-Funktionen erstellen. Die Funktion `createAction` akzeptiert den Action-Typ und optional zusätzliche Daten (Props) und gibt eine Action zurück.
+Als Nächstes muss man die Typen in einer Action-Creator-Funktion verwenden. Dazu muss diese Funktion zuerst erstellt werden. Mithilfe der `createAction`-Funktion aus dem `@ngrx/store`-Package kann man Action-Creator-Funktionen erstellen. Die Funktion `createAction` akzeptiert den Action-Typ und optional zusätzliche Daten (Props) und gibt eine Action zurück.
 ```typescript
 import { createAction, props } from '@ngrx/store';
 

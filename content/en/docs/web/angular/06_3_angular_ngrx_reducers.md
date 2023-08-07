@@ -9,7 +9,7 @@ description: >
 ---
 ## Ziele
 * Du weisst, was NgRx Reducers sind und kannst diese anwenden.
-* Du weisst, wie und warum die Reducers beim Root registrieren musst.
+* Du weisst, wie und warum die Reducers beim Root registriert werden.
 
 ## NgRx Reducers
 Reducers sind Funktionen in NgRx, die den aktuellen Zustand des Stores und eine Action als Parameter entgegennehmen und den neuen Zustand des Stores zurückgeben. Sie sind dafür verantwortlich, den Zustand basierend auf den eingehenden Aktionen zu aktualisieren.
@@ -18,7 +18,7 @@ Reducers in NgRx folgen dem Redux-Muster und sollten immer eine rein funktionale
 
 Man erstellt für jeden State den man in der Applikation verwenden möchte ein Interface. Diese Interfaces werden dan dazu benutzt sicherlich einen weiteren State zu definieren, nämlich den Initialen State. Mit dem Initialen State wird vermieden das der State `undefined` sein kann.
 
-Da man mehrere Actions hat, was meistens der Fall ist, muss man diese auch unterschieden. Dazu ist die `on`-Funktion da, mit dieser kann man einen Fallunterschied zwischen den Actions erstellen. Durch die Verwendung der props in den Action-Creator-Funktionen kann man die relevanten Daten an die Reducer-Funktion übergeben und im Reducer-Zustand verwenden.
+Da mestens mehrere Actions vorhanden sind, müssen diese auch unterschieden werden. Dazu ist die `on`-Funktion da, diese kann einen Fallunterschied zwischen den Actions erstellen. Durch die Verwendung der props in den Action-Creator-Funktionen kann man die relevanten Daten an die Reducer-Funktion übergeben und im Reducer-Zustand verwenden.
 
 
 ```typescript
@@ -49,7 +49,7 @@ Der State muss registriert werden, damit er im NgRx Store verwaltet und von den 
 
 Besitzt man nur einen Reducer in der Anwendung so kann man diesen einfach im `app.module.ts` angeben.
 
-**Wichtig** ist das der key im `forRoot()` gleich ist wie der key vom Reducername (z.B. auth: authReducer oder userProfile: userProfileReducer).
+**Wichtig** ist das der Key im `forRoot()` gleich ist wie der Key vom Reducername (z.B. auth: authReducer oder userProfile: userProfileReducer).
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -66,7 +66,7 @@ import { StoreModule } from '@ngrx/store';
 export class AppModule {}
 ```
 
-Wenn man mehr als einen Reducer besitzt, muss man eine Root-Reducer erstellen, dieser ist ein Reducer, welcher alle Reducer einer Anwendung kombiniert und den Gesamtzustand der Anwendung definiert.
+Wenn man mehr als einen Reducer besitzt, muss man eine Root-Reducer erstellen. Dieser kombiniert alle Reducer und definiert den Gesamtzustand einer Anwendung.
 Durch die Registrierung des States im `app.module.ts` mit `StoreModule.forRoot(rootReducer)` wird der Root-Reducer als zentrale Instanz für das Verwalten des Zustands festgelegt.
 
 ```typescript
