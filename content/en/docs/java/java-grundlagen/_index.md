@@ -6,7 +6,7 @@ description: >
   Modul #J1
 ---
 
-Hiermit beginnt deine Reise ~~nach~~ mit Java!
+Hiermit beginnt deine Reise mit Java!
 
 In dem Modul #J1 mit dem Namen "_Java Grundlagen_" lernst du die Basics der Programmierung mit Java.
 
