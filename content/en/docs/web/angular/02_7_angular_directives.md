@@ -22,7 +22,7 @@ Components-Directives sind die am häufigsten verwendeten Directives in Angular.
 
 ```html
 <!--app-greeting.html-->
-<app-triumphs [Title]="'Triumphs'"></app-triumphs>
+<app-triumphs [title]="'Triumphs'"></app-triumphs>
 ```
 
 ```typescript
@@ -110,7 +110,7 @@ export class GreetingComponent {
 ```
 
 ### *ngFor
-Die `*ngFor`-Direktive wird verwendet, um eine Liste von Elementen im Template eines Components zu rendern. Mit `*ngFor` kann man über eine Datenquelle iterieren und für jedes Element den entsprechenden Code im Template generieren. Es ist besonders nützlich wenn man Kachel anzeigen möchte oder eine eine Liste mit User Objekten anzeigen möchte.
+Die `*ngFor`-Direktive wird verwendet, um eine Liste von Elementen im Template eines Components zu rendern. Mit `*ngFor` kann man über eine Datenquelle iterieren und für jedes Element den entsprechenden Code im Template generieren. Es ist besonders nützlich wenn man Kachel anzeigen möchte oder eine Liste mit User Objekten anzeigen möchte.
 
 ```html
 <!--app-greeting.html-->
