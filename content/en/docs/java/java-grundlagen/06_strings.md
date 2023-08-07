@@ -32,6 +32,16 @@ String hello = "Hello, Java";
 hello = "Hello, how are you?";
 ```
 
+Ausserdem ist es möglich, Strings mit mehreren Zeilen zu definieren, indem du einen String mit 3 `"` beginnst und beendest und den String auf einer neuen Zeile beginnst:
+
+```java
+String poem = """
+    Strings dürfen mehreren Zeilen enthalten.
+    So kannst du auch einfach eine Auflistung notieren:
+        1. Element
+        2. Element.""";
+```
+
 ### Strings verknüpfen (String Concatenation)
 
 Oft generierst du aus verschiedenen Variablen EINEN neuen `String`. Angenommen du hast eine Variable für "name" und "age" (Alter), dann kannst du wie folgt den String "Hallo {name}, du bist {age} Jahre alt." generieren:
@@ -65,6 +75,31 @@ String greeting = sb.toString();
 ```
 
 Hierbei musst du aber zuerst ein neues `StringBuilder`-Objekt erstellen. (Im Modul #J1 musst du solche Objekte noch nicht verstehen.) Anschliessend fügst du alle einzelnen Strings via `.append(...)` hinzu. Den gewünschten String kannst du dann mit `.toString()` generieren lassen.
+
+### Neue Zeilen oder Tabs
+Beim Verknüpfen von Strings ist es oft praktisch, wenn man Zeilenumbrüche hinzufügen kann. Dies kannst du mit dem `Character` `'\n'` (new line) tun:
+
+```java
+String greeting = " name: " + name + ", \n nage: " + age;
+```
+
+Das Gleiche ist auch mit Einrückungen (Tabulatoren) möglich mit dem `Character` `'\t'` (tab):
+```java
+System.out.println("weapon name \t ranges (m)");
+System.out.println("Shuriken \t 5-10");
+System.out.println("Nunchaku \t 1-1.5");
+System.out.println("Naginata \t 3-4");
+```
+
+Im Java fungiert das Zeichen `\` als "escape character". Das bedeutet, dass spezielle Zeichen, die in einem String regulär nicht möglich wären, oft irgendwie mit einem `\` "escaped" werden. Neben der "New-Line" und dem "Tabulator" gibt es noch weitere, die oft verwendet werden:
+* `\\`: Das `\`-Zeichen ("Backslash) selber.
+* `\"`: Ein Anführungszeichen in einem String.
+
+Hier ein Beispiel, wie das Anführungszeichen und Backslash in einem String verwendet werden können:
+
+```java
+System.out.println("Die Datei \"Main.java\" befindet sich im Ordner C:\\Users\\Ninja\\Documents.");
+```
 
 ### Methoden
 
@@ -265,3 +300,6 @@ Die `for`-Schlaufe musst du zu diesem Zeitpunkt noch nicht verstehen. Wichtig is
 Auf diese Art und Weise können wir z.B. alle Wörter aus einem String ermitteln.
 
 Anzufügen ist noch, dass es sich beim Suchbegriff um eine sogenannten "Regulären Ausdruck" (RegEx) handelt. Eine RegEx ist eine Folge von Zeichen, die ein Suchmuster bilden. Eine Regex wird dafür verwendet, um einen Text anhand eines Musters (einer Regel) abzugleichen. RegEx ist im Moment kein Thema im Modul #J1. Wichtig ist für dich im Moment nur, dass du weisst, dass sich bei diesem Suchbegriff von `split(...)` nicht um einen gewöhnlichen String handelt, sondern um eine RegEx. Möglicherweise können dir RegEx' viel Arbeit abnehmen. Bitte melde dich bei Interesse für RegEx.
+
+---
+![asset](/images/hint.png) Jetzt bist du dran. Löse bitte die [Aufgabe 2](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-2---strings) in den Labs.
