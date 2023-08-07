@@ -45,9 +45,9 @@ Weitere Informationen zu den verfügbaren Optionen und deren Werten finden man i
 
 #### Prettier ausführen
 Das Prettier Plugin kann man wie folgt ausführe.
-* **IntelliJ**: Alt-Shift-Cmd-P auf macOS oder Alt-Shift-Ctrl-P auf Windows und Linux.
+* **IntelliJ**: Alt-Shift-Ctrl-P auf Windows und Linux oder Alt-Shift-Cmd-P auf macOS.
 
-* **VSCode**: [Shift] + [Option] + [F] auf macOS und [Shift] + [Alt] + [F] unter Windows und Linux. Alternativ kannst du durch Klick auf [F1] den Task "Format Document (With...)" auswählen. Auf diese Weise kannst du auch gleich den Default-Formatter festlegen (wenn du es noch nicht in der Datei `settings.json` wie oben beschrieben getan hast).
+* **VSCode**: [Shift] + [Alt] + [F] unter Windows und Linux und [Shift] + [Option] + [F] auf macOS. Alternativ kannst du durch Klick auf [F1] den Task "Format Document (With...)" auswählen. Auf diese Weise kannst du auch gleich den Default-Formatter festlegen (wenn du es noch nicht in der Datei `settings.json` wie oben beschrieben getan hast).
 
 
 ### ESLint
@@ -64,14 +64,14 @@ npx eslint src/index.js
 ```
 
 #### ESLint konfigurieren
-Man kann eigene Regeln erstellen oder bereits vorhandene Regeln anpassen, um den Anforderungen Ihres Projekts gerecht zu werden.
+Man kann eigene Regeln erstellen oder bereits vorhandene Regeln anpassen, um den Anforderungen des Projekts gerecht zu werden.
 Die Konfiguration erfolgt über eine `.eslintrc`-Datei, in der man die Regeln, Erweiterungen und spezifischen Projekteinstellungen festlegen kann.
 
 Hier einige Beispiele wie man dies tun kann:
 
 **Anpassen bestehender Regel**:
 
-In der `.eslintrc`-Datei kann man die Einstellungen für eine spezifische Regel ändern. Wenn man die maximale Zeilenlänge auf 100 Zeichen festlegen, geht die wie folgt.
+In der `.eslintrc`-Datei kann man die Einstellungen für eine spezifische Regel ändern. Wenn die maximale Zeilenlänge auf 100 Zeichen beschränkt werden soll, wird dies wie folgt eingerichtet.
 ```json
 {
   "rules": {
@@ -91,10 +91,10 @@ Man kann Regeln hinzufügen oder entfernen, indem man die `rules`-Eigenschaft an
 }
 ```
 
-Weitere Informationen finden Sie in der ESLint-Dokumentation unter https://eslint.org/docs/user-guide/configuring.
+Weitere Informationen findest du in der ESLint-Dokumentation unter https://eslint.org/docs/user-guide/configuring.
 
 #### ESLint ausführen
-ESLint kan man über die Konsole ausführen dazu muss man folgende Schritte tun:
+ESLint kann man über die Konsole ausführen dazu sind folgende Schritte erforderlich:
 
 1. In der Konsole zum Wurzelverzeichnis des Projekts navigieren.
 2. Den Befehl `eslint` gefolgt von den Datei- oder Verzeichnisnamen ausführen, die man überprüfen möchten.
@@ -103,17 +103,17 @@ eslint src/index.js
 ```
 3. ESLint überprüft nun die angegebenen Dateien oder Verzeichnisse anhand der definierten Regeln und gibt mögliche Fehler oder Warnungen in der Konsole aus.
 
-ESLint kann man mit zusätzlichen Optionen und Flags verwenden, die wichtigste Flag ist  `--fix`. Man kann es verwenden, um automatische Code-Fixes für bestimmte Probleme durchzuführen.
+ESLint kann man mit zusätzlichen Optionen und Flags verwenden, die wichtigste Flag ist  `--fix`. Man kann sie verwenden, um automatische Code-Fixes für bestimmte Probleme durchzuführen.
 ```shell
 eslint --fix src/index.js
 ```
 
 Vielfach ist ESLint bereits als Script im `packages.json` hinterlegt und kann dann so mit dem Befehl `npm run <scriptname>` (beispielsweise `npm run lint`) aufgerufen werden.
 
-#### ESLint als beim Speichern
-**Im VS-Code**:
+#### ESLint automatisch beim Speichern
+**In VS-Code**:
 
-Man öffnet die VS Code-Einstellungen, indem man "Datei" (File) in der Menüleiste wählen und dann "Einstellungen" (Preferences) auswählen. Oder man verwendet den Shortcut "[Ctrl] + [,]" für Windows/Linux oder "[Cmd] + [,]" für macOS.
+Man öffnet die VS Code-Einstellungen, indem man "Datei" (File) in der Menüleiste wählt und dann "Einstellungen" (Preferences) auswählt. Oder man verwendet den Shortcut "[Ctrl] + [,]" für Windows/Linux oder "[Cmd] + [,]" für macOS.
 
 Man sucht nach `Save Actions` in den Einstellungen und wählt "In settings.json bearbeiten" (Edit in settings.json).
 
@@ -128,16 +128,16 @@ In der `settings.json`-Datei fügt man den folgenden Code hinzu:
 
 * `"editor.formatOnSave": true`: Diese Einstellung bewirkt, dass der Code automatisch entsprechend den in den Editor-Einstellungen konfigurierten Regeln formatiert wird, wenn das Dokument gespeichert wird.
 
-* `"editor.defaultFormatter": "esbenp.prettier-vscode"`: Diese Einstellung gibt den Standard-Codeformatter an, der verwendet wird, wenn `"editor.formatOnSave"` aktiviert ist. In diesem Fall wird das Prettier verwendet. 
+* `"editor.defaultFormatter": "esbenp.prettier-vscode"`: Diese Einstellung gibt den Standard-Codeformatter an, der verwendet wird, wenn `"editor.formatOnSave"` aktiviert ist. In diesem Fall wird Prettier verwendet. 
 
 * `"editor.codeActionsOnSave": { "source.fixAll.eslint": true }` : Diese Einstellung aktiviert Code-Aktionen beim Speichern des Dokuments. Konkret wird hier die ESLint-Erweiterung verwendet. Durch das Aktivieren von `"source.fixAll.eslint": true` werden automatisch Vorschläge zur Fehlerbehebung und Verbesserung des Codes angezeigt, wenn das Dokument gespeichert wird.
 
-Nun noch die Datei speichern und VS-Code wird automatisch den Code formatieren und Lint-Fixes anwenden, wenn man eine Datei speichert.
+Nun noch die Datei speichern und VS-Code wird automatisch den Code formatieren und Lint-Fixes anwenden.
 
 
-**Im IntelliJ**:
+**In IntelliJ**:
 
-Man öffnet die VS Code-Einstellungen, indem man den Shortcut "Strg + Alt + S" für Windows/Linux oder "Cmd + ," für macOS verwendet.
+Man öffnet die IntelliJ-Einstellungen, indem man den Shortcut "Strg + Alt + S" für Windows/Linux oder "Cmd + ," für macOS verwendet.
 
 Man navigiert zu `Languages & Frameworks` -> `[Code-Language z.B. JavaScript]` -> `Code Quality Tools` -> `ESLint` nun wählt man die `Automatic ESLint configuration` und `Run eslint --fix on save` Option an.
 
