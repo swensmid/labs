@@ -84,7 +84,11 @@ String poem = """
 
 ## Aufgabe 7 - Eingaben von der Kommandozeile
 ![task1](/images/task.png) Lies zuerst deinen Namen und danach dein Alter über einen Scanner von der Kommandozeile ein und gib dann die folgenden Daten auf die Kommandozeile aus
-*   Hello + <Dein Name> + you are + <Dein Alter> + years old
+*   `Hello + <Dein Name> + you are + <Dein Alter> + years old. Next year, you will be <Dein Alter + 1> years old.`
+
+Generiere diesen Output
+* mithilfe eines `StringBuilder`s
+* und mithilfe der `String.format()`-Methode.
 
 ## Aufgabe 8 - Arrays
 ![task1](/images/task.png) Löse die folgenden Aufgaben:
