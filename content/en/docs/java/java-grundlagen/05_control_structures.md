@@ -100,6 +100,11 @@ switch (variable) {
 Die Schlüsselwörter switch und case werden hier immer benötigt. Die Schlüsselwörter break und default sind optional. Das Schlüsselwort break verlässt die Switch-Anweisung.
 Wenn ein Fall nicht über das Keyword _break_ verfügt, wird auch der darauffolgende Fall ausgewertet. Dies ist spannend, um die einzelnen Auswertungen verketten zu können. Der Default-Fall wird ausgewertet, wenn kein Fall mit dem Variablenwert übereinstimmt.
 
+---
+![task1](/images/task.png) Jetzt bist du dran. Löse bitte die [Aufgabe 2](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-2---conditional-statements) in den Labs.
+
+---
+
 ### Schleifen (Loops)
 Manchmal müssen wir einen Codeblock für eine bestimmte Anzahl wiederholen. Zu diesem Zweck stellt Java die Schleife bereit. Diese Schleife wird häufig verwendet, um über einen Wertebereich oder durch ein Array zu iterieren. For-Loops arbeiten mit einem Schleifenzähler, welcher sehr gut für Indizes von Arrays verwendet werden kann. Bei allen Schleifen ist Vorsicht geboten, da es rasch zu einer unendlichen Anzahl von Ausführungen kommen kann.
 
@@ -176,3 +181,6 @@ do {
     // body: do something
 } while (condition);
 ```
+
+---
+![task1](/images/task.png) Jetzt bist du dran. Löse bitte die [Aufgabe 3](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-3---loops) in den Labs.

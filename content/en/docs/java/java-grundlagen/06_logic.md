@@ -83,3 +83,6 @@ Diese Operatoren basieren auf der boolschen Algebra. Daher arbeiten boolsche Ope
 | ^ | Logisches ENTWEDER-ODER (XOR) | _XOR_ gibt true zurück, wenn die beiden Ausdrücke unterschiedlich sind |
 | & | Logisches UND (AND) | Im Unterschied zum obigen _AND_ wertet dieses immer beide Ausdrücke aus |
 | \|  | Logisches ODER (OR) | Im Unterschied zum obigen _OR_ wertet dieses immer beide Ausdrücke aus. |
+
+---
+![task1](/images/task.png) Jetzt bist du dran. Löse bitte die [Aufgabe 4](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-4---einfache-berechnungen) in den Labs.

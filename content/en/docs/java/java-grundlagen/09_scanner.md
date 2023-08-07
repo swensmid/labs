@@ -41,3 +41,6 @@ Es ist einfach zu bedienen, muss jedoch importiert werden, damit die Klasse funk
 * Wir deklarieren eine Variable vom Datentyp String mit dem Bezeichner name
 * Wir weisen der Variable name das Resultat der Methode _scanner.nextLine()_ zu
 * Diese Methode nimmt die Tastatureingabe vom Benutzer auf der Kommandozeile entgegen. Sie wird beendet, wenn der Benutzer die Enter-Taste drückt
+
+---
+![task1](/images/task.png) Jetzt bist du dran. Löse bitte die [Aufgabe 7](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-7---eingaben-von-der-kommandozeile) in den Labs.
