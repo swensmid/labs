@@ -27,7 +27,33 @@ description: >
 * `Zeichne ein Haus, nutze dazu beliebige Zeichen`
 * `Zeichne eine Schweizerfahne`
 
-## Aufgabe 2 - Strings
+
+## Aufgabe 2 - Conditional Statements
+![task1](/images/task.png) Löse die folgende Aufgaben:
+* Schreibe eine Methode, die feststellen kann, ob eine Zahl (als Parameter) grösser, kleiner oder gleich 0 ist
+* Schreibe eine Methode, die dich begrüsst wenn dein Name als Parameter übergeben wird
+* Schreibe eine Methode, die feststellt, ob das übergebene Jahr ein Schaltjahr ist
+* Schreibe eine Methode, die überprüft, ob eine Zahl (als Parameter) gerade oder ungerade ist
+* Debugge mindestens zwei dieser Methoden mit einem Breakpoint
+
+## Aufgabe 3 - Loops
+![task1](/images/task.png) Löse die folgenden Aufgaben:
+* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Fakultät](https://www.studysmarter.de/schule/mathe/algebra/fakultaet/) dieser Zahl berechnet.
+* Schreibe einen Loop, welcher alle Zahlen von 1 bis 100 zusammenzählt, welche durch 8 teilbar sind
+  * Erweitere deine Lösung mit einer Methode, welche eine Zahl entgegennimmt und dann die Zahlen zusammenzählt, welche durch diese Zahl teilbar sind
+
+
+## Aufgabe 4 - Einfache Berechnungen
+![task1](/images/task.png) Berechne die folgenden Dinge:
+* Fläche eines Rechtecks
+* Fläche eines Kreises
+* Umfang eines Rechtecks
+* Inhalt einer Pyramide mit quadratischen Grundriss und einer bestimmten Höhe
+* Berechne dein Alter am heutigen Tag in Jahren, Monaten und Tagen
+* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Vielfache](https://www.studysmarter.de/schule/mathe/algebra/vielfaches/) von 3 zusammen mit der Vielfache von 5 dieser Zahl summiert.
+
+
+## Aufgabe 5 - Strings
 Du hast den folgenden String:
 
 ```java
@@ -51,44 +77,21 @@ String poem = """
 4. Schneide das Wort "Shurikens" aus. Ermittle hierfür die Position des Wortes anhand des `"`-Zeichens.
     Hinweis: Die `indexOf()`-Methode bietet ein optionales Argument `fromIndex` an. Übergibst du die `Position des ersten Anführungszeichen + 1`, dann wird die Position des zweiten zurückgegeben.
 
-## Aufgabe 2 - Eingaben von der Kommandozeile
-Lies zuerst deinen Namen und danach dein Alter über einen Scanner von der Kommandozeile ein und gib dann die folgenden Daten auf die Kommandozeile aus
-*   Hello + <Dein Name> + you are + <Dein Alter> + years old
-
-## Aufgabe 3 - Einfache Berechnungen
-![task1](/images/task.png) Berechne die folgenden Dinge:
-* Fläche eines Rechtecks
-* Fläche eines Kreises
-* Umfang eines Rechtecks
-* Inhalt einer Pyramide mit quadratischen Grundriss und einer bestimmten Höhe
-* Berechne dein Alter am heutigen Tag in Jahren, Monaten und Tagen
-* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Vielfache](https://www.studysmarter.de/schule/mathe/algebra/vielfaches/) von 3 zusammen mit der Vielfache von 5 dieser Zahl summiert.
-
-## Aufgabe 4 - Methoden
-![task1](/images/task.png) Löse die folgende Aufgaben:
-* Schreibe eine Methode, die zwei beliebigen Ganzzahlen als Parameter übernimmt und die Summe der beiden zurückliefert.
-* Schreibe eine eigene Methode, die als Parameter einen Namen übernimmt. Die Methode soll dann die folgenden Daten auf die Kommandozeile ausgeben ```Hello + <Parameter-Name>```
-
-## Aufgabe 5 - Conditional Statements
-![task1](/images/task.png) Löse die folgende Aufgaben:
-* Schreibe eine Methode, die feststellen kann, ob eine Zahl (als Parameter) grösser, kleiner oder gleich 0 ist
-* Schreibe eine Methode, die dich begrüsst wenn dein Name als Parameter übergeben wird
-* Schreibe eine Methode, die feststellt, ob das übergebene Jahr ein Schaltjahr ist
-* Schreibe eine Methode, die überprüft, ob eine Zahl (als Parameter) gerade oder ungerade ist
-* Debugge mindestens zwei dieser Methoden mit einem Breakpoint
-
-## Aufgabe 6 - Loops
-![task1](/images/task.png) Löse die folgenden Aufgaben:
-* Schreibe eine Methode, welche eine beliebige Ganzzahl als Parameter übernimmt und die [Fakultät](https://www.studysmarter.de/schule/mathe/algebra/fakultaet/) dieser Zahl berechnet.
-* Schreibe einen Loop, welcher alle Zahlen von 1 bis 100 zusammenzählt, welche durch 8 teilbar sind
-  * Erweitere deine Lösung mit einer Methode, welche eine Zahl entgegennimmt und dann die Zahlen zusammenzählt, welche durch diese Zahl teilbar sind
-
-## Aufgabe 7 - Strings
+## Aufgabe 6 - Strings und Loops
 ![task1](/images/task.png) Löse die folgende Aufgaben:
 * Schreibe eine Methode, welche als Parameter einen beliebigen String übernimmt und dessen Zeichenfolge umkehrt
 * Schreibe eine Methode, welche als Parameter einen beliebigen String übernimmt und die Anzahl Wörter darin ausgibt
+
+## Aufgabe 7 - Eingaben von der Kommandozeile
+![task1](/images/task.png) Lies zuerst deinen Namen und danach dein Alter über einen Scanner von der Kommandozeile ein und gib dann die folgenden Daten auf die Kommandozeile aus
+*   Hello + <Dein Name> + you are + <Dein Alter> + years old
 
 ## Aufgabe 8 - Arrays
 ![task1](/images/task.png) Löse die folgenden Aufgaben:
 * Schreibe eine Methode, welche zwei Parametern übernimmt: einen beliebigen Zahlen-Array und eine beliebige Zahl. Die Methode gibt die Position der Zahl im Array aus.
 * Schreibe eine Methode, welche als Parameter einen beliebigen Zahlen-Array übernimmt und die grösste Zahl im Array zurückliefert.
+
+## Aufgabe 9 - Methoden
+![task1](/images/task.png) Löse die folgende Aufgaben:
+* Schreibe eine Methode, die zwei beliebigen Ganzzahlen als Parameter übernimmt und die Summe der beiden zurückliefert.
+* Schreibe eine eigene Methode, die als Parameter einen Namen übernimmt. Die Methode soll dann die folgenden Daten auf die Kommandozeile ausgeben ```Hello + <Parameter-Name>```
