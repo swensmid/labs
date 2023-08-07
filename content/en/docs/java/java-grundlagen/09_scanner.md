@@ -40,7 +40,22 @@ Es ist einfach zu bedienen, muss jedoch importiert werden, damit die Klasse funk
 
 * Wir deklarieren eine Variable vom Datentyp String mit dem Bezeichner name
 * Wir weisen der Variable name das Resultat der Methode _scanner.nextLine()_ zu
-* Diese Methode nimmt die Tastatureingabe vom Benutzer auf der Kommandozeile entgegen. Sie wird beendet, wenn der Benutzer die Enter-Taste drückt
+* Diese Methode nimmt die Tastatureingabe vom Benutzer auf der Kommandozeile entgegen. Sie wird beendet, wenn der Benutzer die Enter-Taste drückt.
+
+### Zahlen einlesen
+
+Oft möchtest du, dass der User Zahlen in der Konsole eingeben kann. Hierfür bietet der `Scanner` eine passende Methode an:
+
+```java
+System.out.print("Enter an integer: ");
+int number = scanner.nextInt();
+```
+
+Die `Scanner.nextInt()`-Methode gibt dir die letzte Zahl vor dem Enter und nach dem letzten Leerzeichen zurück.
+
+Wie du es bereits an der mühsamen Formulierung des letzten Satzes siehst, hat diese Methode komische Eigenheiten. Wenn du z.B. nach dem Aufruf von `nextInt()` wieder `nextLine()` aufrufst, so gibt die zweit genannte Methode sofort einen leeren String zurück, weil das Enter von der Zahl noch nicht konsumiert wurde. Um dieses Problem in Java zu beheben, kannst du `nextLine()` 2 mal hintereinander aufrufen.
+
+Für die Labs und das Exams im Modul #J1 kannst du diese Methode gut brauchen. Spiele aber trotzdem ein bisschen mit dieser `nextInt()`-Methode, damit du die komischen Eigenheiten dieser Methode einmal kennenlernst.
 
 ---
 ![task1](/images/task.png) Jetzt bist du dran. Löse bitte die [Aufgabe 7](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-7---eingaben-von-der-kommandozeile) in den Labs.
