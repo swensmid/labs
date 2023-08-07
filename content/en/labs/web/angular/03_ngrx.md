@@ -9,7 +9,7 @@ description: >
 ---
 # Aufgaben
 ## Aufgabe 1
-Als kleines Beispiel, wie man NgRx verwendet, setze man ein kleines neues Angular-projekt auf und schreibt eine Anwendung mit einem Counter welchen man Inkrementieren, Dekrementieren und Resetten kann.
+Als Beispiel zur Verwendung von NgRx, setzen wir ein neues Angular-projekt auf und schreiben eine Anwendung mit einem Counter, der Inkrementier, Dekrementiert und Resettet werden kann.
 
 ### Einrichten
 Als Erstes muss man ein neues Angular Projekt [aufsetzen](../../../../docs/web/angular/03_1_ts_einführung_angular#angular-projekt-aufsetzen).
@@ -22,7 +22,7 @@ Nun erstellt man der Übersicht halber noch zwei Ordner names actions und reduce
 Als Erstes werden die Actions definiert, welche man alle für dieses Projekt benötigt. Wie bei der Einleitung erwähnt sind das Inkrementieren, Dekrementieren und Resetten. Dazu erstellt man nun ein neues Typescript File namens `counter.actions.ts`.
 Lagere die Action Types in ein Enum aus.
 
-Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+Versuche selbständig auf eine Lösung zu kommen, bevor du dir die Lösung anschaust.
 
 <details>
 <summary>Lösung (click to expand)</summary>
@@ -44,9 +44,9 @@ export const reset = createAction(ActionTypes.RESET);
 </details>
 
 ### Reducer erstellen
-Nun muss man eine Reducer-Funktion definieren, um Änderungen im Zählerwert basierend auf den bereitgestellten Aktionen zu verarbeiten. Dazu auch ein neues Typescript File namens `counter.reducer.ts` erstellen und darin es umsetzen.
+Nun muss man eine Reducer-Funktion definieren, um Änderungen im Zählerwert basierend auf den bereitgestellten Aktionen zu verarbeiten. Erstelle dazu ein neues Typescript File namens `counter.reducer.ts` und setze die Funktion darin um.
 
-Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+Versuche selbständig auf eine Lösung zu kommen, bevor du dir die Lösung anschaust.
 
 <details>
 <summary>Lösung (click to expand)</summary>
@@ -67,10 +67,10 @@ export const counterReducer = createReducer(
 </details>
 
 ### Component erstellen
-Erstelle mittels der ng-Befehle einen neuen Component namens `my-counter` innerhalb des app-Ordners. Das HTML soll einen Titel besitzen, drei Buttons für jede Actions und eine Anzeige für den aktuellen Counter.
-Im Typescript soll für jeden Button eine Methode erstellt werden, zudem ein Observable welches den aktuellen Count besitzt. Das Observable soll mit dem Wert des Stores verbunden sein.
+Erstelle mittels ng-Befehl einen neuen Component namens `my-counter` innerhalb des app-Ordners. Das HTML soll einen Titel besitzen, drei Buttons für jede Actions und eine Anzeige für den aktuellen Counter.
+Im Typescript soll für jeden Button eine Methode erstellt werden, zudem ein Observable welches den aktuellen Count beinhaltet. Das Observable soll mit dem Wert des Stores verbunden sein.
 
-Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+Versuche selbständig auf eine Lösung zu kommen, bevor du dir die Lösung anschaust.
 
 <details>
 <summary>Lösung (click to expand)</summary>
@@ -118,9 +118,9 @@ export class MyCounterComponent {
 </details>
 
 ### AppModule anpassen
-Das `app.module.ts` muss nun noch angepasst werden mit dem Store und dem Reducer.
+Das `app.module.ts` muss nun noch mit dem Store und Reducer ergänzt werden.
 
-Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+Versuche selbständig auf eine Lösung zu kommen, bevor du dir die Lösung anschaust.
 
 <details>
 <summary>Lösung (click to expand)</summary>
@@ -146,9 +146,9 @@ export class AppModule {}
 </details>
 
 ### Im AppComponent anzeigen 
-Der neue Component soll nun noch mit dem `app.component.html` verknüpft werden so das man den Inhalt des Components sehen kann.
+Der neue Component soll nun mit dem `app.component.html` verknüpft werden, sodass der Inhalt des Components sichtbar wird.
 
-Man sollte versuchen es selbst umzusetzen, bevor man die Lösung anschaut.
+Versuche selbständig auf eine Lösung zu kommen, bevor du dir die Lösung anschaust.
 
 <details>
 <summary>Lösung (click to expand)</summary>
@@ -170,13 +170,13 @@ Entwickle eine Angular-Anwendung für einen Online-Shop mit den folgenden Funkti
 ### Produktübersicht
 * Erstelle eine Seite für die Produktübersicht, auf der alle Produkte angezeigt werden.
 * Rufe die Produktdaten aus einem Mock-Datenservice ab und zeige sie an.
-* Implementiere zu jedem Produkt einen Button für das Hinzufügen von Produkten im Warenkorb.
+* Implementiere zu jedem Produkt einen Button für das Hinzufügen von Produkten in den Warenkorb.
 
 ### Warenkorb:
-* Erstelle eine Seite, auf der die im Warenkorb befindlichen Produkte angezeigt werden.
-* Verwende NgRx, um den Warenkorbzustand zu verwalten. Definiere Aktionen zum Hinzufügen und Entfernen von Produkten im Warenkorb. (Verwende Selektoren, um den Zugriff auf den NgRx-Store zu erleichtern.))
+* Erstelle eine Seite, auf der die Produkte im Warenkorb angezeigt werden.
+* Verwende NgRx, um den Warenkorbzustand zu verwalten. Definiere Aktionen zum Hinzufügen und Entfernen von Produkten in den Warenkorb. (Verwende Selektoren, um den Zugriff auf den NgRx-Store zu erleichtern.))
 * Zeige eine Liste der ausgewählten Produkte im Warenkorb an, inklusive Name und Preis.
-* Implementiere einen Button für das Löschen von Produkten im Warenkorb.
+* Implementiere einen Button für das Löschen von Produkten aus dem Warenkorb.
 * Füge eine Bestellfunktion hinzu, um den Kaufprozess abzuschliessen (kann eine einfache Bestätigungsnachricht sein).
 
 ## Aufgabe 3

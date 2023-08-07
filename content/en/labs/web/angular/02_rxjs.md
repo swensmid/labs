@@ -49,7 +49,7 @@ intervalObservable.subscribe((interval) => {
 Auch bei dieser Aufgabe ist bereits ein wenig Code schon gegeben. Und zwar erneut eine Funktion zum Erhalten einer zufälligen Zahl für die Celsiusgrade.
 Auch das Observable ist hier bereits gegeben, dieses emitted alle zwei Sekunden eine neue Random Celsiusgrad Zahl.
 
-Die Aufgabe ist nun beim subscriben auf das Observable, die kommende Celsius Zahl zu Fahreinheiten umzuwandeln und dann die Celsius und Fahrenheiten loggen.
+Die Aufgabe ist nun beim subscriben auf das Observable, die kommende Celsius Zahl in Fahreinheiten umzuwandeln und dann beide zu loggen.
 
 ```typescript
 import { Observable } from "rxjs";
