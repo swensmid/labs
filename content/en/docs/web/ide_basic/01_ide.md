@@ -4,11 +4,11 @@ linkTitle: "IDE"
 weight: 1
 date: 2022-02-16
 description: >
-    In diesem Kapitel werden die IDE beschrieben.
+    In diesem Kapitel wird die IDE beschrieben.
 ---
 
 # IDE
-In den folgenden Kapiteln ist alles aufgeführt was man für das Programmieren mit HTML und CSS benötigt
+In den folgenden Kapiteln ist alles aufgeführt was man für das Programmieren mit HTML und CSS benötigt.
 
 ## VS Code
 Die Beispiele in diesem Modul werden mit Visual Studio Code erklärt. Visual Studio Code ist ein kostenloser Codierungseditor, mit welchem du schnell mit dem Coden beginnen kannst. Du kannst Visual Studio Code verwenden, um in jeder Programmiersprache zu programmieren, ohne den Editor zu wechseln. Es unterstützt viele Sprachen, darunter sind JavaScript, Angular, Vue und viele mehr.
