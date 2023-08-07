@@ -13,8 +13,8 @@ description: >
 ## Special Operators
 Viele der wichtigen Operatoren wurden bereits beim JavaScript behandelt, diese können auch in TypeScript verwendet werden. Die Operatoren können [hier](../../../docs/web/javascript/06_js_operators) nachgelesen werden.
 
-### ?.-Operator
-Der `?.`-Operator ist der optionale Aufruf-Operator (optional chaining operator). Er ermöglicht den Zugriff auf Eigenschaften oder Methoden eines Objekts, wenn das Objekt potenziell `null` oder `undefined` sein kann.
+### ?-Operator
+Der `?`-Operator ist der optionale Aufruf-Operator (optional chaining operator). Er ermöglicht den Zugriff auf Eigenschaften oder Methoden eines Objekts, wenn das Objekt potenziell `null` oder `undefined` sein kann.
 
 Er wird verwendet, um sicherzustellen, dass der Code nicht abbricht und einen Fehler auslöst, wenn eine Eigenschaft oder Methode auf einem möglicherweise `null` oder `undefined` Objekt aufgerufen wird. Wenn das Objekt `null` oder `undefined` ist, gibt er `undefined` zurück, anstatt einen Fehler zu werfen.
 

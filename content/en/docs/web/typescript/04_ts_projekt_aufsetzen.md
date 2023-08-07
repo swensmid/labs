@@ -5,7 +5,7 @@ linkTitle: "Projekt aufsetzen in TypeScript"
 weight: 4
 date: 2023-06-02
 description: >
-    In diesem Kapitel wird beschrieben wie man in Typescript ein projekt aufsetzt und startet.
+    In diesem Kapitel wird beschrieben, wie man in Typescript ein Projekt aufsetzt und startet.
 ---
 ## Hello World
 Da Node.js bereits installiert wurde, kann nun anhand des Node Package Manager mühelos typescript installiert werden.
@@ -15,12 +15,12 @@ npm install -g typescript
 ```
 
 Sobald die Installation abgeschlossen ist, erstellt man eine Datei und nennt diese `hello-world.ts`.
-Nun die Datei mit einer IDE öffne und die folgende Codezeile reinschreiben:
+Nun die Datei mit einer IDE öffnen und die folgende Codezeile reinschreiben:
 ``` typescript
 console.log("Hello World");
 ```
 
-Somit wurde das erstes Typescript "Projekt" erstellt. Um dies auszuführen, muss der Quellcode zu JS transpilieren.
+Somit wurde das erste Typescript "Projekt" erstellt. Um dieses auszuführen, muss der Quellcode zu JS transpilieren.
 Dazu eine Konsole öffnen und sich in das Verzeichnis, indem sich die Datei befindet, begeben.
 
 Danach folgenden Befehl in der Konsole eingeben: 
