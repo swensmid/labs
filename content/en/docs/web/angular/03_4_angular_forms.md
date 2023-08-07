@@ -230,8 +230,8 @@ export class TriumphsComponent implements AfterViewInit {
 <p>Value Zip: {{ triumphForm.value.placeOfAchieving.zip }}</p>
 ```
 
-Wenn man eine so grosse FormGroup hat und nun ein Wert ändern möchte über das Typescript, kann man dies auch mittels `setValue()` tun. Das kann jedoch mühsam sein da man bei dieser Methode alle Values der FormGroup angeben muss. Wenn man aber nur einzelne anpassen möchte, kann man die Methode `patchValue()` verwenden.
-Denn diese Methode erlaubt es das man nur einzelne der Values angeben muss.
+Wenn man eine so grosse FormGroup hat und nun ein Wert ändern möchte über das Typescript, kann man dies auch mittels `setValue()` tun. Das kann jedoch mühsam sein da man bei dieser Methode alle Values (FormControls) der FormGroup angeben muss. Wenn man aber nur einzelne anpassen möchte, kann man die Methode `patchValue()` verwenden.
+Denn diese Methode erlaubt es das man nur einzelne der Values (FormControls) angeben muss.
 
 ```typescript
 import { Component } from '@angular/core';

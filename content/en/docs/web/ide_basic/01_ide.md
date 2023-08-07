@@ -11,7 +11,7 @@ description: >
 In den folgenden Kapiteln ist alles aufgeführt was man für das Programmieren mit HTML und CSS benötigt.
 
 ## VS Code
-Die Beispiele in diesem Modul werden mit Visual Studio Code erklärt. Visual Studio Code ist ein kostenloser Codierungseditor, mit welchem du schnell mit dem Coden beginnen kannst. Du kannst Visual Studio Code verwenden, um in jeder Programmiersprache zu programmieren, ohne den Editor zu wechseln. Es unterstützt viele Sprachen, darunter sind JavaScript, Angular, Vue und viele mehr.
+Die Beispiele in diesem Modul werden mit Visual Studio Code erklärt. Visual Studio Code ist ein kostenloser Codierungseditor, mit welchem du schnell mit dem Coden beginnen kannst. Du kannst Visual Studio Code verwenden, um in beinahe jeder Programmiersprache zu programmieren, ohne den Editor zu wechseln. Es werden viele Sprachen unterstützt, darunter sind JavaScript, Angular, Vue und viele mehr.
 https://code.visualstudio.com/
 
 ### Extensions
@@ -69,10 +69,6 @@ Um eine Datei (z.B. eine HTML-Datei) via Live Server im Browser zu öffnen, tät
 Ganz unten in VS Code siehst du nun einen versteckten Button mit der Aufschrift "Port 5500". Wenn du darauf klickst, beendest du den Live Server wieder. [Besser noch ein Bild hinzufügen]
 
 
-![task1](/images/task.png) 15' - Einzelarbeit
-
-    Installiere die IDE, die genannten Extensions, und richte sie entsprechend deiner Präferenz ein.
-
 ### Live-Server in IntelliJ
 Wenn man jedoch IntelliJ als seine IDE wählt, kann man ähnlich wie bei VS Code einen Liv Server mittels Extension erhalten. Dazu muss mah jedoch die Extension LiveEdit installieren. Nach dem man es installiert hat muss man es noch ein wenig konfigurieren, dafür einfach in den Einstellungen auf "Build, Execution, Deployment" -> Debugger -> Live Edit.
 Dort muss man folgendes anpassen:
@@ -84,6 +80,9 @@ Dort muss man folgendes anpassen:
 
 Das gesamte nun sichern und danach kann es verwendet werden. Dazu muss man einfach den Debugger starten und ein Chromefernster öffnet sich. Man kann nun im Code Änderungen vornhemen solange man im Debugger ist und es wird live im Chromefenster aktualisiert.
 
+![task1](/images/task.png) 15' - Einzelarbeit
+
+    Installiere die IDE, die genannten Extensions, und richte sie entsprechend deiner Präferenz ein.
 
 ## Git
 Git ist dir bereits bekannt ein Codeversionierungssystem, welches bei diesem Modul genutzt wird.

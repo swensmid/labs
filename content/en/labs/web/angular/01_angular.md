@@ -8,6 +8,7 @@ description: >
      Aufgaben zu Angular.
 ---
 # Aufgaben
+In diesen Aufgaben wirst du eine Applikation erstellen, die dir Informationen über verschiedene Velos anzeigt. Erstelle die Applikation anhand des bereitgestellten Codes und den dazugehörigen Informationen.
 ## Aufgabe 1
 Folgender Code ist gegeben:
 Datei `../interfaces.ts`:

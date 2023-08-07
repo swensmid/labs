@@ -141,3 +141,14 @@ Man öffnet die IntelliJ-Einstellungen, indem man den Shortcut "Strg + Alt + S" 
 
 Man navigiert zu `Languages & Frameworks` -> `[Code-Language z.B. JavaScript]` -> `Code Quality Tools` -> `ESLint` nun wählt man die `Automatic ESLint configuration` und `Run eslint --fix on save` Option an.
 
+## Überprüfen
+Nun hoffen wir, dass alle nötigen Installationen erfolgreich ausgeführt wurden.
+
+![task5](/images/task.png) 5' - Einzelarbeit
+
+    - Öffne deine IDE
+    - Öffne in deiner IDE ein neues Terminal
+    - git --version
+    - npm -v
+
+Sofern alle Versionen angezeigt werden, war die Installation erfolgreich. Anderweitig solltest du einen Coach konsultieren.

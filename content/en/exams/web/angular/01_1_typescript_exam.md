@@ -9,10 +9,7 @@ description: >
 ---
 
 # Exam Typscript
-
+TODO: Exam zu Typescript erstellen.
 
 # Zurück zur Theorie
 [Hier](../../../../docs/web/angular/03_1_intro_typescript) gelangst du zurück zur Theorie.
-
-
-# Eventuell noch eine kleiner Exam (ToDo!!!!!)

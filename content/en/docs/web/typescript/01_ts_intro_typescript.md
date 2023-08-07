@@ -13,7 +13,7 @@ Die Programmiersprache wurde von Microsoft entwickelt und wurde im Jahr 2012 mit
 Seitdem wird die Programmiersprache kontinuierlich weiterentwickelt. Zahlreiche JavaScript-Frameworks setzen heute auf die Verwendung von TypeScript.
 Dazu gehören zum Beispiel Angular 2+ und React.
 
-TypeScript bildet eine Obermenge von JavaScript, erweitert also JavaScript um bestimmte Features.
+TypeScript bildet eine Erweiterung von JavaScript, fügt also JavaScript bestimmte Features hinzu.
 Es handelt sich dabei also um ein sogenanntes Superset von JavaScript.
 
 Da Quellcode geschrieben in TypeScript zu JavaScript transpiliert wird, ist der Code in jedem Browser lauffähig.

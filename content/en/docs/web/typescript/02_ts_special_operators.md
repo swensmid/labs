@@ -39,6 +39,7 @@ console.log(person2?.name); // 'Alice'
 console.log(person1?.getInfo()); // undefined
 console.log(person2?.getInfo()); // 'Name: Alice, Age: undefined'
 ```
+> Wichtig der hier gezeigte Operator ist nicht das gleiche wie der [ternary Operator(?:)](../../../docs/web/javascript/06_js_operators/#ternary-operator-)! Wenn du unsicher bist, lies dir nochmal die Beschreibung des ternary Operators durch. 
 
 ### !-Operator
 Der `!`-Operator ist ein Non-null-Assertion-Operator. Er wird verwendet, um dem Compiler mitzuteilen und zu garantieren, dass eine Variabel während der Laufzeit nicht `null` oder `undefiniert` ist und somit einen gültigen Wert hat.

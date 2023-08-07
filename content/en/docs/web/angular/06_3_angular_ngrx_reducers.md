@@ -16,9 +16,9 @@ Reducers sind Funktionen in NgRx, die den aktuellen Zustand des Stores und eine 
 
 Reducers in NgRx folgen dem Redux-Muster und sollten immer eine rein funktionale Programmierung befolgen. Das bedeutet, dass sie den aktuellen Zustand nicht verändern, sondern einen neuen Zustand erstellen und zurückgeben.
 
-Man erstellt für jeden State den man in der Applikation verwenden möchte ein Interface. Diese Interfaces werden dan dazu benutzt sicherlich einen weiteren State zu definieren, nämlich den Initialen State. Mit dem Initialen State wird vermieden das der State `undefined` sein kann.
+Für jeden State, der in der Applikation verwendet werden soll, wird ein Interface erstellt. Diese Interfaces werden dazu verwendet mindestens einen weiteren State zu definieren, nämlich den Initialen State. Mit dem Initialen State wird vermieden, dass der State `undefined` sein kann.
 
-Da mestens mehrere Actions vorhanden sind, müssen diese auch unterschieden werden. Dazu ist die `on`-Funktion da, diese kann einen Fallunterschied zwischen den Actions erstellen. Durch die Verwendung der props in den Action-Creator-Funktionen kann man die relevanten Daten an die Reducer-Funktion übergeben und im Reducer-Zustand verwenden.
+Da meistens mehrere Actions vorhanden sind, müssen diese auch unterschieden werden. Dazu ist die `on`-Funktion da, diese kann einen Fallunterschied zwischen den Actions erstellen. Durch die Verwendung der props in den Action-Creator-Funktionen kann man die relevanten Daten an die Reducer-Funktion übergeben und im Reducer-Zustand verwenden.
 
 
 ```typescript
