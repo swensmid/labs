@@ -1,7 +1,7 @@
 ---
 title: "Mathematik & Logik"
 linkTitle: "Mathematik & Logik"
-weight: 10
+weight: 6
 description: >
   Modul #J1
 ---

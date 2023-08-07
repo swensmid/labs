@@ -1,7 +1,7 @@
 ---
 title: "Kontrollstrukturen"
 linkTitle: "Kontrollstrukturen"
-weight: 11
+weight: 5
 description: >
   Modul #J1
 ---
@@ -139,7 +139,7 @@ System.out.println(sum); // Output: 55
 ```
 
 #### For-Each Loop
-Der For-Each-Loop durchläuft alle Elemente eines Arrays oder einer Collection. Die Angaben aus dem For-Loop werden durch eine Schleifenvariable und ein Doppelpunkt ersetzt.
+Der For-Each-Loop durchläuft alle Elemente eines Arrays oder einer Collection. Die Angaben aus dem For-Loop werden durch eine Schleifenvariable und ein Doppelpunkt ersetzt. (Arrays lernst du später im Kapitel "Arrays" kennen. Daher ist dieses Beispiel hier nur zur Vollständigkeit aufgelistet - du musst dieses Beispiel hier noch nicht verstehen.)
 ```java
 int[] numbers = { 125, 381, 98, 12, 235 };
 for (int number: numbers) {

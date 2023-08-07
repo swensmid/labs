@@ -1,7 +1,7 @@
 ---
 title: "Referenztypen"
 linkTitle: "Referenztypen"
-weight: 5
+weight: 7
 description: >
   Modul #J1
 ---
