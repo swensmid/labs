@@ -8,7 +8,7 @@ description: >
   In diesem Kapitel wird erläutert was Internationalization ist.
 ---
 ## Ziele
-* Du weisst, wofür ist Internationalisierung ist.
+* Du weisst, wofür Internationalisierung ist.
 * Du kannst diese in deinen Projekten anwenden.
 
 ## Wofür ist Internationalisierung 
@@ -110,7 +110,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-7. Translate-Pipe in den HTML-Dateien: In den HTML-Dateien der Components kann man die Translate-Pipe verwenden, um die lokalisierten Texte anzuzeigen. Dazu die Pipe `translate` mit dem Übersetzungs-Key verwenden, um die Übersetzungen abzurufen. Wurden einem Key mehrere neuen Key-Value Paare geben so ruft man den äussersten Schlüssel auf und fügt in mittels eines Punktes (`.`) mit dem nächsten Key zusammen.
+7. Translate-Pipe in den HTML-Dateien: In den HTML-Dateien der Components kann man die Translate-Pipe verwenden, um die lokalisierten Texte anzuzeigen. Dazu die Pipe `translate` mit dem Übersetzungs-Key verwenden, um die Übersetzungen abzurufen. Wurden einem Key mehrere neue Key-Value Paare geben so ruft man den äussersten Schlüssel auf und fügt ihn mittels eines Punktes (`.`) mit dem nächsten Key zusammen.
 ```html
     <h1>{{ 'TITEL' | translate }}{{ name }}!</h1>
 

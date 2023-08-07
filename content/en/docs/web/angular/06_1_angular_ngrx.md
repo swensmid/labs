@@ -15,7 +15,7 @@ description: >
 NgRx ist ein beliebtes State-Management-Framework für Angular-Anwendungen, das auf der Redux-Architektur basiert. Es bietet eine zentrale Datenquelle, den sogenannten Store, um den Anwendungsstatus zu verwalten. Mit NgRx kann man den Zustand einer Anwendung zentralisieren, die Datenflüsse vereinfachen und eine bessere Skalierbarkeit und Testbarkeit erreichen.
 
 NgRx besteht aus verschiedenen Kernkonzepten:
-* **Store**: Der Store ist der zentrale Speicherort für den Anwendungsstatus. Er enthält den globalen Zustand deiner Anwendung in einem einheitlichen JavaScript-Objekt. Du kannst auf den Zustand lesen und ihn mit Aktionen ändern.
+* **Store**: Der Store ist der zentrale Speicherort für den Anwendungsstatus. Er enthält den globalen Zustand deiner Anwendung in einem einheitlichen JavaScript-Objekt. Du kannst den Zustand lesen und ihn mit Aktionen ändern.
 
 * **Actions**: Actions repräsentieren Ereignisse oder Absichten, die in einer Anwendung auftreten können. Sie sind einfache JavaScript-Objekte, die eine Typ-Eigenschaft haben, um den Typ der Aktion zu definieren. Actions werden verwendet, um Änderungen im Zustand anzufordern.
 
@@ -28,9 +28,9 @@ NgRx besteht aus verschiedenen Kernkonzepten:
 ![NgRx Statemanagement](../images/ngrx-statemanagement.png)
 
 ## Installation
-Um NgRx in ein Angular-Projekt zu installieren, kann man die folgenden Schritte ausführen:
-1. Sicherstelle, dass Node.js und npm (Node Package Manager) auf dem Computer installiert ist. (Kann mit `npm -v`erledigt werden.)
-2. Nun ein Terminal öffnen oder eine andere Shell und navigiere zum Hauptverzeichnis des Projekts. 
+Um NgRx in einem Angular-Projekt zu verwenden, werden folgende Schritte benötigt:
+1. Stelle sicher, dass Node.js und npm (Node Package Manager) auf dem Computer installiert sind. (Kann mit `npm -v` geprüft werden.)
+2. Öffne ein Terminal oder eine andere Shell und navigiere zum Hauptverzeichnis des Projekts. 
 3. Folgenden Befehl ausführen, um NgRx zu installieren:
 ```shell
 npm install @ngrx/store
@@ -43,8 +43,8 @@ npm install @ngrx/entity        // Für die Verwendung von Entity State
 npm install @ngrx/router-store  // Für die Integration von Router-Status mit dem Store
 ```
 
-5. Sobald die Installation abgeschlossen ist, kann man die NgRx-Features im Projekt verwenden, indem man die entsprechenden Module importiert und konfiguriert:
-* NgRx Store: Um den NgRx Store zu verwenden, muss man das `StoreModule` importiere und im `app.module.ts` konfigurieren.
+5. Sobald die Installation abgeschlossen ist, können die NgRx-Features im Projekt verwenden werden, indem die entsprechenden Module importiert und konfiguriert werden:
+* NgRx Store: Um den NgRx Store zu verwenden, muss das `StoreModule` importiert und im `app.module.ts` konfiguriert werden.
 ```typescript
 import { StoreModule } from '@ngrx/store';
 
@@ -58,7 +58,7 @@ import { StoreModule } from '@ngrx/store';
 export class AppModule { }
 ```
 
-* **Optional** NgRx Effects: Um den NgRx Effects zu verwenden, muss man das `EffectsModule` importiere und im `app.module.ts` konfigurieren.
+* **Optional** NgRx Effects: Um den NgRx Effects zu verwenden, muss das `EffectsModule` importiert und im `app.module.ts` konfiguriert werden.
 ```typescript
 import { EffectsModule } from '@ngrx/effects';
 import { MyEffects } from './my-effects';  // Hier die eigenen Effects importieren
@@ -73,7 +73,7 @@ import { MyEffects } from './my-effects';  // Hier die eigenen Effects importier
 export class AppModule { }
 ```
 
-* **Optional** NgRx Entity State: Um den NgRx Entity State zu verwenden, muss man das `EntityStateModule` importiere und im `app.module.ts` konfigurieren.
+* **Optional** NgRx Entity State: Um den NgRx Entity State zu verwenden, muss das `EntityStateModule` importiert und im `app.module.ts` konfiguriert werden.
 ```typescript
 import { EntityStateModule } from '@ngrx/entity';
 
@@ -88,5 +88,5 @@ export class AppModule { }
 ```
 
 ## Debugging Tool
-Damit man das gesamte auch gut debuggen kann, gibt es eine [Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related), welche einem dabei hilft.
+Damit man das gesamte auch gut debuggen kann, gibt es eine [Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related), welche dabei hilft.
 Die Extension bietet eine Vielzahl von Funktionen, um den Zustand des Redux-Stores zu überwachen, Aktionen zu verfolgen und den Ablauf der Anwendung besser zu verstehen.
