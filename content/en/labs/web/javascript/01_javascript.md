@@ -33,7 +33,7 @@ Hilfestellungen zu
 * [Canvas](https://www.w3schools.com/html/html5_canvas.asp)
 
 ### Aufgabe 4 - Global Scope, Function Scope und Block-Scope
-Im Kapitel [ES6: Variablen deklarieren](../../../docs/web/javascript/18_variables#global-scope-und-function-scope) zu  hast du die Funktionsweise vom Global und Function Scope kennengelernt mit einem Beispiel-Code mit `console.log(...)`s. In diesem Beispiel wurden alle Variablen  mit `var` deklariert/definiert - also keine `let`s oder `const`s.
+Im Kapitel [ES6: Variablen deklarieren](../../../docs/web/javascript/18_variables#global-scope-und-function-scope) hast du die Funktionsweise vom Global und Function Scope kennengelernt mit einem Beispiel-Code mit `console.log(...)`s. In diesem Beispiel wurden alle Variablen  mit `var` deklariert/definiert - also keine `let`s oder `const`s.
 
 ![task1](/images/task.png) Ändere in diesem Code alle `var`s zu `let`s oder `const`s.
 
@@ -123,6 +123,6 @@ Schreibe zusätzlich eine Funktion, um neue Schüler zu erfassen. Der zu erfasse
 
 Noch zu ergänzen sind je eine Funktion, welche beide auch ein Array von Schülern erwarten. Die eine Funktion soll den Schüler mit der besten und die andere Funktion mit dem schlechtesten Durchschnitt herausfinden. Die Funktionen sollen den Namen des Schülers und dessen Durchschnitt zurückgegeben. Versuche diese beiden Funktionen mit so wenig Redundanzen wie möglich zu schreiben (evtl. kann man eine Funktion draus machen).
 
-Die letzte Funktion sollte ein Array von Schüler entgegennehmen und sie anhand des Durchschnitts ordnen. Der mit dem schlechtesten Durchschnitt kommt zuerst. Die Funktion soll ein Promise mit nur den Namen aller Schüler zurückgeben, nachdem diese sortiert wurden.
+Die letzte Funktion sollte ein Array von Schülern entgegennehmen und sie anhand des Durchschnitts ordnen. Der schlechteste Durchschnitt kommt zuerst. Die Funktion soll ein Promise mit nur den Namen aller Schüler zurückgeben, nachdem diese sortiert wurden.
 
 Schreibe ein HTML-File, in welchem man neue Schüler hinzufügen kann und wo die Ergebnisse aus den Funktionen angezeigt werden.

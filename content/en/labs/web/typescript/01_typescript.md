@@ -9,29 +9,29 @@ description: >
 ---
 # Aufgaben
 ## Aufgabe 1
-Erstellen Sie eine neue TypeScript-Projektstruktur und richten eine tsconfig.json-Datei ein, um den TypeScript-Compiler für das Projekt zu konfigurieren.
+Erstelle eine neue TypeScript-Projektstruktur und richte eine tsconfig.json-Datei ein, um den TypeScript-Compiler für das Projekt zu konfigurieren.
 
-1. Erstellen Sie ein neues Verzeichnis für Ihr TypeScript-Projekt. 
-2. Navigieren Sie in das Verzeichnis und Initialisieren Sie das Projekt mit den Node Befehlen. Diese können [hier](../../../docs/web/ide_advanced/01_nodejs.md#npm-commands) nachgelesen werden. 
-4. Installieren Sie TypeScript. 
-5. Erstellen Sie eine `tsconfig.json`-Datei im Stammverzeichnis des Projekts. Und richten Sie diese anhand von folgenden Informationen korrekt ein:
+1. Erstelle ein neues Verzeichnis für dein TypeScript-Projekt. 
+2. Navigiere in das Verzeichnis und Initialisiere das Projekt mit den Node Befehlen. Diese können [hier](../../../docs/web/ide_advanced/01_nodejs.md#npm-commands) nachgelesen werden. 
+4. InstalliereTypeScript. 
+5. Erstelle eine `tsconfig.json`-Datei im Stammverzeichnis des Projekts. Und richte diese anhand der folgenden Informationen korrekt ein:
    * ECMAScript-Version = es6
    * Modulsystem = commonjs
    * Ausgabeverzeichnis = dist
    * Typen-Check-Modus = true
-6. Erstellen Sie im Projektverzeichnis ein Unterverzeichnis namens `src`. 
-7. Erstellen Sie eine TypeScript-Datei mit dem Namen `index.ts` im Verzeichnis src und schreiben Sie darin eine Funktion, welche einen Parameter entgegennimmt und diesen ausgibt (Typisieren sie zuerst den Parameter nicht und prüfen sie, ob die tsconfig-Datei funktioniert. Wenn die tsconfig-Datei korrekt ist, wird die IDE folgendes anzeigen: `Parameter '' implicitly has an 'any' type.ts`). Rufen Sie danach in diesem File die Funktion mit dem Parameter `HelloWorld!` auf.
-8. Transpilieren Sie die TypeScript-Datei.
-9. Führen Sie die JS-Datei aus.
+6. Erstelle im Projektverzeichnis ein Unterverzeichnis namens `src`. 
+7. Erstelle eine TypeScript-Datei mit dem Namen `index.ts` im Verzeichnis src und schreibe darin eine Funktion, welche einen Parameter entgegennimmt und diesen ausgibt (Typisiere zuerst den Parameter nicht und prüfe, ob die tsconfig-Datei funktioniert. Wenn die tsconfig-Datei korrekt ist, wird die IDE folgendes anzeigen: `Parameter '' implicitly has an 'any' type.ts`). Rufe danach in diesem File die Funktion mit dem Parameter `HelloWorld!` auf.
+8. Transpiliere die TypeScript-Datei.
+9. Führe die JS-Datei aus.
 
-Resultat sollte `HelloWorld!` sein.
+In der Konsole solltest du `HelloWorld!` sehen.
 
 
 ## Aufgabe 2
 ![task2](/images/task.png) - Einzelarbeit
 
 Lade die [Datei](/files/exams/angular/uebung2.ts) herunter und fülle wo nötig Quellcode ein.
-Die Person soll sich folgendermassen vorstellen: "Hallo, mein Name ist  [Name]"
+Die Person soll sich folgendermassen vorstellen: "Hallo, mein Name ist [Name]"
 Die Grundstruktur, sowie die letzten 2 Codezeilen dürfen nicht verändert werden.
 
 
@@ -59,7 +59,7 @@ In der Konsole sollte Dir nun folgendes angezeigt werden.
 ## Aufgabe 3
 ![task4](/images/task.png) - Einzelarbeit
 
-Laden Sie die [Datei](/files/exams/angular/uebung3.ts) herunter.
+Lade die [Datei](/files/exams/angular/uebung3.ts) herunter.
 In dieser Aufgabe wollen wir Benutzereingabe in der Konsole verarbeiten.
 Dazu verwenden wir in diesem Beispiel readline(https://nodejs.org/api/readline.html) von NodeJS.
 Wir wollen nun ein kleines Programm schreiben, welches wie folgt aussieht.
