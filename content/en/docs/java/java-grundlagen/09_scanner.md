@@ -44,7 +44,7 @@ Es ist einfach zu bedienen, muss jedoch importiert werden, damit die Klasse funk
 
 ### Zahlen einlesen
 
-Oft möchtest du, dass der User Zahlen in der Konsole eingeben kann. Hierfür bietet der `Scanner` eine passende Methode an:
+Oft möchtest du, dass der Benutzer Zahlen in der Konsole eingeben kann. Hierfür bietet der `Scanner` eine passende Methode an:
 
 ```java
 System.out.print("Enter an integer: ");
