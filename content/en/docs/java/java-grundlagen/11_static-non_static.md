@@ -1,7 +1,7 @@
 ---
 title: "Statische und nicht-statische Elemente"
 linkTitle: "Static / Non-Static"
-weight: 9
+weight: 11
 description: >
   Modul #J1
 ---
@@ -138,3 +138,6 @@ public final class SpeedConverter {
     }
 }
 ```
+
+---
+![task1](/images/task.png) Jetzt bist du dran. Löse bitte die [Aufgabe 9](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-9---methoden) in den Labs.
