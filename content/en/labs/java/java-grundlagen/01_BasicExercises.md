@@ -21,7 +21,7 @@ description: >
 * Ich kann mein Programm mit einem Debugger zur Laufzeit untersuchen
 
 ## Aufgabe 1 - Ausgaben auf die Kommandozeile
-![task1](/images/task.png) Gib die folgenden Daten auf die Kommandozeile aus:
+![task1](/images/task.png) Gib die folgenden Daten in der Kommandozeile aus:
 * `Hello World`
 * `Hello + <Dein Name>`
 * `Zeichne ein Haus, nutze dazu beliebige Zeichen`
