@@ -255,8 +255,8 @@ stehen, und umgekehrt.
 
 Wenn wir also unser Wissen in einem ERM aufzeichnen, würde das ungefähr wie in diesem Diagramm aussehen:
 
-![ERD](../images/ERD.jpg)
+![Buch-ERD](../images/Buch-ERD.png)
 
-Hier wurde eine Zoodatenbank dargestellt, die Tiere, Angestellte und Nahrung hat.
+Hier wurde eine Buchdatenbank dargestellt, die Bücher und Autoren hat.
 > Hinweis: mehrere zu mehrere (m:m, mc:m, ...) benötigen normalerweise eine Zwischentabelle, da sonst keine eindeutige
 > Verbindung zwischen den Tabellen hergestellt werden kann.
