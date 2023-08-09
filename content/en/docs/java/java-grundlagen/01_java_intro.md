@@ -84,4 +84,4 @@ Innerhalb der Main-Methode sehen wir ein einzelnes Statement. Es besteht aus ein
 Die statische Methode _println()_ auf dem öffentlich zugänglichen _Feld_ der Klasse _System_ dient dazu Text auf der Konsole auszugeben. Das Statement wird mit einem Semikolon abgeschlossen.
 
 
-![asset](/images/hint.png) Jetzt bist du dran. Löse bitte die [Aufgabe 1](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-1---ausgaben-auf-die-kommandozeile) in den Labs.
+![task1](/images/task.png) Jetzt bist du dran. Löse bitte die [Aufgabe 1](../../../../labs/java/java-grundlagen/01_basicexercises/#aufgabe-1---ausgaben-auf-die-kommandozeile) in den Labs.
